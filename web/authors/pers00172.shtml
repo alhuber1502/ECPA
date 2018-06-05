@@ -1,0 +1,69 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Samuel Foote" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Samuel Foote "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Samuel Foote</h1>
+            												(bap. 27 January 1721 - 
+            											21 October 1777)
+            											
+            <div id="portrait">
+               <figure class="figure">
+                  <figcaption class="caption">Samuel Foote (1721-1777)</figcaption>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/FootSa1721_NPG.jpg" alt="Samuel Foote (1721-1777)" class="graphic"></img></figure>
+            </div>
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/o5089-w0230.shtml"><em>MR. FOOTE's ADDRESS TO THE PUBLIC, After a Prosecution against him for a LIBEL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5089" href="/works/o5089.shtml#o5089-w0230"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o5089"><a title="view table of contents of source edition" href="/works/o5089.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A collection of the most esteemed pieces of poetry: that have appeared for several
+                           years. With variety of originals, by the late Moses Mendez, Esq; and other contributors
+                           to Dodsley's collection. To which this is intended as a supplement.</span> </em>  London: printed for Richardson and Urquhart, 1767. [8],320p. ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T124631">T124631</a>; 
+                     						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1073&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1073</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K099398.000">K099398.000</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1593&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1593</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/9808">9808</a></p>
+               <h3>Reference</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 130-131. Print.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Samuel Foote\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

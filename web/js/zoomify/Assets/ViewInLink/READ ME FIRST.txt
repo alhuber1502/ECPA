@@ -1,0 +1,11 @@
+Zoomify 'View In Link' Example
+
+This example demonstrates the display of the Zoomify Image Viewer in simple but powerful way, involving two web pages - the calling page, "ViewInLink.htm", and the pop-up display page, "PopUpPage.htm".  The calling page includes a link that contains the path of the Zoomify Image to display as well as any other parameters to apply (initial X or Y coordinates, etc.).  The pop-up display page receives this information and uses it to show the correct image in the desired way.  
+
+The advantage of this approach is that any page can call the pop-up page.  Thus, it is possible to design the look and layout of a single display page and use it for any Zoomify Image on a web site.  The specifics of what image to display and what additional parameters to apply are all in the calling links in other web pages.
+
+To view the example simply double-click the file "ViewInLink.htm".  Do NOT double-click the file "PopUpPage.htm" as it will not have any information about what Zoomify Image to display unless it is called by the link in the page "ViewInLink.htm".   
+
+Lastly, please remember that this example passes specific image, skin, and/or watermark foldername to a pop-up page so the folder structure is assumed not to have been changed. If you move the files around or rename the folder the pop-up page is in, you will have to change the paths in the calling link so that they match the changes you have made.
+
+

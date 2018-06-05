@@ -1,0 +1,137 @@
+<HOTSPOTDATA>
+	<SETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		LISTTITLE="Hotspots"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		NAME="Visible Always"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromJPG.jpg"
+		X="225"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="0"
+		ZMAX="0"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="This hotspot is always visible!"
+		TOOLTIP="ZMIN and ZMAX are both set to 0" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		NAME="Visible At Initial Zoom"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromPNG.png"
+		X="525"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="-1"
+		ZMAX="-1"
+		CLICKURL="http://www.viewthewall.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="This Hotspot Is Visible%0D%0AAt Initial Zoom"
+		TOOLTIP="ZMIN and ZMAX are both set to -1" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		NAME="Visible Up To 50% Zoom"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromPNG.png"
+		X="825"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="0"
+		ZMAX="50"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="This Hotspot Is Visible%0D%0AUp To 50% Zoom - Inclusive"
+		TOOLTIP="ZMIN and ZMAX are set to 0 and 50" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		NAME="Visible Only At 50% Zoom - On Rollover"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromPNG.png"
+		X="1125"
+		Y="1375"
+		ZOOM="50" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="50"
+		ZMAX="50"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="1"
+		CAPTION="This Rollover Hotspot Is Visible%0D%0AIf Rolled Over%0D%0AOnly At 50% Zoom"
+		TOOLTIP="ROLLOVER is set to 1 and ZMIN and ZMAX are both set to 50" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Visible Over 50% Zoom"
+		MEDIATYPE="icon"
+		MEDIA=""
+		X="1125"
+		Y="1500"
+		ZOOM="100" 
+		XSCALE="50"
+		YSCALE="90"
+		ZMIN="50"
+		ZMAX="0"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="This Hotspot Is Visible%0D%0AOver 50% Zoom - Inclusive"
+		TOOLTIP="ZMIN and ZMAX are set to 50 and 0" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		NAME="Visible Over 50% And Under 75% Zoom"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromPNG.png"
+		X="1425"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="50.1"
+		ZMAX="74.9"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="This Hotspot Is Visible%0D%0ABetween 50% And 75% Zoom - Not Inclusive"
+		TOOLTIP="ZMIN and ZMAX are set to 50.1 and 74.9" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="7"
+		NAME="Visible At 100% Zoom"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ZoomRanges/hotspotFromJPG.jpg"
+		X="1725"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		ZMIN="100"
+		ZMAX="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="This Hotspot Is Visible%0D%0AOnly At 100% Zoom"
+		TOOLTIP="ZMIN and ZMAX are both set to 100" >
+	</HOTSPOT>
+</HOTSPOTDATA>
+

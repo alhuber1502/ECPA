@@ -1,0 +1,149 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Home" -->
+<!--#set var="bodyid" value="home"  -->
+<!--#set var="youarehere" value="<li>Home</li>" -->
+<!--#set var="home" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+
+    <!-- start of website -->
+
+    <div class="row">
+
+      <div class="col-xs-8">
+
+	<h1><!--#echo var="ecep_full" --></h1>
+
+	<div class="pull-left" style="padding-right:30px;padding-left:10px;"><a target="_blank" 
+             href="http://www.bsecs.org.uk/"><img 
+	     src="/images/logos/bsecs_white.gif" alt="BSECS"/></a><div class="text-center
+	       small">&nbsp;Digital Prize Winner 2018</div></div>
+	<p class="lead">The <!--#echo var="ecep_full" --> — <strong><abbr><!--#echo var="ecep" --></abbr></strong> —
+	  is a peer-reviewed, <a href="https://www.bsecs.org.uk/" target="_blank" class="external">award-winning</a> digital archive and research project devoted to
+	  the poetry of the long eighteenth century. <abbr><!--#echo var="ecep" --></abbr> builds on the electronic texts created by
+	  the <a class="external" href="http://www.textcreationpartnership.org/">Text
+	    Creation Partnership</a> from Gale’s <em>Eighteenth Century Collections Online (ECCO)</em>.</p>
+	
+	<h2>Key features</h2>
+
+	  <ul>
+	  <li>browse <a href="/authors/"><span id="stats_authors"></span>
+		  authors</a> by names, dates of birth, or gender;</li>
+	  <li>browse <a href="/works/"><span id="stats_works"></span> works</a>
+		(<span id="stats_texts"></span> text versions) by titles, first lines, themes, or genres;</li>
+	  <li>view high-quality digital facsimiles of select source editions of the texts used by <abbr><!--#echo var="ecep" --></abbr>;</li>
+	  <li>use the built-in digital tools to augment the close reading
+	  process of individual poems;</li>
+	  <li>contribute and share textual notes and glosses, readings and
+	  interpretations, observations and suggestions, via easy-to-use forms
+	  (just click on any line or word);</li>
+	  <li>use the collaborative potential in the classroom to increase student engagement with the texts;</li>
+	  <li>use the <a href="/resources/">resources</a> (chronology, gallery, and bibliography) to enhance your studies.</li>
+
+	  </ul>
+
+	  <h2>Coming soon</h2>
+	  <p><abbr><!--#echo var="ecep" --></abbr> is currently released in
+	   <span style="font-variant:small-caps;font-size:16px;">beta</span>
+	   and is being constantly updated. Follow 
+	   <abbr><!--#echo var="ecep"--></abbr> on <a class="external"
+						      target="_blank"
+						      href="https://twitter.com/C18AH" 
+	   >Twitter</a> to be kept informed of developments.  Upcoming updates include:</p>
+	  <ul>
+	    <li>increasing the number of authors and works represented (currently in
+	      preparation: Mary Collier, Thomas Parnell, Charlotte Lennox);</li>
+	    <li>implementing and testing a number of adapted and bespoke options for both <em>visualization</em>
+	      and <em>modelling</em> views.
+	  </ul>
+
+	  <div id="featured">
+
+	  <hr>
+	  <h2 class="ecep-home-box">Recent additions</h2>
+	  <!--#include virtual="/about/featuredauthor.shtml" -->
+
+	  </div>
+
+      </div>
+
+      <div class="col-xs-4">
+<!--
+	<h2 class="ecep-home-box">Featured Work</h2>
+
+            <div id="featuredwork">
+               <figure class="figure"><a href="/works/" class="image"><img 
+		  src="/images/screenshots/ba-obj-3658-0001-pub-detail.jpg"
+                  alt="[title page]" class="graphic"/></a>
+                  <figcaption class="caption">William Blake, 
+		    <a target="_blank" class="external"
+		    href="http://collections.britishart.yale.edu/vufind/Record/1667921"><em>The
+		    Poems of Thomas Gray, Design 67, "The Fatal Sisters".</em></a> Watercolour
+		    with pen, black ink and graphite, with inlaid letterpress
+                    page (1797/8, detail). Yale Center for British Art, Paul Mellon
+                    Collection. 
+		  </figcaption>
+	       </figure>
+            </div>
+//-->
+
+        <h2 class="ecep-home-box" style="padding-bottom:.3em;">Follow <!--#echo var="ecep" --></h2>
+	<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+	<div class="addthis_inline_follow_toolbox"></div>
+
+
+        <h2 class="ecep-home-box" style="padding-bottom:.3em;">
+        <!--#echo var="ecep" --> core
+        features tour</h2>
+
+	<a role="button" id="tour" class="btn btn-primary btn-lg"
+        data-demo="" href="/works/o5152-w0120-tour.shtml">
+        <span class="glyphicon glyphicon-play"></span>
+	Take the tour
+      </a>
+
+<!--
+<h2 class="ecep-home-box">Close reading, digitally</h2>
+<img src="/images/screenshots/reading-word-properties2.png" alt="[Reading view]"/>
+//-->
+
+        <h2 class="ecep-home-box">News/Updates <i class="fa fa-twitter"></i></h2>
+
+
+        <a class="twitter-timeline" data-lang="en" data-height="1800"
+	   data-theme="light"
+	   href="https://twitter.com/C18AH/timelines/981517373248364544?ref_src=twsrc%5Etfw">#ECPA
+	  News/Updates - Curated tweets by C18AH</a> <script async
+		src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      </div>
+
+    </div><!-- end of row -->
+
+    <!-- end of website -->
+
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+
+<script type="text/javascript">
+  var citation = "";
+  citation += "Huber, Alexander, ed. ";
+  var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+  citation += '<!--#echo var="ecep_full" -->. ';
+  citation +='<em><!--#echo var="ecep_full" --></em>, '+
+  '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+  '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+  window.onload = function() {
+  document.getElementById('stats_authors').insertAdjacentHTML('afterbegin',stats.authors);
+  document.getElementById('stats_works').insertAdjacentHTML('afterbegin',stats.works);
+  document.getElementById('stats_texts').insertAdjacentHTML('afterbegin',stats.texts);
+  }
+
+</script>
+
+<!--#include virtual="/bottom.shtml" -->

@@ -1,0 +1,65 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / John Nourse" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors John Nourse "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>John Nourse</h1>
+            												(1722 - 
+            											1757)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/o5156-w0420.shtml"><em>UT PICTURA POESIS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5156" href="/works/o5156.shtml#o5156-w0420"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o5156"><a title="view table of contents of source edition" href="/works/o5156.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. V.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.005">K104099.005</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=5061&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">5061</a></p>
+               <h3>Reference</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree"><span class="author">Courtney, William P.</span>  <q class="titlea">John Nourse</q>. <span class="titlem">Dodsley's Collection of Poetry: Its Contents &amp; Contributors</span>. <span class="pubPlace">London</span>: <span class="publisher">Arthur L. Humphreys</span>, <span class="date">1910</span>. 115. Print.
+                     </div>
+                  </li>
+                  <li>
+                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Nourse, John</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 187-188. Print. 6 volumes.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"John Nourse\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

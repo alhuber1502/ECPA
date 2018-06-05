@@ -1,0 +1,22 @@
+
+/* Frameviz (horizontal frame view) */
+.frameviz { border: solid 1px #bbb; }
+.frameviz table td,.frameviz table th { border: none; }
+/*.frameviz table.sentence { margin-left: auto; margin-right: auto; }*/
+.frameviz .sentence,.frameviz .sentence tbody { font-family: Helvetica,arial,sans-serif; }
+.frameviz .sentence tbody tr:first-child { font-family: verdana,Helvetica,arial,sans-serif; }
+.frameviz .sentence { border-collapse: separate; border-spacing: 0px 3px; }
+.frameviz .sentence .word { font-weight: normal; border-bottom: solid 2.5px transparent; }
+.frameviz .sentence .target { font-weight: bold; background-color: transparent; color: #000; }
+.frameviz .sentence .frameann .framename { font-size: 10pt; color: #fff; font-variant: small-caps; text-align: right; }
+.frameviz .sentence .frameann.targets .framename { color: #555; text-align: center; }
+.frameviz .sentence .frameann .arg { font-size: 10pt; text-align: center; border-top: solid 2.5px #286090; }
+.frameviz .sentence .word.hoveredarg { border-bottom: solid 2.5px #286090; }
+.frameviz .sentence .frameann .arg + .arg { border-left: solid 1px #286090; } /* border between different args */
+.frameviz .sentence .frameann .arg.continues + .arg.continuation { border-left: none; } /* border of continued arg */
+.frameviz .sentence .frameann .target { font-size: 10pt; font-weight: normal; background-color: #bbb !important; }
+.frameviz .sentence th,.sentence td { padding: 3px; }
+.frameviz .sentence .frameann .arg,.sentence .frameann .internalFiller { background-color: #ddd; }
+.frameviz .sentence .leftmost { /*border-top-left-radius: 8px;*/ border-bottom-left-radius: 8px; border-left: solid 1px #fff !important; }
+.frameviz .sentence .rightmost { /*border-top-right-radius: 8px;*/ border-bottom-right-radius: 8px; border-right: solid 1px #fff !important; }
+.frameviz .sentence .filler { visibility: hidden; }

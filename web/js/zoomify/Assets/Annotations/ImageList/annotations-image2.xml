@@ -1,0 +1,69 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Triangle Label" 
+				MEDIATYPE="icon"
+				MEDIA="triangle" 
+				X="1160" 
+				Y="600" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Triangle Label" 
+				COMMENT="This is an example comment for image 2."
+				TOOLTIP="Triangle label tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="00FF00" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Circle Label" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				X="1160" 
+				Y="1000" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Circle Label" 
+				COMMENT="Another example comment for image 2."
+				TOOLTIP="Circle label tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="00FF00"  >
+			</LABEL>
+			<LABEL 
+				ID="2" 
+				NAME="Square Label" 
+				MEDIATYPE="icon"
+				MEDIA="square" 
+				X="1160" 
+				Y="1400" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Square Label" 
+				COMMENT="A third example comment for image 2."
+				TOOLTIP="Square label tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="00FF00"  >
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

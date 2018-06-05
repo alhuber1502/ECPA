@@ -1,0 +1,702 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="About" -->
+<!--#set var="bodyid" value="about" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="about" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-9">
+	  <h1>About</h1>
+
+	  <h2 id="aims">Aims and objectives</h2>
+
+	  <p>The main objective of the <!--#echo var="ecep_full" -->
+	   — <strong><abbr><!--#echo var="ecep" --></abbr></strong> — is to
+	  develop into a lively, collaborative workspace in support of the
+          teaching, study, and research of eighteenth-century poetry.  To this
+	  end, <!--#echo var="ecep" --> is committed to the creation of an
+	  open-access digital archive of high-quality primary and
+	  secondary sources.  <!--#echo var="ecep" --> comprises two
+	  central components: the digital collection of richly encoded
+	  full-texts and a research project, which focuses on the
+	  computationally-assisted analysis of these texts.</p>
+
+	  <h3 id="collection">A digital collection</h3>
+          <p>The <!--#echo var="ecep" --> full-text collection
+            utilizes well-established open standards for creating and
+            preserving richly-encoded digital texts. Based on the principle of
+            peer participation, the corpus is edited and annotated
+            collaboratively, and will grow and evolve with the requirements and
+            interests of the scholarly community. <!--#echo var="ecep" --> thus participates
+	    in and benefits from a growing network of editors, scholars, and students who are
+	    collaborating and sharing texts, notes, and interpretations in a global
+	    network.</p>
+	   
+	   <p>Wherever possible, we have supplemented the full-texts
+	    with digital images for scholars who are primarily
+	    interested in the appearance of the source document or who want
+	    to check the transcription against the original.  We
+	    have also included an XML-editor, where corrections and
+	    improvements (descriptive and analytical) can be made directly in
+	    the source files and can be submitted to the editor for inclusion
+	    in future updates.</p> 
+	   
+	   <p>All digital surrogates can be downloaded in a variety of formats
+	    and re-used under the terms of <!--#echo var="ecep" -->'s content
+	    license.  If you re-use and do exciting things with any of the
+	    digital surrogates, please do <a 
+	    href="mailto:huber@eighteenthcenturypoetry.org">let us know</a> about it.</p>
+
+	  <h3 id="project">A research project</h3>
+
+	  <p>The <!--#echo var="ecep_full" --> aims to make a scholarly contribution
+	    by producing a corpus of annotated texts, analyses, tools, and
+	    a host of secondary materials.
+	    The focus of the <!--#echo var="ecep" --> research project is the
+	    integration of texts and (digital) scholarship into a living
+	    research collection of eighteenth-century poetry.  The main
+	    purpose of this integration is to facilitate interactivity and 
+	    discovery, and to support a multi-layered reader engagement.
+            For this purpose, we have introduced a variety of <em>views</em>, which
+	    reflect different modes of engagement with the texts.</p>
+
+	  <p>We have represented each of the different modes of engagement in
+	    the side-by-side layout of <em>text</em> and <em>view</em> in the form of tabs 
+            (currently, <em>Reading</em> view and <em>Analysis</em> view) in the hope that 
+	    the information provided in each will best support the level of
+	    engagement the reader has chosen.</p>
+
+          <p>The <em>reading</em> view offers a set of bibliographic
+            metadata, information about the source edition, a brief summary of
+            poetic form, an editorial statement, and other
+            contextualizing information, as well as a reading aid
+            function.
+	    The five analytical 
+            layers that support the <em>analysis</em> view are intended to 
+	    support a close reading of the texts, and help to reflect this
+            engagement through enabling interactive selection, highlighting,
+            and manipulation of the observed phenomena.  We hope that through
+            the combination of human knowledge (manifested through
+            contributions to the corpus in form of corrections, annotations,
+            glosses, and interpretations) and machine learning we can arrive
+            at an "augmented criticism" (Bradley/Ullyot) based on a
+            larger pool of supporting materials and more comprehensive analysis.</p>
+
+	  <p>Over time, the <!--#echo var="ecep" --> research project will
+	    facilitate new modes of engagement (<em>views</em>), which will join <em>reading</em>
+	    and <em>analysis</em>, and allow for increasingly sophisticated ways
+	    of interacting and thus re-creating the texts through each
+	    reading process. We are currently working on implementing and testing
+	    a number of adapted and bespoke options for the 
+	    next two modes of engagement (<em>views</em>), namely 
+	    <em>visualization</em> view and <em>modelling</em> view.
+</p>
+
+<h2 id="history">History</h2>
+
+<p>Work on the small project that eventually evolved into the more ambitious 
+<!--#echo var="ecep_full" --> began in 2006.  Originally intended as a focused
+contextualisation to the <a href="http://www.thomasgray.org/" target="_blank"
+class="external"><em>Thomas Gray Archive</em></a>, covering the lives and
+works of contemporaries of Gray's such as William Collins, Mark Akenside, Joseph and 
+Thomas Warton, Christopher Smart, James Thomson, the materials quickly grew
+substantial in quantity and wide-ranging in subject matter and coverage.</p>
+
+<p>In 2008, the idea for a much more comprehensive and ambitious project
+that would contribute to and benefit from the many exciting developments in
+"humanities computing" at the time was born.  With full-text production of
+ECCO-TCP in full swing in Oxford, early experiments in the computational
+exploration and analysis proved promising and encouraged us to embark on a
+dedicated resource on eighteenth-century poetry.  After several delays for
+various reasons, work on <!--#echo var="ecep" --> began in earnest in
+Winter 2012.
+</p>
+
+<p>A first <span style="font-variant:small-caps;font-size:16px;">alpha</span> version
+  of the Website was completed in Winter 2015.  The current 
+  <span style="font-variant:small-caps;font-size:16px;">beta</span> of
+  <!--#echo var="ecep" -->  went live on 1 May 2016.  We 
+  are actively seeking formative peer review at this stage, please do not
+  hesitate to <a href="mailto:huber@eighteenthcenturypoetry.org">contact us</a> 
+  with any issues, requests, or general feedback about the content, 
+  functionalities, or design of the Website.  We expect the
+  <span style="font-variant:small-caps;font-size:16px;">beta</span> phase to
+  come to an end after a maximum of three years.
+</p>
+
+<h2 id="funding">Funding</h2>
+
+<p>The <!--#echo var="ecep_full" --> is an unfunded research project.
+  As a collaborative effort of scholars, teachers,
+  and students of eighteenth-century poetry, <!--#echo var="ecep" --> is made possible
+  primarily through the generous donation of its contributors' time and
+  expertise.  We expect funding opportunities, particularly through (interdisciplinary) 
+  collaboration on research projects or participation in national or 
+  international initiatives, will become available over time.
+</p>
+
+<h2 id="cooperation">Cooperation</h2>
+
+<p>We are cooperating with the ERC-funded <a target="_blank"
+ class="external" href="http://postdata.linhd.es/">POSTDATA - Poetry
+ Standardization and Linked Open Data</a> project (2016-2021) to
+ construct a digital platform of semantically linked poetry.  POSTDATA
+ is a research project at the Laboratorio de Innovación en Humanidades
+ Digitales (LiNHD), Universidad Nacional de Educación a Distancia
+ (UNED), Madrid.
+</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<a target="_blank" href="http://www.tei-c.org/"><img class="pull-right"
+   src="http://www.tei-c.org/About/Badges/powered-by-TEI.png" alt="Powered by TEI"/></a>	    	
+<p><!--#echo var="ecep" --> builds on the digital texts created by the Text
+  Creation Partnership from Gale’s <em>Eighteenth Century Collections Online
+    (ECCO)</em>.  We use the TEI/XML P5 versions of the texts as they are made 
+  available by the <a href="http://ota.ox.ac.uk/tcp/" class="external"
+  target="_blank">Oxford Text Archive (OTA)</a> as our starting point (all
+  changes to the documents have been recorded as revisions).  The following is
+  a high-level summary of the current steps taken to create the digital surrogates in
+  <!--#echo var="ecep" -->. Any tools used for a particular task are also
+  listed. 
+</p>
+
+<h3 id="transcription">Transcription and descriptive markup</h3>
+<ul>
+<li>single-pass correction of transcription and markup (addresses gaps,
+  structural errors, omissions) against the ECCO microfilm images</li>
+<li>illegible text was supplied either from the copies originally used for the
+  microfilms or other available copies of the same edition</li>
+<li>enhanced 'semi-diplomatic' transcription of a small sample of texts (adding
+  typographical features, drop capitals, indentations etc.), otherwise
+  'semi-normalized'</li>
+<li>enhancing of bibliographic information and references (Foxon, DMI, etc.)</li>
+<li>adding author information on item level</li>
+</ul>
+
+<h3 id="markup">Analytical markup</h3>
+<ul>
+<li>assigning of IDs to poems and lower-level structural units</li>
+<li>recording verse, stanza, and poem form</li>
+<li>assigning of themes and genres (vocabulary adapted from <a href="http://digitalmiscellaniesindex.org/"
+class="external" target="_blank">DMI</a>)</li>
+<li>assigning rhyme scheme (where applicable)</li>
+<li>assigning metrical pattern (where applicable)</li>
+<li>recording of syllable pattern</li>
+<li>addition of textual and explanatory notes</li>
+</ul>
+
+<h3 id="processing">Text processing</h3>
+<ul>
+<li>tokenization/sentencing (white-space tokenization,
+  <a href="http://morphadorner.northwestern.edu/" class="external"
+  target="_blank">Morphadorner</a>)</li>
+<li>PoS-tagging (dictionary-based, Morphadorner)</li>
+<li>lemmatization/regularization (dictionary-based, Morphadorner)</li>
+<li>syllable count (Morphadorner)</li>
+<li>spot-checking and correction of the above steps</li>
+<li>phonemic transcription (mostly dictionary-based, self-developed tool)</li>
+</ul>
+
+<h3 id="tanalysis">Analysis</h3>
+<ul>
+<li>metrical and rhyme analysis (self-developed tool)</li>
+<li>rhetorical figure detection (self-developed tool)</li>
+<li>named entity recognition (mostly gazetteer-based, generated from several NER
+  engines, including the 
+<a href="http://nlp.stanford.edu/software/CRF-NER.shtml" class="external"
+   target="_blank">Stanford Named Entity Recognizer</a>,
+<a href="https://github.com/mit-nlp/MITIE" class="external" target="_blank">MITIE: MIT Information
+  Extraction</a>, and 
+<a href="https://opennlp.apache.org/" class="external" target="_blank">Apache OpenNLP</a>
+)</li>
+<li>syntactic dependency parse (<a href="http://www.maltparser.org/"
+class="external" target="_blank">MaltParser</a> [pre-trained, optimized])</li>
+<li>frame-semantic parse (<a href="http://www.cs.cmu.edu/~ark/SEMAFOR/" class="external" 
+target="_blank">SEMAFOR</a> [pre-trained])</li>
+</ul>
+
+<h3 id="website">Interface/Website</h3>
+<ul>
+<li>based on the concepts of peer participation and peer content creation</li>
+<li>opportunities for user contributions (subject to peer review)</li>
+<li>review-based annotation system to any part of a text (notes/queries)</li>
+<li>direct editing of XML sources</li>
+<li>digital images (captured with an Atiz BookDrive scanning station)</li>
+<li>all content files available for download via the "Downloads"-tab,
+  all data supporting this research are also available from our <a 
+    class="external" target="_blank" 
+    href="https://github.com/alhuber1502/ECPA">GitHub</a> page
+ </li>
+</ul>
+
+
+<h2 id="plans">Current and future plans</h2>
+
+<p>Our main focus of work is on expanding and improving
+  <!--#echo var="ecep" --> to a more comprehensive "release" version.
+  We will be focusing on the following areas.</p> 
+
+<h3 id="scope">Digital collection</h3>
+
+<p><!--#echo var="ecep" --> currently comprises <span id="stats_works"></span> works
+  by <span id="stats_authors"></span> authors.  Originally taken from
+  just three sources,<ul>
+    <li>Mark Akenside's <em>Pleasures of Imagination</em> (1744), published
+    by Dodsley,</li>
+    <li>Robert Dodsley's six-volume <em>Collection</em> (1763 [1st. ed. 1758]), the
+    last edition to appear in his lifetime, and </li>
+    <li>Thomas Gray's English poems, taken from
+      the <a href="http://www.thomasgray.org/texts/poems.shtml" target="_blank" 
+class="external"><em>Thomas Gray Archive</em></a>,</li>
+</ul>
+  <p>we will be expanding the scope of the collection over the coming months with
+  the addition of numerous single author editions as well as of
+  collections and miscellanies.
+</p>
+
+<p>Please feel free to <a href="mailto:huber@eighteenthcenturypoetry.org">send
+  us</a> suggestions for additions you would like us to prioritise, or,
+  if you have your own collection of texts, we would be more than happy
+  to collaborate with you on their inclusion in <!--#echo var="ecep" --> .</p>
+
+<h3 id="research">Research</h3>
+
+<p>We are working on providing better interconnection between all
+  analytical layers as these inform all current and future modes
+  of reader engagement. As each layer interacts with the others at any
+  given point as well as over time, we are looking for better ways to
+  make these points of connectedness visible and highlight the ways in
+  which these are maintained, dissolved, and taken up again (in
+  different forms) over time.
+</p>
+
+<p>As <!--#echo var="ecep" --> evolves and matures, we will expand our
+  research to go beyond the current modes (<em>views</em>) of reader engagement
+  (<em>reading</em> and <em>analysis</em>).  We are
+  currently working on implementing and testing
+	    a number of adapted and bespoke options 
+  for the next two <em>views</em>, namely 
+  <em>visualization</em> view and <em>modelling</em> view.
+</p>
+
+<h2 id="dissemination">Output and dissemination</h2>
+
+<p>The <!--#echo var="ecep_full" -->'s main output is a comprehensive set of
+  tools and high-quality resources aimed at supporting scholars, teachers, and
+  students of eighteenth-century poetry throughout the research process, from
+  the early stages of discovery, collection, and annotation through to the
+  later stages of comparison, analysis, and composition.</p>
+
+<p>All of <!--#echo var="ecep" -->'s digital collections and research outcomes
+  are freely available online for review and secondary analysis, future digital
+  scholarship, opportunities for (interdisciplinary) collaboration, re-use,
+  extension, or adaptation, and long-term preservation.  All data can
+  be downloaded from the Website or our <a class="external"
+  target="_blank"
+  href="https://github.com/alhuber1502/ECPA">GitHub</a> page.
+</p>
+
+<p>Conceived of as collaborative from inception, <!--#echo var="ecep" --> is
+  also seeking to increase its outreach through collaboration with libraries,
+  other digital repositories, research projects, scholarly societies, and initiatives
+  such as <a href="http://www.18thconnect.org/" class="external"
+  target="_blank">18thConnect</a>.
+
+<h3 id="updates">Update history</h3>
+
+<ul class="listBibl">
+<li><em>1 May 2016 (v0.95):</em> 
+  Public <span style="font-variant:small-caps;font-size:16px;">beta</span> first made available
+  at <a href="http://www.eighteenthcenturypoetry.org/">http://www.eighteenthcenturypoetry.org/</a> 
+  (604 works, 147 authors)
+</li>
+<li><em>18 May 2016 (v0.95.1):</em> 
+  Content added: <a href="/authors/pers00012.shtml">Alexander Pope</a> (13 poems added) 
+</li>
+<li><em>31 May 2016 (v0.95.2):</em> 
+  Content added: <a href="/authors/pers00148.shtml">Jonathan Swift</a> (author page and eleven poems added) 
+</li>
+<li><em>16 June 2016 (v0.95.3):</em> 
+  Content added: <a href="/authors/pers00149.shtml">Anna Laetitia Barbauld</a> (author page
+  and 32 poems added)
+</li>
+<li><em>30 June 2016 (v0.95.4):</em> 
+  Content added: <a href="/authors/pers00150.shtml">Joseph Addison</a> (author page, six
+    English and Latin poems, three translator pages and four English
+    translations added) 
+</li>
+<li><em>15 July 2016 (v0.95.5):</em> 
+  Content added: <a href="/authors/pers00154.shtml">Mary Leapor</a> (author page and 70 poems
+  added)
+</li>
+<li><em>17 August 2016 (v0.95.6):</em>
+  Enhancements: introduced "Featured Author" and "Featured
+  Work"; Corrections: several PoS tagging issues resolved
+</li>
+<li><em>31 August 2016 (v0.95.7):</em>
+  Content added: <a href="/authors/pers00155.shtml">Charles Churchill</a> (author page and twelve poems
+  added)
+</li>
+<li><em>30 September 2016 (v0.95.8):</em>
+  Content added: <em>A Collection of the Most Esteemed Pieces of Poetry</em>, ed. by
+  Moses Mendez (1 vol., 1st edition 1767) (36 new author pages and 78 poems
+  added); Content removed: author pages for D'Assigny and Waller;
+  Enhancements: home page re-designed; Corrections: minor encoding issues resolved
+</li>
+<li><em>31 October 2016 (v0.96):</em>
+  Content added: <em>A Collection of Poems in Four Volumes. By Several Hands</em>, ed. by
+  G. Pearch (4 vols., 2nd edition 1770) (64 new author pages and 293 poems
+  added); Version milestone (1000+ works) reached; Corrections: several PoS
+  tagging and sentencing issues resolved; Enhancements: NER gazetteer
+  supplemented by PoS-based named entity recognition
+</li>
+<li><em>16 November 2016 (v0.96.1):</em>
+  Content added: <a href="/authors/pers00256.shtml">Ann
+  Yearsley</a>, <em>Poems on Several Occasions</em> (1785) (author page and 17 poems
+  added)
+</li>
+<li><em>30 November 2016 (v0.96.2):</em>
+  Content added: <a href="/authors/pers00257.shtml">John 
+  Pomfret</a>, <em>Poems upon Several Occasions</em> (6th ed., 1724) (author page and 20 poems
+  added)
+</li>
+<li><em>16 December 2016 (v0.96.3):</em>
+  Content added: <a href="/authors/pers00121.shtml">Laetitia
+  Pilkington</a> (enhanced author page and one poem added) and <a href="/authors/pers00258.shtml">John Philips</a>
+  (author page and two poems added)
+</li>
+<li><em>30 January 2017 (v0.96.4):</em>
+  Content added: <a href="/authors/pers00087.shtml">Mary Barber</a>
+  (114 poems added) and seven other authors (seven new author pages
+  and 19 poems added)
+</li>
+<li><em>27 February 2017 (v0.96.5):</em>
+  Content added: <a href="/authors/pers00266.shtml">William Diaper</a>
+  and <a href="/authors/pers00267.shtml">Edward Young</a>
+  (author pages and some major works added); Enhancements: tables of contents of
+  all <a href="/works/#edns">source editions</a> added; Corrections:
+  minor encoding issues and several sentencing issues resolved
+</li>
+<li><em>31 March 2017 (v0.96.6):</em>
+  Content added: <a href="/authors/pers00268.shtml">Anne
+  Finch</a>, <em>Miscellany poems, on several occasions</em> (1713)
+  (author page and 86 poems added); Enhancements: links from the
+  gallery to author pages added; links to source editions in
+  the <a class="external" target="_blank"
+  href="http://ota.ox.ac.uk/">OTA</a> added; all data supporting this
+  research are now also available from our <a class="external"
+  target="_blank"
+  href="https://github.com/alhuber1502/ECPA">GitHub</a> page; 
+  Corrections: sorting of work titles improved
+</li>
+<li><em>18 April 2017 (v0.96.7):</em>
+  Content added: <a href="/authors/pers00269.shtml">William
+  Cowper</a>, <em>Poems</em> (1782) and <em>The Task</em> (1785) (two author pages
+  and 49 poems added) and <a href="/authors/pers00020.shtml">James Thomson</a>
+  (major works added); Enhancements: improved display of other works by the
+  same author(s) in the <em>reading</em> view
+</li>
+<li><em>2 May 2017 (v0.97):</em>
+  Content added: <a href="/authors/pers00271.shtml">Mary Robinson</a>
+  (author page and 31 poems added); Version milestone (completion of
+  year one) reached (1501 works, 269 authors); Enhancements: follow 
+  <!--#echo var="ecep" --> on
+  <a href="https://www.facebook.com/EighteenthCenturyPoetryArchive"
+  target="_blank" class="external">Facebook</a>
+  or <a href="https://plus.google.com/111181082501883572720" target="_blank" 
+  class="external">Google+</a> for the latest updates; Corrections:
+  several important corrections prompted by user feedback
+</li>
+<li><em>10 May 2017 (v0.97.1):</em>
+  Enhancements: token highlighting in syntactic and semantic parses
+  (<em>analysis</em> view) added; Corrections: resolved an issue introduced in
+  v0.97 that resulted in erroneous spelling normalizations
+</li>
+<li><em>1 June 2017 (v0.97.2):</em>
+  Content added: <a href="/authors/pers00091.shtml">Stephen Duck</a>
+  and <a href="/authors/pers00174.shtml">Oliver Goldsmith</a>
+  (major works added); Enhancements: added phonemic transcription
+  display in the phonological layer and token highlighting in
+  morphological parses (<em>analysis</em> view)
+</li>
+<li><em>14 June 2017 (v0.97.3):</em>
+  Content added: <a href="/authors/pers00272.shtml">Sarah Fyge Egerton</a>
+  (author page and 58 poems added),
+  <a href="/authors/pers00273.shtml">Mary Jones</a> (author page and 53 poems added), and
+  <a href="/authors/pers00274.shtml">Hannah More</a> (author page and three
+  poems added)
+</li>
+<li><em>3 July 2017 (v0.97.4):</em>
+  Content added: <a href="/authors/pers00265.shtml">Elizabeth Singer Rowe</a>
+  (enhanced author page and 52 poems added)
+</li>
+<li><em>17 August 2017 (v0.97.5):</em>
+  Content added: <a href="/authors/pers00254.shtml">Christopher Smart</a>
+  (31 poems added)
+</li>
+<li><em>4 September 2017 (v0.98):</em>
+  Content added: <a href="/authors/pers00275.shtml">George Crabbe</a>
+  (author page and nine poems added); Enhancements: added <em>analysis</em> popovers
+  (similar to contextual reading aid popovers in the <em>reading</em>
+  view), which provide an integrated display of the analytical layers
+  for every word/token; Research: planning phase for the next two
+  modes of engagement (<em>views</em>) started, namely <em>visualization</em>
+  view and <em>modelling</em> view
+</li>
+<li><em>2 October 2017 (v0.98.1):</em>
+  Content added: <a href="/authors/pers00276.shtml">Helen Maria Williams</a>
+  (author page and 60 poems added); Enhancements: introductory tour of
+  the <!--#echo var="ecep" --> views and core features added; 
+  Website: fixed an issue that prevented printing of some pages
+</li>
+<li><em>1 November 2017 (v0.98.2):</em>
+  Content added: <a href="/authors/pers00277.shtml">George Monck
+  Berkeley</a> (author page and 44 poems
+  added), <a href="/authors/pers00278.shtml">Robert 
+  Bloomfield</a> (author page and one poem added), and <a 
+href="/authors/pers00279.shtml">Amelia Alderson Opie</a> (author page
+  and 37 poems added)
+</li>
+<li><em>4 December 2017 (v0.98.3):</em>
+  Content added: <a href="/authors/pers00282.shtml">Anna Seward</a>
+  (author page and twelve poems
+  added), <a href="/authors/pers00281.shtml">Anne Home Hunter</a>
+  (author page and 58 poems added),
+  <a href="/authors/pers00280.shtml">Susanna Blamire</a> (author
+  page and 84 poems added), and
+  <a href="/authors/pers00283.shtml">Catherine Gilpin</a> (author
+  page and two poems added); Website: all external links
+  restored and verified
+</li>
+<li><em>17 January 2018 (v0.98.4):</em>
+ Content added: <a href="/authors/pers00284.shtml">Hannah
+ Cowley</a> (author page and 21 poems added), <a 
+  href="/authors/pers00285.shtml">Robert Merry</a> (author page and
+ eight poems added), <a href="/authors/pers00286.shtml">Bertie
+ Greatheed</a> (author page and one poem added),
+ and <a href="/authors/pers00256.shtml">Ann Yearsley</a> (one 
+ poem added)
+</li>
+<li><em>5 February 2018 (v0.98.5):</em>
+ Content added: <a href="/authors/pers00287.shtml">Joanna Baillie</a>
+ (author page and 93 poems added)
+</li>
+<li><em>8 March 2018 (v0.98.6):</em>
+ Content added: <a href="/authors/pers00288.shtml">Thomas Chatterton</a>
+ (author page and 45 poems added) and <a 
+ href="/authors/pers00289.shtml">Thomas Cary</a> (author page and one
+ poem added)
+</li>
+<li><em>3 April 2018 (v0.98.7):</em>
+ Content added: <a href="/authors/pers00290.shtml">Charlotte Smith</a>
+ (author page and 68 poems added)
+</li>
+<li><em>2 May 2018 (v0.99):</em>
+ Content added: <a href="/authors/pers00291.shtml">James Macpherson</a>
+ (author page and 32 poems added); Version milestone (completion of
+  year two) reached (2327 works, 289 authors); Enhancements:
+  <em>ECPA</em> is now also listed as a <a
+  href="https://ora.ox.ac.uk/objects/uuid:961b4896-1fda-423e-a900-73d8b92d9ab3"
+  class="external" target="_blank">dataset</a> in the Oxford
+  University Research Archive (ORA); Website: added placeholders for
+  <em>visualization</em> and <em>modelling</em> views to the
+  interface, updates on progress to follow throughout the year
+</li>
+<li><em>4 June 2018 (<!--#include virtual="/data/version" -->):</em>
+ Content added: <a href="/authors/pers00292.shtml">Isaac Watts</a>
+  (author page and 111 poems added); Enhancements: <a href="/works/#edns">source
+    editions</a> are now browsable in their entirety (via the book icons);
+  Website: the vertical divider on poem pages can now be dragged to resize the
+  left and right parts of the display in any <em>view</em>; Research:
+ we have begun implementation of our first <em>visualization</em>,
+ entitled <em>Leitkl&auml;nge</em> (dominant sounds),
+ to be added over the coming months
+</li>
+</ul>
+
+<h2 id="projects">Projects</h2>
+
+<p>We are interested in working with scholars and digital humanists on
+  any aspect of the poetry of the long eighteenth-century.  Some of
+  the areas we think might be fruitfully explored include:</p>
+<ul>
+<li>interlinking of texts that form a clear dialogue with each other</li>
+<li>exploring digital editing of a text or author and edition visualization</li>
+<li>expanding an author or improving a single text or group of texts</li>
+<li>collaborating on improving, training, and adding to the set of tools</li>
+<li>(insert your idea here... and get in touch!)</li>
+</ul>
+
+<p>If you would like to collaborate with us on a project, please do not
+  hesitate to <a href="mailto:huber@eighteenthcenturypoetry.org">contact the
+  editor</a>.</p>
+
+<h2 id="copcit">Copyright information and citation guide</h2>
+
+  <p>All digital surrogates of works not held by the <!--#echo var="ecep_full" --> 
+    are reproduced under license from the libraries, archives, museums, and
+    other institutions which hold the originals and must not be reproduced
+    without prior written permission. Unfortunately, <!--#echo var="ecep" --> is
+    unable to provide that permission, nor can it provide images for re-use as
+    the copyright holders may reserve the right to charge a fee. Please
+    contact the relevant institution directly using the copyright information
+    provided with every work in the <!--#echo var="ecep_full" -->.
+  </p>
+
+  <p>Copyright in digital surrogates of works owned by <!--#echo var="ecep" -->,
+    in the electronic texts, bibliographic information and markup, and the
+    Website is with the <!--#echo var="ecep_full" -->.  These works,
+    including their XML source files, are licensed under a
+    <a rel="license" target="_blank" class="external"
+    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike License</a>.  This license 
+    is intended to encourage and promote re-use and re-purposing of the
+       collection as well as ultimately to ensure its long-term preservation.
+ </p>
+
+<p>All contributions to <!--#echo var="ecep" --> are submitted to the editor
+  in the first instance for review.  When accepted for publication,
+  all contributions become licensed under a
+    <a rel="license" target="_blank" class="external"
+    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+    Commons Attribution-NonCommercial-ShareAlike License</a>.
+    This license protects contributions, but at the same time lets others
+    re-use and build upon them.
+</p>
+
+<p>If you want to cite material from the <!--#echo var="ecep_full" --> in online or
+  print publications, please feel free to copy and paste the information
+  provided in the the MLA-style citation in the footer of each page.</p>
+
+
+<h2 id="usepolicy">Use and privacy policy</h2>
+
+<p>The <!--#echo var="ecep_full" --> is open access.  All materials are made
+available under the <a href="#copcit">license terms</a> indicated above.</p>
+
+<p>We use two external services which will store some small pieces of
+  information on your computer in the form of cookies.  We
+  use <a class="external" target="_blank" 
+  href="http://www.addthis.com/">AddThis</a> to connect our Website to a
+  number of Social Networking services and also to provide convenient access
+  to sharing, printing, and e-mail options.  And we use <a class="external"
+  target="_blank" href="http://www.google.com/analytics/">Google Analytics</a>
+  to provide us with a measure of the usage and impact of our site, and to
+  inform any outreach activities. We only submit anonymized IP addresses to
+  Google Analytics.</p>
+
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>We would like to thank the <a class="external" target="_blank"
+    href="http://www.textcreationpartnership.org/">Text Creation Partnership</a>
+  for their efforts to create and make available searchable digital
+  editions of the books in the Eighteenth Century Collections Online (ECCO)
+  corpus.</p> 
+
+<p>We would like to thank the staff of
+  <a href="http://www.bodleian.ox.ac.uk/bodley/using-this-library/imaging_services" class="external"
+ target="_blank">Imaging Services</a> at the Bodleian Libraries,
+  University of Oxford for their expertise, advice and practical assistance in
+  creating the digital images.</p>
+			
+<p>We would like to thank Zoomify, Inc. for the gift of the enterprise edition
+  of the <a href="http://www.zoomify.com/" class="external" 
+	    target="_blank">Zoomify software</a> to <!--#echo var="ecep" -->.</p>
+
+
+<h2 id="contact">Contact</h2>
+
+<p>The <!--#echo var="ecep_full" --> was founded and is edited
+  by <a href="http://orcid.org/0000-0002-2151-6415" class="external" target="_blank">Alexander Huber</a>, Bodleian Libraries,
+University of Oxford.  The Website was designed by Emma Huber, Taylor
+  Institution Library, Oxford.</p>
+<p>You can e-mail <!--#echo var="ecep" -->
+  at <a href="mailto:info@eighteenthcenturypoetry.org">info@eighteenthcenturypoetry.org</a>
+  or follow the editor on <a href="https://twitter.com/C18AH" class="external" target="_blank">Twitter</a>.
+</p>
+<!--
+<p>You can telephone and fax the editor respectively on +44 (0)1865 2-80032 and +44 (0)1865 2-04937.</p>
+//-->
+<p>
+You can also write to <!--#echo var="ecep" --> at:<br/><br/>
+<b>Eighteenth-Century Poetry Archive</b><br/>
+<span id="AH">Alexander Huber, Editor</span><br/>
+Bodleian Libraries<br/>
+University of Oxford<br/>
+Osney One Bldg., Osney Mead<br/>
+Oxford<br/>
+OX2 0EW<br/><br/>
+<a href="http://www.eighteenthcenturypoetry.org/">http://www.eighteenthcenturypoetry.org/</a>
+</p>
+
+      </div> <!-- /col -->
+
+      <div class="col-xs-3" id="myScrollspy">
+       <nav class="affix">
+	<ul class="nav nav-stacked" data-offset-top="41" data-offset-bottom="41">
+          <li><a href="#aims">Aims and objectives</a>
+	    <ul>
+	      <li><a href="#collection">A digital collection</a></li>
+	      <li><a href="#project">A research project</a></li>
+	    </ul>
+	  </li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#funding">Funding</a></li>
+          <li><a href="#cooperation">Cooperation</a></li>
+          <li><a href="#methodology">Methodology</a>
+	    <ul>
+	      <li><a href="#transcription">Transcription and descriptive markup</a></li>
+	      <li><a href="#markup">Analytical markup</a></li>
+	      <li><a href="#processing">Text processing</a></li>
+	      <li><a href="#tanalysis">Analysis</a></li>
+	      <li><a href="#website">Interface/Website</a></li>
+	    </ul>
+	  </li>
+          <li><a href="#plans">Current and future plans</a>
+	    <ul>
+	      <li><a href="#scope">Digital collection</a></li>
+	      <li><a href="#research">Research</a></li>
+	    </ul>
+	  </li>
+          <li><a href="#dissemination">Output and dissemination</a>
+	    <ul>
+	      <li><a href="#updates">Update history</a></li>
+	    </ul>
+	  </li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#copcit">Copyright information and citation guide</a></li>
+          <li><a href="#usepolicy">Use and privacy policy</a></li>
+          <li><a href="#acknowledgements">Acknowledgements</a></li>
+          <li><a href="#contact">Contact</a></li>
+	</ul>
+       </nav>
+      </div>
+
+    </div> <!-- /row -->
+   </div> <!-- /container -->
+</section> <!-- /main -->
+
+  <script type="text/javascript">
+    var citation = "";
+    citation += "Huber, Alexander. ";
+    var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+    citation += '\"About\". ';
+    citation +='<em><!--#echo var="ecep_full" --></em>, '+
+      '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+      '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+    window.onload = function() {
+        document.getElementById('stats_authors').insertAdjacentHTML('afterbegin', stats.authors);
+        document.getElementById('stats_works').insertAdjacentHTML('afterbegin', stats.works);
+    }
+
+  </script>
+
+<!--#include virtual="/bottom.shtml" -->

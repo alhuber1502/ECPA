@@ -1,0 +1,60 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Thomas Cary" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Thomas Cary "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Thomas Cary</h1>
+            												(1751 - 
+            											29 January 1823)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/o4039-w0220.shtml"><em>ELEGY, TO THE MEMORY OF MR. THOMAS CHATTERTON, LATE OF BRISTOL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4039" href="/works/o4039.shtml#o4039-w0220"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o4039"><a title="view table of contents of source edition" href="/works/o4039.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Miscellanies in Prose and Verse; by Thomas Chatterton, the supposed author of the
+                           poems published under the names of Rowley, Canning, &amp;c.</span> </em>  London: printed for Fielding and Walker, Pater-Noster Row, MDCCLXXVIII., 1778. xxxii,245,[3]p.,plates; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T39457">T39457</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K039720.000">K039720.000</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <h3>Biography</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Gauvin, Daniel.  <q class="titlea">CARY, THOMAS (1751-1823)</q>. <span class="titlem">Dictionary of Canadian Biography</span>, vol. 6. University of Toronto/Université Laval, 2003. Web. 28 Feb. 2018.  <a class="external" target="_blank" href="http://www.biographi.ca/en/bio/cary_thomas_1751_1823_6E.html"><span>http://www.biographi.ca/en/bio/cary_thomas_1751_1823_6E.html</span></a></div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Thomas Cary\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

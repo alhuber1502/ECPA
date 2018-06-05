@@ -1,0 +1,193 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Visible Always"
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/ZoomRanges/circle.png" 
+				X="1100" 
+				Y="400" 
+				ZOOM="100"  
+				ZMIN="0"
+				ZMAX="0"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"  
+				CAPTION="This label is always visible!"
+				COMMENT="ZMIN and ZMAX are both set to 0"
+				TOOLTIP="ZMIN and ZMAX are both set to 0"
+				USER="Example User 1" 
+				DATE="20090102073026" 
+				TEXTCOLOR="ffffff" 
+				BACKCOLOR="000000"
+				LINECOLOR="ffff00"
+				FILLCOLOR="ffff33" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Visible At Initial Zoom"
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/ZoomRanges/triangle.png" 
+				X="1100" 
+				Y="800" 
+				ZOOM="50" 
+				ZMIN="-1"
+				ZMAX="-1"
+				CAPTION="This Label Is Visible%0D%0AAt Initial Zoom"
+				COMMENT="ZMIN and ZMAX are both set to -1"
+				TOOLTIP="ZMIN and ZMAX are both set to -1"
+				USER="Example User 1" 
+				DATE="20090102073026" 
+				TEXTCOLOR="0000ff" 
+				BACKCOLOR="ffffff"
+				LINECOLOR="333333" 
+				FILLCOLOR="ffffff" >
+			</LABEL>
+			<LABEL 
+				ID="2" 
+				NAME="Visible Up To 50% Zoom - On Rollover"
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/ZoomRanges/arrowLeft.png" 
+				X="1100" 
+				Y="1400" 
+				ZOOM="50" 
+				ZMIN="0"
+				ZMAX="50"
+				CLICKURL="http://www.adobe.com" 
+				URLTARGET="_blank" 
+				ROLLOVER="1" 
+				CAPTION="This Rollover Label Is Visible%0D%0AIf Rolled Over%0D%0AUp To 50% Zoom - Inclusive"
+				COMMENT="ROLLOVER is set to 1 and ZMIN and ZMAX are set to 0 and 50"
+				TOOLTIP="ROLLOVER is set to 1 and ZMIN and ZMAX are set to 0 and 50"
+				USER="Guest" 
+				DATE="20090111073026" 
+				TEXTCOLOR="000000" 
+				BACKCOLOR="ffffff"
+				LINECOLOR="333333" 
+				FILLCOLOR="ffffff"
+				CAPTIONPOSITION="2" >
+			</LABEL>
+			<LABEL 
+				ID="3" 
+				NAME="Visible Only At 50% Zoom"
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/ZoomRanges/arrowUpRight.png" 
+				X="1100" 
+				Y="1600" 
+				ZOOM="50"
+				ZMIN="50"
+				ZMAX="50"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank"  
+				CAPTION="This Label Is Visible%0D%0AOnly At 50% Zoom"
+				COMMENT="ZMIN and ZMAX are both set to 50"
+				TOOLTIP="ZMIN and ZMAX are both set to 50"
+				USER="Guest" 
+				DATE="20090114073026" 
+				TEXTCOLOR="ffffff" 
+				BACKCOLOR="000000"
+				LINECOLOR="333333" 
+				FILLCOLOR="ffffff" >
+					<CAPTION><font color="#FFFFFF">Multiline, </font><font color="#6699FF"><i><br/>HTML enabled</i></font><font color="#FFFFFF"><br/>Caption</font></CAPTION>
+			</LABEL>
+			<LABEL 
+				ID="4" 
+				NAME="Visible Over 50% Zoom"
+				MEDIATYPE="polygon"
+				MEDIA="polygon" 
+				X="1050" 
+				Y="2250" 
+				ZOOM="100"
+				ZMIN="50"
+				ZMAX="0"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank" 
+				CAPTION="This Label Is Visible%0D%0AOver 50% Zoom - Inclusive"
+				COMMENT="ZMIN and ZMAX are set to 50 and 0"
+				TOOLTIP="ZMIN and ZMAX are set to 50 and 0"
+				USER="Guest" 
+				DATE="20090114073026" 
+				TEXTCOLOR="008000"
+				BACKCOLOR="ffffff"
+				LINECOLOR="ffffff" 
+				FILLCOLOR="999999"
+				CAPTIONPOSITION="5" >
+					<POLYGON> 
+						<POINT X="1205" Y="2126.25" ></POINT> 
+						<POINT X="997.5" Y="2083.75" ></POINT> 
+						<POINT X="843.75" Y="2282.5" ></POINT> 
+						<POINT X="875" Y="2387.5" ></POINT> 
+						<POINT X="1131.25" Y="2396.25" ></POINT> 
+						<POINT X="1246.25" Y="2227.5" ></POINT> 
+					</POLYGON>
+			</LABEL>
+			<LABEL 
+				ID="5" 
+				NAME="Visible Over 50% And Under 75% Zoom"
+				MEDIATYPE="measure"
+				MEDIA="polygon" 
+				X="1550" 
+				Y="2300" 
+				ZOOM="100"
+				ZMIN="50.1"
+				ZMAX="74.9"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank"  
+				CAPTION="This Label Is Visible%0D%0ABetween 50% And 75% Zoom - Not Inclusive"
+				COMMENT="ZMIN and ZMAX are set to 50.1 and 74.9"
+				TOOLTIP="ZMIN and ZMAX are set to 50.1 and 74.9" >
+				USER="Guest" 
+				DATE="20090114073026" 
+				TEXTCOLOR="ff0000"
+				BACKCOLOR="000000"
+				LINECOLOR="ffffff" 
+				FILLCOLOR="999999" >
+					<POLYGON> 					
+						<POINT X="1605" Y="2126.25" ></POINT> 
+						<POINT X="1447.5" Y="2183.75" ></POINT> 
+						<POINT X="1343.75" Y="2332.5" ></POINT> 
+						<POINT X="1475" Y="2437.5" ></POINT> 
+						<POINT X="1631.25" Y="2446.25" ></POINT> 
+						<POINT X="1746.25" Y="2277.5" ></POINT> 
+					</POLYGON>
+			</LABEL>
+			<LABEL 
+				ID="6" 
+				NAME="Visible At 100% Zoom"
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/ZoomRanges/circle.png" 
+				X="1500" 
+				Y="1500" 
+				ZOOM="100"
+				ZMIN="100"
+				ZMAX="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self" 
+				CAPTION="This Label Is Visible%0D%0AOnly At 100% Zoom"
+				COMMENT="ZMIN and ZMAX are both set to 100"
+				TOOLTIP="ZMIN and ZMAX are both set to 100"
+				USER="Example User 1" 
+				DATE="20090102073026" 
+				TEXTCOLOR="ffffff" 
+				BACKCOLOR="000000"
+				LINECOLOR="ffff00"
+				FILLCOLOR="ffff33" >
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

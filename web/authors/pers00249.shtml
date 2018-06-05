@@ -1,0 +1,55 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Ralph Schomberg" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Ralph Schomberg "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Ralph Schomberg</h1>
+            												(14 August 1714 - 
+            											29 June 1792)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/o4985-w0290.shtml"><em>ODE ON THE REBELLION IN THE YEAR MDCCXLV.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4985" href="/works/o4985.shtml#o4985-w0290"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o4985"><a title="view table of contents of source edition" href="/works/o4985.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A collection of poems in four volumes. By several hands. Vol. II.</span> </em> [The second edition]. London: printed for G. Pearch, 1770. 4v. ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T116245">T116245</a>; 
+                     						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1135&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1135</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K093079.002">K093079.002</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=2130&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">2130</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/24827">24827</a></p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Ralph Schomberg\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

@@ -1,0 +1,61 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Thomas Scott" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Thomas Scott "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Thomas Scott</h1>
+            												(1705 - 
+            											1775)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/o5157-w0120.shtml"><em>The PICTURE of HUMAN LIFE. Translated from the GREEK of CEBES the THEBAN.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0120"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o5157"><a title="view table of contents of source edition" href="/works/o5157.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. VI.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.006">K104099.006</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=5800&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">5800</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/24918">24918</a></p>
+               <h3>Reference</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Scott, Thomas</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 203. Print. 6 volumes.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Thomas Scott\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

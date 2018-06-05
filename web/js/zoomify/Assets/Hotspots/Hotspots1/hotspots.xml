@@ -1,0 +1,131 @@
+<HOTSPOTDATA>
+	<SETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		LISTTITLE="Hotspots"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		NAME="Simple Caption Hotspot"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromJPG.jpg"
+		X="225"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Simple Caption"
+		TOOLTIP="This is a simple tooltip."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		NAME="Transparent PNG Hotspot"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="525"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.viewthewall.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Transparent PNG Hotspot%0D%0AWith Multiline Caption"
+		TOOLTIP="This hotspot's graphic includes transparent areas."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		NAME="Hotspot Without Caption"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="825"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION=""
+		TOOLTIP="This hotspot has no caption."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		NAME="Hotspot Visible On Rollover"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="1125"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="1"
+		CAPTION="Rollover Hotspot"
+		TOOLTIP="This hotspot is revealed on mouse-over."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Hotspot Without Graphic"
+		MEDIATYPE="icon"
+		MEDIA=""
+		X="1125"
+		Y="1500"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Hotspot Without Graphic (roll mouse over ruby above!)"
+		TOOLTIP="This hotspot has no graphic."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		NAME="Hotspot With HTML Caption"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="1425"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="Hotspot With HTML Caption%0D%0ABut No Click-Link Or Tooltip"
+		TOOLTIP=""
+		TEXTCOLOR="FFFFFF" >
+			<CAPTION><font color="#FFFFFF">Hotpot Six: </font><br/><font color="#6699FF"><i>Hotspots can have HTML<br/>font properties.</i></font></CAPTION>
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="7"
+		NAME="Reused External Icon"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromJPG.jpg"
+		X="1725"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Reusing External Icons is OK"
+		TOOLTIP="This hotspot automatically clones the JPG graphic file."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+</HOTSPOTDATA>
+

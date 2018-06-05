@@ -1,0 +1,122 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Slide 3: First label" 
+				MEDIATYPE="icon"
+				MEDIA="Assets/Slidestacks/SlidestackWithAnnotationsManyFiles-SimpleWithComments/Annotations/circle.png" 
+				X="500" 
+				Y="300" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Colorful label%0D%0A (1st label)" 
+				COMMENT="Slide 3: This is an example comment! Comments are a simple way to add notes about a label."
+				TOOLTIP="This example has label%0D%0Aand caption colors" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Second label" 
+				MEDIATYPE="icon"
+				MEDIA="Assets/Slidestacks/SlidestackWithAnnotationsManyFiles-SimpleWithComments/Annotations/triangle.png" 
+				X="1100" 
+				Y="800" 
+				ZOOM="50"
+				CAPTION="Zoomed label (2nd label)" 
+				COMMENT="This comment is somewhat long. Comments can hold a virtually unlimited number of characters (spaces included)."
+				TOOLTIP="This example is at 50% image zoom" >
+			</LABEL>
+			<LABEL 
+				ID="2" 
+				NAME="Third label" 
+				MEDIATYPE="icon"
+				MEDIA="Assets/Slidestacks/SlidestackWithAnnotationsManyFiles-SimpleWithComments/Annotations/arrowLeft.png" 
+				X="1100" 
+				Y="1400" 
+				ZOOM="100"
+				CLICKURL="http://www.adobe.com" 
+				URLTARGET="_blank" 
+				ROLLOVER="1" 
+				CAPTION="Rollover label (3rd label)" 
+				COMMENT="A vertical scrollbar automatically appears when a comment requires more lines than fit in the comment area - as is the case with this comment which is not verbose and yet is longer than will fit in the text area without a need to scroll to display the latter part of the comment."
+				TOOLTIP="This label is revealed when the mouse rolls over it" >
+			</LABEL>
+			<LABEL 
+				ID="3" 
+				NAME="Fourth label" 
+				MEDIATYPE="icon"
+				MEDIA="Assets/Slidestacks/SlidestackWithAnnotationsManyFiles-SimpleWithComments/Annotations/arrowUpRight.png" 
+				X="1100" 
+				Y="1600" 
+				ZOOM="100" 
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank" 
+				CAPTION="This caption is overridden by the HTLM caption below" 
+				COMMENT="Comments can contain carriage returns - new lines created with the Return key - like this... %0D%0A or this %0D%0A or this %0D%0A ...very useful."
+				TOOLTIP="This is a tooltip" >
+					<CAPTION><font color="#FFFFFF">Multiline, </font><font color="#6699FF"><i><br/>HTML enabled</i></font><font color="#FFFFFF"><br/>Caption</font></CAPTION>
+			</LABEL>
+			<LABEL 
+				ID="4" 	
+				NAME="Fifth label" 
+				MEDIATYPE="polygon"
+				MEDIA="polygon" 
+				X="1050" 
+				Y="2250" 
+				ZOOM="100" 
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank"
+				CAPTION="Polygon label (5th label)" 
+				COMMENT="This is another example comment."
+				TOOLTIP="This is a polygonal label"
+				CAPTIONPOSITION="5" >
+					<POLYGON> 
+						<POINT X="1205" Y="2126.25" ></POINT> 
+						<POINT X="997.5" Y="2083.75" ></POINT> 
+						<POINT X="843.75" Y="2282.5" ></POINT> 
+						<POINT X="875" Y="2387.5" ></POINT> 
+						<POINT X="1131.25" Y="2396.25" ></POINT> 
+						<POINT X="1246.25" Y="2227.5" ></POINT> 
+					</POLYGON>
+			</LABEL>
+			<LABEL 
+				ID="5" 	
+				NAME="Sixth label" 
+				MEDIATYPE="measure"
+				MEDIA="polygon"
+				X="2000"
+				Y="2100"
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_blank" 
+				CAPTION="Polygon label (6th label)" 
+				COMMENT="This is one final example comment."
+				TOOLTIP="This is another polygonal label" >
+					<POLYGON> 					
+						<POINT X="2055" Y="1926.25" ></POINT> 
+						<POINT X="1897.5" Y="1983.75" ></POINT> 
+						<POINT X="1793.75" Y="2132.5" ></POINT> 
+						<POINT X="1925" Y="2237.5" ></POINT> 
+						<POINT X="2081.25" Y="2246.25" ></POINT> 
+						<POINT X="2196.25" Y="2077.5" ></POINT> 
+					</POLYGON>
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

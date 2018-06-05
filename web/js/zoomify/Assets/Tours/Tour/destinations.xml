@@ -1,0 +1,84 @@
+<HOTSPOTDATA>	
+	<SETUP 
+		AUTOSTART="1" 
+		AUTOLOOP="1"
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		X="1040"
+		Y="1560"
+		ZOOM="-1"
+		NAME="Destination One: Image Overview"
+		SHOWFOR="1500"
+		TRANSITION="ZoomAndPanToView"
+		CHANGEFOR="500" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		X="1125"
+		Y="1375"
+		ZOOM="100"
+		NAME="Destination Two: Red Ruby"
+		SHOWFOR="1500"
+		TRANSITION="ZoomAndPanToView"
+		CHANGEFOR="500"
+		ROTATION="90" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		MEDIATYPE="url"
+		MEDIA="Assets/Tours/Tour/ZoomifyLogo.png"
+		X="500"
+		Y="1600"
+		ZOOM="70" 
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		NAME="Destination Three: Left Eye"
+		TOOLTIP="" 
+		SHOWFOR="1500"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500" >
+			<CAPTION><font color="#FFFFFF">Tour Destination Three: Left Eye</font><br/><font color="#6699FF"><i>Tour destinations can have no visible<br/>features or any hotspot feature.</i></font></CAPTION>
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		X="1325"
+		Y="1875"
+		ZOOM="70" 
+		NAME="Destination Four: Right Eye"
+		SHOWFOR="1500"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Hotspot: example non-destination"
+		MEDIATYPE="url"
+		MEDIA="Assets/Tours/Tour/ZoomifyLogo.png"
+		X="1887"
+		Y="400"
+		ZOOM="100" 
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Example of hotspot skipped by tour"
+		TOOLTIP="Value of Transition attribute in XML is set to %27Skip%27."
+		TRANSITION="Skip" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		X="1040"
+		Y="1660"
+		ZOOM="30" 
+		NAME="Destination Five: Mask Face"
+		SHOWFOR="1500"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500">
+	</HOTSPOT>
+</HOTSPOTDATA>
+

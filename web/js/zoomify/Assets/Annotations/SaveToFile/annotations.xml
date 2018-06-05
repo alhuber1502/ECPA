@@ -1,0 +1,67 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0" 
+		MAXSCALE="0" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Icon Label Circle" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				X="270" 
+				Y="780" 
+				ZOOM="100"
+				CAPTION="%u8FD9%u662F%u4E00%u4E2A%u5706"
+				TEXTCOLOR="0000ff"
+				BACKCOLOR="00ff00"  >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Icon Label Logo" 
+				MEDIATYPE="icon"
+				MEDIA="Assets/Annotations/SaveToFile/Z-18x18.gif" 
+				X="500" 
+				Y="500" 
+				ZOOM="50"
+				CAPTION="Icon Label Logo"
+				TEXTCOLOR="0000ff"
+				BACKCOLOR="000000"  >
+			</LABEL>
+			<LABEL 
+				ID="2" 	
+				NAME="Polyon Label" 
+				MEDIATYPE="polygon"
+				MEDIA="polygon" 
+				X="1000"
+				Y="1000"
+				ZOOM="100"
+				CAPTION="Polygon Label"
+				TEXTCOLOR="ff0000"
+				BACKCOLOR="000000"
+				LINECOLOR="ffffff" 
+				FILLCOLOR="999999" >
+					<POLYGON>						
+						<POINT X="1005" Y="916.25" ></POINT> 
+						<POINT X="947.5" Y="943.75" ></POINT> 
+						<POINT X="893.75" Y="1032.5" ></POINT> 
+						<POINT X="975" Y="1087.5" ></POINT> 
+						<POINT X="1031.25" Y="1096.25" ></POINT> 
+						<POINT X="1096.25" Y="1027.5" ></POINT> 
+					</POLYGON>
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

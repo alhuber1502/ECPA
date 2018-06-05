@@ -1,0 +1,64 @@
+
+<h3 id="pragmatic">Pragmatic layer</h3>
+
+<p>
+Unlike semantics, which is concerned with the creation of meaning on
+the level of the word and sentence, this layer is concerned with the
+creation of meaning in context. The poem is considered as spoken
+language, i.e. as an act of internal communication between speaker and
+addressee in the text, and external communication between the poet and
+the reader and in a wider sense with society itself.  This layer
+comprises elements such as discourse, intention, argumentative
+structure, internal and external contexts, themes and genre, and
+real-world references (e.g. named entities).
+</p>
+
+<h4>Rhetorical figures</h4>
+<p>The rhetorical figures currently detected in the pragmatic domain are
+  ecphonesis, apostrophe, and pysma. The components of each figure are
+  highlighted when hovering over the constituent parts.  Individual 
+  patterns of each figure will be highlighted globally when hovering over the
+  identified pattern.
+</p>
+
+<h4>Named entities</h4>
+<p>
+Among the various types of referring expressions,
+references to named entities are crucial to the communication
+process in a specific context.  For the purpose of identifying these references to
+named entities, ECPA uses a hand-curated and domain customized gazetteer that
+has been constructed from the results of four NERC engines 
+(<a href="http://morphadorner.northwestern.edu/namerecognizer/" 
+class="external" target="_blank">Morphadorner</a>,
+<a href="http://nlp.stanford.edu/software/CRF-NER.shtml" 
+class="external" target="_blank">Stanford NER</a>, 
+<a href="https://github.com/mit-nlp/MITIE" 
+class="external" target="_blank">MITIE</a>, and 
+<a href="https://opennlp.apache.org/documentation/1.6.0/manual/opennlp.html#tools.namefind" 
+class="external" target="_blank">OpenNLP</a>). We have
+supplemented the <em>gazetteer</em> with automated PoS-based named
+entity recognition (<em>classifier</em>), and the source of the
+detected named entity will be identified from one of these two sources.
+</p>
+
+<p>
+As an enabling technology, Named Entity Recognition and Classification is
+often a pre-processing step for relation extraction, knowledge base generation
+(taxonomies, ontologies, thesauri), question answering, semantic search, and
+proper noun and pronominal coreference resolution.  All of these areas may
+offer valuable avenues of enquiry in future updates.
+</p>
+
+<!--
+<h4>Character/speaker/voice</h4>
+<p>
+In the internal communication process of a poem, we distinguish between
+character, speaker, and voice.  Character is the literary entity that has an
+identifyable agency, an agenda, and can betray an attitude or tone to what is
+communicated.  We define a speaker, on the other hand, as an entity produced
+by the text to perform a particular communicative role in the text (e.g. as in
+verse drama, or dramatic monologue).  Lastly, we define voice as a distinct,
+but not always attributable, communicative act that marks or highlights a
+particular section or produces change in the communicative flow.
+</p>
+//-->

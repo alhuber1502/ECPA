@@ -1,0 +1,138 @@
+
+      <div style="clear: both; height: 40px;"></div>
+    </div>
+    <!-- /#wrap -->
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="container text-muted">
+	<p>&copy; 2015 <!--#echo var='ecep_full' --> (<!--#echo var='ecep' -->). &nbsp;
+	<!--#echo var='ecep' --> is licensed under <a rel="license" target="_blank"
+	href="http://creativecommons.org/licenses/by-sa/4.0/"><img 
+	alt="CC BY-SA 4.0" style="border-width:0"
+	src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a>.
+	</p>
+	<nav>
+	  <ul class="footer-links">
+            <li><a id="citation"
+                   data-placement="top"
+                   data-toggle="popover"
+                   data-container="body"
+                   data-html="true"
+                   title="Citation (MLA-style)">Cite this page</a>
+	    </li>
+	    <li><a href="/about/#contact">Contact</a></li>
+	    <li><div class="addthis_sharing_toolbox"></div></li>
+	  </ul>
+	</nav>
+	<!--#config timefmt="%d %b %Y" -->
+	<p class="pull-right small"><em><!--#include
+	virtual='/data/version' --> (<!--#flastmod
+	virtual="/data/version" -->)</em></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    -->
+    <script src="/js/jquery-1.11.2/jquery.min.js">
+    </script>
+    <script src="/js/jquery.ui-1.11.4/jquery-ui.min.js">
+    </script>
+
+    <!-- ECEP -->
+    <script>
+      var docname = '<!--#echo var="docname" -->';
+      var encoding = '<!--#echo var="encoding" -->';
+      var source = '<!--#echo var="REMOTE_ADDR" -->';
+      var ecep = '<!--#echo var="ecep" -->';
+      var ecep_full = '<!--#echo var="ecep_full" -->';
+    </script>
+    <script src="/js/document.load.js"></script>
+
+    <!-- Codemirror -->
+    <script src="/js/codemirror/lib/codemirror.js"></script>
+    <script src="/js/codemirror/mode/xml/xml.js"></script>
+    <script src="/js/codemirror/addon/scroll/simplescrollbars.js"></script>
+    <script src="/js/codemirror/addon/dialog/dialog.js"></script>
+    <script src="/js/codemirror/addon/search/searchcursor.js"></script>
+    <script src="/js/codemirror/addon/search/search.js"></script>
+    <script src="/js/codemirror/addon/edit/matchtags.js"></script>
+    <script src="/js/codemirror/addon/fold/foldcode.js"></script>
+    <script src="/js/codemirror/addon/fold/xml-fold.js"></script>
+    <script src="/js/codemirror/addon/edit/closetag.js"></script>
+    <script>
+      var editor;
+      if (document.getElementById("myXML")) {
+        editor = CodeMirror.fromTextArea(document.getElementById("myXML"), {
+          mode: "xml",
+          lineNumbers: true,
+          scrollbarStyle: "overlay",
+          matchTags: {bothTags: true},
+          extraKeys: {"Ctrl-J": "toMatchingTag"},
+          autoCloseTags: true,
+          autofocus: true
+        });
+      }
+    </script>
+
+    <!-- Underscore v1.8.3 -->
+    <script src="/js/underscore-min.js"></script>
+
+    <!-- Annodoc / conllu.js -->
+    <script>
+      var webFontURLs = [
+      '/js/annodoc-gh-pages/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+      '/js/annodoc-gh-pages/static/fonts/Liberation_Sans-Regular.ttf'
+      ];
+    </script>
+    <script src="/js/jquery.svg.package-1.5.0/jquery.svg.min.js"></script>
+    <script src="/js/jquery.svg.package-1.5.0/jquery.svgdom.min.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/ext/waypoints.min.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/configuration.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/util.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/annotation_log.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/ext/webfont.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/dispatcher.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/url_monitor.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/brat/visualizer.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/ext/conllu.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/local/annodoc.js"></script>
+    <script src="/js/annodoc-gh-pages/lib/local/config.js"></script>
+
+    <!-- frameviz.js -->
+    <script src="/js/frameviz/frameviz.js"></script>
+    <script src="/js/frameviz/frameviz_json.js"></script>
+
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- jQuery Pagination plugin v. 1.2.5-5: http://esimakin.github.io/twbs-pagination/ -->
+    <script src="/js/pagination/jquery.twbsPagination.min.js"></script>
+
+    <!-- ECEP -->
+    <script src="/js/document.ready.js"></script>
+    <script src="/js/ecep.functions.js"></script>
+    <script src="/js/ana.functions.js"></script>
+    <script src="/js/viz.functions.js"></script>
+    <script src="/js/mod.functions.js"></script>
+
+    <!-- Zoomify v4: http://www.zoomify.com/ -->
+    <script src="/js/zoomify/ZoomifyImageViewerEnterprise-min.js"></script>
+    <script>
+      var pageno = '<!--#echo var="zoomifyfirst" -->';
+      pageno = pageno.split("/").pop();
+      if (document.getElementById("myImage")) {
+        Z.showImage("myImage","/images/works/<!--#echo var="zoomifyfirst"-->.zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename=<!--#echo var="docname"-->-"+pageno+".png&zSaveImageFormat=PNG&zSaveHandlerPath=Assets/SaveHandlers/upload.php&zSaveImageHandlerPath=Assets/SaveHandlers/uploadImage.php");
+      }
+    </script>
+
+    <!-- Prettify Twitter timeline -->
+    <script src="/js/twitter_fix.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509e8f8d233ff269"></script> 
+
+  <script src="/js/bootstrap-tour-0.11.0/build/js/bootstrap-tour.min.js"></script><script src="/js/tour-core.js"></script></body>
+
+</html>

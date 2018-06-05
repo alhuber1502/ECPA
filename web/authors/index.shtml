@@ -1,0 +1,68 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<section id="main">
+
+<div class="container">
+<div class="row" style="height:inherit;">
+
+<div class="col-xs-8">
+
+<h1 style="display:inline;">Authors</h1>
+<ul style="display:inline-block; margin:0 0 -2px 10px; width:inherit;" class="nav nav-tabs" role="tablist">
+<li role="presentation" class="active"><a href="#names" aria-controls="names" role="tab"
+			   data-toggle="tab">Names</a></li>
+<li role="presentation"><a href="#dates" aria-controls="dates"
+					  role="tab"
+					  data-toggle="tab">Birth dates</a></li>
+<li role="presentation"><a href="#gender" aria-controls="gender" role="tab"
+			   data-toggle="tab">Gender</a></li>
+</ul>
+
+<div class="tab-content">
+
+<div role="tabpanel" class="tab-pane active" id="names">
+<!--#include virtual="/authors/names.shtml" -->
+</div>
+
+<div role="tabpanel" class="tab-pane" id="dates">
+<!--#include virtual="/authors/dates.shtml" -->
+</div>
+
+<div role="tabpanel" class="tab-pane" id="gender">
+<!--#include virtual="/authors/gender.shtml" -->
+</div>
+
+</div>
+
+</div>
+
+<div class="col-xs-4">
+<h1 style="white-space:nowrap;">Featured Author</h1>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane" style="display:block;">
+<!--#include virtual="/about/featuredauthor.shtml" -->
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<script type="text/javascript">
+  var citation = "";
+  citation += "Huber, Alexander. ";
+  var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+  citation += "\"Authors\". "; 
+  citation +='<em><!--#echo var="ecep_full" --></em>, '+
+  '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+  '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+</script>
+
+<!--#include virtual="/bottom.shtml" -->

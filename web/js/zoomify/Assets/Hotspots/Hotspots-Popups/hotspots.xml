@@ -1,0 +1,131 @@
+<HOTSPOTDATA>
+	<SETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		LISTTITLE="Hotspots"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		NAME="Simple Hotspot With Popup"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hotspotFromJPG.jpg"
+		X="225"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Simple Hotspot With Popup Graphic"
+		TOOLTIP="This is a simple popup example."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup1.png" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		NAME="Popup Reusing Same Graphic"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hotspotFromPNG.png"
+		X="525"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Reused Popups Only Loaded Once"
+		TOOLTIP="This hotspot automatically clones the popup PNG graphic file."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup1.png" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		NAME="Popup Position Offset"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hotspotFromPNG.png"
+		X="825"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Popup Position Can Be Explicitly Set"
+		TOOLTIP="This popup is positioned by XML values relative to the hotspot."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup2.png"
+		POPOFFSETX="120"
+		POPOFFSETY="120" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		NAME="Hotspot Visible On Rollover"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hotspotFromPNG.png"
+		X="1125"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="1"
+		CAPTION="Rollover Hotspot%0D%0AWith Popup"
+		TOOLTIP="This hotspot and its popup are revealed on mouse-over."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup1.png" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Hotspot With Transparent Graphic"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hiddenHotspot.png"
+		X="1425"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="Transparent Graphic Defines%0D%0AMouseover Area For Popup"
+		TOOLTIP="This hotspot has transparent graphic."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup2.png" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		NAME="Hotspot Without Icon"
+		MEDIATYPE="text"
+		MEDIA=""
+		X="1725"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="Hotpost Without Icon%0D%0ACaption Defines Mouseover Area"
+		TOOLTIP="This hotspot has no icon but popup triggers on mouseover of caption."
+		POPUP="Assets/Hotspots/Hotspots-Popups/examplePopup1.png" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="7"
+		NAME="Hotspot Without Popup"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Popups/hotspotFromJPG.jpg"
+		X="1125"
+		Y="1500"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="Hotspot Without Popup%0D%0A(Rollover hotspot on ruby above!)"
+		TOOLTIP="This hotspot has no popup." >
+	</HOTSPOT>
+</HOTSPOTDATA>
+

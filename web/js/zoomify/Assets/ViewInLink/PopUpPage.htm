@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xml:lang="EN" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<script type="text/javascript" src="../../ZoomifyImageViewerPro-min.js"></script>
+		<style type="text/css"> #myContainer { width:900px; height:550px; margin:auto; border:1px; border-style:solid; border-color:#696969;} </style>
+
+        <script type="text/javascript" >
+			var urlString = document.location.href;
+			var paramIndex = urlString.indexOf("?")+1;
+			var paramString = urlString.substring(paramIndex,urlString.length);
+			var imagePathEndIndex = paramString.indexOf("&");
+			var imagePath = paramString.substring("zImagePath=".length,imagePathEndIndex);
+			var optionalParams = paramString.substring(imagePathEndIndex+1,paramString.length);
+        	Z.showImage("myContainer", imagePath, optionalParams);
+        </script>
+
+	</head>
+
+	<body>
+
+		<div id="myContainer"></div>
+
+	</body>
+
+</html>
+
+
+
+

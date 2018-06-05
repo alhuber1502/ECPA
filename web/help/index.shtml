@@ -1,0 +1,68 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Help" -->
+<!--#set var="bodyid" value="help" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="help" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-9">
+
+	  <h1>Help</h1>
+
+	  <!--#include virtual="/help/rdn_help.shtml"-->
+	  <!--#include virtual="/help/ana_help.shtml"-->
+
+      </div> <!-- /col -->
+
+      <div class="col-xs-3" id="myScrollspy">
+
+       <nav class="affix">
+        <ul class="nav nav-stacked" data-offset-top="41" data-offset-bottom="41">
+          <li><a href="#readingview">Reading view</a>
+	    <ul>
+	      <li><a href="#readingaid">Reading aid</a>
+	      <li><a href="#annotations">Annotations</a>
+	      <li><a href="#IC">Contributions</a>
+	    </ul>
+          </li>
+          <li><a href="#analysisview">Analysis view</a>
+	    <ul>
+	      <li><a href="#phonological">Phonological layer</a>
+	      <li><a href="#morphological">Morphological layer</a>
+	      <li><a href="#syntactic">Syntactic layer</a>
+	      <li><a href="#semantic">Semantic layer</a>
+	      <li><a href="#pragmatic">Pragmatic layer</a>
+	    </ul>
+          </li>
+          <li><a href="mailto:help@eighteenthcenturypoetry.org">help@eighteenthcenturypoetry.org</a>
+          <li><a role="button" id="tour" class="btn btn-primary
+		 btn-lg" style="width:180px;"
+		 data-demo="" href="/works/o5152-w0120-tour.shtml">
+              <span class="glyphicon glyphicon-play"></span>
+              Take the tour</a></li>
+        </ul>
+
+       </nav>
+
+      </div> <!-- /col -->
+
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+  <script type="text/javascript">
+    var citation = "";
+    citation += "Huber, Alexander. ";
+    var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+    citation += '\"Help\". ';
+    citation +='<em><!--#echo var="ecep_full" --></em>, '+
+      '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+      '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+  </script>
+
+<!--#include virtual="/bottom.shtml" -->

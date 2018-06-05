@@ -1,0 +1,184 @@
+/* Phonemes */
+/* Vowels, monophthongs (short) */
+.ph01::before { content:"ɪ"; min-width:7px; display:inline-block; text-align:center; }
+.ph02::before { content:"ʊ"; min-width:8px; display:inline-block; text-align:center; }
+.ph03::before { content:"e"; min-width:8px; display:inline-block; text-align:center; }
+.ph04::before { content:"ə"; min-width:8px; display:inline-block; text-align:center; }
+.ph05::before { content:"æ"; min-width:8px; display:inline-block; text-align:center; }
+.ph06::before { content:"ʌ"; min-width:8px; display:inline-block; text-align:center; }
+.ph07::before { content:"ɒ"; min-width:8px; display:inline-block; text-align:center; }
+/* Vowels, monophthongs (long) */
+.ph08::before { content:"iː"; min-width:8px; display:inline-block; text-align:center; }
+.ph09::before { content:"uː"; min-width:8px; display:inline-block; text-align:center; }
+.ph10::before { content:"ɜː"; min-width:8px; display:inline-block; text-align:center; }
+.ph11::before { content:"ɔː"; min-width:8px; display:inline-block; text-align:center; }
+.ph12::before { content:"ɑː"; min-width:8px; display:inline-block; text-align:center; }
+/* Volwels, diphthongs */
+.ph13::before { content:"eɪ"; min-width:8px; display:inline-block; text-align:center; }
+.ph14::before { content:"aɪ"; min-width:8px; display:inline-block; text-align:center; }
+.ph15::before { content:"ɔɪ"; min-width:8px; display:inline-block; text-align:center; }
+.ph16::before { content:"əʊ"; min-width:8px; display:inline-block; text-align:center; }
+.ph17::before { content:"ɪə"; min-width:8px; display:inline-block; text-align:center; }
+.ph18::before { content:"eə"; min-width:8px; display:inline-block; text-align:center; }
+.ph19::before { content:"ʊə"; min-width:8px; display:inline-block; text-align:center; }
+.ph20::before { content:"aʊ"; min-width:8px; display:inline-block; text-align:center; }
+/* Vowels, neutralized */
+.ph21::before { content:"i"; min-width:6px; display:inline-block; text-align:center; }
+.ph22::before { content:"u"; min-width:8px; display:inline-block; text-align:center; }
+/* Consonants, nasal */
+.ph23::before { content:"m"; min-width:8px; display:inline-block; text-align:center; }
+.ph24::before { content:"n"; min-width:8px; display:inline-block; text-align:center; }
+.ph25::before { content:"ŋ"; min-width:8px; display:inline-block; text-align:center; }
+/* Consonants, stop/plosive */
+.ph26::before { content:"p"; min-width:8px; display:inline-block; text-align:center; }
+.ph27::before { content:"b"; min-width:8px; display:inline-block; text-align:center; }
+.ph28::before { content:"t"; min-width:7px; display:inline-block; text-align:center; }
+.ph29::before { content:"d"; min-width:8px; display:inline-block; text-align:center; }
+.ph30::before { content:"k"; min-width:8px; display:inline-block; text-align:center; }
+.ph31::before { content:"g"; min-width:8px; display:inline-block; text-align:center; }
+/* Consonants, affricate */
+.ph32::before { content:"dʒ"; min-width:8px; display:inline-block; text-align:center; }
+.ph33::before { content:"tʃ"; min-width:8px; display:inline-block; text-align:center; }
+/* Consonants, fricative */
+.ph34::before { content:"f"; min-width:7px; display:inline-block; text-align:center; }
+.ph35::before { content:"v"; min-width:8px; display:inline-block; text-align:center; }
+.ph36::before { content:"θ"; min-width:8px; display:inline-block; text-align:center; }
+.ph37::before { content:"ð"; min-width:8px; display:inline-block; text-align:center; }
+.ph38::before { content:"s"; min-width:8px; display:inline-block; text-align:center; }
+.ph39::before { content:"z"; min-width:8px; display:inline-block; text-align:center; }
+.ph40::before { content:"ʃ"; min-width:8px; display:inline-block; text-align:center; }
+.ph41::before { content:"ʒ"; min-width:8px; display:inline-block; text-align:center; }
+.ph42::before { content:"h"; min-width:8px; display:inline-block; text-align:center; }
+.ph43::before { content:"x"; min-width:8px; display:inline-block; text-align:center; }
+/* Consonants, approximant */
+.ph44::before { content:"l"; min-width:6px; display:inline-block; text-align:center; }
+.ph45::before { content:"r"; min-width:7px; display:inline-block; text-align:center; }
+.ph46::before { content:"w"; min-width:8px; display:inline-block; text-align:center; }
+.ph47::before { content:"j"; min-width:6px; display:inline-block; text-align:center; }
+
+/* Suprasegmentals */
+.su01::before { content:"ˈ"; display:inline-block; text-align:center; }
+.su02::before { content:"ˌ"; display:inline-block; text-align:center; }
+.su03::before { content:"ː"; display:inline-block; text-align:center; }
+.su04::before { content:"ˑ"; display:inline-block; text-align:center; }
+.su05::before { content:"."; display:inline-block; text-align:center; }
+
+/* LK space  */
+#lk_viz {
+    display: flex;
+    height: 100%;
+}
+
+/* LK scrollable divs */
+#lk_control,#lk_body {
+    overflow: auto;
+    height: auto;
+    position: relative;
+}
+/* LK control section */
+#lk_control {
+    width: 30%;
+    margin-right: 25px;
+}
+#lk_viz .panel-title a {
+    display:block;
+}
+#lk_viz .panel-title {
+    color: #920a33;
+}
+#lk_viz a#clear_con,
+#lk_viz a#clear_vow {
+    float: right;
+    padding-right: 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #920a33;
+    cursor: pointer;
+}
+#lk_viz .panel-heading {
+    padding: 0 10px;
+    height: 30px;
+    background-color: #fafafa;
+}
+#lk_control .panel-heading .panel-title a:hover ,
+#lk_control .panel-heading .panel-title a:focus ,
+#lk_control .panel-heading .panel-title a:visited {
+    color: inherit;
+}
+#lk_control .panel-body .input-group input {
+    display: inline-block;
+}
+
+/* LK body section */
+#lk_body {
+    width: 70%;
+    padding-right: 10px;
+}
+#lk_body .text {
+    width: 100%;
+    padding-top:15px;
+}
+#lk_body .text .ln {
+    margin-right:20px;
+    margin-left:15px;
+}
+#lk_body .text .l {
+    display:block;
+}
+/* space phonemic transcription for better legibility */
+#lk_body .text .w + .pc + .w::before,
+#lk_body .text .w + .w::before {
+    content:"\a0";
+}
+#lk_body .text tr td:nth-child(1) {
+    width: inherit;
+    border: 0px;
+    padding: 0px;
+    text-align:left;
+}
+#lk_body .text tr td {
+    border: 1px dotted black;
+    padding: 0px;
+    text-align:center;
+    width:inherit;
+    min-width:30px;
+}
+#lk_body .text tr th:nth-child(1) {
+    padding: 2px;
+    width:30px;
+    text-align:left;
+}
+#lk_body .text tr th {
+    text-align:center;
+}
+#lk_body .text tr td.t_vt ,
+#lk_body .text tr td.t_ct {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+#lk_body .text tr td.t_c_n {
+    border-left: 3px solid black;
+}
+.idsSelected,
+.idsSelected * {
+    background-color: rgb(136, 188, 223) !important;
+    color:#fff !important;
+}
+.figures {
+    padding-left:0;
+}
+.figures li {
+    list-style-type: none;
+    padding-right: 5px;
+    display: inline;
+}
+
+
+/* POEMVIS */
+
+#poemvis_frame {
+    width:100%;
+    height:99%;
+    border:0;
+    overflow:hidden;
+}

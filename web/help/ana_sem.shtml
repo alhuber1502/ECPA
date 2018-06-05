@@ -1,0 +1,64 @@
+
+<h3 id="semantic">Semantic layer</h3>
+
+<p>
+This layer is concerned with the creation of "literal" meaning on the word and sentence
+level.  The meaning of a sentence is a function of the meaning of its
+component words (paradigmatic associations) and the way they are combined
+(syntagmatic associations).  The study of the function of this selection and
+arrangement of words is at the centre of this layer.
+</p>
+
+<h4>Semantic structure</h4>
+<p>
+For the purpose of a computationally assisted analysis of meaning, <em>frame 
+semantics</em> offers an attractive model as it relativizes word meanings to a
+finite set of semantic frames.  <em>Semantic frames</em> are schematic representations
+of the conceptual structures and patterns that provide the foundation for
+meaningful interaction in a given speech community.  Thus, semantic frames are 
+linked by linguistic conventions to the meanings of linguistic units (lexical
+items) constructing a schematic representation of a situation, object, event,
+or relation and providing the background structure against which words are
+understood.  Each semantic frame identifies a set of <em>frame elements</em>, i.e. participants
+in the frame (semantic role labels), which in turn are linked to
+individual lexical units (words).  We currently use the 
+<a href="http://www.cs.cmu.edu/~ark/SEMAFOR/" class="external"
+target="_blank">SEMAFOR</a> v3.0.4 alpha [pre-trained] software to
+generate the frame semantic parses and the 
+<a href="https://github.com/sammthomson/semviz/blob/master/semviz/static/js/frameviz.js"
+   class="external" target="_blank">frameviz.js</a> software to visualize them.
+</p>
+
+<p>
+Just like the syntactic dependency parse, the frame semantic parse is meant to
+be read from left to right and top to bottom.  At the top are the
+lexical units of the selected sentence.  Below the lexical units are
+the names of the evoked frames, a complete list of which can be found at
+<a href="https://framenet.icsi.berkeley.edu" class="external"
+   target="_blank">FrameNet</a>.  The subsequent rows indicate the frame
+   elements for each frame.  Frame element spans are indicated with
+   blue bars. For the future, the plan is both to adapt the frames for
+   the narrower context of eighteenth-century writing by supplementing
+   the frame associations with historical contextual information, such
+   as contemporary dictionaries and historical gazetteers, and to
+   integrate the results of this analysis more closely with the other
+   analytical layers.
+</p>
+
+<p><em>NB:</em> Meaning is notoriously difficult to establish computationally, and the
+  analysis presented here should be considered <em>experimental</em>.  Frames may be
+  evoked erroneously when lexical units are not or wrongly mapped to
+  frame elements due to changes in word meaning, a loss of meaning altogether,
+  or a change of associations conveyed through historical distance between
+  speaker and recipient, or insufficient domain appropriation.</p>
+
+<h4>Rhetorical figures</h4>
+<p>
+The rhetorical figures currently detected in the semantic domain are 
+similie and homophonic paronomasia.  The components of each figure are
+highlighted when hovering over the constituent words.  Individual patterns of
+each figure will be highlighted globally when hovering over the identified
+pattern.  Please be aware that semantic figures of speech are complex entities
+and provide a considerable challenge for computationally facilitated
+detection.
+</p>

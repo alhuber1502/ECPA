@@ -1,0 +1,306 @@
+<!--	
+	The Zoomify Image Viewer automatically creates the Toolbar and other interface elements
+	by loading graphics files from the Skins folders. 
+
+	Skin files can be replaced easily to customize the look of the Viewer.  Supported file formats
+	include those commonly supported by popular browsers: PNG, GIF, and JPG. 	
+	
+	Additional 	detailed notes about advanced features and custom skins follow below at the end of this file. 	
+-->	
+
+
+<SKINDATA>	
+	<SETUP
+		SKINMODE="0" 
+		FOLDERSTANDARD="standard"
+		FOLDERLARGE="large"
+		PROGRESSCOLOR="000000" >
+	</SETUP>
+	<SIZESSTANDARD
+		TOOLBARW="-1"
+		TOOLBARH="20"
+		LOGOW="24"
+		LOGOH="20"
+		DIVIDERW="1"
+		DIVIDERH="18"
+		BUTTONW="15"
+		BUTTONH="15"
+		BUTTONSPAN="22"
+		SLIDERBUTTONW="13"
+		SLIDERBUTTONH="13"
+		SLIDERTRACKW="116"
+		SLIDERTRACKH="15"
+		SLIDERSPAN="120"
+		PROGRESSW="40" 
+		PROGRESSH="20"
+		PROGRESSFONTSIZE="12" >
+	</SIZESSTANDARD>
+	<SIZESLARGE
+		TOOLBARW="-1"
+		TOOLBARH="40"
+		LOGOW="48"
+		LOGOH="40"
+		DIVIDERW="2"
+		DIVIDERH="35"
+		BUTTONW="30"
+		BUTTONH="30"
+		BUTTONSPAN="37"
+		SLIDERBUTTONW="23"
+		SLIDERBUTTONH="29"
+		SLIDERTRACKW="180"
+		SLIDERTRACKH="45"
+		SLIDERSPAN="184"
+		PROGRESSW="80" 
+		PROGRESSH="30"
+		PROGRESSFONTSIZE="24" >
+	</SIZESLARGE>
+	<FILES
+		SKIN0="toolbarBackground.gif"
+		
+		SKIN1="zoomOutUp.gif"
+		SKIN2="zoomOutOver.gif"
+		SKIN3="zoomOutDown.gif"
+		SKIN4="zoomInUp.gif"
+		SKIN5="zoomInOver.gif"
+		SKIN6="zoomInDown.gif"
+		
+		SKIN7="toolbarLogo.gif"
+		SKIN8="logoDivider.gif"
+		
+		SKIN9="toolbarMinimizeUp.gif"
+		SKIN10="toolbarMinimizeOver.gif"
+		SKIN11="toolbarMinimizeDown.gif"
+		SKIN12="toolbarExpandUp.gif"
+		SKIN13="toolbarExpandOver.gif"
+		SKIN14="toolbarExpandDown.gif"
+		
+		SKIN15="sliderTrack.gif"
+		SKIN16="sliderTick.gif"
+		SKIN17="sliderThumbUp.gif"
+		SKIN18="sliderThumbOver.gif"
+		SKIN19="sliderThumbDown.gif"
+		
+		SKIN20="panDivider.gif"		
+		SKIN21="panLeftUp.gif"
+		SKIN22="panLeftOver.gif"
+		SKIN23="panLeftDown.gif"
+		SKIN24="panUpUp.gif"
+		SKIN25="panUpOver.gif"
+		SKIN26="panUpDown.gif"
+		SKIN27="panDownUp.gif"
+		SKIN28="panDownOver.gif"
+		SKIN29="panDownDown.gif"
+		SKIN30="panRightUp.gif"
+		SKIN31="panRightOver.gif"
+		SKIN32="panRightDown.gif"
+		
+		SKIN33="resetUp.gif"
+		SKIN34="resetOver.gif"
+		SKIN35="resetDown.gif"
+		
+		SKIN36="fullViewDivider.gif"
+		SKIN37="fullViewUp.gif"
+		SKIN38="fullViewOver.gif"
+		SKIN39="fullViewDown.gif"
+		SKIN40="fullViewExitUp.gif"
+		SKIN41="fullViewExitOver.gif"
+		SKIN42="fullViewExitDown.gif"
+		
+		SKIN43="helpUp.gif"
+		SKIN44="helpOver.gif"
+		SKIN45="helpDown.gif"
+		
+		SKIN46="measureUp.gif"
+		SKIN47="measureOver.gif"
+		SKIN48="measureDown.gif"
+		SKIN49="measureExitUp.gif"
+		SKIN50="measureExitOver.gif"
+		SKIN51="measureExitDown.gif"
+		
+		SKIN52="rotateDivider.gif"
+		SKIN53="rotateCounterwiseUp.gif"
+		SKIN54="rotateCounterwiseOver.gif"
+		SKIN55="rotateCounterwiseDown.gif"
+		SKIN56="rotateClockwiseUp.gif"
+		SKIN57="rotateClockwiseOver.gif"
+		SKIN58="rotateClockwiseDown.gif"
+		
+		SKIN59="tourOrSlideDivider.gif"
+		SKIN60="priorUp.gif"
+		SKIN61="priorOver.gif"
+		SKIN62="priorDown.gif"
+		SKIN63="nextUp.gif"
+		SKIN64="nextOver.gif"
+		SKIN65="nextDown.gif"
+		SKIN66="startUp.gif"
+		SKIN67="startOver.gif"
+		SKIN68="startDown.gif"
+		SKIN69="stopUp.gif"
+		SKIN70="stopOver.gif"
+		SKIN71="stopDown.gif"
+		SKIN72="audioOnUp.gif"
+		SKIN73="audioOnOver.gif"
+		SKIN74="audioOnDown.gif"
+		SKIN75="audioMutedUp.gif"
+		SKIN76="audioMutedOver.gif"
+		SKIN77="audioMutedDown.gif"
+		
+		SKIN78="imageFilterDivider.gif"		
+		SKIN79="imageFilterPanelHideUp.gif"
+		SKIN80="imageFilterPanelHideOver.gif"
+		SKIN81="imageFilterPanelHideDown.gif"
+		SKIN82="imageFilterPanelShowUp.gif"
+		SKIN83="imageFilterPanelShowOver.gif"
+		SKIN84="imageFilterPanelShowDown.gif"		
+		SKIN85="imageFilterMinusUp.gif"
+		SKIN86="imageFilterMinusOver.gif"
+		SKIN87="imageFilterMinusDown.gif"
+		SKIN88="imageFilterPlusUp.gif"
+		SKIN89="imageFilterPlusOver.gif"
+		SKIN90="imageFilterPlusDown.gif"
+		SKIN91="imageFilterApplyUp.gif"
+		SKIN92="imageFilterApplyOver.gif"
+		SKIN93="imageFilterApplyDown.gif"		
+		SKIN94="imageFilterStateDivider.gif"		
+		SKIN95="imageFilterClearUp.gif"
+		SKIN96="imageFilterClearOver.gif"
+		SKIN97="imageFilterClearDown.gif"
+		SKIN98="imageFiltersClearAllUp.gif"
+		SKIN99="imageFiltersClearAllOver.gif"
+		SKIN100="imageFiltersClearAllDown.gif"
+	
+		SKIN101="viewModeUp.gif"
+		SKIN102="viewModeOver.gif"
+		SKIN103="viewModeDown.gif"
+		SKIN104="colorPickerUp.gif"
+		SKIN105="colorPickerOver.gif"
+		SKIN106="colorPickerDown.gif"		
+	
+		SKIN107="editModeDivider.gif"	
+		SKIN108="editModeFreehandUp.gif"
+		SKIN109="editModeFreehandOver.gif"
+		SKIN110="editModeFreehandDown.gif"
+		SKIN111="editModeTextUp.gif"
+		SKIN112="editModeTextOver.gif"
+		SKIN113="editModeTextDown.gif"	
+		SKIN114="editModeIconUp.gif"
+		SKIN115="editModeIconOver.gif"
+		SKIN116="editModeIconDown.gif"			
+		SKIN117="editModeRectangleUp.gif"
+		SKIN118="editModeRectangleOver.gif"
+		SKIN119="editModeRectangleDown.gif"
+		SKIN120="editModePolygonUp.gif"
+		SKIN121="editModePolygonOver.gif"
+		SKIN122="editModePolygonDown.gif"
+		
+		SKIN123="color0Up.gif"
+		SKIN124="color0Over.gif"
+		SKIN125="color0Down.gif"
+		SKIN126="color1Up.gif"
+		SKIN127="color1Over.gif"
+		SKIN128="color1Down.gif"
+		SKIN129="color2Up.gif"
+		SKIN130="color2Over.gif"
+		SKIN131="color2Down.gif"
+		SKIN132="color3Up.gif"
+		SKIN133="color3Over.gif"
+		SKIN134="color3Down.gif"
+		SKIN135="color4Up.gif"
+		SKIN136="color4Over.gif"
+		SKIN137="color4Down.gif"
+		SKIN138="color5Up.gif"
+		SKIN139="color5Over.gif"
+		SKIN140="color5Down.gif"
+		SKIN141="color6Up.gif"
+		SKIN142="color6Over.gif"
+		SKIN143="color6Down.gif"
+		SKIN144="color7Up.gif"
+		SKIN145="color7Over.gif"
+		SKIN146="color7Down.gif" 
+	
+		SKIN147="deleteUp.gif"
+		SKIN148="deleteOver.gif"
+		SKIN149="deleteDown.gif"
+		SKIN150="saveUp.gif"
+		SKIN151="saveOver.gif"
+		SKIN152="saveDown.gif"		
+		
+		SKIN153="addUp.gif"
+		SKIN154="addOver.gif"
+		SKIN155="addDown.gif"
+		SKIN156="editUp.gif"
+		SKIN157="editOver.gif"
+		SKIN158="editDown.gif"
+		SKIN159="cancelUp.gif"
+		SKIN160="cancelOver.gif"
+		SKIN161="cancelDown.gif"
+						
+		SKIN162="trackingNavUp.gif"
+		SKIN163="trackingNavOver.gif"
+		SKIN164="trackingNavDown.gif"
+		SKIN165="trackingClearLastUp.gif"
+		SKIN166="trackingClearLastOver.gif"
+		SKIN167="trackingClearLastDown.gif"		
+		SKIN168="trackingClearTypeUp.gif"
+		SKIN169="trackingClearTypeOver.gif"
+		SKIN170="trackingClearTypeDown.gif"		
+		SKIN171="trackingClearAllUp.gif"
+		SKIN172="trackingClearAllOver.gif"
+		SKIN173="trackingClearAllDown.gif"		
+		SKIN174="trackingSaveUp.gif"
+		SKIN175="trackingSaveOver.gif"
+		SKIN176="trackingSaveDown.gif" >
+		
+	</FILES>
+</SKINDATA>
+
+
+<!--	
+	This file, "skinFiles.xml", references graphics files by an internal SKIN name such as "SKIN0" 
+	as well as a descriptive filename such as "toolbarBackground.gif". Filename changes can be 
+	useful, for example, for international localization, however, do not change the descriptive file 
+	names unless you also change the matching name of the file in the Skins folders. More importantly, 
+	do not change the SKIN# names unless you also modify matching references in the Viewer JavaScript. 
+
+	The SKINMODE value can be used to enable an alternative graphics fileset and is useful for 
+	supporting mobile devices with small screens. SKINMODE values include: 0 = auto-select folder 
+	based on mobile device detection (default);  1 = always use FOLDERSTANDARD files; 2 = always 
+	use FOLDERLARGE files. 
+	
+	Note that the contents of the toolbar will be automatically validated as fitting within the toolbar 
+	width. If it does not, toolbar elements will be hidden until few enough are showing to fit in the 
+	space available. Elements will be hiddent beginning with the toolbar slider, then the progress 
+	display, and lastly the logo and minimize / expand buttons. 	
+      
+	Specific files are required for the features listed below. The listed features can be disabled 
+	or enabled using HTML parameters described in the file "Zoomify Parameter List.htm" in the 
+	"Documentation" folder of the product.  A parameter setting of '0' disables a feature, while a 
+	setting of 1 enables it.
+	
+	The use of skin files is simple and streamlined. Disabling toolbar features will prevent the relevant 
+	graphics files that are not needed from being loaded. Note however, that while unneeded skin files 
+	will note be loaded, the skinFiles.xml file will be parsed to the degree necessary for the highest
+	numbered skin of the features that remain enabled. Therefore, when skinning the toolbar it is 
+	possible to not include skins files for feature that are not in use but it is not possible to remove the
+	references to those files from the skinFiles.xml file. 
+	
+	The following is a list of feature-skin dependencies in the skinFiles.xml file:	
+	
+	SKIN0 through:		Parameters in use:
+	SKIN6 			"zFullPageVisible=0&zPanButtonsVisible=0&Z.sliderVisible=0&zMinimizeVisible=0&zLogoVisible"
+	SKIN8			"zFullPageVisible=0&zPanButtonsVisible=0&Z.sliderVisible=0&zMinimizeVisible=0"
+	SKIN14			"zFullPageVisible=0&zPanButtonsVisible=0&Z.sliderVisible=0"
+	SKIN19			"zFullPageVisible=0&zPanButtonsVisible=0"
+	SKIN32			"zResetVisible=0"
+	SKIN35			"zFullPageVisible=0"
+	SKIN38			"zHelpVisible=0"
+	SKIN45			No Parameters - Default Behavior
+	SKIN51			"zMeasureVisible=1"
+	SKIN58			"zRotationVisible=1"
+	SKIN77			"zTourPath=path" or "zSlidePath=path"
+	SKIN100			"zImageFiltersVisible=1"
+	SKIN152			"zMarkupMode=1"
+	SKIN161			"zEditMode=1"
+	SKIN164			"zTracking=1"
+	SKIN176			"zTrackingEditMode=1"
+-->

@@ -1,0 +1,113 @@
+<HOTSPOTDATA>
+	<SETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		LISTTITLE="Hotspots"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		NAME="Hotspot click calls function in hotspots file"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="225"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="alert(%27Hello from function in hotspots file!%27);"
+		ROLLOVER="0"
+		CAPTION="Hotspot click calls function in hotspots file"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		NAME="Hotspot click calls function in page"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="525"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="function1InPage();"
+		ROLLOVER="0"
+		CAPTION="Hotspot click calls function in page"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		NAME="Hotspot click calls zoomAndPanToView function in Viewer"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="825"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="function2InPageCallingFunctionInViewer();"
+		ROLLOVER="0"
+		CAPTION="Hotspot click calls zoomAndPanToView function in Viewer"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		NAME="Hotspot click passes parameters to function in Viewer"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="1125"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="function3InPageCallingFunctionInViewerWithParameters(1040, 1125);"
+		ROLLOVER="0"
+		CAPTION="Hotspot click passes parameters to function in Viewer"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Hotspot click calls setImage function in Viewer"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="1425"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="function4InPageCallingFunctionInViewer();"
+		ROLLOVER="0"
+		CAPTION="Hotspot click calls setImage function in Viewer"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		NAME="Hotspot click calls function in page to create DIV in display"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-ClickFunctions/hotspotFunction.png"
+		X="1040"
+		Y="1725"
+		ZOOM="30" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="function"
+		URLTARGET="function5InPageCreatesDIVInPage();"
+		ROLLOVER="0"
+		CAPTION="Hotspot click calls function in page to create DIV in display"
+		TOOLTIP="Click hotspot to see function execute."
+		TEXTCOLOR="FFFFFF" >
+	</HOTSPOT>
+</HOTSPOTDATA>
+

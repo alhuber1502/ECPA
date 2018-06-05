@@ -1,0 +1,54 @@
+
+<h3 id="syntactic">Syntactic layer</h3>
+
+<p>
+This layer is concerned with the analysis of <em>syntactic structures</em>, the
+position and arrangement of words, interesting phenomena such as parataxis and
+hypotaxis, and the relationship between verse line, metrical and rhythmic
+structures, and syntactic units, such as phrases, clauses, and sentences.
+</p>
+
+<h4>Stanza</h4>
+<p>The relationship between <em>verse line</em> and <em>syntactic structure</em> is complex and
+  ever changing as the poetic text is played out in time and space.
+  Metrical pattern, rhythm, rhyme, and syntactic structure need to be studied
+  as closely connected and interrelated. The <em>stanza form</em> is an important
+  indicator for further analysis and will be identified first.
+</p>
+
+<h4>Syntactic structure</h4>
+<p>
+A computationally facilitated analysis of the syntactic structure is presented
+in form of a <em>syntactic dependency</em> parse of the selected sentence.  <em>Dependency</em>
+as a syntactic theory is based on the idea that all linguistic units are
+connected to each other by directed links named <em>dependencies</em>.  A
+syntactic dependency parse thus connects linguistic units according to their
+relationships. The result is a <em>tree diagram</em>, to be read from
+left to right and top to bottom, that serves as a visual
+representation of syntactic structure, in which the grammatical
+hierarchy is graphically displayed.  The <em>verb</em> is taken to be
+the structural centre of the clause structure.  All other syntactic units are
+either directly or indirectly connected to the verb in terms of the directed
+links.  Technically spoken, each vertex in the tree represents a lexical unit,
+child nodes are units that are dependent on the parent, and edges are labelled
+by the relationship between the words.
+</p>
+
+<p>
+The major word classes, nouns, pronouns, verbs, adjectives, and adverbs, are
+highlighted with a different colour scheme each to make it easier to process
+the information and to relate it to the verse lines.  Hovering over the
+nodes and edges highlights the node properties as well as the types of
+dependencies. Closer integration of the syntactic parse with the
+poetic text is planned for a future update.  As a start, a sentencing
+button has been introduced that highlights syntactic units in the
+poetic text. 
+</p>
+
+<p>We currently use the <a href="http://www.maltparser.org/" target="_blank"
+   class="external">MaltParser</a> v.1.7.2 [pre-trained, optimized] software to
+   produce the dependency parses in the <a href="http://ilk.uvt.nl/conll/#dataformat" class="external"
+   target="_blank">CoNLL data format</a> and we use the
+   <a href="https://github.com/spyysalo/conllu.js" target="_blank" class="external">conllu.js</a>
+   software to visualize them. 
+</p>

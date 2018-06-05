@@ -1,0 +1,63 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Triangle Label" 
+				MEDIATYPE="icon"
+				MEDIA="triangle" 
+				X="1000" 
+				Y="1300" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Triangle Label" 
+				COMMENT="This is an example comment."
+				TOOLTIP="Triangle label tooltip" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Circle Label" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				X="1300" 
+				Y="1300" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Circle Label" 
+				COMMENT="Another example comment."
+				TOOLTIP="Circle label tooltip" >
+			</LABEL>
+			<LABEL 
+				ID="2" 
+				NAME="Square Label" 
+				MEDIATYPE="icon"
+				MEDIA="square" 
+				X="1600" 
+				Y="1300" 
+				ZOOM="100"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Square Label" 
+				COMMENT="A third example comment."
+				TOOLTIP="Square label tooltip" >
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

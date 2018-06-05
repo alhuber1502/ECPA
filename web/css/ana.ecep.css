@@ -1,0 +1,218 @@
+span.ne {
+    color: #333;
+}
+span.ne_tim {
+    background-color: #d1d5e5 !important;
+}
+span.ne_loc {
+    background-color: #dff0d8 !important;
+}
+span.ne_org {
+    background-color: #dcd8e3 !important;
+}
+span.ne_per {
+    background-color: #d9eff7 !important;
+}
+span.ne_mon {
+    background-color: #e4e9e0 !important;
+}
+span.ne_prc {
+    background-color: #fcdef3 !important;
+}
+span.ne_dat {
+    background-color: #c1caf4 !important;
+}
+span.ne_msc {
+    background-color: #f5dece !important;
+}
+
+.sstart, .send, .sdiv { display: inline-block; }
+#meta-tabs { display: block; }
+
+.nav-tabs > .ui-tabs-active > a, .nav-tabs > .ui-tabs-active > a:focus, .nav-tabs > .ui-tabs-active > a:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: #ddd #ddd transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #555;
+    cursor: default;
+}
+
+/* highlight poem lines */
+#text div.line:hover *:not(a):not(sup):not(i) {
+    color: #000;
+    background-color: transparent;
+}
+
+#text div.line:hover *:not(.lineSelected,.hoverLine) {
+/* *:not(a):not(sup):not(i) { */
+    color: initial;
+    background-color: initial;
+/*
+    padding:.01px;
+    border-top: thin dotted;
+    border-bottom: thin dotted;
+*/
+    margin-top:-1px;
+    margin-bottom:-1px;
+}
+
+.hoverLine {
+/* *:not(a):not(sup):not(i) { */
+    color: #000;
+    background-color: initial;
+    padding:.01px;
+    border-top: thin dashed;
+    border-bottom: thin dashed;
+    margin-top:-1px;
+    margin-bottom:-1px;
+}
+
+#meta-tabs {
+    height: 70px;
+    color:#666;
+    padding-top:10px;
+    overflow:auto;
+}
+
+p#sentences {
+    margin: 20px 0 0 0;
+}
+
+.lineSelected {
+/* *:not(a):not(sup):not(i) { */
+    color: initial;
+    background-color: initial;
+    border-top: medium dotted;
+    border-bottom: medium dotted;
+}
+
+.idsSelected {
+    background-color: rgb(136, 188, 223);
+    color:#fff;
+}
+
+#text div.line span.l span.w:hover,
+#text div.line span.l span.pc:hover
+{
+    color: initial;
+    background-color: initial;
+}
+
+#ana-docs h1, .panel-body h2 {
+    margin-top: 0;
+}
+
+#parse_horiz {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.kwic span.left {
+      float: left;
+      min-width: 45%;
+      min-height: 1px;
+      margin-right: 5px;
+      text-align: right;
+}
+.kwic span.right {
+      min-width: 45%;
+      min-height: 1px;
+      margin-left: 5px;
+      text-align: left;
+}
+.kwic span.keyword a {
+      text-align: center;
+      float: left;
+      margin-left: 5px;
+      margin-right: 5px;
+}
+ol.kwic {
+      padding-left:0;
+}
+.kwic li, .ana_metre li, .ana_rhymes li, .figures li, .ana_syll li, .ana_stanza li, .namedent li {
+      list-style-type: none;
+}
+ul.ana_rhymes, ul.ana_metre, ul.ana_syll, ul.ana_stanza {
+      padding-left: 20px;
+}
+.ana_rhymes ul {
+      padding-left: 20px;
+}
+.ana_pop .ana_rhymes ul {
+      padding-left: 20px;
+      margin-bottom:0;
+}
+.ana_rhymes ul > li, .ana_syll li {
+      display: inline;
+}
+h3.rhetname, h3.nename {
+      padding: 0 0 0 20px !important;
+      margin: 10px 0 2px 0 !important;
+      font-size: 14px !important;
+}
+.ana_pop h3.rhetname, .ana_pop h3.nename {
+      padding: 3px 0 0 10px !important;
+      margin: 0px 0 2px 0 !important;
+      font-size: 1em !important;
+}
+ul.figures, ul.namedent {
+      padding-left: 40px;
+      margin-bottom:10px;
+}
+.ana_pop ul.figures, .ana_pop ul.namedent {
+      padding-left: 20px;
+      margin-bottom:0;
+}
+.namedent li {
+      text-indent: -20px; 
+      margin-left: 20px;
+}
+
+.btn-panel > div {
+    float: left;
+    padding-right: 5px;
+}
+.btn-panel:first-child {
+    margin-left: 25px;
+}
+.btn-panel .freeze {
+    margin-left: 15px;
+}
+
+table.sentence {
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+    padding: 15px 0;
+    margin-top:-1px;
+    margin-bottom:-1px;
+}
+table.sentence:last-child {
+    border-top: 1px solid #bbb;
+    padding: 15px 0;
+    margin-top: -1px;
+    border-bottom: 0;
+    width: 100%;
+}
+table.sentence:nth-child(even) {
+    background-color:#eee;
+}
+
+table.morphanalysis {
+    width: 98%;
+}
+table.morphanalysis tbody tr td,table.morphanalysis thead th {
+    padding: 4px 4px 0 0;
+}
+table.morphological tbody tr td {
+    padding:5px;
+}
+table.morphanalysis thead tr th {
+    font-weight:normal;
+    font-style:italic;
+}

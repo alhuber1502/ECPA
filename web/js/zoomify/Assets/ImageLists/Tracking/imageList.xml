@@ -1,0 +1,67 @@
+<IMAGELISTDATA>
+	<SETUP 
+		LISTPOSITION="1"
+		LISTSOURCE="NAME"
+		LISTTITLE="Select Image" >
+	</SETUP>
+	<IMAGES>
+		<IMAGE
+			MEDIA="Images/Fluorescence"
+			NAME="Fluorescence"
+			INITIALX=""
+			INITIALY=""
+			INITIALZOOM="fit" 
+			MINZOOM="-1"
+			MAXZOOM="100"
+			RULERLISTYPE="1"
+			UNITS="mm"
+			UNITSPERIMAGE="50"
+			SOURCEMAGNIFICATION="40"
+			TRACKING="Assets/Tracking/tracking-image1.xml" >
+		</IMAGE>
+		<IMAGE
+			MEDIA="Images/ZoomifyImageExample3"
+			NAME="UC Davis Medical Slide"
+			INITIALX=""
+			INITIALY=""
+			INITIALZOOM="fit" 
+			MINZOOM="-1"
+			MAXZOOM="100"
+			RULERLISTYPE="1"
+			UNITS="mm"
+			UNITSPERIMAGE="50"
+			SOURCEMAGNIFICATION="40"
+			TRACKING="Assets/Tracking/tracking-image2.xml" >
+		</IMAGE>
+		<IMAGE
+			MEDIA="Images/ZoomifyImageExample4"
+			NAME="Micro-Array Image"
+			INITIALX=""
+			INITIALY=""
+			INITIALZOOM="fit"  
+			MINZOOM="-1"
+			MAXZOOM="100"
+			RULERLISTYPE="2"
+			UNITS="cm"
+			UNITSPERIMAGE="200"
+			SOURCEMAGNIFICATION="40"
+			TRACKING="Assets/Tracking/tracking-image3.xml" >
+		</IMAGE>
+		<IMAGE
+			MEDIA="Images/ZoomifyImageExample-RectangularTiles"
+			NAME="Rectangular Tiles Scan"
+			INITIALX=""
+			INITIALY=""
+			INITIALZOOM="fit"  
+			MINZOOM="-1"
+			MAXZOOM="100"
+			RULERLISTYPE="1"
+			UNITS="mm"
+			UNITSPERIMAGE="100"
+			SOURCEMAGNIFICATION="40"
+			TRACKING="Assets/Tracking/tracking-image4.xml"
+			TILEW="480"
+			TILEH="256" >
+		</IMAGE>
+	</IMAGES>
+</IMAGELISTDATA>

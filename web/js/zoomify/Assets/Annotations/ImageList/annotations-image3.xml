@@ -1,0 +1,70 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="0" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="0"
+		COMMENTVISIBILITY="1" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Whole Image" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Triangle Label 1" 
+				MEDIATYPE="icon"
+				MEDIA="triangle" 
+				X="1600" 
+				Y="1300" 
+				ZOOM="80"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Triangle Label 1" 
+				COMMENT="This is an example comment for image 3."
+				TOOLTIP="Triangle label 1 tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="0000FF" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Triangle Label 2" 
+				MEDIATYPE="icon"
+				MEDIA="triangle" 
+				X="2100" 
+				Y="1300" 
+				ZOOM="80"
+				ROTATION="45"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Triangle Label 2" 
+				COMMENT="Another example comment for image 3."
+				TOOLTIP="Triangle label 2 tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="0000FF" >
+			</LABEL>
+			<LABEL 
+				ID="3" 
+				NAME="Triangle Label 3" 
+				MEDIATYPE="icon"
+				MEDIA="triangle"
+				X="2600" 
+				Y="1300" 
+				ZOOM="80"
+				CLICKURL="http://www.zoomify.com" 
+				URLTARGET="_self"
+				CAPTION="Triangle Label 3" 
+				COMMENT="A third example comment for image 3."
+				TOOLTIP="Triangle label 3 tooltip"
+				TEXTCOLOR="FF0000" 
+				LINECOLOR="0000FF" >
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

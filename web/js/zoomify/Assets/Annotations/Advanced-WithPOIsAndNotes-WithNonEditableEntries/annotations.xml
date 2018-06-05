@@ -1,0 +1,96 @@
+<ZAS>
+	<SETUP 
+		PANELPOSITION="2"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.20" 
+		MAXSCALE="2" 
+		POIVISIBILITY="1" 
+		LABELVISIBILITY="1" 
+		NOTEVISIBILITY="1"
+		COMMENTVISIBILITY="0" >
+	</SETUP>
+	<POI 
+		ID="0" 
+		NAME="Editable POI" 
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<NOTES>
+			<NOTE 
+				ID="0" 				
+				NAME="Non-Editable Note" 
+				EDITABLE="0"
+				TEXT="This note CANNOT be edited." >
+			</NOTE>
+			<NOTE 
+				ID="1" 
+				NAME="Editable Note" 
+				TEXT="This note CAN be edited." >
+			</NOTE>
+		</NOTES>	
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Non-Editable Label" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				EDITABLE="0"
+				X="1000" 
+				Y="1000" 
+				ZOOM="100"
+				RADIUS="300"
+				CAPTION="This label CANNOT%0D%0Abe edited" 
+				COMMENT="This is an example of a label that is NOT editable even in edit mode."
+				TOOLTIP="This label is NOT editable."
+				LINECOLOR="ff0000" >
+			</LABEL>
+			<LABEL 
+				ID="1" 
+				NAME="Editable Label" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				EDITABLE="1"
+				X="2000" 
+				Y="1000" 
+				ZOOM="100"
+				RADIUS="300"
+				CAPTION="This label CAN%0D%0Abe edited" 
+				COMMENT="This is an example of a that is editable in edit mode. This is the default behavior."
+				TOOLTIP="This label IS editable."
+				LINECOLOR="00ffff" >
+			</LABEL>
+		</LABELS>
+	</POI>
+	<POI 
+		ID="1" 
+		NAME="Non-Editable POI" 
+		EDITABLE="0"
+		X="center" 
+		Y="center" 
+		ZOOM="-1" >
+		<NOTES>
+			<NOTE 
+				ID="0" 				
+				NAME="Editable Note In Non-Editable POI"
+				TEXT="This is an example of a note that is not editable even in edit mode because its POI cannot be edited." >
+			</NOTE>
+		</NOTES>	
+		<LABELS>
+			<LABEL 
+				ID="0" 
+				NAME="Editable Label In Non-Editable POI" 
+				MEDIATYPE="icon"
+				MEDIA="circle" 
+				EDITABLE="1"
+				X="1500" 
+				Y="2000" 
+				ZOOM="100"
+				RADIUS="300"
+				CAPTION="This label CANNOT%0D%0Abe edited%0D%0Abecause its POI cannot be edited" 
+				COMMENT="This is an example of a label that is not editable even in edit mode because its POI cannot be edited."
+				TOOLTIP="This label is not editable because of its POI."
+				LINECOLOR="ff0000" >
+			</LABEL>
+		</LABELS>
+	</POI>
+</ZAS>

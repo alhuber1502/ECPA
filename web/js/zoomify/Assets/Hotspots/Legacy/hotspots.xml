@@ -1,0 +1,123 @@
+<HOTSPOTDATA>
+	<HOTSPOTSETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		LISTTITLE="Hotspots"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</HOTSPOTSETUP>
+	<HOTSPOT 
+		ID="1"
+		NAME="Simple Caption Hotspot"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromJPG.jpg"
+		X="225"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Simple Caption"
+		TOOLTIP="This is a simple tooltip." >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		NAME="Transparent PNG Hotspot"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="525"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.viewthewall.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Transparent PNG Hotspot"
+		TOOLTIP="This hotspot's graphic includes transparent areas." >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		NAME="Hotspot Without Caption"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="825"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION=""
+		TOOLTIP="This hotspot has no caption." >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		NAME="Hotspot Visible On Rollover"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="1125"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="1"
+		CAPTION="Rollover Hotspot"
+		TOOLTIP="This hotspot is revealed on mouse-over." >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		NAME="Hotspot Without Graphic"
+		MEDIATYPE="url"
+		MEDIA=""
+		X="1125"
+		Y="1500"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Hotspot Without Graphic (roll mouse over ruby above!)"
+		TOOLTIP="This hotspot has no graphic." >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="6"
+		NAME="Hotspot Without Click Link"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromPNG.png"
+		X="1425"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="Hotspot Without Click Link Or Tooltip"
+		TOOLTIP="" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="7"
+		NAME="Reused External Icon"
+		MEDIATYPE="url"
+		MEDIA="Assets/Hotspots/Hotspots1/hotspotFromJPG.jpg"
+		X="1725"
+		Y="1375"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.adobe.com"
+		URLTARGET="_self"
+		ROLLOVER="0"
+		CAPTION="Reusing External Icons is OK"
+		TOOLTIP="This hotspot automatically clones the JPG graphic file." >
+	</HOTSPOT>
+</HOTSPOTDATA>
+

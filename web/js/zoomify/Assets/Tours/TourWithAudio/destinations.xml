@@ -1,0 +1,74 @@
+<HOTSPOTDATA>	
+	<SETUP 
+		AUTOSTART="1" 
+		AUTOLOOP="1"
+		CHOICELIST="2" 
+		LISTSOURCE="NAME"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		AUDIO="Assets/Tours/TourWithAudio/imageOverview.mp3"
+		X="1040"
+		Y="1560"
+		ZOOM="-1"
+		NAME="Destination One: Image Overview"
+		SHOWFOR="2000"
+		TRANSITION="ZoomAndPanToView"
+		CHANGEFOR="500" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		AUDIO="Assets/Tours/TourWithAudio/redRuby.mp3"
+		X="1125"
+		Y="1375"
+		ZOOM="100"
+		NAME="Destination Two: Red Ruby"
+		SHOWFOR="2000"
+		TRANSITION="ZoomAndPanToView"
+		CHANGEFOR="500"
+		ROTATION="90" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="3"
+		MEDIATYPE="url"
+		MEDIA="Assets/Tours/TourWithAudio/ZoomifyLogo.png"
+		AUDIO="Assets/Tours/TourWithAudio/leftEye.mp3"
+		X="500"
+		Y="1600"
+		ZOOM="70" 
+		CLICKURL="http://www.zoomify.com"
+		URLTARGET="_blank"
+		NAME="Destination Three: Left Eye"
+		TOOLTIP="" 
+		SHOWFOR="2000"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500" >
+			<CAPTION><font color="#FFFFFF">Tour Destination Three: Left Eye</font><br/><font color="#6699FF"><i>Tour destinations can have no visible<br/>features or any hotspot feature.</i></font></CAPTION>
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="4"
+		AUDIO="Assets/Tours/TourWithAudio/rightEye.mp3"
+		X="1325"
+		Y="1875"
+		ZOOM="70" 
+		NAME="Destination Four: Right Eye"
+		SHOWFOR="2000"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="5"
+		AUDIO="Assets/Tours/TourWithAudio/maskFace.mp3"
+		X="1040"
+		Y="1660"
+		ZOOM="30" 
+		NAME="Destination Five: Mask Face"
+		SHOWFOR="2000"
+		TRANSITION="ZoomAndPanToView" 
+		CHANGEFOR="500">
+	</HOTSPOT>
+</HOTSPOTDATA>
+

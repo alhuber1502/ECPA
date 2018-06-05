@@ -1,0 +1,675 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext,greek,greek-ext);
+
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans",sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/*:target:not(#text a:target):before {*/
+:target:before {
+  content:"";
+  display:block;
+  height:50px; /* fixed header height*/
+  margin:-50px 0 0; /* negative fixed header height */
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  min-height: 0px;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -40px 0;
+  /* Pad bottom by footer height */
+  padding: 40px 0;
+}
+
+#wrap > section {
+  height: 100%;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-width: 1080px;
+  height: 40px;
+  max-height: 40px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+#footer > .container {
+  padding-top: 10px;
+}
+#footer > .container p, #footer > .container nav {
+  padding-top: 10px;
+  display: inline;
+}
+
+.container {
+  height:inherit;
+/*  display: table; */
+  width:100%;
+  margin:0;
+}
+
+.row > div {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 100%;
+/*  display: table-cell; */
+}
+
+#works section .row > div.col-xs-3 ,
+#works section .row > div.col-xs-6 ,
+#works section .row > div.col-xs-9 {
+  border:1px solid #eee;
+}
+
+#authors section .row > div.col-xs-8,
+#works section .row > div.col-xs-8 {
+  border:1px solid #eee;
+}
+
+.tab-content > .tab-pane {
+  position: absolute;
+  left: 15px;
+  top: 43px;
+  bottom: 5px;
+  right: 5px;
+  padding-right:10px;
+}
+
+@media print {
+  .tab-content > .tab-pane {
+    overflow: visible;
+  }
+  #myXMLContainer {
+    height: auto !important;
+    max-height:	none !important;
+    overflow: visible !important;
+  }
+  #footer {
+    display: none;
+  }
+}
+
+@media screen {
+  .tab-content > .tab-pane {
+    overflow: auto;
+  }
+}
+
+#myImageControls {
+  height: 40px;
+  max-height: 40px;
+  border:1px; 
+  border-style:solid;
+  border-color:#ddd;
+  overflow:hidden;
+  text-align: center;
+}
+
+#myImageContainer {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: 100%;
+  overflow:hidden;
+  margin-top: -1px;
+  padding-bottom: 40px;
+}
+
+#myImage, #myImagePortrait {
+  max-height: 100%;
+  border:1px; 
+  border-style:solid;
+  border-color:#ddd;
+  overflow:hidden;
+}
+
+#myImageControls #image-pagination {
+  margin: 4px auto;
+  padding: 0;
+  display: inline-block;
+}
+
+.pagination > li.first > a,
+.pagination > li.last > a {
+    padding: 5px 13px;
+}
+.pagination > li.prev > a,
+.pagination > li.next > a {
+    padding: 5px 14px;
+}
+.pagination > li.page > a {
+    width: 35px;
+    padding: 5px 0;
+}
+#saveViewLocal, #showView {
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.navbar, .navbar > .container {
+    min-height: 40px;
+    height: 40px;
+}
+
+.navbar-header {
+    padding-right:15px;
+}
+.navbar-toggle {
+    margin-top: 4px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+.navbar-nav {
+    margin: 0px -15px 7.5px -5px;
+}
+.navbar-nav>li {
+    padding-left:3.5px;
+}
+
+.navbar-brand > img {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.navbar-brand {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 18px;
+}
+
+.navbar-inverse .navbar-brand {
+/*    color: #999999;*/
+      color: #fff;
+}
+
+.nav-tabs > li {
+    margin-bottom:-2px;
+}
+.nav-tabs {
+    overflow: auto;
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    max-height: 43px;
+}
+
+a.link_ref:not([href^="#"]):not([href^="/"]),a:not(.img).external {
+    background: url(/images/extlink.png) right center no-repeat; 
+    padding-right: .85em;
+}
+
+.navbar .nav > li > a {
+    padding: 9px 13px; /* don't change */
+}
+.nav > li.active > a, .nav > li.ui-state-active > a {
+    background-color: #f5f5f5;
+}
+
+.nav-stacked li, .gallery-nav li {
+    list-style-type: none;
+}
+.nav-stacked, .gallery-nav {
+    padding-top:15px;
+}
+.nav-stacked li a, .gallery-nav li a {
+    padding: 3px 0 3px 5px;
+}
+.nav-stacked ul {
+    padding-left:20px;
+}
+
+.footer-links {
+    margin: 0;
+    list-style-type: none;
+    display: inline !important;
+    padding: 8px;
+}
+.footer-links li {
+    line-height: 20px;
+    display: inline !important;
+}
+.footer-links li + li:before {
+    content: " | ";
+}
+.addthis_sharing_toolbox {
+    display: inline-block !important;
+}
+.addthis_sharing_toolbox div a {
+    vertical-align: middle;
+}
+
+div.logos {
+	margin-top: 30px;
+	text-align: center;
+}
+div.logos span {
+	vertical-align: middle;
+	padding: 0 50px 0 0;
+}
+
+#main h1, h2, h3, h4, h5, h6 { 
+    margin: 15px 0 6px 0;
+    font-weight: normal;
+}
+
+#main h1 {
+    font-size: 1.6em;
+    line-height: 1.4em;
+}
+
+#main h2 {
+    font-size: 1.4em;
+    line-height: 1.2em;
+}
+
+#main h3 {
+    font-size: 1.2em;
+    line-height: 1.1em;
+}
+
+#main h4 {
+    font-size: 1.1em;
+    line-height: 1em;
+}
+
+#main h5 {
+    font-size: 1em;
+}
+
+#main h6 {
+    font-size: 1em;
+}
+
+#main h1.deco:first-letter {
+    font-size: 1.6em;
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-weight: normal;
+}
+
+#myXMLControls {
+  height: 40px;
+  max-height: 40px;
+  border:1px; 
+  border-style:solid;
+  border-color:#ddd;
+  overflow:hidden;
+  text-align: center;
+}
+
+#myXMLControls button {
+  margin: 4px 20px;
+}
+
+#myXMLContainer {
+  height: 100%;
+  max-height: 100%;
+  overflow:hidden;
+  padding-bottom: 40px;
+  margin-top: -1px;
+}
+
+#myXMLContainer form {
+  height: inherit;
+}
+
+#myXML {
+  max-height: 100%;
+  border: 1px; 
+  border-style:solid;
+  border-color:#ddd;
+}
+
+.CodeMirror {
+  height: 100% !important;
+  font-size: 12px;
+}
+.CodeMirror-overlayscroll-horizontal div, .CodeMirror-overlayscroll-vertical div {
+    background: #ddd;
+}
+.CodeMirror-overlayscroll-vertical div {
+    min-height: 20px;
+}
+
+ul.downloads {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    list-style-type: none;
+    margin: 0 0 10px 0; 
+    padding: 0;
+}
+
+.inline { display: inline }
+.inline-block { display: inline-block }
+
+.popover {
+    opacity: 0.8;
+    font-family: "Open Sans";
+    min-width: 300px;
+    max-width: 500px;
+}
+.popover-content {
+    max-height:400px;
+    overflow-y:auto;
+}
+.popover.fade {
+    min-width: 500px;
+}
+.popover.fade .popover-content {
+    font-size: 12px;
+}
+
+#poeticform ul {
+    list-style-type: none;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+#poeticform ul li span {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 5px;
+    text-align: right;
+    width: 0;
+}
+#poeticform table {
+    width: 100%;
+}
+#poeticform table td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.panel-title {
+    font-size:18px !important;
+}
+.panel-body h2 {
+    font-size:16px !important;
+}
+
+.panel-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+div.panel-heading a:hover {
+    text-decoration: none;
+}
+
+.cs_query .glyphicon {
+    display: inline;
+}
+
+#names h1, #dates h1, #gender h1,
+#titles h1, #lines h1, #themes h1, #genres h1, #edns h1
+{
+    font-size: 20px;
+}
+#names h2, #dates h2, #gender h2,
+#titles h2, #lines h2, #themes h2, #genres h2, #edns h2 
+{
+    font-size: 16px;
+    margin-left: 10px;
+}
+#themes h3, #genres h3 
+{
+    font-size: 14px;
+    margin-left: -10px;
+    margin-top: 10px;
+    line-height: .5em;
+}
+#names li, #dates li, #gender li,
+#titles li, #lines li, #themes li, #genres li, #edns li 
+{
+    list-style-type: none;
+}
+#names-done > ul, #dates-done > ul, #gender-done > ul,
+#titles-done > ul, #lines-done > ul, #themes-done > ul, #genres-done > ul, #editions-done > ul
+{
+    padding-left: 0px !important;
+}
+#names ul, #dates ul, #gender ul,
+#titles ul, #lines ul, #themes ul, #genres ul, #edns ul
+{
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+#editions-done .listBibl {
+    margin-left: 0px;
+}
+.listBibl {
+    margin-left: -20px;
+}
+.listBibl li {
+    text-indent: -20px;
+    margin: 0 0 2px 20px;
+    list-style-type: none;
+}
+.bibliography li {
+    list-style-type: none;    
+}
+.event {
+    padding-left: 20px;
+}
+
+.modal-body .btn-group,
+.modal-body .input-group {
+    padding-bottom: 10px;
+}
+.modal-body textarea {
+    width: 100%;
+    padding-bottom: 10px;
+}
+.modal-body #newNoteForm h5:first-of-type,.modal-body h3:first-of-type {
+    margin-top: 5px;
+}
+.modal-body h2 {
+    font-size: 18px;
+}
+.modal-body h3 {
+    font-size: 16px;
+}
+.modal-body h4 {
+    font-size: 15px;
+}
+
+.w, .pc, .l, #citation, .browse {
+    cursor:pointer;
+}
+
+.navbar-nav > li,
+.navbar-nav > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu li
+{
+    background-color:#000;
+}
+.dropdown-menu > li > a {
+    color:#fff;
+}
+.dropdown-header {
+    color:#9d9d9d;
+}
+.gallery {
+/*    position:fixed;*/
+}
+#myImagePortrait img {
+    max-width:100%;
+    max-height:100%;
+    display: block;
+    margin: 0 auto;
+}
+#myImageControls p {
+    padding-top:10px;
+}
+
+.gallery-nav {
+    padding-left:20px;
+    margin-top:0;
+    overflow-y:hidden;
+    padding-top:20px;
+}
+
+.gallery-nav > li.active > a {
+    background-color: #f5f5f5;
+}
+
+.sup {font-size:75%; line-height:0; position:relative; vertical-align:baseline; top:-0.5em}
+
+a.image  { text-decoration: none !important; color: #333; }
+
+/* hide parts and modify appearance of the featured author/work */
+#home #bib, #home #portrait, .col-xs-4 #portrait {
+    display:none;
+}
+#home #portrait img {
+    width:300px;
+}
+#home h1:not(:nth-child(2)) {
+    font-size:2em;
+    line-height:1.8em;
+}
+#home #featuredwork img {
+    width:100%;
+    box-shadow:-10px 10px 10px #bbbbbb;
+}
+#home #featuredwork {
+    padding:10px 40px 10px 40px;
+    text-align: center;
+}
+#home #featuredwork figcaption {
+    font-size: small;
+    margin-top:20px;
+}
+#home h2.ecep-home-box {
+    font-size: 1.6em;
+    line-height: 1.4em;
+}
+#home #featured h1, #authors .col-xs-4 .tab-pane h1, #works .col-xs-4 .tab-pane h1 {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    margin-top:20px;
+}
+#home #featured h2:not(.ecep-home-box), 
+#authors .col-xs-4 h2 {
+    font-size: 1.2em;
+    line-height: 1em;
+}
+#main .col-xs-4 h3 {
+    font-size: 1.1em;
+    line-height: 1em;
+}
+#home #featured #portrait {
+    margin-top:-25px;
+}
+#home #featured {
+    padding-bottom:20px;
+}
+
+/* Bootstrap Tour */
+.tour-backdrop {
+    opacity:.3;
+}
+.popover[class*=tour-] {
+    padding: 0;
+}
+.popover[class*=tour-] .popover-title {
+    background: #000;
+    color: #fff;
+}
+
+span.collapse,span.collapsing {
+    display: none !important;
+}
+span.collapse,span.collapsing,span.collapse.in {
+    transition: none;
+}
+span.collapse.in {
+    display: block !important;
+    border-top: 1px dotted #333;
+    border-bottom: 1px dotted #333;
+    background-color: white;
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+    text-align: left;
+    padding: 2px;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+#text.edn_para [id*=body] .pagebreak,
+#text.edn_para [id*=body] .pb {
+    display:none !important;
+}
+#text.edn_para h1 {
+    text-align:inherit;
+    font-size:20px;
+    line-height:26px;
+}
+#text.edn_para .pagebreak, #text.edn_para .byline, #text.edn_para .figure, #text.edn_para .titlepage, #text.edn_para .tableofcontents, #text.edn_para .dramatispersonae, #text.edn_para .halftitle, #text.edn_para .half-title, #text.edn_para .introduction, #text.edn_para .dedication, #text.edn_para .preface {
+    display:block !important;
+}
+#text.edn_para .epigraph {
+    width:70%;
+}
+#text.edn_para .dedication header {
+    text-align:center;
+}
+.floatingText .notes {
+    display:none;
+}
+
+/* Adapted from https://codepen.io/delagics/pen/PWxjMN */
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    touch-action: none;
+    width: 30px;
+    right: -15px;
+}
+.ui-resizable-handle:after {
+/*
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ddd;
+    box-shadow: 0 10px 0 #ddd, 0 20px 0 #ddd;
+*/
+}
+.ui-resizable-e {
+    cursor: col-resize;
+    width: 12px;
+    right: -7px;
+    top: 0;
+    height: 100%;
+}

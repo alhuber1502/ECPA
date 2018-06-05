@@ -1,0 +1,32 @@
+# Build settings
+
+source: .
+destination: ./_site
+markdown: kramdown
+# don't change the following; coderay will break the embedded
+# annotations.
+kramdown:
+  enable_coderay: false
+permalinks: pretty
+# safe: true
+markdown_ext: md
+
+##############################################################################
+
+# Site settings
+
+name: Annodoc
+baseurl: "/annodoc"
+homeurl: "https://github.com/spyysalo/annodoc/"
+editurl: "https://github.com/spyysalo/annodoc/edit/gh-pages"
+issueurl: "https://github.com/spyysalo/annodoc/issues"
+
+##############################################################################
+
+# Collection settings
+
+collections:
+  entity:
+    output: true
+  relation:
+    output: true

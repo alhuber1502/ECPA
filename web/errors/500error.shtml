@@ -1,0 +1,49 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Not found" -->
+<!--#set var="bodyid" value="error"  -->
+<!--#set var="youarehere" value="<li>Not found</li>" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    
+    <!-- start of website -->
+    
+    <div class="row">
+      
+      <div class="col-xs-12">
+	
+	<h1>Sorry, something went wrong</h1>
+	<p>Here are some helpful links instead:</p>
+	<ul class="bibliography">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/about/">About</a></li>
+	  <li><a href="/authors/">Authors</a></li>
+	  <li><a href="/works/">Works</a></li>
+	  <li><a href="/resources/">Resources</a></li>
+	  <li><a href="/help/">Help</a></li>
+	  <li><a href="/about/#contact">Contact</a></li>
+	</ul>
+      
+      </div>
+      
+    </div><!-- end of row -->
+    
+    <!-- end of website -->
+    
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+<script type="text/javascript">
+  var citation = "";
+  citation += "Huber, Alexander, ed. ";
+  var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" -->';
+  citation += '<!--#echo var="ecep_full" -->. ';
+  citation +='<em><!--#echo var="ecep_full" --></em>, '+
+  '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+  '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+  
+</script>
+
+<!--#include virtual="/bottom.shtml" -->

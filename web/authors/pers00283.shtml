@@ -1,0 +1,61 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Catherine Gilpin" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Catherine Gilpin "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Catherine Gilpin</h1>
+            												(1738 - 
+            											1811)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <ul class="listBibl">
+                  <li><a title="view full-text" href="/works/bsb18-w0580.shtml"><em>THE CUMBERLAND SCOLD.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="bsb18" href="/works/bsb18.shtml#bsb18-w0580"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+                  <li><a title="view full-text" href="/works/bsb18-w0850.shtml"><em>THE VILLAGE CLUB.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="bsb18" href="/works/bsb18.shtml#bsb18-w0850"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="bsb18"><a title="view table of contents of source edition" href="/works/bsb18.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The Poetical Works of Miss Susanna Blamire “The muse of Cumberland.” Now for the first
+                           time collected by Henry Lonsdale, M.D. with a preface, memoir, and notes by Patrick
+                           Maxwell, ...</span> </em>  Edinburgh: John Menzies, 61 Princes Street; R. Tyas, London; D. Robertson, Glasgow; and C. Thurnam,
+                     Carlisle. MDCCCXLII., 1842. 
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <h3>Editions</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Gilpin, Sidney, ed. <span class="titlem">Songs and Poems by Miss Blamire, together with songs by her friend Miss Gilpin</span>. London: Geo. Routledge and sons; <span class="hi">et al.</span>, 1866. Web. 13 Nov. 2017.  <a class="external" target="_blank" href="https://babel.hathitrust.org/cgi/pt?id=uc1.31970001998878;view=1up;seq=11"><span>https://babel.hathitrust.org/cgi/pt?id=uc1.31970001998878;view=1up;seq=11</span></a></div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Catherine Gilpin\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

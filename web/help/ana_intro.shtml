@@ -1,0 +1,86 @@
+
+<h2 id="analysisview">Analysis view</h2>
+<p>
+The <em>Analysis</em> tab comprises results from a number of computationally-assisted
+analytical processes on five core linguistic levels.  These analytical
+layers can be studied individually (hence their containers are
+collapsible and sortable), when focusing on a particular aspect, for
+example the relation between verse line and syntax.  However they
+should be considered as connected and interrelated when studying the
+poem as a whole, as each layer interacts with the others at any given
+point as well as over time.  They require the reader to pay attention
+to them simultaneously, and to take into account literary as well as
+sociological features while doing so.
+</p>
+
+<p>
+The analysis results thus represent a means of assisting the reader in
+the task of analysing a poem on a number of interrelated levels. 
+We understand computer-assisted reading as enabling us to realize the full
+scope of phenomena on phonological, morphological, syntactic, semantic, and pragmatic
+levels that can be expressed and analysed algorithmically.  The key task of
+fine-tuning the contextual data around every word in a text, i.e. assuming
+unique significance of every occurrence and its relations to other words, is
+at the heart of creating the inventory of analytical results.  Any of these
+findings, once verified, are potentially useful, but it is through selection
+based on relevance and weighting in the context of an individual poem that
+this potential is fully realized and new insights can be won.
+</p>
+
+<img src="/images/screenshots/analysis1.png"
+     alt="[screenshot showing analysis options]"
+     style="width:500px; margin:15px; float:right;"/>
+
+<p>
+The verse line serves as the basic reference point for all analytical
+results.  Visually as well as rhythmically accentuated, it provides an
+accessible level of granularity between smaller units such as
+phonemes, morphemes, and lexemes, and bigger building blocks, such as
+sentences, stanzas, and ultimately the text as a whole.  When hovering
+over any line the analytical results for that line are dynamically
+updated on the right.  In addition, an integrated view of all
+analytical layers is displayed when hovering over any word/token
+(identical words/tokens and lemmas are also highlighted throughout the
+poem).
+</p>
+
+<p>
+As any computationally-assisted analysis of poetic texts that transcends basic
+quantitative levels is notoriously complex, frequently ambiguous and always
+error-prone, a word of caution must preface any such undertaking.  Despite our
+best efforts to present useful and interesting results and highlight potential
+avenues for further investigation, we are aware of the pitfalls and many
+potential sources of errors, which we will continue to address as ECPA
+evolves and matures.  The main issue of the use of natural language
+processing (NLP) on language that is both poetic and historically distant can
+only be addressed through ongoing work to improve domain appropriation, the
+training of tools on historical corpora, and the contribution of human
+knowlegde in the form of textual notes, glosses, corrections and queries,
+interpretations, and models.
+</p>
+
+<p>
+The long-term aim of this applied computational criticism is to make
+it possible, analytically, to "zoom" into a single phoneme, morpheme,
+lexeme and to seamlessly "zoom" out to the word, the line, the stanza,
+the whole poem, or even a cluster of poems, thus supplementing the
+current focus on close reading of individual texts with an analysis of
+the historical and cultural functions of poetic form on a larger
+scale. At the functional level, it should be possible to enhance the
+the website with new tools and let them operate on the underlying
+texts.  Analysis thus becomes an act not separate from, but integrated
+with the act of reading.  The integration of tools with the corpus,
+rather than as a separate entity, modifies the texts to "research
+objects".
+</p>
+
+<!--
+<p>
+ECPA uses the open-standard format JSON to record analysis
+results and interchange data between tools.  This ensures that data can be
+captured, stored, and represented platform-, device- and tool-independently.
+It also allows for a swift transition when tools are superseded or become
+obsolete.  Ultimately, we envision a well defined service-based infrastructure
+for all analytical processes.
+</p>
+//-->

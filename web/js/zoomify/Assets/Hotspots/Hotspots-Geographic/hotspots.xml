@@ -1,0 +1,41 @@
+<HOTSPOTDATA>
+	<SETUP 
+		CHOICELIST="2" 
+		LISTSOURCE="CAPTION"
+		INITIALVISIBILITY="1" 
+		MINSCALE="0.25"
+		MAXSCALE="2" >
+	</SETUP>
+	<HOTSPOT 
+		ID="1"
+		MEDIATYPE="icon"
+		MEDIA="Assets/Hotspots/Hotspots-Geographic/evacuation.png"
+		X="200"
+		Y="750"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL="http://www.fs.fed.us"
+		URLTARGET="_blank"
+		ROLLOVER="0"
+		CAPTION="Evacuation Area"
+		TOOLTIP="Hotspots are supported with Geo Coordinates" >
+	</HOTSPOT>
+	<HOTSPOT 
+		ID="2"
+		MEDIATYPE="icon"
+		MEDIA="arrowDownRight"
+		X="790"
+		Y="527"
+		ZOOM="100" 
+		XSCALE="100"
+		YSCALE="100"
+		CLICKURL=""
+		URLTARGET=""
+		ROLLOVER="0"
+		CAPTION="This caption entry is overridden in the HTML below."
+		TOOLTIP="The color of this caption is set with HTML" >
+			<CAPTION><font size="2" color="red"><strong><i>Primary Path Of Fire</i></strong></font></CAPTION>
+	</HOTSPOT>
+</HOTSPOTDATA>
+
