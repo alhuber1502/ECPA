@@ -508,6 +508,21 @@ $(document.body).on('mouseenter mouseleave', 'table.morphological tbody tr[id]',
 	$(jq( $(this).attr("id") )).toggleClass("idsSelected");
 	$(jq( $(this).attr("id").substring(0,$(this).attr("id").length - 5) )).toggleClass("idsSelected");
 });
+$(document.body).on('mouseenter', '.freq a', function () {
+    var d = this;
+    $.each(o, function(index) {
+	if (o[index].spe && o[index].spe.toLowerCase() == $(d).text()) {
+	    $( jq( index ) ).css({"background-color":"#88bcdf","color":"#fff"});
+	}
+    });
+}).on('mouseleave', '.freq a', function () {
+    var d = this;
+    $.each(o, function(index) {
+	if (o[index].spe && o[index].spe.toLowerCase() == $(d).text()) {
+	    $( jq( index ) ).css({"background-color":"","color":""});
+	}
+    });
+});
 
 
 // morphological analysis
@@ -1005,7 +1020,7 @@ $(document.body).on('mousedown', '.phonological,.morphological,.syntactic,.seman
 	$("#"+$(this).attr("aria-controls")).collapse('show');
     });
 
-
+var wtokensno = 0, wtokens = [];
 // phonological layer
 function ana_phonological (lineID) {
 
@@ -1093,10 +1108,9 @@ function ana_phonological (lineID) {
 
 // Phonemic display button
     if ( !$("#phonemic")[0]) {
-	var wtokens = 0;
-	$.each(o, function(index) { if (o[ index ].class == "w") { wtokens++; } });
+	$.each(o, function(index) { if (o[ index ].class == "w") { wtokensno++; } });
 	$( "#pho-static" )
-            .append( "<p id='phonemic'>This text has "+wtokens+" word token"+(wtokens > 1 ? "s" : "")+". <button id='phonemicdisplay' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Phonemic display <span>on</span></button></p> ");
+            .append( "<p id='phonemic'>This text has "+wtokensno+" word token"+(wtokensno > 1 ? "s" : "")+". <button id='phonemicdisplay' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Phonemic display <span>on</span></button></p> ");
     }
 
 }
@@ -1126,6 +1140,29 @@ function ana_morphological (lineID) {
 	$( "#mor-dynamic" ).append("<h2 class='rhetfigs'>Rhetorical figures</h2>");
 	$( "#mor-dynamic" ).append(RF_json(RFmorp));
     }
+
+    if ( !$("#morphemic")[0]) {
+	var morphtext;
+	$.each(o, function(index) { if (o[ index ].class == "w" && !_.contains(stopped, o[index].tok.toLowerCase())
+				       ) { wtokens.push( o[index].tok.toLowerCase() ) } });
+	morphtext = `<p id='morphemic'>This text has `+wtokensno+` word`+(wtokensno > 1 ? `s` : ``)+` and `+_.uniq(wtokens).length+` unique word forms. Its <b>vocabulary density</b> is `+(_.uniq(wtokens).length/wtokensno).toFixed(3)+`.</p><p>Most frequent words (excluding <a target="_blank" class="external" href="https://github.com/alhuber1502/ECPA/blob/master/web/data/stopwords.txt">stop words</a>): <ul class="figures freq">`;
+	var frqMap = {};
+	for (var x=0, len=wtokens.length; x<len; x++) {
+	    var hkey = wtokens[x];
+	    frqMap[hkey] = (frqMap[hkey] || 0) + 1;
+	}
+	var frqArr = [];
+	for (hkey in frqMap) frqArr.push({key: hkey, freq: frqMap[hkey]});
+	frqArr.sort(function(a,b){return b.freq - a.freq});
+	var newArr = frqArr.length;
+	for (var j = 0; j < newArr; j++) {
+	    morphtext += "<li style='display:inline;'><a style='word-break:no;'>"+frqArr[j].key+"</a>&nbsp;("+frqArr[j].freq+")</a>";
+	    if (j+1 < newArr && j < 50) { morphtext += ",</li> ";} else { morphtext += " ...</li>"; break; }
+	}
+	morphtext += "</ul>";	
+	$( "#mor-static" ).append( morphtext );
+    }
+    
 }
 
 
@@ -1171,7 +1208,7 @@ function ana_syntactic (lineID) {
 // Sentencing button
     if ( !$("#sentences")[0]) {
 	$( "#syn-static" )
-            .append( "<p id='sentences'>This text has "+Object.keys(s).length+" sentence"+(Object.keys(s).length > 1 ? "s" : "")+". <button id='sentencing' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Sentencing <span>on</span></button></p> ");
+            .append( "<p id='sentences'>This text has "+Object.keys(s).length+" sentence"+(Object.keys(s).length > 1 ? "s" : "")+". The average number of <b>words per sentence</b> is "+(wtokensno/Object.keys(s).length).toFixed(1)+". <button id='sentencing' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Sentencing <span>on</span></button></p> ");
     }
 }
 
@@ -1249,11 +1286,13 @@ $(document.body).on('mouseenter', '.visualize_ids', function () {
     var ids = $(this).attr('data-ids').split(',');
     $.each( ids , function( index, item ){
 	$( jq( item ) ).addClass("idsSelected");
+	$( "[data-id='"+item+"']" ).addClass("idsSelected");
     });
 }).on('mouseleave', '.visualize_ids', function () {
     var ids = $(this).attr('data-ids').split(',');
     $.each( ids , function( index, item ){
 	$( jq( item ) ).removeClass("idsSelected");
+	$( "[data-id='"+item+"']" ).removeClass("idsSelected");
     });
 });
 

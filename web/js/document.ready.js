@@ -1,6 +1,6 @@
 
 // Document ready
-$( document ).ready(function() {
+//$( document ).ready(function() {
 
     // dropdown navigation
     $('.dropdown').hover(function() {
@@ -173,7 +173,7 @@ $( document ).ready(function() {
     // default IC modal
     IC_modal();
 
-});
+//});
 
 
 // gallery navigation

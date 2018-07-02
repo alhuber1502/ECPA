@@ -70,6 +70,12 @@ if ($('#reading').length) {
 	success: function(data) { malt = data.split("\n\n"); }
     });
 
+    // load stopwords list
+    $.ajax({
+	url: "/data/stopwords.txt", dataType: 'text',
+	success: function(data) { stopped = data.split("\n"); }
+    });
+
 // Visualization
     // load phonemes (w) data
     $.ajax({
