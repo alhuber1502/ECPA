@@ -27,8 +27,7 @@
 	</nav>
 	<!--#config timefmt="%d %b %Y" -->
 	<p class="pull-right small"><em><!--#include
-	virtual='/data/version' --> (<!--#flastmod
-	virtual="/data/version" -->)</em></p>
+	virtual='/data/version' --> (<!--#flastmod virtual="/data/version" -->)</em></p>
       </div>
     </footer>
 
@@ -111,7 +110,6 @@
     <script src="/js/pagination/jquery.twbsPagination.min.js"></script>
 
     <!-- ECEP -->
-    <script src="/js/document.ready.js"></script>
     <script src="/js/ecep.functions.js"></script>
     <script src="/js/ana.functions.js"></script>
     <script src="/js/viz.functions.js"></script>
@@ -133,6 +131,8 @@
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509e8f8d233ff269"></script> 
 
+    <script src="/js/document.ready.js"></script>
+    
   <script src="/js/bootstrap-tour-0.11.0/build/js/bootstrap-tour.min.js"></script><script src="/js/tour-core.js"></script></body>
 
 </html>
