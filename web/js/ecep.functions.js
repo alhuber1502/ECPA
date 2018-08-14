@@ -355,7 +355,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	if ( viz_chosen == '' ) {
 	    $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
 	    $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
-	    $( '#visualization' ).load( '/works/viz_overview.shtml #viz_overview' );
+	    $.getScript('/js/viz_overview.js');
 	}
 
 	if (phonemic == true) {

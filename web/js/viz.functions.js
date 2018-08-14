@@ -2,7 +2,7 @@
 // Visualizations
 
 
-// "Leitklaenge"
+// "Phonemia" (LK)
 
 // Phonemes
 // Vowels
@@ -31,7 +31,11 @@ var cuv = ["ph26","ph28","ph30","ph33","ph34","ph36","ph38","ph40","ph42"];
 var sup = ["su01","su02","su03","su04","su05"];
 
 // CSS Styles
-var phon, stats;
+var phon = '', statsd = '', classes = '', scan = '', isProse = 0;
+if ( $("#text").children('p').length > 1 ||
+  ($("#text").find('p[class="p-in-sp"]')).length > 1 ) { // prose poems
+    isProse = 1;
+}
 phon='<style id="style_v_s">\n'; $.each(v_s,function(i,e) { phon += "."+e+"::before,"; });
 var $style_v_s = phon.substring(0,phon.length-1) + ' { background-color:#FA8072; }\n</style>';
 phon='<style id="style_v_l">\n'; $.each(v_l,function(i,e) { phon += "."+e+"::before,"; });
@@ -66,31 +70,75 @@ var $style_cvo = phon.substring(0,phon.length-1) + ' { background-color:#b5f9d3;
 phon='<style id="style_cuv">\n'; cuv = $.map(cuv, function(n){ return n; }); $.each(cuv,function(i,e) { phon += "."+e+"::before,"; });
 var $style_cuv = phon.substring(0,phon.length-1) + ' { background-color:#9ee7fa; }\n</style>';
 
+var $style_cl_noun = '<style id="style_cl_noun">\n.cl_noun { background-color:#fad8d8; }\n</style>';
+var $style_cl_pron = '<style id="style_cl_pron">\n.cl_pron { background-color:#ffe2d7; }\n</style>';
+var $style_cl_verb = '<style id="style_cl_verb">\n.cl_verb { background-color:#ddf9dd; }\n</style>';
+var $style_cl_adj = '<style id="style_cl_adj">\n.cl_adj { background-color:#bce7e5; }\n</style>';
+var $style_cl_adv = '<style id="style_cl_adv">\n.cl_adv { background-color:#e7edf5; }\n</style>';
+var $style_cl_other = '<style id="style_cl_other">\n.cl_other { background-color:#d8e3ff; }\n</style>';
+
+var $style_scans = '<style id="style_scans">\n.conf-high { background-color:#9d9 !important; }\n.conf-med { background-color:#ffdcb2 !important; }\n.conf-low { background-color:#fcc !important; }\n</style>';
+//var $style_scans = '<style id="style_scans">\n#lk_body .text table#lk_scan tr.scan.conf-high td { background-color:#9d9 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-med td { background-color:#ffdcb2 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-low td { background-color:#fcc !important; }\n</style>';
 
 // initialize visualizations
-var ecep, ecepsaved = 0, ecepidsaved, $clone = $(), viz_chosen='';
+var ecep, ecepsaved = 0, ecepidsaved, displaysaved, $clone = $(), viz_chosen = '';
 $(document.body).on('click', '.viz_choose', function () {
-    viz_chosen = $(this).attr( 'id' );
+	$( "#visualization" ).append( "<div id='spinner'><img src='/images/loader.gif'/></div>" );
+	var checkExist = setInterval(function() {
+	    if ($('#spinner').length) {
+		clearInterval(checkExist);		    
+	    }
+	}, 100);
+	var d = $(this);
+	_.defer( function() {
+	    init( d );
+	    $( "#spinner" ).remove();
+	});
+});
+function init(d) {
+    viz_chosen = $(d).attr( 'id' );
     $('.nav-tabs a[href="#text"]').tab('show');
     $( "div#text" ).scrollTop(0);
     ecep = $("#text").find('.ecep');
-    switch ( $(this).attr( 'id' ) ) {
-    case "LK_VIZ":                                             // "Leitklaenge"
+    switch ( $(d).attr( 'id' ) ) {
+    case "PHONEMIA_VIZ":                                             // "Phonemia"
 	if ( $(ecep).length ) {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
 		.find( "#"+$(ecep).eq(0).attr('id') ).nextUntil( "#"+$(ecep).eq(1).attr('id') );
 	} else {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
 		.children(".lg,.sp,#text > p");
 	    if ($clone.length == 0) { $clone = $( "#text > div" ).clone()
-				      .find( '[id*="_return"],[class*="note"],.pagebreak,.stage' ).remove().end()
-				      .children(".lg,.sp,#text > p"); }
+				      .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
+				      .children(".lg,.sp,p"); }
+	    if ($clone.length == 0) { $clone = $( "#text > div > div" ).clone()
+				      .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
+				      .children(".lg,.sp,p"); }
 	}
 	ecepsaved = 0;
 	ecepidsaved = '';
+	(totals = []).length = 16; totals.fill(0);
+	totalc = [], totalv = [], totala = [];
 	lk_clone();
+	
+	// default visualization
+	if ( $("#text").children('p').length > 1
+	     || ($("#text").find('p[class="p-in-sp"]')).length > 1
+	   ) { // prose poems
+	    displaysaved = "t+c";
+	    lk_wc();
+	    display_viz_lk( classes );
+	} else {	                             // lyric poems
+	    displaysaved = "t+d";
+	    lk_stats();
+	    display_viz_lk( statsd );
+	}
+	$.ajax({
+	    url: "/js/lk-zeus/"+docname+"-1-lk.txt.zeus", dataType: 'text',
+	    success: function(data) { zeus = data.split("\n"); }
+	});
 	break;
     case "POEMVIS_VIZ":                                        // PoemViewer
 	poemvis_load(1);
@@ -98,31 +146,113 @@ $(document.body).on('click', '.viz_choose', function () {
 	ecepidsaved = '';
 	break;
     }
-});
+}
 
 
 // LK viz home
 $(document.body).on('click', '.viz_home', function () {
     viz_chosen = '';
     $( "div#text" ).scrollTop(0);
-    $( '#visualization' ).load( '/works/viz_overview.shtml #viz_overview' );
-});
-
-
-// LK ecep selection
-$(document.body).on('change', '#selection', function () {
-    ecepsaved = parseInt( $(this).val(),10 );
-    ecepidsaved = $("#text").find('.ecep').eq(ecepsaved).attr("id");
-    $clone = $( "#text" ).clone()
-	.find( '[id*="_return"],[class*="note"],.pagebreak,.stage' ).remove().end()
-	.find( "#"+$(ecep).eq(ecepsaved).attr('id') ).nextUntil( "#"+$(ecep).eq(ecepsaved+1).attr('id') );
-    lk_clone();
+    statsd = '', classes = '', scan = '';
+    $.getScript('/js/viz_overview.js');
     $( "#style_vow,#style_v_s,#style_v_l,#style_v_d,#style_v_n,#style_v_f,#style_v_c,#style_v_b" ).remove();
     $( "#style_con,#style_c_n,#style_c_p,#style_c_a,#style_c_f,#style_c_x,#style_cvo,#style_cuv" ).remove();
+    $( "#style_cl_noun,#style_cl_pron,#style_cl_verb,#style_cl_adj,#style_cl_adv,#style_cl_other,#style_scans" ).remove();
+});
+
+// LK selection
+$(document.body).on('change', '#selection', function () {
+    var d = $(this);
+    $( "#visualization" ).append( "<div id='spinner'><img src='/images/loader.gif'/></div>" );
+    var checkExist = setInterval(function() {
+	if ($('#spinner').length) {
+	    clearInterval(checkExist);		    
+	}
+    }, 100);
+    _.defer( function() {
+        ecepsaved = parseInt( d.val(),10 );
+	ecepidsaved = $("#text").find('.ecep').eq(ecepsaved).attr("id");
+	displaysaved = $( 'select#display' ).val();
+	(totals = []).length = 16; totals.fill(0);
+	totalc = [], totalv = [], totala = [];
+	$.ajax({
+	    url: "/js/lk-zeus/"+docname+"-"+(ecepsaved+1)+"-lk.txt.zeus", dataType: 'text', async: false,
+	    success: function(data) { zeus = data.split("\n"); }
+	});
+	$clone = $( "#text" ).clone()
+	    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument' ).remove().end()
+	    .find( "#"+$(ecep).eq(ecepsaved).attr('id') ).nextUntil( "#"+$(ecep).eq(ecepsaved+1).attr('id') );
+	lk_clone();
+	switch ( $( 'select#display' ).val() ) {
+	case "t+d":
+	    lk_stats();
+	    display_viz_lk( statsd );
+	    break;
+	case "t+c":
+	    lk_wc();
+	    display_viz_lk( classes );
+	    break;
+	case "t+m":
+	    lk_scansion();
+	    display_viz_lk( scan );
+	    break;
+	}
+	$( "#style_vow,#style_v_s,#style_v_l,#style_v_d,#style_v_n,#style_v_f,#style_v_c,#style_v_b" ).remove();
+	$( "#style_con,#style_c_n,#style_c_p,#style_c_a,#style_c_f,#style_c_x,#style_cvo,#style_cuv" ).remove();
+	$( "#style_cl_noun,#style_cl_pron,#style_cl_verb,#style_cl_adj,#style_cl_adv,#style_cl_other,#style_scans" ).remove();
+	if (ecepidsaved) {
+	    $( "#text" ).animate({
+		    scrollTop: $( "#"+ecepidsaved ).offset().top - 100
+			}, 500);
+	}
+	$( "#spinner" ).remove();
+    });
+});
+
+// LK display
+$(document.body).on('change', '#display', function () {
+    var d = $(this);
+    $( "#visualization" ).append( "<div id='spinner'><img src='/images/loader.gif'/></div>" );
+    var checkExist = setInterval(function() {
+	if ($('#spinner').length) {
+	    clearInterval(checkExist);		    
+	}
+    }, 100);
+    _.defer( function() {
+	displaysaved = $( 'select#display' ).val();
+	(totals = []).length = 16; totals.fill(0);
+	totalc = [], totalv = [], totala = [];
+	lk_clone();
+	switch ( $( 'select#display' ).val() ) {
+	case "t+d":
+	    scan = '';
+	    classes = '';
+	    lk_stats();
+	    display_viz_lk( statsd );
+	    break;
+	case "t+c":
+	    statsd = '';
+	    scan = '';
+	    lk_wc();
+	    display_viz_lk( classes );
+	    break;
+	case "t+m":
+	    statsd = '';
+	    classes = '';
+	    lk_scansion();
+	    display_viz_lk( scan );
+	    break;
+	}
+	$( "#style_vow,#style_v_s,#style_v_l,#style_v_d,#style_v_n,#style_v_f,#style_v_c,#style_v_b" ).remove();
+	$( "#style_con,#style_c_n,#style_c_p,#style_c_a,#style_c_f,#style_c_x,#style_cvo,#style_cuv" ).remove();
+	$( "#style_cl_noun,#style_cl_pron,#style_cl_verb,#style_cl_adj,#style_cl_adv,#style_cl_other,#style_scans" ).remove();
+	$( "#spinner" ).remove();
+    });
 });
 
 // LK display phonemes
 function lk_clone() {
+    // phonemic transcription
     $clone.find( ".w" ).each( function(index,element) {
 	if (p[ $(element).attr("id") ]) {
 	    var phon = "<span class='w' data-id='"+$(element).attr("id")+"'>";
@@ -133,14 +263,265 @@ function lk_clone() {
 	    $clone.find( jq ($(element).attr("id")) ).replaceWith( phon );
 	}
     });
-    lk_stats();
-    display_viz_lk();    
+}
+
+// LK generate word classes
+function lk_wc() {
+    // create overview
+    classes = `<table style="width:100%; table-layout:fixed;" id="lk_wc"><tr><th style="width:50%; margin-right:30px; text-align:left;" class="panel-title">Phonemic transcription</th><th style="text-align:left" class="panel-title">Major word classes</th></tr>`;
+    if ( $(ecep).length ) { // multiple parts
+	$clone.each( function(i,e) { // paratexts
+	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+		    classes += `<tr>`;
+		    classes += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+		    classes += `</tr>`;
+	    } else { // text
+		$(e).children().each( function(i,e) {
+                    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+			$(e).children().each( function(i,e) {
+			    classes += `<tr>`;
+			    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
+			    classes += `</tr>`;
+			});
+		    } else {
+			classes += `<tr>`;
+			classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_wordclass( $(e) ):'</td>');
+			classes += `</tr>`;
+		    }
+		});
+	    }
+	});
+    } else {                // single part
+	if ( $("#text").children('p').length > 1
+	     && !($("#text").find('p[class="p-in-sp"]').length > 1)
+	   ) { // prose poems
+	    $clone.each( function(i,e) {
+		classes += `<tr>`;
+		classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="P")?`</td>`+lk_wordclass( $(e) ):'</td>');
+		classes += `</tr>`;
+	    });
+	} else { // lyric poems and prose speech
+	    $clone.children().each( function(i,e) {
+		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+		    $(e).children().each( function(i,e) {
+			classes += `<tr>`;
+			classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
+			classes += `</tr>`;
+		    });
+		} else {
+		    classes += `<tr>`;
+		    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).prop("nodeName")=="P")?`</td>`+lk_wordclass( $(e) ):'</td>');
+		    classes += `</tr>`;
+		}
+	    });
+	}
+    }
+    classes += '</table>';
+}
+
+// LK word class line
+function lk_wordclass (line) {
+    var result = '', i = 0;
+    $( line ).find( ".w" ).each( function(index,element) {
+	if (o[ $(element).attr("data-id") ]) {
+	    var posA = (o[$(element).attr("data-id")].pos).split('|'), posSm = '';
+	    $.each(posA, function(index, value) {
+		var cl = '';
+		if ( nupos[value].mwc == "noun" ) { cl = 'noun'; }
+		else if  ( nupos[value].mwc == "pron" ) { cl = 'pron'; }
+		else if  ( nupos[value].mwc == "verb" ) { cl = 'verb'; }
+		else if  ( nupos[value].mwc == "adj" ) { cl = 'adj'; }
+		else if  ( nupos[value].mwc == "adv" ) { cl = 'adv'; }
+		else { cl = 'other'; }
+		posSm += "<span data-id='"+$(element).attr("data-id")+"-wc' class='cl_"+ cl +"'>" + nupos[value].mwc + "</span>"+"|";
+	    });
+	    posSm = posSm.substring(0, posSm.length-1);
+	    result += posSm + " ";
+	}
+    });
+    $.each( [vow,con], function(i,e) {
+	var result = 0;
+	$.each(e, function (i2,e2) {
+	    var re = new RegExp(e2, 'g');
+	    result = ((line.html() || '').match(re) || []).length;
+	    for (x=0;x<result;x++) {
+		totala.push(e2);
+		if ( $.inArray(e2, [].concat.apply([], vow)) != -1 ) {
+		    totalv.push(e2);
+		} else {
+		    totalc.push(e2);
+		}
+	    }
+	});
+    });
+    return "<td>"+result+"</td>";
+}
+
+// LK build scansion
+function lk_scansion() {
+    // create overview
+    scan = `<table style="width:100%;" id="lk_scan"><tr class="panel-title"><th style="width:50%; margin-right:30px;">Phonemic transcription</th><th style="width:50%; text-align:left;" class="panel-title">Scansion (metrical pattern)</th>
+    </tr>`;
+    // build scansion
+    if ( $(ecep).length ) { // multiple parts
+	$clone.each( function(i,e) { // paratexts
+	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+		scan += `<tr>`;
+		scan += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+		scan += `</tr>`;
+	    } else { // text
+		$(e).children().each( function(i,e) {
+		    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+			$(e).children().each( function(i,e) {
+			    scan += `<tr>`;
+			    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
+			    scan += `</tr>`;
+
+			});
+		    } else {
+			scan += `<tr>`;
+			scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
+			scan += `</tr>`;
+		    }
+		});
+	    }
+	});
+    } else { // single part
+	$clone.children().each( function(i,e) {
+	    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+		$(e).children().each( function(i,e) {
+		    scan += `<tr>`;
+		    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
+		    scan += `</tr>`;
+		});
+	    } else {
+		scan += `<tr>`;
+		scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
+		scan += `</tr>`;
+	    }
+	});
+    }
+    scan += '</table>';
+}
+
+// LK scan line
+function lk_scan (line) {
+    var met = '', syllab = '', result = '';
+    var syl = [], scount = 0;
+
+    if ( l[ $( line ).attr( "id" ) ] ) {
+	if ( l[$( line ).attr( "id" )].real != '' && l[$( line ).attr( "id" )].real != null ) {
+	    met = l[$( line ).attr( "id" )].real;
+	} else {
+	    met = l[$( line ).attr( "id" )].met;
+	}
+    }
+    if (l[$( line ).attr( "id" )] && l[$( line ).attr( "id" )].syllab != "" && l[$( line ).attr( "id" )].syllab != null) {
+	syllab = l[$( line ).attr( "id" )].syllab;
+    }
+    if ((met != '' && syllab != '') || l.met != '' ) {
+	var i = 0, j = 0, wordnum = 0, hyphened = [], omitted = [];
+	$.each( l[$( line ).attr( "id" )].content, function( index,item ) {
+	    if ( o[item] && o[item].class == "w" ) {
+		syl[i] = parseInt(o[item].syllab);
+		scount += parseInt(o[item].syllab)
+		wordnum++;
+		if (o[item].tok.indexOf('-') > -1) {
+		    hyphened.push(i);
+		}
+		if (parseInt(o[item].syllab) == 0) {
+		    omitted.push(i);
+		}
+		i++;
+	    }
+	});
+	if ( (met != '' && syllab != '') && scount == parseInt(syllab)) {           // syllables and metrical pattern match
+	    var i = 0, wrd = [];
+	    met = met.replace(/[\||\/]/g,'');
+	    for (i = 0; i < syl.length; i++) {
+		wrd[i] = '';
+		for  (var j = 0; j < syl[i]; j++) {
+		    wrd[i] += met.charAt(j);
+		}
+		met = met.substring( syl[i] );
+	    }
+	    result = lk_output_scan(wrd,line,1);
+	} else {                                                                    // use automatic scansion results
+	    var lineno = $clone.find( "#"+$( line ).attr( "id" ) ).children(".ln").text().trim()-1;
+	    var	syl = zeus[ lineno ].split(':').pop().trim().replace(/'/g,'+').split(" ");
+	    $.each( hyphened, function(index,item) {
+		syl[item] += syl[item+1];
+	    });
+	    $.each( hyphened, function(index,item) {
+		syl.splice(item+1,1);
+	    });
+	    $.each( omitted, function(index,item) {
+		syl[item] = '';
+	    });
+	    if (syl.length == wordnum) {
+		result = lk_output_scan(syl,line,_.contains(syl, '?')?3:2); 		
+	    } else {
+		result = lk_output_scan(syl,line,3);
+	    }
+	}
+    }
+    $.each( [vow,con], function(i,e) {
+	var result = 0;
+	$.each(e, function (i2,e2) {
+	    var re = new RegExp(e2, 'g');
+	    result = ((line.html() || '').match(re) || []).length;
+	    for (x=0;x<result;x++) {
+		totala.push(e2);
+		if ( $.inArray(e2, [].concat.apply([], vow)) != -1 ) {
+		    totalv.push(e2);
+		} else {
+		    totalc.push(e2);
+		}
+	    }
+	});
+    });
+    return "<td class='scan'>"+result+"</td>";
+}
+
+function lk_output_scan (syl, line, conf) {
+
+    var linetext = '',linemet = '',open = 0, saved = '', i = 0;
+    $.each( l[$( line ).attr( "id" )].content, function( index,item ) {
+	if ( o[item] && o[item].class == "w" ) {
+	    open = 1;
+	    linetext += "<td colspan='"+ ((typeof syl[i]=='string')?syl[i].split('').length:0) +"' data-id='"+item+"-wc'>"+saved+o[item].tok;
+	    if ( parseInt( o[item].syllab ) == 0 || (typeof syl[i]!='string') ) { linemet += "<td> </td>"; }
+	    else {
+		$.each( syl[i].split(''), function( index,item ) {
+		    linemet += "<td>"+output_met(item)+"</td>";
+		});
+	    }
+	    saved = '';
+	    i++;
+	} else if ( o[item] && o[item].class == "pc" ) {
+	    if (open == 1 ) {
+		linetext += o[item].tok;
+	    } else {
+		saved += o[item].tok;
+	    }
+	} else if ( item == "c" ) {
+	    linetext += "</td>";
+	    open = 0;
+	}
+    });
+    var confidence;
+    if (conf == 1) { confidence = "conf-high"; }
+    else if (conf == 2) { confidence = "conf-med"; }
+    else if (conf == 3) { confidence = "conf-low"; }
+    return `<table><tr class="scan `+confidence+`">`+linemet+`</tr><tr class="line">`+linetext+`</tr></table>`;
 }
 
 // LK generate statistics
+(totals = []).length = 16; totals.fill(0);
+var totalc = [], totalv = [], totala = [];
 function lk_stats() {
     // create overview
-    stats = `<table><tr><th style="width:50%; margin-right:30px;" class="panel-heading panel-title">Phonemic transcription</th>
+    statsd = `<table style="width:100%;" id="lk_stats"><tr class="panel-title"><th style="width:50%; margin-right:30px;">Phonemic transcription</th>
 	<th class="t_v_s">V/s</th><th class="t_v_l">V/l</th><th class="t_v_d">V/d</th><th class="t_v_n">V/n</th>
 	<th class="t_vt">V</th><th class="t_v_f">V/f</th><th class="t_v_c">V/c</th><th class="t_v_b">V/b</th>
 	<th class="t_c_n">C/n</th><th class="t_c_p">C/p</th><th class="t_c_a">C/af</th><th class="t_c_f">C/f</th>
@@ -148,88 +529,105 @@ function lk_stats() {
 	</tr>`;
     // build stats
     if ( $(ecep).length ) { // multiple parts
-	$clone.each( function(i,e) {
-		if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) ) {
-		    stats += `<tr>`;
-		    stats += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
-		    stats += `</tr>`;
-		} else {
-		    $(e).children().each( function(i,e) {
+	$clone.each( function(i,e) { // paratexts
+	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+		statsd += `<tr>`;
+		statsd += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+		statsd += `</tr>`;
+	    } else { // text
+		$(e).children().each( function(i,e) {
+		    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+			$(e).children().each( function(i,e) {
 			    res = lk_calculate( $(e) );
-			    stats += `<tr>`;
-			    stats += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
+			    statsd += `<tr>`;
+			    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
 										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
 										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
 										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
 										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-			    stats += `</tr>`;
+			    statsd += `</tr>`;
+			    
 			});
-		}
-	    });
-    } else {                // single part
-	if ( $("#text").children('p') ) { // prose poems
-	    $clone.each( function(i,e) {
-		    res = lk_calculate( $(e) );
-		    stats += `<tr>`;
-		    stats += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
-									    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
-									    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
-									    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
-									    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-		    stats += `</tr>`;
+		    } else {
+			res = lk_calculate( $(e) );
+			statsd += `<tr>`;
+			statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
+										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
+										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
+										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
+										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
+			statsd += `</tr>`;
+		    }
 		});
-	} else { // lyric poems
+	    }
+	});
+    } else { // single part
 	    $clone.children().each( function(i,e) {
 		var res = [];
 		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
 		    $(e).children().each( function(i,e) {
 			    res = lk_calculate( $(e) );
-			    stats += `<tr>`;
-			    stats += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
+			    statsd += `<tr>`;
+			    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
 										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
 										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
 										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
 										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-			    stats += `</tr>`;
+			    statsd += `</tr>`;
 			});
 		} else {
 		    res = lk_calculate( $(e) );
-		    stats += `<tr>`;
-		    stats += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
+		    statsd += `<tr>`;
+		    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
 									    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
 									    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
 									    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
 									    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-		    stats += `</tr>`;
+		    statsd += `</tr>`;
 		}
 	    });
-	}
     }
-    stats += '</table>';
+    statsd += `<tr id="totals"><td></td><td class="t_v_s">`+totals[0]+`</td><td class="t_v_l">`+totals[1]+`</td><td class="t_v_d">`+totals[2]+`</td><td class="t_v_n">`+totals[3]+`</td><td class="t_vt">`+totals[4]+`</td><td class="t_v_f">`+totals[5]+`</td><td class="t_v_c">`+totals[6]+`</td><td class="t_v_b">`+totals[7]+`</td><td class="t_c_n">`+totals[8]+`</td><td class="t_c_p">`+totals[9]+`</td><td class="t_c_a">`+totals[10]+`</td><td class="t_c_f">`+totals[11]+`</td><td class="t_c_x">`+totals[12]+`</td><td class="t_ct">`+totals[13]+`</td><td class="t_cvo">`+totals[14]+`</td><td class="t_cuv">`+totals[15]+`</td></tr>`;
+    statsd += '</table>';
 }
 
 // LK calculate line
 function lk_calculate (line) {
     var result = [], i = 0;
     $.each( [v_s,v_l,v_d,v_n,vow,v_f,v_c,v_b,c_n,c_p,c_a,c_f,c_x,con,cvo,cuv], function(i,e) {
-	    result[i] = 0;
-	    $.each(e, function (i2,e2) {
-		    var re = new RegExp(e2, 'g');
-		    result[i] += ((line.html() || '').match(re) || []).length;
-		});
-	    i++;
+	result[i] = 0;
+	$.each(e, function (i2,e2) {
+	    var re = new RegExp(e2, 'g');
+	    result[i] += ((line.html() || '').match(re) || []).length;
+	    });
+	totals[i] += result[i];
+	i++;
+    });
+    $.each( [vow,con], function(i,e) {
+	var result = 0;
+	$.each(e, function (i2,e2) {
+	    var re = new RegExp(e2, 'g');
+	    result = ((line.html() || '').match(re) || []).length;
+	    for (x=0;x<result;x++) {
+		totala.push(e2);
+		if ( $.inArray(e2, [].concat.apply([], vow)) != -1 ) {
+		    totalv.push(e2);
+		} else {
+		    totalc.push(e2);
+		}
+	    }
 	});
+    });
     return result;
 }
 
-// LK dsiplay
-function display_viz_lk() {
+// LK display
+function display_viz_lk( vis ) {
     // set up LK
     $("#visualization").html( '<div id="lk_viz"><div id="lk_control"></div><div id="lk_body"></div></div>' );
-    // display clone + stats
-    $(stats).appendTo( '#lk_body' ).wrapAll( '<div class="text"/>' );
-    var lk_control = `<img style="width:120px; padding:5px 0;" src="/images/screenshots/lk.png" alt="Leitklänge"/>`+`
-    <a style="cursor:pointer; float:right; padding:23px 5px 0 0;" class="viz_home">Visualization Home</a>
+    // display clone + visualization
+    $(vis).appendTo( '#lk_body' ).wrapAll( '<div class="text"/>' );
+    var lk_control = `<img style="padding:5px 0;" src="/images/screenshots/phonemia.png" alt="Phonemia"/><a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:middle'/></a>`+`<a style="cursor:pointer; float:right; padding:23px 5px 0 0;" class="viz_home">Visualization Home</a>
     <div class="panel-group" role="tablist" aria-multiselectable="true">
         <div class="panel">
 	    <div class="panel-heading" role="tab" id="headingOne">
@@ -246,7 +644,7 @@ function display_viz_lk() {
 	$.each(ecep, function(i,e) {
 		lk_control += `<option value="`+i+`">`;
 		var $text = $( '#contents' ).find( 'li' ).eq(i).text();
-		if ( $text.length > 45 ) {
+		if ( $text.length > 42 ) {
 		    $text = $text.trim().substring(0, 45).split(" ").slice(0, -1).join(" ") + "...";
 		}
 		lk_control += $text;
@@ -254,66 +652,149 @@ function display_viz_lk() {
 	    });
 	lk_control += `</select><br clear='all'/>`;
     }
-    // TODO: tr + word classes, tr + semantics, others? named entities? metre?
     lk_control += `<label style="margin-right:23px;">Display:</label>
-                     <select id="display">
-			    <option value="t+t">Phonemic transcription + distribution</option>			    
+	<select id="display">`;
+    if ( !($("#text").children('p').length > 1
+	   || $("#text").find('p[class="p-in-sp"]').length > 1)
+       ) {
+	lk_control += `<option value="t+d">Phonemic transcription / distribution</option>`;
+    }
+//    if ( l[ $("#text").find(".line").first().attr("id")] && l[ $("#text").find(".line").first().attr("id") ].met != null && l[$("#text").find(".line").first().attr("id")].met != '') {
+    if ( l.met != "" ) {
+	lk_control += `<option value="t+m">Phonemic transcription / metre</option>`;
+    }
+    lk_control += `<option value="t+c">Phonemic transcription / word classes</option>
 		     </select>
 	        </div>
             </div>
-	</div>
-	<div class="panel">
-	        <div class="panel-heading" role="tab" id="headingTwo">
+	</div>`;
+    if (classes != '') {
+	lk_control += `<div class="panel">
+	        <div class="panel-heading" role="tab" id="headingTwoA">
 		    <div class="panel-title">
-		        <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Phonemic units and features</a>
+		        <a role="button" data-toggle="collapse" href="#collapseTwoA" aria-expanded="true" aria-controls="collapseTwoA">Parts of speech (word classes)</a>
 		    </div>
 		</div>
-		<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+		<div id="collapseTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
 		    <div class="panel-body">
 		        <table style="width:100%">
 	                    <tr>
-	                        <th><label>Vowels:</label><a id="clear_vow"> ×</a></th>
-			        <th><label>Consonants:</label><a id="clear_con"> ×</a></th>
+	                        <th colspan="2"><label>Word classes:</label><a id="clear_cl"> ×</a></th>
 			    </tr>
-			    <tr>
-			        <td style="width:50%;vertical-align:baseline;" id="vowels">
-			    <input value="v_s" type="checkbox" aria-label="..."/> <span>Monophthongs (short)</span><br/>
-			    <input value="v_l" type="checkbox" aria-label="..."/> <span>Monophthongs (long)</span><br/>
-    			            <input value="v_d" type="checkbox" aria-label="..."/> <span>Diphthongs</span><br/>
-			            <input value="v_n" type="checkbox" aria-label="..."/> <span>Neutralized</span><br/><br/>
-			     <input value="v_f" type="checkbox" aria-label="..."/> <span>Front (short/long)</span><br/>
-			     <input value="v_c" type="checkbox" aria-label="..."/> <span>Central (short/long)</span><br/>
-			     <input value="v_b" type="checkbox" aria-label="..."/> <span>Back (short/long)</span><br/>
-			        </td>
-                                <td style="width:50%;vertical-align:baseline;" id="consonants">
-                                    <input value="c_n" type="checkbox" aria-label="..."/> <span>Nasal</span><br/>
-			            <input value="c_p" type="checkbox" aria-label="..."/> <span>Plosive</span><br/>
-			            <input value="c_a" type="checkbox" aria-label="..."/> <span>Affricate</span><br/>
-			            <input value="c_f" type="checkbox" aria-label="..."/> <span>Fricative</span><br/>
-			            <input value="c_x" type="checkbox" aria-label="..."/> <span>Approximant</span><br/><br/>
-			            <input value="cvo" type="checkbox" aria-label="..."/> <span>Voiced</span><br/>
-			            <input value="cuv" type="checkbox" aria-label="..."/> <span>Voiceless</span><br/>
-			        </td>
+			    <tr id="classes">
+			        <td style="width:50%;vertical-align:baseline;">
+	            <input value="cl_noun" type="checkbox" aria-label="..."/> <span>Nouns</span><br/>
+	            <input value="cl_pron" type="checkbox" aria-label="..."/> <span>Pronouns</span><br/>
+	            <input value="cl_verb" type="checkbox" aria-label="..."/> <span>Verbs</span><br/>
+                                </td><td>
+	            <input value="cl_adj" type="checkbox" aria-label="..."/> <span>Adjectives</span><br/>
+	            <input value="cl_adv" type="checkbox" aria-label="..."/> <span>Adverbs</span><br/>
+	            <input value="cl_other" type="checkbox" aria-label="..."/> <span>Other</span><br/>
+                                </td>
                             </tr>
-			</table>
-			<label style="padding-top:7px;">Suprasegmentals:</label> &nbsp;
-                            <span class="su01"></span> &nbsp;
-                            <span class="su02"></span> &nbsp;
-                            <span class="su03"></span> &nbsp;
-                            <span class="su04"></span> &nbsp;
-                            <span class="su05"></span>
+                        </table>
                     </div>
                 </div>
-        </div>
-        <div class="panel">
+	    </div>`;
+    } else if (scan != '') {
+	lk_control += `<div class="panel">
+	        <div class="panel-heading" role="tab" id="headingTwoA">
+		    <div class="panel-title">
+		        <a role="button" data-toggle="collapse" href="#collapseTwoA" aria-expanded="true" aria-controls="collapseTwoA">Scansion (metrical pattern)</a>
+		    </div>
+		</div>
+		<div id="collapseTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
+		    <div class="panel-body">
+		        <table style="width:100%">
+	                    <tr>
+	                        <th colspan="2"><label>Scansion results:</label></th>
+			    </tr>
+			    <tr>
+			        <td style="vertical-align:baseline;">
+	            <input value="scans" type="checkbox" aria-label="..."/> Show degrees of confidence <div id="scan_res" style="margin-left:20px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+	    </div>`;
+    }
+    lk_control += `<div class="panel">
+	<div class="panel-heading" role="tab" id="headingTwo">
+	<div class="panel-title">
+	<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Phonemic units and features</a>
+	</div>
+	</div>
+	<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+	<div class="panel-body">
+	<table style="width:100%">
+	<tr>
+	<th><label>Vowels:</label><a id="clear_vow"> ×</a></th>
+	<th><label>Consonants:</label><a id="clear_con"> ×</a></th>
+	</tr>
+	<tr>
+	<td style="width:50%;vertical-align:baseline;" id="vowels">
+	<input value="v_s" type="checkbox" aria-label="..."/> <span>Monophthongs (short)</span><br/>
+	<input value="v_l" type="checkbox" aria-label="..."/> <span>Monophthongs (long)</span><br/>
+	<input value="v_d" type="checkbox" aria-label="..."/> <span>Diphthongs</span><br/>
+	<input value="v_n" type="checkbox" aria-label="..."/> <span>Neutralized</span><br/><br/>
+	<input value="v_f" type="checkbox" aria-label="..."/> <span>Front (short/long)</span><br/>
+	<input value="v_c" type="checkbox" aria-label="..."/> <span>Central (short/long)</span><br/>
+	<input value="v_b" type="checkbox" aria-label="..."/> <span>Back (short/long)</span><br/>
+	</td>
+	<td style="width:50%;vertical-align:baseline;" id="consonants">
+	<input value="c_n" type="checkbox" aria-label="..."/> <span>Nasal</span><br/>
+	<input value="c_p" type="checkbox" aria-label="..."/> <span>Plosive</span><br/>
+	<input value="c_a" type="checkbox" aria-label="..."/> <span>Affricate</span><br/>
+	<input value="c_f" type="checkbox" aria-label="..."/> <span>Fricative</span><br/>
+	<input value="c_x" type="checkbox" aria-label="..."/> <span>Approximant</span><br/><br/>
+	<input value="cvo" type="checkbox" aria-label="..."/> <span>Voiced</span><br/>
+	<input value="cuv" type="checkbox" aria-label="..."/> <span>Voiceless</span><br/>
+	</td>
+	</tr>
+	</table>
+	<label style="padding-top:7px;">Suprasegmentals:</label> &nbsp;
+    <span class="su01"></span> &nbsp;
+    <span class="su02"></span> &nbsp;
+    <span class="su03"></span> &nbsp;
+    <span class="su04"></span> &nbsp;
+    <span class="su05"></span>
+	 </div>
+	 </div>
+	 </div>`;
+    lk_control += `<div class="panel">
                 <div class="panel-heading" role="tab" id="headingThree">
                     <div class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Sound devices</a>
+                        <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Dominant sounds</a>
                     </div>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body" id="sound_devices">`;
+                    <div class="panel-body" id="dominant_sounds">`;
 
+    var domlabels = ["Vowels","Consonants","All phonemes"];
+    $.each([totalv,totalc,totala], function(i,e) {
+	lk_control += "<label>"+domlabels[i]+":</label><ul class='figures'>";
+	var frqMap = {};
+	for (var x=0, len=e.length; x<len; x++) {
+		var hkey = e[x];
+		frqMap[hkey] = (frqMap[hkey] || 0) + 1;
+	    }
+	    var frqArr = [];
+	    for (hkey in frqMap) frqArr.push({key: hkey, freq: frqMap[hkey]});
+	    frqArr.sort(function(a,b){return b.freq - a.freq});
+	    var newArr = frqArr.length;
+	    for (var j = 0; j < newArr; j++) {
+		lk_control += "<li style='display:inline;'><a>\/<span class='"+frqArr[j].key+"'></span>\/</a>&nbsp;("+frqArr[j].freq+")</a>";
+		if (j+1 < newArr) { lk_control += ", ";}
+		lk_control += "</li>";
+	    }
+	    lk_control += `</ul>`;
+    });
+
+    lk_control  += `</div>
+	        </div>
+	</div>`;
+    // phonologicalfigures
     var RFphon = [];
     if ( typeof( rf ) != 'undefined' ) {
 	for (var key in rf) {
@@ -323,51 +804,58 @@ function display_viz_lk() {
 	    }
 	}
     }
-    if (Object.keys(RFphon).length > 0) {
-	lk_control += lk_json( RFphon );
-    }
-    var stable = [];
-    if ( l.rhyme != "" && l.rhyme != null ) { // add rhyme vowels
-	lk_control += "<label>End-rhyme vowels</label><ul class='figures'>";
-	for (var key in l) {
-	    if ( l[key] !== null && l[key].rhymes !== undefined ) {
-		stable.push( l[key].rhymes[0]["end"].rpho );
-	    }
+    if (Object.keys(RFphon).length > 0 || l.rhyme != "" && l.rhyme != null ) {
+	lk_control  += `<div class="panel">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <div class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Sound devices`+ (( $(ecep).length > 0 )?` (entire poem)`:``) + `</a>
+                    </div>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body" id="sound_devices">`;
+	if (Object.keys(RFphon).length > 0) {
+	    lk_control += lk_json( RFphon );
 	}
-	var frqMap = {};
-	for (var x=0, len=stable.length; x<len; x++) {
-	    var hkey = stable[x];
-	    frqMap[hkey] = (frqMap[hkey] || 0) + 1;
-	}
-	var frqArr = [];
-	for (hkey in frqMap) frqArr.push({key: hkey, freq: frqMap[hkey]});
-	frqArr.sort(function(a,b){return b.freq - a.freq});
-	var newArr = frqArr.length;
-	for (var j = 0; j < newArr; j++) {
-	    var pattids = [];
+	// end-rhyme vowels
+	var stable = [];
+	if ( l.rhyme != "irregular" && l.rhyme != "" && l.rhyme != null ) { // add rhyme vowels
+	    lk_control += "<label>End-rhyme vowels:</label><ul class='figures'>";
 	    for (var key in l) {
-		if ( l[key] == null || l[key].rhymes == undefined || l[key].rhymes[0]["end"].rpho != frqArr[j].key) { continue; }
-		$.each( l[key].rhymes[0]["end"].rword, function( index, item ) {
-		    pattids.push ( item );
-		});
+		if ( l[key] !== null && l[key].rhymes !== undefined ) {
+		    stable.push( l[key].rhymes[0]["end"].rpho );
+		}
 	    }
-	    lk_control += "<li style='display:inline;'><a style='word-break:no;' class='visualize_ids' data-ids='"+pattids.join()+"'>\/<span class='"+frqArr[j].key+"'></span>\/</a>&nbsp;("+frqArr[j].freq+")</a>";
-	    if (j+1 < newArr) { lk_control += ", ";}
-	    lk_control += "</li>";
+	    var frqMap = {};
+	    for (var x=0, len=stable.length; x<len; x++) {
+		var hkey = stable[x];
+		frqMap[hkey] = (frqMap[hkey] || 0) + 1;
+	    }
+	    var frqArr = [];
+	    for (hkey in frqMap) frqArr.push({key: hkey, freq: frqMap[hkey]});
+	    frqArr.sort(function(a,b){return b.freq - a.freq});
+	    var newArr = frqArr.length;
+	    for (var j = 0; j < newArr; j++) {
+		var pattids = [];
+		for (var key in l) {
+		    if ( l[key] == null || l[key].rhymes == undefined || l[key].rhymes[0]["end"].rpho != frqArr[j].key) { continue; }
+		    $.each( l[key].rhymes[0]["end"].rword, function( index, item ) {
+			pattids.push ( item );
+		    });
+		}
+		lk_control += "<li style='display:inline;'><a class='visualize_ids' data-ids='"+pattids.join()+"'>\/<span class='"+frqArr[j].key+"'></span>\/</a>&nbsp;("+frqArr[j].freq+")</a>";
+		if (j+1 < newArr) { lk_control += ", ";}
+		lk_control += "</li>";
+	    }
+	    lk_control += `</ul>`;
 	}
-	lk_control += `</ul>`;
-    }
-    lk_control += `</div>
+	lk_control += `</div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
+    }
+    lk_control += `</div>`;
     $( '#lk_control').append( lk_control );
     $( 'select#selection' ).val( ecepsaved );
-    if (ecepidsaved) {
-	$( "#text" ).animate({
-	    scrollTop: $( "#"+ecepidsaved ).offset().top - 100
-	}, 500);
-    }
+    $( 'select#display' ).val( displaysaved );
 }
 
 // LK collect, sort and prioritize phonological figures by phoneme occurrence for each figure 
@@ -378,7 +866,7 @@ function lk_json (json) {
     for (i = 0; i < keys.length; i++) { // output figures sorted by name
 	var stable = [];
 	var key = keys[i];
-	RF += "<label>"+rf_id[key].name.capitalize()+" (<a class='external' target='_blank' href='"+rf_id[key].link+"'>"+rf_id[key].kind+"</a>)</label><ul class='figures'>";
+	RF += "<label>"+rf_id[key].name.capitalize()+" (<a class='external' target='_blank' href='"+rf_id[key].link+"'>"+rf_id[key].kind+"</a>):</label><ul class='figures'>";
 	for (var j = 0; j < json[key].length; j++) { // populate frequency table
 	    stable.push( json[key][j].phon );
 	}
@@ -467,8 +955,23 @@ $(document.body).on('click', '#lk_control input', function () {
 	    }
 	    $( '#consonants input[value=c_n],#consonants input[value=c_p],#consonants input[value=c_a],#consonants input[value=c_f],#consonants input[value=c_x]' ).prop('checked', false);
 	    break;
+        case "cl_noun":
+        case "cl_pron":
+        case "cl_verb":
+        case "cl_adj":
+        case "cl_adv":
+        case "cl_other":
+        case "scans":
+	    if ( $("#style_"+$(this).val()).length ) {
+		$( "#style_"+$(this).val() ).remove();
+		$( "#scan_res *" ).remove();
+	    } else {
+		$('head').append( window[ "$style_"+$(this).val() ] );
+		$( "#scan_res" ).append("<span class='conf-high'>high confidence</span><br/><span class='conf-med'>medium confidence</span><br/><span class='conf-low'>low confidence</span>")
+	    }
+	    break;
     }
-    $("#vowels input,#consonants input").each(function(i,e) { 
+    $("#vowels input,#consonants input,#classes input").each(function(i,e) { 
 	if ( $(this).prop('checked') == true ) {
 	    if ( window[ "$style_"+$(this).val() ] ) {
 		var colour = window[ "$style_"+$(this).val() ].match(/(#.*)/);
@@ -500,7 +1003,13 @@ $(document.body).on('click', 'a#clear_con', function () {
     });
     $( '[class^="t_c"]' ).css('background-color','');
 });
-
+$(document.body).on('click', 'a#clear_cl', function () {
+    $( "#style_cl_noun,#style_cl_pron,#style_cl_verb,#style_cl_adj,#style_cl_adv,#style_cl_other" ).remove();
+    $( '#classes input' ).prop('checked', false);
+    $( "#classes input" ).each(function(i,e) { 
+	$( this ).next().css('background-color','');
+    });
+});
 
 // LK viz view mouse for popover
 function viz_mouse (e,p) {
@@ -514,11 +1023,17 @@ function viz_mouse (e,p) {
 }
 // LK phonemic transcription hover highlight
 $(document.body).on('mouseenter', '.text .w', function (e) {
-	$( jq( $(this).attr("data-id") ) ).css({"background-color":"#88bcdf","color":"#fff"});
-	//	$( "#visualization .text .w[data-id='"+jq( $(this).attr('data-id') ).substr(1)+"']" ).addClass("idsSelected");
+        $( jq( $(this).attr("data-id") ) ).css({"background-color":"#88bcdf","color":"#fff"});
+        $( "#visualization .text [data-id='"+jq( $(this).attr('data-id') ).substr(1)+"-wc']" ).addClass("idsSelected");
     }).on('mouseleave', '.text .w', function (e) {
 	$( jq( $(this).attr("data-id") ) ).css({"background-color":"","color":""});
-	//	$( "#visualization .text .w[data-id='"+jq( $(this).attr('data-id') ).substr(1)+"']" ).removeClass("idsSelected");
+	$( "#visualization .text [data-id='"+jq( $(this).attr('data-id') ).substr(1)+"-wc']" ).removeClass("idsSelected");
+});
+// LK phonemes hover highlight
+$(document.body).on('mouseenter', '#dominant_sounds span[class^="ph"]', function (e) {
+	$( ".text span."+$(this).attr("class") ).css({"background-color":"#88bcdf","color":"#fff"});
+    }).on('mouseleave', '#dominant_sounds span[class^="ph"]', function (e) {
+	$( ".text span."+$(this).attr("class") ).css({"background-color":"","color":""});
 });
 
 
@@ -558,13 +1073,48 @@ function poemvis_load (part) {
 	    poemvisFrame.find(".viz_home").click(function(){
 		    viz_chosen = '';
 		    $( "div#text" ).scrollTop(0);
-		    $( '#visualization' ).load( '/works/viz_overview.shtml #viz_overview' );
+                    $.getScript('/js/viz_overview.js');
+	    });
+	    poemvisFrame.find(".help-modal").click(function(){
+
+$( "body" ).prepend(`
+<div id="newHelp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Help</h4>
+      </div>
+      <div class="modal-body" id="modal-help-text"/>
+`);
+    var file = "viz_poemvis";
+    $( "#modal-help-text" ).append( $("<div/>").load("/help/"+file+".shtml", function( data ) { data } ))
+        .after(`
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+`);
+$( "#newHelp" ).modal('show');
+
 	    });
 	    // new selection
 	    poemvisFrame.find("#selection").change(function(){
-		ecepsaved = parseInt( $(this).val(),10 )+1;
-		ecepidsaved = $("#text").find('.ecep').eq(ecepsaved-1).attr("id");
-		poemvis_load(ecepsaved);
+		var d = $(this);
+		$( "#visualization" ).append( "<div id='spinner'><img src='/images/loader.gif'/></div>" );
+		var checkExist = setInterval(function() {
+		    if ($('#spinner').length) {
+			clearInterval(checkExist);		    
+		    }
+		}, 100);
+		_.defer( function() {
+		    ecepsaved = parseInt( d.val(),10 )+1;
+		    ecepidsaved = $("#text").find('.ecep').eq(ecepsaved-1).attr("id");
+		    poemvis_load(ecepsaved);
+		    $( "#spinner" ).remove();
+		});
 	    });
 	    // highlight corresponding words in text
 	    poemvisFrame.on("mouseenter", "[id*='word_']", function(e) {

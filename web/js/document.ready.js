@@ -115,7 +115,10 @@
 
 
 	// add help buttons
-	$.each( ["reading","analysis"] , function( index, item ) {
+	$.each( ["reading","analysis"
+		 //		 ,"visualization"
+		 //		 ,"modelling"
+		] , function( index, item ) {
 		$( 'a[href="#' + item + '"]' )
 		    .append(" <a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:text-top'/></a>");
 	    });

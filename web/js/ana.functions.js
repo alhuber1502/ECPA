@@ -1,5 +1,5 @@
 
-// help modals
+// help modals - there is a copy of this in viz.functions.js for iFrame modals
 $(document.body).on('click', '.help-modal', function () {
     $( "body" ).prepend(`
 <div id="newHelp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newModalLabel">
@@ -20,9 +20,21 @@ $(document.body).on('click', '.help-modal', function () {
 	case "#analysis":
 	    file = "ana_intro";
 	    break;
+	case "#visualization":
+	    file = "viz_intro";
+	    break;
+	case "#modelling":
+	    file = "mod_intro";
+	    break;
 	}
-    } else { // layer tabs
-	file = "ana_"+$(this).parent().attr("id").substring(0,3);
+    } else if ( !$(this).parent().attr("id").match(/\_/) ) { // layer tabs
+	file = "ana_"+$(this).parent().attr("id").substring(0,3);	
+    } else {
+	if ($(this).prev().attr("src").match(/phonemia/)) {
+	    file = "viz_phonemia";
+	} else if ($(this).prev().attr("src").match(/poemvis/)) {
+	    file = "viz_poemvis";
+	} // iFrame help is in viz.functions.js
     }
     $( "#modal-help-text" ).append( $("<div/>").load("/help/"+file+".shtml", function( data ) { data } ))
 	.after(`
@@ -142,7 +154,7 @@ function ana_cont (e) {
     		    ids.push ( l[ l[lineID].rrel[i].id ].rhymes[0]["end"].rword[j] );
 		}
 		rrwrd = rrwrd.substring(0,rrwrd.length-1);
-		rrel += "<ul><li>Line: "+$( "div[id='"+l[lineID].rrel[i].id+"']" ).children(".ln").text().trim()+"; </li>"+
+		rrel += "<ul><li>Line: "+$( "div[id='"+l[lineID].rrel[i].id+"']" ).children(".ln").first().text().trim()+"; </li>"+
 		    "<li>rhyme word: "+rrwrd+"; </li>"+
 		    "<li>nature of similarity: "+l[lineID].rrel[i].sim+" rhyme</li></ul>";
 	    }
@@ -828,34 +840,54 @@ $(document.body).on('click', '#meta-tabs a.freeze', function (e) {
 });
 
 $('#collapsePho').on('show.bs.collapse', function (e) {
-    $( "#meta-tabs a.phonological" ).addClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.phonological" ).addClass( "active" );
+    }
 });
 $('#collapsePho').on('hide.bs.collapse', function (e) {
-    $( "#meta-tabs a.phonological" ).removeClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.phonological" ).removeClass( "active" );
+    }
 });
 $('#collapseMor').on('show.bs.collapse', function (e) {
-    $( "#meta-tabs a.morphological" ).addClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.morphological" ).addClass( "active" );
+    }
 });
 $('#collapseMor').on('hide.bs.collapse', function (e) {
-    $( "#meta-tabs a.morphological" ).removeClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.morphological" ).removeClass( "active" );
+    }
 });
 $('#collapseSyn').on('show.bs.collapse', function (e) {
-    $( "#meta-tabs a.syntactic" ).addClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.syntactic" ).addClass( "active" );
+    }
 });
 $('#collapseSyn').on('hide.bs.collapse', function (e) {
-    $( "#meta-tabs a.syntactic" ).removeClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.syntactic" ).removeClass( "active" );
+    }
 });
 $('#collapseSem').on('show.bs.collapse', function (e) {
-    $( "#meta-tabs a.semantic" ).addClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.semantic" ).addClass( "active" );
+    }
 });
 $('#collapseSem').on('hide.bs.collapse', function (e) {
-    $( "#meta-tabs a.semantic" ).removeClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.semantic" ).removeClass( "active" );
+    }
 });
 $('#collapsePra').on('show.bs.collapse', function (e) {
-    $( "#meta-tabs a.pragmatic" ).addClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.pragmatic" ).addClass( "active" );
+    }
 });
 $('#collapsePra').on('hide.bs.collapse', function (e) {
-    $( "#meta-tabs a.pragmatic" ).removeClass( "active" );
+    if (e.target.nodeName == "DIV") {
+	$( "#meta-tabs a.pragmatic" ).removeClass( "active" );
+    }
 });
 
 // produce "analysis"-view displays
@@ -1029,9 +1061,9 @@ function ana_phonological (lineID) {
 	$( "#pho-dynamic" ).append("<h2>Metre</h2>");
 	var real = '', type = '', number = '', rtype = '', rnumber = '', stanzas = '';
 	if (l[lineID].real != "" && l[lineID].real != null) {
-	    real = l[lineID].real;
+	    real = output_met(l[lineID].real);
 	} else {
-	    real = query("["+l[lineID].met+"]",l[lineID].met,"real",lineID,'Add line stress', 'Please add the line stress as opposed to the metre shown here', 'ln');
+	    real = query("["+ output_met(l[lineID].met) +"]",output_met(l[lineID].met),"real",lineID,'Add line stress', 'Please add the line stress as opposed to the metre shown here', 'ln');
 	}
 	if (l[lineID].foot.id != "" && l[lineID].foot.id != null) {      
 	    type = l[lineID].foot.text;
@@ -1045,7 +1077,7 @@ function ana_phonological (lineID) {
 	if (l[lineID].realfootnum.id != "" && l[lineID].realfootnum.id != null) {      
 	    rnumber = l[lineID].realfootnum.text;
 	}
-	$( "#pho-dynamic" ).append("<ul class='ana_metre'><li>Metre: "+l[lineID].met+"</li>"+((type != '')?'<li>Metrical foot type: '+type+'</li>':'')+((number != '')?'<li>Metrical foot number: '+number+'</li>':'')+"<li>Realisation: "+real+"</li>"+((rtype != '')?'<li>Realised foot type: '+rtype+'</li>':'')+((rnumber != '')?'<li>Realised foot number: '+rnumber+'</li>':'')+"</ul>");
+	$( "#pho-dynamic" ).append("<ul class='ana_metre'><li>Metre: "+ output_met(l[lineID].met) +"</li>"+((type != '')?'<li>Metrical foot type: '+type+'</li>':'')+((number != '')?'<li>Metrical foot number: '+number+'</li>':'')+"<li>Realisation: "+real+"</li>"+((rtype != '')?'<li>Realised foot type: '+rtype+'</li>':'')+((rnumber != '')?'<li>Realised foot number: '+rnumber+'</li>':'')+"</ul>");
     }
 
 // rhyme pattern/position
@@ -1087,7 +1119,7 @@ function ana_phonological (lineID) {
     		    ids.push ( l[ l[lineID].rrel[i].id ].rhymes[0]["end"].rword[j] );
 		}
 		rrwrd = rrwrd.substring(0,rrwrd.length-1);
-		rrel += "<ul><li>Line: "+$( "div[id='"+l[lineID].rrel[i].id+"']" ).children(".ln").text().trim()+"; </li>"+
+		rrel += "<ul><li>Line: "+$( "div[id='"+l[lineID].rrel[i].id+"']" ).children(".ln").first().text().trim()+"; </li>"+
 		    "<li>rhyme word: "+rrwrd+"; </li>"+
 		    "<li>nature of similarity: "+l[lineID].rrel[i].sim+" rhyme</li></ul>";
 	    }
@@ -1145,7 +1177,7 @@ function ana_morphological (lineID) {
 	var morphtext;
 	$.each(o, function(index) { if (o[ index ].class == "w" && !_.contains(stopped, o[index].tok.toLowerCase())
 				       ) { wtokens.push( o[index].tok.toLowerCase() ) } });
-	morphtext = `<p id='morphemic'>This text has `+wtokensno+` word`+(wtokensno > 1 ? `s` : ``)+` and `+_.uniq(wtokens).length+` unique word forms. Its <b>vocabulary density</b> is `+(_.uniq(wtokens).length/wtokensno).toFixed(3)+`.</p><p>Most frequent words (excluding <a target="_blank" class="external" href="https://github.com/alhuber1502/ECPA/blob/master/web/data/stopwords.txt">stop words</a>): <ul class="figures freq">`;
+	morphtext = `<p id='morphemic'>This text has `+wtokensno+` word`+(wtokensno > 1 ? `s` : ``)+` and `+_.uniq(wtokens).length+` unique word forms. Its <b>vocabulary density</b> is `+(_.uniq(wtokens).length/wtokensno).toFixed(3)+`.</p><p>Most frequent words (including paratexts; excluding <a target="_blank" class="external" href="https://github.com/alhuber1502/ECPA/blob/master/web/data/stopwords.txt">stop words</a>): <ul class="figures freq">`;
 	var frqMap = {};
 	for (var x=0, len=wtokens.length; x<len; x++) {
 	    var hkey = wtokens[x];
@@ -1157,9 +1189,13 @@ function ana_morphological (lineID) {
 	var newArr = frqArr.length;
 	for (var j = 0; j < newArr; j++) {
 	    morphtext += "<li style='display:inline;'><a style='word-break:no;'>"+frqArr[j].key+"</a>&nbsp;("+frqArr[j].freq+")</a>";
-	    if (j+1 < newArr && j < 50) { morphtext += ",</li> ";} else { morphtext += " ...</li>"; break; }
+	    if (j+1 < newArr && (j < 50 || j > 50)) { morphtext += ",</li> "; } else if (j+1 < newArr && j == 50) { morphtext += ", <a class='more' id='freqallc'>[more]</a></li><ul class='collapse' id='freqall'>"; }
 	}
-	morphtext += "</ul>";	
+	if (newArr >= 50) {
+	    morphtext += "</ul></ul>";
+	} else {
+	    morphtext += "</ul>";
+	}
 	$( "#mor-static" ).append( morphtext );
     }
     
@@ -1436,4 +1472,15 @@ $(document.body).on('click', '#toggle_all_ana' ,function(){
 	});
         $(this).html("<i class=\"glyphicon glyphicon-minus-sign\"></i> Collapse All").addClass("active");
     }
+});
+
+$(document.body).on('click', '#freqallc' ,function(){
+    if ($(this).hasClass("more")) {
+	$(this).html("[less]");
+	$(this).removeClass("more").addClass("less");
+    } else {
+	$(this).html("[more]");
+	$(this).removeClass("less").addClass("more");
+    }
+    $('#freqall').collapse('toggle');
 });

@@ -1,3 +1,5 @@
+/* Phonemia (LK) */
+
 /* Phonemes */
 /* Vowels, monophthongs (short) */
 .ph01::before { content:"ɪ"; min-width:7px; display:inline-block; text-align:center; }
@@ -63,19 +65,19 @@
 .su04::before { content:"ˑ"; display:inline-block; text-align:center; }
 .su05::before { content:"."; display:inline-block; text-align:center; }
 
-/* LK space  */
+/* Phonemia space  */
 #lk_viz {
     display: flex;
     height: 100%;
 }
 
-/* LK scrollable divs */
+/* Phonemia scrollable divs */
 #lk_control,#lk_body {
     overflow: auto;
     height: auto;
     position: relative;
 }
-/* LK control section */
+/* Phonemia control section */
 #lk_control {
     width: 30%;
     margin-right: 25px;
@@ -87,7 +89,8 @@
     color: #920a33;
 }
 #lk_viz a#clear_con,
-#lk_viz a#clear_vow {
+#lk_viz a#clear_vow,
+#lk_viz a#clear_cl {
     float: right;
     padding-right: 15px;
     font-size: 16px;
@@ -109,7 +112,7 @@
     display: inline-block;
 }
 
-/* LK body section */
+/* Phonemia body section */
 #lk_body {
     width: 70%;
     padding-right: 10px;
@@ -119,45 +122,99 @@
     padding-top:15px;
 }
 #lk_body .text .ln {
-    margin-right:20px;
+    margin-right:5px;
     margin-left:15px;
 }
 #lk_body .text .l {
     display:block;
 }
 /* space phonemic transcription for better legibility */
+/*
 #lk_body .text .w + .pc + .w::before,
 #lk_body .text .w + .w::before {
     content:"\a0";
 }
-#lk_body .text tr td:nth-child(1) {
+*/
+#lk_body .text tr td:nth-child(1) .w,
+#lk_body .text tr td:nth-child(1) .w + .pc {
+   white-space:nowrap;
+}
+#lk_body .text tr td:nth-child(1) .w {
+   display:inline-block;
+}
+#lk_body .text tr td:nth-child(1) .w + .pc +.w,
+#lk_body .text tr td:nth-child(1) .w + .w {
+   margin-left:3px;
+}
+
+#lk_body .text table#lk_stats tr td:nth-child(1),
+/*#lk_body .text table#lk_scan tr td:nth-child(1),*/
+#lk_body .text table#lk_wc tr td:nth-child(1) {
     width: inherit;
     border: 0px;
     padding: 0px;
     text-align:left;
+    vertical-align:top;
+    background-color:#fff;
 }
-#lk_body .text tr td {
+#lk_body .text #lk_scan table {
+    margin-bottom:5px;
+}
+#lk_body .text #lk_scan table tr.scan td {
+    text-align:center;
+    padding-top:2px;
+}
+#lk_body .text #lk_scan table tr.line td {
+    padding-right:4px;
+}
+#lk_body .text table#lk_scan tr.scan {
+    line-height:0px;
+}
+#lk_body .text table#lk_stats tr td,
+#lk_body .text table#lk_wc tr td {
     border: 1px dotted black;
     padding: 0px;
     text-align:center;
     width:inherit;
     min-width:30px;
 }
+#lk_body table#lk_wc tr td:nth-child(2) {
+    text-align:left;
+}
+#lk_body table#lk_wc tr td:nth-child(2) span {
+    min-width: 35px;
+    vertical-align: top;
+    display: inline-block;
+}
+#lk_body .text table#lk_stats tr:nth-child(even),
+#lk_body .text table#lk_wc tr:nth-child(even) {
+    background-color:#eee;
+}
 #lk_body .text tr th:nth-child(1) {
     padding: 2px;
     width:30px;
     text-align:left;
+    font-size:inherit;
 }
 #lk_body .text tr th {
     text-align:center;
+    font-size:14px;
 }
-#lk_body .text tr td.t_vt ,
-#lk_body .text tr td.t_ct {
+#lk_body .text table#lk_stats tr td.t_vt ,
+#lk_body .text table#lk_stats tr td.t_ct {
     border-left: 2px solid black;
     border-right: 2px solid black;
 }
-#lk_body .text tr td.t_c_n {
+#lk_body .text table#lk_stats tr td.t_c_n {
     border-left: 3px solid black;
+}
+#lk_body .text table#lk_stats tr td.t_v_d {
+    border-left: 1px solid black;
+}
+#lk_body .text tr#totals td:not(:first-child) {
+    border-top: 2px solid black;
+    font-weight:700;
+    background-color:#ddd;
 }
 .idsSelected,
 .idsSelected * {
@@ -172,7 +229,20 @@
     padding-right: 5px;
     display: inline;
 }
-
+.figures a {
+    white-space:nowrap;    
+}
+#viz_overview h2 {
+    font-size:1.6em;
+    line-height:1.4em;
+}
+.viz_intro td {
+    vertical-align:top;
+}
+.viz_intro div {
+    width: max-content;
+    margin-right:20px;
+}
 
 /* POEMVIS */
 
@@ -181,4 +251,15 @@
     height:99%;
     border:0;
     overflow:hidden;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px; /* half width of the spinner gif */
+    margin-top: -25px; /* half height of the spinner gif */
+    text-align: center;
+    z-index: 1234;
+    overflow: auto;
 }

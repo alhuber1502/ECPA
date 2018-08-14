@@ -5,6 +5,11 @@ $.ajax({
     success: function(data) { stats = data; }
 });
 
+function output_met(met) {
+    //    return met.replace(/\-/g,"&#x23d1;").replace(/\+/g," &#x2032;");    
+    return met.replace(/\-/g," &#x02d8; ").replace(/\+/g,"&#x2032;");
+}
+
 // Initialize poem display
 if ($('#reading').length) {
 
@@ -108,11 +113,11 @@ if ($('#reading').length) {
 	    for (var i=0; i<arr_met.length; i++) {
 		pf += "<li><span>"+
 		    (arr_rhyme[i] ? arr_rhyme[i] : i+1)
-		    +"</span> "+arr_met[i]+"</li>";
+		    +"</span> "+ output_met(arr_met[i]) +"</li>";
 	    }
 	    pf += "</ul>";
 	} else {
-	    pf += l.met;
+	    pf += output_met(l.met);
 	}
 	pf += "</div>";
     }
@@ -128,7 +133,7 @@ if ($('#reading').length) {
     }
     result = result.slice(0,-2);
     pf += result != "" ? "<div class='bibl'>Metrical foot number: "+result+"</div>" : "";
-    pf += l.real != "" && l.real != null ? "<div class='bibl'>Realisation: "+l.real+"</div>" : "";
+    pf += l.real != "" && l.real != null ? "<div class='bibl'>Realisation: "+ output_met(l.real) +"</div>" : "";
     result = "";
     for (var i=0; i<l.lines.length; i++) {
 	result += l.lines[i].text + "; ";
@@ -150,7 +155,7 @@ if ($('#reading').length) {
     result = result.slice(0,-2);
     pf += result != "" ? "<div class='bibl'>Rhyme (stanza position): "+result+"</div>" : "";
     if (pf != "") {
-	var pf_symbols = '<i>Symbols:</i><ul class="bibl"><li><span>-</span> metrically non-prominent</li><li><span>+</span> metrically prominent</li><li><span>|</span> metrical foot boundary</li><li><span>/</span> metrical line boundary</li><li><span>||</span> caesura</li></ul>';
+	var pf_symbols = '<i>Symbols:</i><ul class="bibl"><li><span>&#x02d8;</span> metrically non-prominent</li><li><span>&#x2032;</span> metrically prominent</li><li><span>|</span> metrical foot boundary</li><li><span>/</span> metrical line boundary</li><li><span>||</span> caesura</li></ul>';
 	$("#poeticform").html('<div id="form"><h1 class="info">Poetic form</h1><table><tr><td>'+pf+'</td>'+
           '<td style="font-size:12px">'+pf_symbols+'</td></tr></table></div>');
     } else {

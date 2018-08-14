@@ -193,10 +193,10 @@ body {
 
 .navbar-brand {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 5px;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 18px;
+    font-size: 21px;
 }
 
 .navbar-inverse .navbar-brand {
@@ -251,7 +251,7 @@ a.link_ref:not([href^="#"]):not([href^="/"]),a:not(.img).external {
     display: inline !important;
 }
 .footer-links li + li:before {
-    content: " | ";
+    content: "\a0 | \a0";
 }
 .addthis_sharing_toolbox {
     display: inline-block !important;
