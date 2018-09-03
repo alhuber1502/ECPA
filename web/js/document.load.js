@@ -102,7 +102,7 @@ if ($('#reading').length) {
     if (l.met != "" && l.met != null) {
 	arr_met = l.met.split(/\s+/);
     }
-    if (l.rhyme != "" && l.rhyme != null) {
+    if (l.rhyme != "" && l.rhyme != null && l.rhyme != "irregular") {
 	arr_rhyme = l.rhyme.split('');
     }
     var pf = ""; 

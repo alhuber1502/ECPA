@@ -57,6 +57,7 @@
                    {
                        element: ".right .nav-tabs .active",
 			   backdrop: true,
+			   placement: "bottom",
 			   title: "6. Analysis view with results of a computationally-assisted reading",
 			   content: "<p>The <i>Analysis</i> view (accessed via the second tab on the <b>right</b>) comprises results from a number of <b>computationally-assisted analytical processes</b> on five core linguistic levels and hence a means of assisting the reader in the task of <b>close reading</b> a poem.</p>",
 			   onShow: function(tour){

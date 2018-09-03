@@ -466,14 +466,18 @@ function ana_mouse(e,p) {
 	// highlight token in morphological parse
 	$('table.morphological tbody tr[id="'+$(e).attr("id")+'-kwic"]').css({"background-color":"#88bcdf","color":"#fff"});
 	// highlight token in syntactic dependency parse
-	$('div.conllu-parse g.text text tspan[data-chunk-id="' +(parseInt(synwords[ o[$(e).attr('id')].spos ][0])+offset-1)+ '"]').css({"text-decoration":"underline overline"});
+	if (synwords[ o[$(e).attr('id')].spos]) {
+	    $('div.conllu-parse g.text text tspan[data-chunk-id="' +(parseInt(synwords[ o[$(e).attr('id')].spos ][0])+offset-1)+ '"]').css({"text-decoration":"underline overline"});
 	// highlight token in frame semantic parse
 	$('#parse_horiz table:nth-child('+((offset==0)?"1":(l[lineID].sentences.indexOf( parseInt(o[$(e).attr("id")].sent,10) )+1))+') th.word.w' +(parseInt(synwords[ o[$(e).attr("id")].spos ][0])-1) ).css({"text-decoration":"underline overline"});
+	}
     } else {
 	// undo highlighting
 	$('table.morphological tbody tr[id="'+$(e).attr("id")+'-kwic"]').css({"background-color":"","color":""});
-	$('div.conllu-parse g.text text tspan[data-chunk-id="' +(parseInt(synwords[ o[$(e).attr('id')].spos ][0])+offset-1)+ '"]').css({"text-decoration":"initial"});
+	if (synwords[ o[$(e).attr('id')].spos]) {
+	    $('div.conllu-parse g.text text tspan[data-chunk-id="' +(parseInt(synwords[ o[$(e).attr('id')].spos ][0])+offset-1)+ '"]').css({"text-decoration":"initial"});
 	$('#parse_horiz table:nth-child('+((offset==0)?"1":(l[lineID].sentences.indexOf( parseInt(o[$(e).attr("id")].sent,10) )+1))+') th.word.w' +(parseInt(synwords[ o[$(e).attr('id')].spos ][0])-1) ).css({"text-decoration":"initial"});
+	}	
     }
 }
 
@@ -899,6 +903,7 @@ $('.line,#text p').hover(
 	// context line
 	lineID = $(this).attr("id");
 
+	if (lineID && l[lineID] && l[lineID].content) {
 	var wordnum = 0;
 	$.each( l[lineID].content, function( index,item ) {
 	    if ( o[item] && o[item].class == "w" ) { wordnum++; }
@@ -996,7 +1001,7 @@ $('.line,#text p').hover(
 	    ana_semantic(lineID);
 	    ana_pragmatic(lineID);
 	}, 100);
-
+	}
     }
     },  function() { // mouseleave
     if ($('.right .tab-content > div.active').attr("id") == "analysis" && hoverEnabled == true) {

@@ -353,9 +353,9 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	$('link[href="/css/mod.ecep.css"]').prop('disabled', true);
 	$('.nav-tabs a[href="#text"]').tab('show');
 	if ( viz_chosen == '' ) {
+	    $.getScript('/js/viz_overview.js');
 	    $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
 	    $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
-	    $.getScript('/js/viz_overview.js');
 	}
 
 	if (phonemic == true) {

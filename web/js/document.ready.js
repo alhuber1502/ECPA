@@ -115,8 +115,7 @@
 
 
 	// add help buttons
-	$.each( ["reading","analysis"
-		 //		 ,"visualization"
+	$.each( ["reading","analysis","visualization"
 		 //		 ,"modelling"
 		] , function( index, item ) {
 		$( 'a[href="#' + item + '"]' )

@@ -67,7 +67,8 @@
 
 	  <p>We have represented each of the different modes of engagement in
 	    the side-by-side layout of <em>text</em> and <em>view</em> in the form of tabs 
-            (currently, <em>Reading</em> view and <em>Analysis</em> view) in the hope that 
+            (currently, <em>Reading</em> view, <em>Analysis</em> view, and
+	    <em>Visualization</em> view) in the hope that 
 	    the information provided in each will best support the level of
 	    engagement the reader has chosen.</p>
 
@@ -80,7 +81,16 @@
             layers that support the <em>analysis</em> view are intended to 
 	    support a close reading of the texts, and help to reflect this
             engagement through enabling interactive selection, highlighting,
-            and manipulation of the observed phenomena.  We hope that through
+            and manipulation of the observed phenomena.
+	    Our <em>visualization</em> view comprises a growing number of
+	    visualizations intended to support the analysis/interpretation
+	    of the poems.  By shedding light on the texts from different
+	    visualization perspectives (presentational/disseminative,
+	    operational/observational, analytical/interactive,
+	    creative/inventive) and with varying foci on one or more analytical
+	    layers, the visualizations serve as a toolbox for researchers
+	    interested in visual interpretation.
+	    We hope that through
             the combination of human knowledge (manifested through
             contributions to the corpus in form of corrections, annotations,
             glosses, and interpretations) and machine learning we can arrive
@@ -88,13 +98,13 @@
             larger pool of supporting materials and more comprehensive analysis.</p>
 
 	  <p>Over time, the <!--#echo var="ecep" --> research project will
-	    facilitate new modes of engagement (<em>views</em>), which will join <em>reading</em>
-	    and <em>analysis</em>, and allow for increasingly sophisticated ways
+	    facilitate new modes of engagement (<em>views</em>), which will join the
+	    current views, and allow for increasingly sophisticated ways
 	    of interacting and thus re-creating the texts through each
-	    reading process. We are currently working on implementing and testing
-	    a number of adapted and original options for the 
-	    next two modes of engagement (<em>views</em>), namely 
-	    <em>visualization</em> view and <em>modelling</em> view.
+	    reading process.  We are currently working on implementing
+	    a number of adapted and original visualizations in the <em>visualization</em>
+	    view, and are exploring ontological modelling techniques for poetry
+	    analysis in our <em>modelling</em> view.
 </p>
 
 <h2 id="history">History</h2>
@@ -109,9 +119,10 @@ substantial in quantity and wide-ranging in subject matter and coverage.</p>
 
 <p>In 2008, the idea for a much more comprehensive and ambitious project
 that would contribute to and benefit from the many exciting developments in
-"humanities computing" at the time was born.  With full-text production of
-ECCO-TCP in full swing in Oxford, early experiments in the computational
-exploration and analysis proved promising and encouraged us to embark on a
+  <em>digital literary studies</em> and <em>humanities computing</em> at the
+  time was born. With full-text production of
+ECCO-TCP in full swing in Oxford, early experiments in computational
+literary criticism proved promising and encouraged us to embark on a
 dedicated resource on eighteenth-century poetry.  After several delays for
 various reasons, work on <!--#echo var="ecep" --> began in earnest in
 Winter 2012.
@@ -269,7 +280,7 @@ class="external"><em>Thomas Gray Archive</em></a>,</li>
 
 <p>We are working on providing better interconnection between all
   analytical layers as these inform all current and future modes
-  of reader engagement. As each layer interacts with the others at any
+  of reader engagement.  As each layer interacts with the others at any
   given point as well as over time, we are looking for better ways to
   make these points of connectedness visible and highlight the ways in
   which these are maintained, dissolved, and taken up again (in
@@ -278,11 +289,13 @@ class="external"><em>Thomas Gray Archive</em></a>,</li>
 
 <p>As <!--#echo var="ecep" --> evolves and matures, we will expand our
   research to go beyond the current modes (<em>views</em>) of reader engagement
-  (<em>reading</em> and <em>analysis</em>).  We are
-  currently working on implementing and testing
-	    a number of adapted and original options 
-  for the next two <em>views</em>, namely 
-  <em>visualization</em> view and <em>modelling</em> view.
+  (<em>reading</em>, <em>analysis</em>, and <em>visualization</em>).  We are
+  currently focussing on expanding the <em>visualization</em> view with additional
+  visualizations, which will cover all analytical layers (phonological, morphological,
+  syntactic, semantic, and pragmatic) and offer a range of perspectives, from the
+  purely illustrative to the deeply engaging creative.  We are also in the process
+  of exploring ontological modelling techniques for poetry analysis in the
+  <em>modelling</em> view.
 </p>
 
 <h2 id="dissemination">Output and dissemination</h2>
@@ -530,11 +543,17 @@ href="/authors/pers00279.shtml">Amelia Alderson Opie</a> (author page
   <em>visualization</em> view&mdash;many thanks to Alfie Abdul-Rahman for
   collaborating with us on this project!
 </li>
-<li><em>15 August 2018 (<!--#include virtual="/data/version" -->):</em>
+<li><em>15 August 2018 (v0.99.3):</em>
  Content added: <a href="/authors/pers00294.shtml">Thomas Parnell</a>
   (author page and 20 poems added); Website: <em>Phonemia</em> and
  <em>Poem Viewer</em>, our first two visualizations, will 
  become available in our next update (Sep. 2018)
+</li>
+<li><em>3 September 2018 (<!--#include virtual="/data/version" -->):</em>
+ Content added: <a href="/authors/pers00295.shtml">Charlotte Lennox</a>
+  (author page and 31 poems added); Website: <em>Phonemia</em> and
+  <em>Poem Viewer</em> are now live and ready to be explored in
+  the <em>visualization</em> view
 </li>
 </ul>
 
@@ -544,10 +563,10 @@ href="/authors/pers00279.shtml">Amelia Alderson Opie</a> (author page
   any aspect of the poetry of the long eighteenth-century.  Some of
   the areas we think might be fruitfully explored include:</p>
 <ul>
-<li>interlinking of texts that form a clear dialogue with each other</li>
-<li>exploring digital editing of a text or author and edition visualization</li>
-<li>expanding an author or improving a single text or group of texts</li>
-<li>collaborating on improving, training, and adding to the set of tools</li>
+<li>interlinking of texts that form a clear dialogue with each other;</li>
+<li>exploring digital editing of a text or author and edition visualization;</li>
+<li>expanding an author or improving a single text or group of texts;</li>
+<li>collaborating on improving, training, and adding to the set of tools;</li>
 <li>(insert your idea here... and get in touch!)</li>
 </ul>
 

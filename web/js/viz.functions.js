@@ -33,7 +33,7 @@ var sup = ["su01","su02","su03","su04","su05"];
 // CSS Styles
 var phon = '', statsd = '', classes = '', scan = '', isProse = 0;
 if ( $("#text").children('p').length > 1 ||
-  ($("#text").find('p[class="p-in-sp"]')).length > 1 ) { // prose poems
+     ($("#text").find('p[class="p-in-sp"]')).length > 1 ) { // prose poems
     isProse = 1;
 }
 phon='<style id="style_v_s">\n'; $.each(v_s,function(i,e) { phon += "."+e+"::before,"; });
@@ -104,18 +104,18 @@ function init(d) {
     case "PHONEMIA_VIZ":                                             // "Phonemia"
 	if ( $(ecep).length ) {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 		.find( "#"+$(ecep).eq(0).attr('id') ).nextUntil( "#"+$(ecep).eq(1).attr('id') );
 	} else {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 		.children(".lg,.sp,#text > p");
 	    if ($clone.length == 0) { $clone = $( "#text > div" ).clone()
-				      .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
-				      .children(".lg,.sp,p"); }
+		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .children(".lg,.sp,p"); }
 	    if ($clone.length == 0) { $clone = $( "#text > div > div" ).clone()
-				      .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,p.align-center' ).remove().end()
-				      .children(".lg,.sp,p"); }
+		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .children(".lg,.sp,p"); }
 	}
 	ecepsaved = 0;
 	ecepidsaved = '';
@@ -126,7 +126,7 @@ function init(d) {
 	// default visualization
 	if ( $("#text").children('p').length > 1
 	     || ($("#text").find('p[class="p-in-sp"]')).length > 1
-	   ) { // prose poems
+	     ) {                                     // prose poems
 	    displaysaved = "t+c";
 	    lk_wc();
 	    display_viz_lk( classes );
@@ -140,7 +140,7 @@ function init(d) {
 	    success: function(data) { zeus = data.split("\n"); }
 	});
 	break;
-    case "POEMVIS_VIZ":                                        // PoemViewer
+    case "POEMVIS_VIZ":                                              // PoemViewer
 	poemvis_load(1);
 	ecepsaved = 0;
 	ecepidsaved = '';
@@ -180,7 +180,7 @@ $(document.body).on('change', '#selection', function () {
 	    success: function(data) { zeus = data.split("\n"); }
 	});
 	$clone = $( "#text" ).clone()
-	    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument' ).remove().end()
+	    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 	    .find( "#"+$(ecep).eq(ecepsaved).attr('id') ).nextUntil( "#"+$(ecep).eq(ecepsaved+1).attr('id') );
 	lk_clone();
 	switch ( $( 'select#display' ).val() ) {
@@ -269,54 +269,30 @@ function lk_clone() {
 function lk_wc() {
     // create overview
     classes = `<table style="width:100%; table-layout:fixed;" id="lk_wc"><tr><th style="width:50%; margin-right:30px; text-align:left;" class="panel-title">Phonemic transcription</th><th style="text-align:left" class="panel-title">Major word classes</th></tr>`;
-    if ( $(ecep).length ) { // multiple parts
-	$clone.each( function(i,e) { // paratexts
-	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
-		    classes += `<tr>`;
-		    classes += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
-		    classes += `</tr>`;
-	    } else { // text
-		$(e).children().each( function(i,e) {
-                    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-			$(e).children().each( function(i,e) {
-			    classes += `<tr>`;
-			    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
-			    classes += `</tr>`;
-			});
-		    } else {
-			classes += `<tr>`;
-			classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_wordclass( $(e) ):'</td>');
-			classes += `</tr>`;
-		    }
-		});
-	    }
-	});
-    } else {                // single part
-	if ( $("#text").children('p').length > 1
-	     && !($("#text").find('p[class="p-in-sp"]').length > 1)
-	   ) { // prose poems
-	    $clone.each( function(i,e) {
-		classes += `<tr>`;
-		classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="P")?`</td>`+lk_wordclass( $(e) ):'</td>');
-		classes += `</tr>`;
-	    });
-	} else { // lyric poems and prose speech
-	    $clone.children().each( function(i,e) {
+
+    $clone.each( function(i,e) { // paratexts
+	if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+	    classes += `<tr>`;
+	    classes += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+	    classes += `</tr>`;
+	} else if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+	    $(e).children().each( function(i,e) {                                                              
 		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-		    $(e).children().each( function(i,e) {
+		    $(e).find( "div.line,span.head-stanza").each( function(i,e) {
 			classes += `<tr>`;
 			classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
 			classes += `</tr>`;
 		    });
-		} else {
+		} else {         
 		    classes += `<tr>`;
-		    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).prop("nodeName")=="P")?`</td>`+lk_wordclass( $(e) ):'</td>');
+		    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
 		    classes += `</tr>`;
 		}
 	    });
 	}
-    }
+    });
     classes += '</table>';
+
 }
 
 // LK word class line
@@ -363,45 +339,30 @@ function lk_scansion() {
     scan = `<table style="width:100%;" id="lk_scan"><tr class="panel-title"><th style="width:50%; margin-right:30px;">Phonemic transcription</th><th style="width:50%; text-align:left;" class="panel-title">Scansion (metrical pattern)</th>
     </tr>`;
     // build scansion
-    if ( $(ecep).length ) { // multiple parts
-	$clone.each( function(i,e) { // paratexts
-	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
-		scan += `<tr>`;
-		scan += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
-		scan += `</tr>`;
-	    } else { // text
-		$(e).children().each( function(i,e) {
-		    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-			$(e).children().each( function(i,e) {
-			    scan += `<tr>`;
-			    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
-			    scan += `</tr>`;
 
-			});
-		    } else {
-			scan += `<tr>`;
+    $clone.each( function(i,e) { // paratexts
+	if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+	    scan += `<tr>`;
+	    scan += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+	    scan += `</tr>`;
+	} else if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+	    $(e).children().each( function(i,e) {                                                              
+		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+		    $(e).find( "div.line,span.head-stanza").each( function(i,e) {
+			scan += `<tr>`;                                                                           
 			scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
 			scan += `</tr>`;
-		    }
-		});
-	    }
-	});
-    } else { // single part
-	$clone.children().each( function(i,e) {
-	    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-		$(e).children().each( function(i,e) {
-		    scan += `<tr>`;
-		    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
-		    scan += `</tr>`;
-		});
-	    } else {
-		scan += `<tr>`;
-		scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
-		scan += `</tr>`;
-	    }
-	});
-    }
+		    });
+		} else {         
+		    scan += `<tr>`;                                                                           
+		    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');                                                                                           
+		    scan += `</tr>`;                                                                         
+		}
+	    });
+	}
+    });
     scan += '</table>';
+
 }
 
 // LK scan line
@@ -419,7 +380,7 @@ function lk_scan (line) {
     if (l[$( line ).attr( "id" )] && l[$( line ).attr( "id" )].syllab != "" && l[$( line ).attr( "id" )].syllab != null) {
 	syllab = l[$( line ).attr( "id" )].syllab;
     }
-    if ((met != '' && syllab != '') || l.met != '' ) {
+    if (l[$( line ).attr( "id" )] && ( (met != '' && syllab != '') || l.met != '' ) ) {
 	var i = 0, j = 0, wordnum = 0, hyphened = [], omitted = [];
 	$.each( l[$( line ).attr( "id" )].content, function( index,item ) {
 	    if ( o[item] && o[item].class == "w" ) {
@@ -435,7 +396,7 @@ function lk_scan (line) {
 		i++;
 	    }
 	});
-	if ( (met != '' && syllab != '') && scount == parseInt(syllab)) {           // syllables and metrical pattern match
+	if ( (met != '' && syllab != '') && scount == parseInt(syllab)) {    // syllables and metrical pattern match
 	    var i = 0, wrd = [];
 	    met = met.replace(/[\||\/]/g,'');
 	    for (i = 0; i < syl.length; i++) {
@@ -446,7 +407,7 @@ function lk_scan (line) {
 		met = met.substring( syl[i] );
 	    }
 	    result = lk_output_scan(wrd,line,1);
-	} else {                                                                    // use automatic scansion results
+	} else {                                                             // use automatic scansion results
 	    var lineno = $clone.find( "#"+$( line ).attr( "id" ) ).children(".ln").text().trim()-1;
 	    var	syl = zeus[ lineno ].split(':').pop().trim().replace(/'/g,'+').split(" ");
 	    $.each( hyphened, function(index,item) {
@@ -484,7 +445,6 @@ function lk_scan (line) {
 }
 
 function lk_output_scan (syl, line, conf) {
-
     var linetext = '',linemet = '',open = 0, saved = '', i = 0;
     $.each( l[$( line ).attr( "id" )].content, function( index,item ) {
 	if ( o[item] && o[item].class == "w" ) {
@@ -514,6 +474,7 @@ function lk_output_scan (syl, line, conf) {
     else if (conf == 2) { confidence = "conf-med"; }
     else if (conf == 3) { confidence = "conf-low"; }
     return `<table><tr class="scan `+confidence+`">`+linemet+`</tr><tr class="line">`+linetext+`</tr></table>`;
+
 }
 
 // LK generate statistics
@@ -528,67 +489,33 @@ function lk_stats() {
 	<th class="t_c_x">C/ap</th><th class="t_ct">C</th><th class="t_cvo">C/v</th><th class="t_cuv">C/vl</th>
 	</tr>`;
     // build stats
-    if ( $(ecep).length ) { // multiple parts
-	$clone.each( function(i,e) { // paratexts
-	    if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
-		statsd += `<tr>`;
-		statsd += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
-		statsd += `</tr>`;
-	    } else { // text
-		$(e).children().each( function(i,e) {
-		    if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-			$(e).children().each( function(i,e) {
-			    res = lk_calculate( $(e) );
-			    statsd += `<tr>`;
-			    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
-										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
-										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
-										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
-										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-			    statsd += `</tr>`;
-			    
-			});
-		    } else {
+
+    $clone.each( function(i,e) { // paratexts
+	if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+	    statsd += `<tr>`;
+	    statsd += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
+	    statsd += `</tr>`;
+	} else if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+	    $(e).children().each( function(i,e) {                                                              
+		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
+		    $(e).find( "div.line,span.head-stanza").each( function(i,e) {
 			res = lk_calculate( $(e) );
 			statsd += `<tr>`;
-			statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
-										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
-										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
-										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
-										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
+			statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td><td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td><td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td><td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td><td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
 			statsd += `</tr>`;
-		    }
-		});
-	    }
-	});
-    } else { // single part
-	    $clone.children().each( function(i,e) {
-		var res = [];
-		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-		    $(e).children().each( function(i,e) {
-			    res = lk_calculate( $(e) );
-			    statsd += `<tr>`;
-			    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
-										    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
-										    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
-										    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
-										    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
-			    statsd += `</tr>`;
-			});
-		} else {
+		    });
+		} else {         
 		    res = lk_calculate( $(e) );
 		    statsd += `<tr>`;
-		    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>
-									    <td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td>
-									    <td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td>
-									    <td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td>
-									    <td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
+		    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td><td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td><td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td><td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td><td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
 		    statsd += `</tr>`;
-		}
+                }
 	    });
-    }
+	}
+    });
     statsd += `<tr id="totals"><td></td><td class="t_v_s">`+totals[0]+`</td><td class="t_v_l">`+totals[1]+`</td><td class="t_v_d">`+totals[2]+`</td><td class="t_v_n">`+totals[3]+`</td><td class="t_vt">`+totals[4]+`</td><td class="t_v_f">`+totals[5]+`</td><td class="t_v_c">`+totals[6]+`</td><td class="t_v_b">`+totals[7]+`</td><td class="t_c_n">`+totals[8]+`</td><td class="t_c_p">`+totals[9]+`</td><td class="t_c_a">`+totals[10]+`</td><td class="t_c_f">`+totals[11]+`</td><td class="t_c_x">`+totals[12]+`</td><td class="t_ct">`+totals[13]+`</td><td class="t_cvo">`+totals[14]+`</td><td class="t_cuv">`+totals[15]+`</td></tr>`;
     statsd += '</table>';
+
 }
 
 // LK calculate line
@@ -856,6 +783,7 @@ function display_viz_lk( vis ) {
     $( '#lk_control').append( lk_control );
     $( 'select#selection' ).val( ecepsaved );
     $( 'select#display' ).val( displaysaved );
+
 }
 
 // LK collect, sort and prioritize phonological figures by phoneme occurrence for each figure 
@@ -901,6 +829,7 @@ function lk_json (json) {
 	RF += "</ul>";
     }
     return RF;
+
 }
 
 // LK interface controls
@@ -1045,37 +974,37 @@ function poemvis_load (part) {
     $( '#visualization' ).html( '<iframe id="poemvis_frame"></iframe>' );
     // make sure iframe is loaded before manipulating and attaching listeners
     $( '#poemvis_frame' ).on('load', function() {
-	    var poemvisFrame = $("#poemvis_frame").contents();
-	    // adapt interface for multiple ecep
-	    if ( $(ecep).length > 0 ) {
-		poemvisFrame.find("#sel_label").replaceWith( "<label class='subtitle'>Selection:</label>" );
-		var poemvisReplace= `<select id="selection" class="subtitle select_mapping">`;
-		$.each(ecep, function(i,e) {
-			poemvisReplace += `<option value="`+i+`">`;
-			var $text = $( '#contents' ).find( 'li' ).eq(i).text();
-			if ( $text.length > 45 ) {
-			    $text = $text.trim().substring(0, 45).split(" ").slice(0, -1).join(" ") + "...";
-			}
-			poemvisReplace += $text;
-			poemvisReplace += `</option>`;
-		    });
-		poemvisReplace += `</select>`;
-		poemvisFrame.find("#sel_selection").replaceWith( poemvisReplace );
-	    }
-	    // preserve selection
-	    poemvisFrame.find( '#selection' ).val( part-1 );
-	    if (ecepidsaved) {
-		$( "#text" ).animate({
-			scrollTop: $( "#"+ecepidsaved ).offset().top - 100
-		}, 500);
-	    }
-	    // viz home
-	    poemvisFrame.find(".viz_home").click(function(){
-		    viz_chosen = '';
-		    $( "div#text" ).scrollTop(0);
-                    $.getScript('/js/viz_overview.js');
+	var poemvisFrame = $("#poemvis_frame").contents();
+	// adapt interface for multiple ecep
+	if ( $(ecep).length > 0 ) {
+	    poemvisFrame.find("#sel_label").replaceWith( "<label class='subtitle'>Selection:</label>" );
+	    var poemvisReplace= `<select id="selection" class="subtitle select_mapping">`;
+	    $.each(ecep, function(i,e) {
+	        poemvisReplace += `<option value="`+i+`">`;
+		var $text = $( '#contents' ).find( 'li' ).eq(i).text();
+	      	if ( $text.length > 45 ) {
+		    $text = $text.trim().substring(0, 45).split(" ").slice(0, -1).join(" ") + "...";
+		}
+		poemvisReplace += $text;
+		poemvisReplace += `</option>`;
 	    });
-	    poemvisFrame.find(".help-modal").click(function(){
+      	    poemvisReplace += `</select>`;
+	    poemvisFrame.find("#sel_selection").replaceWith( poemvisReplace );
+	}
+	// preserve selection
+	poemvisFrame.find( '#selection' ).val( part-1 );
+	if (ecepidsaved) {
+	    $( "#text" ).animate({
+	      	scrollTop: $( "#"+ecepidsaved ).offset().top - 100
+	    }, 500);
+	}
+	// viz home
+        poemvisFrame.find(".viz_home").click(function(){
+	   viz_chosen = '';
+           $( "div#text" ).scrollTop(0);
+           $.getScript('/js/viz_overview.js');
+	});
+	poemvisFrame.find(".help-modal").click(function(){
 
 $( "body" ).prepend(`
 <div id="newHelp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newModalLabel">
