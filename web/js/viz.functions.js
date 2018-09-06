@@ -91,16 +91,16 @@ $(document.body).on('click', '.viz_choose', function () {
 	}, 100);
 	var d = $(this);
 	_.defer( function() {
-	    init( d );
+	    init( $(d).attr( 'id' ) );
 	    $( "#spinner" ).remove();
 	});
 });
 function init(d) {
-    viz_chosen = $(d).attr( 'id' );
+    viz_chosen = d;
     $('.nav-tabs a[href="#text"]').tab('show');
     $( "div#text" ).scrollTop(0);
     ecep = $("#text").find('.ecep');
-    switch ( $(d).attr( 'id' ) ) {
+    switch ( d ) {
     case "PHONEMIA_VIZ":                                             // "Phonemia"
 	if ( $(ecep).length ) {
 	    $clone = $( "#text" ).clone()

@@ -24,10 +24,17 @@
     $('a.link_ref:not(a.link_ref[href^="#"])').attr('target', '_blank');
     $('a.external').attr('target', '_blank');
 
-    
+
     // switch to tab specified in URL hash
     var hash = window.location.hash;
     hash && $('ul.nav a[href="' + hash + '"]').tab('show') || $('.nav-tabs a[href="#text"]').tab('show');
+    if (hash == "#poemvis") { // supports direct link into #PoemViewer from TGA
+	viz_chosen = "POEMVIS_VIZ";
+	hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
+	$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
+	$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+	init( viz_chosen );
+    }
     $('.nav-tabs a').click(function (e) {
         $(this).tab('show');
         var scrollmem = $('body').scrollTop();

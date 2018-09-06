@@ -467,6 +467,7 @@ function showAllParatexts(value) {
 	$("#text .tableofcontents").css('display','none');
 	$("#text .dramatispersonae").css('display','none');
 	$("#text .halftitle").css('display','none');
+	$("#text .half-title").css('display','none');
 	$("#text .introduction").css('display','none');
 	$("#text .dedication").css('display','none');
 	$("#text .preface").css('display','none');
@@ -489,6 +490,7 @@ function showAllParatexts(value) {
 	$("#text .tableofcontents").css('display','');
 	$("#text .dramatispersonae").css('display','');
 	$("#text .halftitle").css('display','');
+	$("#text .half-title").css('display','');
 	$("#text .introduction").css('display','');
 	$("#text .dedication").css('display','');
 	$("#text .preface").css('display','');
