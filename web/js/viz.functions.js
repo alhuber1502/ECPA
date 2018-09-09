@@ -554,7 +554,7 @@ function display_viz_lk( vis ) {
     $("#visualization").html( '<div id="lk_viz"><div id="lk_control"></div><div id="lk_body"></div></div>' );
     // display clone + visualization
     $(vis).appendTo( '#lk_body' ).wrapAll( '<div class="text"/>' );
-    var lk_control = `<img style="padding:5px 0;" src="/images/screenshots/phonemia.png" alt="Phonemia"/><a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:middle'/></a>`+`<a style="cursor:pointer; float:right; padding:23px 5px 0 0;" class="viz_home">Visualization Home</a>
+    var lk_control = `<img style="padding:5px 0;" src="/images/screenshots/phonemia.png" alt="Phonemia"/><a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:middle'/></a>`+`<a style="float:right; padding:23px 5px 0 0;" href="#visualization" class="viz_home">Visualization Home</a>
     <div class="panel-group" role="tablist" aria-multiselectable="true">
         <div class="panel">
 	    <div class="panel-heading" role="tab" id="headingOne">
@@ -1000,6 +1000,7 @@ function poemvis_load (part) {
 	}
 	// viz home
         poemvisFrame.find(".viz_home").click(function(){
+           window.location.hash = "#visualization";
 	   viz_chosen = '';
            $( "div#text" ).scrollTop(0);
            $.getScript('/js/viz_overview.js');

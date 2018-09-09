@@ -1026,7 +1026,7 @@ function ana_initialize () {
         placeholder: "panel-placeholder ui-corner-all"
     });
 
-    $( ".panel" )
+    $( "#analysis .panel" )
         .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
         .find( ".panel-heading" )
         .addClass( "ui-widget-header ui-corner-all" )
