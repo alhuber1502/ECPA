@@ -124,9 +124,7 @@ function init(d) {
 	lk_clone();
 	
 	// default visualization
-	if ( $("#text").children('p').length > 1
-	     || ($("#text").find('p[class="p-in-sp"]')).length > 1
-	     ) {                                     // prose poems
+	if ( isProse ) {                             // prose poems
 	    displaysaved = "t+c";
 	    lk_wc();
 	    display_viz_lk( classes );
@@ -271,12 +269,12 @@ function lk_wc() {
     classes = `<table style="width:100%; table-layout:fixed;" id="lk_wc"><tr><th style="width:50%; margin-right:30px; text-align:left;" class="panel-title">Phonemic transcription</th><th style="text-align:left" class="panel-title">Major word classes</th></tr>`;
 
     $clone.each( function(i,e) { // paratexts
-	if ( $(e).prop("nodeName")=="H2" || $(e).prop("nodeName")=="P" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
+	    if ( $(e).prop("nodeName")=="H2" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
 	    classes += `<tr>`;
 	    classes += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
 	    classes += `</tr>`;
 	} else if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-	    $(e).children().each( function(i,e) {                                                              
+	    $(e).children().each( function(i,e) {
 		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
 		    $(e).find( "div.line,span.head-stanza").each( function(i,e) {
 			classes += `<tr>`;
@@ -289,8 +287,12 @@ function lk_wc() {
 		    classes += `</tr>`;
 		}
 	    });
-	}
-    });
+	    } else {
+		classes += `<tr>`;
+		classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="P" || $(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
+		classes += `</tr>`;
+	    }
+	});
     classes += '</table>';
 
 }
@@ -581,14 +583,12 @@ function display_viz_lk( vis ) {
     }
     lk_control += `<label style="margin-right:23px;">Display:</label>
 	<select id="display">`;
-    if ( !($("#text").children('p').length > 1
-	   || $("#text").find('p[class="p-in-sp"]').length > 1)
-       ) {
+    if ( isProse == 0 ) { // verse only
 	lk_control += `<option value="t+d">Phonemic transcription / distribution</option>`;
-    }
 //    if ( l[ $("#text").find(".line").first().attr("id")] && l[ $("#text").find(".line").first().attr("id") ].met != null && l[$("#text").find(".line").first().attr("id")].met != '') {
-    if ( l.met != "" ) {
-	lk_control += `<option value="t+m">Phonemic transcription / metre</option>`;
+        if ( l.met != "" ) {
+	    lk_control += `<option value="t+m">Phonemic transcription / metre</option>`;
+        }
     }
     lk_control += `<option value="t+c">Phonemic transcription / word classes</option>
 		     </select>
