@@ -22,7 +22,8 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/o3499-w0010.shtml"><em>THE CAMPAIGN, A POEM, To His GRACE the DUKE of MARLBOROUGH.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3499" href="/works/o3499.shtml#o3499-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o4602-w0020.shtml"><em>AN ODE TO Dr. HANNES, An Eminent PHYSICIAN and POET.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4602" href="/works/o4602.shtml#o4602-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
@@ -34,6 +35,59 @@
                   <li><a title="view full-text" href="/works/o4226-w0010.shtml"><em>To Her ROYAL HIGHNESS the PRINCESS of WALES, With the Tragedy of CATO. Nov. 1714.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4226" href="/works/o4226.shtml#o4226-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o4226-w0020.shtml"><em>TO Sir GODFREY KNELLER, ON HIS PICTURE of the KING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4226" href="/works/o4226.shtml#o4226-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="o3499"><a title="view table of contents of source edition" href="/works/o3499.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The campaign: a poem, to His Grace the Duke of Marlborough. By Mr. Addison.</span> </em>  London: printed for Jacob Tonson, 1705 [1704]. [4],23,[1]p. ; 2⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/N26484">N26484</a>; 
+                     						Foxon A27; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K014868.000">K014868.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o3499-w0010" style="text-indent:-30px;"><a href="/works/o3499-w0010.shtml"><em>THE CAMPAIGN, A POEM, To His GRACE the DUKE of MARLBOROUGH.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o4226"><a title="view table of contents of source edition" href="/works/o4226.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">To her Royal Highness the Princess of Wales, with the tragedy of Cato. Nov. 1714.
+                           To Sir Godfrey Kneller, on his picture of the King.</span> </em>  London: printed for J. Tonson, 1716 [1715]. [2],9,[1]p. ; 2⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T51118">T51118</a>; 
+                     						Foxon A41-A42; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K046707.000">K046707.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o4226-w0010" style="text-indent:-30px;"><a href="/works/o4226-w0010.shtml"><em>To Her ROYAL HIGHNESS the PRINCESS of WALES, With the Tragedy of CATO. Nov. 1714.</em></a></li>
+                        <li id="o4226-w0020" style="text-indent:-30px;"><a href="/works/o4226-w0020.shtml"><em>TO Sir GODFREY KNELLER, ON HIS PICTURE of the KING.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o3428"><a title="view table of contents of source edition" href="/works/o3428.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The resurrection. A poem: Written by Mr. Addison.</span> <span class="titlem">Resurrectio delineata ad altare col. Magd. Oxon. English and Latin.</span> </em>  London: printed for E. Curll, 1718. xii,8,17-21,[1]p.,plate ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/N13275">N13275</a>; 
+                     						Foxon A204; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K008178.000">K008178.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o3428-w0010" style="text-indent:-30px;"><a href="/works/o3428-w0010.shtml"><em>THE RESURRECTION A POEM.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o4602"><a title="view table of contents of source edition" href="/works/o4602.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Two poems: viz. I. On the deluge, paradise, the burning of the world, and of the new
+                           heavens and new earth. An ode to. Dr. Burnett. II. In praise of physic and poetry.
+                           An ode to Dr. Hannes. Written by Mr. Addison.</span> </em>  London: printed for E. Curll, 1718. 24p. : ill ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T75001">T75001</a>; 
+                     						Foxon N275; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K063010.000">K063010.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o4602-w0010" style="text-indent:-30px;"><a href="/works/o4602-w0010.shtml"><em>AN ODE To the Learned Dr. Thomas Burnett, AUTHOR of The Theory of the EARTH.</em></a></li>
+                        <li id="o4602-w0020" style="text-indent:-30px;"><a href="/works/o4602-w0020.shtml"><em>AN ODE TO Dr. HANNES, An Eminent PHYSICIAN and POET.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o5282"><a title="view table of contents of source edition" href="/works/o5282.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Mr. Addison's fine ode to Dr. Thomas Burnet, on his sacred theory of the earth: Done
+                           into English by the author of a late tale call'd Coffee.</span> <span class="titlem">Ad insignissimum virum, D. Thomam Burnettum. English.</span> </em>  London: printed for T. Warner, 1727. [4],15,[1]p. ; 4⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T143099">T143099</a>; 
+                     						Foxon M288; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K111808.000">K111808.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o5282-w0010" style="text-indent:-30px;"><a href="/works/o5282-w0010.shtml"><em>TO That GREAT-THINKER, Dr. THOMAS BURNET, On His SACRED THEORY of the EARTH.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

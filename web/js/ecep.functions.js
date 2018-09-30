@@ -451,6 +451,20 @@ $('div.CodeMirror').click(function(){
     $('#downXML').prop('disabled', false);
 });
 
+function showTitles(value) {
+    if (value == false) { // alphabetical
+	$('#alphabetical').html('<b>alphabetical listing</b>');
+	$('#bysourceeditions').html('<a href="#" onClick="showTitles(true);">listing in source editions</a>');
+	$('[data-id="alphabetical"').show();
+	$('[data-id="bysourceeditions"').hide();
+    } else {
+	$('#alphabetical').html('<a href="#" onClick="showTitles(false);">alphabetical listing</a>');
+	$('#bysourceeditions').html('<b>listing in source editions</b>');
+	$('[data-id="alphabetical"').hide();
+	$('[data-id="bysourceeditions"').show();
+    }
+
+}
 
 // switch between "text" view and "document" view
 function showAllParatexts(value) {

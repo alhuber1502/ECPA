@@ -22,7 +22,8 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/pro75-w0020.shtml"><em>ANOTHER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pro75" href="/works/pro75.shtml#pro75-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/pro75-w0070.shtml"><em>A CHARACTER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pro75" href="/works/pro75.shtml#pro75-w0070"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
@@ -86,9 +87,48 @@
                   <li><a title="view full-text" href="/works/pro75-w0080.shtml"><em>Written on the Outside of an HERMITAGE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pro75" href="/works/pro75.shtml#pro75-w0080"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="pro75"><a title="view table of contents of source edition" href="/works/pro75.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems by Mrs. Robinson [poems only].</span> </em>  London: Printed for C. Parker, the Upper Part of New Bond-Street, 1775. [8],134p.,plate; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T100118">T100118</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="pro75-w0010" style="text-indent:-30px;"><a href="/works/pro75-w0010.shtml"><em>A PASTORAL BALLAD.</em></a></li>
+                        <li id="pro75-w0020" style="text-indent:-30px;"><a href="/works/pro75-w0020.shtml"><em>ANOTHER.</em></a></li>
+                        <li id="pro75-w0030" style="text-indent:-30px;"><a href="/works/pro75-w0030.shtml"><em>A PASTORAL ELEGY.</em></a></li>
+                        <li id="pro75-w0040" style="text-indent:-30px;"><a href="/works/pro75-w0040.shtml"><em>An ODE to WISDOM.</em></a></li>
+                        <li id="pro75-w0050" style="text-indent:-30px;"><a href="/works/pro75-w0050.shtml"><em>An ODE to CHARITY.</em></a></li>
+                        <li id="pro75-w0060" style="text-indent:-30px;"><a href="/works/pro75-w0060.shtml"><em>The LINNET'S PETITION.</em></a></li>
+                        <li id="pro75-w0070" style="text-indent:-30px;"><a href="/works/pro75-w0070.shtml"><em>A CHARACTER.</em></a></li>
+                        <li id="pro75-w0080" style="text-indent:-30px;"><a href="/works/pro75-w0080.shtml"><em>Written on the Outside of an HERMITAGE.</em></a></li>
+                        <li id="pro75-w0090" style="text-indent:-30px;"><a href="/works/pro75-w0090.shtml"><em>A CHARACTER.</em></a></li>
+                        <li id="pro75-w0100" style="text-indent:-30px;"><a href="/works/pro75-w0100.shtml"><em>ODE to VIRTUE.</em></a></li>
+                        <li id="pro75-w0110" style="text-indent:-30px;"><a href="/works/pro75-w0110.shtml"><em>An EPISTLE to a FRIEND.</em></a></li>
+                        <li id="pro75-w0120" style="text-indent:-30px;"><a href="/works/pro75-w0120.shtml"><em>On the DEATH of a FRIEND.</em></a></li>
+                        <li id="pro75-w0130" style="text-indent:-30px;"><a href="/works/pro75-w0130.shtml"><em>The WISH.</em></a></li>
+                        <li id="pro75-w0140" style="text-indent:-30px;"><a href="/works/pro75-w0140.shtml"><em>On a FRIEND.</em></a></li>
+                        <li id="pro75-w0150" style="text-indent:-30px;"><a href="/works/pro75-w0150.shtml"><em>On the DEATH of LORD GEORGE LYTTELTON.</em></a></li>
+                        <li id="pro75-w0160" style="text-indent:-30px;"><a href="/works/pro75-w0160.shtml"><em>A CHARACTER.</em></a></li>
+                        <li id="pro75-w0170" style="text-indent:-30px;"><a href="/works/pro75-w0170.shtml"><em>ODE to SPRING.</em></a></li>
+                        <li id="pro75-w0180" style="text-indent:-30px;"><a href="/works/pro75-w0180.shtml"><em>LETTER to a FRIEND on leaving TOWN.</em></a></li>
+                        <li id="pro75-w0190" style="text-indent:-30px;"><a href="/works/pro75-w0190.shtml"><em>WRITTEN EXTEMPORE on the PICTURE of a FRIEND.</em></a></li>
+                        <li id="pro75-w0200" style="text-indent:-30px;"><a href="/works/pro75-w0200.shtml"><em>HYMN to VIRTUE.</em></a></li>
+                        <li id="pro75-w0210" style="text-indent:-30px;"><a href="/works/pro75-w0210.shtml"><em>SONG.</em></a></li>
+                        <li id="pro75-w0220" style="text-indent:-30px;"><a href="/works/pro75-w0220.shtml"><em>SONG.</em></a></li>
+                        <li id="pro75-w0230" style="text-indent:-30px;"><a href="/works/pro75-w0230.shtml"><em>On the BIRTH-DAY of a LADY.</em></a></li>
+                        <li id="pro75-w0240" style="text-indent:-30px;"><a href="/works/pro75-w0240.shtml"><em>To AURELIA on her GOING ABROAD.</em></a></li>
+                        <li id="pro75-w0250" style="text-indent:-30px;"><a href="/works/pro75-w0250.shtml"><em>To LOVE: written extempore.</em></a></li>
+                        <li id="pro75-w0260" style="text-indent:-30px;"><a href="/works/pro75-w0260.shtml"><em>The COMPLAINT.</em></a></li>
+                        <li id="pro75-w0270" style="text-indent:-30px;"><a href="/works/pro75-w0270.shtml"><em>THOUGHTS on RETIREMENT.</em></a></li>
+                        <li id="pro75-w0280" style="text-indent:-30px;"><a href="/works/pro75-w0280.shtml"><em>An ODE to CONTENTMENT.</em></a></li>
+                        <li id="pro75-w0290" style="text-indent:-30px;"><a href="/works/pro75-w0290.shtml"><em>A SONG.</em></a></li>
+                        <li id="pro75-w0300" style="text-indent:-30px;"><a href="/works/pro75-w0300.shtml"><em>The VISION.</em></a></li>
+                        <li id="pro75-w0310" style="text-indent:-30px;"><a href="/works/pro75-w0310.shtml"><em>To MATILDA.</em></a></li>
+                     </ul>
+                  </li>
+               </ul>
                <h2 class="info">Source editions</h2>
                <ul class="listBibl">
-                  <li id="pro75"><a title="view table of contents of source edition" href="/works/pro75.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems by Mrs. Robinson [poems only].</span> </em>  London: Printed for C. Parker, the Upper Part of New Bond-Street, 1775. [8],134p.,plate; 8°.
+                  <li id="pro75"><a title="view table of contents of source edition" href="/works/pro75.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems by Mrs. Robinson [poems only].</span> </em>  London: Printed for C. Parker, the Upper Part of New Bond-Street, 1775. [8],134p.,plate; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T100118">T100118</a>)
                      				
                   </li>
@@ -176,6 +216,10 @@
                   </li>
                   <li>
                      <div class="biblfree">Curran, Stuart.  <q class="titlea">Mary Robinson's <span class="hi">Lyrical Tales</span> in context</q>. Wilson, Carol Shiner and Joel Haefner, eds. <span class="titlem">Re-visioning Romanticism: British women writers, 1776-1837</span>. Philadelphia: Pennsylvania UP, 1994. 17-35. Print.
+                     </div>
+                  </li>
+                  <li>
+                     <div class="biblfree">Garnai, Amy. <span class="titlem">Revolutionary imaginings in the 1790s: Charlotte Smith, Mary Robinson, Elizabeth Inchbald</span>. Basingstoke; New York: Palgrave Macmillan, 2009. Print.
                      </div>
                   </li>
                   <li>

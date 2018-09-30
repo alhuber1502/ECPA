@@ -17,10 +17,22 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/bsb18-w0580.shtml"><em>THE CUMBERLAND SCOLD.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="bsb18" href="/works/bsb18.shtml#bsb18-w0580"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/bsb18-w0850.shtml"><em>THE VILLAGE CLUB.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="bsb18" href="/works/bsb18.shtml#bsb18-w0850"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="bsb18"><a title="view table of contents of source edition" href="/works/bsb18.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The Poetical Works of Miss Susanna Blamire “The muse of Cumberland.” Now for the first
+                           time collected by Henry Lonsdale, M.D. with a preface, memoir, and notes by Patrick
+                           Maxwell, ...</span> </em>  Edinburgh: John Menzies, 61 Princes Street; R. Tyas, London; D. Robertson, Glasgow; and C. Thurnam,
+                     Carlisle. MDCCCXLII., 1842. 
+                     <ul class="listBibl ednTOC">
+                        <li id="bsb18-w0580" style="text-indent:-30px;"><a href="/works/bsb18-w0580.shtml"><em>THE CUMBERLAND SCOLD.</em></a></li>
+                        <li id="bsb18-w0850" style="text-indent:-30px;"><a href="/works/bsb18-w0850.shtml"><em>THE VILLAGE CLUB.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

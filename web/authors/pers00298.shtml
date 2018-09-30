@@ -1,0 +1,84 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Elizabeth Inchbald (née Simpson)" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Elizabeth Inchbald (née Simpson) "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Elizabeth Inchbald (née Simpson)</h1>
+            												(1753 - 
+            											1821)
+            											
+            <div id="portrait">
+               <figure class="figure">
+                  <figcaption class="caption">Elizabeth Inchbald (1753-1821)</figcaption>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/InchEl1753_NPG.jpg" alt="Elizabeth Inchbald (1753-1821)" class="graphic"></img></figure>
+            </div>
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
+                  <li><a title="view full-text" href="/works/o5472-w0010.shtml"><em>In the Dead of the Night. Sung by Mrs. Jordan in the Wedding Day.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5472" href="/works/o5472.shtml#o5472-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="o5472"><a title="view table of contents of source edition" href="/works/o5472.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">In the dead of the night. Sung by Mrs. Jordan in The wedding day.</span> </em>  [London]: Sold by J. Evans, No. 41, Long-lane, 1791-1803. 1 sheet ([1] p.); 1/8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T196353">T196353</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K126403.000">K126403.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o5472-w0010" style="text-indent:-30px;"><a href="/works/o5472-w0010.shtml"><em>In the Dead of the Night. Sung by Mrs. Jordan in the Wedding Day.</em></a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="o5472"><a title="view table of contents of source edition" href="/works/o5472.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">In the dead of the night. Sung by Mrs. Jordan in The wedding day.</span> </em>  [London]: Sold by J. Evans, No. 41, Long-lane, 1791-1803. 1 sheet ([1] p.); 1/8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T196353">T196353</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K126403.000">K126403.000</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2>Bibliography</h2>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1747&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1747</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/14374">14374</a></p>
+               <h3>Biography</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Jenkins, Annibel. <span class="titlem">I'll tell you what: the life of Elizabeth Inchbald</span>. Lexington: Kentucky UP, 2003. Print.
+                     </div>
+                  </li>
+               </ul>
+               <h3>Criticism</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Garnai, Amy. <span class="titlem">Revolutionary imaginings in the 1790s: Charlotte Smith, Mary Robinson, Elizabeth Inchbald</span>. Basingstoke; New York: Palgrave Macmillan, 2009. Print.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Elizabeth Inchbald (née Simpson)\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

@@ -1036,6 +1036,11 @@ function ana_initialize () {
         .parent()
         .after( "<a class='help-modal' href='#'><span class='pull-right glyphicon glyphicon-question-sign' style='padding-right:2px; vertical-align:text-top'/></a>");
 
+    // add textareas for notes/observations
+    $.each( ["pho-static","mor-static","syn-static","sem-static","pra-static"], function( index,item ) {
+	    $( "#"+item ).append( '<div data-id="'+item.substr(0,3)+'"><i>Notes/Observations:</i><br/><textarea style="resize:vertical;width:100%;" class="textaInput" rows="4" id="ta-'+item+'"/></div>' );
+    });
+
     // trigger first line hover
     if ( $("#analysis")[0] ) {
 	for (var key in l) {
@@ -1045,8 +1050,24 @@ function ana_initialize () {
 	    }
 	}
     }
-
 }
+
+// save notes/observations textarea after timeout
+var timeout = null;
+$(document.body).on('input propertychange paste', '.textaInput', function(e){
+    clearTimeout(timeout);
+    var d = $(this);
+    timeout = setTimeout(function() {
+        $.ajax({
+	    type: 'POST',
+	    url: '/cgi-bin/handleCS.cgi',
+	    data: { 'content': $(d).parent().attr("data-id")+"/"+lineID+": "+$(d).val(), 'file': docname, 'source': source },
+	    dataType: 'text',
+	    success: function() {},
+	    error: function() {}
+    	});
+    }, 2500);
+});
 
 $('#collapseSyn').on('show.bs.collapse', function () { // Annodoc needs a re-draw when change happens while collapsed
 	draw(lineID);
@@ -1147,7 +1168,7 @@ function ana_phonological (lineID) {
     if ( !$("#phonemic")[0]) {
 	$.each(o, function(index) { if (o[ index ].class == "w") { wtokensno++; } });
 	$( "#pho-static" )
-            .append( "<p id='phonemic'>This text has "+wtokensno+" word token"+(wtokensno > 1 ? "s" : "")+". <button id='phonemicdisplay' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Phonemic display <span>on</span></button></p> ");
+            .prepend( "<p id='phonemic'>This text has "+wtokensno+" word token"+(wtokensno > 1 ? "s" : "")+". <button id='phonemicdisplay' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Phonemic display <span>on</span></button></p> ");
     }
 
 }
@@ -1201,7 +1222,7 @@ function ana_morphological (lineID) {
 	} else {
 	    morphtext += "</ul>";
 	}
-	$( "#mor-static" ).append( morphtext );
+	$( "#mor-static" ).prepend( morphtext );
     }
     
 }
@@ -1249,7 +1270,7 @@ function ana_syntactic (lineID) {
 // Sentencing button
     if ( !$("#sentences")[0]) {
 	$( "#syn-static" )
-            .append( "<p id='sentences'>This text has "+Object.keys(s).length+" sentence"+(Object.keys(s).length > 1 ? "s" : "")+". The average number of <b>words per sentence</b> is "+(wtokensno/Object.keys(s).length).toFixed(1)+". <button id='sentencing' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Sentencing <span>on</span></button></p> ");
+            .prepend( "<p id='sentences'>This text has "+Object.keys(s).length+" sentence"+(Object.keys(s).length > 1 ? "s" : "")+". The average number of <b>words per sentence</b> is "+(wtokensno/Object.keys(s).length).toFixed(1)+". <button id='sentencing' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Sentencing <span>on</span></button></p><br/> ");
     }
 }
 
@@ -1263,7 +1284,7 @@ function ana_semantic (lineID) {
 	$( "#sem-sporadic" ).append("<div>Sentence no. "+sentnum+":</div>"+
 	"<p style='text-align: right;' class='small'>[<b>Tokens</b> // <span style='font-variant:small-caps;font-size:1.1em;'>Frames</span> // Frame elements (frame-specific roles)] &nbsp; "+query('[Found an error?]','Please specify...','semantics',l[lineID].sentences[0], 'Make a correction', 'Please provide a correction to the frame semantic parse', 'ta')+
 
-	"<br/><div id='parse_horiz' class='frameviz'/>");
+	"<br/><div id='parse_horiz' class='frameviz'/><br/>");
 	for (var i = 0; i < l[lineID].sentences.length; i++) {
 	    sentnum += (parseInt(l[lineID].sentences[i])+1)+", ";
 	    receivedFrameJSON(sema[ l[lineID].sentences[i]], 'sent', l[lineID].sentences[i]); // function appends output directly, plus, added third parameter to include sentence number
@@ -1317,7 +1338,7 @@ function ana_pragmatic (lineID) {
 // Named entities button
     if ( !$("#namedent")[0]) {
 	$( "#pra-static" )
-	    .append( "<span id='namedent'>This text refers to "+nespresent+" named entit"+(nespresent > 1 || nespresent == 0 ? "ies" : "y")+" ("+nesoccur+" occurrence"+(nesoccur > 1 || nesoccur == 0 ? "s" : "")+")."+((nespresent > 0)?" <button id='namedentities' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Named Entities <span>on</span></button> ":""));
+	    .prepend( "<div id='namedent'>This text refers to "+nespresent+" named entit"+(nespresent > 1 || nespresent == 0 ? "ies" : "y")+" ("+nesoccur+" occurrence"+(nesoccur > 1 || nesoccur == 0 ? "s" : "")+")."+((nespresent > 0)?" <button id='namedentities' type='button' class='btn btn-xs btn-primary' data-toggle='off' aria-pressed='false' autocomplete='off'>Named Entities <span>on</span></button></div><br/> ":"</div><br/>"));
     }
 }
 

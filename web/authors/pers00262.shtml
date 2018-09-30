@@ -17,7 +17,8 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/pba35-w0970.shtml"><em>To Mrs. Ward.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pba35" href="/works/pba35.shtml#pba35-w0970"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/pba35-w0950.shtml"><em>To the Reverend Mr. Mabell, of Cambridge, who has publish'd Proposals for a Translation
@@ -25,6 +26,21 @@
                   </li>
                   <li><a title="view full-text" href="/works/pba35-w0960.shtml"><em>To the Right Honourable the Earl of Orrery in Dublin: Upon receiving an Account from
                            Mrs. Barber, of his Lordship's great Generosity to her.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pba35" href="/works/pba35.shtml#pba35-w0960"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="pba35"><a title="view table of contents of source edition" href="/works/pba35.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems on Several Occasions [poems only].</span> </em>  London: Printed for C. Rivington, at the Bible and Crown in St. Paul's Church-Yard, 1735. lx, 290,[14]p.; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T42623">T42623</a>; 
+                     						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=519&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">519</a>; 
+                     						Foxon p. 45)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="pba35-w0950" style="text-indent:-30px;"><a href="/works/pba35-w0950.shtml"><em>To the Reverend Mr. Mabell, of Cambridge, who has publish'd Proposals for a Translation
+                                 of Longinus.  Bath, Dec. 20. 1731.</em></a></li>
+                        <li id="pba35-w0960" style="text-indent:-30px;"><a href="/works/pba35-w0960.shtml"><em>To the Right Honourable the Earl of Orrery in Dublin: Upon receiving an Account from
+                                 Mrs. Barber, of his Lordship's great Generosity to her.</em></a></li>
+                        <li id="pba35-w0970" style="text-indent:-30px;"><a href="/works/pba35-w0970.shtml"><em>To Mrs. Ward.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

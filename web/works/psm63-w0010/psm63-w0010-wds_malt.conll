@@ -8,7 +8,7 @@
 8	throne	throne	NN	NN	_	5	dobj	_	_
 9	,	,	,	,	_	11	punct	_	_
 10	With	with	RP	RP	_	11	dep	_	_
-11	harp	harp	NN	NN	_	0	null	_	_
+11	harp	harp	NN	NN	_	44	nsubj	_	_
 12	of	of	IN	IN	_	11	prep	_	_
 13	high	high	JJ	JJ	_	15	amod	_	_
 14	majestic	majestic	JJ	JJ	_	15	amod	_	_
@@ -38,10 +38,10 @@
 38	Clear	clear	VBP	VBP	_	11	rcmod	_	_
 39	,	,	,	,	_	11	punct	_	_
 40	as	as	CC	CC	_	11	cc	_	_
-41	a	a	DT	DT	_	44	nsubj	_	_
-42	clarion	clarion	FW	FW	_	41	dep	_	_
-43	,	,	,	,	_	41	punct	_	_
-44	rings	ring	VBZ	VBZ	_	11	conj	_	_
+41	a	a	DT	DT	_	42	det	_	_
+42	clarion	clarion	NN	NN	_	11	conj	_	_
+43	,	,	,	,	_	11	punct	_	_
+44	rings	ring	VBZ	VBZ	_	0	null	_	_
 45	:	:	:	:	_	44	punct	_	_
 46	To	to	RP	RP	_	47	dep	_	_
 47	bless	bless	VB	VB	_	44	parataxis	_	_
@@ -55,10 +55,10 @@
 55	And	and	CC	CC	_	47	cc	_	_
 56	charm	charm	VB	VB	_	47	conj	_	_
 57	the	the	DT	DT	_	58	det	_	_
-58	cherubs	cherub	NNS	NNS	_	47	dobj	_	_
-59	to	to	RP	RP	_	47	prt	_	_
+58	cherubs	cherub	NNS	NNS	_	56	dobj	_	_
+59	to	to	RP	RP	_	56	prep	_	_
 60	the	the	DT	DT	_	61	det	_	_
-61	post	post	NN	NN	_	47	dobj	_	_
+61	post	post	NN	NN	_	59	pobj	_	_
 62	Of	of	IN	IN	_	61	prep	_	_
 63	gratitude	gratitude	NN	NN	_	65	nn	_	_
 64	in	in	RP	RP	_	63	prt	_	_
@@ -124,7 +124,7 @@
 124	wreathe	wreath	NN	NN	_	120	dobj	_	_
 125	I	i	PRP	PRP	_	126	nsubj	_	_
 126	weave	weave	VBP	VBP	_	124	rcmod	_	_
-127	.	.	.	.	_	11	punct	_	_
+127	.	.	.	.	_	44	punct	_	_
 
 1	Great	great	JJ	JJ	_	24	dep	_	_
 2	,	,	,	,	_	24	punct	_	_

@@ -22,12 +22,33 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/o3982-w0020.shtml"><em>THE BAS BLEU.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o3982-w0010.shtml"><em>FLORIO: A POETICAL TALE, FOR FINE GENTLEMEN AND FINE LADIES.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o4179-w0010.shtml"><em>SLAVERY, A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4179" href="/works/o4179.shtml#o4179-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="o3982"><a title="view table of contents of source edition" href="/works/o3982.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Florio: a tale: for fine gentlemen and fine ladies: and, the bas bleu; or, conversation:
+                           two poems.</span> </em>  London: printed for T. Cadell, 1786. v,[3],89,[3]p. ; 4⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T35621">T35621</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K037413.000">K037413.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o3982-w0010" style="text-indent:-30px;"><a href="/works/o3982-w0010.shtml"><em>FLORIO: A POETICAL TALE, FOR FINE GENTLEMEN AND FINE LADIES.</em></a></li>
+                        <li id="o3982-w0020" style="text-indent:-30px;"><a href="/works/o3982-w0020.shtml"><em>THE BAS BLEU.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o4179"><a title="view table of contents of source edition" href="/works/o4179.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Slavery, a poem. By Hannah More.</span> </em>  London: printed for T. Cadell, 1788. [4],20p. ; 4⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T48439">T48439</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K045163.000">K045163.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o4179-w0010" style="text-indent:-30px;"><a href="/works/o4179-w0010.shtml"><em>SLAVERY, A POEM.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

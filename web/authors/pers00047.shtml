@@ -22,7 +22,8 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/o5157-w0010.shtml"><em>HYMN TO THE NAIADS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o5157-w0040.shtml"><em>[Inscription]  I. For a GROTTO.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0040"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
@@ -44,6 +45,44 @@
                   <li><a title="view full-text" href="/works/o5089-w0690.shtml"><em>ON THE WINTER SOLSTICE. M. D.CC.XL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5089" href="/works/o5089.shtml#o5089-w0690"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
                   </li>
                   <li><a title="view full-text" href="/works/o4279-w0010.shtml"><em>[THE PLEASURES OF IMAGINATION. A POEM.]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4279" href="/works/o4279.shtml#o4279-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="o4279"><a title="view table of contents of source edition" href="/works/o4279.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The pleasures of imagination: A poem. In three books.</span> </em>  London: printed for R. Dodsley, 1744. 125,[3]p. ; 4⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T42493">T42493</a>; 
+                     						Foxon A139; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K048676.000">K048676.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o4279-w0010" style="text-indent:-30px;"><a href="/works/o4279-w0010.shtml"><em>[THE PLEASURES OF IMAGINATION. A POEM.]</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o5157"><a title="view table of contents of source edition" href="/works/o5157.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. VI.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.006">K104099.006</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o5157-w0010" style="text-indent:-30px;"><a href="/works/o5157-w0010.shtml"><em>HYMN TO THE NAIADS.</em></a></li>
+                        <li id="o5157-w0020" style="text-indent:-30px;"><a href="/works/o5157-w0020.shtml"><em>ODE To the Right Honourable FRANCIS Earl of HUNTINGDON. MDCCXLVII.</em></a></li>
+                        <li id="o5157-w0030" style="text-indent:-30px;"><a href="/works/o5157-w0030.shtml"><em>ODE To the Right Reverend BENJAMIN Lord Bishop of WINCHESTER.</em></a></li>
+                        <li id="o5157-w0040" style="text-indent:-30px;"><a href="/works/o5157-w0040.shtml"><em>[Inscription]  I. For a GROTTO.</em></a></li>
+                        <li id="o5157-w0041" style="text-indent:-30px;"><a href="/works/o5157-w0041.shtml"><em>[Inscription]  II. For a Statue of CHAUCER at WOODSTOCK.</em></a></li>
+                        <li id="o5157-w0042" style="text-indent:-30px;"><a href="/works/o5157-w0042.shtml"><em>[Inscription]  III.</em></a></li>
+                        <li id="o5157-w0043" style="text-indent:-30px;"><a href="/works/o5157-w0043.shtml"><em>[Inscription]  IV.</em></a></li>
+                        <li id="o5157-w0045" style="text-indent:-30px;"><a href="/works/o5157-w0045.shtml"><em>[Inscription]  VI. For a Column at RUNNYMEDE.</em></a></li>
+                        <li id="o5157-w0050" style="text-indent:-30px;"><a href="/works/o5157-w0050.shtml"><em>ODE.</em></a></li>
+                     </ul>
+                  </li>
+                  <li data-id="o5089"><a title="view table of contents of source edition" href="/works/o5089.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">A collection of the most esteemed pieces of poetry: that have appeared for several
+                           years. With variety of originals, by the late Moses Mendez, Esq; and other contributors
+                           to Dodsley's collection. To which this is intended as a supplement.</span> </em>  London: printed for Richardson and Urquhart, 1767. [8],320p. ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T124631">T124631</a>; 
+                     						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1073&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1073</a>; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K099398.000">K099398.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o5089-w0690" style="text-indent:-30px;"><a href="/works/o5089-w0690.shtml"><em>ON THE WINTER SOLSTICE. M. D.CC.XL.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

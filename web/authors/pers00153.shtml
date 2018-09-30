@@ -22,8 +22,20 @@
                <h2 class="info">Works in 
                   <!--#echo var='ecep'-->
                </h2>
-               <ul class="listBibl">
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
                   <li><a title="view full-text" href="/works/o3428-w0010.shtml"><em>THE RESURRECTION A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3428" href="/works/o3428.shtml#o3428-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="o3428"><a title="view table of contents of source edition" href="/works/o3428.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">The resurrection. A poem: Written by Mr. Addison.</span> <span class="titlem">Resurrectio delineata ad altare col. Magd. Oxon. English and Latin.</span> </em>  London: printed for E. Curll, 1718. xii,8,17-21,[1]p.,plate ; 8⁰.
+                     					(ESTC <a class="external" href="http://estc.bl.uk/N13275">N13275</a>; 
+                     						Foxon A204; 
+                     						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K008178.000">K008178.000</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="o3428-w0010" style="text-indent:-30px;"><a href="/works/o3428-w0010.shtml"><em>THE RESURRECTION A POEM.</em></a></li>
+                     </ul>
                   </li>
                </ul>
                <h2 class="info">Source editions</h2>

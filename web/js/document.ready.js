@@ -53,6 +53,7 @@
     });
 
 
+    showTitles(false);
     if ($('#text').length) {
 	// switch to default view
 	showAllParatexts(false);
