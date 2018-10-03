@@ -32,9 +32,10 @@ var sup = ["su01","su02","su03","su04","su05"];
 
 // CSS Styles
 var phon = '', statsd = '', classes = '', scan = '', isProse = 0;
-if ( $("#text").children('p').length > 1 ||
-     ($("#text").find('p[class="p-in-sp"]')).length > 1 ) { // prose poems
-    isProse = 1;
+if ( ($("#text").children('.lg').length == 0 && $("#text").children('.sp').length == 0) 
+     //     || ($("#text").find('p[class="p-in-sp"]')).length > 1 
+     ) { // prose poems
+	isProse = 1;
 }
 phon='<style id="style_v_s">\n'; $.each(v_s,function(i,e) { phon += "."+e+"::before,"; });
 var $style_v_s = phon.substring(0,phon.length-1) + ' { background-color:#FA8072; }\n</style>';
