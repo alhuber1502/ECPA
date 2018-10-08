@@ -71,6 +71,19 @@
     height: 100%;
 }
 
+@media print {
+  .tab-content > .tab-pane {
+    overflow: visible !important;
+  }
+  #lk_viz {
+    display: flex;
+    height: auto;
+  }
+  #footer {
+    display: none;
+  }
+}
+
 /* Phonemia scrollable divs */
 #lk_control,#lk_body {
     overflow: auto;
