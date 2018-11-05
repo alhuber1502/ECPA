@@ -2,68 +2,68 @@
 
 /* Phonemes */
 /* Vowels, monophthongs (short) */
-.ph01::before { content:"ɪ"; min-width:7px; display:inline-block; text-align:center; }
-.ph02::before { content:"ʊ"; min-width:8px; display:inline-block; text-align:center; }
-.ph03::before { content:"e"; min-width:8px; display:inline-block; text-align:center; }
-.ph04::before { content:"ə"; min-width:8px; display:inline-block; text-align:center; }
-.ph05::before { content:"æ"; min-width:8px; display:inline-block; text-align:center; }
-.ph06::before { content:"ʌ"; min-width:8px; display:inline-block; text-align:center; }
-.ph07::before { content:"ɒ"; min-width:8px; display:inline-block; text-align:center; }
+.ph01::before { content:"ɪ"; min-width:7px; display:inline-block; text-align:center; font-variant:normal; }
+.ph02::before { content:"ʊ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph03::before { content:"e"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph04::before { content:"ə"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph05::before { content:"æ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph06::before { content:"ʌ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph07::before { content:"ɒ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Vowels, monophthongs (long) */
-.ph08::before { content:"iː"; min-width:8px; display:inline-block; text-align:center; }
-.ph09::before { content:"uː"; min-width:8px; display:inline-block; text-align:center; }
-.ph10::before { content:"ɜː"; min-width:8px; display:inline-block; text-align:center; }
-.ph11::before { content:"ɔː"; min-width:8px; display:inline-block; text-align:center; }
-.ph12::before { content:"ɑː"; min-width:8px; display:inline-block; text-align:center; }
+.ph08::before { content:"iː"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph09::before { content:"uː"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph10::before { content:"ɜː"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph11::before { content:"ɔː"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph12::before { content:"ɑː"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Volwels, diphthongs */
-.ph13::before { content:"eɪ"; min-width:8px; display:inline-block; text-align:center; }
-.ph14::before { content:"aɪ"; min-width:8px; display:inline-block; text-align:center; }
-.ph15::before { content:"ɔɪ"; min-width:8px; display:inline-block; text-align:center; }
-.ph16::before { content:"əʊ"; min-width:8px; display:inline-block; text-align:center; }
-.ph17::before { content:"ɪə"; min-width:8px; display:inline-block; text-align:center; }
-.ph18::before { content:"eə"; min-width:8px; display:inline-block; text-align:center; }
-.ph19::before { content:"ʊə"; min-width:8px; display:inline-block; text-align:center; }
-.ph20::before { content:"aʊ"; min-width:8px; display:inline-block; text-align:center; }
+.ph13::before { content:"eɪ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph14::before { content:"aɪ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph15::before { content:"ɔɪ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph16::before { content:"əʊ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph17::before { content:"ɪə"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph18::before { content:"eə"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph19::before { content:"ʊə"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph20::before { content:"aʊ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Vowels, neutralized */
-.ph21::before { content:"i"; min-width:6px; display:inline-block; text-align:center; }
-.ph22::before { content:"u"; min-width:8px; display:inline-block; text-align:center; }
+.ph21::before { content:"i"; min-width:6px; display:inline-block; text-align:center; font-variant:normal; }
+.ph22::before { content:"u"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Consonants, nasal */
-.ph23::before { content:"m"; min-width:8px; display:inline-block; text-align:center; }
-.ph24::before { content:"n"; min-width:8px; display:inline-block; text-align:center; }
-.ph25::before { content:"ŋ"; min-width:8px; display:inline-block; text-align:center; }
+.ph23::before { content:"m"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph24::before { content:"n"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph25::before { content:"ŋ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Consonants, stop/plosive */
-.ph26::before { content:"p"; min-width:8px; display:inline-block; text-align:center; }
-.ph27::before { content:"b"; min-width:8px; display:inline-block; text-align:center; }
-.ph28::before { content:"t"; min-width:7px; display:inline-block; text-align:center; }
-.ph29::before { content:"d"; min-width:8px; display:inline-block; text-align:center; }
-.ph30::before { content:"k"; min-width:8px; display:inline-block; text-align:center; }
-.ph31::before { content:"g"; min-width:8px; display:inline-block; text-align:center; }
+.ph26::before { content:"p"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph27::before { content:"b"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph28::before { content:"t"; min-width:7px; display:inline-block; text-align:center; font-variant:normal; }
+.ph29::before { content:"d"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph30::before { content:"k"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph31::before { content:"g"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Consonants, affricate */
-.ph32::before { content:"dʒ"; min-width:8px; display:inline-block; text-align:center; }
-.ph33::before { content:"tʃ"; min-width:8px; display:inline-block; text-align:center; }
+.ph32::before { content:"dʒ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph33::before { content:"tʃ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Consonants, fricative */
-.ph34::before { content:"f"; min-width:7px; display:inline-block; text-align:center; }
-.ph35::before { content:"v"; min-width:8px; display:inline-block; text-align:center; }
-.ph36::before { content:"θ"; min-width:8px; display:inline-block; text-align:center; }
-.ph37::before { content:"ð"; min-width:8px; display:inline-block; text-align:center; }
-.ph38::before { content:"s"; min-width:8px; display:inline-block; text-align:center; }
-.ph39::before { content:"z"; min-width:8px; display:inline-block; text-align:center; }
-.ph40::before { content:"ʃ"; min-width:8px; display:inline-block; text-align:center; }
-.ph41::before { content:"ʒ"; min-width:8px; display:inline-block; text-align:center; }
-.ph42::before { content:"h"; min-width:8px; display:inline-block; text-align:center; }
-.ph43::before { content:"x"; min-width:8px; display:inline-block; text-align:center; }
+.ph34::before { content:"f"; min-width:7px; display:inline-block; text-align:center; font-variant:normal; }
+.ph35::before { content:"v"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph36::before { content:"θ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph37::before { content:"ð"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph38::before { content:"s"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph39::before { content:"z"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph40::before { content:"ʃ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph41::before { content:"ʒ"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph42::before { content:"h"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph43::before { content:"x"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
 /* Consonants, approximant */
-.ph44::before { content:"l"; min-width:6px; display:inline-block; text-align:center; }
-.ph45::before { content:"r"; min-width:7px; display:inline-block; text-align:center; }
-.ph46::before { content:"w"; min-width:8px; display:inline-block; text-align:center; }
-.ph47::before { content:"j"; min-width:6px; display:inline-block; text-align:center; }
+.ph44::before { content:"l"; min-width:6px; display:inline-block; text-align:center; font-variant:normal; }
+.ph45::before { content:"r"; min-width:7px; display:inline-block; text-align:center; font-variant:normal; }
+.ph46::before { content:"w"; min-width:8px; display:inline-block; text-align:center; font-variant:normal; }
+.ph47::before { content:"j"; min-width:6px; display:inline-block; text-align:center; font-variant:normal; }
 
 /* Suprasegmentals */
-.su01::before { content:"ˈ"; display:inline-block; text-align:center; }
-.su02::before { content:"ˌ"; display:inline-block; text-align:center; }
-.su03::before { content:"ː"; display:inline-block; text-align:center; }
-.su04::before { content:"ˑ"; display:inline-block; text-align:center; }
-.su05::before { content:"."; display:inline-block; text-align:center; }
+.su01::before { content:"ˈ"; display:inline-block; text-align:center; font-variant:normal; }
+.su02::before { content:"ˌ"; display:inline-block; text-align:center; font-variant:normal; }
+.su03::before { content:"ː"; display:inline-block; text-align:center; font-variant:normal; }
+.su04::before { content:"ˑ"; display:inline-block; text-align:center; font-variant:normal; }
+.su05::before { content:"."; display:inline-block; text-align:center; font-variant:normal; }
 
 /* Phonemia space  */
 #lk_viz {

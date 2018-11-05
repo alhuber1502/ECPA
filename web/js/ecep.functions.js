@@ -1,4 +1,7 @@
 
+// Reading
+
+
 // annotation modal (available on ALL w/pc of the text, and on all tabs)
 $(document.body).on('click', '.w:not(.note .w),.pc:not(.note .pc),.l:not(.note .l)', function (e) {
     if (e.target.nodeName == "SUP") { e.preventDefault(); return true; } // prevent modal on footnotes
@@ -82,7 +85,7 @@ $(document.body).on('click', 'button#newNoteSubmit' , function(e) {
     $.ajax({
         type: 'POST',
         url: '/cgi-bin/handleCS.cgi',
-        data: { 'content': str, 'file': docname, 'source': source },
+	data: { 'content': str, 'file': docname, 'source': source },
         dataType: 'text',
         success: function() {
 	    $(d).html("Thank You!");
@@ -419,7 +422,7 @@ $("#upXML").click(function(e){
         $.ajax({
 	    type: 'POST',
 	    url: '/cgi-bin/handleXML.cgi',
-	    data: { 'myXML': content, 'file': docname, 'option': "up", 'source': source },
+	    data: { 'myXML': content, 'file': docname, 'option': "up", 'source': source.replace(/\./g,'') },
 	    dataType: 'xml',
 	    success: function() {
 		$("#upXML").html("Changes submitted!");

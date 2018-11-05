@@ -158,7 +158,7 @@
 69	champions	champion	NNS	NNS	_	70	nsubj	_	_
 70	heard	hear	VBD	VBD	_	66	conj	_	_
 71	the	the	DT	DT	_	73	det	_	_
-72	clarion's	clarion	FW	FW	_	73	nn	_	_
+72	clarion's	clarion	NN	NN	_	73	nn	_	_
 73	call	call	NN	NN	_	70	dobj	_	_
 74	,	,	,	,	_	66	punct	_	_
 75	And	and	CC	CC	_	66	cc	_	_
@@ -610,7 +610,7 @@
 67	conscious	conscious	JJ	JJ	_	68	amod	_	_
 68	plain	plain	NN	NN	_	65	dep	_	_
 69	:	:	:	:	_	62	punct	_	_
-70	Pleased	please	VBN	VBN	_	113	dep	_	_
+70	Pleased	please	VBN	VBN	_	62	parataxis	_	_
 71	in	in	RP	RP	_	70	prt	_	_
 72	the	the	DT	DT	_	74	det	_	_
 73	Muse's	muse	NN	NN	_	74	nn	_	_
@@ -649,12 +649,13 @@
 106	her	she	PRP	PRP	_	107	dep	_	_
 107	stay	stay	VB	VB	_	70	conj	_	_
 108	.	.	.	.	_	70	punct	_	_
-109	—	—	,	,	_	113	punct	_	_
-110	These	these	DT	DT	_	113	nsubj	_	_
-111	are	be	VBP	VBP	_	113	cop	_	_
-112	Britannia's	britannia	NNP	NNP	_	113	nn	_	_
-113	praises	praise	NNS	NNS	_	62	parataxis	_	_
-114	.	.	.	.	_	13	punct	_	_
+109	—	—	,	,	_	70	punct	_	_
+
+1	These	these	DT	DT	_	4	nsubj	_	_
+2	are	be	VBP	VBP	_	4	cop	_	_
+3	Britannia's	britannia	NNP	NNP	_	4	nn	_	_
+4	praises	praise	NNS	NNS	_	0	null	_	_
+5	.	.	.	.	_	4	punct	_	_
 
 1	Deign	deign	VBP	VBP	_	0	null	_	_
 2	to	to	RP	RP	_	1	prt	_	_

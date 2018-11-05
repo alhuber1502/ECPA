@@ -23,11 +23,10 @@ my $cgi = CGI->new;
 if ($cgi->param('content')) {
     print $cgi->header('text/plain;charset=UTF-8');
     open(my $fh, ">>:encoding(UTF-8)", $subpath.$cgi->param('file').".txt") or die "Could not open file: $!";
-#    chmod 0777, $subpath.$cgi->param('file').".txt" or die "Could not chmod file: $!\n";
     flock($fh, 2) or die "Could not lock file: $!";
     print $fh $cgi->param('content')."&source=".$cgi->param('source')."&timestamp=".(time)."\n";
     close $fh;
     my $query = CGI->new($cgi->param('content'));
     my %params = $query->Vars;
-#    &send_mail($params{'name'},$params{'e-mail'},"CS");
+    &send_mail($params{'name'},$params{'e-mail'},"CS");
 }

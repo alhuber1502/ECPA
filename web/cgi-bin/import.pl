@@ -13,7 +13,7 @@ if ($ENV{'HTTP_HOST'} =~ /\.test/i) {        # development server (Mac)
     $sendmail = "/usr/sbin/sendmail ";
     $subpath = "../public/submitted/";
 }
-$receiver = "huber\@thomasgray.org";
+$receiver = "alhuber1502\@gmail.com";
 
 sub send_mail {
     local ($from, $email, $type) = @_;

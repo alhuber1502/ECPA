@@ -24,6 +24,7 @@ my $cgi = CGI->new;
 if ($cgi->param('option') && $cgi->param('option') eq 'up') {
     print $cgi->header('application/xml;charset=UTF-8');
     open(my $fh, ">:encoding(UTF-8)", $subpath.$cgi->param('file')."-".$cgi->param('source')."-".(time).".xml") or die "Could not open file: $!";
+    flock($fh, 2) or die "Could not lock file: $!";
     print $fh decode('UTF-8',$cgi->param('myXML'));
     close $fh;
     &send_mail ("Anonymous","anonymous\@anonymous.org","XML file");

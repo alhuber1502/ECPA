@@ -1,5 +1,5 @@
 
-// Visualizations
+// Visualization
 
 
 // "Phonemia" (LK)
@@ -267,7 +267,7 @@ function lk_clone() {
 // LK generate word classes
 function lk_wc() {
     // create overview
-    classes = `<table style="width:100%; table-layout:fixed;" id="lk_wc"><tr><th style="width:50%; margin-right:30px; text-align:left;" class="panel-title">Phonemic transcription</th><th style="text-align:left" class="panel-title">Major word classes</th></tr>`;
+    classes = `<table style="width:100%; table-layout:fixed;" id="lk_wc"><tr><th style="width:45%; margin-right:30px; text-align:left;" class="panel-title">Phonemic transcription</th><th style="text-align:left" class="panel-title">Major word classes</th></tr>`;
 
     $clone.each( function(i,e) { // paratexts
 	    if ( $(e).prop("nodeName")=="H2" || $(e).hasClass( 'trailer' ) || $(e).hasClass( 'epigraph' ) ) {
@@ -339,7 +339,7 @@ function lk_wordclass (line) {
 // LK build scansion
 function lk_scansion() {
     // create overview
-    scan = `<table style="width:100%;" id="lk_scan"><tr class="panel-title"><th style="width:50%; margin-right:30px;">Phonemic transcription</th><th style="width:50%; text-align:left;" class="panel-title">Scansion (metrical pattern)</th>
+    scan = `<table style="width:100%; table-layout:fixed;" id="lk_scan"><tr class="panel-title"><th style="width:45%; margin-right:30px;">Phonemic transcription</th><th style="text-align:left;" class="panel-title">Scansion (metrical pattern)</th>
     </tr>`;
     // build scansion
 
@@ -485,7 +485,7 @@ function lk_output_scan (syl, line, conf) {
 var totalc = [], totalv = [], totala = [];
 function lk_stats() {
     // create overview
-    statsd = `<table style="width:100%;" id="lk_stats"><tr class="panel-title"><th style="width:50%; margin-right:30px;">Phonemic transcription</th>
+    statsd = `<table style="width:100%; table-layout:fixed;" id="lk_stats"><tr class="panel-title"><th style="width:45%; margin-right:30px;">Phonemic transcription</th>
 	<th class="t_v_s">V/s</th><th class="t_v_l">V/l</th><th class="t_v_d">V/d</th><th class="t_v_n">V/n</th>
 	<th class="t_vt">V</th><th class="t_v_f">V/f</th><th class="t_v_c">V/c</th><th class="t_v_b">V/b</th>
 	<th class="t_c_n">C/n</th><th class="t_c_p">C/p</th><th class="t_c_a">C/af</th><th class="t_c_f">C/f</th>
@@ -1049,6 +1049,7 @@ $( "#newHelp" ).modal('show');
 	    });
 	    // highlight corresponding words in text
 	    poemvisFrame.on("mouseenter", "[id*='word_']", function(e) {
+		if ($(e.currentTarget).closest("svg[id*='word_']").attr('id') && $(e.currentTarget).closest("svg[id*='line_']").attr('id')) {
 		    var wordno = $(e.currentTarget).closest("svg[id*='word_']").attr('id').split("_").pop();
 		    var lineno = $(e.currentTarget).closest("svg[id*='line_']").attr('id').split("_").pop();
 		    if ( $(e.currentTarget).closest("svg[id*='line_']").find("svg[id*='word_']").first().children("text").is(":empty") ) { // addresses empty word bug in PoemVis SVG plot
@@ -1056,14 +1057,17 @@ $( "#newHelp" ).modal('show');
 		    } else {
 			$( jq( IDfromPLW(part,lineno,wordno) ) ).addClass("idsSelected");
 		    }
+		}
 	    }).on("mouseleave", "[id*='word_']", function(e) {
+		if ($(e.currentTarget).closest("svg[id*='word_']").attr('id') && $(e.currentTarget).closest("svg[id*='line_']").attr('id')) {
 		    var wordno = $(e.currentTarget).closest("svg[id*='word_']").attr('id').split("_").pop();
 		    var lineno = $(e.currentTarget).closest("svg[id*='line_']").attr('id').split("_").pop();
 		    if ( $(e.currentTarget).closest("svg[id*='line_']").find("svg[id*='word_']").first().children("text").is(":empty") ) {
 			$( jq( IDfromPLW(part,lineno,wordno-1) ) ).removeClass("idsSelected");
 		    } else {
 			$( jq( IDfromPLW(part,lineno,wordno) ) ).removeClass("idsSelected");
-		    }				
+		    }
+		}
 	    });
 	});
     // load iframe

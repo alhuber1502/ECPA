@@ -1,4 +1,7 @@
 
+// Analysis
+
+
 // help modals - there is a copy of this in viz.functions.js for iFrame modals
 $(document.body).on('click', '.help-modal', function () {
     $( "body" ).prepend(`
