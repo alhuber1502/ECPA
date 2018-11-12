@@ -82,9 +82,11 @@ var $style_scans = '<style id="style_scans">\n.conf-high { background-color:#9d9
 //var $style_scans = '<style id="style_scans">\n#lk_body .text table#lk_scan tr.scan.conf-high td { background-color:#9d9 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-med td { background-color:#ffdcb2 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-low td { background-color:#fcc !important; }\n</style>';
 
 // initialize visualizations
-var ecep, ecepsaved = 0, ecepidsaved, displaysaved, $clone = $(), viz_chosen = '';
+var ecep, ecepsaved = 0, ecepidsaved, displaysaved, $clone = $(), viz_chosen = '', rp = {};
+
 $(document.body).on('click', '.viz_choose', function () {
-	$( "#visualization" ).append( "<div id='spinner'><img src='/images/loader.gif'/></div>" );
+	// set up LK
+	$("#visualization").html( '<div id="lk_viz"><p id="loading"><br/>Loading default display...</p><div id="spinner"><img src="/images/loader.gif"/></div></div>' );
 	var checkExist = setInterval(function() {
 	    if ($('#spinner').length) {
 		clearInterval(checkExist);		    
@@ -94,6 +96,7 @@ $(document.body).on('click', '.viz_choose', function () {
 	_.defer( function() {
 	    init( $(d).attr( 'id' ) );
 	    $( "#spinner" ).remove();
+	    $( "#loading" ).remove();
 	});
 });
 function init(d) {
@@ -113,10 +116,12 @@ function init(d) {
 		.children(".lg,.sp,#text > p");
 	    if ($clone.length == 0) { $clone = $( "#text > div" ).clone()
 		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
-		    .children(".lg,.sp,p"); }
+		    .children(".lg,.sp,p");
+	    }
 	    if ($clone.length == 0) { $clone = $( "#text > div > div" ).clone()
 		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
-		    .children(".lg,.sp,p"); }
+		    .children(".lg,.sp,p");
+	    }
 	}
 	ecepsaved = 0;
 	ecepidsaved = '';
@@ -221,7 +226,7 @@ $(document.body).on('change', '#display', function () {
 	displaysaved = $( 'select#display' ).val();
 	(totals = []).length = 16; totals.fill(0);
 	totalc = [], totalv = [], totala = [];
-	lk_clone();
+
 	switch ( $( 'select#display' ).val() ) {
 	case "t+d":
 	    scan = '';
@@ -251,17 +256,24 @@ $(document.body).on('change', '#display', function () {
 
 // LK display phonemes
 function lk_clone() {
-    // phonemic transcription
-    $clone.find( ".w" ).each( function(index,element) {
-	if (p[ $(element).attr("id") ]) {
-	    var phon = "<span class='w' data-id='"+$(element).attr("id")+"'>";
-	    $.each( p[ $(element).attr("id") ].phon, function(i,e) {
+
+    $.each(p, function(index) {
+	var phon = "<span class='w' data-id='"+index+"'>";
+	$.each( p[ index ].phon, function(i,e) {
 		phon += "<span class='"+e+"'></span>";
 	    });
-	    phon += "</span>";
-	    $clone.find( jq ($(element).attr("id")) ).replaceWith( phon );
+	phon += "</span>";
+	rp[index] = {
+	    "index" : index,
+	    "phon" : phon
+	};
+    });
+    $clone.find( ".w" ).each( function(i,e) {
+	if ( p[ $(e).attr("id") ] ) {
+	    $(e).replaceWith( rp[ $(e).attr("id") ].phon );
 	}
     });
+
 }
 
 // LK generate word classes
@@ -553,6 +565,7 @@ function lk_calculate (line) {
 
 // LK display
 function display_viz_lk( vis ) {
+
     // set up LK
     $("#visualization").html( '<div id="lk_viz"><div id="lk_control"></div><div id="lk_body"></div></div>' );
     // display clone + visualization
