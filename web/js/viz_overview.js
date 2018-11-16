@@ -11,7 +11,7 @@ $( '#viz_intro' ).after( "<p>Please choose from the <b>available visualizations<
 // Phonemia
 $( '#viz_phonemia' ).load( "/works/viz_phonemia.shtml" );
 // Poem Viewer
-if (!isProse) {
+if (isProse == 0) {
     $( '#viz_phonemia' ).after( "<hr/><div id='viz_poemvis'/>" );
     $( '#viz_poemvis' ).load( "/works/viz_poemvis.shtml"  );
 }

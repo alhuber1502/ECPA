@@ -357,10 +357,13 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	$('.nav-tabs a[href="#text"]').tab('show');
 	if ( viz_chosen == '' ) {
 	    $.getScript('/js/viz_overview.js');
-	    $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
-	    $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+	    if (viz_ft == 1) {
+		$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
+		$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+		viz_ft = 0;
+	    }
 	}
-
+	
 	if (phonemic == true) {
 	    $.each(o, function(index) {
 		if (o[ index ].class == "w") {

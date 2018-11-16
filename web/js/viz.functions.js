@@ -32,10 +32,8 @@ var sup = ["su01","su02","su03","su04","su05"];
 
 // CSS Styles
 var phon = '', statsd = '', classes = '', scan = '', isProse = 0;
-if ( ($("#text").children('.lg').length == 0 && $("#text").children('.sp').length == 0) 
-     //     || ($("#text").find('p[class="p-in-sp"]')).length > 1 
-     ) { // prose poems
-	isProse = 1;
+if ( $('#genres').text().indexOf('prose poem') > -1 ) { // prose poems
+    isProse = 1;
 }
 phon='<style id="style_v_s">\n'; $.each(v_s,function(i,e) { phon += "."+e+"::before,"; });
 var $style_v_s = phon.substring(0,phon.length-1) + ' { background-color:#FA8072; }\n</style>';
@@ -82,7 +80,7 @@ var $style_scans = '<style id="style_scans">\n.conf-high { background-color:#9d9
 //var $style_scans = '<style id="style_scans">\n#lk_body .text table#lk_scan tr.scan.conf-high td { background-color:#9d9 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-med td { background-color:#ffdcb2 !important; }\n#lk_body .text table#lk_scan tr.scan.conf-low td { background-color:#fcc !important; }\n</style>';
 
 // initialize visualizations
-var ecep, ecepsaved = 0, ecepidsaved, displaysaved, $clone = $(), viz_chosen = '', rp = {};
+var ecep, ecepsaved = 0, ecepidsaved, displaysaved, $clone = $(), viz_chosen = '', viz_ft = 1, rp = {};
 
 $(document.body).on('click', '.viz_choose', function () {
 	// set up LK
@@ -130,7 +128,7 @@ function init(d) {
 	lk_clone();
 	
 	// default visualization
-	if ( isProse ) {                             // prose poems
+	if ( isProse == 1 ) {                             // prose poems
 	    displaysaved = "t+c";
 	    lk_wc();
 	    display_viz_lk( classes );
