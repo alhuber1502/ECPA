@@ -11,7 +11,7 @@ if ($ENV{'HTTP_HOST'} =~ /\.test/i) {        # development server (Mac)
     $subpath = "../submitted/";
 } else {                                     # production server
     $sendmail = "/usr/sbin/sendmail ";
-    $subpath = "../public/submitted/";
+    $subpath = "../submitted/";
 }
 $receiver = "alhuber1502\@gmail.com";
 

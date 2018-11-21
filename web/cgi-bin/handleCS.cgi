@@ -12,7 +12,8 @@ if ($ENV{'HTTP_HOST'} =~ /\.test/i) {         # development server home
 } elsif ($ENV{'HTTP_HOST'} =~ /\.local/i) {   # development server work
     $path_inc = "/home/ahuber/projects/ecep/web/cgi-bin/";
 } else {                                      # production
-    $path_inc = "/services/webpages/util/t/h/thomasgray.site.aplus.net/eighteenthcenturypoetry.org/cgi-bin/";
+    $CGITempFile::TMPDIRECTORY = '/is/htdocs/user_tmp/wp13281444_FM2O9BY5QR/';
+    $path_inc = "/is/htdocs/wp13281444_FM2O9BY5QR/www/eighteenthcenturypoetry.org/cgi-bin/";
 }
 
 our ($subpath);
