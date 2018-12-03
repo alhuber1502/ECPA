@@ -274,7 +274,8 @@ function jq( myid ) {
 
 // on switching primary tabs do...
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    if ($(e.target).attr('href') == "#xml") {
+
+    if ($(e.target).attr('href') == "#xml") {           // TEI/XML tab
 	var content = editor.getValue();
 	if (content == "") {     // load XML on first visit to XML tab
             $.ajax({
@@ -293,12 +294,14 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	    editor.refresh();
 	    $('#myXML').click();
 	}
-    } else if ($(e.target).attr('href') == "#image") {
+
+    } else if ($(e.target).attr('href') == "#image") {  // Facsimile tab
 	$("#myImage").css({"width":"100%", "height":"100%"}); // seems to lose this info
 	if (Z.Viewer) {
 	    Z.Viewer.autoResizeViewer();
 	}
     }
+    
 });
 
 // make disabled tabs "disabled" (bug in BS3.3.6)
@@ -311,13 +314,19 @@ $("a[data-toggle='tab'],[role='menu']>li>a").on("click", function(e) {
 
 // on switching secondary tabs do ...
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
     if ($(e.target).attr('href') == "#reading") {
 	$('link[href="/css/ana.ecep.css"]').prop('disabled', true);
 	$('link[href="/css/viz.ecep.css"]').prop('disabled', true);
 	$('link[href="/css/mod.ecep.css"]').prop('disabled', true);
 	$('.nav-tabs a[href="#text"]').tab('show');
 
-	if (phonemic == true) {
+	if (mod_ft == 0) {  // don't display outside of modelling view
+	    $(".cytoscape-navigator")
+		.css({ "display":"none" });
+	}
+
+	if (phonemic == true) {  // don't display outside of analysis view
 	    $.each(o, function(index) {
 		if (o[ index ].class == "w") {
 		    $( jq( index ) ).text( o[ index ].spe );
@@ -342,7 +351,12 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	    }
 	}
 
-	if (phonemic == true) {
+	if (mod_ft == 0) {  // don't display outside of modelling view
+	    $(".cytoscape-navigator")
+		.css({ "display":"none"});
+	}
+
+	if (phonemic == true) {  // display when selected
 	    $.each(o, function(index) {
 		if (o[ index ].class == "w") {
                     $( jq( index ) ).text( o[ index ].pron );
@@ -363,8 +377,13 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		viz_ft = 0;
 	    }
 	}
+
+	if (mod_ft == 0) {  // don't display outside of modelling view
+	    $(".cytoscape-navigator")
+		.css({ "display":"none"});
+	}
 	
-	if (phonemic == true) {
+	if (phonemic == true) {  // don't display outside of analysis view
 	    $.each(o, function(index) {
 		if (o[ index ].class == "w") {
 		    $( jq( index ) ).text( o[ index ].spe );
@@ -377,8 +396,16 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	$('link[href="/css/viz.ecep.css"]').prop('disabled', true);
 	$('link[href="/css/mod.ecep.css"]').prop('disabled', false);
 	$('.nav-tabs a[href="#text"]').tab('show');
+	if (mod_ft == 1) {
+	    $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
+	    $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+	    mod_ft = 0;
+	}
+	
+	$(".cytoscape-navigator")
+	    .css({ "display":"initial"}); //  display when selected
 
-	if (phonemic == true) {
+	if (phonemic == true) {  // don't display outside of analysis view
 	    $.each(o, function(index) {
 		if (o[ index ].class == "w") {
 		    $( jq( index ) ).text( o[ index ].spe );
@@ -489,6 +516,7 @@ function showAllParatexts(value) {
 	$("#text .halftitle").css('display','none');
 	$("#text .half-title").css('display','none');
 	$("#text .introduction").css('display','none');
+	$("#text .argument").css('display','none');
 	$("#text .dedication").css('display','none');
 	$("#text .preface").css('display','none');
 	$("#text .gap").css('display','none');
@@ -512,6 +540,7 @@ function showAllParatexts(value) {
 	$("#text .halftitle").css('display','');
 	$("#text .half-title").css('display','');
 	$("#text .introduction").css('display','');
+	$("#text .argument").css('display','');
 	$("#text .dedication").css('display','');
 	$("#text .preface").css('display','');
 	$("#text .gap").css('display','');

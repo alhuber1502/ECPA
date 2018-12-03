@@ -106,19 +106,19 @@ function init(d) {
     case "PHONEMIA_VIZ":                                             // "Phonemia"
 	if ( $(ecep).length ) {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 		.find( "#"+$(ecep).eq(0).attr('id') ).nextUntil( "#"+$(ecep).eq(1).attr('id') );
 	} else {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 		.children(".lg,.sp,#text > p");
 	    if ($clone.length == 0) { $clone = $( "#text > div" ).clone()
-		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
-		    .children(".lg,.sp,p");
+		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .children(".lg,.sp,#text > p");
 	    }
 	    if ($clone.length == 0) { $clone = $( "#text > div > div" ).clone()
-		    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
-		    .children(".lg,.sp,p");
+		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .children(".lg,.sp,#text > p");
 	    }
 	}
 	ecepsaved = 0;
@@ -182,7 +182,7 @@ $(document.body).on('change', '#selection', function () {
 	    success: function(data) { zeus = data.split("\n"); }
 	});
 	$clone = $( "#text" ).clone()
-	    .find( '[id*="_return"],[class*="note"],.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+	    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
 	    .find( "#"+$(ecep).eq(ecepsaved).attr('id') ).nextUntil( "#"+$(ecep).eq(ecepsaved+1).attr('id') );
 	lk_clone();
 	switch ( $( 'select#display' ).val() ) {
@@ -644,13 +644,22 @@ function display_viz_lk( vis ) {
 		</div>
 		<div id="collapseTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
 		    <div class="panel-body">
-		        <table style="width:100%">
+		        <table style="width:100%" id="scan_results">
 	                    <tr>
 	                        <th colspan="2"><label>Scansion results:</label></th>
 			    </tr>
 			    <tr>
-			        <td style="vertical-align:baseline;">
-	            <input value="scans" type="checkbox" aria-label="..."/> Show degrees of confidence <div id="scan_res" style="margin-left:20px;"/>
+			        <td style="vertical-align:baseline;"><span>′</span> Primary stress</td>
+                            </tr>
+			    <tr>
+			        <td style="vertical-align:baseline;"><span>\`</span> Secondary stress</td>	
+                            </tr>
+			    <tr>
+		                <td style="vertical-align:baseline;"><span>˘</span> Unstressed</td>
+                            </tr>
+			    <tr>
+			        <td style="vertical-align:baseline;"><span>
+	            <input value="scans" type="checkbox" aria-label="..."/></span> Show degrees of confidence <div id="scan_res" style="margin-left:20px;"/>
                                 </td>
                             </tr>
                         </table>
