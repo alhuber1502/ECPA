@@ -1,5 +1,7 @@
 Eighteenth-Century Poetry Archive (ECPA)
 ======
+![](https://img.shields.io/github/repo-size/alhuber1502/ECPA.svg?style=flat)
+
 
 The Eighteenth-Century Poetry Archive — 
 [eighteenthcenturypoetry.org](http://www.eighteenthcenturypoetry.org/) — is a
