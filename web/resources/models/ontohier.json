@@ -1,0 +1,396 @@
+[
+ {
+  "children": [
+   {
+    "children": [
+     {"name": "frbroo:F17_Aggregation_Work"}
+    ],
+    "name": "frbroo:F14_Individual_Work"
+   },
+   {
+    "children": [
+     {"name": "frbroo:F18_Serial_Work"}
+    ],
+    "name": "frbroo:F15_Complex_Work"
+   },
+   {
+    "children": [
+     {"name": "frbroo:F17_Aggregation_Work"},
+     {
+      "children": [
+       {"name": "frbroo:F18_Serial_Work"}
+      ],
+      "name": "frbroo:F19_Publication_Work"
+     },
+     {"name": "frbroo:F20_Performance_Work"}
+    ],
+    "name": "frbroo:F16_Container_Work"
+   },
+   {"name": "frbroo:F21_Recording_Work"}
+  ],
+  "name": "frbroo:F1_Work"
+ },
+ {
+  "children": [
+   {"name": "crminf:I2_Belief"},
+   {"name": "crm:E3_Condition_State"},
+   {"name": "crm:E4_Period"}
+  ],
+  "name": "crm:E2_Temporal_Entity"
+ },
+ {"name": "crm:E52_Time-Span"},
+ {
+  "children": [
+   {"name": "frbroo:F9_Place"}
+  ],
+  "name": "crm:E53_Place"
+ },
+ {"name": "crm:E54_Dimension"},
+ {
+  "children": [
+   {
+    "children": [
+     {
+      "children": [
+       {"name": "frbroo:F10_Person"}
+      ],
+      "name": "crm:E21_Person"
+     },
+     {
+      "children": [
+       {"name": "frbroo:F11_Corporate_Body"},
+       {"name": "frbroo:F39_Family"},
+       {
+        "children": [
+         {"name": "frbroo:F44_Bibliographic_Agency"}
+        ],
+        "name": "crm:E40_Legal_Body"
+       }
+      ],
+      "name": "crm:E74_Group"
+     }
+    ],
+    "name": "crm:E39_Actor"
+   },
+   {
+    "children": [
+     {
+      "children": [
+       {
+        "children": [
+         {"name": "frbroo:F4_Manifestation_Singleton"},
+         {
+          "children": [
+           {
+            "children": [
+             {
+              "children": [
+               {"name": "frbroo:F5_Item"},
+               {"name": "frbroo:F53_Material_Copy"}
+              ],
+              "name": "frbroo:F54_Utilized_Information_Carrier"
+             }
+            ],
+            "name": "crm:E84_Information_Carrier"
+           }
+          ],
+          "name": "crm:E22_Man-Made_Object"
+         },
+         {"name": "crm:E25_Man-Made_Feature"},
+         {"name": "crm:E78_Collection"}
+        ],
+        "name": "crm:E24_Physical_Man-Made_Thing"
+       },
+       {
+        "children": [
+         {"name": "frbroo:F6_Concept"},
+         {"name": "frbroo:F38_Character"},
+         {
+          "children": [
+           {"name": "frbroo:F3_Manifestation_Product_Type"},
+           {"name": "crm:E56_Language"},
+           {"name": "crm:E57_Material"},
+           {"name": "crm:E58_Measurement_Unit"}
+          ],
+          "name": "crm:E55_Type"
+         },
+         {
+          "children": [
+           {"name": "crminf:I3_Inference_Logic"},
+           {"name": "crm:E30_Right"},
+           {"name": "crm:E73_Information_Object"}
+          ],
+          "name": "crm:E89_Propositional_Object"
+         },
+         {"name": "crm:E90_Symbolic_Object"}
+        ],
+        "name": "crm:E28_Conceptual_Object"
+       }
+      ],
+      "name": "crm:E71_Man-Made_Thing"
+     },
+     {
+      "children": [
+       {"name": "frbroo:F3_Manifestation_Product_Type"},
+       {"name": "crm:E18_Physical_Thing"},
+       {
+        "children": [
+         {
+          "children": [
+           {
+            "children": [
+             {
+              "children": [
+               {"name": "frbroo:F50_Controlled_Access_Point"}
+              ],
+              "name": "frbroo:F13_Identifier"
+             }
+            ],
+            "name": "frbroo:F12_Nomen"
+           },
+           {"name": "crm:E35_Title"},
+           {
+            "children": [
+             {"name": "frbroo:F13_Identifier"}
+            ],
+            "name": "crm:E42_Identifier"
+           },
+           {
+            "children": [
+             {"name": "crm:E45_Address"},
+             {"name": "crm:E46_Section_Definition"},
+             {"name": "crm:E47_Spatial_Coordinates"},
+             {"name": "crm:E48_Place_Name"}
+            ],
+            "name": "crm:E44_Place_Appellation"
+           },
+           {
+            "children": [
+             {"name": "crm:E50_Date"}
+            ],
+            "name": "crm:E49_Time_Appellation"
+           },
+           {
+            "children": [
+             {"name": "crm:E45_Address"}
+            ],
+            "name": "crm:E51_Contact_Point"
+           },
+           {"name": "crm:E75_Conceptual_Object_Appellation"},
+           {"name": "crm:E82_Actor_Appellation"}
+          ],
+          "name": "crm:E41_Appellation"
+         },
+         {
+          "children": [
+           {"name": "crminf:I4_Proposition_Set"},
+           {
+            "children": [
+             {
+              "children": [
+               {"name": "frbroo:F24_Publication_Expression"},
+               {"name": "frbroo:F25_Performance_Plan"},
+               {"name": "frbroo:F26_Recording"}
+              ],
+              "name": "frbroo:F22_Self-Contained_Expression"
+             },
+             {"name": "frbroo:F23_Expression_Fragment"},
+             {"name": "frbroo:F34_KOS"},
+             {"name": "frbroo:F35_Nomen_Use_Statement"},
+             {"name": "frbroo:F43_Identifier_Rule"}
+            ],
+            "name": "frbroo:F2_Expression"
+           },
+           {
+            "children": [
+             {"name": "frbroo:F25_Performance_Plan"},
+             {"name": "frbroo:F34_KOS"},
+             {"name": "frbroo:F35_Nomen_Use_Statement"},
+             {"name": "frbroo:F36_Script_Conversion"},
+             {"name": "frbroo:F43_Identifier_Rule"}
+            ],
+            "name": "crm:E29_Design_or_Procedure"
+           },
+           {
+            "children": [
+             {
+              "children": [
+               {"name": "frbroo:F34_KOS"}
+              ],
+              "name": "crm:E32_Authority_Document"
+             }
+            ],
+            "name": "crm:E31_Document"
+           },
+           {
+            "children": [
+             {"name": "crm:E34_Inscription"},
+             {"name": "crm:E35_Title"}
+            ],
+            "name": "crm:E33_Linguistic_Object"
+           },
+           {
+            "children": [
+             {
+              "children": [
+               {"name": "crm:E34_Inscription"}
+              ],
+              "name": "crm:E37_Mark"
+             },
+             {"name": "crm:E38_Image"}
+            ],
+            "name": "crm:E36_Visual_Item"
+           }
+          ],
+          "name": "crm:E73_Information_Object"
+         }
+        ],
+        "name": "crm:E90_Symbolic_Object"
+       }
+      ],
+      "name": "crm:E72_Legal_Object"
+     }
+    ],
+    "name": "crm:E70_Thing"
+   }
+  ],
+  "name": "crm:E77_Persistent_Item"
+ },
+ {
+  "children": [
+   {
+    "children": [
+     {"name": "frbroo:F8_Event"},
+     {
+      "children": [
+       {
+        "children": [
+         {"name": "frbroo:F31_Performance"},
+         {"name": "frbroo:F51_Pursuit"},
+         {"name": "crm:E8_Acquisition"},
+         {"name": "crm:E9_Move"},
+         {"name": "crm:E10_Transfer_of_Custody"},
+         {
+          "children": [
+           {"name": "crm:E12_Production"},
+           {"name": "crm:E79_Part_Addition"},
+           {"name": "crm:E80_Part_Removal"}
+          ],
+          "name": "crm:E11_Modification"
+         },
+         {
+          "children": [
+           {"name": "frbroo:F41_Representative_Manifestation_Assignment"},
+           {"name": "frbroo:F42_Representative_Expression_Assignment"},
+           {"name": "frbroo:F52_Name_Use_Activity"},
+           {"name": "crm:E14_Condition_Assessment"},
+           {
+            "children": [
+             {"name": "frbroo:F40_Identifier_Assignment"}
+            ],
+            "name": "crm:E15_Identifier_Assignment"
+           },
+           {"name": "crm:E16_Measurement"},
+           {"name": "crm:E17_Type_Assignment"}
+          ],
+          "name": "crm:E13_Attribute_Assignment"
+         },
+         {"name": "crm:E65_Creation"},
+         {"name": "crm:E66_Formation"},
+         {"name": "crm:E85_Joining"},
+         {"name": "crm:E86_Leaving"},
+         {"name": "crm:E87_Curation_Activity"}
+        ],
+        "name": "crm:E7_Activity"
+       },
+       {
+        "children": [
+         {
+          "children": [
+           {"name": "frbroo:F28_Expression_Creation"},
+           {"name": "frbroo:F32_Carrier_Production_Event"},
+           {"name": "frbroo:F33_Reproduction_Event"}
+          ],
+          "name": "crm:E12_Production"
+         },
+         {
+          "children": [
+           {"name": "frbroo:F27_Work_Conception"},
+           {
+            "children": [
+             {"name": "frbroo:F29_Recording_Event"},
+             {"name": "frbroo:F30_Publication_Event"}
+            ],
+            "name": "frbroo:F28_Expression_Creation"
+           },
+           {"name": "crm:E83_Type_Creation"}
+          ],
+          "name": "crm:E65_Creation"
+         },
+         {"name": "crm:E66_Formation"},
+         {"name": "crm:E67_Birth"},
+         {"name": "crm:E81_Transformation"}
+        ],
+        "name": "crm:E63_Beginning_of_Existence"
+       },
+       {
+        "children": [
+         {"name": "crm:E6_Destruction"},
+         {"name": "crm:E68_Dissolution"},
+         {"name": "crm:E69_Death"},
+         {"name": "crm:E81_Transformation"}
+        ],
+        "name": "crm:E64_End_of_Existence"
+       }
+      ],
+      "name": "crm:E5_Event"
+     }
+    ],
+    "name": "crm:E4_Period"
+   },
+   {
+    "children": [
+     {"name": "frbroo:F7_Object"},
+     {
+      "children": [
+       {
+        "children": [
+         {"name": "crm:E21_Person"}
+        ],
+        "name": "crm:E20_Biological_Object"
+       },
+       {"name": "crm:E22_Man-Made_Object"}
+      ],
+      "name": "crm:E19_Physical_Object"
+     },
+     {"name": "crm:E24_Physical_Man-Made_Thing"},
+     {
+      "children": [
+       {
+        "children": [
+         {"name": "frbroo:F53_Material_Copy"}
+        ],
+        "name": "crm:E25_Man-Made_Feature"
+       },
+       {"name": "crm:E27_Site"}
+      ],
+      "name": "crm:E26_Physical_Feature"
+     }
+    ],
+    "name": "crm:E18_Physical_Thing"
+   },
+   {"name": "crm:E93_Presence"}
+  ],
+  "name": "crm:E92_Spacetime_Volume"
+ },
+ {"name": "crmsci:S4_Observation"},
+ {
+  "children": [
+   {"name": "crmsci:S6_Data_Evaluation"},
+   {"name": "crmsci:S7_Simulation_or_Prediction"},
+   {"name": "crmsci:S8_Categorical_Hypothesis_Building"}
+  ],
+  "name": "crminf:I5_Inference_Making"
+ },
+ {"name": "crminf:I7_Belief_Adoption"}
+]

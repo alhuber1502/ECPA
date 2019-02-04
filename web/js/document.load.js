@@ -94,6 +94,14 @@ if ($('#reading').length) {
 	success: function(data) { l = data; }
     });
 
+// Modelling
+    // load ontologies
+    $.ajax({
+	url: "/resources/models/onto.json", dataType: 'json', async: false,
+	success: function(data) { onto = data; }
+    });
+    
+    
     // generate "poetic form"
     var arr_syllab = [], arr_met = [], arr_rhyme = [];
     if (l.syllab != "" && l.syllab != null) {
