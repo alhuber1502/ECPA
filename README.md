@@ -1,6 +1,5 @@
 Eighteenth-Century Poetry Archive (ECPA)
 ======
-![](https://img.shields.io/github/repo-size/alhuber1502/ECPA.svg?style=flat)
 ![](https://img.shields.io/github/last-commit/alhuber1502/ECPA.svg?style=flat)
 ![](https://img.shields.io/badge/license-CC%20BY--SA-orange.svg?style=flat)
 ![](https://img.shields.io/website-up-down-green-red/http/www.eighteenthcenturypoetry.org.svg?style=flat)
