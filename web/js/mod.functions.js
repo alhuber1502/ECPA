@@ -25,10 +25,9 @@ NS["crmsci"]  = $rdf.Namespace("http://www.ics.forth.gr/isl/CRMsci/");
 NS["frbroo"]  = $rdf.Namespace("http://iflastandards.info/ns/fr/frbr/frbroo/");
 NS["dcterms"] = $rdf.Namespace("http://purl.org/dc/terms/");
 
-// -delete-
+// TODO: -delete-
 // kbURI is format-agnostic, can read variety of serializations
 var kbURI = base+"resources/models/tgaen-wimit";
-//var kbURI = base+"resources/models/kb-80ce278b-8be6-4be9-b720-4517dc5440e2";
 // -delete-
 
 
@@ -240,6 +239,8 @@ function launchform () {
   * if sx, px, and ox exist, a triple MUST be written, otherwise the entire statement MUST be discarded
   * if v2.p.id is an array: "p":{"name":"p2","id":["crm:P26_moved_to","crm:P27_moved_from"],"stype":"string"}, that 
     needs to be turned into a drop-down list
+  * need to create datalist's from refresh_graph by class, so that rdfs:labels can be used in the appropriate
+    input fields
   * maybe the "next step" example would be an option to reveal the statements one at a time to make the process
     more transparent, one step could replace the next (or back/next arrows indicating required/optional)
   * might be worth keeping the statements/form entry always at the same place (top) abnd have a direct visualization
@@ -299,7 +300,7 @@ function mod_edit_graph ( kbURI ) {
     localizedKBURI = ((kbURI.substr(kbURI.lastIndexOf('/')+1).startsWith('kb-'))?kbURI:kbURI.slice(0, kbURI.lastIndexOf("/")+1)+"kb-"+uuidv4());
     console.log( "localized graph created: "+localizedKBURI+" ("+localizedKB.length+" triples)" );
 
-// -delete-    
+// TODO: -delete-    
     mod_run_tests();
 // -delete-    
 }
@@ -328,7 +329,6 @@ function mod_save_graph ( localizedKBURI ) {
 
 function refresh_graph () {
 
-    // This retrieves the entire graph - should be useful for refreshgraph()
     var statements = localizedKB.statementsMatching( undefined, undefined, undefined );
     statements.forEach(function(statement) {
 	console.log(statement.subject, statement.predicate, statement.object);
@@ -457,7 +457,7 @@ function createCYgraph( data ) {
 
 
 
-// -delete-
+// TODO: -delete-
 // below this line will be obsolete -- delete
 
 // run some tests
