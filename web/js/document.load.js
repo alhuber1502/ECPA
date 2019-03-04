@@ -101,6 +101,12 @@ if ($('#reading').length) {
 	success: function(data) { onto = data; }
     });
     
+    // load fundamentals
+    $.ajax({
+	url: "/resources/models/fundamental.json", dataType: 'json', async: false,
+	success: function(data) { fcr = data; }
+    });
+    
     
     // generate "poetic form"
     var arr_syllab = [], arr_met = [], arr_rhyme = [];

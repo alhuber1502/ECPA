@@ -918,10 +918,10 @@ $('.line,#text p').hover(
 	$(this).append("<div id='meta-tabs'><div class='btn-panel'><div>Jump to or pin/unpin analytical layers:</div>"+
 	"<div class='panel-btn'><a class='btn btn-default btn-xs freeze' role='button'>Pin/Unpin</a></div><br clear='both'/>"+
 	"<div class='panel-btn'><a class='btn btn-default btn-xs phonological in' role='button' data-toggle='' href='#collapsePho' aria-controls='collapsePho' aria-expanded='true'>Phonological</a></div>"+
-	"<div class='panel-btn'><a class='btn btn-default btn-xs morphological in' role='button' data-toggle='' href='#collapseMor' aria-controls='collapseMor' aria-expanded='true'>Morphological</a></div>"+
-	"<div class='panel-btn'><a class='btn btn-default btn-xs syntactic in' role='button' data-toggle='' href='#collapseSyn' aria-controls='collapseSyn' aria-expanded='true'>Syntactic</a></div>"+
-	"<div class='panel-btn'><a class='btn btn-default btn-xs semantic in' role='button' data-toggle='' href='#collapseSem' aria-controls='collapseSem' aria-expanded='true'>Semantic</a></div>"+
-	"<div class='panel-btn'><a class='btn btn-default btn-xs pragmatic in' role='button' data-toggle='' href='#collapsePra' aria-controls='collapsePra' aria-expanded='true'>Pragmatic</a></div>"+
+	"<div class='panel-btn'><a class='btn btn-success btn-xs morphological in' role='button' data-toggle='' href='#collapseMor' aria-controls='collapseMor' aria-expanded='true'>Morphological</a></div>"+
+	"<div class='panel-btn'><a class='btn btn-info btn-xs syntactic in' role='button' data-toggle='' href='#collapseSyn' aria-controls='collapseSyn' aria-expanded='true'>Syntactic</a></div>"+
+	"<div class='panel-btn'><a class='btn btn-warning btn-xs semantic in' role='button' data-toggle='' href='#collapseSem' aria-controls='collapseSem' aria-expanded='true'>Semantic</a></div>"+
+	"<div class='panel-btn'><a class='btn btn-danger btn-xs pragmatic in' role='button' data-toggle='' href='#collapsePra' aria-controls='collapsePra' aria-expanded='true'>Pragmatic</a></div>"+
 	"</div></div>").addClass("hoverLine");
 	if ( $( "div#pho-dynamic" ).hasClass( "first-time" )) {
 //	    $( "a[aria-controls='collapseMor'],a[aria-controls='collapseSyn'],a[aria-controls='collapseSem'],a[aria-controls='collapsePra']" ).addClass( "collapsed" );

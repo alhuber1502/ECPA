@@ -356,9 +356,8 @@ ul.downloads {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
-    list-style-type: none;
-    margin: 0 0 10px 0; 
-    padding: 0;
+    list-style-type: circle;
+    padding: 0 0 0 20px; 
 }
 
 .inline { display: inline }
@@ -493,6 +492,9 @@ div.panel-heading a:hover {
 }
 .modal-body h4 {
     font-size: 15px;
+}
+.modal-header,.modal-footer {
+    background-color:#f5f5f5;
 }
 
 .w, .pc, .l, #citation, .browse {
@@ -677,4 +679,66 @@ span.collapse.in {
 .ednTOC {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.panel-success .panel-heading a,
+.panel-success .panel-heading a.active,
+.panel-success .panel-heading a:active {
+    color: #3c763d; 
+}
+.panel-warning .panel-heading a,
+.panel-warning .panel-heading a.active,
+.panel-warning .panel-heading a:active {
+    color: #8a6d3b;
+}
+.panel-danger .panel-heading a,
+.panel-danger .panel-heading a.active,
+.panel-danger .panel-heading a:active {
+    color: #843534; 
+}
+.panel-default .panel-heading a,
+.panel-default .panel-heading a.active,
+.panel-default .panel-heading a:active {
+    color: #777;
+}
+.panel-info .panel-heading a,
+.panel-info .panel-heading a.active,
+.panel-info .panel-heading a:active {
+    color: #31708f; 
+}
+
+#meta-tabs .btn-success,
+#meta-tabs .btn-success.active, 
+#meta-tabs .btn-success:active
+{
+   background-color: #dff0d8;
+   color: #3c763d;
+}
+#meta-tabs .btn-warning,
+#meta-tabs .btn-warning.active,
+#meta-tabs .btn-warning:active
+{
+   background-color: #fcf8e3;
+   color: #8a6d3b;
+}
+#meta-tabs .btn-danger,
+#meta-tabs .btn-danger.active,
+#meta-tabs .btn-danger:active
+{
+   background-color: #f2dede;
+   color: #843534; 
+}
+#meta-tabs .btn-default,
+#meta-tabs .btn-default.active,
+#meta-tabs .btn-default:active
+{
+   background-color: #f5f5f5;
+   color: #777;
+}
+#meta-tabs .btn-info,
+#meta-tabs .btn-info.active,
+#meta-tabs .btn-info:active
+{
+   background-color: #d9edf7;
+   color: #31708f;
 }
