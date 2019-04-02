@@ -1,32 +1,49 @@
 
 <div class="viz_intro">
 
-<img style="padding:5px 5px; width:350px; float:right;"
-   src="/images/screenshots/poemvis_ss.png" alt="PoemViewer"/>
-<h2 class="info"><a href="#poemvis" id="POEMVIS_VIZ" style="cursor:pointer;"
-   class="viz_choose">Poem Viewer</a></h2>
-<p>
-<div><em>Analytical layer(s):</em> Phonological<br/>
-</div>
-<div><em>Visualization perspective(s):</em> Analytical</div>
-</p>
-<p id="viz_desc">
-<em>Poem Viewer</em> 
-focuses on the specific but complex task of tracing the
-<b>movement of sound</b> through the defined space of almost any poem or poem
-fragment.  This single poetic device involves <b>twenty-six distinct 
-variables</b>, which have been mapped onto linguistic categories and
-visual channels.  Readers can choose which linguistic variables to
-view &#x2014; in isolation or relation &#x2014; at any given
-time.  <em>Poem Viewer</em> comprises two layouts: the default
-<b>horizontal layout</b>, which makes tracing relations easy (but
-requires horizontal scrolling), and a <b>structured layout</b>, which
-offers a number of <b>animations</b> tracking how sounds are formed in
-the mouth.  <em>Poem Viewer</em> was a collaborative project between
-the University of Oxford and the University of Utah and was funded by
-the JISC/NEH's "Digging into Data Challenge" programme. 
-<span src="poemvis"/>
-<a class="help-modal" href="#">[more]</a>
-</p>
+  <a class="btn btn-primary" role="button" data-toggle="collapse"
+     href="#collapseTwo" aria-expanded="true"
+     aria-controls="collapseTwo" style="display:inline-block">
+    Poem Viewer
+  </a>
+  <ul style="display:inline-block;list-style:none;vertical-align:top;margin-top:-3px;margin-bottom:3px;">
+    <li><em>Analytical layer:</em> 
+      <span class="label label-default label-sm">Phonological</span>
+      (<span class="label label-success label-sm">Morphological</span> /
+      <span class="label label-info label-sm">Syntactic</span> /
+      <span class="label label-warning label-sm">Semantic</span> /
+      <span class="label label-danger label-sm">Pragmatic</span>)
+</li>
+    <li><em>Visualization perspective:</em>
+    <span class="label                                                             
+    label-analytical label-sm">Analytical</span></li>
+  </ul>
+  <div class="collapse in" id="collapseTwo">
+    <div class="well" style="min-height:250px;">
 
-</div><br clear="all"/>
+      <img style="padding:5px 5px; width:350px; float:right;"
+	   src="/images/screenshots/poemvis_ss.png" alt="PoemViewer"/>
+      <h2 class="info"><a href="#poemvis" id="POEMVIS_VIZ" style="cursor:pointer;"
+			  class="viz_choose">Launch Poem Viewer</a></h2>
+      <p id="viz_desc">
+	<em>Poem Viewer</em> 
+	focuses on the specific but complex task of tracing the
+	<b>movement of sound</b> through the defined space of almost any poem or poem
+	fragment.  This single poetic device involves <b>twenty-six distinct 
+	  variables</b>, which have been mapped onto linguistic categories and
+	visual channels.  Readers can choose which linguistic variables to
+	view &#x2014; in isolation or relation &#x2014; at any given
+	time.  <em>Poem Viewer</em> comprises two layouts: the default
+	<b>horizontal layout</b>, which makes tracing relations easy (but
+	requires horizontal scrolling), and a <b>structured layout</b>, which
+	offers a number of <b>animations</b> tracking how sounds are formed in
+	the mouth.  <em>Poem Viewer</em> was a collaborative project between
+	the University of Oxford and the University of Utah and was funded by
+	the JISC/NEH's "Digging into Data Challenge" programme. 
+	<span src="poemvis"/>
+	<a class="help-modal" href="#">[more]</a>
+      </p>
+    </div>
+  </div>
+
+</div>

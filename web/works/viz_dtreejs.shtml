@@ -1,0 +1,40 @@
+
+<div class="viz_intro">
+
+  <a class="btn btn-primary" role="button" data-toggle="collapse"
+     href="#collapseThree" aria-expanded="true"
+     aria-controls="collapseThree" style="display:inline-block">
+    DoubleTreeJS
+  </a>
+  <ul style="display:inline-block;list-style:none;vertical-align:top;margin-top:-3px;margin-bottom:3px;">
+    <li><em>Analytical layers:</em> <span class="label label-success label-sm">Morphological</span> /
+      <span class="label label-info label-sm">Syntactic</span>
+    </li>
+    <li><em>Visualization perspective:</em> <span class="label
+    label-analytical label-sm">Analytical</span></li>
+  </ul>
+  <div class="collapse in" id="collapseThree">
+    <div class="well" style="min-height:250px;">
+
+      <img style="padding:5px 5px; width:350px; float:right;" 
+	   src="/images/screenshots/dtreejs_ss.png" alt="DoubleTreeJS"/>
+      <h2 class="info"><a href="#dtreejs" id="DTREEJS_VIZ" style="cursor:pointer;"
+			  class="viz_choose">Launch DoubleTreeJS</a></h2>
+      <p id="viz_desc">
+	DoubleTreeJS is an <em>interactive</em> way to give a more compact
+	view of <b>words in their context of use</b> than a traditional
+	concordance (KWIC) does.  Clicking on a word on one side of DoubleTreeJS
+	highlights the words on the other side that occur in the same phrase
+	as the word clicked on.  This re-implementation of Double Tree includes
+	several enhancements, including the abilities to <b>sort the
+	  branches</b> by a variety of properties, to <b>filter the branches</b>
+	by different properties, and to <b>search the words</b> in the
+	Double Tree. DoubleTreeJS is &copy; 2012-2016, Chris Culy. Used
+	under a BSD license.<span src="dtreejs"/> 
+	<a class="help-modal" href="#">[more]</a>
+      </p>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+    	<!-- Copyright (c) 2012-2016, Chris Culy See below for the (new BSD) license-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>DoubleTreeJS + KWIC</title>
+    <!-- See end of body for scripts -->
+    
+    <link rel="stylesheet" href="../doubletreejs/doubletree.css" />
+
+    <style>
+      * {
+	font-family: "Lucida Bright", Georgia, serif; /* one suggestion from http://cssfontstack.com/ */ 
+	
+	/* font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; /* one suggestion from http://cssfontstack.com/ */
+      }
+    
+      div#taggedText {
+	display:none;
+      }
+      table#kwic {
+	margin-left: auto;
+	margin-right: auto;
+      }
+    
+      #kwic td {
+	vertical-align:top;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+      }
+      td.kwicHit {
+	 color:green;
+	 font-weight:bold;
+	 text-align:center;
+	 cursor:pointer;
+      }
+      td.kwicLeft {
+	text-align:right;
+      }
+      td.kwicRt {
+	text-align:left;
+      }
+      span.kwicItem {
+	cursor:pointer;
+	color:blue;
+      }
+      p.hitContext {
+	color:black;
+      }
+      svg {
+	/*
+	border: thin solid red;
+	z-index:-100;
+	position:relative;
+	top:-19ex;
+	*/
+      }
+      
+      span.loadProgress {
+	display: none:
+	/*z-index:99;*/
+	position:relative:
+	left: -5em;
+      
+      }
+      
+      #predicted ul {
+	list-style-type:none;
+	margin-left:0;
+	padding-left:0.1em;
+	cursor:pointer;
+	border: thin solid black;
+      }
+      div#predicted {
+	position:relative;
+	top:-5ex;
+      }
+      
+      div#controls {
+	width:65%;
+      }
+      div#controls td {
+	vertical-align: top;
+      }
+      
+      div#filters {
+	/*border: thin solid black;*/
+	padding-bottom: 2ex;
+	
+      }
+      
+      div#about {
+	float:right;
+	position:relative;
+	width:35%;
+	margin:0;
+	padding:0;
+	padding-left:0.5em;
+	/*top:-3ex;*/
+	border: 3px solid #777;
+	
+      }
+      div#about h1 {
+	font-size:1.15em;
+      }
+      div#about h2 {
+	font-size:1.1em;
+	position:relative;
+	/*top:-1ex;*/
+      }
+      div#about p {
+	position:relative;
+	font-size:0.9em;
+	/*top:-3ex;*/
+      }
+      
+    </style>
+  </head>
+  <body>
+      	<!--
+  	/* (This is the new BSD license.)
+* Copyright (c) 2012-2016, Chris Culy
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the Chris Culy nor the 
+*		names of its contributors may be used to endorse or promote 
+*		products from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY Chris Culy
+* ``AS IS'' AND ANY OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+* THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+* ARE DISCLAIMED. IN NO EVENT SHALL Chris Culy
+* BE LIABLE FOR ANY, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+* CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+* GOODS OR SERVICES; OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+* CAUSED AND ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+* TORT INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+-->
+	<div id="about">
+	  <h1>DoubleTreeJS + KWIC, Right to Left script demo, &copy; 2012-2016 <a href="http://linguistics.chrisculy.net/" target="_blank">Chris Culy</a> </h1>
+	  <p>The preloaded text is in the N'Ko script,
+	  from <a href="http://kanjamadi.com" target="_blank">kanjamadi.com</a>.
+	  You can load any plain text file with a right-to-left writing system, 
+	  but the part of speech filtering will work only if it immediately follows the word, separated by /.
+	  Alt-click on a node to make it the center. Shift-click on a node to get a KWIC view below.
+	  Move the tree by dragging on a node or the branches.
+	  The input boxes accept regular expressions. Search for a word, or hold shift and press return in the "Word to use" field
+	  to search for the field as a regular expression. Numbers after the words in the dropdown indicate how many occurrences there are.
+	  Experiment! Feedback appreciated.
+	  </p>
+	</div>
+  	<div id="controls">
+	<table>
+	<tr>
+	  <td id="filereader">Input file: <input type="file" id="fileIn" onchange="handleFiles(this.files)"></input> <span id="loadProgress"></span></td>
+	  <td>Word to use:</td>
+	  <td><input type="text" id="toUse" name="toUse" onkeypress="handlePress(event, this)" value=""></input>
+		or from history <select id="searchHistory" onchange="setFromHistory(this.value)"></select>
+	  </td>
+	</tr>
+	<tr>
+	  <td>Sort branches by: <input id="defaultSort" type="radio" name="brSort" value="token" checked onclick="updateSort()">token</input>
+			       <input id="posSort" type="radio" name="brSort" value="POS" onclick="updateSort()">POS</input>
+			       <input id="contSort" type="radio" name="brSort" value="continuations" onclick="updateSort()">branching</input>
+	  </td>
+	</tr>
+	<tr>
+	  
+	  <td colspan="2">
+	  <div id="filters">
+	    <table>
+		  <tr>
+			 <td><input type="checkbox" id="punc" onchange="updatePunc()">Exclude punctuation</td>
+			</tr>
+	      <tr>
+		<td>Limit first left POS to:</td>
+		<td><input type="text" id="leftPOS" name="leftPOS" onkeypress="handlePress(event, this)" value=" " size="3" title="Hint: Press shift-enter to update the filter immediately"></input></td>
+	      </tr>
+	      <tr>
+		<td>Limit first right POS to:</td>
+		<td><input type="text" id="rtPOS" name="rtPOS" onkeypress="handlePress(event, this)" value=" "size="3" title="Hint: Press shift-enter to update the filter immediately"></input></td>
+		<td><input type="button" id="doFilters" name="doFilters" value="Update filters" onClick="updateFilters()"></input></td>
+	      </tr>
+	    </table>
+	    
+	  </div>
+	  <input type="button" id="Find" name="Find" value="Find in tree:" onClick="doSearch()"></input>
+	  <input type="text" id="toFind" name="toFind" onkeypress="handlePress(event, this)" value="[aA]"></input>
+	  <span id="numFound"></span>
+	  <input type="button" id="ClearFind" name="ClearFind" value="Clear" onClick="doClear()"></input>
+	  <input type="checkbox" id="ShowPOS" name="ShowPOS" vale="Show POS" onClick="togglePOS(this)" checked="checked">Show POS</input>
+	  </td>
+	  
+	  
+	  <td id="predictedTD"><div id="predicted"></div></td></td>
+	</tr>
+	
+	</table>	  
+	</div>
+   <div>
+	 <p><input type="button" value="Make image" onclick="makeImg()" title="Will open in new window"></p>
+	 <canvas id="imgCan" style="display:none"></canvas>
+	</div>
+	<div id="doubletree"></div>
+	<div id="results"></div>
+	<div id="taggedText">
+ߞߏ
+ߡߍ߲
+ߞߵߊ߬
+ߞߍ߫
+ߊ߲
+ߛߋ߫
+ߘߊ߫
+ߞߊ߬
+ߕߟߋ߬ߓߊ߰ߓߟߐߟߐ
+ߘߊߦߟߍ߬
+ߒߞߏ
+ߦߋ߫
+߸
+ߊ߲
+ߧߴߊ߲
+ߞߊߘߊ߲߫
+ߏ߬
+ߘߐ߫
+ߞߙߊߕߊߕߊ߫
+ߞߊ߬
+ߒ߬
+ߓߊߘߋ߲
+ߕߐ߬ߡߊ
+ߟߎ߬
+ߟߊߞߍ߫
+ߊ߬
+ߞߊ߬ߟߊߡߊ߬߸
+ߞߵߊ߬ߟߎ߬
+ߡߊߛߊ߬ߡߊ߲߫
+ߞߵߊ߬ߟߎ߬
+ߡߊߘߏ߲߬
+ߒ߬
+ߠߊ߫
+ߒߞߏ
+ߛߘߊߟߊ߫
+ߞߏߓߊ
+ߣߌ߲߬
+ߞߊߡߊ߲
+ߞߣߐ߫߸
+ߏ߬
+ߘߏ߲߬
+ߕߴߛߋ߫
+ߘߊߓߊ߲߫
+ߠߊ߫
+ߝߋߎ߫
+ߝߏ߫
+ߊ߬ߟߎ߬
+ߦߋ߫
+ߛߋ߫
+ߞߊ߬
+ߓߟߐߟߐ
+ߞߐߜߍ
+ߟߎ߬
+ߡߊߝߟߍ߫
+ߟߴߊ߬ߟߎ߫
+ߖߘߍ߬
+ߦߋ߫
+ߊ߬ߟߎ߬
+ߟߊ߫
+ߕߟߋ߬ߓߊ߮
+ߟߎ߬
+ߟߊ߫
+ߣߐ߰ߦߊ߫
+ߘߐ߫
+߸
+ߣߌ߲߬
+ߘߏ߲߬
+ߕߊ߬ߣߍ߲߫
+ߒߞߏ
+ߟߊ߫
+ߖߘߍ߬ߛߐߘߐ߲
+ߛߌߟߊ߫
+ߓߐߣߍ߲
+ߠߎ߫
+ߓߎ߭
+ߟߋ߫
+ߡߊ߬
+.
+ߡߊ߲߬ߘߋ߲߬
+ߛߊ߲ߘߊ
+ߘߏ߫
+ߟߋ߬
+ߞߊ߲߫
+ߞߏ߫:
+ߌ
+ߓߊ߯
+ߌ
+ߢߊ
+ߟߐ߬
+ߕߋ߬ߟߋ
+ߘߐ߫
+ߞߵߌ
+ߕߊ߯
+ߦߙߐ
+ߡߊߝߟߍ߫߸
+ߛߎ߫
+ߕߍ߫
+ߞߏ߬
+ߌ
+ߡߊ߬
+.
+ߒ߬ߓߊ߬
+ߊ߲
+ߧߋ߫
+ߒ߬
+ߠߞߊߟߌߦߊ߫
+ߛߊ߫
+ߒ߬
+ߘߌ߫
+ߞߍ߫
+ߒ߬
+ߘߎߢߊߘߐߕߍ߯
+ߢߐ߲߮
+ߠߎ߬
+ߘߐ߫
+ߞߊ߬
+ߞߍ߫
+ߞߎߟߎ߲߫
+ߞߋߟߋ߲߫
+ߞߣߐ߫
+ߏ߬
+ߘߐ߫
+.
+ߝߌߟߊߣߊ߲
+ߕߋ߬ߟߋ߫
+߂߇-߂߈/߂߀߁߀
+ߕߊ߬ߡߌ߲߬ߣߍ߲
+ߠߊ߫߸
+ߞߎ߲߬ߜߙߊ߬ߓߊ
+ߘߏ߫
+ߞߍ߫
+ߘߊ߫
+ߞߊ߯ߓߊ߫
+ߛߏ߫
+ߞߐߞߊ߲߬
+ߞߙߎ߬ߞߊ߲߬ߝߎߥߊ߫
+ߜߊ߬ߙߊ
+ߦߙߐ߸
+ߏ߬
+ߞߍ߫
+ߘߊ߫
+ߞߎ߲߬ߠߊ߬ߝߎ߬ߟߋ߲߬ߓߊ߫
+ߘߌ߫
+ߡߊ߲߬ߘߋ߲߬
+ߞߏߢߊ
+ߞߊ߲߬߸
+ߓߊߏ߬
+ߖߊ߲߬ߖߏ߲߬ߓߊ
+ߡߍ߲
+ߕߊ߬ߡߌ߲߬
+ߘߊ߫
+ߞߣߍ
+ߏ߬
+ߞߊ߲߬
+ߞߊ߬ߦߌ߯
+ߞߙߌߣߊ߬
+ߞߟߊߓߍ߲
+ߛߊ߲߬ߠߊ߬ߞߊ
+ߣߊߟߌ߬ߡߎ߲߫
+ߛߏ߲߬ߖߘߊ߫
+ߞߋߕߊ߬
+ߟߊߛߌ߭
+ߘߌ߫
+ߡߊ߲߬ߛߊ߬ߦߊ
+ߥߊ߰ߣߍ߲
+ߞߊ߲߬
+ߡߊ߲߬ߘߋ߲
+ߞߎ߲߬ߠߊ߫߸
+ߏ߬
+ߟߋ
+ߟ
+ߊߞߎߣߎ߲߫
+ߠߊ߫
+ߟߏ߲߫
+߂
+ߣߌ߲߬
+ߞߘߐ߫
+ߊ߬
+ߞߎ߬ߙߎ߲߬ߘߎ߫
+߁߅߀
+ߕߊ߬ߣߍ߲
+ߠߎ߬
+ߢߊߝߐ
+ߟߊ߫
+ߡߌ߬ߙߌ߲߬ߘߌ
+ߦߋ߫߸
+ߞߊߕߙߍ߬ߕߍ߫
+ߒ߬
+ߠߊ߫
+ߞߎ߲߬ߠߊ߬ߛߌ߮
+ߟߎ߫
+ߡߊ߬
+.
+ߡߍ߲
+ߦߋ߫߸
+ߒߞߏ
+ߞߊ߬ߙߊ߲
+ߖߡߊ߬ߣߊ
+ߛߊ߲ߝߍ߫
+ߞߊߙߊ߲ߕߊ
+ߟߎ߬
+ߟߊ߫߸
+ߞߎ߲߬ߜߙߊ
+ߢߊ߬ߟߌ
+ߞߵߏ߬
+ߟߋ
+ߝߐ߫
+ߞߎ߲߬ߠߊ߬ߛߌ߮
+ߦߋ߫߸
+ߊ߬ߟߎ߫
+ߘߏ߲߬
+ߝߣߊ߫
+ߓߘߴߊ߬
+ߡߌ߬ߘߊ߬
+ߘߊߞߎ߲
+ߏ߬
+ߘߐ߫
+ߘߏߦߌ߲߫
+.
+ߞߙߊ߬ߡߐ߯
+ߓߊ߲߬ߓߊ
+ߓߡߊ߬ߞߐ߫
+ߡߐ߰
+ߛߌߦߊߡߊ߲߫
+ߓߍ߫߸
+ߏ߬
+ߟߎ߬
+ߢߊ
+ߓߍ߲߬ߣߍ߲߬
+ߜߊ߲ߛߊ߲
+ߠߋ߬
+ߒߞߏ
+ߡߊ߬߸
+ߞߋߟߋ߲߫
+ߞߵߊ߬
+ߟߊ߫
+ߛߎߘߊ߲
+ߘߐߞߐ߬ߣߐ߲߬
+ߊ߬
+ߦߋ߫
+ߣߊ߬
+ߕߏ߫
+ߘߏ߲߬
+ߠߴߊ߬
+ߘߐ߫
+ߏ߬
+ߞߐ߫߸
+ߊ߬
+ߕߍ߫
+ߏ߬
+ߕߌ߰
+ߢߣߊ߫
+ߝߋߎ߫
+ߞߏ߫
+ߊ߬ߟߋ߬
+ߞߊ߫
+ߞߊ߲߫
+ߞߊ߬
+ߓߟߋ߬ߓߟߋ߫
+ߞߍ߫
+ߒߞߏ
+ߟߊߥߙߎߞߌ
+ߘߐ߫
+ߊ߬ߟߋ
+ߖߍ߬ߘߍ
+ߘߌ߫
+ߞߎ߲߬ߠߊ߬ߦߋߙߋ߲
+ߛߐ߬ߘߐ߲߬
+ߡߍ߲
+ߘߐ߫
+ߞߊߟߌߦߊ߫
+ߘߐ߫
+.
+ߘߏ߫
+ߝߣߊ߫
+ߢߊ
+ߓߍ߲߬ߣߍ߲߫
+ߊ߬
+ߡߊ߬
+ߞߎ߲߬ߘߐ߬ߞߏ߬ߖߎ߰ߦߊ
+ߡߙߌߦߊ
+ߟߋ߬
+ߘߌ߫߸
+ߓߊߏ߬
+ߊ߬
+ߦߴߏ߬
+ߢߣߊ߫
+ߟߋ߬
+ߞߏ߫
+ߝߘߊ߬ߝߌ߲߬
+ߞߏ
+ߕߍ߫
+ߝߊ߲߬ߞߊ߫
+ߛߐ߬ߘߐ߲߬
+ߠߊ߫
+ߞߊ߬
+ߕߊ߯
+ߢߍ߫
+ߪ
+ߕߍߣߊ߬
+ߞߎߡߊ߫
+ߊ߬
+ߝߊ߲߬ߒ߬ߕߊ߲߬
+ߝߋ߲߬
+ߠߊ߬ߡߊ
+ߡߊ߬߸
+ߏ߬
+ߘߐ߫
+ߒߞߏ
+ߦߋ
+ߦߴߏ߬
+ߕߙߐ߫
+ߟߊ߫
+ߟߋ߬߸
+ߞߏ߬ߣߌ߲߬
+ߣߴߊ߬
+ߛߍ߬ߘߏ߲߬ߠߊ
+ߟߎ߫
+ߛߍ߰
+ߘߊ߫
+ߕߎ߬ߡߊ
+ߡߍ߲
+ߊ߬ߟߋ
+ߘߌ߫
+ߘߐߝߢߐ߫
+ߞߊ߬
+ߛߍߥߊ߫߸
+ߓߊߏ߬
+ߊ߬
+ߘߐߜߍ߬ߘߍ߲߬
+ߞߏ
+ߓߘߊ߫
+ߓߐ߫
+ߊ߬
+ߘߟߊ߫،
+.
+.
+ߊ߯߸
+ߒ߬ߓߊ߬
+ߏ߬
+ߕߌ߰
+ߟߋ߬
+ߦߋ߫
+ߕߙߐ߫
+ߟߊ߫
+ߓߊ
+ߞߍ߬߸
+ߓߊߏ߬
+ߛߓߍ߬
+ߞߏ߫
+ߟߋ߬
+ߝߘߊ߬ߝߌ߲߬
+ߞߏ߫
+ߕߍ߫
+.
+ߞߐ
+ߣߌ߲߬
+ߠߊ߫߸
+ߒߞߏ
+ߛߓߍߘߋ߲
+ߓߍ߯
+ߛߐ߫
+ߘߴߊ߬
+ߕߊ߫
+ߘߎ߲߬ߘߎ߬ߡߊ߬
+ߘߏߝߙߍߕߍ߫
+ߟߊ߫
+ߊ߬
+ߣߌ߫
+ߛߓߍߘߋ߲߫
+ߛߌ߫
+ߘߍ߬
+ߕߍ߫
+ߡߍ߲
+ߘߌ
+ߘߎߢߊ߫
+ߛߓߍߛߎ߲
+ߣߴߊ߬
+ߛߓߍߘߋ߲
+ߠߎ߬
+ߟߊߛߌߦߊߦߊ
+ߢߊߝߍ߬߸
+ߊ߬
+ߟߊ߫
+ߘߎ߲߬ߘߎ߬ߡߊ߬
+ߘߏߝߙߍߕߍ
+ߏ߬
+ߟߋ
+ߘߏ߲߬
+ߠߊ߬
+ߘߍ߬ߡߍ߲߬
+ߞߍ߫
+ߟߊ߫
+ߞߏ߫
+ߛߌߦߊߡߊ߲߫
+ߢߊ߬߸
+ߦߏ߫
+ߊ߲
+ߧߋ߫
+ߞߐߜߍ
+ߡߍ߲
+ߞߣߐ߫
+ߣߌ߲߬
+.
+ߘߏߝߙߍߕߍ
+ߏ߬
+ߞߎ߬ߘߎߜߟߍ߬ߦߊ
+ߟߋ߫
+ߣߐ߬
+ߘߍ߬ߞߙߎ߫
+ߣߊ߲߬ߞߙߊ߬ߓߊ
+ߛߌߦߊߡߊ߲߫
+ߟߐ߬
+ߟߊ߫
+ߒߞߏ
+ߟ
+ߊߕߘߍ߬
+ߟߴߊ߬ߟߎ߬
+ߟߊ
+ߢߍߥߟߊ
+ߟߎ߬
+ߓߎ߲ߓߎ߲ߝߍ߲
+ߠߎ߬
+ߛߏ߯ߙߏߟߌ
+ߘߐ߫
+ߊ߬
+ߕߊ߫
+ߞߎ߲߬
+ߠߊ߫߸
+ߓߊߏ߬
+ߢߌ߬ߡߦߊ߬ߟߊ߬ߘߌߦߊߢߍ
+ߦߴߊ߬
+ߕߊ߫
+ߘߌ߫
+ߝߛߊߦߌ߫߸
+ߞߏ߬ߣߌ߲߬
+ߊ߬
+ߘߐ߫
+ߓߋ߬ߓߊߟߌߦߊ
+ߝߣߊ߫
+ߦߴߊ߬
+ߕߊ߫
+ߘߌ߫߸
+ߓߊ
+ߒߞߏ
+ߟߊߕߍ߬ߘߍ
+ߊ߬ߟߎ߬
+ߟߊ߫
+ߓߊ߯ߙߊ߫
+ߡߐ߬ߟߐ߲߬ߡߊ
+ߏ߬
+ߟߎ߬
+ߘߐ߫߸
+ߏ߬
+ߟߋ
+ߦߴߊ߬ߟߎ߫
+ߘߏ߲߬
+ߘߌߦߊ߫
+ߟߴߊ߲
+ߠߊ߫
+ߟߐ߯ߝߍ
+ߟߎ߬
+ߘߐ߫߸
+ߞߵߊ߬
+ߕߘߍ߬
+ߊ߬ߟߎ߬
+ߦߟߌ߫
+ߦߋ߫
+ߕߣߐ߬
+ߛߐߘߐ߲
+ߡߊ߬
+ߊ߬ߟߎ߬
+ߟߊ߫
+ߥߟߏߒߘߐ
+ߟߎ߬
+ߟߊ߫
+.
+ߏ߬
+ߞߏߛߐ߲߬߸
+߂߀߀߉
+ߞߊߙߏ߫
+߁߀߲/߂߂
+߸
+ߡߌߞߙߏߛߐߝ
+ߟߊ߫
+ߢߍߥߟߊ߫
+ߢߐ߲߰ߦߋ߬ߓߊߟߌ
+ߝߢߐߘߊ߫߇
+ߖߌ߰
+ߘߊ߫
+ߘߎߢߊ߫
+ߟߐ߯ߝߍ
+ߟߎ߬
+ߘߐ߫
+ߒߞߏ
+ߘߌ߫߸
+ߤߋ߫
+.
+.
+ߟߏ߲
+ߏ߬
+ߞߍ߫
+ߘߊ߫
+ߟߏ߲ߓߊ߫
+ߟߋ߬
+ߘߌ߫
+ߒߞߏ
+ߟߊ߫
+ߘߐ߬ߝߐ
+ߘߐ߫
+ߘߌ߬߸
+ߤߊߟߌ߬
+ߣߴߊ߬
+ߕߘߍ߬
+ߘߊ߫
+ߞߏ߫
+ߊ߲
+ߝߊ߲߬ߓߊ
+ߡߊ߫
+ߞߍ߫
+ߊ߬
+ߞߊ߬ߟߊߡߊ߬߸
+ߞߏ߬ߣߌ߲߬
+ߣߴߏ߬
+ߝߣߊ߫
+ߕߎ߲߬
+ߡߊ߫
+ߞߍ߫
+ߏ߬
+ߟߏ߲߸
+ߊ߲
+ߛߋߣߍ߲߫
+ߓߊ߯ߙߊ
+ߡߍ߲
+ߠߎ߬
+ߞߍ߫
+ߟߊ߫
+ߣߌ߲߬߸
+ߛߊ߫
+ߕߐ߬
+ߦߴߏ߬
+ߟߊ߫
+ߤߊߟߌ߫
+ߓߌ߬߸
+ߓߊ߰ߘߌ߬
+ߒ
+ߛߊ߬ߣߊ߲߬ߞߎ߲߫
+.
+ߞߊ߲߬ߖߊ߬ߡߊߘߌ
+ߞߊ߲߬ߖߊ߬ߡߊ߯ߘߌ߫
+
+	</div>
+
+<!-- Load all the javascript -->
+<!-- just for saving -->
+  <script src="canvg-1.3/rgbcolor.js"></script>
+  <script src="canvg-1.3/StackBlur.js"></script>
+  <script src="canvg-1.3/canvg.js"></script>
+  <script src="utilities.js"></script>
+<!-- end of just for saving -->
+
+  <script src="../doubletreejs/d3.min.js"></script>
+  <script src="../doubletreejs/classListSubstitute.min.js"></script>
+  <script src="../doubletreejs/DoubleTree.min.js"></script>
+  <script src="../doubletreejs/Trie.min.js"></script>
+  <script src="../textmodels/TextHash.min.js"></script>
+  
+  <script src="searchhistory.js"></script>
+  <script src="history_utilities.js"></script>
+  
+  <script src="doubletree-kwic.js"></script>
+  <script src="doubletree-kwic-right-to-left-extras.js"></script>
+  
+  
+
+<!-- initialize -->  
+  <script>
+    setup();
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <!-- Copyright (c) 2012-2016, Chris Culy See below for the (new BSD) license-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>DoubleTreeJS + Filtered KWIC</title>
+    <!-- See end of body for scripts -->
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../doubletreejs/doubletree.css" />
+    
+    <style>
+      html,body {
+      height:100%;
+      font-family:'Open Sans',Helvetica,Arial,sans-serif;
+      }
+      <!--
+	  * {
+	  font-family: "Lucida Bright", Georgia, serif; /* one suggestion from http://cssfontstack.com/ */ 
+	  
+	  /* font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; /* one suggestion from http://cssfontstack.com/ */
+	  }
+	-->
+      div#taggedText {
+          display:none;
+      }
+      table#kwic {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      
+      #kwic td {
+          vertical-align:top;
+          padding-left: 0.75em;
+          padding-right: 0.75em;
+      }
+      td.kwicHit {
+	  color:green;
+	  font-weight:bold;
+	  text-align:center;
+	  cursor:pointer;
+      }
+      td.kwicLeft {
+	  text-align:right;
+      }
+      td.kwicRt {
+	  text-align:left;
+      }
+      span.kwicItem {
+	  cursor:pointer;
+	  color:blue;
+      }
+      p.hitContext {
+	  color:black;
+      }
+      svg {
+	  /*border: thin solid red;*/
+	  /*z-index:-100;
+	  position:relative;
+	  top:-19ex;
+	  */
+      }
+	 div#doubletree{
+	   overflow:scroll;
+	 }
+      span.loadProgress {
+	 display: none:
+	 /*z-index:99;*/
+	 position:relative:
+	 left: -5em;
+      }
+      
+      #predicted ul {
+          list-style-type:none;
+          margin-left:0;
+	  padding-left:0.1em;
+	  cursor:pointer;
+	  border: thin solid black;
+      }
+      div#predicted {
+	  position:relative;
+	  top:0ex;
+          width:max-content;
+      }
+      
+      div#filters {
+	/*border: thin solid black;*/
+	padding-bottom: 2ex;
+	
+      }
+
+#dtreejs_viz {
+    display: flex;
+    height: 100%;
+}
+
+@media print {
+  .tab-content > .tab-pane {
+    overflow: visible !important;
+  }
+  #dtreejs_viz {
+    display: flex;
+    height: auto;
+  }
+  #footer {
+    display: none;
+  }
+}
+
+/* Phonemia scrollable divs */
+#dtreejs_control,#dtreejs_body {
+    overflow: hidden;
+    height: auto;
+    position: relative;
+}
+/* Phonemia control section */
+#dtreejs_control {
+    width: 30%;
+    min-width: 25%;
+    margin-right: 25px;
+}
+#dtreejs_viz .panel-title a {
+    display:block;
+}
+#dtreejs_viz .panel-title {
+    color: #920a33;
+}
+#dtreejs_viz .panel-heading {
+    padding: 0 10px;
+    height: 30px;
+    background-color: #fafafa;
+}
+#dtreejs_control .panel-heading .panel-title a:hover ,
+#dtreejs_control .panel-heading .panel-title a:focus ,
+#dtreejs_control .panel-heading .panel-title a:visited {
+    color: inherit;
+    text-decoration:none;
+}
+#dtreejs_control .panel-body .input-group input {
+    display: inline-block;
+}
+
+#dtreejs_control #controls {
+/*    padding-left: 0; */
+}
+
+/* Phonemia body section */
+#dtreejs_body {
+    width: 70%;
+    padding-right: 10px;
+}
+#dtreejs_body #doubletree {
+    margin-left:-125px;
+    height:69%;
+    overflow:scroll;
+}
+#dtreejs_body #results {
+    height:30%;
+    font-size: 12px;
+    overflow:scroll;
+}
+
+      
+    </style>
+  </head>
+  <body>
+      	<!--
+  	/* (This is the new BSD license.)
+* Copyright (c) 2012-2016, Chris Culy
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the Chris Culy nor the 
+*		names of its contributors may be used to endorse or promote 
+*		products from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY Chris Culy
+* ``AS IS'' AND ANY OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+* THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+* ARE DISCLAIMED. IN NO EVENT SHALL Chris Culy
+* BE LIABLE FOR ANY, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+* CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+* GOODS OR SERVICES; OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+* CAUSED AND ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+* TORT INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+-->
+<!--
+	<div id="about">
+	  <h1>DoubleTreeJS + Filtered KWIC demo, &copy; 2012-2016 <a href="http://linguistics.chrisculy.net" target="_blank">Chris Culy</a> </h1>
+	  <p>The preloaded text is from <em>Robin Hood</em> by Howard Pyle.
+	  In browsers other than Safari, you can load all of Robin Hood (included in the download) or any plain text file,
+	  but the context and part of speech filtering will work only if it immediately follows the word, separated by /. (<em>Filtering slows the display down.</em>)
+	  Alt-click on a node to make it the center. Shift-click on a node to get a KWIC view below.
+	  Move the tree by dragging on a node or the branches.
+	  The input boxes accept regular expressions. Search for a word, or hold shift and press return in the "Word to use" field search for the field as a regular expression.
+	  Experiment! Feedback appreciated.
+	  </p>
+	</div>
+-->
+
+<div id="dtreejs_viz">
+  <div id="dtreejs_control">
+    <h3 style="display:inline-block;">DoubleTreeJS</h3> &nbsp; <a class="help-modal" href="#"><span class="glyphicon
+	glyphicon-question-sign" style="vertical-align:baseline"></span></a><a style="float:right;
+	padding:30px 5px 0 0;" href="#visualization"
+	class="viz_home">Visualization Home</a>
+    <div class="panel-group" role="tablist"
+	 aria-multiselectable="true">
+      <div class="panel">
+	<div class="panel-heading" role="tab" id="headingOne">
+	  <div class="panel-title">
+	    <a role="button" data-toggle="collapse"
+	       href="#collapseOne" aria-expanded="true"
+	       aria-controls="collapseOne">Query</a>
+	  </div>
+	</div>
+	<div id="collapseOne" class="panel-collapse collapse in"
+	     role="tabpanel" aria-labelledby="headingOne">
+	  <div class="panel-body" id="controls">
+	    <label>Word to use / or choose from history: </label><br/>
+	    <input type="text" id="toUse" name="toUse"
+		   onkeypress="handlePress(event, this)"
+		   value=""></input> / 
+	    <select id="searchHistory" onchange="setFromHistory(this.value)"></select>
+	    <div id="predicted"></div>
+	  </div>
+	</div>
+      </div>
+      <div class="panel">
+	<div class="panel-heading" role="tab" id="headingTwo">
+	  <div class="panel-title">
+	    <a role="button" data-toggle="collapse"
+	       href="#collapseTwo" aria-expanded="true"
+	       aria-controls="collapseTwo">Query options</a>
+	  </div>
+	</div>
+	<div id="collapseTwo" class="panel-collapse collapse in"
+	     role="tabpanel" aria-labelledby="headingTwo">
+	  <div class="panel-body" id="filters">
+	    <label>Context:</label><br/>
+	    <input type="radio" id="rFull" name="include"
+		   value="all" checked>&nbsp;<b>Full</b> context<br>
+	    <input type="radio" id="rInclude" name="include"
+		   value="include">&nbsp;<b>Include only</b>
+	    POS: <input type="text" id="contextInclude"
+			title="Insert a comma separated list, no spaces" size="5"><br>
+	    <input type="radio" id="rExclude" name="include"
+		   value="exclude">&nbsp;<b>Exclude all</b>
+	    POS: <input type="text" id="contextExclude"
+			title="Insert a comma separated list, no spaces" size="5"><br>
+	    <input type="button" id="setContext" name="setContext" value="Update context" onClick="updateContext()"></input><br/><br/>
+	    
+	    <label>Filters:</label><br/>
+	    Limit <b>first left</b> POS to:&nbsp;<input type="text" id="leftPOS" name="leftPOS" onkeypress="handlePress(event, this)" value=" " size="5" title="Hint: Press shift-enter to update the filter immediately"></input><br/>
+	    Limit <b>first right</b> POS to:&nbsp;<input type="text" id="rtPOS" name="rtPOS" onkeypress="handlePress(event, this)" value=" "size="5" title="Hint: Press shift-enter to update the filter immediately"></input><br/>
+	    <input type="checkbox" id="punc"
+		   onchange="updatePunc()">&nbsp;Exclude punctuation</input><br/>
+	    
+	    <input type="button" id="doFilters" name="doFilters" value="Update filters" onClick="updateFilters()"></input>
+	  </div>
+	</div>
+      </div>
+      <div class="panel">
+	<div class="panel-heading" role="tab" id="headingThree">
+	  <div class="panel-title">
+	    <a role="button" data-toggle="collapse"
+	       href="#collapseThree" aria-expanded="true"
+	       aria-controls="collapseThree">Result options</a>
+	  </div>
+	</div>
+	<div id="collapseThree" class="panel-collapse collapse in"
+	     role="tabpanel" aria-labelledby="headingThree">
+	  <div class="panel-body">
+	    
+	    <label>Sort branches by:</label><br/> 
+	    <input id="defaultSort" type="radio" name="brSort"
+		   value="token" checked
+		   onclick="updateSort()">&nbsp;token</input> &nbsp;
+	    <input id="posSort" type="radio" name="brSort"
+		   value="POS" onclick="updateSort()">&nbsp;POS</input> &nbsp; 
+	    <input id="contSort" type="radio" name="brSort"
+		   value="continuations"
+		   onclick="updateSort()">&nbsp;branching</input><br/><br/> 
+	    
+	    <input type="button" id="Find" name="Find" value="Find in tree:&nbsp;" onClick="doSearch()"></input>
+	    <input type="text" id="toFind" name="toFind" onkeypress="handlePress(event, this)" value="[aA]"></input>
+	    <span id="numFound"></span>
+	    <input type="button" id="ClearFind" name="ClearFind" value="Clear" onClick="doClear()"></input><br/><br/>
+	    <input type="checkbox" id="ShowPOS" name="ShowPOS" vale="Show POS" onClick="togglePOS(this)" checked="checked">&nbsp;Show POS</input>
+	    
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+
+<!--
+    <div>
+      <p><input type="button" value="Make image" onclick="makeImg()" title="Will open in new window"></p>
+      <canvas id="imgCan" style="display:none"></canvas>
+    </div>
+    -->
+  <div id="dtreejs_body">
+    <div id="help" style="text-align:center;align-items:baseline;">
+    <em>ALT+CLICK a node to center it.</em> &nbsp; 
+      <a id="dt_reset" class="btn btn-primary" role="button"
+      style="font-family:'Open Sans',Helvetica,Arial,sans-serif">Reset display</a>
+ &nbsp; 
+        <em>SHIFT+CLICK a node to get a KWIC view below.</em>
+    </div>
+    <div id="doubletree"></div>
+    <div id="results"></div>
+    <div id="taggedText"></div>
+</div>
+<!-- Load all the javascript -->
+<!-- just for saving -->
+<!--
+    <script src="canvg-1.3/rgbcolor.js"></script>
+    <script src="canvg-1.3/StackBlur.js"></script>
+    <script src="canvg-1.3/canvg.js"></script>
+    <script src="utilities.js"></script>
+    -->
+<!-- end of just for saving -->
+
+    <script src="../../jquery-1.11.2/jquery.min.js"></script>
+    <script src="../../jquery.ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../doubletreejs/d3.min.js"></script>
+    <script src="../doubletreejs/classListSubstitute.min.js"></script>
+    <script src="../doubletreejs/DoubleTree.min.js"></script>
+    <script src="../doubletreejs/Trie.min.js"></script>
+    <script src="../textmodels/TextHash.min.js"></script>
+    
+    <script src="searchhistory.js"></script>
+    <script src="history_utilities.js"></script>
+    
+    <script src="doubletree-kwic.js"></script>
+    <script src="doubletree-filtered.js"></script>
+    <script src="../../poemvis-page/WebContent/JavaScript/utils.js"></script>
+    <script src="doubletree-tagged-setup-ecpa.js"></script>
+  
+    <!-- initialize -->  
+    <script>
+      setup();
+      $("#dt_reset").click(function() {
+          $( "#doubletree svg" ).detach();
+          dt.redraw();
+      });
+    </script>
+   
+  </body>
+</html>

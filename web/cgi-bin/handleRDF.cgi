@@ -29,4 +29,4 @@ open(my $fh, ">:encoding(UTF-8)", $subpath.$cgi->param('file')) or die "Could no
 flock($fh, 2) or die "Could not lock file: $!";
 print $fh decode('UTF-8',$cgi->param('myRDF'));
 close $fh;
-&send_mail ("Anonymous","anonymous\@anonymous.org","RDF file");
+&send_mail ("ECPA mailer","huber\@eighteenthcenturypoetry.org","RDF file");

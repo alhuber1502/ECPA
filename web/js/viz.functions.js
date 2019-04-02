@@ -147,6 +147,11 @@ function init(d) {
 	ecepsaved = 0;
 	ecepidsaved = '';
 	break;
+    case "DTREEJS_VIZ":                                              // PoemViewer
+	dtreejs_load(1);
+	ecepsaved = 0;
+	ecepidsaved = '';
+	break;
     }
 }
 
@@ -1124,4 +1129,52 @@ function IDfromPLW (part, line, word) {
 	}
     }
     return returnID;
+}
+
+
+
+// DoubleTreeJS
+function dtreejs_load (part) {
+
+    // DoubleTreeJS in iframe
+    $( '#visualization' ).html( '<iframe id="dtreejs_frame"></iframe>' );
+    // load iframe
+    var dt_token = "";
+    $( '#dtreejs_frame' ).attr("src", "/js/DoubleTreeJS_0.8/samples/doubletree-ecpa.html?filename="+docname+"&token="+dt_token);
+    $( '#dtreejs_frame' ).on('load', function() {
+	var dtreejsFrame = $("#dtreejs_frame").contents();
+	// viz home
+        dtreejsFrame.find(".viz_home").click(function(){
+           window.location.hash = "#visualization";
+	   viz_chosen = '';
+           $( "div#text" ).scrollTop(0);
+           $.getScript('/js/viz_overview.js');
+	});
+        // help modal
+	dtreejsFrame.find(".help-modal").click(function(){
+$( "body" ).prepend(`
+<div id="newHelp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Help</h4>
+      </div>
+      <div class="modal-body" id="modal-help-text"/>
+`);
+    var file = "viz_dtreejs";
+    $( "#modal-help-text" ).append( $("<div/>").load("/help/"+file+".shtml", function( data ) { data } ))
+        .after(`
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+`);
+            $( "#newHelp" ).modal('show');
+
+	});
+    });
+
 }

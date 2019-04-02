@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <!-- (This is the new BSD license.)
+  * Copyright (c) 2011, Europaeische Akademie Bozen/Accademia Europea Bolzano
+  * All rights reserved.
+  *
+  * Redistribution and use in source and binary forms, with or without
+  * modification, are permitted provided that the following conditions are met:
+  *     * Redistributions of source code must retain the above copyright
+  *       notice, this list of conditions and the following disclaimer.
+  *     * Redistributions in binary form must reproduce the above copyright
+  *       notice, this list of conditions and the following disclaimer in the
+  *       documentation and/or other materials provided with the distribution.
+  *     * Neither the name of the Europaeische Akademie Bozen/Accademia Europea 
+  *		  Bolzano nor the of its contributors may be used to endorse or promote 
+  *		  products from this software without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY Europaeische Akademie Bozen/Accademia Europea
+  * Bolzano``AS IS'' AND ANY OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+  * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+  * ARE DISCLAIMED. IN NO EVENT SHALL Europaeische Akademie Bozen/Accademia Europea
+  * Bolzano BE LIABLE FOR ANY, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+  * CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+  * GOODS OR SERVICES; OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  * CAUSED AND ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+  * TORT INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+  
+    <title>Arc Diagram example</title>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui-1.8.10.custom/js/jquery-ui-1.8.10.custom.min.js"></script>
+	<script type="text/javascript" src="protovis_3.2/protovis-d3.2.js"></script>
+    <!-- <script type="text/javascript" src="jscolor/jscolor.js"></script> --> <!-- http://jscolor.com/ -->
+	<script type="text/javascript" src="js/jsds.js"></script>
+    <script type="text/javascript" src="js/converters.js"></script>
+
+    <!--
+    <script type="text/javascript" src="data/conllTxt.js"></script>
+    <script type="text/javascript" src="data/conllTxt80.js"></script>
+    -->
+
+    <script type="text/javascript" src="js/dep_diagram/xLDDLayout.js"></script>
+    <script type="text/javascript" src="js/dep_diagram/xLDDVisualization.js"></script>
+
+
+    <script type="text/javascript">
+   
+	var xdd = XDD(); //create the diagram
+	xdd.onWheel = null; //disable zooming with scrollwheel, since have slider and buttons
+	xdd.setDisplaySize(1200,600);
+	var showRelations;
+	xdd.showRelationLabels = function() {return showRelations;} //static
+	var currZoom = 10;
+  
+  //apparently, we need to initialize the jscolor stuff the old school way, not using jquery
+  //and because of that, we need to do the settings here as well (not in myready), since onload gets called after myready
+  window.onload = function() {
+		$("#slider").slider({ min: 1, max:15, step:1, value:currZoom,
+			slide: function(event, ui) {
+				var deltaZoom = ui.value - currZoom;
+				xdd.magnify(50*deltaZoom),
+				currZoom = ui.value;
+			}
+			//change: ... //only when stop moving
+		});
+                
+  }
+  
+  $(document).ready(myReady);
+
+  function myReady() {
+
+	// show/hide of explanatory text
+    $("p#showExplain").click( function(event) {
+		$("p#showExplain").hide();
+		$("div#explainContent").slideDown('slow');
+	});
+	
+	$("p#hideExplain").click( function(event) {
+		$("div#explainContent").slideUp('slow');
+		$("p#showExplain").show();
+	});
+	
+	//display of xLDD with standard visual encoding
+	$("#exs").change( function(event) {
+            showExample( $("#exs").val() );
+	  apply_vis();
+	  window.scrollBy(0,document.body.scrollHeight);	  
+    });
+
+	//apply user-driven visual encoding
+    $("#apply_vis_enc").click( function(event) {
+      apply_vis();
+	  window.scrollBy(0,document.body.scrollHeight);
+    });
+	
+	// magnify in zooming (using the button)
+	$("#magPlus").click( function(event) {
+			xdd.magnify(50);
+			resetSlider(currZoom + 1);
+	});
+	// demagnify in zooming (using the button)
+	$("#magMinus").click( function(event) {
+		xdd.magnify(-50);
+		resetSlider(currZoom - 1);
+	});
+        
+        //var query = window.location.search.substring(3); //?p=
+        //var sent = decodeURIComponent(query);
+        //showExample(sent);
+		  
+	 showRelations = false;
+  }
+
+  function showExample(sent, ref) {
+//    if (sNum == "") {
+//      return;
+//    }
+//    var sent;
+//    if (sNum == "1") {
+//		sent = conllTxt;
+//    } else {
+//		sent = conllTxt80;
+//    }
+  
+	 
+    var jsds = JSDS.CoNLL2JSDS( sent );
+    if (jsds.phraseInfo != null && jsds.phraseInfo.errors != null) {
+      alert("Errors converting the structure:\n\t" + jsds.phraseInfo.errors.join("\n\t"));
+    }
+    var ourDD = JSDS.jsds2pv(jsds, true);
+	//var ourDD = JSDS.jsds2pv(jsds, false); //try making dependents the targets -- works
+	
+    document.getElementById("sref").innerHTML = ref;
+    document.getElementById("dd1S").innerHTML = "Diagram for:<br/>" + ourDD.original;
+    xdd.resetVis("dd1", ourDD);
+    // show the slider control
+	$("div#controls").show();
+	resetSlider();
+	//selectPOS("NN");
+    //xdd.selectRelation("sb");
+  }
+
+  function apply_vis() {
+    // sample application that allows to customize:
+	//	- link style and coloring (above/below, show/hide, color, multiple colors) according to dependency relation types
+	//  - coloring of tokens according to values of the token level attributes: word, lemma and part of speech
+
+    xdd.font = "14px sans-serif";
+	xdd.visFrameWidth = 2;
+	xdd.visFrameStyle = "blue";
+    xdd.levelDelta = function() {return 0;}
+	xdd.linkColor = function() {return "grey";}
+		
+	var defaultarc = 0; //$("#vis_alt_arc").val(); // visual encoding of unselected arcs 
+	var selectedarc = 0; //$("#vis_arc").val();	// visual encoding of selected arcs
+	var relval = []; // $("#dep_rel").val();	// list of selected arcs
+	
+	var tokentype = 0; //$("#tok_attr").val();	// type of token level attribute (word, lemma, pos)
+	var tokenvis = 0; //$("#vis_tok").val();	// visual encoding of selected tokens
+	
+	//var reg = new RegExp(", *");
+	var tokens = []; //$("#tok_list").val().split(reg);	// list of selected tokens
+	
+	//arc width
+	xdd.linkWidth = function(link) {
+		return 3; 
+	}
+	
+	// arc color
+	xdd.linkColor = function(link) {
+		return "violet";
+    }
+	
+    pv.Layout.EURACDepDiagram.isOver = function(link) {
+		return true; // standard encoding with all arcs above the text
+	}	
+
+	xdd.showArcHeads = function() {return true;}; //always show arc heads
+    xdd.linkCurve = function() {return 0;} //static; always circular
+    
+    xdd.showRelationLabels = function() {return true;} //static
+	
+	//coloring of tokens
+	xdd.nodeItemStyle = function(nd) { // nodeItem is the text word
+		return "black";
+	}
+	
+	
+	//shape of nodes
+	xdd.nodeDotShape = function(nd) {   // nodeDot is the node above the token
+		return "circle";
+	}
+	
+	xdd.linkTitle = function(link) {
+		var src = link.sourceNode.nodeName; //getPOS(link.sourceNode);
+		var tar = link.targetNode.nodeName; //getPOS(link.targetNode);
+		
+		return link.relation + ":\t" + src + " -> " + tar;
+	}
+	
+	xdd.nodeItemClick = function(nd) { // when clicking on a word show information on the dependencies of the word in a javascript dialogue
+		var name_dep;
+		var name_head;
+		if (nd.headArcs.length == 1){
+			name_dep = "arc";
+		}
+		else{
+			name_dep = "arcs";
+		}
+		if (nd.dependentArcs.length == 1){
+			name_head = "arc";
+		}
+		else{
+			name_head = "arcs";
+		}
+		alert("\"" + nd.nodeName + "\"\n" + 
+		"is dependent of " + nd.headArcs.length + " " + name_dep + " with type: " 
+		+ xdd.getRelationNames(nd.headArcs).join(",") + "\n" 
+		+ "is head of " + nd.dependentArcs.length + " " + name_head + " with type: " 
+		+ xdd.getRelationNames(nd.dependentArcs).join(",") 
+		);
+	}
+	
+	xdd.nodeDotFillStyle = function() {return "black";} //static
+	xdd.nodeDotTitle = function() {return null;} //static, on mouse over nodes don't show anything
+	xdd.nodeItemTitle = function(nd) {
+	  return getLemma(nd) + " " + getCPOS(nd) + " " + getPOS(nd); // static, on mouse over tokens show the lemma and morph inof for each word
+   } 
+
+	
+	
+	var sNum = $("#exs").val();
+	var sent;
+    if (sNum == "1") {
+		sent = conllTxt;
+    } else {
+		sent = conllTxt80;
+    }
+	var jsds = JSDS.CoNLL2JSDS(sent);
+    var pvd = JSDS.jsds2pv(jsds);
+    document.getElementById("dd1S").innerHTML = "Diagram for:<br/>" + pvd.original;
+    xdd.resetVis("dd1", pvd);
+	$("div#controls").show();
+	resetSlider();
+  }
+  
+  function getLemma(node) {
+	if (node.nodeValue.info == null) {
+		return null; //no pos, e.g. CoNLL ROOT
+	}
+	var what = node.nodeValue.info.LEMMA; 
+	return what;
+  }
+  
+  function getMorph(node) {
+	if (node.nodeValue.info == null) {
+		return null; //no pos, e.g. CoNLL ROOT
+	}
+	var what = node.nodeValue.info.FEATS.join("-"); 
+	return what;
+  }
+  
+  function getPOS(node) {
+	if (node.nodeValue.info == null) {
+		return null; //no pos, e.g. CoNLL ROOT
+	}
+	var what = node.nodeValue.info.POSTAG; 
+	
+	return what;
+  }
+  
+  function getCPOS(node) {
+	if (node.nodeValue.info == null) {
+		return null; //no pos, e.g. CoNLL ROOT
+	}
+	var what = node.nodeValue.info.CPOSTAG; 
+	
+	return what;
+  }
+  
+  
+  function resetSlider(thisVal) {
+	currZoom = 10;
+	if (thisVal != null) {
+		currZoom = thisVal;
+	}
+	$("#slider").slider( "option", "value", currZoom );
+  }
+  
+    function update() {
+		showRelations = document.getElementById("showRelns").checked;
+		xdd.magnify(0);
+	 }
+	</script>
+
+    <link type="text/css" href="jquery/jquery-ui-1.8.10.custom/css/overcast/jquery-ui-1.8.12.custom.css" rel="stylesheet" />
+	<style type="text/css">
+    h1, h2 {
+		text-align:center;
+	}
+	h2 {
+		font-size:1.1em;
+	}
+	p#showExplain, p#hideExplain {
+		color:blue;
+		text-decoration:underline;
+		cursor:pointer;
+	}
+	p#showExplain {
+		display:none;
+	}
+	div#theExplanation {
+		width:80%;
+		border: thin black solid;
+		padding:10px;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom:20px;
+	}
+	p.Slabel {
+      font-size:1.25em;
+    }
+	span.instructLabel {
+			font-size:1.1em;
+			font-weight:bold;
+	}
+	span#adjustD {
+			padding-right: 5px;
+	}
+	div#controls {
+			display:none; /* will show it after we've done a search */
+			width:100%;
+	}
+	div#magControls {
+		width:100%;
+		padding-top:20px;
+	}
+	div#magMinusDiv {
+		float:left;
+		padding-right: 15px;
+	}
+	div#slider {
+		width:200px;
+		float:left;
+		margin-right: 15px;
+		margin-top: 3px;
+	}
+	div#clear {
+		clear:both;
+	}
+    div#dd1 {
+	  /*
+	  padding:5px;
+      border:thin solid red;
+	  */
+    }
+    
+    </style>
+  </head>
+
+  <body>
+
+
+  <h1><span id="sref"></span></h1>
+<!--
+  <div id="input">
+      
+    Thomisticus sentence:
+    <select id="exs" name="exs" size=1>
+      <option value="" selected="selected">-</option>
+      <option value="1">1</option>
+      <option value="80">80</option>
+    </select>
+	<br/>
+	<br/>
+  </div>
+-->
+  
+  <div id="controls">
+    <p class="Slabel" id="dd1S"></p>
+    <div id="magControls">
+                  <div id="magMinusDiv"><span class="instructLabel" id="adjustD">Adjust diagram size:</span><input type="button" value="-" id="magMinus" ></div>
+                  <div id="slider"></div>
+                  <div id="magPlusDiv"><input type="button" value="+" id="magPlus" > <input id="showRelns" type="checkbox" onchange="update();">Show relations</div>
+                  <div id="clear">&nbsp;</div>
+		  
+    </div>
+	 
+  </div>
+
+  <div id="dd1"></div>
+  </body>
+</html>

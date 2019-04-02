@@ -5,13 +5,15 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crminf: <http://www.ics.forth.gr/isl/CRMinf/> .
+@prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/> .
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix viaf: <http://viaf.org/ontology/1.1/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 @prefix postdata: <http://postdata.linhd.es/#> .
 @prefix lcs: <http://id.loc.gov/authorities/subjects/> .
 @prefix lcn: <http://id.loc.gov/authorities/names/> .
@@ -26,7 +28,7 @@
 
 # About the ontology
 
-<http://www.eighteenthcenturypoetry.org/resources/models/tgaen-wimit.ttl> a owl:Ontology ;
+:tgaen-wimit a owl:Ontology ;
     rdfs:label """\"Thomas Gray's Old Norse and Welsh imitations\" - an ECPA Knowledge Base"""@en ;
     rdfs:comment """\"Thomas Gray's Old Norse and Welsh imitations\" is a CRM-based knowledge base about three imitations ("The Fatal Sisters", "The Descent of Odin", "The Triumphs of Owen") by Thomas Gray."""@en ;
     dcterms:title """\"Thomas Gray's Old Norse and Welsh imitations\" - an ECPA Knowledge Base"""@en ;
@@ -34,28 +36,34 @@
     rdfs:seeAlso <http://dx.doi.org/10.1353/sip.2015.0032> ;
     dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
     owl:versionInfo 0.5 ;
-    dcterms:created "2018-09-27"^^xsd:date ;
-    dcterms:creator :AH ;
+    dcterms:created "2018-09-27"^^xs:date ;
+    dcterms:subject <http://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml> ;
+    dcterms:creator <http://www.eighteenthcenturypoetry.org/resources/models/#tgaen-wimit/creator> ;
     dcterms:source <http://dx.doi.org/10.1353/sip.2015.0032> ;
     .
 
 
 # Researchers
 
-:AH a crm:E21_Person, crm:E39_Actor, foaf:Person ;
-    rdfs:label "Alexander Huber"^^xsd:string ;
-    foaf:givenName "Alexander"^^xsd:string ;
-    foaf:familyName "Huber"^^xsd:string ;
+<http://www.eighteenthcenturypoetry.org/resources/models/#tgaen-wimit/creator> a foaf:Person ;
+    rdfs:label "Alexander Huber"^^xs:string ;
+    foaf:givenName "Alexander"^^xs:string ;
+    foaf:familyName "Huber"^^xs:string ;
+    foaf:name "Alexander Huber"^^xs:string ;
     dcterms:identifier <https://orcid.org/0000-0002-2151-6415> ;
     foaf:homepage <https://orcid.org/0000-0002-2151-6415> ;
     foaf:publications <https://oxford.academia.edu/AlexanderHuber> ;
+    foaf:mbox <mailto:huber@eighteenthcenturypoetry.org> ;
+    owl:sameAs :AH ;
     .
 
-:JoshuaSwidzinski a crm:E21_Person, crm:E39_Actor, foaf:Person ;
-    rdfs:label "Joshua Swidzinski"^^xsd:string ;
-    foaf:givenName "Joshua"^^xsd:string ;
-    foaf:familyName "Swidzinski"^^xsd:string ;
+:JoshuaSwidzinski a foaf:Person ;
+    rdfs:label "Joshua Swidzinski"^^xs:string ;
+    foaf:name "Joshua Swidzinski"^^xs:string ;
+    foaf:givenName "Joshua"^^xs:string ;
+    foaf:familyName "Swidzinski"^^xs:string ;
     foaf:homepage <https://www.up.edu/directory/Joshua-Swidzinski.html> ;
+    foaf:mbox <mailto:swidzins@up.edu> ;
     foaf:publications <https://college.up.edu/english/files/swidzinski-publications.pdf> ;
     .
 
@@ -66,9 +74,9 @@
     rdfs:label """\"Uncouth Rhymes: Thomas Gray, Prosody, and Literary History\""""@en ;
     dcterms:creator :JoshuaSwidzinski ;
     dcterms:title "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History"@en ;
-    dcterms:publisher "The University of North Carolina Press"^^xsd:string ;
-    dcterms:date "2015"^^xsd:gYear ;
-    dcterms:bibliographicCitation """Swidzinski, Joshua. "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History". <em>Studies in Philology</hi> 112(4) (2015): 837-861. Project MUSE, doi:10.1353/sip.2015.0032"""@en ;
+    dcterms:publisher "The University of North Carolina Press"^^xs:string ;
+    dcterms:date "2015"^^xs:gYear ;
+    dcterms:bibliographicCitation """Swidzinski, Joshua. "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History". <em>Studies in Philology</em> 112(4) (2015): 837-861. Project MUSE, doi:10.1353/sip.2015.0032"""@en ;
     .
 
 
@@ -156,9 +164,9 @@
     ] ;
     crm:P82_at_some_time_within [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1768"^^xsd:string ;
-  	crm:P82a_begin_of_the_begin "1768-01-01"^^xsd:date ;
-	crm:P82b_end_of_the_end "1768-12-31"^^xsd:date ;
+	crm:P3_has_note "1768"^^xs:string ;
+  	crm:P82a_begin_of_the_begin "1768-01-01"^^xs:date ;
+	crm:P82b_end_of_the_end "1768-12-31"^^xs:date ;
     ] ;
     .
 :Poems1768 a crm:E33_Linguistic_Object, postdata:PrimarySource, owl:NamedIndividual ;
@@ -181,9 +189,9 @@
     ] ;
     crm:P82_at_some_time_within [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1757"^^xsd:string ;
-  	crm:P82a_begin_of_the_begin "1757-01-01"^^xsd:date ;
-	crm:P82b_end_of_the_end "1757-12-31"^^xsd:date ;
+	crm:P3_has_note "1757"^^xs:string ;
+  	crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
+	crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
     ] ;
     .
 :Odes1757 a crm:E33_Linguistic_Object, postdata:PrimarySource, owl:NamedIndividual ;
@@ -209,9 +217,9 @@
     ] ;
     crm:P81_ongoing_throughout [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1736 - 1762"^^xsd:string ;
-  	crm:P81a_end_of_the_begin "1736"^^xsd:gYear ;
-	crm:P81b_begin_of_the_end "1762"^^xsd:gYear ;
+	crm:P3_has_note "1736 - 1762"^^xs:string ;
+  	crm:P81a_end_of_the_begin "1736"^^xs:gYear ;
+	crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
     ] ;
     crm:P92_brought_into_existence :ThomasGraysHistoryOfEnglishPoetry ;
     .
@@ -241,9 +249,9 @@
     ] ;
     crm:P81_ongoing_throughout [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1753 - 1762"^^xsd:string ;
-  	crm:P81a_end_of_the_begin "1753"^^xsd:gYear ;
-	crm:P81b_begin_of_the_end "1762"^^xsd:gYear ;
+	crm:P3_has_note "1753 - 1762"^^xs:string ;
+  	crm:P81a_end_of_the_begin "1753"^^xs:gYear ;
+	crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
     ] ;
     crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
     rdfs:seeAlso """Jones, William Powell. <em>Thomas Gray, Scholar</em>. Cambridge, MA: Harvard UP, 1937. 84-107. Print."""@en ;
@@ -307,9 +315,9 @@
     ] ;
     crm:P81_ongoing_throughout [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1760 - 1761"^^xsd:string ;
-  	crm:P81a_end_of_the_begin "1760"^^xsd:gYear ;
-	crm:P81b_begin_of_the_end "1761"^^xsd:gYear ;
+	crm:P3_has_note "1760 - 1761"^^xs:string ;
+  	crm:P81a_end_of_the_begin "1760"^^xs:gYear ;
+	crm:P81b_begin_of_the_end "1761"^^xs:gYear ;
     ] ;
     crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
     .
@@ -355,9 +363,9 @@
     ] ;
     crm:P81_ongoing_throughout [
 	a crm:E52_Time-Span ;
-	crm:P3_has_note "1751 - 1757"^^xsd:string ;
-  	crm:P81a_end_of_the_begin "1751"^^xsd:gYear ;
-	crm:P81b_begin_of_the_end "1757"^^xsd:gYear ;
+	crm:P3_has_note "1751 - 1757"^^xs:string ;
+  	crm:P81a_end_of_the_begin "1751"^^xs:gYear ;
+	crm:P81b_begin_of_the_end "1757"^^xs:gYear ;
     ] ;
     crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
     .
@@ -377,19 +385,19 @@
     rdfs:comment "Thomas Gray's imitations are concerned with prosodic phenomena (poetic measures) as constitutive of a theory of literary form and a basis for the making of literary history."@en ;
     rdfs:label "Central research question: what was the main intention/purpose of composing the imitations?"@en ;
     crm:P14_carried_out_by :JoshuaSwidzinski ;
-    crm:J2_concluded_that :PastScholarlyAssessmentOfThomasGraysImitations ;
-    crm:J2_concluded_that :RecentScholarlyAssessmentOfThomasGraysImitations ;
-    crm:J2_concluded_that :JoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
+    crminf:J2_concluded_that :PastScholarlyAssessmentOfThomasGraysImitations ;
+    crminf:J2_concluded_that :RecentScholarlyAssessmentOfThomasGraysImitations ;
+    crminf:J2_concluded_that :JoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
     .
 
 :PastScholarlyAssessmentOfThomasGraysImitations a crm:I2_Belief ;
     rdfs:label "Past scholarly belief: Gray was influenced by the Macpherson hype"@en ;
-    crm:J4_that :PropositionsForPastScholarlyAssessmentOfThomasGraysImitations ;
-    crm:J5_holds_to_be "false"^^xsd:boolean ;
+    crminf:J4_that :PropositionsForPastScholarlyAssessmentOfThomasGraysImitations ;
+    crminf:J5_holds_to_be "false"^^xs:boolean ;
     .
 :PropositionsForPastScholarlyAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set;
     rdfs:label "Past scholarly belief (proposition set)"@en ;
-    crm:P148_consists_of :BagOfPropositionsForPastScholarlyAssessmentOfThomasGraysImitations-1 ;
+    crm:P148_has_component :BagOfPropositionsForPastScholarlyAssessmentOfThomasGraysImitations-1 ;
     .
 :BagOfPropositionsForPastScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
     rdfs:label "Past scholarly belief (proposition)"@en ;
@@ -401,12 +409,12 @@
 
 :RecentScholarlyAssessmentOfThomasGraysImitations a crm:I2_Belief ;
     rdfs:label "Recent scholarly belief: Gray was proccupied with poetic voice, orality, and immediacy"@en ;
-    crm:J4_that :PropositionsForRecentScholarlyAssessmentOfThomasGraysImitations ;
-    crm:J5_holds_to_be "false"^^xsd:boolean ;
+    crminf:J4_that :PropositionsForRecentScholarlyAssessmentOfThomasGraysImitations ;
+    crminf:J5_holds_to_be "false"^^xs:boolean ;
     .
 :PropositionsForRecentScholarlyAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set;
     rdfs:label "Recent scholarly belief (proposition set)"@en ;
-    crm:P148_consists_of :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-2 ;
+    crm:P148_has_component :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-2 ;
     .
 :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
     rdfs:label "Recent scholarly belief (proposition)"@en ;
@@ -435,12 +443,12 @@
 :JoshuaSwidzinskisAssessmentOfThomasGraysImitations a crm:I2_Belief ;
     rdfs:label "Swidzinski's scholarly belief: Gray was interested in establishing a history of prosody"@en ;
     rdfs:comment "Gray's history of prosody subsumes questions of poetic voice to questions of poetic measure.  This interest in the historicity of prosodic phenomena as a theory of poetic form lead Gray to assign poetic measure a constitutive role in the making of literary history"@en ;
-    crm:J4_that :PropositionsForJoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
-    crm:J5_holds_to_be "true"^^xsd:boolean ;
+    crminf:J4_that :PropositionsForJoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
+    crminf:J5_holds_to_be "true"^^xs:boolean ;
     .
 :PropositionsForJoshuaSwidzinskisAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set ;
     rdfs:label "Swidzinski's scholarly belief (proposition set)"@en ;
-    crm:P148_consists_of :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-2 ;
+    crm:P148_has_component :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-2 ;
     .
 :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
     rdfs:label "Swidzinski's scholarly belief (proposition)"@en ;
@@ -456,7 +464,7 @@
     .
 :HistoryOfProsody a crm:E89_Propositional_Object ;
     rdfs:label "History of Prosody"@en ;
-    crm:P1_is_defined_by wd:Q13377228 ;
+    crm:P1_is_identified_by wd:Q13377228 ;
     crm:P2i_is_type_of dbpedia:Literary_form ;
     crm:P135_created_type dbpedia:Literary_history ;
     .

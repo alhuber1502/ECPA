@@ -1,0 +1,590 @@
+<!DOCTYPE HTML>
+<html>
+    	<!-- License> New BSD. See below  -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ProD: CoNLL Tester</title>
+    <script type="text/javascript" src="../ProD/classListSubstitute.js"></script>
+    <script type="text/javascript" src="../d3/d3.min.js"></script>
+    <script type="text/javascript" src="../d3/d3.layout.min.js"></script> 
+    <script type="text/javascript" src="../ProD/sfsD3.js"></script>
+    <script src="../ProD/linguisticTrees.js" type="text/javascript"></script>    
+    <script src="pathsJS/treeFuns.js" type="text/javascript"></script>
+    <script src="pathsJS/conll.js" type="text/javascript"></script>
+    
+    
+    
+    <script type="text/javascript">
+      var paisa;
+      var treeType = "ordered"; //ordered, hierarchical (just needed for loading the data)
+      
+    </script>
+    
+    
+    <script type="text/javascript">
+    
+    var settings =  {		    
+		    branch:"curvy", //curvy, straight?, zigzag
+		    layout: "dendrogramTree" //dendogram
+		};
+    var vis;
+    var diagramElt;
+    var theEx;
+    var getInfo = conllInfo;
+    var prevX = 0;
+    var pathCycler;
+	 
+	 var verticalStyle = true;  //false is horrendously buggy, see conllTxt80
+    
+    //we can't build the tree until the document is loaded
+      window.onload = function() {
+	document.addEventListener("keydown", cycleSelection);
+        diagramElt = document.getElementById("diagram");        
+        
+      };
+      
+//   function showIt(which) {
+//	 if (which == 1) {
+//		showExample(conllTxt);
+//	 } else {
+//		showExample(conllTxt80);
+//	 }
+//    
+//   }
+    
+    function showExample(parse, ref) {
+      
+	document.getElementById("ZoomIn").style.display = "inline";
+	document.getElementById("ZoomOut").style.display = "inline";
+	
+	var s = conll2json(parse);
+	if (verticalStyle) {
+		var json = d3TreeFromParse(s);
+	} else {
+      var json = d3TreeFromParseOrdered(s); ///buggy see conllTxt80
+	}
+        
+        document.getElementById("sref").innerHTML = ref;
+	document.getElementById("diagramLabel").innerHTML = sentSpansFromTree(json);
+
+	
+	d3.selectAll("span.toksp")
+	  .on("mouseover", function() {	    
+	    var which = this.id.substring(1); //strip "p"
+	    var elts = vis.selectAll("g.nodeContainer");
+	    elts.each(function(d) {
+		if (d.tok && d.tok[0] === which) {
+		  this.__onmouseover(); //CC ugly
+		}
+	    });
+	    
+	  })
+	  .on("mouseout", function(sp) {
+	    var which = this.id.substring(1); //strip "p"
+	    var elts = vis.selectAll("g.nodeContainer");  
+	    elts.each(function(d) {
+		if (d.tok && d.tok[0] === which) {
+		  this.__onmouseout(); //CC ugly
+		}
+	    });
+	  })
+	;
+	
+	vis = sfs.d3.linfovis.syntree(diagramElt, json, settings);
+	
+	vis.selectAll("g.nodeContainer")
+	//Should hide siblings instead of clicked node?
+	//   .on("click", function(d) {		
+	//      var dvis = d.vis;
+	//      var elt = sfs.d3.element2selection(dvis);
+	//      classListToggle(dvis, "collapsed");
+	//      if (classListContains(dvis, "collapsed")) {
+	//			vis.collapseSubTrees(elt, true);
+	//	   } else {
+	//			vis.expandSubTrees(elt, true);
+	//	   }			      
+	//	})
+	   .on("mouseover", function(d){
+//			 var curs = "s-resize"
+//			 if (classListContains(d.vis, "collapsed")) {
+//				curs = "n-resize";
+//			 } else if (d.children.length == 0) {
+//				curs = "auto";
+//			 }
+//			 d.vis.style.cursor = curs;
+			 //classListAdd(d.vis, "hilite");
+			 d3.select("#" + d.vis.id).classed("hilite", true);
+			 if (d.tok) {
+				classListAdd(document.getElementById("p" + d.tok[0]), "hilite");
+				showInfo(d);
+			 }
+	   })
+	   .on("mouseout", function(d){ //was mouseleave
+	      //classListRemove(d.vis, "hilite");
+	      d3.select("#" + d.vis.id).classed("hilite", false);
+	      if (d.tok) {
+				classListRemove(document.getElementById("p" + d.tok[0]), "hilite");
+	      }
+	      
+	    })	   
+	;
+
+  //this isn't ideal -- "pos" is overriding "dep"; should really make sure supposed dep isn't pos
+	vis.selectAll("text")
+	  .classed("tok", function(d) {
+	      return d.tok;
+	  })
+	  .classed("dep", function(d) {
+	      return (! d.tok &&  ! d.headTok);
+	   })
+	  .classed("headTok", function(d) {
+		  return d.headTok;
+		})
+	  .classed("pos", function(d) {
+		  if (verticalStyle) {
+			 return false; //No POS
+		  }
+	      return (d.children[0] && d.children[0].children.length === 0); //POS are parent of tokens, which have no children
+	  })
+	  .classed("nonprojOrig", function(d){
+	      return (d.nonprojective && d.nonprojective === "original");
+	  })
+	  .classed("nonprojMoved", function(d){
+	      return (d.nonprojective && d.nonprojective === "moved");
+	  })
+	;
+  
+	
+	var pairs = [];
+	if (true || includePOS) {
+	 //link POS of "original" nonprojective token with dep of its "moved" version
+		var origPOSNds = vis.select("text.nonprojMoved.dep");
+		var origs = vis.selectAll("text.nonprojOrig.dep");
+		origs.each(function(npo){
+			var posn = npo["children"][0]["tok"][0];
+			
+			origPOSNds.each(function(op) {
+		  var posn2 = op["children"][0]["tok"][0];
+		  if (posn === posn2) {
+			 pairs.push({source:op.parent, target:npo});
+		  }
+			});
+		});
+	} 
+	vis.addXLinks(pairs);
+	
+	
+	
+	//not conceptually nice, but see below
+	doClear();
+	showPath("arg sub");
+	
+	//Conceptually nice, but annoying if I want to keep looking for a different pattern across results
+	//document.getElementById("toFind").value = "path: arg . sub";
+	//doFind();
+	
+	var links = vis.selectAll("path.link");
+	var toHide = [];
+	links.each(function(lnk){
+	    if ((lnk.target.nonprojective === "original" && lnk.source.nonprojective !== "original") || (lnk.target.nonprojective === "moved")){
+		toHide.push(lnk);		
+	    }
+	  })
+	;
+	vis.hideLinks(toHide);
+	
+	
+    }
+    
+    function showInfo(d) {
+      var what = getInfo(d);
+      if (what) {
+	document.getElementById("info").innerHTML = what;
+	document.getElementById("info").style.display = "inline";
+      } else {
+	document.getElementById("info").style.display = "none";
+      }
+    }
+    
+    function noInfo() {return "";};
+    
+    function conllInfo(d) {
+      if (d.tok) {	
+	return d.tok[1] + " (" + d.tok[2] + ") "  + d.tok[0] + " "+ d.tok[3] + " " + d.tok[4];
+      }
+      return "";
+    }
+    
+    
+    function handlePress(e, elt) {
+	//CC based on http://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
+        // look for window.event in case event isn't passed in
+        if (typeof e === 'undefined' && window.event) {
+	  e = window.event;
+	}
+        if (e.keyCode === 13) {
+            doFind();
+        }
+    }
+        
+    function doFind() {      
+      doClear();
+      var toFind = document.getElementById("toFind").value;      
+      if (toFind.indexOf(":") > -1) {
+	var pieces = toFind.split(":");
+	if (pieces[0] === "path") {
+	  showPath(pieces[1]);
+	} else {
+	  findByInfo(pieces[0], pieces[1]);
+	}
+      } else if (toFind.indexOf(" ") > -1) { //token searches won't have spaces (if we're careful), but paths will 
+	showPath(toFind);
+      } else {
+	//tokens
+	vis.findNodes("name", toFind, "found");
+      }
+      vis.update();
+    }
+
+    function findByInfo(iType, info) {
+      
+	var posn;
+	if (iType === "lemma") {
+	  posn = 2;
+	} else if (iType === "pos") {
+	  posn = 3;
+	} else if (iType === "pos2") {
+	  posn = 4;
+	} else if (iType === "posn") {
+	  posn = 0;
+	}
+	vis.findNodes("tok", checkInfo(posn, info), "found");
+	
+	function checkInfo(posn, info) {
+	  return function(attr, node) {
+	      return (node.tok && node.tok[posn] === info);
+	  };
+	}
+    }
+    
+    function showPath(p) {
+      var path = p.split(/\s+/);
+      if (path[0] === "") {
+	path.shift();
+      }
+      if (path[path.length -1] === "") {
+	path.pop();
+      }
+      var paths = vis.findPath(path, "found", "foundLink");
+      pathCycler = vis.pathCycler;
+    }
+    
+    function doClear() {
+      vis.clear(["found"],["foundLink"]);
+      d3.selectAll("span.foundSelect").classed("foundSelect", false);
+      pathCycler = null;
+      vis.update();
+    }
+    
+    function curveIt() {
+      settings.branch = "curvy";
+      showExample();
+    }
+    function diagIt() {
+      settings.branch = "straight";
+      showExample();
+    }
+    function zigit() {
+      settings.branch = "zigzag";
+      showExample();
+    }
+    
+    function asVisDendro() {
+	changeVisTree("dendrogram");	
+	setLayoutBtns("VisDendro");
+	//refresh(); //having trouble updating with PAISA
+      }      
+      function asVisDendroTree() {
+	changeVisTree("dendrogramTree");
+	setLayoutBtns("VisDendroTree");
+	//refresh(); //having trouble updating with PAISA
+      }
+      function changeVisTree(which) {
+	  vis.setLayout(which);
+	  settings.layout = which;
+      }
+      
+
+      
+      function setLayoutBtns(id) {
+	document.getElementById("VisDendro").disabled = false;
+	document.getElementById("VisDendroTree").disabled = false;
+	document.getElementById(id).disabled = true;
+      }
+      
+    function zoomOut(n) {
+      for(var i=0;i<n;i++) {
+	vis.scaleSubTrees( d3.select("g.nodeContainer"), 0.8, false);
+      }
+      vis.update();
+    }
+    function zoomIn(n) {
+      for(var i=0;i<n;i++) {
+	vis.scaleSubTrees( d3.select("g.nodeContainer"), 1/0.8, false);
+      }
+      vis.update();
+    }
+    
+    
+    var prevSliderVal;
+    var handleSliderChange = function(sliderObj) {      
+      if (false && isNaN(prevSliderVal)) {
+	  prevSliderVal = 0+ sliderObj.value;
+      }
+      
+      var newVal = Math.round(sliderObj.value);
+      var diff = newVal - prevSliderVal;
+      prevSliderVal = newVal;
+      
+      if (diff > 0 ) {
+	zoomIn(diff);
+      } else {
+	zoomOut(-diff);
+      }
+    };
+    
+    
+    </script>
+    
+    <script>    
+    function selectPath(aPath) {
+      vis.clear(["foundSelect"], ["foundSelectLink"]);      
+      vis.selectOnePath(aPath, "foundSelect", "foundSelectLink");
+      
+      d3.selectAll("span.foundSelect").classed("foundSelect", false);
+     
+     //this will select words that are *in* a path
+      //TBD: extend path in hierarchical to word if the path ends in dep?
+      //TBD: extend path in ordered dependency to leaf word ?
+      var nodes = vis.selectAll("text.foundSelect");
+      aPath.forEach(function(id) {
+	  nodes.each(function(nd) {
+	    if (nd.tok && nd.synTreeID === id) {
+	      classListAdd(document.getElementById("p" + nd.tok[0]), "foundSelect");	   
+	    }
+	  });
+      });
+      
+      
+    }
+    
+    function cycleSelection(evt) {
+	if (! pathCycler) {
+	  return;
+	}
+	if (evt.keyCode === 37) {
+	  //left arrow
+	  selectPath( pathCycler.prev() );
+	  
+	} else if (evt.keyCode === 39) {
+	  //right arrow
+	  selectPath( pathCycler.next() );
+	} else if (evt.keyCode === 27) {
+	  //escape
+	  vis.clear(["foundSelect"], ["foundSelectLink"]);
+	  d3.selectAll("span.foundSelect").classed("foundSelect", false);
+	}
+    }
+    
+    </script>
+    
+    
+    
+    <link href='../ProD/tree.css' rel='stylesheet' type='text/css' />    
+    <style type="text/css">
+    h1, h2 {
+      text-align:center;
+    }
+    path.hiddenLink {
+	stroke-width: 1.0px;
+	stroke: #f00;
+    }
+    /* we neeed nonprojOrig before dep, so it can be overridden. Similarly, we need dep before pos */
+    .nonprojOrig {
+       fill:blue;
+       font-size:1.2em;
+    }
+    .nonprojMoved {
+       fill:blue;
+       font-size:0em;
+    }
+    .dep {
+      /* these don't work in Firefox  10.x :( */
+      /*font-variant: small-caps;*/
+      /* text-decoration: underline;*/
+      fill: orange;
+    }
+    .pos {
+      fill: hotpink;
+    }
+	 .headTok {
+		fill:gray;
+	 }
+    
+    .hilite {
+      fill: red;   /* for svg element */
+      color: red; /* for span */      
+    }
+     .found {
+      fill: #0c0; /* for svg element */
+      /*font-size: 1.5em;*/
+      font-weight: bold;      
+    }
+    .foundSelect {
+      font-size: 1.1em;
+      font-style: italic;
+    }
+    span.foundSelect {
+      color:#0c0;
+    }
+    .foundLink {
+      stroke: #0c0;
+      stroke-width: 2;
+    }
+    .foundSelectLink {
+      stroke-width: 4;
+    }
+    input[disabled] {
+      color:green;
+    }
+    
+    span {
+      z-index:-1;
+    }
+    span#info {
+      border: thin solid red;
+      display:none;
+    }
+    
+    input#ZoomIn, input#ZoomOut, input#zoomSlider{
+      display:none;
+    }
+    div span.subSelected { /* we need the div to let it override the other span borders */
+      z-index:100;
+      border:medium solid red;
+    }
+    span.menuName, span.submenuName {            
+      /*color: rgb(200,128,0);*/
+      color: rgb(200,96,32);      
+      border: medium solid blue;
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      cursor: pointer;      
+    }
+    span.menuName {
+      display: inline-block;
+      width: 5.5em;
+    }
+    span.subHighlite {
+      font-weight:bold;
+      font-size: 1.25em;
+    }
+    span#exLabel {
+      text-decoration: underline;
+    }
+    
+    div.submenu {
+      position:relative;
+      left:2em;
+      display:none;
+    }    
+    div.vis {
+      display:block;
+    }
+    
+    p#diagramLabel {
+      font-size: 1.5em;
+      /*font-weight:bold;*/
+    }
+    
+    div#examples {
+      float:left;
+      padding-right: 2em;
+    }
+    div#diagramContainer {
+       /*overflow:auto;     */
+       /*border: thin solid red;*/
+    }
+    div#diagram {
+      position:relative;
+      max-height: 1050px;
+      overflow:auto;
+    }
+    body {
+      position:relative;
+    }
+
+    </style>
+    
+  </head>
+  <body>
+    	<!--
+  	/* (This is the new BSD license.)
+* Copyright (c) 2012, Chris Culy
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the Chris Culy nor the 
+*		names of its contributors may be used to endorse or promote 
+*		products from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY Chris Culy
+* ``AS IS'' AND ANY OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+* THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+* ARE DISCLAIMED. IN NO EVENT SHALL Chris Culy
+* BE LIABLE FOR ANY, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+* CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+* GOODS OR SERVICES; OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+* CAUSED AND ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+* TORT INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+-->
+
+
+  <h1><span id="sref"></span></h1>
+  
+  <p>
+    You can search for nodes in the diagrams.
+    Node search terms are regular expressions, so <em>sub</em> will match any node containing "sub", while <em>^sub$</em> will match only "sub" nodes.
+    You can also search for paths in the diagram, by specifying a (top down) sequence of nodes, separated by spaces. A * can be used within a sequence as a wildcard.
+    If there is more than one path, you can highlight them successively by using the left and right arrows.
+  </p>
+   
+   <div id="diagramContainer">
+      <p id="diagramLabel"></p>
+      <input type="text" id="toFind" name="toFind" onkeypress="handlePress(event, this);" value="^ROOT * Sb$" title="String or regex for node names OR lemma, pos, pos2, or path followed by colon and string"> 
+      <input type="button" id="Find" name="Find" value="Find!" onClick="doFind();"> 
+      <input type="button" id="Clear" name="Clear" value="Clear!" onClick="doClear();">
+      <span id="info"></span>
+      <p>
+      <input type="button" id="ZoomOut" name="ZoomOut" value="-" onClick="zoomOut(1);" >      
+      <input type="button" id="ZoomIn" name="ZoomIn" value="+" onClick="zoomIn(1);" >
+      </p>
+      <div id="diagram"></div>
+   </div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DoubleTreeJS: A compact view of words in context</title>
+    <link rel="stylesheet" type="text/css" href="http://linguistics.chrisculy.net/lx/software/software.css" />
+    
+    
+    
+<style type="text/css">
+    p#version {
+    	text-align:center;
+    }
+    span#updated {
+    	color:red;
+    }
+    span.new {
+	color:violet;
+	vertical-align:super;
+	font-size: smaller;
+    }
+    span.new:before {
+	content: "New "
+    }
+    h3#roadmap {
+      color:red;
+      font-style: italic;
+    }
+    
+    pre {
+	padding-left: 2em;
+    }
+</style>
+</head>
+<body>
+    <h1>DoubleTreeJS: A compact view of words in context</h1>
+    <h2><a href="http://www.chrisculy.net">Chris Culy</a></h2>
+  
+<p id="version">
+  <img src="doubletreejs2.png" height="400">
+  <br/>Version: 0.8 <span id="updated">released 3 February 2016</span></p>
+
+<div id="users">
+    Used in the <a href="http://www.catma.de/" target="_blank">CATMA project</a>
+	and in the <a href="http://commul.eurac.edu/opatch/LinguisticPortal" target="_blank">OPATCH project</a>
+</div>
+
+<h3>What's new?</h3>
+	<p>DoubletreeJS now supports scripts written right to left</p>
+	
+<h3>What is it?</h3>
+<div>
+	
+    <p>
+      DoubleTreeJS is an <em>interactive</em> way to give a more compact view of words in their context of use than a traditional concordance (KWIC) does.
+	  Clicking on a word on one side of DoubleTree
+      highlights the words on the other side that occur in the same phrase as the word clicked on. 
+      DoubleTreeJS is a re-implementation in Javascript of
+      <a href="http://www.eurac.edu/en/research/autonomies/commul/projects/Pages/Linfovis/programs.aspx#DoubleTree" target="_blank">Double Tree</a>
+      (<a href="#ref">Culy and Lyding, 2010, below</a>), which was inspired by Word Tree (Wattenberg & Viégas, 2008).
+    </p>
+    <p>
+      This re-implementation of DoubleTree includes several of the enhancements mentioned in Culy and Lyding, 2010, including the abilities to sort the branches by a variety of properties,
+      to filter the branches by different properties, and to search the words in the DoubleTree.
+	  It also is designed to work with various types of <strong>structured</strong> data.
+	  See also my <a href="http://linguistics.chrisculy.net/lx/software/KWICis/" target="_blank">KWICis</a> concordance viewer, also
+	  designed for structured data.
+    </p>
+    <p>
+        Here are a few sample uses:
+        <ul>
+			<li><a href="samples/doubletree-bare.html">Plain DoubleTreeJS</a>, with fixed text, no parts of speech (see other examples for user-supplied text)</li>
+			<li><a href="samples/doubletree-kwic.html">DoubleTreeJS + KWIC</a> Combines DoubleTreeJS with a standard KWIC</li>
+			<li><a href="samples/doubletree-kwic-right-to-left.html">DoubletreeJS with a script written right to left (<a href="https://en.wikipedia.org/wiki/N%27Ko_alphabet" target="_blank">N'Ko</a>)</li>
+			<li><a href="samples/doubletree-POS.html">DoubleTreeJS POS only</a> shows only the parts of speech in the DoubleTree</li>
+			<li><a href="samples/doubletree-filtered.html">DoubleTreeJS + filtered</a> Like DoubleTreeJS + KWIC, but also allows filtering which elements are displayed in the DoubleTree</li>
+			<li><a href="samples/doubletree-compare.html">DoubleTreeJS Comparison</a> Shows two DoubleTrees sided by side, for comparison of different words.
+				 Selecting a word in one shows it centered in the other.</li>
+			<li><a href="samples/doubletree-compare-docs.html">DoubleTreeJS Document Comparison</a> Shows two DoubleTrees sided by side, for comparison of different words from separate documents.
+				 Selecting a word in one shows it centered in the other.</li>
+			<li><a href="samples/doubletree-metadata.html">DoubleTreeJS + Metadata</a> Shows coloring of nodes according to metadata.
+				 Also shows the use of lemmas rather than tokens as the nodes.</li>
+			<li><a href="http://linguistics.chrisculy.net/lx/software/KWICis/examples/doubletree-kwicis-cluster.html" target="_blank">Clustering with
+					KWICis and DoubleTreeJS</a>
+				Shows multiple DoubleTreeJS on a single page, as well as integration with <a href="http://linguistics.chrisculy.net/lx/software/KWICis/index.html" target="_blank">KWICis</a>.
+				Not included in this download, just in the KWICis download.
+				</li>
+        </ul>
+	   
+	   Two additional examples are included in the download. One is the system from <a href="#ref">Culy et al. 2014</a>.
+	   The other shows how to use DoubleTreeJS to visualize results from a corpus query engine.
+    </p>
+    <p>
+      Hint: in all of the examples, you can use text files which have the part of speech (POS) immediately following word, separated by a slash: espresso/NN.
+      There is nothing special about POS information: you can put any information after the slash and the filtering and sorting will (should) work with that information.
+    </p>
+    <p>
+	DoubleTreeJS is still very much under development, and this is not a final release.  Any feedback is appreciated.
+    </p>
+    <h3>How to use DoubleTreeJS with your own data</h3>
+    <p>
+	Many of the samples should be usable as is. The data format is extremely simple: your input file should have one item per line,
+	with the word first, and optionally followed by a "/" and then a part of speech. e.g.
+    </p>
+<pre>
+Not/RB
+only/JJ
+Robin/NP
+himself/PP
+but/RB
+all/PDT
+the/DT
+band/NN
+were/VBD
+outlaws/NNS
+</pre>    
+    <p>
+	For more advanced users, there is a <a href="developer_guide.html" target=_"blank">developer's guide</a>, as well as jsdoc <a href="doc/index.html" target="_blank">API documentation</a>.
+	In addition, there is an example of how to use DoubleTreeJS with SketchEngine. This example is intended for those who have their own instance of SketchEngine, or some other corpus query engine.
+    </p>
+    <h3>Compatibility</h3>
+    <p>DoubleTreeJS has been tested with Chrome, Firefox, Opera, and Safari on OS X 10.6 and 10.8, as well as Chrome and Firefox on Windows 7.
+	   Older versions of Safari my not allow local files to be read, in which case you will not be able to try your own data. </p>
+ 
+    <ul>
+	<li>In Firefox on Linux, instead of alt-click, use AltGr+Alt-click (Firefox uses alt-click for itself).</li>
+	<li>Background rectangles do not work in Opera</li>
+	<li>DoubleTreeJS does not function at all in IE (at least not version 9 or lower).</li>
+    </ul>
+
+    <h3>Download</h3>
+	<p>
+	DoubleTreeJS is freely available under the new BSD license (see the source files). <a href="DoubleTreeJS_0.8.zip">Download</a>
+	</p>
+    <p>
+        If you use DoubleTreeJS, please cite this web site and (for research papers, articles, reports):
+    </p>
+    <p id="ref">
+	   <ul>
+		  <li><a href="http://www.lrec-conf.org/proceedings/lrec2014/pdf/63_Paper.pdf">C. Culy, M. Passarotti, and U. König-Cardanobile. 2014.</a> A Compact Interactive Visualization of Dependency Treebank Query Results.
+		  in Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC'14),  Rejkjavik, Iceland. May 26-31, 2014. N. Calzolari et al. (eds.). ELRA.</li>
+		  <li><a href="http://origin-www.computer.org/csdl/proceedings/iv/2010/4165/00/4165a098.pdf" target="_blank">Culy, C. and V. Lyding. 2010.</a> "Double Tree: An Advanced KWIC Visualization for Expert Users" in Information Visualization, Proceedings of IV 2010, 2010 14th International Conference Information Visualization, 98-103.</li>
+	   </ul>
+    </p>
+    <h3 id="roadmap">Roadmap</h3>
+    <p>
+      This version of DoubleTreeJS should be ready for more extensive use. 
+	 
+      Possible improvements:
+    </p> 
+    <ul>
+	 <li>Secondary sort of the branches</li>
+	 <li>Examples with the Regular Expression Text Model from <a href="../KWICis/index.html" target="_blank">KWICis</a></li>
+	 <li>Multiple documents</li>
+	 <li>Improved UI in the examples (configuration, select, KWIC)</li>
+    </ul>
+	 
+    <p>
+	 Please let me know if you have other suggestions, or suggestions for a priority order.
+    </p>
+    
+    
+    <h3>Acknowledgments</h3>
+    <p>DoubleTreeJS uses the <a href="http://d3js.org/" target="_blank">D3</a> toolkit, and the tree drawing uses elements from its examples.
+	   Some of the examples use the <a href="https://code.google.com/p/canvg/" target="_blank">canvg</a> library for drawing SVG to HTML canvas.
+    </p>
+    <p>
+	   Thanks to Corina Dima, Ulla Köning-Cardanobile, Verena Lyding, L. Lee McIntyre, Marco Passarotti, Eran Raveh and Tanja Säily for useful feedback and testing.
+    </p>
+    <h3>Version history</h3>    
+    <ul>
+	<li>Version 0.8
+		<ul>DoubleTreeJS
+		<li>Added the ability to display right to left languages correctly via the prefixesOnRight getter/setter</li>
+		</ul>
+		
+		<ul>Examples
+		<li>Added the doubletree-kwic-right-to-left.html example</li>
+		</ul>
+	</li>
+	
+	<li>Version 0.7
+		<ul>DoubleTreeJS
+		<li>!!! setupFromArrays() now takes an array of ids (can supply null if there are no ids)</li>
+		<li>added filteredIDs() to get the ids of just the data satisfying the current filters</li>
+		<li>Fixed bug with expanding/collapsing nodes with just one child</li>
+		<li>Fixed bug with panning in Firefox and Chrome</li>
+		</ul>
+		
+		<ul>TextHash
+			<li>improved ids</li>
+			<li>fixed bug with restoring from JSON</li>
+			<li>Moved TextHash to new textmodels folder</li>
+		</ul>
+
+		<ul>Examples
+		<li>Added search history to doubletree-kwic, doubletree-filtered, doubletree-metadata
+		</li>
+		</ul>
+		
+		<ul>Miscellaneous
+		<li>Revised the developer's guide</li>
+		<li>Fixed typos in jsdoc</li>
+		</ul>
+
+		<ul>Known bugs
+		<li>When clicking on a hit in a simple KWIC when the search term was a regular expression,
+		the longer context cannot be retrieved</li>
+		</ul>
+	</li>
+	
+	
+	<li>Version 0.6.1
+	   <ul>DoubleTree
+		  <li>Fixed bug with panning in Chrome and Safari</li>
+	   </ul>
+	</li>
+    <li>Version 0.6
+	   <ul>DoubleTree
+		  <li>Clicking on a node with one child will expand the descendants until there is more than one child (more like WordTree)</li>
+		  <li>After filtering, the nodes now report the correct IDs and continuations</li>
+		  <li>Dragging on the background to pan now works (and panning code has been cleaned up)</li>
+		  <li>Added "move" cursor</li>
+	   </ul>
+	   <ul>Trie
+		  <li>Improvment and bug fix for private function</li>
+	   </ul>
+	   <ul>TextHash
+		  <li>Added ability to exclude punctuation, separate from other exclude filters</li>
+		  <li>Fixed bug concerning the last elements in a text</li>
+		  
+	   </ul>
+	   <ul>Examples
+		  <li>Redid poe_v2.conll for LREC2014 example</li>
+		  <li>Added punctuation filter to doubletree-kwic.html and doubletree-filtered.html</li>
+		  <li>When a DT has been filtered, only the examples which pass the filter will be accessed, e.g. for the KWICs</li>
+	   </ul>
+    </li>	   
+	   
+    <li>Version 0.51
+	   <ul>
+	   <li>DoubleTree Colors
+		  <ul>
+			 <li>Moved circle (node) styles into DoubleTree</li>
+			 <li>Moved link (branches) styles into DoubleTree</li>
+			 <li>These are customizable via DoubleTree.basicStyles()</li>
+		  </ul>
+	   </li>
+	   <li>Examples
+		  <ul>
+			 <li>Added dependency paths example (LREC 2014)</li>
+			 <li>Added SketchEngine example</li>
+			 <li>Pressing the escape key while typing a new search term cancels the interaction</li>
+			 <li>Searching for the empty string in the tree finds nothing</li>
+			 <li>Canceling from an error loading a file removes the name of the problematic file</li>
+			 <li>Loading a new file in doubletree-compare.html and in doubletree-compare-docs.html now resets the tree correctly.</li>
+		  </ul>
+	   </li>
+	   </ul>
+    </li>
+    <li>Version 0.5aa
+	   <ul>
+		  <li>Fixed critical bug in Safari concerning highlighting of continuations</li>
+		  <li>Added link to DoubleTreeJS + Filtered example</li>
+	   </ul>
+    </li>	   
+    <li>Version 0.5a
+	   <ul>
+	   <li>DoubleTree
+		  <ul>
+			 <li>DoubleTree.setupFromArrays is no longer destructive -- the input arrays are unchanged</li>
+			 <li>DoubleTree.nodeText() and DoubleTree.tokenExtraText() now take a second argument: isRoot</li>
+		  </ul>
+	   </li>
+	   <li>Colors: These changes were made to allow the saving of DoubleTrees as images
+		  <ul>
+			 <li>DoubleTree now can customize the continuation color: DoubleTree.continuationColor()<br>NB: Removed continuation color from css</li>
+			 <li>Moved circle styles into DoubleTree (i.e. no longer customizable)</li>
+			 <li>Moved link (branches) styles into DoubleTree (i.e. no longer customizable)</li>
+		  </ul>
+	   </li>
+	   <li>DoubleTree.Trie
+		  <ul>
+			 <li>Trie constructor now has optional argument allowing the root to be calculated without using the distinguishing fields</li>
+		  </ul>
+	   </li>
+	   <li>TextHash
+		  <ul>
+			 <li><em>doubletree.TextHash moved to textmodel.TextHash</em></li>
+			 <li>TextHash constructor now takes an optional extra argument indicating that the input is records delimited by 2 newlines</li>
+			 <li>added TextHash.getItems(): like getItem, but takes regex to match</li>
+			 <li>TextHash.getItem() now takes an argument indicating that the "item" is a regular expression</li>
+			 <li>TextHash.getItem() now has extra argument for context filters</li>
+			 <li>TextHash.getItem() now has extra argument to specify a random selection of hits</li>
+			 <li>TextHash.getItemContext() now has argument indicating whether the item parameter should be considered a regular expression</li>
+		  </ul>
+	   </li>
+	   <li>Examples
+		  <ul>
+			 <li>Added doubletree-filtered sample</li>
+			 <li>Added save as image to some examples (kwic, metadata, filtered)<br>NB: found nodes highlighting won't be preserved in image</li>
+			 <li>fixed doubletree-kwic.js so that illformed regex input for words doesn' give an error</li>
+		  </ul>
+	   </li>
+	   </ul>
+    </li>
+    <li>Version 0.4.1
+	<ul>
+	    <li>Fixed bug in doubletree.sortByStrFld() in cases where info.field is not defined</li>
+	</ul>
+    </li>
+    <li>Version 0.4
+		<ul>
+		    <li>Changed doubletree.DoubleTree API to follow the "chart" conventions of D3,
+		    i.e. with a no-argument constructor, and chained functions, including single function setter/getters</li>
+		    <li>Added the possibility to provide a colored background rectangle for each node, variable according to node properties</li>
+		    <li>Added (de)serialization for doubletree.Trie, doubletree.TextHash</li>
+		    <li>Added new metadata lemma example</li>
+		    <li>Added documentation</li>
+		    <li>Added developer guide</li>
+		    <li>Moved Trie and TextHash into doubletree.Trie and doubletree.TextHash respectively</li>
+		    <li>Rewrote doubletree.Trie</li>
+		    <li>Moved the true utility functions into doubletree.js or Trie.js</li>
+		    <li>Renamed cleaned up utils.js as TextHash.js  </li>
+		    <li>Moved filterByPOS and filterByMinCount out of examples and to doubletree.filterByPOS and doubletree.filterByMinCount</li>
+		    <li>Miscellaneous old comments removed</li>
+		    <li>Updated samples to incorporate new API</li>
+		    <li>Cleaned up samples</li>
+		</ul>
+	
+    </li>
+    <li>Version 0.3
+    		<ul>
+			<li>Nodes are now logarithmically scaled by frequency by default</li>
+			<li>In the DoubleTreeJS + KWIC demo, it is now possible to optionally show the POS after the tokens (if there is a POS)</li>
+			<li>Added "bare" demo</li>
+			<li>Added document comparison demo</li>
+			<li>Added part of speech only demo</li>
+			<li>Added more sample tagged texts, in English and in German</li>
+			<li>Added sample text file of character sequences from the Bambara Wikipedia</li>
+			<li>Node formatting is now done by doubletree.nodeText()</li>
+			<li>Fixed bug in sorting by continuations</li>
+			<li>Fixed an off-by-one bug in the reporting of the search results</li>
+			<li>Cleaned up the tagged texts</li>
+    		</ul>
+    </li>
+	<li>Version 0.2
+    		<ul>
+			<li>First publicly available version</li>
+			<li>Added the "Clear" button to clear the in-tree search results</li>
+			<li>Pressing enter in a "Word to use" field now selects the first word in the prediction list.</li>
+    		<li>Fixed positioning of predicted words</li>
+			<li>Improved handling of words that are Object properties</li>
+    		</ul>
+    </li>
+	<li>Version 0.1a
+		<ul>
+			<li>First privately available version</li>
+		</ul>
+	</li>
+    <hr/>
+    <p>3 February 2015</p>
+</div>
+
+</body>
+</html>

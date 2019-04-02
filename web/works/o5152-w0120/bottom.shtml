@@ -8,7 +8,7 @@
       <div class="container text-muted">
 	<p>&copy; 2015 <!--#echo var='ecep_full' --> (<!--#echo var='ecep' -->). &nbsp; &nbsp; 
 	<!--#echo var='ecep' --> is licensed under <a rel="license" target="_blank"
-	href="http://creativecommons.org/licenses/by-sa/4.0/"><img 
+	href="https://creativecommons.org/licenses/by-sa/4.0/"><img 
 	alt="CC BY-SA 4.0" style="border-width:0"
 	src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a>. &nbsp; 
 	</p>
@@ -115,13 +115,18 @@
     <script src="/js/uuidv4.js"></script>
     <script src="/js/jsonform-2.1.3/deps/opt/jsv.js"></script>
     <script src="/js/jsonform-2.1.3/lib/jsonform.js"></script>
-<!--
+    <script src="/js/bootstrap-treeview-1.2.0/dist/bootstrap-treeview.min.js"></script>
+
+    <!-- Cytoscape JS -->
     <script src="/js/cytoscape.min.js"></script>
-    <script src="/js/cytoscape.js-panzoom-2.5.3/cytoscape-panzoom.js"></script>
-    <script src="/js/cytoscape.js-navigator-1.3.3/cytoscape-navigator.js"></script>
     <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
     <script src="/js/cytoscape.js-cola-2.3.0/cytoscape-cola.js"></script>
-//-->    
+    <script src="/js/popper.js-1.14.7/dist/umd/popper-utils.min.js"></script>
+    <script src="/js/popper.js-1.14.7/dist/umd/popper.min.js"></script>
+    <script src="/js/cytoscape.js-popper-1.0.4/cytoscape-popper.js"></script>
+    <script src="/js/cytoscape.js-panzoom-2.5.3/cytoscape-panzoom.js"></script>
+    <script src="/js/cytoscape.js-navigator-1.3.3/cytoscape-navigator.js"></script>
+
     <!-- ECEP -->
     <script src="/js/ecep.functions.js"></script>
     <script src="/js/ana.functions.js"></script>

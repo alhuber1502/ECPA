@@ -1,396 +1,1694 @@
 [
  {
-  "children": [
+  "href": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+  "nodes": [
    {
-    "children": [
-     {"name": "frbroo:F17_Aggregation_Work"}
-    ],
-    "name": "frbroo:F14_Individual_Work"
-   },
-   {
-    "children": [
-     {"name": "frbroo:F18_Serial_Work"}
-    ],
-    "name": "frbroo:F15_Complex_Work"
-   },
-   {
-    "children": [
-     {"name": "frbroo:F17_Aggregation_Work"},
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity",
+    "nodes": [
      {
-      "children": [
-       {"name": "frbroo:F18_Serial_Work"}
-      ],
-      "name": "frbroo:F19_Publication_Work"
-     },
-     {"name": "frbroo:F20_Performance_Work"}
-    ],
-    "name": "frbroo:F16_Container_Work"
-   },
-   {"name": "frbroo:F21_Recording_Work"}
-  ],
-  "name": "frbroo:F1_Work"
- },
- {
-  "children": [
-   {"name": "crminf:I2_Belief"},
-   {"name": "crm:E3_Condition_State"},
-   {"name": "crm:E4_Period"}
-  ],
-  "name": "crm:E2_Temporal_Entity"
- },
- {"name": "crm:E52_Time-Span"},
- {
-  "children": [
-   {"name": "frbroo:F9_Place"}
-  ],
-  "name": "crm:E53_Place"
- },
- {"name": "crm:E54_Dimension"},
- {
-  "children": [
-   {
-    "children": [
-     {
-      "children": [
-       {"name": "frbroo:F10_Person"}
-      ],
-      "name": "crm:E21_Person"
-     },
-     {
-      "children": [
-       {"name": "frbroo:F11_Corporate_Body"},
-       {"name": "frbroo:F39_Family"},
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E4_Period",
+      "nodes": [
        {
-        "children": [
-         {"name": "frbroo:F44_Bibliographic_Agency"}
-        ],
-        "name": "crm:E40_Legal_Body"
-       }
-      ],
-      "name": "crm:E74_Group"
-     }
-    ],
-    "name": "crm:E39_Actor"
-   },
-   {
-    "children": [
-     {
-      "children": [
-       {
-        "children": [
-         {"name": "frbroo:F4_Manifestation_Singleton"},
-         {
-          "children": [
-           {
-            "children": [
-             {
-              "children": [
-               {"name": "frbroo:F5_Item"},
-               {"name": "frbroo:F53_Material_Copy"}
-              ],
-              "name": "frbroo:F54_Utilized_Information_Carrier"
-             }
-            ],
-            "name": "crm:E84_Information_Carrier"
-           }
-          ],
-          "name": "crm:E22_Man-Made_Object"
-         },
-         {"name": "crm:E25_Man-Made_Feature"},
-         {"name": "crm:E78_Collection"}
-        ],
-        "name": "crm:E24_Physical_Man-Made_Thing"
+        "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F8_Event",
+        "text": "Event"
        },
        {
-        "children": [
-         {"name": "frbroo:F6_Concept"},
-         {"name": "frbroo:F38_Character"},
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E5_Event",
+        "nodes": [
          {
-          "children": [
-           {"name": "frbroo:F3_Manifestation_Product_Type"},
-           {"name": "crm:E56_Language"},
-           {"name": "crm:E57_Material"},
-           {"name": "crm:E58_Measurement_Unit"}
-          ],
-          "name": "crm:E55_Type"
-         },
-         {
-          "children": [
-           {"name": "crminf:I3_Inference_Logic"},
-           {"name": "crm:E30_Right"},
-           {"name": "crm:E73_Information_Object"}
-          ],
-          "name": "crm:E89_Propositional_Object"
-         },
-         {"name": "crm:E90_Symbolic_Object"}
-        ],
-        "name": "crm:E28_Conceptual_Object"
-       }
-      ],
-      "name": "crm:E71_Man-Made_Thing"
-     },
-     {
-      "children": [
-       {"name": "frbroo:F3_Manifestation_Product_Type"},
-       {"name": "crm:E18_Physical_Thing"},
-       {
-        "children": [
-         {
-          "children": [
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence",
+          "nodes": [
            {
-            "children": [
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
+            "text": "Formation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
+            "nodes": [
              {
-              "children": [
-               {"name": "frbroo:F50_Controlled_Access_Point"}
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F33_Reproduction_Event",
+              "text": "Reproduction Event"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
               ],
-              "name": "frbroo:F13_Identifier"
+              "text": "Expression Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event",
+              "text": "Carrier Production Event"
              }
             ],
-            "name": "frbroo:F12_Nomen"
-           },
-           {"name": "crm:E35_Title"},
-           {
-            "children": [
-             {"name": "frbroo:F13_Identifier"}
-            ],
-            "name": "crm:E42_Identifier"
+            "text": "Production"
            },
            {
-            "children": [
-             {"name": "crm:E45_Address"},
-             {"name": "crm:E46_Section_Definition"},
-             {"name": "crm:E47_Spatial_Coordinates"},
-             {"name": "crm:E48_Place_Name"}
-            ],
-            "name": "crm:E44_Place_Appellation"
-           },
-           {
-            "children": [
-             {"name": "crm:E50_Date"}
-            ],
-            "name": "crm:E49_Time_Appellation"
-           },
-           {
-            "children": [
-             {"name": "crm:E45_Address"}
-            ],
-            "name": "crm:E51_Contact_Point"
-           },
-           {"name": "crm:E75_Conceptual_Object_Appellation"},
-           {"name": "crm:E82_Actor_Appellation"}
-          ],
-          "name": "crm:E41_Appellation"
-         },
-         {
-          "children": [
-           {"name": "crminf:I4_Proposition_Set"},
-           {
-            "children": [
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E65_Creation",
+            "nodes": [
              {
-              "children": [
-               {"name": "frbroo:F24_Publication_Expression"},
-               {"name": "frbroo:F25_Performance_Plan"},
-               {"name": "frbroo:F26_Recording"}
-              ],
-              "name": "frbroo:F22_Self-Contained_Expression"
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception",
+              "text": "Work Conception"
              },
-             {"name": "frbroo:F23_Expression_Fragment"},
-             {"name": "frbroo:F34_KOS"},
-             {"name": "frbroo:F35_Nomen_Use_Statement"},
-             {"name": "frbroo:F43_Identifier_Rule"}
-            ],
-            "name": "frbroo:F2_Expression"
-           },
-           {
-            "children": [
-             {"name": "frbroo:F25_Performance_Plan"},
-             {"name": "frbroo:F34_KOS"},
-             {"name": "frbroo:F35_Nomen_Use_Statement"},
-             {"name": "frbroo:F36_Script_Conversion"},
-             {"name": "frbroo:F43_Identifier_Rule"}
-            ],
-            "name": "crm:E29_Design_or_Procedure"
-           },
-           {
-            "children": [
              {
-              "children": [
-               {"name": "frbroo:F34_KOS"}
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation",
+              "text": "Type Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
               ],
-              "name": "crm:E32_Authority_Document"
+              "text": "Expression Creation"
              }
             ],
-            "name": "crm:E31_Document"
+            "text": "Creation"
            },
            {
-            "children": [
-             {"name": "crm:E34_Inscription"},
-             {"name": "crm:E35_Title"}
-            ],
-            "name": "crm:E33_Linguistic_Object"
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E67_Birth",
+            "text": "Birth"
            },
            {
-            "children": [
-             {
-              "children": [
-               {"name": "crm:E34_Inscription"}
-              ],
-              "name": "crm:E37_Mark"
-             },
-             {"name": "crm:E38_Image"}
-            ],
-            "name": "crm:E36_Visual_Item"
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E81_Transformation",
+            "text": "Transformation"
            }
           ],
-          "name": "crm:E73_Information_Object"
+          "text": "Beginning of Existence"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E7_Activity",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
+            "text": "Formation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E9_Move",
+            "text": "Move"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity",
+            "text": "Curation Activity"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance",
+            "text": "Performance"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E86_Leaving",
+            "text": "Leaving"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment",
+              "text": "Condition Assessment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment",
+                "text": "Identifier Assignment"
+               }
+              ],
+              "text": "Identifier Assignment"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment",
+              "text": "Representative Expression Assignment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E16_Measurement",
+              "text": "Measurement"
+             },
+             {
+              "href": "http://www.ics.forth.gr/isl/CRMinf/I1_Argumentation",
+              "nodes": [
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I7_Belief_Adoption",
+                "text": "Belief Adoption"
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMsci/S4_Observation",
+                "text": null
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I5_Inference_Making",
+                "nodes": [
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S8_Categorical_Hypothesis_Building",
+                  "text": null
+                 },
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S6_Data_Evaluation",
+                  "text": null
+                 },
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S7_Simulation_or_Prediction",
+                  "text": null
+                 }
+                ],
+                "text": "Inference Making"
+               }
+              ],
+              "text": "Argumentation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F52_Name_Use_Activity",
+              "text": "Name Use Activity"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F41_Representative_Manifestation_Assignment",
+              "text": "Representative Manifestation Assignment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment",
+              "text": "Type Assignment"
+             }
+            ],
+            "text": "Attribute Assignment"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E85_Joining",
+            "text": "Joining"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E11_Modification",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition",
+              "text": "Part Addition"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F33_Reproduction_Event",
+                "text": "Reproduction Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                  "text": "Publication Event"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                  "text": "Recording Event"
+                 }
+                ],
+                "text": "Expression Creation"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event",
+                "text": "Carrier Production Event"
+               }
+              ],
+              "text": "Production"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E80_Part_Removal",
+              "text": "Part Removal"
+             }
+            ],
+            "text": "Modification"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E65_Creation",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception",
+              "text": "Work Conception"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation",
+              "text": "Type Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
+              ],
+              "text": "Expression Creation"
+             }
+            ],
+            "text": "Creation"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F51_Pursuit",
+            "text": "Pursuit"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition",
+            "text": "Acquisition"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody",
+            "text": "Transfer of Custody"
+           }
+          ],
+          "text": "Activity"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E68_Dissolution",
+            "text": "Dissolution"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E6_Destruction",
+            "text": "Destruction"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E69_Death",
+            "text": "Death"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E81_Transformation",
+            "text": "Transformation"
+           }
+          ],
+          "text": "End of Existence"
          }
         ],
-        "name": "crm:E90_Symbolic_Object"
+        "text": "Event"
        }
       ],
-      "name": "crm:E72_Legal_Object"
+      "text": "Period"
+     },
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State",
+      "text": "Condition State"
+     },
+     {
+      "href": "http://www.ics.forth.gr/isl/CRMinf/I2_Belief",
+      "text": "Belief"
      }
     ],
-    "name": "crm:E70_Thing"
+    "text": "Temporal Entity"
+   },
+   {
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume",
+    "nodes": [
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E4_Period",
+      "nodes": [
+       {
+        "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F8_Event",
+        "text": "Event"
+       },
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E5_Event",
+        "nodes": [
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
+            "text": "Formation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F33_Reproduction_Event",
+              "text": "Reproduction Event"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
+              ],
+              "text": "Expression Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event",
+              "text": "Carrier Production Event"
+             }
+            ],
+            "text": "Production"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E65_Creation",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception",
+              "text": "Work Conception"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation",
+              "text": "Type Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
+              ],
+              "text": "Expression Creation"
+             }
+            ],
+            "text": "Creation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E67_Birth",
+            "text": "Birth"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E81_Transformation",
+            "text": "Transformation"
+           }
+          ],
+          "text": "Beginning of Existence"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E7_Activity",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
+            "text": "Formation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E9_Move",
+            "text": "Move"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity",
+            "text": "Curation Activity"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F31_Performance",
+            "text": "Performance"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E86_Leaving",
+            "text": "Leaving"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment",
+              "text": "Condition Assessment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F40_Identifier_Assignment",
+                "text": "Identifier Assignment"
+               }
+              ],
+              "text": "Identifier Assignment"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F42_Representative_Expression_Assignment",
+              "text": "Representative Expression Assignment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E16_Measurement",
+              "text": "Measurement"
+             },
+             {
+              "href": "http://www.ics.forth.gr/isl/CRMinf/I1_Argumentation",
+              "nodes": [
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I7_Belief_Adoption",
+                "text": "Belief Adoption"
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMsci/S4_Observation",
+                "text": null
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I5_Inference_Making",
+                "nodes": [
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S8_Categorical_Hypothesis_Building",
+                  "text": null
+                 },
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S6_Data_Evaluation",
+                  "text": null
+                 },
+                 {
+                  "href": "http://www.ics.forth.gr/isl/CRMsci/S7_Simulation_or_Prediction",
+                  "text": null
+                 }
+                ],
+                "text": "Inference Making"
+               }
+              ],
+              "text": "Argumentation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F52_Name_Use_Activity",
+              "text": "Name Use Activity"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F41_Representative_Manifestation_Assignment",
+              "text": "Representative Manifestation Assignment"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment",
+              "text": "Type Assignment"
+             }
+            ],
+            "text": "Attribute Assignment"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E85_Joining",
+            "text": "Joining"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E11_Modification",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition",
+              "text": "Part Addition"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F33_Reproduction_Event",
+                "text": "Reproduction Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                  "text": "Publication Event"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                  "text": "Recording Event"
+                 }
+                ],
+                "text": "Expression Creation"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F32_Carrier_Production_Event",
+                "text": "Carrier Production Event"
+               }
+              ],
+              "text": "Production"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E80_Part_Removal",
+              "text": "Part Removal"
+             }
+            ],
+            "text": "Modification"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E65_Creation",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F27_Work_Conception",
+              "text": "Work Conception"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation",
+              "text": "Type Creation"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F28_Expression_Creation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F30_Publication_Event",
+                "text": "Publication Event"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F29_Recording_Event",
+                "text": "Recording Event"
+               }
+              ],
+              "text": "Expression Creation"
+             }
+            ],
+            "text": "Creation"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F51_Pursuit",
+            "text": "Pursuit"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition",
+            "text": "Acquisition"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody",
+            "text": "Transfer of Custody"
+           }
+          ],
+          "text": "Activity"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E68_Dissolution",
+            "text": "Dissolution"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E6_Destruction",
+            "text": "Destruction"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E69_Death",
+            "text": "Death"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E81_Transformation",
+            "text": "Transformation"
+           }
+          ],
+          "text": "End of Existence"
+         }
+        ],
+        "text": "Event"
+       }
+      ],
+      "text": "Period"
+     },
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E93_Presence",
+      "text": "Presence"
+     },
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing",
+      "nodes": [
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature",
+        "nodes": [
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E27_Site",
+          "text": "Site"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature",
+          "nodes": [
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+            "text": "Material Copy"
+           }
+          ],
+          "text": "Man-Made Feature"
+         }
+        ],
+        "text": "Physical Feature"
+       },
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing",
+        "nodes": [
+         {
+          "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton",
+          "text": "Manifestation Singleton"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature",
+          "nodes": [
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+            "text": "Material Copy"
+           }
+          ],
+          "text": "Man-Made Feature"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection",
+          "text": "Collection"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                "text": "Material Copy"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item",
+                "text": "Item"
+               }
+              ],
+              "text": "Utilized Information Carrier"
+             }
+            ],
+            "text": "Information Carrier"
+           }
+          ],
+          "text": "Man-Made Object"
+         }
+        ],
+        "text": "Physical Man-Made Thing"
+       },
+       {
+        "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F7_Object",
+        "text": "Object"
+       },
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object",
+        "nodes": [
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E20_Biological_Object",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E21_Person",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F10_Person",
+              "text": "Person"
+             }
+            ],
+            "text": "Person"
+           }
+          ],
+          "text": "Biological Object"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                "text": "Material Copy"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item",
+                "text": "Item"
+               }
+              ],
+              "text": "Utilized Information Carrier"
+             }
+            ],
+            "text": "Information Carrier"
+           }
+          ],
+          "text": "Man-Made Object"
+         }
+        ],
+        "text": "Physical Object"
+       }
+      ],
+      "text": "Physical Thing"
+     }
+    ],
+    "text": "Spacetime Volume"
+   },
+   {
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
+    "text": "Dimension"
+   },
+   {
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
+    "nodes": [
+     {
+      "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F9_Place",
+      "text": "Place"
+     }
+    ],
+    "text": "Place"
+   },
+   {
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span",
+    "text": "Time-Span"
+   },
+   {
+    "href": "http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item",
+    "nodes": [
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
+      "nodes": [
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E74_Group",
+        "nodes": [
+         {
+          "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F39_Family",
+          "text": "Family"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E40_Legal_Body",
+          "nodes": [
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F44_Bibliographic_Agency",
+            "text": "Bibliographic Agency"
+           }
+          ],
+          "text": "Legal Body"
+         },
+         {
+          "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F11_Corporate_Body",
+          "text": "Corporate Body"
+         }
+        ],
+        "text": "Group"
+       },
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E21_Person",
+        "nodes": [
+         {
+          "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F10_Person",
+          "text": "Person"
+         }
+        ],
+        "text": "Person"
+       }
+      ],
+      "text": "Actor"
+     },
+     {
+      "href": "http://www.cidoc-crm.org/cidoc-crm/E70_Thing",
+      "nodes": [
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing",
+        "nodes": [
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing",
+          "nodes": [
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton",
+            "text": "Manifestation Singleton"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+              "text": "Material Copy"
+             }
+            ],
+            "text": "Man-Made Feature"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection",
+            "text": "Collection"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                  "text": "Material Copy"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item",
+                  "text": "Item"
+                 }
+                ],
+                "text": "Utilized Information Carrier"
+               }
+              ],
+              "text": "Information Carrier"
+             }
+            ],
+            "text": "Man-Made Object"
+           }
+          ],
+          "text": "Physical Man-Made Thing"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object",
+          "nodes": [
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F6_Concept",
+            "text": "Concept"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
+              "text": "Right"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F15_Complex_Work",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work",
+                  "text": "Serial Work"
+                 }
+                ],
+                "text": "Complex Work"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F16_Container_Work",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F19_Publication_Work",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F18_Serial_Work",
+                    "text": "Serial Work"
+                   }
+                  ],
+                  "text": "Publication Work"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F17_Aggregation_Work",
+                  "text": "Aggregation Work"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F20_Performance_Work",
+                  "text": "Performance Work"
+                 }
+                ],
+                "text": "Container Work"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F14_Individual_Work",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F17_Aggregation_Work",
+                  "text": "Aggregation Work"
+                 }
+                ],
+                "text": "Individual Work"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F21_Recording_Work",
+                "text": "Recording Work"
+               }
+              ],
+              "text": "Work"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                    "text": "KOS"
+                   }
+                  ],
+                  "text": "Authority Document"
+                 }
+                ],
+                "text": "Document"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                  "text": "Nomen Use Statement"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                    "text": "Performance Plan"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression",
+                    "text": "Publication Expression"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F26_Recording",
+                    "text": "Recording"
+                   }
+                  ],
+                  "text": "Self-Contained Expression"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                  "text": "Identifier Rule"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment",
+                  "text": "Expression Fragment"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                  "text": "KOS"
+                 }
+                ],
+                "text": "Expression"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
+                  "text": "Image"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E37_Mark",
+                  "nodes": [
+                   {
+                    "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                    "text": "Inscription"
+                   }
+                  ],
+                  "text": "Mark"
+                 }
+                ],
+                "text": "Visual Item"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                  "text": "Inscription"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
+                  "text": "Title"
+                 }
+                ],
+                "text": "Linguistic Object"
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I4_Proposition_Set",
+                "text": "Proposition Set"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F36_Script_Conversion",
+                  "text": "Script Conversion"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                  "text": "Nomen Use Statement"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                  "text": "Performance Plan"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                  "text": "Identifier Rule"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                  "text": "KOS"
+                 }
+                ],
+                "text": "Design or Procedure"
+               }
+              ],
+              "text": "Information Object"
+             },
+             {
+              "href": "http://www.ics.forth.gr/isl/CRMinf/I3_Inference_Logic",
+              "text": "Inference Logic"
+             }
+            ],
+            "text": "Propositional Object"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type",
+              "text": "Manifestation Product Type"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E57_Material",
+              "text": "Material"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit",
+              "text": "Measurement Unit"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E56_Language",
+              "text": "Language"
+             }
+            ],
+            "text": "Type"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F12_Nomen",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F13_Identifier",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F50_Controlled_Access_Point",
+                    "text": "Controlled Access Point"
+                   }
+                  ],
+                  "text": "Identifier"
+                 }
+                ],
+                "text": "Nomen"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F13_Identifier",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F50_Controlled_Access_Point",
+                    "text": "Controlled Access Point"
+                   }
+                  ],
+                  "text": "Identifier"
+                 }
+                ],
+                "text": "Identifier"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
+                "text": "Title"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E44_Place_Appellation",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition",
+                  "text": "Section Definition"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates",
+                  "text": "Spatial Coordinates"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E45_Address",
+                  "text": "Address"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name",
+                  "text": "Place Name"
+                 }
+                ],
+                "text": "Place Appellation"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E45_Address",
+                  "text": "Address"
+                 }
+                ],
+                "text": "Contact Point"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation",
+                "text": "Conceptual Object Appellation"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
+                  "text": "Date"
+                 }
+                ],
+                "text": "Time Appellation"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
+                "text": "Actor Appellation"
+               }
+              ],
+              "text": "Appellation"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                    "text": "KOS"
+                   }
+                  ],
+                  "text": "Authority Document"
+                 }
+                ],
+                "text": "Document"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                  "text": "Nomen Use Statement"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                    "text": "Performance Plan"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression",
+                    "text": "Publication Expression"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F26_Recording",
+                    "text": "Recording"
+                   }
+                  ],
+                  "text": "Self-Contained Expression"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                  "text": "Identifier Rule"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment",
+                  "text": "Expression Fragment"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                  "text": "KOS"
+                 }
+                ],
+                "text": "Expression"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
+                  "text": "Image"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E37_Mark",
+                  "nodes": [
+                   {
+                    "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                    "text": "Inscription"
+                   }
+                  ],
+                  "text": "Mark"
+                 }
+                ],
+                "text": "Visual Item"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                  "text": "Inscription"
+                 },
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
+                  "text": "Title"
+                 }
+                ],
+                "text": "Linguistic Object"
+               },
+               {
+                "href": "http://www.ics.forth.gr/isl/CRMinf/I4_Proposition_Set",
+                "text": "Proposition Set"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F36_Script_Conversion",
+                  "text": "Script Conversion"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                  "text": "Nomen Use Statement"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                  "text": "Performance Plan"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                  "text": "Identifier Rule"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                  "text": "KOS"
+                 }
+                ],
+                "text": "Design or Procedure"
+               }
+              ],
+              "text": "Information Object"
+             }
+            ],
+            "text": "Symbolic Object"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F38_Character",
+            "text": "Character"
+           }
+          ],
+          "text": "Conceptual Object"
+         }
+        ],
+        "text": "Man-Made Thing"
+       },
+       {
+        "href": "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object",
+        "nodes": [
+         {
+          "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type",
+          "text": "Manifestation Product Type"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F12_Nomen",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F13_Identifier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F50_Controlled_Access_Point",
+                  "text": "Controlled Access Point"
+                 }
+                ],
+                "text": "Identifier"
+               }
+              ],
+              "text": "Nomen"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F13_Identifier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F50_Controlled_Access_Point",
+                  "text": "Controlled Access Point"
+                 }
+                ],
+                "text": "Identifier"
+               }
+              ],
+              "text": "Identifier"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
+              "text": "Title"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E44_Place_Appellation",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition",
+                "text": "Section Definition"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates",
+                "text": "Spatial Coordinates"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E45_Address",
+                "text": "Address"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name",
+                "text": "Place Name"
+               }
+              ],
+              "text": "Place Appellation"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E45_Address",
+                "text": "Address"
+               }
+              ],
+              "text": "Contact Point"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation",
+              "text": "Conceptual Object Appellation"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
+                "text": "Date"
+               }
+              ],
+              "text": "Time Appellation"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
+              "text": "Actor Appellation"
+             }
+            ],
+            "text": "Appellation"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E31_Document",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                  "text": "KOS"
+                 }
+                ],
+                "text": "Authority Document"
+               }
+              ],
+              "text": "Document"
+             },
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F2_Expression",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                "text": "Nomen Use Statement"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                  "text": "Performance Plan"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression",
+                  "text": "Publication Expression"
+                 },
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F26_Recording",
+                  "text": "Recording"
+                 }
+                ],
+                "text": "Self-Contained Expression"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                "text": "Identifier Rule"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F23_Expression_Fragment",
+                "text": "Expression Fragment"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                "text": "KOS"
+               }
+              ],
+              "text": "Expression"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
+                "text": "Image"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E37_Mark",
+                "nodes": [
+                 {
+                  "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                  "text": "Inscription"
+                 }
+                ],
+                "text": "Mark"
+               }
+              ],
+              "text": "Visual Item"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription",
+                "text": "Inscription"
+               },
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
+                "text": "Title"
+               }
+              ],
+              "text": "Linguistic Object"
+             },
+             {
+              "href": "http://www.ics.forth.gr/isl/CRMinf/I4_Proposition_Set",
+              "text": "Proposition Set"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F36_Script_Conversion",
+                "text": "Script Conversion"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F35_Nomen_Use_Statement",
+                "text": "Nomen Use Statement"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F25_Performance_Plan",
+                "text": "Performance Plan"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F43_Identifier_Rule",
+                "text": "Identifier Rule"
+               },
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F34_KOS",
+                "text": "KOS"
+               }
+              ],
+              "text": "Design or Procedure"
+             }
+            ],
+            "text": "Information Object"
+           }
+          ],
+          "text": "Symbolic Object"
+         },
+         {
+          "href": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing",
+          "nodes": [
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E27_Site",
+              "text": "Site"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                "text": "Material Copy"
+               }
+              ],
+              "text": "Man-Made Feature"
+             }
+            ],
+            "text": "Physical Feature"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing",
+            "nodes": [
+             {
+              "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F4_Manifestation_Singleton",
+              "text": "Manifestation Singleton"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature",
+              "nodes": [
+               {
+                "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                "text": "Material Copy"
+               }
+              ],
+              "text": "Man-Made Feature"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection",
+              "text": "Collection"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                    "text": "Material Copy"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item",
+                    "text": "Item"
+                   }
+                  ],
+                  "text": "Utilized Information Carrier"
+                 }
+                ],
+                "text": "Information Carrier"
+               }
+              ],
+              "text": "Man-Made Object"
+             }
+            ],
+            "text": "Physical Man-Made Thing"
+           },
+           {
+            "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F7_Object",
+            "text": "Object"
+           },
+           {
+            "href": "http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object",
+            "nodes": [
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E20_Biological_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E21_Person",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F10_Person",
+                  "text": "Person"
+                 }
+                ],
+                "text": "Person"
+               }
+              ],
+              "text": "Biological Object"
+             },
+             {
+              "href": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+              "nodes": [
+               {
+                "href": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
+                "nodes": [
+                 {
+                  "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F54_Utilized_Information_Carrier",
+                  "nodes": [
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F53_Material_Copy",
+                    "text": "Material Copy"
+                   },
+                   {
+                    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/F5_Item",
+                    "text": "Item"
+                   }
+                  ],
+                  "text": "Utilized Information Carrier"
+                 }
+                ],
+                "text": "Information Carrier"
+               }
+              ],
+              "text": "Man-Made Object"
+             }
+            ],
+            "text": "Physical Object"
+           }
+          ],
+          "text": "Physical Thing"
+         }
+        ],
+        "text": "Legal Object"
+       }
+      ],
+      "text": "Thing"
+     }
+    ],
+    "text": "Persistent Item"
    }
   ],
-  "name": "crm:E77_Persistent_Item"
- },
- {
-  "children": [
-   {
-    "children": [
-     {"name": "frbroo:F8_Event"},
-     {
-      "children": [
-       {
-        "children": [
-         {"name": "frbroo:F31_Performance"},
-         {"name": "frbroo:F51_Pursuit"},
-         {"name": "crm:E8_Acquisition"},
-         {"name": "crm:E9_Move"},
-         {"name": "crm:E10_Transfer_of_Custody"},
-         {
-          "children": [
-           {"name": "crm:E12_Production"},
-           {"name": "crm:E79_Part_Addition"},
-           {"name": "crm:E80_Part_Removal"}
-          ],
-          "name": "crm:E11_Modification"
-         },
-         {
-          "children": [
-           {"name": "frbroo:F41_Representative_Manifestation_Assignment"},
-           {"name": "frbroo:F42_Representative_Expression_Assignment"},
-           {"name": "frbroo:F52_Name_Use_Activity"},
-           {"name": "crm:E14_Condition_Assessment"},
-           {
-            "children": [
-             {"name": "frbroo:F40_Identifier_Assignment"}
-            ],
-            "name": "crm:E15_Identifier_Assignment"
-           },
-           {"name": "crm:E16_Measurement"},
-           {"name": "crm:E17_Type_Assignment"}
-          ],
-          "name": "crm:E13_Attribute_Assignment"
-         },
-         {"name": "crm:E65_Creation"},
-         {"name": "crm:E66_Formation"},
-         {"name": "crm:E85_Joining"},
-         {"name": "crm:E86_Leaving"},
-         {"name": "crm:E87_Curation_Activity"}
-        ],
-        "name": "crm:E7_Activity"
-       },
-       {
-        "children": [
-         {
-          "children": [
-           {"name": "frbroo:F28_Expression_Creation"},
-           {"name": "frbroo:F32_Carrier_Production_Event"},
-           {"name": "frbroo:F33_Reproduction_Event"}
-          ],
-          "name": "crm:E12_Production"
-         },
-         {
-          "children": [
-           {"name": "frbroo:F27_Work_Conception"},
-           {
-            "children": [
-             {"name": "frbroo:F29_Recording_Event"},
-             {"name": "frbroo:F30_Publication_Event"}
-            ],
-            "name": "frbroo:F28_Expression_Creation"
-           },
-           {"name": "crm:E83_Type_Creation"}
-          ],
-          "name": "crm:E65_Creation"
-         },
-         {"name": "crm:E66_Formation"},
-         {"name": "crm:E67_Birth"},
-         {"name": "crm:E81_Transformation"}
-        ],
-        "name": "crm:E63_Beginning_of_Existence"
-       },
-       {
-        "children": [
-         {"name": "crm:E6_Destruction"},
-         {"name": "crm:E68_Dissolution"},
-         {"name": "crm:E69_Death"},
-         {"name": "crm:E81_Transformation"}
-        ],
-        "name": "crm:E64_End_of_Existence"
-       }
-      ],
-      "name": "crm:E5_Event"
-     }
-    ],
-    "name": "crm:E4_Period"
-   },
-   {
-    "children": [
-     {"name": "frbroo:F7_Object"},
-     {
-      "children": [
-       {
-        "children": [
-         {"name": "crm:E21_Person"}
-        ],
-        "name": "crm:E20_Biological_Object"
-       },
-       {"name": "crm:E22_Man-Made_Object"}
-      ],
-      "name": "crm:E19_Physical_Object"
-     },
-     {"name": "crm:E24_Physical_Man-Made_Thing"},
-     {
-      "children": [
-       {
-        "children": [
-         {"name": "frbroo:F53_Material_Copy"}
-        ],
-        "name": "crm:E25_Man-Made_Feature"
-       },
-       {"name": "crm:E27_Site"}
-      ],
-      "name": "crm:E26_Physical_Feature"
-     }
-    ],
-    "name": "crm:E18_Physical_Thing"
-   },
-   {"name": "crm:E93_Presence"}
-  ],
-  "name": "crm:E92_Spacetime_Volume"
- },
- {"name": "crmsci:S4_Observation"},
- {
-  "children": [
-   {"name": "crmsci:S6_Data_Evaluation"},
-   {"name": "crmsci:S7_Simulation_or_Prediction"},
-   {"name": "crmsci:S8_Categorical_Hypothesis_Building"}
-  ],
-  "name": "crminf:I5_Inference_Making"
- },
- {"name": "crminf:I7_Belief_Adoption"}
+  "text": "CRM Entity"
+ }
 ]

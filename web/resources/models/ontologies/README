@@ -1,0 +1,10 @@
+
+This folder contains all the ontologies used.  Unless indicated, RDFS files have been taken as is.
+
+I have modified CRMinf, as it did not have rdfs:labels for all classes/properties, and did not 
+reflect the subclassing indicated in the documentation.
+
+It looks like all compatible models in CIDOC-CRM are subclassed, so there will only be a single root,
+CRM Entity.  Should I also be offering the compatible models as stand-alone ontologies?
+
+I am using the latest versions of all ontologies for which RDFS files are available.

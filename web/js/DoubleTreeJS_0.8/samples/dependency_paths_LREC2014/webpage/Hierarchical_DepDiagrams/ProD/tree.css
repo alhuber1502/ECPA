@@ -1,0 +1,28 @@
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #AAA;  
+  stroke-width: 1.5px;
+}
+
+.xlink {
+  fill: none;
+  stroke: #00f;  
+  stroke-width: 1.5px;
+  stroke-dasharray:5 5;
+}
+
+/* for arrow head */
+marker > polyline {
+  fill: #00f;
+}

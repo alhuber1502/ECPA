@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - doubletree.Trie</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/doubletree.html">doubletree</a></li>
+	
+	<li><a href="../symbols/doubletree.DoubleTree.html">doubletree.DoubleTree</a></li>
+	
+	<li><a href="../symbols/doubletree.Trie.html">doubletree.Trie</a></li>
+	
+	<li><a href="../symbols/textmodel.html">textmodel</a></li>
+	
+	<li><a href="../symbols/textmodel.TextHash.html">textmodel.TextHash</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class doubletree.Trie
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				doubletree.Trie
+This is the class for the specialized trie that is the data for <a href="../symbols/doubletree.DoubleTree.html">doubletree.DoubleTree</a>.
+The Trie will get pieces of data that contain fields. Some (possibly all) of those fields will be used for distinguishing among items.
+For example, we might have an "author" field, but not use it when distinguishing among items for the Trie.
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/doubletreejs_Trie.js.html">Trie.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class doubletree.Trie.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/doubletree.Trie.html#constructor">doubletree.Trie</a></b>(caseSensitive, fldNames, fldDelim, distinguishingFldsArray, undistinguishedRoot)
+							</div>
+							<div class="description"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class doubletree.Trie.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#addNgram">addNgram</a></b>(itemArray, id, count)
+								</div>
+								<div class="description">Add an ngram to the Trie</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#caseSensitive">caseSensitive</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#deserialize">deserialize</a></b>(serialized)
+								</div>
+								<div class="description">make this Trie have the values of a previously serialized Trie see <a href="../symbols/doubletree.Trie.html#serialize">#serialize</a></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#distinguishingFieldsArray">distinguishingFieldsArray</a></b>()
+								</div>
+								<div class="description">get the distinguishing fields for the data</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#fieldDelim">fieldDelim</a></b>()
+								</div>
+								<div class="description">get the field delimiter for the data</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#fieldNames">fieldNames</a></b>()
+								</div>
+								<div class="description">get the field names in the data</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#getUniqRoot">getUniqRoot</a></b>()
+								</div>
+								<div class="description">get the unique root of this Trie.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#serialize">serialize</a></b>()
+								</div>
+								<div class="description">serialize the Trie as a JSON string</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/doubletree.Trie.html#toTree">toTree</a></b>(filterFuns, descendentLevel)
+								</div>
+								<div class="description">convert the Trie to a tree structure for display.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>doubletree.Trie</b>(caseSensitive, fldNames, fldDelim, distinguishingFldsArray, undistinguishedRoot)
+				</div>
+				
+				<div class="description">
+					
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								 <b>caseSensitive</b>
+								
+							</dt>
+								<dd>are the elements in the first distinguishing field compared in a case sensitive fashion</dd>
+						
+							<dt>
+								 <b>fldNames</b>
+								
+							</dt>
+								<dd>the names of the fields</dd>
+						
+							<dt>
+								 <b>fldDelim</b>
+								
+							</dt>
+								<dd>the field delimiter</dd>
+						
+							<dt>
+								 <b>distinguishingFldsArray</b>
+								
+							</dt>
+								<dd></dd>
+						
+							<dt>
+								 <b>undistinguishedRoot</b>
+								
+							</dt>
+								<dd></dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="addNgram"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>addNgram</b>(itemArray, id, count)
+					
+					</div>
+					<div class="description">
+						Add an ngram to the Trie
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>itemArray</b>
+									
+								</dt>
+								<dd>an array of delimited items (the ngrams)</dd>
+							
+								<dt>
+									<b>id</b>
+									
+								</dt>
+								<dd>an id for this ngram</dd>
+							
+								<dt>
+									<b>count</b>
+									
+								</dt>
+								<dd>a count for this ngram. Default is 1</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="caseSensitive"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>caseSensitive</b>()
+					
+					</div>
+					<div class="description">
+						
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>whether this Trie uses case sensitive comparison</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="deserialize"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>deserialize</b>(serialized)
+					
+					</div>
+					<div class="description">
+						make this Trie have the values of a previously serialized Trie see <a href="../symbols/doubletree.Trie.html#serialize">#serialize</a>
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>serialized</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="distinguishingFieldsArray"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>distinguishingFieldsArray</b>()
+					
+					</div>
+					<div class="description">
+						get the distinguishing fields for the data
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the distinguishing fields for the data</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="fieldDelim"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>fieldDelim</b>()
+					
+					</div>
+					<div class="description">
+						get the field delimiter for the data
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the field delimiter for the data</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="fieldNames"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>fieldNames</b>()
+					
+					</div>
+					<div class="description">
+						get the field names in the data
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the field names in the data</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getUniqRoot"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getUniqRoot</b>()
+					
+					</div>
+					<div class="description">
+						get the unique root of this Trie. Used only by DoubleTree
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>a new Trie with a unique item as the root</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="serialize"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>serialize</b>()
+					
+					</div>
+					<div class="description">
+						serialize the Trie as a JSON string
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the JSON string representation of the Trie</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="toTree"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>toTree</b>(filterFuns, descendentLevel)
+					
+					</div>
+					<div class="description">
+						convert the Trie to a tree structure for display. Used only by DoubleTree
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>filterFuns</b>
+									
+								</dt>
+								<dd>the filtering functions to apply to the tree see DoubleTree.filters</dd>
+							
+								<dt>
+									<b>descendentLevel</b>
+									
+								</dt>
+								<dd>the current level we are filtering</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the tree</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Oct 19 2015 19:21:49 GMT-0400 (EDT)
+		</div>
+	</body>
+</html>

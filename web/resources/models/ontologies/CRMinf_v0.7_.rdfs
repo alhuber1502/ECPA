@@ -27,7 +27,7 @@ Encoding Rules:
 
 <!-- 
 
--AH- minor change + provided labels for all classes and properties
+-AH- minor change + provided labels for all classes and properties + added class hierarchy from model description
 
 -->
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -38,7 +38,9 @@ Encoding Rules:
             This class comprises the activity of making honest inferences or observations. An honest inference or observation is one in which the E39 Actor carrying out the I1 Argumentation justifies and believes that the I6 Belief Value associated with resulting I2 Belief about the I4 Proposition Set is the correct value at the time that the activity was undertaken and that any I3 Inference Logic  or methodology was correctly applied.
 	Only one instance of E39 Actor may carry out an instance of I1 Argumentation, though the E39 Actor may, of course, be an instance of E74 Group.
 </rdfs:comment>
+    	<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment"/>
     	<rdfs:label xml:lang="en">Argumentation</rdfs:label>
+    	
     </rdfs:Class>
 
     <rdfs:Class  rdf:about="http://www.ics.forth.gr/isl/CRMsci/S4_Observation">

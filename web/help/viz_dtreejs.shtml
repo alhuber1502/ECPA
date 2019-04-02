@@ -1,0 +1,44 @@
+<h3 id="dtreejs">DoubleTreeJS</h3>
+
+<h4>About</h4>
+
+<p>
+DoubleTreeJS is an <em>interactive</em> way to give a more compact
+view of words in their context of use than a traditional concordance
+(KWIC) does.  Clicking on a word on one side of DoubleTreeJS highlights
+the words on the other side that occur in the same phrase as the word
+clicked on.  DoubleTreeJS is a re-implementation in Javascript of
+Double Tree (Culy and Lyding, 2010, below), which was inspired by Word
+Tree (Wattenberg & Viégas, 2008).
+</p>
+
+<p>
+This re-implementation of Double Tree includes several of the
+enhancements mentioned in Culy and Lyding, 2010, including the
+abilities to sort the branches by a variety of properties, to filter
+the branches by different properties, and to search the words in the
+Double Tree. It also is designed to work with various types of
+<b>structured</b> data. 
+</p>
+
+<p>DoubleTreeJS is &copy;
+  2012-2016, <a href="http://linguistics.chrisculy.net"
+		target="_blank"
+class="external">Chris Culy</a>.  Used under a BSD license.</p>
+
+<h4>Papers</h4>
+<ul class="listBibl">
+  <li>
+Culy, C., M. Passarotti, and U. König-Cardanobile. 2014. "A Compact
+Interactive Visualization of Dependency Treebank Query Results". 
+<em>Proceedings of the Ninth International Conference on Language
+Resources and Evaluation</em> (LREC'14), Rejkjavik, Iceland. May 26-31,
+2014. N. Calzolari et al. (eds.). ELRA.
+  </li>
+  <li>
+Culy, C. and V. Lyding. 2010. "Double Tree: An Advanced KWIC
+Visualization for Expert Users". <em>Information Visualization,
+Proceedings of IV 2010</em>, 2010 14th International Conference Information
+Visualization, 98-103.
+  </li>
+</ul>

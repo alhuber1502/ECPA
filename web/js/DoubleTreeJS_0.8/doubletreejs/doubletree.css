@@ -1,0 +1,156 @@
+.node {
+	cursor: pointer;
+}
+
+.node circle {
+  /*cursor: pointer;*/
+  /* fill: #fff; */
+  /* stroke: steelblue; */
+  /* stroke-width: 1.5px; */
+}
+
+.node text {
+  font: 14px sans-serif;
+  fill: #444;
+}
+tspan.tokenExtra {
+	font-size: 0.8em;
+}
+text.foundText {
+	font-size: 1.1em;
+     font-weight:bold;
+	fill: aqua; /* should be background color */
+	stroke: #444; /* same as regular fill */
+  	stroke-width: 0.5;
+}
+
+text.continuation {
+  font-weight:bold;
+  font-size: 1.1em;
+}
+
+text.continuation.foundText {
+	fill:white;
+	stroke: red;
+
+}
+
+
+path.link {
+  /*
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+  */
+}
+
+ #dtreejs_body  * {
+  font-family: "Lucida Bright", Georgia, serif; /* one suggestion from http://cssfontstack.com/ */ 
+  
+  /* font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; /* one suggestion from http://cssfontstack.com/ */
+      }
+    
+      div#taggedText {
+      display:none;
+      }
+      table#kwic {
+      margin-left: auto;
+      margin-right: auto;
+      }
+    
+      #kwic td {
+      vertical-align:top;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      }
+      td.kwicHit {
+       color:green;
+        font-weight:bold;
+	 text-align:center;
+	  cursor:pointer;
+      }
+      td.kwicLeft {
+      text-align:right;
+      }
+      td.kwicRt {
+      text-align:left;
+      }
+      span.kwicItem {
+      cursor:pointer;
+      color:blue;
+      }
+      p.hitContext {
+      color:black;
+      }
+      svg {
+
+      /*border: thin solid red;*/
+      /*z-index:-100;
+      position:relative;
+      top:-19ex;
+      */
+      }
+	
+/*
+ *	 div#doubletree{
+    overflow:scroll;
+     }
+*/      
+      span.loadProgress {
+      display: none:
+      /*z-index:99;*/
+      position:relative:
+      left: -5em;
+      
+      }
+      
+      #predicted ul {
+      list-style-type:none;
+      margin-left:0;
+      padding-left:0.1em;
+      cursor:pointer;
+      border: thin solid black;
+      }
+      div#predicted {
+      position:relative;
+      top:-5ex;
+      }
+/*      
+      div#controls {
+      width:65%;
+      }
+      div#controls td {
+      vertical-align: top;
+      }
+*/    
+      div#filters {
+      /*border: thin solid black;*/
+      padding-bottom: 2ex;
+      
+      }
+/*      
+      div#about {
+      float:right;
+      position:relative;
+      width:35%;
+      margin:0;
+      padding:0;
+      padding-left:0.5em;
+      /*top:-3ex;*/
+      border: 3px solid #777;
+      
+      }
+      div#about h1 {
+      font-size:1.15em;
+      }
+      div#about h2 {
+      font-size:1.1em;
+      position:relative;
+      /*top:-1ex;*/
+      }
+      div#about p {
+      position:relative;
+      font-size:0.9em;
+      /*top:-3ex;*/
+      }
+*/

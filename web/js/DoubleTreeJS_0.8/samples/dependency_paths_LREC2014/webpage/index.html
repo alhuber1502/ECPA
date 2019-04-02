@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    	<!-- Copyright (c) 2012-2013, Chris Culy See below for the (new BSD) license-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>DoubleTreeJS + Dependencies</title>
+    <!-- See end of body for scripts -->
+    <script>
+		var newUI = true; //window.location.search == "?newUI"; //true;
+	 </script>
+    <link rel="stylesheet" href="doubletreejs/doubletree.css" />
+	 <link rel="stylesheet" href="jslibs/kwicD3.css" />
+
+    <style>
+      * {
+	font-family: "Lucida Bright", Georgia, serif; /* one suggestion from http://cssfontstack.com/ */ 
+	
+      }
+    
+      div#taggedText {
+	display:none;
+      }
+      table#kwic {
+	margin-left: auto;
+	margin-right: auto;
+      }
+    
+      #kwic td {
+	vertical-align:top;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+      }
+      td.kwicHit {
+	 color:green;
+	 font-weight:bold;
+	 text-align:center;
+	 cursor:pointer;
+      }
+      td.kwicLeft {
+	text-align:right;
+      }
+      td.kwicRt {
+	text-align:left;
+      }
+      span.kwicItem {
+	cursor:pointer;
+	color:blue;
+      }
+      p.hitContext {
+	color:black;
+      }
+      svg {
+
+	/*border: thin solid red;*/
+	/*z-index:-100;
+	position:relative;
+	top:-19ex;
+	*/
+      }
+		
+/*
+ *	 div#doubletree{
+	   overflow:scroll;
+	 }
+*/      
+      span.loadProgress {
+	display: none;
+	/*z-index:99;*/
+	position:relative;
+	left: -5em;
+      
+      }
+      #words, #toUse {
+        width: 15em;
+      }
+		
+      #predicted ul {
+	list-style-type:none;
+	margin-left:0;
+	padding-left:0.1em;
+	cursor:pointer;
+	border: thin solid black;
+      }
+      div#predicted {
+	position:relative;
+	top:-5ex;
+      }
+      
+      div#controls {
+	width:50%;
+      }
+      div#controls td {
+	vertical-align: top;
+      }
+      
+      div#about {
+			 /*float:right;
+			 position:relative;
+			 width:50%;
+			 margin:0;
+			 padding:0;
+			 padding-left:0.5em;
+			 border: 3px solid #777;
+			 */
+			 /*top:-3ex;*/
+			 text-align: center;
+      }
+      div#about h1 {
+	font-size:1.15em;
+      }
+      div#about h2 {
+	font-size:1.1em;
+	position:relative;
+	/*top:-1ex;*/
+      }
+      div#about p {
+	position:relative;
+	font-size:0.9em;
+	/*top:-3ex;*/
+      }
+      
+		
+		#settings {
+		 
+		}
+		
+		#ShowPOS {
+		  margin-left: 3em;
+		}
+		
+		.thinBorder {
+		  border: thin solid black;
+		}
+		
+    </style>
+  </head>
+  <body>
+      	<!--
+  	/* (This is the new BSD license.)
+* Copyright (c) 2012-2013, Chris Culy
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the Chris Culy nor the 
+*		names of its contributors may be used to endorse or promote 
+*		products from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY Chris Culy
+* ``AS IS'' AND ANY OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+* THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+* ARE DISCLAIMED. IN NO EVENT SHALL Chris Culy
+* BE LIABLE FOR ANY, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+* CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE 
+* GOODS OR SERVICES; OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+* CAUSED AND ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+* TORT INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+-->
+	<div id="about">
+	  <h1>DoubleTreeJS + Dependencies demo, &copy; 2012-2014</h1>
+	  <h2><a href="http://www.sfs.uni-tuebingen.de/~cculy" target="_blank">Chris Culy</a>,
+	  <a href="http://docenti.unicatt.it/web/profilo.do?cod_docente=14144&language=ITA&section=profilo" target="_blank">Marco Passarotti</a>,
+	  Ulla König-Cardanobile</h2>
+	</div>
+  	<div id="controls">
+		<table>
+		<tr>
+		  <td id="filereader">Input file: <input type="file" id="fileIn" onchange="handleFiles(this.files);"> <span id="loadProgress"></span></td>
+		  <td>Dependency relation to use:</td>
+		  <td>
+			<script>
+			  if (newUI) {
+				 document.writeln('<!-- <label id="searchLabel" for="wordlistSelect" >Search for something:</label>--> <input id="words" list="wordlist" title="Press enter to make DoubleTree" onkeypress="newMakeDoubleTree(event)"> ');
+				 document.writeln('<datalist id="wordlist"></datalist>');
+				 document.writeln('<input id="makeKWIC" type="button" value="Make DoubleTree" onclick="newMakeDoubleTree()">');
+			  } else {
+				 document.writeln('<input type="text" id="toUse" name="toUse" onkeypress="handlePress(event, this)" value=""></input>');
+			  }
+			</script>		
+		  </td>
+		</tr>
+		
+		<tr>
+		  <td colspan="2">
+			 <button onclick="showSettings();">Settings</button>
+			<input type="button" id="Find" name="Find" value="Find in tree:" onClick="doSearch();">
+			<input type="text" id="toFind" name="toFind" onkeypress="handlePress(event, this);" value="[aA]">
+			<span id="numFound"></span>
+			<input type="button" id="ClearFind" name="ClearFind" value="Clear" onClick="doClear();">  
+		  </td>
+		  
+		  <td>
+				  <input type="button" value="Make image" onclick="makeImg();" title="Will open in new window">
+				  <canvas id="imgCan" style="display:none"></canvas>
+		  </td>
+		</tr>
+		
+		</table>
+	  
+	</div>
+	
+	
+	
+	<div id="doubletree"></div>
+	<div id="results"></div>
+	<div id="kwicDiv" title="KWIC">
+		<p>Click on a column heading to sort it, or reverse its sort.  Click on an example to see its diagram.
+		</p>
+		<div id="kwicControls">
+		  <input id="sortByDepRel" type="radio" name="kwicSort" onchange="setupReverse();" checked><label id = "sortByDepRelLabel" for="sortByDepRel">Sort by DepRel</label>
+		  <input id="sortByToken" type="radio" name="kwicSort" onchange="setupReverse();"><label id = "sortByTokenLabel" for="sortByToken">Sort by Token</label>
+		  <input id="sortByLemma" type="radio" name="kwicSort" onchange="setupReverse();"><label id = "sortByLemmaLabel" for="sortByLemma">Sort by Lemma</label>
+		  <input id="sortByPOS" type="radio" name="kwicSort" onchange="setupReverse();"><label id = "sortByPOSLabel" for="sortByPOS">Sort by POS</label>
+			 
+		  <br>
+		  
+		  <input id="prevPage" type="button" value="<" onclick="showPrevious();" >
+		  <input id="nextPage" type="button" value=">" onclick="showNext();" >
+		  
+		  <span id="numHits"></span>
+		</div>
+		<div id="realKWIC"></div>
+        </div>
+	
+	
+  <div id="settings" title="Settings">
+	 <table>
+		<tr>
+		  <td>Base is: <input id="defaultType" type="radio" name="brType" value="lemma" title="Choose this before choosing the file">lemmas
+		  <input id="tokenType" type="radio" name="brType" value="token" checked title="Choose this before choosing the file">tokens
+		  <input type="checkbox" id="ShowPOS" name="ShowPOS" value="Show POS" onClick="togglePOS(this);" checked="checked">Show POS
+		  <br>
+			Sort branches by: <input id="defaultSort" type="radio" name="brSort" value="token" checked onclick="updateSort();">base
+						 <input id="posSort" type="radio" name="brSort" value="POS" onclick="updateSort();">DepRel
+						 <input id="contSort" type="radio" name="brSort" value="continuations" onclick="updateSort();">branching
+		  </td>
+                  <td></td>
+		</tr>
+		<tr>
+		  <td colspan="2">
+		  <div id="filters">
+			 <table>
+			<tr>
+				  <td class="thinBorder">
+					 Context:
+					 <input type="radio" id="rFull" name="include" value="all" checked>Full context<br>
+					 <input type="radio" id="rInclude" name="include" value="include">Include only DepRels: <input type="text" id="contextInclude" title="Insert a comma separated list, no spaces, all lower case"><br>
+					 <input type="radio" id="rExclude" name="include" value="exclude">Exclude all DepRels: <input type="text" id="contextExclude" title="Insert a comma separated list, no spaces, all lower case"><br>
+					 <input type="button" id="setContext" name="setContext" value="Update context" onClick="updateContext();">
+				  </td>
+			  </tr>
+                            <tr>
+                              <td class="thinBorder">
+                                     Limit first left Dependency to: <input type="text" id="leftPOS" name="leftPOS" onkeypress="handlePress(event, this);" value=" " size="3" title="Hint: Press shift-enter to update the filter immediately">
+                                     <br>
+                                    Limit first right Dependency to: <input type="text" id="rtPOS" name="rtPOS" onkeypress="handlePress(event, this);" value=" " size="3" title="Hint: Press shift-enter to update the filter immediately">
+                                     <br>
+                              <input type="button" id="doFilters" name="doFilters" value="Update filters" onClick="updateFilters();">
+                              </td>
+                            </tr>
+                            <tr>
+                                <td class="thinBorder">
+                                    Show diagram as <input type="radio" id="aDiagram" name="diagramType" value="arc" checked>arcs <input type="radio" id="tDiagram" name="diagramType" value="tree">tree 
+                                </td>
+                            </tr>
+			 </table>
+			 
+		  </div>
+		  
+		  </td>
+		</tr>
+	 </table>
+  </div>
+	
+        <div id="arcDiagramDiv">
+            <iframe id="arcDiagram" src="./Arc_DepDiagrams/arcDiagrams.html"  width="1500" height="1000"></iframe>
+        </div>
+        
+        <div id="treeDiagramDiv">
+            <iframe id="treeDiagram" src="./Hierarchical_DepDiagrams/more_samples/conllTester.html"  width="1500" height="1000"></iframe>
+        </div>
+
+<!-- Load all the javascript -->
+  <!-- just for saving -->
+  <script src="jslibs/canvg-1.3/rgbcolor.js"></script>
+  <script src="jslibs/canvg-1.3/StackBlur.js"></script>
+  <script src="jslibs/canvg-1.3/canvg.js"></script>
+  <script src="js/utilities.js"></script>
+<!-- end of just for saving -->
+
+<!-- jquery gui stuff -->
+
+   <script src="jslibs/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+	<script src="jslibs/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+	<link rel="stylesheet" href="jslibs/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css" type="text/css" media="screen">
+<!-- end jquery gui stuff -->
+  
+  <script src="js/webserviceHandlers.js"></script>
+  <script src="doubletreejs/d3.min.js"></script>
+  <script src="doubletreejs/classListSubstitute.min.js"></script>
+  <script src="doubletreejs/DoubleTree.min.js"></script>
+  <script src="doubletreejs/Trie.min.js"></script>
+  <script src="jslibs/TextHash.min.js"></script>
+  <script src="jslibs/TextModelUtilities.js"></script>
+  <script src="jslibs/kwicD3.js"></script>
+  
+  <script src="js/doubletree-kwic.js"></script>
+  <script src="js/doubletree-kwic-extras.js"></script>
+  <script src="js/doubletree-filtered.js"></script>
+  <script src="js/doubletree-deprel.js"></script>
+  <script src="js/doubletree-deprel-extras.js"></script>
+  <script src="js/kwicHelpers.js"></script>
+  <script src="js/IT-TB_10--02-2014_IDs.js"></script>
+  
+  
+
+<!-- initialize -->  
+  <script>
+	 if (newUI) {
+		window.onload = function() {
+		  //adjust GUI for Safari, which doesn't support datalist
+		  if (document.getElementById("wordlist") instanceof HTMLUnknownElement) {
+				document.getElementById("words").style.display = "none";
+			 }
+		};
+	 }
+	 try {
+		setup();
+	 } catch (e) {
+		//Chrome won't let us load the paths; eventually we won't need this
+	 }
+	 $(function() {
+		$( "#settings" ).dialog({ autoOpen: false, width: 500 });
+	 });
+	 
+	 function showSettings() {
+		$( "#settings" ).dialog( "open");
+	 }
+	 
+	 $(function() {
+		$( "#kwicDiv" ).dialog({ autoOpen: false, width: 1000 });
+	 });
+         
+         $(function() {
+		$( "#arcDiagramDiv" ).dialog({ autoOpen: false, width: 1500 });
+	 });
+         
+         $(function() {
+		$( "#treeDiagramDiv" ).dialog({ autoOpen: false, width: 1000 });
+	 });
+         
+  </script>
+
+  </body>
+</html>

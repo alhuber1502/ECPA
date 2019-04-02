@@ -1,0 +1,127 @@
+<!DOCTYPE>
+
+<html>
+
+<head>
+	<title>cytoscape-popper.js tippy demo</title>
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+	<!-- for testing with local version of cytoscape.js -->
+	<!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+
+  <script src="https://unpkg.com/popper.js@1.14.7/dist/umd/popper.js"></script>
+	<script src="cytoscape-popper.js"></script>
+
+	<script src="https://unpkg.com/tippy.js@4.0.1/umd/index.all.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/tippy.js@4.0.1/index.css" />
+
+	<style>
+		body {
+			font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+			font-size: 14px
+		}
+
+		#cy {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 1;
+		}
+
+		h1 {
+			opacity: 0.5;
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		/* makes sticky faster; disable if you want animated tippies */
+		.tippy-popper {
+			transition: none !important;
+		}
+	</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+
+			var cy = window.cy = cytoscape({
+				container: document.getElementById('cy'),
+
+				style: [
+					{
+						selector: 'node',
+						style: {
+							'content': 'data(id)'
+						}
+					},
+
+					{
+						selector: 'edge',
+						style: {
+							'curve-style': 'bezier',
+							'target-arrow-shape': 'triangle'
+						}
+					}
+				],
+
+				elements: {
+					nodes: [
+						{ data: { id: 'a' } },
+						{ data: { id: 'b' } }
+					],
+					edges: [
+						{ data: { id: 'ab', source: 'a', target: 'b' } }
+					]
+				},
+
+				layout: {
+					name: 'grid'
+				}
+			});
+
+			var a = cy.getElementById('a');
+			var b = cy.getElementById('b');
+			var ab = cy.getElementById('ab');
+
+			var makeTippy = function(node, text){
+				return tippy( node.popperRef(), {
+					content: function(){
+						var div = document.createElement('div');
+
+						div.innerHTML = text;
+
+						return div;
+					},
+					trigger: 'manual',
+					arrow: true,
+					placement: 'bottom',
+					hideOnClick: false,
+					multiple: true,
+					sticky: true
+				} );
+			};
+
+			var tippyA = makeTippy(a, 'foo');
+
+			tippyA.show();
+
+			var tippyB = makeTippy(b, 'bar');
+
+			tippyB.show();
+
+			var tippyAB = makeTippy(ab, 'baz');
+
+			tippyAB.show();
+		});
+	</script>
+</head>
+
+<body>
+	<h1>cytoscape-popper tippy demo</h1>
+	<div id="cy"></div>
+</body>
+
+</html>

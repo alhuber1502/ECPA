@@ -169,7 +169,7 @@ if ($('#reading').length) {
     result = result.slice(0,-2);
     pf += result != "" ? "<div class='bibl'>Rhyme (stanza position): "+result+"</div>" : "";
     if (pf != "") {
-	var pf_symbols = '<i>Symbols:</i><ul class="bibl"><li><span>&#x02d8;</span> metrically non-prominent</li><li><span>&#x2032;</span> metrically prominent</li><li><span>|</span> metrical foot boundary</li><li><span>/</span> metrical line boundary</li><li><span>||</span> caesura</li></ul>';
+	var pf_symbols = '<i>Symbols:</i><ul class="bibl"><li><span>&#x02d8;</span> metrically non-prominent</li><li><span>&#x2032;</span> metrically prominent (primary)</li><li><span>`</span> metrically prominent (secondary)</li><li><span>|</span> metrical foot boundary</li><li><span>/</span> metrical line boundary</li><li><span>||</span> caesura</li></ul>';
 	$("#poeticform").html('<div id="form"><h1 class="info">Poetic form</h1><table><tr><td>'+pf+'</td>'+
           '<td style="font-size:12px">'+pf_symbols+'</td></tr></table></div>');
     } else {

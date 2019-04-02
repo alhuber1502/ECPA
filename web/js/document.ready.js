@@ -28,11 +28,13 @@
     // switch to tab specified in URL hash
     var hash = window.location.hash;
     hash && $('ul.nav a[href="' + hash + '"]').tab('show') || $('.nav-tabs a[href="#text"]').tab('show');
-    if (hash == "#poemvis" || hash == "#phonemia") { // supports direct link into #PoemViewer from TGA
+    if (hash == "#poemvis" || hash == "#phonemia" || hash == "#dtreejs") { // supports direct link into #PoemViewer from TGA
 	if (hash == "#poemvis") {
 	    viz_chosen = "POEMVIS_VIZ";
 	} else if (hash == "#phonemia") {
 	    viz_chosen = "PHONEMIA_VIZ";
+	} else if (hash == "#dtreejs") {
+	    viz_chosen = "DTREEJS_VIZ";
 	}
 	hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
 	$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);

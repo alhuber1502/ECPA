@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    	<!-- 2013-2016, Chris Culy -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>DoubleTreeJS Developer Guide</title>
+    <!-- See end of body for scripts -->
+    
+   
+    <style>
+      * {
+	font-family: "Lucida Bright", Georgia, serif; /* one suggestion from http://cssfontstack.com/ */
+      }
+		body {
+		  margin-left:15%;
+		  margin-right:15%;
+		}
+		
+		p {
+		  text-indent: 2em;
+		}
+      
+      h1, h2, h3#licence {
+	text-align: center;
+      }
+      
+      h4 {
+	margin-left: 1em;
+	text-decoration: underline;
+      }
+      
+      code {
+	padding-left: 3em;
+	font-weight: bold;
+      }
+      
+      .offsetLeft {
+	margin-left: -20%;
+      }
+
+      .attention {
+	font-weight: bold;
+      }
+      
+      ol {
+	counter-reset: section;
+	list-style-type: none;
+      }
+      li:before {
+	counter-increment: section;
+	content: counters(section, ".") " ";
+      }
+      
+      img#system {
+	width: 80%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>DoubleTreeJS Developer Guide</h1>
+    <h2>2013-2016 Chris Culy</h2>
+    <h3 id="licence">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank">
+	<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a>
+      <br>This work is licensed under a
+      <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"  target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </h3>
+    
+    <section id="toc">
+     
+    </section>
+    <section id="intro">
+    <h3>Introduction</h3>
+    <p>
+      This is a guide for how to develop <em>new</em> applications using
+      <a href="http://linguistics.chrisculy.net/software/DoubleTreeJS/index.html" target="_blank">DoubleTreeJS</a>.
+    </p>
+	 
+	 <p>
+		A DoubleTreeJS application consists of a variety of components, as shown in this schematic system diagram:
+	 </p>
+	 
+	 <p>
+		<img id="system" src="SystemDiagram.png">
+	 </p>
+	 
+	 <p>
+		The DoubleTreeJS <em>visualization</em> is just one of the components.
+		The sample applications give examples of some of the possibilities for each of the other components, each of which will be
+		covered in turn below.
+	 </p>
+	
+    </section>
+	 
+    <section id="data">
+      <h3>The data</h3>
+	  <p>
+	    DoubleTree (and DoubleTreeJS specifically) is meant to visualize <em>sequences of items</em>. While a typical scenario would
+	    consist of consecutive tokens of from a text, other types of items are possible, both simple (e.g. POS tags), and complex
+	    (e.g. word-lemma-POS-author tuples). DoubleTreeJS does not itself do any analysis of raw data &mdash; that is the responsibility
+	    of the application (or the user). However, many of the sample applications <em>do</em> allow for the possibility of plain text
+	    input, which is then "analyzed" into tokens by splitting on white space. However, most of the sample applications assume that
+	    a text has already been analyzed, e.g. with POS tags. The dependency paths sample application does the most analysis, but it takes as
+	    its input a file of dependency parses in the CONLL-X format, i.e. a file which itself is the result of significant analysis.
+	    
+	  </p>
+    </section>
+	 
+    <section id="model">
+       <h3>The data model</h3>
+	  <p>
+	    The data model is a representation of the analyzed data. It might be a transformed version of the analyzed data, e.g. eliminating
+	    punctuation. Often an application will have its own particular data model, especially when DoubleTreeJS is used in conjunction
+	    with another program, e.g. a corpus query engine. In the example for The Sketch Engine (only included in the download), it is
+		 The Sketch Engine which provides both the data model and the query engine.		  
+	  </p>
+	  <h4 id="TextHash">Using TextHash as a data model</h4>
+	  <p>
+	    To facilitate creating applications, DoubleTreeJS comes with a basic data model:
+	    <a href="doc/symbols/textmodel.TextHash.html">textmodel.TextHash</a>. TextHash provides a way to read in structured data as well
+	    as simple query engine (see <a href="#queryEngine">below</a>). In addition, TextHash provides the means to filter the data,
+	    removing items from consideration based on any test concerning the information in the item that the developer can write. See
+	    <a href="samples/doubletree-filtered.html">doubletree-filtered</a> for an example. 
+	    TextHash can give a list of unique items, used in the examples for the "predictive" selection of items.
+	  </p>
+	      
+	  <p>
+	    TextHash can read structured data, where items are separated by whitespace and "fields" in the item are separated by a delimiter.
+	    For example, the sample data included with DoubleTreeJS use forward slash (/) as the delimiter, so the begining of
+	    RobinHood_Pyle_tagged.txt is:
+	  </p>
+	    <pre>
+	    THE/DT
+	    MERRY/NP
+	    ADVENTURES/NP
+	    OF/IN
+	    ROBIN/NP
+	    HOOD/NP
+	    </pre>
+	  <p>
+	    When reading structured data, TextHash must know what the fields in the elements are, as well as the delimiter, so its constructor
+	    takes those as arguments. In addition, needs to know which fields are relevant for determining "sameness". For example, we might
+	    decide that lemma and POS are relevant for determining "sameness", so that e.g. the verb <em>bank</em> and the noun <em>bank</em>
+	    would be kept separate, but the verb <em>banks</em> would be grouped together with the verb <em>banked</em>. One other
+	    field-related argument is that indicating which field is the "base", or the fundamental field for the visualization. Finally,
+	    TextHash also allows for groups of items to be treated as a unit. For example, we might not want the context to cross a chapter,
+	    or even a sentence. In this case, the units must be separated by one or more blank lines. This functionality is used in the
+	    dependency paths example, so that path contexts are limited to a single sentence.
+	  </p>
+	  
+	  <p>
+	    A TextHash can be (manually) saved as JSON object, and then restored via
+	    <a href="doc/symbols/textmodel.TextHash.html#fromJSON">fromJSON()</a>. In this way, the text does not have to be analysed when
+	    the page loads, but the TextHash is read instead. See the <a href="samples/doubletree-metadata.html" target="_blank">metadata
+	    sample</a> for an example of this technique.
+	  </p>
+    </section>
+	 
+    <section id="queryEngine">
+      <h3>The query engine</h3>
+	  
+	<p>
+	  We need some way to get information out of the data model so we can visualize it with DoubleTreeJS. This is where the query engine
+	  comes in. The query engine can be as simple or as complex as the application requires. The sample example for The Sketch Engine
+	  shows how DoubleTreeJS can used as (part of) an interface to a corpus query engine. (A similar approach could work for other
+	  corpus query engines; in fact, the original DoubleTree was used as a front end to the Open Corpus Workbench.) These examples show
+	  how we can combine the power of a sophisticated query language with the usability of a DoubleTree.
+	  (Note that due to CORS, the SketchEngine example needs to be on a SketchEngine server,
+	  or have its requests proxied to a SketchEngine server.)
+	</p>
+	<p>
+	  TextHash (see <a href="#TextHash">above</a>) provides a simple query engine. It allows both simple and regular expression based
+	  queries, using a string representation of the items to query against. It is in the query using
+	  <a href="doc/symbols/textmodel.TextHash.html#getItem">getItem()</a> or
+	  <a href="doc/symbols/textmodel.TextHash.html#getItems">getItems()</a>that we do the actual filtering of the data. Filters can
+	  specify the inclusion or exclusion of elements based on the contents of their fields. Both query functions return results in the
+	  form needed by DoubleTreeJS (<a href="#inputFormat">see below</a>).
+	</p>
+	   
+    </section>
+    
+    <section id="dtjs">
+      <h3>Using DoubleTreeJS</h3>
+      <p>
+	DoubleTreeJS consists of two pieces: the visualization itself
+	(<a href="doc/symbols/doubletree.DoubleTree.html">doubletree.DoubleTree</a>) and the trie data structure used by the visualization
+	(<a href="doc/symbols/doubletree.Trie.html">doubletree.Trie</a>). In addition, applications will also have some kind of data model
+	which provides the data for DoubleTreeJS (see <a href="#model">above</a>). Most of the samples included with DoubleTreeJS use the class
+	<a href="doc/symbols/textmodel.TextHash.html">TextHash</a> as the data source.
+      </p>
+      <p>
+	doubletree.DoubleTree and doubletree.Trie use the common "chaining" pattern, so that multiple properties can be set in a row. e.g.
+       </p>
+	<code>
+dt.init("#doubletree").visWidth(w).prefixesOnRight(false).handlers(handlers) \\
+		.showTokenExtra(showTokenExtras).sortFun(sortFun).filters(filters);
+	</code>
+      <p>
+	In addition, CSS classes are used as much as possible for styling various aspects of the DoubleTree. All the relevant classes are in
+	the file doubletree.css, in the same directory as DoubleTreeJs.
+      </p>
+
+      <p id="inputFormat">
+	The input data consists of three parts, analogous to a keyword in context display:
+      </p>
+	<ul>
+	  <li>the "hits" (containing the element that will be at the root of the DoubleTree)</li>
+	  <li>the left context (prefix) of the hits (containing the elements in the left-hand side of the DoubleTree)</li>
+	  <li>the right context (suffix) of the hits (containing the elements in the right-hand side of the DoubleTree)</li>
+	</ul>
+	
+      <p>
+	<a href="doc/symbols/doubletree.DoubleTree.html#.setupFromArrays">DoubleTree.setupFromArrays()</a> takes 4 arrays (and some other
+	parameters, see following), corresponding to the prefixes, the hits, the suffixes, and the ids of the hits, where element <em>i</em> of the hits array has
+	element <em>i</em> of the prefix array as its prefix, element <em>i</em> of the suffix array as its suffix,
+	and element <em>i</em> of the ids array as its id.
+	DoubleTree internally constructs a doubletree.Trie and then creates the visualization.
+      </p>
+      <p>
+	Each element in the hits, prefixes and suffixes consists of a string with various fields, delimited by a delimiter
+	(e.g. the samples use "/" as the delimiter). These fields need to be given names via the fieldNames parameter of
+	<a href="doc/symbols/doubletree.DoubleTree.html#.setupFromArrays">DoubleTree.setupFromArrays()</a>.
+	We also need to specify whether the primary field (typically a token) is to be treated case sensitively.
+	However, not all of these fields will necessarily be relevant for determining which elements are to be treated alike.
+	We thus need to specify which fields <em>are</em> relevant via the distinguishingFields parameter.
+	And of course, we need to specify what the delimiter is, via the fieldDelim parameter.
+      </p>
+      
+      <p>
+	Not surprisingly, these are the same parameters that <a href="doc/symbols/textmodel.TextHash.html">TextHash</a> uses...
+      </p>
+      
+      <p>
+	While DoubleTree can work with these arrays of hits, prefixes and suffixes, it can also directly load doubletree.Tries that have
+	been created elsewhere, via <a href="doc/symbols/doubletree.DoubleTree.html#.setupFromTries">DoubleTree.setupFromTries()</a>,
+	which takes two doubletree.Tries, one for the left side of the DoubleTree and one for the right side.
+	<span class="attention">Note</span> that doubletree.Trie is a specialized trie, and  doubletree.DoubleTree.setupFromTries() will
+	work <em>only</em> with instances of doubletree.Trie, not with other types of tries.
+      </p>
+      <p>
+	Since <a href="doc/symbols/doubletree.Trie.html">doubletree.Trie</a> is the basic datastructure, it needs to know all the
+	information about the elements and their fields, so its constructor takes all four types of information as its parameters:
+	caseSensitive, fldNames, fldDelim, distinguishingFldsArray.
+	In addition, doubletree.Trie has <a href="doc/symbols/doubletree.Trie.html#serialize">serialize()</a> and
+	<a href="doc/symbols/doubletree.Trie.html#deserialize">deserialize()</a> functions to help with working with doubletree.Tries
+	external to DoubleTree.
+      </p>
+    </section>
+   
+    
+    <section id="customizing">
+      <h3>Customizing a DoubleTreeJS</h3>
+      <h4 id="higlightingAndSearch">Highlighting and search</h4>
+      <p>
+	doubletree.DoubleTree is created with a 0 argument constructor:
+      </p>
+      
+	<code>dt = new doubletree.DoubleTree();
+	</code>
+	
+      <p>
+	It is given the data either with <a href="doc/symbols/doubletree.DoubleTree.html#.setupFromArrays">DoubleTree.setupFromArrays()</a>
+	or <a href="doc/symbols/doubletree.DoubleTree.html#.setupFromTries">DoubleTree.setupFromTries()</a> as discussed above.
+	The basic DoubleTree provides the ability to expand and collapse nodes by clicking on them, as well as highlighting the nodes that
+	correspond to prefixes and suffixes of the node just clicked. Highlighting is customizable via
+	<a href="doc/symbols/doubletree.DoubleTree.html#.basicStyles">DoubleTree.basicStyles()</a>. 
+      </p>
+      
+      <p>
+	<span clas="attention">Note</span>: the <a href="https://code.google.com/p/canvg/" target="_blank">canvg</a> library used to create
+	images from the DoubleTrees in some of the examples does not respect external CSS styles. This is why the basic styles are not set
+	via CSS but rather in the javascript.
+      </p>
+      
+      <p>
+	It is also possible to search the nodes in a DoubleTree, using
+	<a href="doc/symbols/doubletree.DoubleTree.html#.search">DoubleTree.search()</a>, which takes a regular expression string argument.
+	Nodes that match the search term are given the "foundText" CSS class. The search can be cleared using
+	<a href="doc/symbols/doubletree.DoubleTree.html#.clearSearch">DoubleTree.clearSearch()</a>, which removes all the "foundText" classes.
+	<span class="attention">Note</span> that the user interface for searching and clearing is <em>NOT</em> part of the DoubleTreeJS
+	library &mdash; you will need to create that yourself in your application.
+      </p>
+      
+      <h4 id="infoObject">The info object</h4>
+       <p>
+	  Each node of a DoubleTree contains an "info" object, which is simply an object with a variety of properties.
+	  These properties include all the fields of the element, as well as information about the "count" and the "continuations".
+	  This info object is used by the various interaction handlers as well as in sorting and filtering.
+	</p>
+       
+       <h4 id="nodeText">The node text</h4>
+	<p>
+	  You can customize what appears on each node via a function which gets the info object of the current node as its argument.
+	  This node text function is set via <a href="doc/symbols/doubletree.DoubleTree.html#.nodeText">DoubleTree.nodeText()</a>.
+	  Here is example that shows the "lemma" field followed by the "count" field in parentheses:
+	</p>
+	  <code>
+	  function(info) {
+	    return info["lemma"] + " (" + info.count + ")";
+	  }
+	  </code>
+	 
+       <h4 id="tokenExtras">Token extras</h4>
+	  <p>
+	    In addition to the basic information for the node, you may want to be able to toggle display of "extra" information.
+	    You can do this via "tokenExtras". As with the node text, the content is defined by a function which gets the info object of
+	    the current node as its argument.
+	    This function is set via  <a href="doc/symbols/doubletree.DoubleTree.html#.tokenExtraText">DoubleTree.tokenExtraText()</a>.
+	    Toggling of the token extras is done via
+	    <a href="doc/symbols/doubletree.DoubleTree.html#.showTokenExtra">DoubleTree.showTokenExtra()</a>.
+	  </p>
+	
+      <h4 id="bgRects">Background rectangles</h4>
+	<p>
+	  It is also possible to provide a colored rectangle, with or without colored borders for each node. The colors and the presence
+	  or absence of a border can all be used to encode information, as in the
+	  <a href="samples/doubletree-metadata.html" target="_blank">metadata sample</a>. The colors of the rectangles and their borders
+	  are determined by two functions, set via <a href="doc/symbols/doubletree.DoubleTree.html#.rectColor">DoubleTree.rectColor()</a>
+	  and <a href="doc/symbols/doubletree.DoubleTree.html#.rectBorderColor">DoubleTree.rectBorderColor()</a>. The two functions are
+	  independent, and each gets the info object of the current node as its argument, and they must return a CSS color as a string.
+	  Here is an example of a border color function from the metadata sample.
+	</p>
+	
+	<code>
+	  <pre>
+	//we put a gray border around lemmas that occur in all 3 sources, and no border on anything else
+	var borderColor = function(info) {
+	    var defaultC = "rgba(255,255,255,0)"; //transparent white
+	    if (info["source"].length == 3) {
+		return "rgba(64,64,64,0.5)"; //transparent gray
+	    }
+	    return defaultC;
+	}</pre>
+	</code>
+       
+       
+       <h4 id="sorting">Sorting</h4>
+       <p>
+	The branches of the DoubleTree can be sorted by any function of the information in the info objects. The sort function is set via
+	<a href="doc/symbols/doubletree.DoubleTree.html#.sortFun">DoubleTree.sortFun()</a>, and it gets the info object of the current
+	node as its argument. Here is an example of a sorting function, the built-in
+	<a href="doc/symbols/doubletree.html#.sortByCount">doubletree.sortByCount()</a>: 
+       </p>
+       
+	<code>
+	doubletree.sortByCount = function() {
+	  return function(a,b) {
+	      return b.info.count - a.info.count;
+	  }
+	}
+	
+	</code>
+	
+      <p>
+	<span class="attention">Note</span> that the branches are sorted in <em>ascending</em> order (according to the sortFun).
+	You also need to explicitly redraw() the visualization to update the display.
+      </p>
+       
+       <h4 id="filtering">Filtering</h4>
+       <p>
+       We can also limit which branches are shown, via filtering functions. <span class="attention">Note</span>: These filters are
+       <em>NOT</em> the filters in TextHash, which filter the data. These filters only affect what is <em>shown</em> in the DoubleTree.
+       As with sorting functions, the filtering functions also get the info object of the current node as their argument.
+       The left and right sides of the DoubleTree have their own filtering functions, and each level of a side has its own filtering
+       function. The filters are specified via an object with "left" and "right" keys, each of which takes an array of functions.
+       Element <em>i</em> of the array filters the <em>i+1</em> position of the side.
+       So filters.left[1] will filter the prefix second element(s) from the root.
+       </p>
+       <p>
+	Filters are set via  <a href="doc/symbols/doubletree.DoubleTree.html#.filters">DoubleTree.filters()</a>.
+	<span class="attention">Note</span> that you need to explicitly redraw() the visualization to update the display.
+      </p>
+       </p>
+       
+      <h4 id="interaction">Interaction</h4>
+      
+      <p>In addition to the expanding/collapsing of nodes, DoubleTree also provides two hooks for additional interaction, namely for
+      shift-clicking and alt-clicking
+      (<span class="attention">Note</span> use AltGr+Alt-click in FireFox for Linux pre-empts alt-click for its own purposes.)
+      </p>
+      
+      <p>
+	As with the other functions, the shift-click and alt-click handlers get the info object of the current node as their argument.
+	Of course, their effects are not limited to the DoubleTree &mdash; many of the examples show a KWIC on shift-click.
+	The handlers are specified using <a href="doc/symbols/doubletree.DoubleTree.html#.handlers">DoubleTree.handlers()</a>, which 
+	takes an object that has "shift" and "alt" keys, which take functions as their values.
+      </p>
+      
+      <p>
+	<span class="attention">Note</span> that the functionality in the examples of alt-clicking to reset the root is <em>NOT</em>
+	a built-in part of DoubleTreeJS, since it requires getting the new data from the external data source.
+      </p>
+    
+    </section>
+    
+    <section id="allTogether">
+      <h3>Putting it all together</h3>
+      The sample <a href="samples/doubletree-kwic.html" target="_blank">Double Tree with KWIC</a> should give you a good idea of how to proceede.
+      Here are the steps, with reference to that sample.
+      <ol>
+      <li>
+	The first thing to do is set up the data source. Everytime the visualization gets a new root, the data source will have to be consulted.
+	cf. setup(), setupDT(), resetData()
+      </li>
+      <li>
+	Next set up any handlers for interaction (shift-click and alt-click), as well as any filter functions.
+	cf. altHndlr, shiftHndlr, handlers, setupDT()
+      </li>
+      <li>
+	Then set up the GUI elements for search, tokenExtras, and anything else (e.g. getting a new root element from the data source).
+	cf. doSearch(), doClear(), updateFilters(),  togglePOS(), doPredictive(), makeKWIC()
+      </li>
+      <li>
+	Finally, add any explanatory text, etc.
+      </li>
+      </ol>
+      
+    </section>
+    
+    <!-- do Javascript here -->
+     <script>
+      function makeTOC() {
+	var what = " <h3>Contents</h3>\n<ol>";
+	var sections = document.getElementsByTagName("section");
+	for(var i=1,n=sections.length;i<n;i++) {
+	  var thisH3 = sections[i].getElementsByTagName("h3")[0];
+	  if (!thisH3) {
+	    continue;
+	  }
+	  what += '<li><a href="#' + sections[i].id + '">' + thisH3.innerHTML + '</a>';
+	  var h4s = sections[i].getElementsByTagName("h4");
+	  var what2 = "<ol>"
+	  var m=h4s.length;
+	  for(var j=0;j<m;j++) {
+	    var thisH4 = h4s[j];
+	    what2 += '<li><a href="#' + thisH4.id + '">' + thisH4.innerHTML + "</a></li>";
+	  }
+	  if (m > 0) {
+	    what += what2 + "</ol>";
+	  }
+	  what += "</li>";
+	}
+	return what;
+      }
+      document.getElementById("toc").innerHTML  = makeTOC();
+    </script>
+
+  </body>
+</html>

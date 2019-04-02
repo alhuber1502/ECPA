@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - textmodel.TextHash</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/doubletree.html">doubletree</a></li>
+	
+	<li><a href="../symbols/doubletree.DoubleTree.html">doubletree.DoubleTree</a></li>
+	
+	<li><a href="../symbols/doubletree.Trie.html">doubletree.Trie</a></li>
+	
+	<li><a href="../symbols/textmodel.html">textmodel</a></li>
+	
+	<li><a href="../symbols/textmodel.TextHash.html">textmodel.TextHash</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class textmodel.TextHash
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				textmodel.TextHash
+ This is the class for the TextHash document model.
+<p>
+ It is used in the samples as a way of providing information to the {@doubletree.DoubleTree} to create its {@doubletree.Trie} data structure.
+ It is not a <em>necessary</em> component of DoubleTree &mdash; all that really matters is that the relevant {@doubletree.Trie}s get created.
+ For example, instead of TextHash, a database query might provide the input to {@doubletree.Trie}.
+ <p>
+ The TextHash maintains a hash of the data items where the keys are based on the distinguishing fields. The data parameters, except for baseField, 
+ should be the same as those used in the DoubleTree that will visualize the data.
+ <p>
+ "Items" are types, which are associated with token ids. Some functions expect an full item as an argument. Others expect a key as an argument. <a href="../symbols/textmodel.TextHash.html#itemToIndex">#itemToIndex</a> converts a full item to a key.
+ <p>
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/textmodels_TextHash.js.html">TextHash.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class textmodel.TextHash.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/textmodel.TextHash.html#constructor">textmodel.TextHash</a></b>(string, caseSensitive, fldNames, fldDelim, distinguishingFldsArray, baseField, useRecords)
+							</div>
+							<div class="description"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class textmodel.TextHash.">
+					<caption>Field Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Field Attributes</th>
+							<th scope="col">Field Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								<b><a href="../symbols/textmodel.TextHash.html#numTokens">numTokens</a></b>
+								</div>
+								<div class="description">The number of tokens (readOnly)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								<b><a href="../symbols/textmodel.TextHash.html#numTypes">numTypes</a></b>
+								</div>
+								<div class="description">The number of types (readOnly)</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class textmodel.TextHash.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#containsIndex">containsIndex</a></b>(item)
+								</div>
+								<div class="description">is the item key in the model</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#containsItem">containsItem</a></b>(item)
+								</div>
+								<div class="description">is the item in the model</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#fromJSON">fromJSON</a></b>(obj)
+								</div>
+								<div class="description">make this TextHash have the values of a (previously saved) TextHash JSON object</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#getItem">getItem</a></b>(item, contextLen, includeOnly, itemIsRegex, contextFilters, maxRandomHits, puncToExclude)
+								</div>
+								<div class="description">get the information associated with an item
+<p>
+The information is an array of preceding items, an array of matching items, and an array of following items,
+where the preceding and following items are of length contextLen.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#getItemContext">getItemContext</a></b>(item, contextLen, id, itemIsRegex)
+								</div>
+								<div class="description">get a string of context around a single hit</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#getItems">getItems</a></b>(regex, contextLen, includeOnly, contextFilters, maxRandomHits, puncToExclude)
+								</div>
+								<div class="description">Convenience function for textmodel.TextHash#getItem with isRegex=true</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#getUniqItems">getUniqItems</a></b>()
+								</div>
+								<div class="description">get the unique item keys in the model</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#getUniqItemsWithCounts">getUniqItemsWithCounts</a></b>()
+								</div>
+								<div class="description">get the unique item keys in the model, each followed by tab and its token count</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/textmodel.TextHash.html#itemToIndex">itemToIndex</a></b>(item)
+								</div>
+								<div class="description">convert a full item to its key form</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>textmodel.TextHash</b>(string, caseSensitive, fldNames, fldDelim, distinguishingFldsArray, baseField, useRecords)
+				</div>
+				
+				<div class="description">
+					
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								 <b>string</b>
+								
+							</dt>
+								<dd>the input string, where each item is separated by whitespace.</dd>
+						
+							<dt>
+								 <b>caseSensitive</b>
+								
+							</dt>
+								<dd>is the comparison of the baseField case sensitive or not</dd>
+						
+							<dt>
+								 <b>fldNames</b>
+								
+							</dt>
+								<dd>the names of the fields in the data items</dd>
+						
+							<dt>
+								 <b>fldDelim</b>
+								
+							</dt>
+								<dd>the field delimter in the data items. Note: it cannot be a whitespace (e.g. tab), since whitespace is used to delimit items</dd>
+						
+							<dt>
+								 <b>distinguishingFldsArray</b>
+								
+							</dt>
+								<dd>the fields that determine identity</dd>
+						
+							<dt>
+								 <b>baseField</b>
+								
+							</dt>
+								<dd>the primary field for comparison and display (typically token or lemma, but also possibly part of speech)</dd>
+						
+							<dt>
+								 <b>useRecords</b>
+								
+							</dt>
+								<dd>blank lines are treated as delimiting units (records) in the text. Default is false</dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+				<div class="sectionTitle">
+					Field Detail
+				</div>
+				
+					<a name="numTokens"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{number}</span>
+					<b>numTokens</b>
+					
+					</div>
+					<div class="description">
+						The number of tokens (readOnly)
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="numTypes"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{number}</span>
+					<b>numTypes</b>
+					
+					</div>
+					<div class="description">
+						The number of types (readOnly)
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					
+				
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="containsIndex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>containsIndex</b>(item)
+					
+					</div>
+					<div class="description">
+						is the item key in the model
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>item</b>
+									
+								</dt>
+								<dd>a key (not a full item)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>true if the item key is in the model, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="containsItem"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>containsItem</b>(item)
+					
+					</div>
+					<div class="description">
+						is the item in the model
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>item</b>
+									
+								</dt>
+								<dd>a full item (not a key)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>true if the item is in the model, false otherwise</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="fromJSON"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>fromJSON</b>(obj)
+					
+					</div>
+					<div class="description">
+						make this TextHash have the values of a (previously saved) TextHash JSON object
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>obj</b>
+									
+								</dt>
+								<dd>the TextHash JSON object</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getItem"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getItem</b>(item, contextLen, includeOnly, itemIsRegex, contextFilters, maxRandomHits, puncToExclude)
+					
+					</div>
+					<div class="description">
+						get the information associated with an item
+<p>
+The information is an array of preceding items, an array of matching items, and an array of following items,
+where the preceding and following items are of length contextLen.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>item</b>
+									
+								</dt>
+								<dd>a key (not a full item)</dd>
+							
+								<dt>
+									<b>contextLen</b>
+									
+								</dt>
+								<dd>the length of the preceding and following context to be returned</dd>
+							
+								<dt>
+									<b>includeOnly</b>
+									
+								</dt>
+								<dd>an object where the keys are the item ids to be included (optional)</dd>
+							
+								<dt>
+									<b>itemIsRegex</b>
+									
+								</dt>
+								<dd>true if the item parameter should be considered as a regular expression instead of as a true item</dd>
+							
+								<dt>
+									<b>contextFilters</b>
+									
+								</dt>
+								<dd>an object with "include" OR "exclude" which have objects whose keys are fields and whose values are arrays of values of those fields e.g. {"include":{"POS":["NN","NNS"]}} would include in the context only those items whose POS is NN or NNS.
+Similarly, "leftEnd" and "rtEnd" (both are possible together) indicate properties determining the left and right end points of the context, excluding those elements. So {"leftEnd":{"POS":["SENT"]}, "rtEnd":{"POS":["MD"]}} would include in the left context elements up to but not including the first SENT POS, and in the right context elements up to but not including the first MD POS.</dd>
+							
+								<dt>
+									<b>maxRandomHits</b>
+									
+								</dt>
+								<dd>how many random hits to return. -1 or null to return all</dd>
+							
+								<dt>
+									<b>puncToExclude</b>
+									
+								</dt>
+								<dd>a string of punctuation to exclude from the base field (will override any punctuation allowed via "include" in contextFilters). Default is null (i.e. include all punctuation)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>array of [array of prefixes, array of item, array of suffixes, array of ids]</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getItemContext"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getItemContext</b>(item, contextLen, id, itemIsRegex)
+					
+					</div>
+					<div class="description">
+						get a string of context around a single hit
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>item</b>
+									
+								</dt>
+								<dd>the item key (not a full form)</dd>
+							
+								<dt>
+									<b>contextLen</b>
+									
+								</dt>
+								<dd>the length of the preceding and following context to include</dd>
+							
+								<dt>
+									<b>id</b>
+									
+								</dt>
+								<dd>the id of the hit to return</dd>
+							
+								<dt>
+									<b>itemIsRegex</b>
+									
+								</dt>
+								<dd>true if the item parameter should be considered as a regular expression instead of as a true item (This should match the value in the original query)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>string of context around the item with id, including the item itself</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getItems"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getItems</b>(regex, contextLen, includeOnly, contextFilters, maxRandomHits, puncToExclude)
+					
+					</div>
+					<div class="description">
+						Convenience function for textmodel.TextHash#getItem with isRegex=true
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>regex</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>contextLen</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>includeOnly</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>contextFilters</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>maxRandomHits</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>puncToExclude</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getUniqItems"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getUniqItems</b>()
+					
+					</div>
+					<div class="description">
+						get the unique item keys in the model
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>a sorted (case insensitive) array of item keys</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getUniqItemsWithCounts"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>getUniqItemsWithCounts</b>()
+					
+					</div>
+					<div class="description">
+						get the unique item keys in the model, each followed by tab and its token count
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>a sorted (case insensitive) array of item keys with their token counts</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="itemToIndex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>itemToIndex</b>(item)
+					
+					</div>
+					<div class="description">
+						convert a full item to its key form
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>item</b>
+									
+								</dt>
+								<dd>the full item</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>the key form of the item</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Oct 19 2015 19:21:49 GMT-0400 (EDT)
+		</div>
+	</body>
+</html>
