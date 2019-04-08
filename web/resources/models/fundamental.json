@@ -5,7 +5,7 @@
   "contents": [
    {
     "id": "thing-place",
-    "label": "<b>Thing<\/b> / <b>Place<\/b>",
+    "label": "<b>Thing<\/b> related to <b>Place<\/b>",
     "contents": [
      {
       "id": "thing-place-a",
@@ -1407,126 +1407,132 @@
       ]
      },
      {
-      "id": "thing-place-c3-1",
-      "path": [
+      "id": "thing-place-c3",
+      "label": "<b>Thing<\/b> produced by someone born in <b>Place<\/b>",
+      "contents": [
        {
-        "s": {
-         "name": "s1",
-         "id": "crm:E70_Thing",
-         "stype": "string"
-        },
-        "p": {
-         "name": "p1",
-         "id": "crm:P92i_was_brought_into_existence_by",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o1",
-         "id": "crm:E63_Beginning_of_Existence",
-         "stype": "string",
-         "svalue": "s2"
-        },
-        "req": true,
-        "rep": false
-       },
-       {
-        "s": {
-         "name": "s2",
-         "id": "crm:E63_Beginning_of_Existence",
-         "stype": "string"
-        },
-        "p": {
-         "name": "p2",
-         "id": "crm:P9i_forms_part_of",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o2",
-         "id": "crm:E7_Activity",
-         "stype": "string",
-         "svalue": "s3"
-        },
-        "req": true,
-        "rep": false
-       },
-       {
-        "s": {
-         "name": "s3",
-         "id": "crm:E7_Activity",
-         "stype": "string"
-        },
-        "p": {
-         "name": "p3",
-         "id": "crm:P14_carried_out_by",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o3",
-         "id": "crm:E39_Actor",
-         "stype": "string",
-         "svalue": "s4"
-        },
-        "req": true,
-        "rep": false
-       },
-       {
-        "s": {
-         "name": "s4",
-         "id": "crm:E39_Actor",
-         "stype": "string"
-        },
-        "p": {
-         "name": "p4",
-         "id": "crm:P92i_was_brought_into_existence_by",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o4",
-         "id": "crm:E63_Beginning_of_Existence",
-         "stype": "string",
-         "svalue": "s5"
-        },
-        "req": true,
-        "rep": false
-       },
-       {
-        "s": {
-         "name": "s5",
-         "id": "crm:E63_Beginning_of_Existence",
-         "stype": "string"
-        },
-        "p": {
-         "name": "p5",
-         "id": "crm:P7_took_place_at",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o5",
-         "id": "crm:E53_Place",
-         "stype": "string"
-        },
-        "req": true,
-        "rep": false
-       },
-       {
-        "s": {
-         "name": "s6",
-         "id": "crm:E53_Place",
-         "stype": "string",
-         "svalue": "o5"
-        },
-        "p": {
-         "name": "p6",
-         "id": "crm:P2_has_type",
-         "stype": "string"
-        },
-        "o": {
-         "name": "o6",
-         "id": "crm:E55_Type",
-         "stype": "string"
-        },
-        "req": false,
-        "rep": false
+        "id": "thing-place-c3-1",
+        "path": [
+         {
+          "s": {
+           "name": "s1",
+           "id": "crm:E70_Thing",
+           "stype": "string"
+          },
+          "p": {
+           "name": "p1",
+           "id": "crm:P92i_was_brought_into_existence_by",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o1",
+           "id": "crm:E63_Beginning_of_Existence",
+           "stype": "string",
+           "svalue": "s2"
+          },
+          "req": true,
+          "rep": false
+         },
+         {
+          "s": {
+           "name": "s2",
+           "id": "crm:E63_Beginning_of_Existence",
+           "stype": "string"
+          },
+          "p": {
+           "name": "p2",
+           "id": "crm:P9i_forms_part_of",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o2",
+           "id": "crm:E7_Activity",
+           "stype": "string",
+           "svalue": "s3"
+          },
+          "req": true,
+          "rep": false
+         },
+         {
+          "s": {
+           "name": "s3",
+           "id": "crm:E7_Activity",
+           "stype": "string"
+          },
+          "p": {
+           "name": "p3",
+           "id": "crm:P14_carried_out_by",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o3",
+           "id": "crm:E39_Actor",
+           "stype": "string",
+           "svalue": "s4"
+          },
+          "req": true,
+          "rep": false
+         },
+         {
+          "s": {
+           "name": "s4",
+           "id": "crm:E39_Actor",
+           "stype": "string"
+          },
+          "p": {
+           "name": "p4",
+           "id": "crm:P92i_was_brought_into_existence_by",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o4",
+           "id": "crm:E63_Beginning_of_Existence",
+           "stype": "string",
+           "svalue": "s5"
+          },
+          "req": true,
+          "rep": false
+         },
+         {
+          "s": {
+           "name": "s5",
+           "id": "crm:E63_Beginning_of_Existence",
+           "stype": "string"
+          },
+          "p": {
+           "name": "p5",
+           "id": "crm:P7_took_place_at",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o5",
+           "id": "crm:E53_Place",
+           "stype": "string"
+          },
+          "req": true,
+          "rep": false
+         },
+         {
+          "s": {
+           "name": "s6",
+           "id": "crm:E53_Place",
+           "stype": "string",
+           "svalue": "o5"
+          },
+          "p": {
+           "name": "p6",
+           "id": "crm:P2_has_type",
+           "stype": "string"
+          },
+          "o": {
+           "name": "o6",
+           "id": "crm:E55_Type",
+           "stype": "string"
+          },
+          "req": false,
+          "rep": false
+         }
+        ]
        }
       ]
      }
@@ -1534,7 +1540,7 @@
    },
    {
     "id": "thing-thing",
-    "label": "<b>Thing<\/b> / <b>Thing<\/b>",
+    "label": "<b>Thing<\/b> related to <b>Thing<\/b>",
     "contents": [
      {
       "id": "thing-thing-a",
@@ -2383,7 +2389,7 @@
    },
    {
     "id": "thing-actor",
-    "label": "<b>Thing<\/b> / <b>Actor<\/b>",
+    "label": "<b>Thing<\/b> related to <b>Actor<\/b>",
     "contents": [
      {
       "id": "thing-actor-a",
@@ -3252,7 +3258,7 @@
    },
    {
     "id": "thing-event",
-    "label": "<b>Thing<\/b> / <b>Event<\/b>",
+    "label": "<b>Thing<\/b> related to <b>Event<\/b>",
     "contents": [
      {
       "id": "thing-event-a",
@@ -3980,7 +3986,7 @@
    },
    {
     "id": "thing-concept",
-    "label": "<b>Thing<\/b> / <b>Concept/Type<\/b>",
+    "label": "<b>Thing<\/b> related to <b>Concept/Type<\/b>",
     "contents": [
      {
       "id": "thing-concept-a",
@@ -4247,7 +4253,7 @@
   "contents": [
    {
     "id": "place-place",
-    "label": "<b>Place<\/b> / <b>Place<\/b>",
+    "label": "<b>Place<\/b> related to <b>Place<\/b>",
     "contents": [
      {
       "id": "place-place-a",
@@ -4406,7 +4412,7 @@
    },
    {
     "id": "place-thing",
-    "label": "<b>Place<\/b> / <b>Thing<\/b>",
+    "label": "<b>Place<\/b> related to <b>Thing<\/b>",
     "contents": [
      {
       "id": "place-thing-a",
@@ -5412,7 +5418,7 @@
    },
    {
     "id": "place-actor",
-    "label": "<b>Place<\/b> / <b>Actor<\/b>",
+    "label": "<b>Place<\/b> related to <b>Actor<\/b>",
     "contents": [
      {
       "id": "place-actor-a",
@@ -6360,7 +6366,7 @@
    },
    {
     "id": "place-event",
-    "label": "<b>Place<\/b> / <b>Event<\/b>",
+    "label": "<b>Place<\/b> related to <b>Event<\/b>",
     "contents": [
      {
       "id": "place-event-a",
@@ -6848,7 +6854,7 @@
    },
    {
     "id": "place-concept",
-    "label": "<b>Place<\/b> / <b>Concept<\/b>",
+    "label": "<b>Place<\/b> related to <b>Concept<\/b>",
     "contents": [
      {
       "id": "place-concept-a",
@@ -6890,7 +6896,7 @@
   "contents": [
    {
     "id": "actor-place",
-    "label": "<b>Actor<\/b> / <b>Place<\/b>",
+    "label": "<b>Actor<\/b> related to <b>Place<\/b>",
     "contents": [
      {
       "id": "actor-place-a",
@@ -7764,7 +7770,7 @@
    },
    {
     "id": "actor-thing",
-    "label": "<b>Actor<\/b> / <b>Thing<\/b>",
+    "label": "<b>Actor<\/b> related to <b>Thing<\/b>",
     "contents": [
      {
       "id": "actor-thing-a",
@@ -8326,7 +8332,7 @@
    },
    {
     "id": "actor-actor",
-    "label": "<b>Actor<\/b> / <b>Actor<\/b>",
+    "label": "<b>Actor<\/b> related to <b>Actor<\/b>",
     "contents": [
      {
       "id": "actor-actor-a",
@@ -9580,7 +9586,7 @@
    },
    {
     "id": "actor-event",
-    "label": "<b>Actor<\/b> / <b>Event<\/b>",
+    "label": "<b>Actor<\/b> related to <b>Event<\/b>",
     "contents": [
      {
       "id": "actor-event-a",
@@ -10666,7 +10672,7 @@
    },
    {
     "id": "actor-concept",
-    "label": "<b>Actor<\/b> / <b>Concept/Type<\/b>",
+    "label": "<b>Actor<\/b> related to <b>Concept/Type<\/b>",
     "contents": [
      {
       "id": "actor-concept-e",
@@ -10708,7 +10714,7 @@
   "contents": [
    {
     "id": "event-place",
-    "label": "<b>Event<\/b> / <b>Place<\/b>",
+    "label": "<b>Event<\/b> related to <b>Place<\/b>",
     "contents": [
      {
       "id": "event-place-a",
@@ -11568,7 +11574,7 @@
    },
    {
     "id": "event-thing",
-    "label": "<b>Event<\/b> / <b>Thing<\/b>",
+    "label": "<b>Event<\/b> related to <b>Thing<\/b>",
     "contents": [
      {
       "id": "event-thing-a",
@@ -12574,7 +12580,7 @@
    },
    {
     "id": "event-actor",
-    "label": "<b>Event<\/b> / <b>Actor<\/b>",
+    "label": "<b>Event<\/b> related to <b>Actor<\/b>",
     "contents": [
      {
       "id": "event-actor-a",
@@ -13483,10 +13489,12 @@
         ]
        }
       ]
-     },
+     }
+    ]
+   },
      {
       "id": "event-event",
-      "label": "<b>Event<\/b> / <b>Event<\/b>",
+      "label": "<b>Event<\/b> related to <b>Event<\/b>",
       "contents": [
        {
         "id": "event-event-a",
@@ -14355,7 +14363,7 @@
      },
      {
       "id": "event-concept",
-      "label": "<b>Event<\/b> / <b>Concept<\/b>",
+      "label": "<b>Event<\/b> related to <b>Concept<\/b>",
       "contents": [
        {
         "id": "event-concept-a",
@@ -14388,10 +14396,8 @@
         ]
        }
       ]
-     }
-    ]
-   }
-  ]
+      }
+      ]
  },
  {
   "id": "concept",
@@ -14399,7 +14405,7 @@
   "contents": [
    {
     "id": "concept-place",
-    "label": "<b>Concept<\/b> / <b>Place<\/b>",
+    "label": "<b>Concept<\/b> related to <b>Place<\/b>",
     "contents": [
      {
       "id": "concept-place-a",
@@ -14435,11 +14441,11 @@
    },
    {
     "id": "concept-thing",
-    "label": "<b>Concept<\/b> / <b>Thing<\/b>",
+    "label": "<b>Concept<\/b> related to <b>Thing<\/b>",
     "contents": [
      {
       "id": "concept-thing-a",
-      "label": "<b>Concept<\/b> is type of <bThing<\/b>",
+      "label": "<b>Concept<\/b> is type of <b>Thing<\/b>",
       "contents": [
        {
         "id": "concept-thing-a-1",
@@ -14471,7 +14477,7 @@
    },
    {
     "id": "concept-actor",
-    "label": "<b>Concept<\/b> / <b>Actor<\/b>",
+    "label": "<b>Concept<\/b> related to <b>Actor<\/b>",
     "contents": [
      {
       "id": "concept-actor-a",
@@ -14507,7 +14513,7 @@
    },
    {
     "id": "concept-event",
-    "label": "<b>Concept<\/b> / <b>Event<\/b>",
+    "label": "<b>Concept<\/b> related to <b>Event<\/b>",
     "contents": [
      {
       "id": "concept-event-a",
@@ -14543,7 +14549,7 @@
    },
    {
     "id": "concept-concept",
-    "label": "<b>Concept<\/b> / <b>Concept<\/b>",
+    "label": "<b>Concept<\/b> related to <b>Concept<\/b>",
     "contents": [
      {
       "id": "concept-concept-a",

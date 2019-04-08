@@ -84,27 +84,33 @@ if ($('#reading').length) {
 // Visualization
     // load phonemes (w) data
     $.ajax({
-	url: "/works/"+docname+"/"+docname+"_p.json", dataType: 'json', async: false,
+	url: "/works/"+docname+"/"+docname+"_p.json", dataType: 'json',
 	success: function(data) { p = data; }
     });
 
     // load line data
     $.ajax({
-	url: "/works/"+docname+"/"+docname+"_l.json", dataType: 'json', async: false,
+	url: "/works/"+docname+"/"+docname+"_l.json", dataType: 'json',
 	success: function(data) { l = data; }
     });
 
 // Modelling
     // load ontologies
     $.ajax({
-	url: "/resources/models/onto.json", dataType: 'json', async: false,
+	url: "/resources/models/onto.json", dataType: 'json',
 	success: function(data) { onto = data; }
     });
     
     // load fundamentals
     $.ajax({
-	url: "/resources/models/fundamental.json", dataType: 'json', async: false,
+	url: "/resources/models/fundamental.json", dataType: 'json',
 	success: function(data) { fcr = data; }
+    });
+    
+    // load hierarchies
+    $.ajax({
+	url: "/resources/models/ontohier.json", dataType: 'json',
+	success: function(data) { ontohier = data; }
     });
     
     

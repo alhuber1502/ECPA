@@ -306,11 +306,11 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
 // make disabled tabs "disabled" (bug in BS3.3.6)
 $("a[data-toggle='tab'],[role='menu']>li>a").on("click", function(e) {
-	if ( $(this).parent().hasClass('disabled') ) {
-	    e.preventDefault(); // prevent hash to change
-	    e.stopImmediatePropagation(); // prevent "active" state change
-	}
-    });
+    if ( $(this).parent().hasClass('disabled') ) {
+	e.preventDefault(); // prevent hash to change
+	e.stopImmediatePropagation(); // prevent "active" state change
+    }
+});
 
 // on switching secondary tabs do ...
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {

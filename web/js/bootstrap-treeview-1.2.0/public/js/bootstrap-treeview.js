@@ -314,10 +314,15 @@
 		});
 	};
 
+
 	Tree.prototype.clickHandler = function (event) {
-
-		if (!this.options.enableLinks) event.preventDefault();
-
+	    // -AH-
+	    // prevent default action for links with "enableLinks" set
+	    // remove any popovers when clicking on node
+	    //	        if (!this.options.enableLinks) event.preventDefault();
+	        event.preventDefault();
+		$(".popover").remove();
+	    // -AH-
 		var target = $(event.target);
 		var node = this.findNode(target);
 		if (!node || node.state.disabled) return;
@@ -343,6 +348,10 @@
 
 			this.render();
 		}
+	    // -AH-
+		triggerMe( target );
+	    // -AH-
+
 	};
 
 	// Looks up the DOM for the closest parent list item to retrieve the
@@ -499,6 +508,7 @@
 
 		// Build tree
 		this.buildTree(this.tree, 0);
+
 	};
 
 	// Starting from the root node, and recursing down the
