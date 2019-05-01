@@ -5,13 +5,14 @@ html, body {
   /* The html and body elements cannot have any padding or margin. */
   padding: 0;
   margin: 0;
-  max-width:1920px;
 }
 
 body {
   font-family: "Open Sans",sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
+  max-width:1920px;
+  margin:auto;
 }
 
 /*:target:not(#text a:target):before {*/
@@ -44,8 +45,8 @@ body {
 #footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  min-width: 1080px;
   height: 40px;
   max-height: 40px;
   background-color: #f5f5f5;
