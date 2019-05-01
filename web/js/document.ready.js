@@ -1,6 +1,6 @@
 
 // Document ready
-//$( document ).ready(function() {
+$( document ).ready(function() {
 
     // dropdown navigation
     $('.dropdown').hover(function() {
@@ -185,11 +185,21 @@
 	$("#myImageControls p").replaceWith("<p><em>"+title[id]+"</em> / "+desc[id]+"</p>");
     }
 
+    // extend JSONform to allow for HTML snippets
+    JSONForm.fieldTypes['htmlsnippet'] = {
+        template: '<%=node.value%>'
+    };
+
+    // RDF prefixes
+    triples_pre = `@base `+NS[""]()+` .\n`;
+    jQuery.each( NS, function( index, value ) {
+	triples_pre += `@prefix `+index+`: `+NS[index]()+` .\n`;
+    });
 
     // default IC modal
     IC_modal();
 
-//});
+});
 
 
 // gallery navigation

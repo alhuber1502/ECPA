@@ -1,17 +1,12 @@
 
 /* Modelling */
 
-/* create model */
-#newModal textarea {
-    resize: vertical;
-}
 
 /* Layout */
 #mod_view {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow:hidden;
 }
 #mod_head {
     height: 50px;
@@ -22,21 +17,98 @@
 #mod_view .mod_content {
     flex: 1;
     display: flex;
+    overflow:hidden;
 }
 .mod_content .mod_columns {
     display: flex;
     flex: 1;
+    height:100%;
 }
 #mod_cy {
     flex: 1;
+    position:relative;
 }
 #mod_ctl {
     width: 25%;
     overflow:auto;
-    height:50%;
+    height:100%;
+    position:relative;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+#mod_ctl .panel-group {
+    margin-bottom:0;
+}
+#mod_ctl .panel-body {
+    padding: 15px 0 0 15px;
+}
+#mod_ctl_nav .panel-heading {
+    padding: 0 10px;
+    height: 30px;
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
+}
+#mod_ctl_sel {
+    display:none;
+    height:auto;
+}
+#mod_ctl_sel_res.panel {
+    margin-bottom:0;
+}
+#mod_ctl_sel_res ol {
+    margin-left:-15px;
+}
+#mod_ctl_sel_res #pred ul {
+    margin-left:-20px;
+}
+#mod_ctl_sel_res .shortcutLink,
+#mod_ctl_sel_res .relsLink,#pred_undo {
+    cursor:pointer;
+}
+#mod_ctl_sel_res {
+    height:inherit;
+}
+#mod_ctl_sel_res .close {
+    opacity:.6;
+    color:white;;
+}
+#mod_ctl_sel_res button.btn {
+    float:right;
+    margin:0 5px 15px 0;
+}
+#mod_ctl_sel_res .panel-body > ul {
+    margin-left: -40px;
+    list-style: none;
+}
+#idmd {
+    margin-left:-30px;
+}
+#idmd div.listBibl ul li > span {
+    display: inline-block;
+    width: 85%;
+    margin-left: 0;
+}
+#idmd div.listBibl ul li span:nth-child(2) {
+    display: inline-block;
+    width: 20%;
 }
 
 
+/* JSONForm */
+form p {
+    margin: -15px 10px 10px 15px;
+}
+.expandable > legend:before {
+  content: '\25B8';
+  padding-right: 5px;
+}
+.expanded > legend:before {
+  content: '\25BE';
+}
+/* create model */
+#newModal textarea {
+    resize: vertical;
+}
 /* shortcuts */
 form[name="shortcut"] fieldset .form-group,
 form[name="shortcut"] fieldset.expandable .form-group .form-group {
@@ -49,19 +121,6 @@ form[name="shortcut"] fieldset.expandable > .form-group {
 }
 legend {
     margin-bottom:5px;
-}
-
-
-/* JSONForm */
-form p {
-    margin: 0px 10px 15px 15px;
-}
-.expandable > legend:before {
-  content: '\25B8';
-  padding-right: 5px;
-}
-.expanded > legend:before {
-  content: '\25BE';
 }
 
 
@@ -86,6 +145,14 @@ form p {
     padding: 2px 5px;
 }
 .treeview span.indent {
-    margin-left: 7px;
-    margin-right: 7px;
+    margin-left: 10px !important;
+    margin-right: 5px !important;
 }
+.popover-content {
+    font-size:12px;
+    max-height:unset;
+}
+#treeview-ontofcr b {
+    font-weight: normal;
+}
+

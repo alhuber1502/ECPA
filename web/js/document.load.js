@@ -6,7 +6,6 @@ $.ajax({
 });
 
 function output_met(met) {
-    //    return met.replace(/\-/g,"&#x23d1;").replace(/\+/g," &#x2032;");    
     return met.replace(/\-/g," &#x02d8; ").replace(/\+/g,"&#x2032;");
 }
 
@@ -90,7 +89,7 @@ if ($('#reading').length) {
 
     // load line data
     $.ajax({
-	url: "/works/"+docname+"/"+docname+"_l.json", dataType: 'json',
+	url: "/works/"+docname+"/"+docname+"_l.json", dataType: 'json', async: false,
 	success: function(data) { l = data; }
     });
 
@@ -106,7 +105,7 @@ if ($('#reading').length) {
 	url: "/resources/models/fundamental.json", dataType: 'json',
 	success: function(data) { fcr = data; }
     });
-    
+
     // load hierarchies
     $.ajax({
 	url: "/resources/models/ontohier.json", dataType: 'json',

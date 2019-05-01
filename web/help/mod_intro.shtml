@@ -23,14 +23,14 @@
   interoperability between them is achieved.
 </p>
 
-<p>It is important to note that these models are not experiential or subjective,
+<p>It is important to note that these models are not experiential or idiosyncratic,
   but are expressed using shared conceptualizations, which makes them useful beyond the
   original context and purpose of their creation.  Models co-exist to shed light on the
   modelled reality from a variety of angles, and because of their formalization can be
   shared, re-used, adapted (forked), enhanced, aggregated, and even developed
   collaboratively.<sup>4</sup>  A pre-requesite for this collaborative effort is a shared
-  vision of our domain (literature) and an agreement on the theoretical underpinnings of
-  our concepts and modelled representations.  These formalized shared conceptualizations
+  vision of our domain (literary studies) and an agreement on the theoretical underpinnings
+  of our concepts and modelled representations.  These formalized shared conceptualizations
   are provided by ontologies.
 </p>
 
@@ -41,7 +41,7 @@
   semantics.  In the ontologies used in this project, we find concepts such as <em>work,
   manuscript, book, author, period, event, production, document, time-span, place, language,
   material, apparatus, line, foot, rhyme, stanza,</em> and hundreds more.  We also find
-  properties and relations between these concepts with varying degrees of specificity such as
+  properties and relations between these concepts with varying degrees of specificity, such as
   <em>mentions, is related to, analyses, has type, consists of, was motivated by, has
   dimensions, has current location, has title, occurs at, is derived from, is mentioned in,
   is irregular,</em> and many more.  Ontologies allow us to capture, encode and organise our
@@ -49,15 +49,15 @@
 </p>
 
 <p>In <!--#echo var="ecep" -->, we employ the <a href="http://www.cidoc-crm.org/" target="_blank"
-  class="external">CIDOC CRM</a> family of ontologies as reference ontologies for the cultural
+  class="external">CIDOC CRM</a> family of ontologies<sup>6</sup> as reference ontologies for the cultural
   heritage domain, and we use <a href="http://postdata.linhd.uned.es/" class="external"
   target="_blank">POSTDATA</a> as a domain ontology specifically to model poetic texts.  We
   employ the CRM as our primary reference model due to its stability and longevity (ISO standard),
-  cross-domain robustness and expressivity, and adaptability and modular extensibility.<sup>6</sup>
+  cross-domain robustness and expressivity, and adaptability and modular extensibility.<sup>7</sup>
   CRM offers hundreds of concepts and relationships, and although not specifically designed with
   our application in mind, it is flexible and extensible enough to serve as a starting point
-  (reference ontology) for modelling textual history, analysis, and scholarly argumentation
-  more generally.  With its many extension ontologies, it also caters for describing archival and
+  for modelling textual history, analysis, and scholarly argumentation more generally.  
+  With its many extension ontologies, it also caters for describing archival and
   library resources, provenance, and material aspects.  We thus hope to offer a feasible way of
   modelling discourse in the literary domain, from the detailed description of poetic form and
   function (POSTDATA) to scholarly argumentation and knowledge representation more generally (CRM).
@@ -65,38 +65,44 @@
 
 <p>The models in <!--#echo var="ecep" -->  are expressed using <a class="external" target="_blank"
   href="https://www.w3.org/RDF/">RDF</a> (Resource Description Framework), the language of the
-  semantic web.<sup>7</sup>
+  semantic web.<sup>8</sup>
 </p>
 
 <h3>Implementation and practice</h3>
 
 <p>CRM is an <em>event-centric ontology</em>, which should not feel completely at odds with our practice
-  as literary scholars:  e.g., the publication of a book is conceived of as a <em>publication event</em>,
+  as literary scholars.  The publication of a book, for example, is conceived of as a <em>publication event</em>,
   the outcome of which is said book, and in which an author, publisher, and printer participated.
   It took place at a specific place and a specific time, etc.  It is through these events that we
   connect people, places, time-spans, concepts, ideas, objects, and much more.  These events become the
-  basic units of description, and at the same time as a network provide the context (e.g. historical,
+  basic units of description, and at the same time&#x2014;as a network&#x2014;provide the context (e.g. historical,
   sociological, economic, literary) for the modelled events.  Put simply, whatever we talk about or are
   interested in become instances of concepts or things conceptualised in our ontologies, and by talking
-  about them, they come into being.<sup>8</sup>
+  about them, they come into existence.
 </p>
 
-<p>Ontological modelling in RDF is based on the idea of making statements about resources in
-  expressions of the form <em>subject – predicate – object,</em> known as triples.  The subject denotes
-  the resource we want to talk about, and the predicate denotes traits or aspects of the resource, and
-  expresses a relationship between the subject and the object. E.g. the sentence "Alexander Pope's poem
+<p>Ontological modelling is based on the idea of making statements about resources in
+  expressions of the form <em>subject – predicate – object,</em>, known as triples.  The subject denotes
+  the resource we want to talk about, the predicate denotes traits or aspects of the resource, and
+  expresses a relationship between the subject and the object.  E.g. the sentence "Alexander Pope's poem
   'Windsor Forest' was published in 1744.' could be formally expressed as
   <blockquote>
-  :WindsorForest is_of_the_type Poem.<br/>
-  :WindsorForest has_author Alexander_Pope.<br/>
-  :WindsorForest was_published_in 1744.<br/>
+    :WindsorForest is_of_the_type :Poem .<br/>
+    :WindsorForest has_author :AlexanderPope .<br/>
+    :WindsorForest was_published_in "1744" .<br/>
+  </blockquote>
+  We can see that by modelling knowlege is this formal manner, we can
+  already infer several additional statements that must be true:
+  <blockquote>
+    :AlexanderPope is_of_the_type :Poet .
+    ...?
   </blockquote>
 </p>
 
 <p>The <!--#echo var="ecep" --> <em>modelling view interface</em> has been designed in a way that
   is easy to grasp, learn, and perform.
   Our tool is at the same time modelling and publishing tool, and by far the most ambitious tool
-  creation effort undertaken by the  research project so far.
+  creation effort undertaken in this research project so far.
 
 The shortcuts implemented are based on the idea of "Fundamental
   Categories" (FC) and "Fundamental Relationships" (FR)
@@ -106,7 +112,7 @@ The shortcuts implemented are based on the idea of "Fundamental
   on to further
 
   Ultimately, we expect these models to constitute a dataset that will be useful
-  for the computational interpretation of the poems.
+  for the computationally-assisted interpretation of the poems.
 
   As a practice, modelling is rarely linear.  It favours the iterative, cyclical, and
   reciprocal with repeated loops of testing, feedback, and adjustment.  
@@ -135,6 +141,23 @@ arriving at ever more sophisticated and adequate models through common practices
 Reasoning is an important way of producing new insights, and formal models can be expressed as
  a system of logical propositions, which can be reasoned upon.  
 
+Creating new models and forking
+
+Forking existing models is at the heart of collaborative digital
+  scholarship.  When forking a model, the model becomes the starting
+  point of a collaborative effort.  The two main purposes of forking 
+  a model are 1. the ability to build upon each other's work and 2. 
+  to offer changes (hopefully, improvements) back to the original 
+  modeller.  Forking facilitates a mode of thinking, learning, and
+  researching that is profoundly social in nature. 
+
+All models are private by default.  You can continue working on your
+  model in private until you're happy for it to be shared with others.
+  Only when you submit a model for publication (and subject to an
+  integrity review), will it become available publicly on the Website.
+  Only then will colleagues and potential collaborators be able to
+  view and fork your model.
+
 this is not an attempt to limit expressivity or freedom, it is a plea for adopting common
   practices where those are possible: opportunities for beneficial formalisms, clarity and precision
   of expression, and collaboratively create and collectively benefit from improved knowledge models.
@@ -162,19 +185,20 @@ Key advantages of an ontology of Eighteenth-Century Poetry would be:
   research reproducable, extensible, and thanks to the ontological underpinnings,
   machine-understandable.
 </p>
-  
+
 <h3>Telling bigger stories</h3>
 
  For modelling to succeed and become the stepping stone to interpretation we believe
  it will be, it needs to be a participatory methodology to produce and organize shared
- knowledge.
+ knowledge, thus transcending our individualistic analytical tradition.
 
- A dominant metaphor in reflecting on the practice of modelling is a cognitive one: to
- know is to see.  According to this metaphor, modelling is a practice that allows us to
- look at/represent/think about/interpret an object.
- A model is a heuristic tool (lens) by means of which an object is redescribed and a result
- of the process of redescription, a starting point for a new interpretation of the object
- itself.
+ A dominant metaphor in reflecting on the practice of modelling is a
+ cognitive one:  to know is to see.  According to this metaphor,
+ modelling is a practice that allows us to look at/represent/think
+ about/interpret an object.  A model is a heuristic tool (lens) by
+ means of which an object is redescribed and a result of the process
+ of redescription, a starting point for a new interpretation of the
+ object itself.
  A model is a thinking tool, a cognitive instrument, modelling an activity, actualisation,
  production to formalize and express explicitly in a formal language.
  Through modelling we engage in thought experiments 
@@ -192,16 +216,16 @@ In the context and for the purpose of this project, the <em>modelling view</em>
   Modeling Texts and Text-based Resources</em>, ed. Julia Flanders and Fotis Jannidis.
   London and New York: Routledge, 2019.<br/>
 <sup>2</sup> 
-In this research, I am not interested in computers as hypothesis-testing or
-  fact-finding machines, or indeed in attempting to teach the computer to read and analyse
-  a text like a human would.  Long-term, I am interested in how computers read, analyse,
-  and ultimately interpret a text, and in understanding the adaptations, mediations, and
+In this research, I am <em>not</em> interested in computers as hypothesis-testing or
+  fact-finding machines, or indeed in attempting to teach a computer to read and analyse
+  a text like a human reader would.  Long-term, I am interested in how computers read, analyse,
+  and ultimately interpret texts, and in understanding the adaptations, mediations, and
   negotiations necessary to activate this potential for our own understanding and
   investigation of new territory.  I consider <em>modelling</em> and, alongside it,
   <em>simulation</em> as crucial steps towards this aim.<br/>
 <sup>3</sup> 
 Models acknowledge their situational, perspectival, and research-led character, but are not
-  limited to a specific time-frame, a singular purpose, and are not ideosyncratic.  They
+  limited to a specific time-frame, a singular purpose, and are not idiosyncratic.  They
   make their assumptions, conceptualizations, contextualizations, and other forms of
   implicit knowledge as explicit as possible and thus aim to contribute to a common
   (adequate and appropriate) understanding of the domain.<br/>
@@ -211,21 +235,28 @@ The multiplicity of models in the <em>modelling view</em> is therefore not a col
   models, modellers, and modelled aspects of those realities.  Models are performative in nature,
   inviting manipulation and experimentation.  As changes in perspective are acted out
   (simulated), new insights are won.  And as models mature, they represent both the what and
-  how of the knowledge created.<br/>
+  the how of the knowledge created.<br/>
 <sup>5</sup> 
 This is not to suggest that agreement about semantics is achievable in every instance, it
   implies, however, a willingness to embrace the core humanistic ideal of unambiguous
   formulation and expression in order to make humanistic concepts and methods computationally 
   operational.<br/>
-<sup>6</sup>
+<sup>6</sup> 
+As of v1.1 of ECPA, the versions of the CRM used are: CIDOC CRM
+v6.2.1 (draft) encoded in RDFS, CRMinf 0.7 Encoded in RDFS, and FRBRoo
+v2.4 DRAFT harmonised with CIDOC CRM v6.2.1 encoded in RDFS.  These
+are currently the latest versions for which RDFS representations exist.  For the
+purposes of simplification, we use a subset or "reduced CRM-compatible
+form" of the CRM.<br/>
+<sup>7</sup>
 Our domain ontology is based on an open world assumption, which accepts that, as in the
   humanities more generally, our knowledge is frequently incomplete, provisional, and
   underspecified, i.e. there will be exceptions, limitations, omissions in our
   conceptualisations.  It is important to realize that it will be easier to model some aspects
   than others.  One aspect we are keen to focus on are situtations where it feels "impossible"
-  to express something we we want to include in a model.<br/>
-<sup>7</sup> 
-Models are serialized (i.e. stored as files) as N-Triples (a very simple, easy-to-parse,
+  to express something we want to include in a model.<br/>
+<sup>8</sup> 
+Models are serialized (i.e. stored as files) as <em>N-Triples</em> (a very simple, easy-to-parse,
   line-based format) for long-term use and preservation.  Models can also be imported into the 
-  <em>modelling view</em> using a variety of ingest formats, of which Turtle is the easiest to 
-  write by hand.<br/>
+  <em>modelling view</em> using a variety of ingest formats, of which
+  <em>Turtle</em> is among the easiest to read and write.<br/>

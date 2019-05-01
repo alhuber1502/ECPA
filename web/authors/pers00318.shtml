@@ -1,0 +1,72 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Harriet Falconar" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Harriet Falconar "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Harriet Falconar</h1>
+            												(1774? - 
+            											
+            												? )
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
+                  <li><a title="view full-text" href="/works/yfs88-w0020.shtml"><em>SLAVERY. A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="yfs88" href="/works/yfs88.shtml#yfs88-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="yfs88"><a title="view table of contents of source edition" href="/works/yfs88.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems on Slavery.</span> </em>  London: Printed for Messrs. EGERTONS, Charing-Cross; Mr. MURRAY, Temple-Bar; and Mr. J. JOHNSON,
+                     No. 72, St. Paul's Church-yard M.DCC.LXXXVIII, 1788. 
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T61945">T61945</a>)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="yfs88-w0020" style="text-indent:-30px;"><a href="/works/yfs88-w0020.shtml"><em>SLAVERY. A POEM.</em></a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="yfs88"><a title="view table of contents of source edition" href="/works/yfs88.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> <em><span class="titlem">Poems on Slavery.</span> </em>  London: Printed for Messrs. EGERTONS, Charing-Cross; Mr. MURRAY, Temple-Bar; and Mr. J. JOHNSON,
+                     No. 72, St. Paul's Church-yard M.DCC.LXXXVIII, 1788. 
+                     					(ESTC <a class="external" href="http://estc.bl.uk/T61945">T61945</a>)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2 id="bib_FalcHa1774">Bibliography</h2>
+               <h3>Reference works</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 117-118. Print.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'http://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Harriet Falconar\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

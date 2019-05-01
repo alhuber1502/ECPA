@@ -90,10 +90,8 @@
 	    creative/inventive) and with varying foci on one or more analytical
 	    layers, the visualizations serve as a toolbox for researchers
 	    interested in visual interpretation.
-	    We hope that through
-            the combination of human knowledge (manifested through
-            contributions to the corpus in form of corrections, annotations,
-            glosses, and interpretations) and machine learning we can arrive
+	    We hope that through the combination of knowledge
+            <em>modelling</em> and machine learning we can arrive
             at an "augmented criticism" (Bradley/Ullyot) based on a
             larger pool of supporting materials and more comprehensive analysis.</p>
 
@@ -101,7 +99,9 @@
 	    facilitate new modes of engagement (<em>views</em>), which will join the
 	    current views, and allow for increasingly sophisticated ways
 	    of interacting and thus re-creating the texts through each
-	    reading process.  We are currently working on implementing
+	    reading process.
+<!--
+	    We are currently working on implementing
 	    a number of adapted and original visualizations in the <em>visualization</em>
 	    view, and are exploring formal ontological modelling
 	    techniques, using domain ontologies such as
@@ -110,6 +110,7 @@
             and <a href="http://postdata.linhd.es/" class="external"
             target="_blank">POSTDATA</a>, in our <em>modelling</em>
             view. 
+//-->
 </p>
 
 <h2 id="history">History</h2>
@@ -133,17 +134,15 @@ various reasons, work on <!--#echo var="ecep" --> began in earnest in
 Winter 2012.
 </p>
 
-<p>A first <span style="font-variant:small-caps;font-size:16px;">alpha</span> version
-  of the Website was completed in Winter 2015.  The current 
-  <span style="font-variant:small-caps;font-size:16px;">beta</span> of
-  <!--#echo var="ecep" -->  went live on 1 May 2016.  We 
-  are actively seeking formative peer review at this stage, please do not
-  hesitate to <a href="mailto:huber@eighteenthcenturypoetry.org">contact us</a> 
-  with any issues, requests, or general feedback about the content, 
-  functionalities, or design of the Website.  We expect the
-  <span style="font-variant:small-caps;font-size:16px;">beta</span> phase to
-  come to an end after a maximum of three years.
-</p>
+<p>A private <span style="font-variant:small-caps;font-size:16px;">alpha</span> version
+  of the Website was completed in Winter 2015.  The public
+  <span style="font-variant:small-caps;font-size:16px;">beta phase</span> of
+  <!--#echo var="ecep" -->  began on 1 May 2016 and ended on 1 May
+  2019.  We continue to seek post-publication peer review at this
+  stage, please do not hesitate to <a href="mailto:huber@eighteenthcenturypoetry.org">contact 
+    us</a> with any issues, requests, or general feedback about the
+  content, functionalities, or design of the Website.</p>
+
 
 <h2 id="funding">Funding</h2>
 
@@ -251,16 +250,22 @@ target="_blank">SEMAFOR</a> [pre-trained])</li>
  </li>
 </ul>
 
-
 <h2 id="plans">Current and future plans</h2>
 
-<p>Our main focus of work is on expanding and improving
-  <!--#echo var="ecep" --> to a more comprehensive "release" version.
-  We will be focusing on the following areas.</p> 
+<p>The <!--#echo var="ecep_full" --> is currently being updated twice
+  a year, in the Summer and Winter.  Our current priorities include:</p>
 
 <h3 id="scope">Digital collection</h3>
 
-<p><!--#echo var="ecep" --> currently comprises <span id="stats_works"></span> works
+<p>
+  <!--#echo var="ecep" --> currently comprises <span id="stats_works"></span> works
+  by <span id="stats_authors"></span> authors.  We will continue to work towards
+  increasing the number of authors, particularly women authors, and
+  works represented.
+</p>
+
+<!--
+<!--#echo var="ecep" --> currently comprises <span id="stats_works"></span> works
   by <span id="stats_authors"></span> authors.  Originally taken from
   just three sources,<ul>
     <li>Mark Akenside's <em>Pleasures of Imagination</em> (1744), published
@@ -274,6 +279,7 @@ class="external"><em>Thomas Gray Archive</em></a>,</li>
   <p>we will be expanding the scope of the collection over the coming months with
   the addition of numerous single author editions as well as of
   collections and miscellanies.
+//-->
 </p>
 
 <p>Please feel free to <a href="mailto:huber@eighteenthcenturypoetry.org">send
@@ -294,7 +300,10 @@ class="external"><em>Thomas Gray Archive</em></a>,</li>
 
 <p>As <!--#echo var="ecep" --> evolves and matures, we will expand our
   research to go beyond the current modes (<em>views</em>) of reader engagement
-  (<em>reading</em>, <em>analysis</em>, and <em>visualization</em>).  We are
+  (<em>reading</em>, <em>analysis</em>, <em>visualization</em>,
+  and <em>modelling</em>). 
+<!--
+ We are 
   currently focussing on expanding the <em>visualization</em> view with additional
   visualizations, which will cover all analytical layers (phonological, morphological,
   syntactic, semantic, and pragmatic) and offer a range of perspectives, from the
@@ -305,7 +314,9 @@ class="external"><em>Thomas Gray Archive</em></a>,</li>
             class="external">CIDOC-CRM</a>
             and <a href="http://postdata.linhd.es/" class="external"
   target="_blank">POSTDATA</a>, in the <em>modelling</em> view. 
+//-->
 </p>
+
 
 <h2 id="dissemination">Output and dissemination</h2>
 
@@ -609,12 +620,21 @@ href="/authors/pers00279.shtml">Amelia Alderson Opie</a> (author page
   Content added: <a href="/authors/pers00313.shtml">Catherine Rebecca
   Grey, Lady Manners</a> (author page and 28 poems added)
 </li>
-<li><em>2 April 2019 (<!--#include virtual="/data/version" -->):</em>
+<li><em>2 April 2019 (v0.99.11):</em>
   Content added: <a href="/authors/pers00314.shtml">Matthew Prior</a>
-  (author page and 114 poems added); Research: <em>DoubleTree</em>
-  joins the available adapted visualizations in
-  the <em>visualization</em> view; Enhancements: redesigned and
-  expanded <em>visualization</em> view
+  (author page and 114 poems added); 
+  Research: <em>DoubleTree</em> joins the available adapted
+  visualizations in the <em>visualization</em> view; 
+  Enhancements: redesigned and expanded <em>visualization</em> view
+</li>
+<li><em>1 May 2019 (<!--#include virtual="/data/version" -->):</em>
+ Release version milestone (completion of year three/end of <span 
+   style="font-variant:small-caps;font-size:16px;">beta</span>) reached (2959 works, 314 authors);
+  Content added: late eighteenth-century authors, 
+ <a href="/authors/pers00315.shtml">(Mary) Matilda Betham</a> (author page and 30 poems added), 
+ <a href="/authors/pers00316.shtml">Thomas Campbell</a> (author page and seven poems added), and 
+ <a href="/authors/pers00317.shtml">Maria</a> and
+ <a href="/authors/pers00318.shtml">Harriet Falconar</a> (author pages and two poems added)
 </li>
 </ul>
 

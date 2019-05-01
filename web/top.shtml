@@ -42,7 +42,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">    
     <title><!--#echo var="ecep_full" --> / <!--#echo var="title" --></title>
-    
+
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -129,7 +129,7 @@
                      style="width:40px; height:40px;"
                      alt="[Alexander Pope (1688-1744) / &copy; National Portrait
 			  Gallery, London]"/>
-                <!--#echo var="ecep_full" --> <sup style="font-variant:small-caps;">beta</sup>
+                <!--#echo var="ecep_full" --><!-- <sup style="font-variant:small-caps;">beta</sup>-->
               </span>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
@@ -158,7 +158,7 @@
 								    aria-expanded="false">Authors</a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="/authors/#names">Names</a></li>
-                    <li><a href="/authors/#dates">Dates</a></li>
+                    <li><a href="/authors/#dates">Birth dates</a></li>
                     <li><a href="/authors/#gender">Gender</a></li>
                   </ul>
                 </li>
@@ -167,7 +167,7 @@
 								  aria-expanded="false">Works</a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="/works/#titles">Titles</a></li>
-                    <li><a href="/works/#lines">First lines</a></li>
+                    <li><a href="/works/#lines">First/Last lines</a></li>
                     <li><a href="/works/#themes">Themes</a></li>
                     <li><a href="/works/#genres">Genres</a></li>
                     <li><a href="/works/#edns">Source editions</a></li>

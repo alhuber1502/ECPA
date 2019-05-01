@@ -321,8 +321,8 @@
 	    // remove any popovers when clicking on node
 	    //	        if (!this.options.enableLinks) event.preventDefault();
 	        event.preventDefault();
-		$(".popover").remove();
-	    // -AH-
+	        $(".popover").remove();
+	    // -AH-	
 		var target = $(event.target);
 		var node = this.findNode(target);
 		if (!node || node.state.disabled) return;
@@ -348,9 +348,9 @@
 
 			this.render();
 		}
-	    // -AH-
-		triggerMe( target );
-	    // -AH-
+		// -AH-
+		triggerTreeLinkClick( target );
+		// -AH-
 
 	};
 

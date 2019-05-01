@@ -397,6 +397,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	$('link[href="/css/mod.ecep.css"]').prop('disabled', false);
 	$('.nav-tabs a[href="#text"]').tab('show');
 	if (mod_ft == 1) {
+	    mod_home( '' );
 	    $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
 	    $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
 	    mod_ft = 0;

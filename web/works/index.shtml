@@ -57,7 +57,11 @@
 <h1 style="white-space:nowrap;">Featured Work</h1>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane" style="display:block;">
-<!--#include virtual="/about/featuredwork.shtml" -->
+<!--#if expr="%{TIME_SEC} -ge 30" -->
+<!--#include virtual="/resources/essays/TickTh1685_w0001.shtml" -->
+<!--#else -->
+<!--#include virtual="/resources/essays/GrayTh1716_wfsio.shtml" -->
+<!--#endif -->
 </div>
 </div>
 </div>
