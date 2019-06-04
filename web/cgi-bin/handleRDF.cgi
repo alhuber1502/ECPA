@@ -18,15 +18,29 @@ if ($ENV{'HTTP_HOST'} =~ /\.test/i) {         # development server home
     $path_inc = "/kunden/homepages/5/d775627187/htdocs/eighteenthcenturypoetry.org/cgi-bin/";
 }
 
-our ($subpath);
+our ($subpath,$pubpath);
 
 require($path_inc."import.pl");
 
 my $cgi = CGI->new;
 
-print $cgi->header($cgi->param('mimetype')+';charset=UTF-8');
-open(my $fh, ">:encoding(UTF-8)", $subpath.$cgi->param('file')) or die "Could not open file: $!";
-flock($fh, 2) or die "Could not lock file: $!";
-print $fh decode('UTF-8',$cgi->param('myRDF'));
-close $fh;
-&send_mail ("ECPA mailer","huber\@eighteenthcenturypoetry.org","RDF file");
+if ( $cgi->param('publ') ) {
+
+    print $cgi->header($cgi->param('mimetype').';charset=UTF-8');
+    open(my $fh, ">:encoding(UTF-8)", $pubpath.$cgi->param('file')) or die "Could not open file: $!";
+    flock($fh, 2) or die "Could not lock file: $!";
+    print $fh decode('UTF-8',$cgi->param('myRDF'));
+    close $fh;
+    rename $subpath.$cgi->param('file'), $subpath."pub-".$cgi->param('file') or die "Cannot rename file: $!";
+    &send_mail ("ECPA mailer","huber\@eighteenthcenturypoetry.org","RDF file");
+
+} else {
+
+    print $cgi->header($cgi->param('mimetype').';charset=UTF-8');
+    open(my $fh, ">:encoding(UTF-8)", $subpath.$cgi->param('file')) or die "Could not open file: $!";
+    flock($fh, 2) or die "Could not lock file: $!";
+    print $fh decode('UTF-8',$cgi->param('myRDF'));
+    close $fh;
+
+}
+

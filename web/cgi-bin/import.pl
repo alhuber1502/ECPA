@@ -1,17 +1,20 @@
 # import.pl
 # (C) 2016 Alexander Huber <mailto:huber@eighteenthcenturypoetry.org>
 
-our ($subpath, $sendmail, $receiver);
+our ($subpath, $pubpath, $sendmail, $receiver);
 
 if ($ENV{'HTTP_HOST'} =~ /\.test/i) {        # development server (Mac)
     $sendmail = "/usr/sbin/sendmail ";
     $subpath = "../submitted/";
+    $pubpath = "../resources/models/";
 } elsif ($ENV{'HTTP_HOST'} =~ /\.local/i) {  # development server (Linux)
     $sendmail = "/usr/lib/sendmail ";
     $subpath = "../submitted/";
+    $pubpath = "../resources/models/";
 } else {                                     # production server
     $sendmail = "/usr/sbin/sendmail ";
     $subpath = "../submitted/";
+    $pubpath = "../resources/models/";
 }
 $receiver = "alhuber1502\@gmail.com";
 
