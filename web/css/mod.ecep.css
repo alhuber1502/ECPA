@@ -3,7 +3,7 @@
 
 
 /* Layout */
-#mod_view {
+#mod_viewer {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
 }
-#mod_view .mod_content {
+#mod_viewer .mod_content {
     flex: 1;
     display: flex;
     overflow:hidden;
@@ -36,13 +36,21 @@
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
 }
+#mod_ctl .tab-content > .tab-pane {
+  left: 0;
+  padding-right:0;
+}
 #mod_ctl .panel-group {
     margin-bottom:0;
 }
 #mod_ctl .panel-body {
     padding: 15px 0 0 15px;
 }
-#mod_ctl_nav .panel-heading {
+#mod_ctl .nav-tabs>li.active>a {
+    background-color: #f5f5f5;
+}
+#mod_ctl_nav .panel-heading,
+#mod_ctl_vie .panel-heading {
     padding: 0 10px;
     height: 30px;
     background-color: #fafafa;
@@ -62,11 +70,15 @@
     margin-left:-20px;
 }
 #mod_ctl_sel_res .shortcutLink,
-#mod_ctl_sel_res .relsLink,#pred_undo {
+#mod_ctl_sel_res .relsLink, #pred_undo,
+#ontotempl .relsLink,
+.ontofcr-collapse a,
+.ontohier-collapse a {
     cursor:pointer;
 }
 #mod_ctl_sel_res {
     height:inherit;
+	border: 0;
 }
 #mod_ctl_sel_res .close {
     opacity:.6;
@@ -74,7 +86,7 @@
 }
 #mod_ctl_sel_res button.btn {
     float:right;
-    margin:0 5px 15px 0;
+    margin:0 5px 5px 0;
 }
 #mod_ctl_sel_res .panel-body > ul {
     margin-left: -40px;
@@ -92,18 +104,66 @@
     display: inline-block;
     width: 20%;
 }
-
+#view_classes,#view_instances {
+    height:200px;
+    overflow:auto;
+    margin-left:-20px;
+}
+#view_classes li span:first-child,
+#view_instances li span:first-child {
+    display: inline-block;
+    word-break: break-all;
+}
+#view_results ul {
+	margin-left:0;
+}
+#view_results li {
+    word-break: break-word;
+}
+#mod_ctl_abt li > span:first-child {
+    font-weight: bold;
+    display: block;
+}
+#ontotempl .listBibl {
+    margin-left:-40px;
+}
+#view_results ul li {
+    display: table;
+	width:94%;
+}
+#view_results ul li span:first-child {
+	display: table-cell;
+    width: 35%;
+	word-break: initial;
+	padding-right:20px;
+}
+#view_results ul li span {
+	display: table-cell;
+    width: 70%;
+}
+#view_results ul {
+    margin-left:-30px;
+}
+.ctl_buttons {
+    display:inline-block;
+    margin-left:25px;
+    margin-right:0px;
+}
+.table.table-bordered tbody tr td,
+.table.table-bordered tbody tr th {
+    vertical-align:inherit;
+}
 
 /* JSONForm */
 form p {
-    margin: -15px 10px 10px 15px;
+    margin: 0px 10px 10px 15px;
 }
 .expandable > legend:before {
-  content: '\25B8';
-  padding-right: 5px;
+    content: '\25B8';
+    padding-right: 5px;
 }
 .expanded > legend:before {
-  content: '\25BE';
+    content: '\25BE';
 }
 /* create model */
 #newModal textarea {
@@ -122,6 +182,30 @@ form[name="shortcut"] fieldset.expandable > .form-group {
 legend {
     margin-bottom:5px;
 }
+#newModal img {
+    width: 285px;
+    margin: 10px 0;
+}
+#newModal fieldset#wd-image {
+    width: 305px;
+    float: right;
+    display:none;
+}
+#newModal .tab-content > .tab-pane {
+    position:unset;
+}
+#newModal .modal-footer .form-group {
+    margin-bottom:0;
+}
+#newModal .modal-footer div {
+    display: inline-block;  
+}
+#modelling:not( #mod_viewer ) {
+/*
+    background-image: url('/images/screenshots/modelling_bg.png');
+    background-repeat: no-repeat;
+*/
+}
 
 
 /* CytoScape */
@@ -132,11 +216,20 @@ legend {
 .cytoscape-navigator,.cy-panzoom {
     z-index:1;
 }
+.cy-panzoom {
+    left:5px;
+}
 .cytoscape-navigator {
     right:unset;
+    width:250px;
+    height:250px;
 }
 [x-out-of-boundaries] {
     display: none;
+}
+.tippy-content {
+    font-size:11px;
+    word-break:break-word;
 }
 
 
@@ -145,8 +238,8 @@ legend {
     padding: 2px 5px;
 }
 .treeview span.indent {
-    margin-left: 10px !important;
-    margin-right: 5px !important;
+    margin-left: 9px !important;
+    margin-right: 4px !important;
 }
 .popover-content {
     font-size:12px;
@@ -155,4 +248,10 @@ legend {
 #treeview-ontofcr b {
     font-weight: normal;
 }
-
+#treeview-ontohier .list-group,#treeview-ontofcr .list-group {
+    margin-bottom:0;
+}
+.ontofcr-collapse,.ontohier-collapse {
+    font-size:small;
+    text-align:right;
+}

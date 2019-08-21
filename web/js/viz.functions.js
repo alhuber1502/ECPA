@@ -106,18 +106,18 @@ function init(d) {
     case "PHONEMIA_VIZ":                                             // "Phonemia"
 	if ( $(ecep).length ) {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center,.notes' ).remove().end()
 		.find( "#"+$(ecep).eq(0).attr('id') ).nextUntil( "#"+$(ecep).eq(1).attr('id') );
 	} else {
 	    $clone = $( "#text" ).clone()
-		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		.find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center,.notes' ).remove().end()
 		.children(".lg,.sp,#text > p");
 	    if ($clone.length == 0) { $clone = $( "#text > div" ).clone()
-		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center,.notes' ).remove().end()
 		    .children(".lg,.sp,#text > p");
 	    }
 	    if ($clone.length == 0) { $clone = $( "#text > div > div" ).clone()
-		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+		    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center,.notes' ).remove().end()
 		    .children(".lg,.sp,#text > p");
 	    }
 	}
@@ -187,7 +187,7 @@ $(document.body).on('change', '#selection', function () {
 	    success: function(data) { zeus = data.split("\n"); }
 	});
 	$clone = $( "#text" ).clone()
-	    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center' ).remove().end()
+	    .find( '[id*="_return"],[class*="note"],.introduction,.pagebreak,.stage,.epigraph,.argument,.castList,.dramatispersonae,p.align-center,.notes' ).remove().end()
 	    .find( "#"+$(ecep).eq(ecepsaved).attr('id') ).nextUntil( "#"+$(ecep).eq(ecepsaved+1).attr('id') );
 	lk_clone();
 	switch ( $( 'select#display' ).val() ) {
@@ -302,7 +302,8 @@ function lk_wc() {
 		    classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
 		    classes += `</tr>`;
 		}
-	    });
+			});
+		classes += `<tr><td><br></td></tr>`;
 	    } else {
 		classes += `<tr>`;
 		classes += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="P" || $(e).prop("nodeName")=="DIV" || $(e).hasClass("p-in-sp"))?`</td>`+lk_wordclass( $(e) ):'</td>');
@@ -371,12 +372,14 @@ function lk_scansion() {
 			scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
 			scan += `</tr>`;
 		    });
+			classes += `<tr><td><br></td></tr>`;
 		} else {         
 		    scan += `<tr>`;                                                                           
 		    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');                                                                                           
 		    scan += `</tr>`;                                                                         
 		}
 	    });
+		scan += `<tr><td><br></td></tr>`;
 	}
     });
     scan += '</table>';
@@ -427,7 +430,7 @@ function lk_scan (line) {
 	    result = lk_output_scan(wrd,line,1);
 	} else {                                                             // use automatic scansion results
 	    var lineno = $clone.find( "#"+$( line ).attr( "id" ) ).children(".ln").text().trim()-1;
-	    var	syl = zeus[ lineno ].split(':').pop().trim().replace(/'/g,'+').split(" ");
+	    var	syl = zeus[ lineno ].split(':').pop().trim().replace(/\'/g,'+').split(" ");
 	    $.each( hyphened, function(index,item) {
 		syl[item] += syl[item+1];
 	    });
@@ -514,21 +517,22 @@ function lk_stats() {
 	    statsd += `<td>`+$('<div>').append($(e).clone()).html()+`</td>`;
 	    statsd += `</tr>`;
 	} else if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
-	    $(e).children().each( function(i,e) {                                                              
+	    $(e).children().each( function(i,e) {
 		if ( ($(e).hasClass( 'lg' )) || ($(e).hasClass( 'sp' )) ) {
 		    $(e).find( "div.line,span.head-stanza").each( function(i,e) {
 			res = lk_calculate( $(e) );
 			statsd += `<tr>`;
 			statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td><td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td><td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td><td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td><td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
 			statsd += `</tr>`;
-		    });
+			});
 		} else {         
 		    res = lk_calculate( $(e) );
 		    statsd += `<tr>`;
 		    statsd += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td><td class="t_v_s">`+res[0]+`</td><td class="t_v_l">`+res[1]+`</td><td class="t_v_d">`+res[2]+`</td><td class="t_v_n">`+res[3]+`</td><td class="t_vt">`+res[4]+`</td><td class="t_v_f">`+res[5]+`</td><td class="t_v_c">`+res[6]+`</td><td class="t_v_b">`+res[7]+`</td><td class="t_c_n">`+res[8]+`</td><td class="t_c_p">`+res[9]+`</td><td class="t_c_a">`+res[10]+`</td><td class="t_c_f">`+res[11]+`</td><td class="t_c_x">`+res[12]+`</td><td class="t_ct">`+res[13]+`</td><td class="t_cvo">`+res[14]+`</td><td class="t_cuv">`+res[15]+`</td>`:'</td>');
 		    statsd += `</tr>`;
-                }
-	    });
+		}
+			});
+		statsd += `<tr><td><br></td></tr>`;
 	}
     });
     statsd += `<tr id="totals"><td></td><td class="t_v_s">`+totals[0]+`</td><td class="t_v_l">`+totals[1]+`</td><td class="t_v_d">`+totals[2]+`</td><td class="t_v_n">`+totals[3]+`</td><td class="t_vt">`+totals[4]+`</td><td class="t_v_f">`+totals[5]+`</td><td class="t_v_c">`+totals[6]+`</td><td class="t_v_b">`+totals[7]+`</td><td class="t_c_n">`+totals[8]+`</td><td class="t_c_p">`+totals[9]+`</td><td class="t_c_a">`+totals[10]+`</td><td class="t_c_f">`+totals[11]+`</td><td class="t_c_x">`+totals[12]+`</td><td class="t_ct">`+totals[13]+`</td><td class="t_cvo">`+totals[14]+`</td><td class="t_cuv">`+totals[15]+`</td></tr>`;
@@ -576,12 +580,12 @@ function display_viz_lk( vis ) {
     var lk_control = `<img style="padding:5px 0;" src="/images/screenshots/phonemia.png" alt="Phonemia"/><a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:middle'/></a>`+`<a style="float:right; padding:23px 5px 0 0;" href="#visualization" class="viz_home">Visualization Home</a>
     <div class="panel-group" role="tablist" aria-multiselectable="true">
         <div class="panel">
-	    <div class="panel-heading" role="tab" id="headingOne">
+	    <div class="panel-heading" role="tab" id="headingVOne">
 	        <div class="panel-title">
-		    <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Layout</a>
+		    <a role="button" data-toggle="collapse" href="#collapseVOne" aria-expanded="true" aria-controls="collapseVOne">Layout</a>
 	        </div>
 	    </div>
-	    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	    <div id="collapseVOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingVOne">
 	        <div class="panel-body">`;
 
     if ( $(ecep).length > 0 ) {
@@ -616,10 +620,10 @@ function display_viz_lk( vis ) {
 	lk_control += `<div class="panel">
 	        <div class="panel-heading" role="tab" id="headingTwoA">
 		    <div class="panel-title">
-		        <a role="button" data-toggle="collapse" href="#collapseTwoA" aria-expanded="true" aria-controls="collapseTwoA">Parts of speech (word classes)</a>
+		        <a role="button" data-toggle="collapse" href="#collapseVTwoA" aria-expanded="true" aria-controls="collapseVTwoA">Parts of speech (word classes)</a>
 		    </div>
 		</div>
-		<div id="collapseTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
+		<div id="collapseVTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
 		    <div class="panel-body">
 		        <table style="width:100%">
 	                    <tr>
@@ -644,10 +648,10 @@ function display_viz_lk( vis ) {
 	lk_control += `<div class="panel">
 	        <div class="panel-heading" role="tab" id="headingTwoA">
 		    <div class="panel-title">
-		        <a role="button" data-toggle="collapse" href="#collapseTwoA" aria-expanded="true" aria-controls="collapseTwoA">Scansion (metrical pattern)</a>
+		        <a role="button" data-toggle="collapse" href="#collapseVTwoA" aria-expanded="true" aria-controls="collapseVTwoA">Scansion (metrical pattern)</a>
 		    </div>
 		</div>
-		<div id="collapseTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
+		<div id="collapseVTwoA" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwoA">
 		    <div class="panel-body">
 		        <table style="width:100%" id="scan_results">
 	                    <tr>
@@ -673,12 +677,12 @@ function display_viz_lk( vis ) {
 	    </div>`;
     }
     lk_control += `<div class="panel">
-	<div class="panel-heading" role="tab" id="headingTwo">
+	<div class="panel-heading" role="tab" id="headingVTwo">
 	<div class="panel-title">
-	<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Phonemic units and features</a>
+	<a role="button" data-toggle="collapse" href="#collapseVTwo" aria-expanded="true" aria-controls="collapseVTwo">Phonemic units and features</a>
 	</div>
 	</div>
-	<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+	<div id="collapseVTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingVTwo">
 	<div class="panel-body">
 	<table style="width:100%">
 	<tr>
@@ -716,12 +720,12 @@ function display_viz_lk( vis ) {
 	 </div>
 	 </div>`;
     lk_control += `<div class="panel">
-                <div class="panel-heading" role="tab" id="headingThree">
+                <div class="panel-heading" role="tab" id="headingVThree">
                     <div class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Dominant sounds</a>
+                        <a role="button" data-toggle="collapse" href="#collapseVThree" aria-expanded="true" aria-controls="collapseVThree">Dominant sounds</a>
                     </div>
                 </div>
-                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                <div id="collapseVThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingVThree">
                     <div class="panel-body" id="dominant_sounds">`;
 
     var domlabels = ["Vowels","Consonants","All phonemes"];
@@ -759,12 +763,12 @@ function display_viz_lk( vis ) {
     }
     if (Object.keys(RFphon).length > 0 || l.rhyme != "" && l.rhyme != null ) {
 	lk_control  += `<div class="panel">
-                <div class="panel-heading" role="tab" id="headingFour">
+                <div class="panel-heading" role="tab" id="headingVFour">
                     <div class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Sound devices`+ (( $(ecep).length > 0 )?` (entire poem)`:``) + `</a>
+                        <a role="button" data-toggle="collapse" href="#collapseVFour" aria-expanded="true" aria-controls="collapseVFour">Sound devices`+ (( $(ecep).length > 0 )?` (entire poem)`:``) + `</a>
                     </div>
                 </div>
-                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                <div id="collapseVFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingVFour">
                     <div class="panel-body" id="sound_devices">`;
 	if (Object.keys(RFphon).length > 0) {
 	    lk_control += lk_json( RFphon );
@@ -1026,7 +1030,7 @@ function poemvis_load (part) {
 	}
 	// viz home
         poemvisFrame.find(".viz_home").click(function(){
-           window.location.hash = "#visualization";
+           location.hash = "#visualization";
 	   viz_chosen = '';
            $( "div#text" ).scrollTop(0);
            $.getScript('/js/viz_overview.js');
@@ -1145,7 +1149,7 @@ function dtreejs_load (part) {
 	var dtreejsFrame = $("#dtreejs_frame").contents();
 	// viz home
         dtreejsFrame.find(".viz_home").click(function(){
-           window.location.hash = "#visualization";
+           location.hash = "#visualization";
 	   viz_chosen = '';
            $( "div#text" ).scrollTop(0);
            $.getScript('/js/viz_overview.js');

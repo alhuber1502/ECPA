@@ -44,6 +44,8 @@ Encoding Rules:
 
     <rdfs:Class  rdf:about="http://www.ics.forth.gr/isl/CRMsci/S4_Observation">
         <rdfs:subClassOf rdf:resource="I1_Argumentation"/>
+    	<rdfs:label xml:lang="en">Observation</rdfs:label>
+    	<rdfs:comment></rdfs:comment>
     </rdfs:Class>
 
     <rdfs:Class rdf:about="I2_Belief">
@@ -79,14 +81,20 @@ Encoding Rules:
 	
 	<rdfs:Class  rdf:about="http://www.ics.forth.gr/isl/CRMsci/S6_Data_Evaluation">
         <rdfs:subClassOf rdf:resource="I5_Inference_Making"/>
+		<rdfs:label xml:lang="en">Data Evaluation</rdfs:label>
+		<rdfs:comment></rdfs:comment>
     </rdfs:Class>
 	
 	<rdfs:Class  rdf:about="http://www.ics.forth.gr/isl/CRMsci/S7_Simulation_or_Prediction">
         <rdfs:subClassOf rdf:resource="I5_Inference_Making"/>
+		<rdfs:label xml:lang="en">Simulation or Prediction</rdfs:label>
+		<rdfs:comment></rdfs:comment>
     </rdfs:Class>
 	
 	<rdfs:Class  rdf:about="http://www.ics.forth.gr/isl/CRMsci/S8_Categorical_Hypothesis_Building">
         <rdfs:subClassOf rdf:resource="I5_Inference_Making"/>
+		<rdfs:label xml:lang="en">Categ. Hypothesis Building</rdfs:label>
+		<rdfs:comment></rdfs:comment>
     </rdfs:Class>
     
     <rdfs:Class rdf:about="I7_Belief_Adoption">

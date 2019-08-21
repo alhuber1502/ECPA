@@ -361,6 +361,13 @@ ul.downloads {
     list-style-type: circle;
     padding: 0 0 0 20px; 
 }
+ul.downloads2 {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    list-style-type: none;
+    padding: 0 0 0 0px; 
+}
 
 .inline { display: inline }
 .inline-block { display: inline-block }
@@ -415,7 +422,7 @@ ul.downloads {
     height: 50px;
 }
 
-div.panel-heading a:hover {
+div.panel-heading a:hover,a:focus {
     text-decoration: none;
 }
 

@@ -1,0 +1,84 @@
+
+<h3 id="mod_interface">Modelling interface</h3>
+
+<p>The ECPA <em>modelling view</em> has been designed in a way that is easy to grasp, 
+  learn, and perform.  Its layout consists of two components: a <em>header</em> and the <em>body
+  of the model</em>.  The former comprises the title of the model and a number of workflow 
+  buttons (e.g. fork, close, save, download, publish), while the latter comprises the model as a <em>graph
+  representation</em> via <a href="http://js.cytoscape.org/"
+  class="external" target="_blank">Cytoscape.js</a>
+ and a <em>control panel</em>, which provides information about the model, a
+  representation of the model's components in text form, and an editing tool.
+</p>
+
+<h3 id="mod_workflow">Workflow components</h3>
+
+<p>Our tool is at the same time modelling and publishing platform.  As such, it offers a number
+  of <em>workflow management buttons</em> that support the entire modelling process, from inception through
+  to publication.</p>
+
+<h4>Viewing an existing model</h4>
+
+<p>Possibly the easiest way to familiarize yourself with the <em>modelling view</em> is to spend
+  some time exploring an existing model.  The default view will show the model in its graphical
+  representation next to a set of metadata about the model in the control panel to the right of 
+  the graph.  You can explore the model in more detail either by traversing the knowledge graph, 
+  or by looking at its components via the <em>View</em>-tab in the control panel.  You will notice
+  that the <em>Edit</em>-tab is not accessible when viewing somebody else's graph.
+</p>
+
+<h4>Forking an existing model</h4>
+
+<p>Forking existing models is at the heart of <em>collaborative digital scholarship</em>.  When forking a 
+  model, the model becomes the starting point of a collaborative effort.<sup>1</sup> To fork a 
+  model, simply click the <em>Fork</em>-button and fill in the required metadata fields.  The
+  header will indicate the collaborative nature of the model created.  Once a model has been 
+  forked, it can be edited in the same way as a newly created model.<sup>2</sup>
+</p>
+
+<h4>Creating a new model</h4>
+
+<p>Creating a new model is easy.  Simply fill in the required metadata fields and you are ready
+  to go.  As your model will be empty to start with, the default view will take you directly to the 
+  <em>Edit</em>-tab in the control panel, where you can start creating your model.<sup>2</sup>
+</p>
+
+<h4>Saving (and resuming work on) a model</h4>
+
+<p>You can pause and save your progress at any point in the modelling process by <em>saving and closing</em>
+  your model.  Before doing so, it may be convenient to bookmark your
+  model's <em>Web address</em> in your browser so that you can easily find it
+  when you are ready to resume your work.
+</p>
+
+<h4>Downloading a model (and its graph)</h4>
+
+<p>You can <em>download your model</em> at any point in the modelling process.  Your model will be saved to 
+  your computer in the n-triples format.  Please note that it is currently not possible to upload
+  models into the ECPA modelling interface via the frontend.  In exceptional circumstances, 
+  we can upload a model for you.  
+</p>
+<p>You can also <em>export an image</em> of the graph (to be precise the part of the graph visible in the 
+  current viewport) of your model as a PNG image file.  In addition, you can
+  also export the <em>Cytoscape graph</em> as a whole as a JSON file, which
+  would enable further processing on the level of the graph alone.
+  </p>
+
+<h4>Publishing a model</h4>
+
+<p>All models are <em>private</em> by default, which means that you can work on them for as long as you need 
+  to.  It is only when you submit a model for <em>publication</em> that the editor will <em>review</em> your model
+  primarily to ensure its integrity and to resolve any issues you may have encountered.  You will 
+  not be able to work on your model during this process.  Once the review stage is completed,
+  your model will be published on the ECPA Website.
+</p>
+
+<br style="clear:both"/>
+<p class="small">
+<sup>1</sup> The two main purposes 
+  of forking a model are: 1. the ability to build upon each other's work, and 2. to offer changes 
+  (hopefully, improvements) back to the original modeller.  Forking facilitates a mode of thinking,
+  learning, and researching that is profoundly social in nature.<br/>
+<sup>2</sup> All models are <em>private</em> by default.  You can continue working on your
+  model in private until you are happy for it to be shared with others.<br/>
+</p>

@@ -28,7 +28,7 @@
 	</nav>
 	<!--#config timefmt="%d %b %Y" -->
 	<p class="pull-right small"><em><!--#include
-	virtual='/data/version' --> (<!--#flastmod virtual="/data/version" -->)</em></p>
+	virtual='/data/version' --></em></p>
       </div>
     </footer>
 
@@ -44,6 +44,7 @@
     <!-- ECEP -->
     <script>
       var docname = '<!--#echo var="docname" -->';
+      var txt_id = docname;
       var encoding = '<!--#echo var="encoding" -->';
       var source = '<!--#echo var="REMOTE_ADDR" -->';
       var ecep = '<!--#echo var="ecep" -->';
@@ -114,19 +115,21 @@
     <script src="/js/rdflib.min.js"></script>
     <!-- modelling libs -->
     <script src="/js/uuidv4.js"></script>
-    <script src="/js/jsonform-2.1.3/deps/opt/jsv.js"></script>
-    <script src="/js/jsonform-2.1.3/lib/jsonform.js"></script>
+    <script src="/js/jsonform-2.1.4/deps/opt/jsv.js"></script>
+    <script src="/js/jsonform-2.1.4/lib/jsonform.js"></script>
     <script src="/js/bootstrap-treeview-1.2.0/public/js/bootstrap-treeview.js"></script>
 
-    <!-- Cytoscape JS -->
-    <script src="/js/cytoscape.min.js"></script>
-    <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
-    <script src="/js/cytoscape.js-cola-2.3.0/cytoscape-cola.js"></script>
-    <script src="/js/popper.js-1.14.7/dist/umd/popper-utils.min.js"></script>
-    <script src="/js/popper.js-1.14.7/dist/umd/popper.min.js"></script>
+    <!-- Cytoscape JS v3.8.1 -->
+    <script src="/js/cytoscape.js-3.8.1/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="/js/cytoscape.js-dagre-2.2.1/cytoscape-dagre.js"></script>
+    <script src="/js/popper.js-1.15.0/dist/umd/popper-utils.min.js"></script>
+    <script src="/js/popper.js-1.15.0/dist/umd/popper.min.js"></script>
     <script src="/js/cytoscape.js-popper-1.0.4/cytoscape-popper.js"></script>
+    <script src="https://unpkg.com/tippy.js@4.3.4/umd/index.all.min.js"></script>
     <script src="/js/cytoscape.js-panzoom-2.5.3/cytoscape-panzoom.js"></script>
     <script src="/js/cytoscape.js-navigator-1.3.3/cytoscape-navigator.js"></script>
+    <script src="/js/FileSaver.js-2.0.2/dist/FileSaver.min.js"></script>
 
     <!-- ECEP -->
     <script src="/js/ecep.functions.js"></script>

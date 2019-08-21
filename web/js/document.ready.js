@@ -10,7 +10,6 @@ $( document ).ready(function() {
         $(this).removeClass('open');
     });
 
-
     // initialize popovers
     $(function () {
 	$('body').popover({
@@ -19,14 +18,12 @@ $( document ).ready(function() {
 	$('#citation').attr("data-content", citation);
     });
 
-
     // add "_blank" link target to external links
     $('a.link_ref:not(a.link_ref[href^="#"])').attr('target', '_blank');
     $('a.external').attr('target', '_blank');
 
-
     // switch to tab specified in URL hash
-    var hash = window.location.hash;
+    var hash = location.hash;
     hash && $('ul.nav a[href="' + hash + '"]').tab('show') || $('.nav-tabs a[href="#text"]').tab('show');
     if (hash == "#poemvis" || hash == "#phonemia" || hash == "#dtreejs") { // supports direct link into #PoemViewer from TGA
 	if (hash == "#poemvis") {
@@ -36,30 +33,36 @@ $( document ).ready(function() {
 	} else if (hash == "#dtreejs") {
 	    viz_chosen = "DTREEJS_VIZ";
 	}
-	hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
 	$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
 	$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+	hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
 	init( viz_chosen );
     }
+    // modelling display
+    if ( hash.match( /#\/submitted\/kb-/gi ) || hash.match( /#\/resources\/models\//gi ) ) {
+        $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
+        $( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+        hash && $('ul.nav a[href="' + '#modelling' + '"]').tab('show');
+        kbURI = base + location.pathname.substring(1) + hash;
+        mod_load_graph( kbURI );
+    }
+
     $('.nav-tabs a').click(function (e) {
         $(this).tab('show');
         var scrollmem = $('body').scrollTop();
-        window.location.hash = this.hash;
+        location.hash = this.hash;
         $('html,body').scrollTop(scrollmem);
     });
-
 
     $('.dropdown-menu a').click(function (e) {
 	$('.nav-tabs a[href="' + this.hash + '"]').tab('show');
 	$(this).closest(".dropdown").removeClass('open');
     });
 
-
     showTitles(false);
     if ($('#text').length) {
 	// switch to default view
 	showAllParatexts(false);
-
 
 	// Make bootstrap cols resizable
 	// Adapted from https://codepen.io/delagics/pen/PWxjMN
@@ -109,13 +112,11 @@ $( document ).ready(function() {
 			}
 		    });
 	    });
-	
-	
+		
 	// IC
 	$("#themes").append(" "+query('[add]','Please separate terms with a semi-colon...','themes',$(this).attr('id'), 'Add themes', 'Please provide one or more themes (keywords)', 'ln') );
 	$("#genres").append(" "+query('[add]','Please separate terms with a semi-colon...','genres',$(this).attr('id'), 'Add genres', 'Please provide one or more genres (keywords)', 'ln') );
 	
-
 	// move all footnotes outside of their parent element to allow for
 	// accordion display as divs
 	$($("div.note").get().reverse()).each(function() {
@@ -127,15 +128,12 @@ $( document ).ready(function() {
 		}
 	    });
 
-
 	// add help buttons
-	$.each( ["reading","analysis","visualization"
-		 //		 ,"modelling"
+	$.each( ["reading","analysis","visualization","modelling"
 		] , function( index, item ) {
 		$( 'a[href="#' + item + '"]' )
 		    .append(" <a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:text-top'/></a>");
 	    });
-
     
 	// generate the image pagination controls for the #image tab
 	if ($('#image').length) {
@@ -155,7 +153,6 @@ $( document ).ready(function() {
 	    //$('#myImageControls').append(' <button class="btn btn-primary btn-sm" autocomplete="off" id="saveViewLocal"> Download view </button> <button class="btn btn-primary btn-sm" autocomplete="off" id="showView"> Open view </button>');
 	}
 
-
 	// unload non-default stylesheet
 	if ($('.right .tab-content > div.active').attr("id") == "reading") {
 	    $('link[href="/css/ana.ecep.css"]').prop('disabled', true);
@@ -170,7 +167,6 @@ $( document ).ready(function() {
 	ana_initialize();
 	
     }
-
 
     // gallery default
     if ($('#myImagePortrait').length) {

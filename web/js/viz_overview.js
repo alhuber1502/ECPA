@@ -2,10 +2,7 @@
 
 // Intro
 $( '#visualization' ).html( `<div id='viz_overview'/>` );
-$( '#viz_overview' ).append( `<h1 class='info'>Original and adapted visualizations</h1>` );
-
-// Available visualizations
-$( '#viz_overview' ).append( `<p style='padding-bottom:15px;'>Please choose from the <b>available visualizations</b> for this poem:</p><div id='viz_avail'>` );
+$( '#viz_overview' ).append( `<h1 class='info'>Original and adapted visualizations</h1> <p>Please choose from the <b>available visualizations</b> for this poem:</p><div id='viz_avail'>` );
 
 $( '#viz_avail' ).append( `<ul id="list_avail" style="display:inline-block;list-style:none;vertical-align:top;">` );
 // Phonemia

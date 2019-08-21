@@ -32,15 +32,18 @@ $(document.body).on('click', '.help-modal', function () {
 	}
     } else if ( !$(this).parent().attr("id").match(/\_/) ) { // layer tabs
 	file = "ana_"+$(this).parent().attr("id").substring(0,3);	
-    } else {                                                 // vizualizations
+    } else if ( $(this).prev().attr("src") ) {               // vizualizations
 	if ($(this).prev().attr("src").match(/phonemia/)) {
 	    file = "viz_phonemia";
 	} else if ($(this).prev().attr("src").match(/poemvis/)) {
 	    file = "viz_poemvis";
 	} else if ($(this).prev().attr("src").match(/dtreejs/)) {
 	    file = "viz_dtreejs";
-	} // iFrame help is in viz.functions.js
+	}
+    } else if ( $(this).attr("href").match(/#[a-z]/) ) {
+	file = $(this).attr("href").substring( 1 );
     }
+
     $( "#modal-help-text" ).append( $("<div/>").load("/help/"+file+".shtml", function( data ) { data } ))
 	.after(`
       <div class="modal-footer">
@@ -1043,7 +1046,7 @@ function ana_initialize () {
 
     // add textareas for notes/observations
     $.each( ["pho-static","mor-static","syn-static","sem-static","pra-static"], function( index,item ) {
-	    $( "#"+item ).append( '<div data-id="'+item.substr(0,3)+'"><i>Notes/Observations:</i><br/><textarea style="resize:vertical;width:100%;" class="textaInput" rows="4" id="ta-'+item+'"/></div>' );
+	    $( "#"+item ).append( '<div data-id="'+item.substr(0,3)+'"><i>For your notes and observations:</i><br/><textarea style="resize:vertical;width:100%;" class="textaInput" rows="4" id="ta-'+item+'"/></div>' );
     });
 
     // trigger first line hover

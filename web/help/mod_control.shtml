@@ -1,0 +1,157 @@
+
+<h3 id="mod_control">The control panel</h3>
+
+<p>As of the current prototype of the <em>modelling</em> interface, the <em>control panel</em>
+  is the main mechanism by which to view and build a model.<sup>1</sup>  The control panel
+  consists of three tabs, <em>About this model</em>, <em>View</em>, and <em>Edit</em>.</p>
+
+<h3 id="mod_about">About this model</h3>
+
+<p>The <em>About this model</em>-tab is the default landing page when viewing a model.  It 
+  provides a set of metadata essential for initial orientation in the model.  Apart 
+  from basic information about the model's creator and provenance, it
+  should explain the motivation and reationale of the model.</p>
+
+<h3 id="mod_view">View</h3>
+
+<p>The <em>View</em>-tab comprises three scrollable sections, namely <em>classes</em>,
+  i.e. the ontological concepts used in the model, <em>instances</em> (or individuals),
+  i.e. the individual instantiations of those classes, and finally <em>statements</em>,
+  i.e. the incoming and outgoing statements that define and relate the instances among
+  themselves and connect them to external conceptualizations.</p>
+
+<h4>Classes</h4>
+
+<p>The number and types of <em>classes</em> reflect the type of argument and discourse 
+  the model instantiates.  A definition and the ontological source of a class
+  will be displayed when hovering over it.  Choose any class from the list to view a 
+  list of its instances in the model.</p>
+
+<h4>Instances</h4>
+
+<p>The <em>instances</em> represent the objects of interest and study
+  in the model.  Choose any of the <em>instances</em> from the list to view the 
+  incoming and outgoing statements that define its properties and relate it to other 
+  internal and external individuals and concepts.  When choosing an instance, it will 
+  be focused on in the graph display.<sup>1</sup></p>
+
+<h4>Statements</h4>
+
+<p>In the <em>statements</em> section you can inspect the defining <em>properties</em> of the chosen 
+  instance.  The statements are also displayed in tooltips, when
+  hovering over any instance, i.e. node, in the graph. </p>
+
+<h3 id="mod_edit">Edit</h3>
+
+<p>The <em>Edit</em>-tab comprises three scrollable/expandable sections, namely 
+  <em>templates</em>, <em>shortcuts</em>, and <em>taxonomy</em>, which
+  provide increasingly granular modelling options.
+
+<h4>Templates</h4>
+
+<p>The easiest way to start modelling is to use the <em>templates</em> provided for a
+ number of common classes (currently, <em>persons, works, objects, events, places, 
+    concepts,</em> and <em>argumentation</em>).  It is recommended to first
+  search <a href="https://www.wikidata.org/" class="external"
+ target="_blank">Wikidata</a> for a usable record of the object of interest.  If a 
+  record is found on Wikidata, you can simply copy&amp;paste its item
+ ID (Q. . .) into the template's <em>Wikidata ID</em> input field and press the
+ TAB key to autofill the form.  You can also select the already customized
+ templates provided for the author and work instances for the selected text.</p>
+
+<p>If no (suitable) Wikidata record can be found, you may want to
+  enhance an existing record or create one if none exists (and then 
+  use its item ID in the above manner).  Alternatively, you can fill
+  in the template form fields by hand.  All
+  templates have been designed with the bare minimum of metadata
+  necessary to create an instance in mind.  You can enhance the detail
+  of any of the instances created at any time during the modelling
+  process.</p>
+
+<p>The required instances and properties of each of the common classes will 
+  be created automatically and added to the knowledge graph on form 
+  submission.  As a result you will see both the graph representation 
+  and the overview of the created instances in the <em>View</em>-tab.
+  Whenever new instances or properties are created the graph will be
+  redrawn and focused on the newly added part of the knowledge graph.<sup>1</sup>
+</p>
+
+<h4>Shortcuts</h4>
+
+<p>The <em>shortcuts</em> in the second section provide a convenient way of
+  connecting common classes in standardized ways.  Shortcuts are
+  currently provided for <em>things, places, actors, events/time,</em>
+  and <em>concepts</em>.  These shortcuts are based on the CIDOC CRM's
+  idea of using "Fundamental Categories" (FC) and "Fundamental
+  Relationships" (FR) for querying CRM-based repositories.<sup>2</sup>
+  </p>
+
+<p>To use the shortcuts, simply choose a class of which you want to
+  connect an instance of, e.g. a person (actor), by clicking on the
+  appropriate arrow symbol to expand the tree.  Next, choose the class
+  of the instance you want to connect to, e.g. a place (again, by
+  clicking on the arrow symbol).  Next, select one of the available
+  categories which best represents the type of connection you are
+  trying to make, e.g. actor refers to place.  You will be
+  presented with one or more shortcuts, which connect the chosen
+  classes in a meaningful way.</p>
+
+<p>Each shortcut takes the form of a <em>path</em> of one or more statements
+  (triples) that follow on from each other.  You can hover over each
+  of the components of the path to get a definition of the
+  constituents of the shortcut.  Choose one of the numbered (bold)
+  Shortcut links to bring up the shortcuts form and start filling in
+  the instances to be connected.  As instances are added to the
+  knowledge base, these will be used to populate data lists that can
+  be used to speed up the process of filling in the forms.
+</p>
+  
+<h4>Taxonomy</h4>
+
+<p>Once familiar with the basics of creating triples (statements), the
+  <em>taxonomy tree</em> display of the classes in our ontologies provides the
+  most granular modelling option.  It is advisable to spend some time
+  familiarizing yourself with the class hierarchy and the concepts
+  represented.  Simply click on the arrow symbols to expand or
+  collapse the tree.  You can call up the scope notes for each of the
+  classes by hovering over it.</p>
+
+<p>To select a class, simply click on its label.  This will take you
+  to the <em>triple creation</em> interface.  The chosen class will become the 
+  <em>subject</em> of your statement.  Next, choose
+  a <em>predicate</em> from the lists of direct and inverse
+  properties.  As you choose from the available options, the <em>current
+  statement</em> is created for you at the top of the panel.  Finally,
+  click the <em>Create</em>-button to insert the triple into the
+  knowledge graph as usual.</p>
+
+<p>It is important to stress that the best results are often achieved
+  by using the three approaches (<em>templates, shortcuts,</em> and
+  <em>taxonomy</em>) in tandem.  As always, please feel free to 
+  <a href="mailto:info@eighteenthcenturypoetry.org">contact
+  us</a> with any questions, problems, or ideas for improvements.  As
+  the most recent addition to ECPA, we are committed to further
+  development and enhancements of the modelling prototype based on
+  user feedback.
+</p>
+
+
+<br style="clear:both"/>
+<p class="small">
+<sup>1</sup> In future updates of the platform, we will experiment
+  with a graphical modelling interface (i.e. directly powered by
+  Cytoscape), however, for now the graph is primarily a 
+  visual and exploratory aid.  <em>Please note:</em>  the graph is
+  currently redrawn from scratch every time an addition is made, any
+  manual adjustments of the layout of the nodes and edges will
+  therefore not be preserved beyond the next edit.  Manual changes to
+  the layout may, however, be useful before exporting an image of the
+  graph.<br/>
+<sup>2</sup> Katerina Tzompanaki and Martin Doerr,
+  <a href="http://www.cidoc-crm.org/sites/default/files/TechnicalReport429_April2012.pdf"
+  class="external" type="_blank">"Fundamental 
+  Categories and Relationships for intuitive querying CIDOC‐CRM based
+  repositories"</a>. Technical Report ICS‐FORTH/TR‐429.  Heraklion: 
+  Institute of Computer Science, FORTH, April 2012.<br/>
+
+</p>

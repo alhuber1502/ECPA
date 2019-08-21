@@ -2,7 +2,8 @@
 // Global
 $.ajax({
     url: "/data/stats.json", dataType: 'json',
-    success: function(data) { stats = data; }
+    success: function(data) { stats = data; },
+    error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
 });
 
 function output_met(met) {
@@ -12,107 +13,137 @@ function output_met(met) {
 // Initialize poem display
 if ($('#reading').length) {
 
-// Reading
+  // Reading
     // load object (w/pc) data
     $.ajax({
         url: "/works/"+docname+"/"+docname+"_o.json", dataType: 'json',
-	success: function(data) { o = data; }
+	success: function(data) { o = data; },
+	error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load sentence data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"_s.json", dataType: 'json',
-	success: function(data) { s = data; }
+	success: function(data) { s = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load NUPOS POS metadata
     $.ajax({
 	url: "/data/nupos.json", dataType: 'json', 
-	success: function(data) { nupos = data; }
+	success: function(data) { nupos = data; },
+	error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load Penn POS metadata
     $.ajax({
 	url: "/data/penn.json", dataType: 'json', 
-	success: function(data) { penn = data; }
+	success: function(data) { penn = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
-// Analysis
+  // Analysis
     // load typed dependencies metadata
     $.ajax({
 	url: "/data/tdep.json", dataType: 'json', 
-	success: function(data) { tdep = data; }
+	success: function(data) { tdep = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load named entities data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"_ne.json", dataType: 'json', 
-	success: function(data) { ne_id = data[0]; ne = data[1]; }
+	success: function(data) { ne_id = data[0]; ne = data[1]; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load rhetorical figures
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"_rf.json", dataType: 'json', 
-	success: function(data) { rf = data; }
+	success: function(data) { rf = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load rhetfig metadata
     $.ajax({
 	url: "/data/rf.json", dataType: 'json', 
-	success: function(data) { rf_id = data; }
+	success: function(data) { rf_id = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load frame semantic parse data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"-wds_sema.json", dataType: 'json',
-	success: function(data) { sema = data; }
+	success: function(data) { sema = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load syntactic dependency parse data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"-wds_malt.conll", dataType: 'text',
-	success: function(data) { malt = data.split("\n\n"); }
+	success: function(data) { malt = data.split("\n\n"); },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load stopwords list
     $.ajax({
 	url: "/data/stopwords.txt", dataType: 'text',
-	success: function(data) { stopped = data.split("\n"); }
+	success: function(data) { stopped = data.split("\n"); },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
-// Visualization
+  // Visualization
     // load phonemes (w) data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"_p.json", dataType: 'json',
-	success: function(data) { p = data; }
+	success: function(data) { p = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load line data
     $.ajax({
 	url: "/works/"+docname+"/"+docname+"_l.json", dataType: 'json', async: false,
-	success: function(data) { l = data; }
+	success: function(data) { l = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
-// Modelling
+  // Modelling
     // load ontologies
     $.ajax({
 	url: "/resources/models/onto.json", dataType: 'json',
-	success: function(data) { onto = data; }
+	success: function(data) { onto = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
     
     // load fundamentals
     $.ajax({
 	url: "/resources/models/fundamental.json", dataType: 'json',
-	success: function(data) { fcr = data; }
+	success: function(data) { fcr = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
     // load hierarchies
     $.ajax({
 	url: "/resources/models/ontohier.json", dataType: 'json',
-	success: function(data) { ontohier = data; }
+	success: function(data) { ontohier = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
-    
-    
+
+    // load authors/works lists
+    $.ajax({
+	url: "/resources/models/authwork_mdp.json", dataType: 'json',
+	success: function(data) { mod_auth = data[0]; mod_work = data[1]; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+    });
+
+    // load public models' metadata
+    $.ajax({
+	url: "/resources/models/models.json", dataType: 'json',
+	success: function(data) { mod_md = data; },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+    });
+
+
     // generate "poetic form"
     var arr_syllab = [], arr_met = [], arr_rhyme = [];
     if (l.syllab != "" && l.syllab != null) {

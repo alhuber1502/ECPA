@@ -170,9 +170,9 @@ function rdn_cont (e) {
 	    "</div></div>";
     }
     content += "<p style='text-align: right;' class='small'>"+query('[Found an error?]','Please specify...','props',$(e).attr('id'), 'Make a correction', 'Please provide a correction to the properites of '+reference($(e)), 'ta')+"</p>";
-    content += "<p class='small'><b>External tools</b></p><ul class='downloads small'><li>Language: "+
-	"<ul class='bibliography'><li><a class='external' target='_blank' href='http://en.oxforddictionaries.com/search/?filter=dictionary&amp;query="+escape(lookup_r)+"'>English dictionary</a>"+
-	"<li><a class='external' target='_blank' href='http://en.oxforddictionaries.com/search/?filter=thesaurus&amp;query="+escape(lookup_l)+"'>English thesaurus</a>"+
+    content += "<p class='small'><b>External tools</b></p><ul class='downloads2 small'><li>Language: "+
+	"<ul class='bibliography'><li><a class='external' target='_blank' href='https://www.lexico.com/en/search/?filter=dictionary&amp;query="+escape(lookup_r)+"'>English dictionary</a>"+
+	"<li><a class='external' target='_blank' href='https://www.lexico.com/en/search/?filter=thesaurus&amp;query="+escape(lookup_l)+"'>English thesaurus</a>"+
 	"<li><a class='external' target='_blank' href='http://www.collinsdictionary.com/search/?dictCode=french-english&amp;q="+escape(lookup_l)+"'>French dictionary</a>"+
 	"<li><a class='external' target='_blank' href='http://www.perseus.tufts.edu/hopper/resolveform?lang=la&amp;lookup="+escape(lookup_l)+"'>Latin dictionary</a></ul>"+
 	"<li>Reference: "+
@@ -305,7 +305,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 });
 
 // make disabled tabs "disabled" (bug in BS3.3.6)
-$("a[data-toggle='tab'],[role='menu']>li>a").on("click", function(e) {
+$(document.body).on('click', 'a[data-toggle="tab"],[role="menu"]>li>a', function (e) {
     if ( $(this).parent().hasClass('disabled') ) {
 	e.preventDefault(); // prevent hash to change
 	e.stopImmediatePropagation(); // prevent "active" state change
@@ -370,8 +370,8 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	$('link[href="/css/mod.ecep.css"]').prop('disabled', true);
 	$('.nav-tabs a[href="#text"]').tab('show');
 	if ( viz_chosen == '' ) {
-	    $.getScript('/js/viz_overview.js');
 	    if (viz_ft == 1) {
+		$.getScript('/js/viz_overview.js');
 		$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
 		$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
 		viz_ft = 0;

@@ -1,47 +1,48 @@
+# ECPA NS
 @base <https://www.eighteenthcenturypoetry.org/resources/models/#> .
 @prefix : <https://www.eighteenthcenturypoetry.org/resources/models/#> .
+# Ontology NS
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+# Metadata NS
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+# Core ontology NS
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix crminf: <http://www.ics.forth.gr/isl/CRMinf/> .
-@prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/> .
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
+# External ontologies NS
 @prefix wd: <http://www.wikidata.org/entity/> .
-@prefix dbpedia: <http://dbpedia.org/resource/> .
-@prefix viaf: <http://viaf.org/ontology/1.1/#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
-@prefix postdata: <http://postdata.linhd.es/#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix viaf: <http://viaf.org/viaf/> .
 @prefix lcs: <http://id.loc.gov/authorities/subjects/> .
 @prefix lcn: <http://id.loc.gov/authorities/names/> .
 @prefix lcr: <http://id.loc.gov/vocabulary/relators/> .
 @prefix lct: <http://id.loc.gov/vocabulary/resourceTypes/> .
 @prefix lcg: <http://id.loc.gov/authorities/genreForms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
-# "Thomas Gray's Old Norse and Welsh imitations" - an ECPA Knowledge Base
+# "Thomas Gray's Old Norse and Welsh imitations" - an ECPA Knowledge Graph based on <http://dx.doi.org/10.1353/sip.2015.0032>
 # by Alexander Huber (AH) <huber@eighteenthcenturypoetry.org>, Editor, Eighteenth-Century Poetry Archive (ECPA)
 
 
 # About the ontology
 
 :tgaen-wimit a owl:Ontology ;
-    skos:prefLabel """Thomas Gray's Old Norse and Welsh imitations"""@en ;
-    rdfs:label """Thomas Gray's Old Norse and Welsh imitations"""@en ;
-    rdfs:comment """\"Thomas Gray's Old Norse and Welsh imitations\" is a CRM-based knowledge base about three imitations ("The Fatal Sisters", "The Descent of Odin", "The Triumphs of Owen") by Thomas Gray."""@en ;
-    dcterms:title """Thomas Gray's Old Norse and Welsh imitations"""@en ;
-    dcterms:description """\"Thomas Gray's Old Norse and Welsh imitations\" is a CRM-based knowledge base about Gray's imitations from the Welsh and Old Norse in the context of his projected "History of English Poetry"."""@en ;
-    rdfs:seeAlso <http://dx.doi.org/10.1353/sip.2015.0032> ;
-    dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-    owl:versionInfo 0.5 ;
-    dcterms:created "2018-09-27"^^xs:date ;
-    dcterms:subject <https://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml> ;
+    skos:prefLabel """Thomas Gray's Old Norse and Welsh imitations: towards the making of a literary history""" ;
+    rdfs:comment """\"Thomas Gray's Old Norse and Welsh imitations\" is a CRM-based knowledge graph about three imitations by Thomas Gray ("The Fatal Sisters", "The Descent of Odin", "The Triumphs of Owen"), composed for his projected \"History of Poetry\".\n\nThe knowledge graph argues that Gray composed his imitations not in the wake of the MacPherson hype or indeed serving an ongoing preoccupation with poetic voice, orality, and immediacy, but as part of an overarching history of prosody.\n\nThis knowlegde graph is based on research published by Joshua Swidzinski in his article "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History", published in _Studies in Philology_ 112(4) (2015): 837-861, here 837-839.  Project MUSE, doi:10.1353/sip.2015.0032.  It has been adapted for demonstration and evaluation purposes.""" ;
+    dcterms:license "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
+    dcterms:date "1566363341000" ;
+    dcterms:created "1538046914000" ;
     dcterms:creator <https://www.eighteenthcenturypoetry.org/resources/models/#tgaen-wimit/creator> ;
-    dcterms:source <http://dx.doi.org/10.1353/sip.2015.0032> ;
+    dcterms:subject "https://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml" ;
+    dcterms:subject "https://www.eighteenthcenturypoetry.org/works/tgaen-wdooo.shtml" ;
+    dcterms:subject "https://www.eighteenthcenturypoetry.org/works/tgaen-wtrow.shtml" ;
+    owl:versionInfo "1.13" ;
     .
 
 
@@ -49,358 +50,300 @@
 
 <https://www.eighteenthcenturypoetry.org/resources/models/#tgaen-wimit/creator> a foaf:Person ;
     skos:prefLabel "Alexander Huber"^^xs:string ;
-    rdfs:label "Alexander Huber"^^xs:string ;
-    foaf:givenName "Alexander"^^xs:string ;
-    foaf:familyName "Huber"^^xs:string ;
     foaf:name "Alexander Huber"^^xs:string ;
-    dcterms:identifier <https://orcid.org/0000-0002-2151-6415> ;
-    foaf:homepage <https://orcid.org/0000-0002-2151-6415> ;
-    foaf:publications <https://oxford.academia.edu/AlexanderHuber> ;
-    foaf:mbox <mailto:huber@eighteenthcenturypoetry.org> ;
-    owl:sameAs :AH ;
+    foaf:homepage "https://orcid.org/0000-0002-2151-6415" ;
+    foaf:publications "https://scholar.google.co.uk/citations?hl=en&user=FKSUyMwAAAAJ" ;
+    foaf:mbox "mailto:huber@eighteenthcenturypoetry.org" ;
     .
 
 :JoshuaSwidzinski a foaf:Person ;
     skos:prefLabel "Joshua Swidzinski"^^xs:string ;
-    rdfs:label "Joshua Swidzinski"^^xs:string ;
     foaf:name "Joshua Swidzinski"^^xs:string ;
-    foaf:givenName "Joshua"^^xs:string ;
-    foaf:familyName "Swidzinski"^^xs:string ;
-    foaf:homepage <https://www.up.edu/directory/Joshua-Swidzinski.html> ;
-    foaf:mbox <mailto:swidzins@up.edu> ;
-    foaf:publications <https://college.up.edu/english/files/swidzinski-publications.pdf> ;
+    foaf:homepage "https://www.up.edu/directory/Joshua-Swidzinski.html" ;
+    foaf:publications "https://college.up.edu/english/files/swidzinski-publications.pdf" ;
+    foaf:mbox "mailto:swidzins@up.edu" ;
     .
 
 
 # References
 
-<http://dx.doi.org/10.1353/sip.2015.0032> a bibo:Article, crm:E73_Information_Object ;
-    skos:prefLabel """\"Uncouth Rhymes: Thomas Gray, Prosody, and Literary History\""""@en ;
-    rdfs:label """\"Uncouth Rhymes: Thomas Gray, Prosody, and Literary History\""""@en ;
+<https://www.eighteenthcenturypoetry.org/resources/models/#dx.doi.org/10.1353/sip.2015.0032> a fabio:JournalArticle ;
+    skos:prefLabel """\"Uncouth Rhymes: Thomas Gray, Prosody, and Literary History\". _Studies in Philology_ 112(4) (2015): 837-861. Project MUSE, doi:10.1353/sip.2015.0032""" ;
     dcterms:creator :JoshuaSwidzinski ;
-    dcterms:title "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History"@en ;
+    dcterms:title "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History" ;
     dcterms:publisher "The University of North Carolina Press"^^xs:string ;
     dcterms:date "2015"^^xs:gYear ;
-    dcterms:bibliographicCitation """Swidzinski, Joshua. "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History". <em>Studies in Philology</em> 112(4) (2015): 837-861. Project MUSE, doi:10.1353/sip.2015.0032"""@en ;
+    dcterms:bibliographicCitation """Swidzinski, Joshua. "Uncouth Rhymes: Thomas Gray, Prosody, and Literary History". _Studies in Philology_ 112(4) (2015): 837-861. Project MUSE, doi:10.1353/sip.2015.0032""" ;
     .
 
 
-# Knowledge Base
+# Knowledge Graph
 
 # Persons
 
-:ThomasGray a crm:E39_Actor, postdata:Person, foaf:Person, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Gray"@en ;
-    rdfs:label "Thomas Gray"@en ;
-    crm:P3_has_note "Gray, Thomas"@en ;
-    crm:P1_is_identified_by "Thomas Gray"@en ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/authors/pers00039.shtml> ;
-    crm:P1_is_identified_by <authors.xml#aut_GrayTh1716> ;
-    crm:P2_has_type frbroo:F10 ;
+:ThomasGray a crm:E21_Person ;
+    skos:prefLabel "Thomas Gray" ;
+    crm:P3_has_note "Gray, Thomas" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/authors/pers00039.shtml" ;
+    crm:P138i_has_representation "https://www.eighteenthcenturypoetry.org/images/authors/GrayTh1716_NPG.jpg" ;
     crm:P2_has_type lcr:aut ;
     owl:sameAs wd:Q315516 ;
-    owl:sameAs dbpedia:Thomas_Gray ;
     owl:sameAs viaf:9889965 ;
-    rdfs:seeAlso <https://www.eighteenthcenturypoetry.org/authors/pers00039.shtml> ;
-    rdfs:seeAlso <https://www.thomasgray.org/resources/bio.shtml> ;
+    rdfs:seeAlso "https://www.thomasgray.org/resources/bio.shtml" ;
     .
 
-:WilliamMason a crm:E39_Actor, postdata:Person, foaf:Person, owl:NamedIndividual ;
-    skos:prefLabel "William Mason"@en ;
-    rdfs:label "William Mason"@en ;
-    crm:P3_has_note "Mason, William"@en ;
-    crm:P1_is_identified_by "William Mason"@en ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/authors/pers00051.shtml> ;
-    crm:P1_is_identified_by <authors.xml#aut_MasoWi1725> ;
-    crm:P2_has_type frbroo:F10 ;
+:WilliamMason a crm:E21_Person ;
+    skos:prefLabel "William Mason" ;
+    crm:P3_has_note "Mason, William" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/authors/pers00051.shtml" ;
+    crm:P138i_has_representation "https://www.eighteenthcenturypoetry.org/images/authors/MasoWi1725_NPG.jpg" ;
     crm:P2_has_type lcr:aut ;
     owl:sameAs wd:Q28048049 ;
-    owl:sameAs <http://dbpedia.org/resource/William_Mason_\u0028poet\u0029> ;
     owl:sameAs viaf:95718679 ;
-    rdfs:seeAlso <https://www.eighteenthcenturypoetry.org/authors/pers00051.shtml> ;
     .
 
-:ThomasWarton a crm:E39_Actor, postdata:Person, foaf:Person, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Warton"@en ;
-    rdfs:label "Thomas Warton"@en ;
-    crm:P3_has_note "Warton, Thomas"@en ;
-    crm:P1_is_identified_by "Thomas Warton"@en ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/authors/pers00053.shtml> ;
-    crm:P1_is_identified_by <authors.xml#aut_WartTh1728> ;
-    crm:P2_has_type frbroo:F10 ;
+:ThomasWarton a crm:E21_Person ;
+    skos:prefLabel "Thomas Warton" ;
+    crm:P3_has_note "Warton, Thomas" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/authors/pers00053.shtml" ;
+    crm:P138i_has_representation "https://www.eighteenthcenturypoetry.org/images/authors/WartTh1728_NPG.jpg" ;
     crm:P2_has_type lcr:aut ;
     owl:sameAs wd:Q1971218 ;
-    owl:sameAs dbpedia:Thomas_Warton ;
     owl:sameAs viaf:44371601 ;
-    rdfs:seeAlso <https://www.eighteenthcenturypoetry.org/authors/pers00053.shtml> ;
     .
 
-:JamesMacpherson a crm:E39_Actor, postdata:Person, foaf:Person, owl:NamedIndividual ;
-    skos:prefLabel "James Macpherson"@en ;
-    rdfs:label "James Macpherson"@en ;
-    crm:P3_has_note "Macpherson, James"@en ;
-    crm:P1_is_identified_by "James Macpherson"@en ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/authors/pers00291.shtml> ;
-    crm:P1_is_identified_by <authors.xml#aut_MacpJa1736> ;
-    crm:P2_has_type frbroo:F10 ;
+:JamesMacpherson a crm:E21_Person ;
+    skos:prefLabel "James Macpherson" ;
+    crm:P3_has_note "Macpherson, James" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/authors/pers00291.shtml" ;
+    crm:P138i_has_representation "https://www.eighteenthcenturypoetry.org/images/authors/MacpJa1736_NPG.jpg" ;
     crm:P2_has_type lcr:aut ;
     owl:sameAs wd:Q312562 ;
-    owl:sameAs dbpedia:James_Macpherson ;
     owl:sameAs viaf:100201047 ;
-    rdfs:seeAlso <https://www.eighteenthcenturypoetry.org/authors/pers00291.shtml> ;
+    owl:sameAs lcn:n96034390 ;
     .
 
 
 # Publications
 
-:ThomasWartonsHistoryOfEnglishPoetry1774-1781 a crm:E33_Linguistic_Object, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Warton's <em>History of English Poetry</em> (1774-1781)"@en ;
-    rdfs:label "Thomas Warton's <em>History of English Poetry</em> (1774-1781)"@en ;
-    crm:P102_has_title "The History of English poetry, from	the Close of the Eleventh to the Commencement of the Eighteenth Century (1774-1781)"@en ;
-    crm:P3_has_note "The History of English poetry, from the Close of the Eleventh to the Commencement of the Eighteenth Century (1774-1781)"@en ;
+:TWsHistoryOfEnglishPoetry1774-1781 a crm:E33_Linguistic_Object ;
+    skos:prefLabel """Thomas Warton's \"History of English Poetry\" (1774-1781)""" ;
+    crm:P102_has_title "The History of English poetry, from the Close of the Eleventh to the Commencement of the Eighteenth Century (1774-1781)" ;
+    crm:P138i_has_representation "https://upload.wikimedia.org/wikipedia/commons/8/8e/Warton%27s_History_of_English_Poetry.JPG" ;
     crm:P2_has_type lcs:sh2008106999 ;
-    crm:P15_was_influenced_by :ThomasGraysHistoryOfEnglishPoetry ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571> ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596> ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599> ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571" ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596" ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599" ;
+    .
+:PublicationOfTWsHistoryOfEnglishPoetry1774-1781 a frbroo:F32_Carrier_Production_Event ;
+    skos:prefLabel """Publication of Thomas Warton's \"History of English Poetry\" (1774-1781)""" ;
+    crm:P15_was_influenced_by :CompositionOfTGsHistoryOfEnglishPoetry ;
+    crm:P92_brought_into_existence :TWsHistoryOfEnglishPoetry1774-1781 ;
+    crm:P14_carried_out_by :ThomasWarton ;
+    crm:P82_at_some_time_within :DateOfPublicationOfTWsHistoryOfEnglishPoetry1774-1781 ;
+    .
+:DateOfPublicationOfTWsHistoryOfEnglishPoetry1774-1781 a crm:E52_Time-Span ;
+    skos:prefLabel """Date of Publication of Thomas Warton's \"History of English Poetry\" (1774-1781)"""^^xs:string ;
+    crm:P3_has_note "1774 - 1781"^^xs:string ;
+    crm:P82a_begin_of_the_begin "1774-01-01"^^xs:date ;
+    crm:P82b_end_of_the_end "1781-12-31"^^xs:date ;
     .
 
-:PublicationOfThomasGraysPoems1768 a owl:NamedIndividual, frbroo:F32 ;
-    skos:prefLabel "Publication of Thomas Gray's <em>Poems</em> (1768)"@en ;
-    rdfs:label "Publication of Thomas Gray's <em>Poems</em> (1768)"@en ;
+:PublicationOfTGsPoems1768 a frbroo:F32_Carrier_Production_Event ;
+    skos:prefLabel """Publication of Thomas Gray's \"Poems\"""" ;
     crm:P92_brought_into_existence :Poems1768 ;
-    crm:P14_carried_out_by [
-        crm:E39_Actor :ThomasGray ;
-    	<http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P82_at_some_time_within [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1768"^^xs:string ;
-  	crm:P82a_begin_of_the_begin "1768-01-01"^^xs:date ;
-	crm:P82b_end_of_the_end "1768-12-31"^^xs:date ;
-    ] ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P82_at_some_time_within :DateOfPublicationOfTGsPoems1768 ;
     .
-:Poems1768 a crm:E33_Linguistic_Object, postdata:PrimarySource, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Gray's <em>Poems</em> (1768)"@en ;
-    rdfs:label "Thomas Gray's <em>Poems</em> (1768)"@en ;
-    rdfs:comment "[We do not distinguish, for the purpose of this model, between the Dodsley and Foulis editions.]"@en ;
-    crm:P102_has_title "Poems (1768)"@en ;
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1768> ;
-    crm:P3_has_note "Poems (1768)"@en ;
+:DateOfPublicationOfTGsPoems1768 a crm:E52_Time-Span ;
+    skos:prefLabel """Date of Publication of Thomas Gray's \"Poems\""""^^xs:string ;
+    crm:P3_has_note "1768"^^xs:string ;
+    crm:P82a_begin_of_the_begin "1768-01-01"^^xs:date ;
+    crm:P82b_end_of_the_end "1768-12-31"^^xs:date ;
+    .
+:Poems1768 a crm:E33_Linguistic_Object ;
+    skos:prefLabel "Thomas Gray's \"Poems\" (1768)" ;
+    rdfs:comment "[We do not distinguish, for the purpose of this model, between the Dodsley and Foulis editions.]" ;
+    crm:P102_has_title "Poems (1768)" ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768a/0001.gif" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1768" ;
     crm:P2_has_type lct:col ;
-    crm:P148_has_component :ThomasGraysImitations ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysPoems1768 ;
+    crm:P148_has_component :TGsImitations ;
+    crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
     .
 
-:PublicationOfThomasGraysOdes1757 a owl:NamedIndividual, frbroo:F32 ;
-    skos:prefLabel "Publication of Thomas Gray's <em>Odes</em> (1757)"@en ;
-    rdfs:label "Publication of Thomas Gray's <em>Odes</em> (1757)"@en ;
+:PublicationOfTGsOdes1757 a frbroo:F32_Carrier_Production_Event ;
+    skos:prefLabel "Publication of Thomas Gray's \"Odes\"" ;
     crm:P92_brought_into_existence :Odes1757 ;
-    crm:P14_carried_out_by [
-        crm:E39_Actor :ThomasGray ;
-    	<http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P82_at_some_time_within [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1757"^^xs:string ;
-  	crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
-	crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
-    ] ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P82_at_some_time_within :DateOfPublicationOfTGsOdes1757 ;
     .
-:Odes1757 a crm:E33_Linguistic_Object, postdata:PrimarySource, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Gray's <em>Odes</em> (1757)"@en ;
-    rdfs:label "Thomas Gray's <em>Odes</em> (1757)"@en ;
-    crm:P102_has_title "Odes (1757)"@en ;
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1757> ;
-    crm:P3_has_note "Odes (1757)"@en ;
+:DateOfPublicationOfTGsOdes1757 a crm:E52_Time-Span ;
+    skos:prefLabel "Date of Publication of Thomas Gray's \"Odes\""^^xs:string ;
+    crm:P3_has_note "1757"^^xs:string ;
+    crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
+    crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
+    .
+:Odes1757 a crm:E33_Linguistic_Object ;
+    skos:prefLabel "Thomas Gray's \"Odes\" (1757)" ;
+    crm:P102_has_title "Odes (1757)" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1757" ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/0001.gif" ;
     crm:P2_has_type lct:col ;
-    crm:P148_has_component :ThomasGraysOdes ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysOdes1757 ;
+    crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
-:CompositionOfThomasGraysCommonplaceBook a owl:NamedIndividual, frbroo:F32 ;
-    skos:prefLabel "Composition of Thomas Gray's <em>Commonplace Book</em>"@en ;
-    rdfs:label "Composition of Thomas Gray's <em>Commonplace Book</em>"@en ;
-    crm:P92_brought_into_existence :ThomasGraysCommonplaceBook ;
-    crm:P14_carried_out_by [
-    	crm:E39_Actor :ThomasGray ;
-        <http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P14_carried_out_by [
-        crm:E39_Actor :WilliamMason ;
-    	<http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:ctb ;
-    ] ;
-    crm:P81_ongoing_throughout [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1736 - 1762"^^xs:string ;
-  	crm:P81a_end_of_the_begin "1736"^^xs:gYear ;
-	crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
-    ] ;
-    crm:P92_brought_into_existence :ThomasGraysHistoryOfEnglishPoetry ;
+:CompositionOfTGsCommonplaceBook a crm:E65_Creation ;
+    skos:prefLabel "Composition of Thomas Gray's \"Commonplace Book\"" ;
+    crm:P92_brought_into_existence :TGsCommonplaceBook ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P14_carried_out_by :WilliamMason ;
+    crm:P81_ongoing_throughout :DateOfCompositionOfTGsCommonplaceBook ;
+    crm:P92_brought_into_existence :TGsHistoryOfEnglishPoetry ;
     .
-:ThomasGraysCommonplaceBook a crm:E33_Linguistic_Object, postdata:PrimarySource, frbroo:F4, owl:NamedIndividual ;
-    skos:prefLabel "Thomas Gray's <em>Commonplace Book</em>"@en ;
-    rdfs:label "Thomas Gray's <em>Commonplace Book</em>"@en ;
-    crm:P102_has_title "Commonplace Books by Thomas Gray"@en ;
-    crm:P3_has_note "Commonplace Books by Thomas Gray"@en ;
+:DateOfCompositionOfTGsCommonplaceBook a crm:E52_Time-Span ;
+    skos:prefLabel "Date of Composition of Thomas Gray's \"Commonplace Book\""^^xs:string ;
+    crm:P3_has_note "1736 - 1762"^^xs:string ;
+    crm:P81a_end_of_the_begin "1736"^^xs:gYear ;
+    crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
+    .
+:TGsCommonplaceBook a crm:E33_Linguistic_Object ;
+    skos:prefLabel "Thomas Gray's \"Commonplace Book\"" ;
+    crm:P102_has_title "Commonplace Books by Thomas Gray" ;
     crm:P2_has_type lct:man ;
-    crm:P2_has_type "folio manuscript"@en ;
-    crm:P148_has_component :ThomasGraysHistoryOfEnglishPoetry ;
-    crm:P148_has_component :ThomasGraysImitations ;
-    crm:P108i_was_produced_by :CompositionOfThomasGraysCommonplaceBook ;
+    crm:P2_has_type "folio manuscript" ;
+    crm:P148_has_component :TGsHistoryOfEnglishPoetry ;
+    crm:P148_has_component :TGsImitations ;
+    crm:P108i_was_produced_by :CompositionOfTGsCommonplaceBook ;
     .
 
-:CompositionOfThomasGraysHistoryOfEnglishPoetry a owl:NamedIndividual, crm:E12_Production ;
-    skos:prefLabel """Composition of Thomas Gray's \"History of English Poetry\""""@en ;
-    rdfs:label """Composition of Thomas Gray's \"History of English Poetry\""""@en ;
-    crm:P92_brought_into_existence :ThomasGraysHistoryOfEnglishPoetry ;
-    crm:P92_brought_into_existence :ThomasGraysImitations ;
-    crm:P14_carried_out_by [
-    	crm:E39_Actor :ThomasGray ;
-        <http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-        <http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:res ;
-    ] ;
-    crm:P14_carried_out_by [
-        crm:E39_Actor :WilliamMason ;
-    	<http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P81_ongoing_throughout [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1753 - 1762"^^xs:string ;
-  	crm:P81a_end_of_the_begin "1753"^^xs:gYear ;
-	crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
-    ] ;
-    crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
-    rdfs:seeAlso """Jones, William Powell. <em>Thomas Gray, Scholar</em>. Cambridge, MA: Harvard UP, 1937. 84-107. Print."""@en ;
+:CompositionOfTGsHistoryOfEnglishPoetry a crm:E65_Creation ;
+    skos:prefLabel """Composition of Thomas Gray's \"History of English Poetry\"""" ;
+    crm:P92_brought_into_existence :TGsHistoryOfEnglishPoetry ;
+    crm:P92_brought_into_existence :TGsImitations ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P14_carried_out_by :WilliamMason ;
+    crm:P81_ongoing_throughout :DateOfCompositionOfTGsHistoryOfEnglishPoetry ;
+    crm:P86_falls_within :CompositionOfTGsCommonplaceBook ;
+    rdfs:seeAlso """Jones, William Powell. _Thomas Gray, Scholar_. Cambridge, MA: Harvard UP, 1937. 84-107. Print.""" ;
     .
-:ThomasGraysHistoryOfEnglishPoetry a crm:E89_Propositional_Object, postdata:PrimarySource ;
-    skos:prefLabel """Thomas Gray's \"History of English Poetry\""""@en ;
-    rdfs:label """Thomas Gray's \"History of English Poetry\""""@en ;
-    crm:P102_has_title "History of English Poetry"@en ;
-    crm:P3_has_note "History of English Poetry"@en ;
-    crm:P148i_is_component_of :ThomasGraysCommonplaceBook ;
-    crm:P67_refers_to :ThomasGraysImitations ;
-    crm:P2_has_type frbroo:F23 ;
-    crm:P15i_influenced :ThomasWartonsHistoryOfEnglishPoetry1774-1781 ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571> ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596> ;
-    rdfs:seeAlso <https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599> ;
+:DateOfCompositionOfTGsHistoryOfEnglishPoetry a crm:E52_Time-Span ;
+    skos:prefLabel """Date of Composition of Thomas Gray's \"History of English Poetry\""""^^xs:string ;
+    crm:P3_has_note "1753 - 1762"^^xs:string ;
+    crm:P81a_end_of_the_begin "1753"^^xs:gYear ;
+    crm:P81b_begin_of_the_end "1762"^^xs:gYear ;
+    .
+:TGsHistoryOfEnglishPoetry a crm:E89_Propositional_Object ;
+    skos:prefLabel """Thomas Gray's \"History of English Poetry\"""" ;
+    crm:P102_has_title "History of English Poetry" ;
+    crm:P148i_is_component_of :TGsCommonplaceBook ;
+    crm:P67_refers_to :TGsImitations ;
+    crm:P15i_influenced :PublicationOfTWsHistoryOfEnglishPoetry1774-1781 ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571" ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596" ;
+    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599" ;
     .
 
 
 # Poems
 
-:FatalSisters a crm:E33_Linguistic_Object, postdata:Opus, owl:NamedIndividual ;
-    skos:prefLabel "The Fatal Sisters"@en ;
-    rdfs:label "The Fatal Sisters"@en ;
-    crm:P3_has_note "The Fatal Sisters"@en ;
-    crm:P3_has_note <https://www.thomasgray.org/cgi-bin/display.cgi?text=fsio> ;
+:FatalSisters a crm:E33_Linguistic_Object ;
+    skos:prefLabel "The Fatal Sisters" ;
+    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=fsio" ;
     crm:P2_has_type lcg:gf2014026481 ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml> ;
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=fsio#mss.0066> ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysPoems1768 ;
-    crm:P148i_is_component_of :ThomasGraysImitations ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0077.gif" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/o4986-w0250.shtml" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=fsio#mss.0066" ;
+    crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
+    crm:P106i_forms_part_of :TGsImitations ;
     .
 
-:DescentOfOdin a crm:E33_Linguistic_Object, postdata:Opus, owl:NamedIndividual ;
-    skos:prefLabel "The Descent of Odin"@en ;
-    rdfs:label "The Descent of Odin"@en ;
-    crm:P3_has_note "The Descent of Odin"@en ;
-    crm:P3_has_note <https://www.thomasgray.org/cgi-bin/display.cgi?text=dooo> ;
+:DescentOfOdin a crm:E33_Linguistic_Object ;
+    skos:prefLabel "The Descent of Odin" ;
+    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=dooo" ;
     crm:P2_has_type lcg:gf2014026481 ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/works/tgaen-wdooo.shtml> ;
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=dooo#mss.0038> ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysPoems1768 ;
-    crm:P148i_is_component_of :ThomasGraysImitations ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0089.gif" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wdooo.shtml" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=dooo#mss.0038" ;
+    crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
+    crm:P106i_forms_part_of :TGsImitations ;
     .
 
-:TriumphsOfOwen a crm:E33_Linguistic_Object, postdata:Opus, owl:NamedIndividual ;
-    skos:prefLabel "The Triumphs of Owen"@en ;
-    rdfs:label "The Triumphs of Owen"@en ;
-    crm:P3_has_note "The Triumphs of Owen"@en ;
-    crm:P3_has_note <https://www.thomasgray.org/cgi-bin/display.cgi?text=trow> ;
+:TriumphsOfOwen a crm:E33_Linguistic_Object ;
+    skos:prefLabel "The Triumphs of Owen" ;
+    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=trow" ;
     crm:P2_has_type lcg:gf2014026481 ;
-    crm:P2_has_type frbroo:F23 ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/works/tgaen-wtrow.shtml> ;    
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=trow#mss.0190> ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysPoems1768 ;
-    crm:P148i_is_component_of :ThomasGraysImitations ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0101.gif" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wtrow.shtml" ;    
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=trow#mss.0190" ;
+    crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
+    crm:P106i_forms_part_of :TGsImitations ;
     .
 
-:CompositionOfThomasGraysImitations a owl:NamedIndividual, crm:E12_Production ;
-    skos:prefLabel """Composition of Thomas Gray's imitations"""@en ;
-    rdfs:label """Composition of Thomas Gray's imitations"""@en ;
-    crm:P92_brought_into_existence :ThomasGraysImitations ;
-    crm:P14_carried_out_by [
-    	crm:E39_Actor :ThomasGray ;
-        <http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P81_ongoing_throughout [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1760 - 1761"^^xs:string ;
-  	crm:P81a_end_of_the_begin "1760"^^xs:gYear ;
-	crm:P81b_begin_of_the_end "1761"^^xs:gYear ;
-    ] ;
-    crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
+:CompositionOfTGsImitations a crm:E65_Creation ;
+    skos:prefLabel """Composition of Thomas Gray's imitations""" ;
+    crm:P92_brought_into_existence :TGsImitations ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P81_ongoing_throughout :DateOfCompositionOfTGsImitations ;
+    crm:P86_falls_within :CompositionOfTGsCommonplaceBook ;
     .
-:ThomasGraysImitations owl:equivalentClass [ a owl:Class ;
-    skos:prefLabel """Thomas Gray's imitations"""@en ;
-    rdfs:label """Thomas Gray's imitations"""@en ;
-    owl:oneOf  ( :FatalSisters :DescentOfOdin :TriumphsOfOwen ) ] ;
-    rdfs:comment "a set of imitations of Old Norse and Welsh verse"@en ;
-    crm:P103_was_intended_for :ThomasGraysHistoryOfEnglishPoetry ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysPoems1768 ;
-    a postdata:Ensemble ;    
+:DateOfCompositionOfTGsImitations a crm:E52_Time-Span ;
+    skos:prefLabel """Date of Composition of Thomas Gray's imitations"""^^xs:string ;
+    crm:P3_has_note "1760 - 1761"^^xs:string ;
+    crm:P81a_end_of_the_begin "1760"^^xs:gYear ;
+    crm:P81b_begin_of_the_end "1761"^^xs:gYear ;
+    .
+:TGsImitations a crm:E90_Symbolic_Object ;
+    skos:prefLabel """Thomas Gray's imitations""" ;
+    rdfs:comment "a set of imitations of Old Norse and Welsh verse" ;
+    crm:P103_was_intended_for :TGsHistoryOfEnglishPoetry ;
+    crm:P106_is_composed_of :FatalSisters ;
+    crm:P106_is_composed_of :DescentOfOdin ;
+    crm:P106_is_composed_of :TriumphsOfOwen ;
     .
 
-:TheBard a crm:E33_Linguistic_Object, postdata:Opus, owl:NamedIndividual ;
-    skos:prefLabel "The Bard"@en ;
-    rdfs:label "The Bard"@en ;
-    crm:P102_has_title "The Bard"@en ;
-    crm:P3_has_note "The Bard"@en ;
-    crm:P3_has_note <https://www.thomasgray.org/cgi-bin/display.cgi?text=bapo> ;
+:TheBard a crm:E33_Linguistic_Object ;
+    skos:prefLabel "The Bard" ;
+    crm:P102_has_title "The Bard" ;
+    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=bapo" ;
     crm:P2_has_type lcg:gf2014026481 ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/works/tgaen-wbapo.shtml> ;
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=bapo#mss.0018> ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysOdes1757 ;
-    crm:P148i_is_component_of :ThomasGraysOdes ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/0011.gif" ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wbapo.shtml" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=bapo#mss.0018" ;
+    crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
-:TheProgressOfPoesy a crm:E33_Linguistic_Object, postdata:Opus, owl:NamedIndividual ;
-    skos:prefLabel "The Progress Of Poesy"@en ;
-    rdfs:label "The Progress Of Poesy"@en ;
-    crm:P102_has_title "The Progress Of Poesy"@en ;
-    crm:P3_has_note "The Progress Of Poesy"@en ;
-    crm:P3_has_note <https://www.thomasgray.org/cgi-bin/display.cgi?text=pppo> ;
+:TheProgressOfPoesy a crm:E33_Linguistic_Object ;
+    skos:prefLabel "The Progress Of Poesy" ;
+    crm:P102_has_title "The Progress Of Poesy" ;
+    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=pppo" ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/0003.gif" ;
     crm:P2_has_type lcg:gf2014026481 ;
-    crm:P1_is_identified_by <https://www.eighteenthcenturypoetry.org/works/tgaen-wpppo.shtml> ;    
-    crm:P1_is_identified_by <https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=pppo#mss.0138> ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysOdes1757 ;
-    crm:P148i_is_component_of :ThomasGraysOdes ;
+    crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wpppo.shtml" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=pppo#mss.0138" ;
+    crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
-:CompositionOfThomasGraysOdes a owl:NamedIndividual, crm:E12_Production ;
-    skos:prefLabel "Composition of Thomas Gray's <em>Odes</em> (1757)"@en ;
-    rdfs:label "Composition of Thomas Gray's <em>Odes</em> (1757)"@en ;
-    crm:P92_brought_into_existence :ThomasGraysOdes ;
-    crm:P14_carried_out_by [
-    	crm:E39_Actor :ThomasGray ;
-        <http://www.cidoc-crm.org/cidoc-crm/P14.1_in_the_role_of> lcr:aut ;
-    ] ;
-    crm:P81_ongoing_throughout [
-	a crm:E52_Time-Span ;
-	crm:P3_has_note "1751 - 1757"^^xs:string ;
-  	crm:P81a_end_of_the_begin "1751"^^xs:gYear ;
-	crm:P81b_begin_of_the_end "1757"^^xs:gYear ;
-    ] ;
-    crm:P86_falls_within :CompositionOfThomasGraysCommonplaceBook ;
+:PublicationOfTGsOdes1757 a frbroo:F32_Carrier_Production_Event ;
+    skos:prefLabel "Publication of Thomas Gray's \"Odes\"" ;
+    crm:P92_brought_into_existence :Odes1757 ;
+    crm:P14_carried_out_by :ThomasGray ;
+    crm:P82_at_some_time_within :DateOfPublicationOfTGsOdes1757 ;
     .
-:ThomasGraysOdes owl:equivalentClass [ a owl:Class ;
-    owl:oneOf  ( :TheBard :TheProgressOfPoesy ) ] ;
-    skos:prefLabel "Thomas Gray's <em>Odes</em> (1757)"@en ;
-    rdfs:label "Thomas Gray's <em>Odes</em> (1757)"@en ;
-    crm:P108i_was_produced_by :PublicationOfThomasGraysOdes1757 ;
-    a postdata:Ensemble ;
+:DateOfPublicationOfTGsOdes1757 a crm:E52_Time-Span ;
+    skos:prefLabel "Date of Publication of Thomas Gray's \"Odes\""^^xs:string ;
+    crm:P3_has_note "1757"^^xs:string ;
+    crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
+    crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
+    .
+:Odes1757 a crm:E33_Linguistic_Object ;
+    skos:prefLabel "Thomas Gray's \"Odes\" (1757)" ;
+    crm:P102_has_title "Odes (1757)" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1757" ;
+    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/0001.gif" ;
+    crm:P2_has_type lct:col ;
+    crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
 
@@ -408,104 +351,89 @@
 
 # Central research hypothesis
 
-<https://www.eighteenthcenturypoetry.org/resources/models/#sip.2015.0032-s1> a crm:I1_Argumentation ;
-    rdfs:comment "Thomas Gray's imitations are concerned with prosodic phenomena (poetic measures) as constitutive of a theory of literary form and a basis for the making of literary history."@en ;
-    skos:prefLabel "Central research question: what was the main intention/purpose of composing the imitations?"@en ;
-    rdfs:label "Central research question: what was the main intention/purpose of composing the imitations?"@en ;
+<https://www.eighteenthcenturypoetry.org/resources/models/#dx.doi.org/10.1353/sip.2015.0032-s1> a crminf:I1_Argumentation ;
+    rdfs:comment "Thomas Gray's imitations are concerned with prosodic phenomena (poetic measures) as constitutive of a theory of literary form and a basis for the making of literary history." ;
+    skos:prefLabel "Central research question: what was the main intention/purpose of composing the imitations?" ;
     crm:P14_carried_out_by :JoshuaSwidzinski ;
-    crminf:J2_concluded_that :PastScholarlyAssessmentOfThomasGraysImitations ;
-    crminf:J2_concluded_that :RecentScholarlyAssessmentOfThomasGraysImitations ;
-    crminf:J2_concluded_that :JoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
+    crminf:J2_concluded_that :PastScholarlyAssessmentOfTGsImitations ;
+    crminf:J2_concluded_that :RecentScholarlyAssessmentOfTGsImitations ;
+    crminf:J2_concluded_that :JSsAssessmentOfTGsImitations ;
     .
 
-:PastScholarlyAssessmentOfThomasGraysImitations a crm:I2_Belief ;
-    skos:prefLabel "Past scholarly belief: Gray was influenced by the Macpherson hype"@en ;
-    rdfs:label "Past scholarly belief: Gray was influenced by the Macpherson hype"@en ;
-    crminf:J4_that :PropositionsForPastScholarlyAssessmentOfThomasGraysImitations ;
+:PastScholarlyAssessmentOfTGsImitations a crminf:I2_Belief ;
+    skos:prefLabel "Past scholarly belief: Gray was influenced by the Macpherson hype" ;
+    crminf:J4_that :PropositionsForPastScholarlyAssessmentOfTGsImitations ;
     crminf:J5_holds_to_be "false"^^xs:boolean ;
+	crm:P120_occurs_before :RecentScholarlyAssessmentOfTGsImitations ;
     .
-:PropositionsForPastScholarlyAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set;
-    skos:prefLabel "Past scholarly belief (proposition set)"@en ;
-    rdfs:label "Past scholarly belief (proposition set)"@en ;
-    crm:P148_has_component :BagOfPropositionsForPastScholarlyAssessmentOfThomasGraysImitations-1 ;
+:PropositionsForPastScholarlyAssessmentOfTGsImitations a crminf:I4_Proposition_Set ;
+    skos:prefLabel "Past scholarly beliefs (proposition set)" ;
+    crm:P148_has_component :BagOfPropositionsForPastScholarlyAssessmentOfTGsImitations-1 ;
     .
-:BagOfPropositionsForPastScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
-    skos:prefLabel "Past scholarly belief (proposition)"@en ;
-    rdfs:label "Past scholarly belief (proposition)"@en ;
-    rdf:subject :CompositionOfThomasGraysImitations ;
+:BagOfPropositionsForPastScholarlyAssessmentOfTGsImitations-1 a crm:E73_Information_Object, rdf:Statement ;
+    skos:prefLabel "Past scholarly belief (proposition)" ;
+    rdf:subject :CompositionOfTGsImitations ;
     rdf:predicate crm:P17_was_motivated_by ; 
-    rdf:object :JamesMacpherson, lcn:n96034390 ;
-    rdfs:seeAlso """Kaul, Suvir. <em>Thomas Gray and Literary Authority: A Study in Ideology and Poetics</em>. Stanford: Stanford UP, 1992. 234. Print."""@en ;
+    rdf:object :JamesMacpherson ;
+    rdfs:seeAlso """Kaul, Suvir. _Thomas Gray and Literary Authority: A Study in Ideology and Poetics_. Stanford: Stanford UP, 1992. 234. Print.""" ;
     .
 
-:RecentScholarlyAssessmentOfThomasGraysImitations a crm:I2_Belief ;
-    skos:prefLabel "Recent scholarly belief: Gray was proccupied with poetic voice, orality, and immediacy"@en ;
-    rdfs:label "Recent scholarly belief: Gray was proccupied with poetic voice, orality, and immediacy"@en ;
-    crminf:J4_that :PropositionsForRecentScholarlyAssessmentOfThomasGraysImitations ;
+:RecentScholarlyAssessmentOfTGsImitations a crminf:I2_Belief ;
+    skos:prefLabel "Recent scholarly belief: Gray was proccupied with poetic voice, orality, and immediacy" ;
+    crminf:J4_that :PropositionsForRecentScholarlyAssessmentOfTGsImitations ;
     crminf:J5_holds_to_be "false"^^xs:boolean ;
+	crm:P120_occurs_before :JSsAssessmentOfTGsImitations ;
     .
-:PropositionsForRecentScholarlyAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set;
-    skos:prefLabel "Recent scholarly belief (proposition set)"@en ;
-    rdfs:label "Recent scholarly belief (proposition set)"@en ;
-    crm:P148_has_component :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-2 ;
+:PropositionsForRecentScholarlyAssessmentOfTGsImitations a crminf:I4_Proposition_Set ;
+    skos:prefLabel "Recent scholarly beliefs (proposition set)" ;
+    crm:P148_has_component :BagOfPropositionsForRecentScholarlyAssessmentOfTGsImitations-1, :BagOfPropositionsForRecentScholarlyAssessmentOfTGsImitations-2 ;
     .
-:BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
-    skos:prefLabel "Recent scholarly belief (proposition)"@en ;
-    rdfs:label "Recent scholarly belief (proposition)"@en ;
-    rdf:subject :CompositionOfThomasGraysImitations ;
+:BagOfPropositionsForRecentScholarlyAssessmentOfTGsImitations-1 a crm:E73_Information_Object, rdf:Statement ;
+    skos:prefLabel "Recent scholarly belief 1 (proposition)" ;
+    rdf:subject :CompositionOfTGsImitations ;
     rdf:predicate crm:P15_was_influenced_by ;
-    rdf:object :ThomasGraysOdes;
+    rdf:object :PublicationOfTGsOdes1757 ;
     .
-:BagOfPropositionsForRecentScholarlyAssessmentOfThomasGraysImitations-2 a rdf:Statement, crm:E73_Information_Object ;
-    skos:prefLabel "Recent scholarly belief (proposition)"@en ;
-    rdfs:label "Recent scholarly belief (proposition)"@en ;
-    rdf:subject :CompositionOfThomasGraysImitations ;
-    rdf:predicate crm:P21_had_general_purpose ;
+:BagOfPropositionsForRecentScholarlyAssessmentOfTGsImitations-2 a crm:E73_Information_Object, rdf:Statement ;
+    skos:prefLabel "Recent scholarly belief 2 (proposition)" ;
+    rdf:subject :CompositionOfTGsImitations ;
+    rdf:predicate crm:P103_was_intended_for ;
     rdf:object :PoeticVoice;
     .
 :PoeticVoice a crm:E89_Propositional_Object ;
-    skos:prefLabel "Poetic Voice"@en ;
-    rdfs:label "Poetic Voice"@en ;
-    rdfs:comment "Gray's engagement with issues of poetic voice, such as his engagement with the media of voice and print."@en ;
-    crm:P3_has_note "Gray's engagement with issues of poetic voice, such as his engagement with the media of voice and print."@en ;
-    crm:P67_refers_to dbpedia:Poetry ;
-    crm:P67_refers_to dbpedia:Orality ;
-    crm:P67_refers_to <http://dbpedia.org/resource/Immediacy_\u0028philosophy\u0029> ;
-    crm:P67_refers_to dbpedia:Print ;
-    rdfs:seeAlso """Mulholland, James. <em>Sounding imperial: poetic voice and the politics of empire, 1730-1820</em>. Baltimore: The Johns Hopkins University Press, 2012. 33-66. Print. Prescott, Sarah. "'Gray's Pale Spectre': Evan Evans, Thomas Gray, and the Rise of Welsh Bardic Nationalism". Modern Philology 104(1) (Aug 2006): 72-95. 84-92. Print. Trumpener, Katie. <em>Bardic Nationalism: The Romantic Novel and the British Empire</em>. Princeton, NJ: Princeton UP, 1997. 6. Print. Kaul, Suvir. <em>Thomas Gray and Literary Authority: A Study in Ideology and Poetics</em>. Stanford: Stanford UP, 1992. 234-245. Print."""@en ;
-    crm:P3_has_note """Poetry as a written and aural art form occupies a special role: the tone we produce when we recite their verses brings back a physical reality from a specific past with an effect of immediacy. This will happen independently of whether we manage to understand what may have motivated the form of their songs and poems. It is like touching the stones of an old building. What we touch and what touches us is a substantial presence of the past — not its signifier.... literary texts have a distinctive edge in producing the historical immediacy and concreteness of Stimmungen. The word concreteness is meant to underline that each Stimmung, however similar it may be to other Stimmungen, has an individual quality in its ontological status as a material phenomenon."""@en ;
+    skos:prefLabel "Poetic Voice" ;
+    rdfs:comment "Gray's engagement with issues of poetic voice, such as his engagement with the media of voice and print." ;
+    crm:P67_refers_to wd:Q482 ;
+    crm:P67_refers_to wd:Q1084976 ;
+    crm:P67_refers_to wd:Q15852127 ;
+    rdfs:seeAlso """Mulholland, James. _Sounding imperial: poetic voice and the politics of empire, 1730-1820_. Baltimore: The Johns Hopkins University Press, 2012. 33-66. Print.\n Prescott, Sarah. "'Gray's Pale Spectre': Evan Evans, Thomas Gray, and the Rise of Welsh Bardic Nationalism". _Modern Philology_ 104(1) (Aug 2006): 72-95. 84-92. Print.\n Trumpener, Katie. _Bardic Nationalism: The Romantic Novel and the British Empire_. Princeton, NJ: Princeton UP, 1997. 6. Print.\n Kaul, Suvir. _Thomas Gray and Literary Authority: A Study in Ideology and Poetics_. Stanford: Stanford UP, 1992. 234-245. Print.""" ;
     .
 
-:JoshuaSwidzinskisAssessmentOfThomasGraysImitations a crm:I2_Belief ;
-    skos:prefLabel "Swidzinski's scholarly belief: Gray was interested in establishing a history of prosody"@en ;
-    rdfs:label "Swidzinski's scholarly belief: Gray was interested in establishing a history of prosody"@en ;
-    rdfs:comment "Gray's history of prosody subsumes questions of poetic voice to questions of poetic measure.  This interest in the historicity of prosodic phenomena as a theory of poetic form lead Gray to assign poetic measure a constitutive role in the making of literary history"@en ;
-    crminf:J4_that :PropositionsForJoshuaSwidzinskisAssessmentOfThomasGraysImitations ;
+:JSsAssessmentOfTGsImitations a crminf:I2_Belief ;
+    skos:prefLabel "Swidzinski's scholarly belief: Gray was interested in establishing a history of prosody" ;
+    rdfs:comment "Gray's history of prosody subsumes questions of poetic voice to questions of poetic measure.  This interest in the historicity of prosodic phenomena as a theory of poetic form lead Gray to assign poetic measure a constitutive role in the making of literary history" ;
+    crminf:J4_that :PropositionsForJSsAssessmentOfTGsImitations ;
     crminf:J5_holds_to_be "true"^^xs:boolean ;
     .
-:PropositionsForJoshuaSwidzinskisAssessmentOfThomasGraysImitations a crm:I4_Proposition_Set ;
-    skos:prefLabel "Swidzinski's scholarly belief (proposition set)"@en ;
-    rdfs:label "Swidzinski's scholarly belief (proposition set)"@en ;
-    crm:P148_has_component :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-1, :BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-2 ;
+:PropositionsForJSsAssessmentOfTGsImitations a crminf:I4_Proposition_Set ;
+    skos:prefLabel "Swidzinski's scholarly beliefs (proposition set)" ;
+    crm:P148_has_component :BagOfPropositionsForJSsScholarlyAssessmentOfTGsImitations-1, :BagOfPropositionsForJSsScholarlyAssessmentOfTGsImitations-2 ;
     .
-:BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-1 a rdf:Statement, crm:E73_Information_Object ;
-    skos:prefLabel "Swidzinski's scholarly belief (proposition)"@en ;
-    rdfs:label "Swidzinski's scholarly belief (proposition)"@en ;
-    rdf:subject :ThomasGraysImitations ;
+:BagOfPropositionsForJSsScholarlyAssessmentOfTGsImitations-1 a crm:E73_Information_Object, rdf:Statement ;
+    skos:prefLabel "Swidzinski's scholarly belief 1 (proposition)" ;
+    rdf:subject :TGsImitations ;
     rdf:predicate crm:P17_was_motivated_by ;
-    rdf:object :ThomasGraysHistoryOfEnglishPoetry ;
+    rdf:object :TGsHistoryOfEnglishPoetry ;
     .
-:BagOfPropositionsForJoshuaSwidzinskisScholarlyAssessmentOfThomasGraysImitations-2 a rdf:Statement, crm:E73_Information_Object ;
-    skos:prefLabel "Swidzinski's scholarly belief (proposition)"@en ;
-    rdfs:label "Swidzinski's scholarly belief (proposition)"@en ;
-    rdf:subject :ThomasGraysHistoryOfEnglishPoetry ;
-    rdf:predicate crm:P20_had_specific_purpose ;
+:BagOfPropositionsForJSsScholarlyAssessmentOfTGsImitations-2 a crm:E73_Information_Object, rdf:Statement ;
+    skos:prefLabel "Swidzinski's scholarly belief 2 (proposition)" ;
+    rdf:subject :TGsHistoryOfEnglishPoetry ;
+    rdf:predicate crm:P103_was_intended_for ;
     rdf:object :HistoryOfProsody ;
     .
 :HistoryOfProsody a crm:E89_Propositional_Object ;
-    skos:prefLabel "History of Prosody"@en ;
-    rdfs:label "History of Prosody"@en ;
+    skos:prefLabel "History of Prosody" ;
     crm:P1_is_identified_by wd:Q13377228 ;
-    crm:P2i_is_type_of dbpedia:Literary_form ;
-    crm:P135_created_type dbpedia:Literary_history ;
+    crm:P2i_is_type_of wd:Q4263830 ;
+    crm:P135_created_type wd:Q6497044 ;
     .
