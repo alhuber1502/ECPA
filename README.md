@@ -11,7 +11,7 @@ collaborative digital archive and research project devoted to the poetry of the 
 century. ECPA builds on the electronic texts created by the Text Creation
 Partnership from Gale’s Eighteenth Century Collections Online (ECCO).
 
-## [Methodology](http://www.eighteenthcenturypoetry.local/about/#methodology)
+## [Methodology](http://www.eighteenthcenturypoetry.org/about/#methodology)
 * transcription and descriptive markup
 * analytical markup
 * text processing (NLP), syntactic and semantic parsing
