@@ -3350,7 +3350,7 @@ function triggerTreeLinkClick (e) {
 	$( "#mod_ctl_nav" ).fadeOut( "fast", function () {
 		$( "#mod_ctl_sel" ).html( panel );
 		$( "#mod_ctl_sel" ).fadeIn( "fast" );
-		if ( !link.startsWith( base ) && link.startsWith( 'http' ) ) { // Taxonomy
+		if ( link.startsWith( 'http' ) ) { // Taxonomy
 		    $( "#tax_subj" ).html( onto[ id ].label );
 		    $( "#tax_pred" ).html( "[please choose a predicate]" );
 		    $( "#tax_obj" ).html( "[tbd]" );
