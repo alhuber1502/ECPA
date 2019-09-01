@@ -3803,7 +3803,8 @@ function createCYgraph( data,graph ) {
 		hideOnClick: true,
 		multiple: true,
 		theme: 'light-border',
-		sticky: true
+		sticky: true,
+		interactive: true
 	    });
     };
 

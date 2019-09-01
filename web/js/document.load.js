@@ -138,7 +138,7 @@ if ($('#reading').length) {
 
     // load public models' metadata
     $.ajax({
-	url: "/resources/models/models.json", dataType: 'json',
+	url: "/resources/models/models.json", dataType: 'json', async: false,
 	success: function(data) { mod_md = data; },
         error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
