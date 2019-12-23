@@ -372,7 +372,7 @@ function lk_scansion() {
 			scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');
 			scan += `</tr>`;
 		    });
-			classes += `<tr><td><br></td></tr>`;
+			scan += `<tr><td><br></td></tr>`;
 		} else {         
 		    scan += `<tr>`;                                                                           
 		    scan += `<td>`+$('<div>').append($(e).clone()).html()+(($(e).prop("nodeName")=="DIV")?`</td>`+lk_scan( $(e) ):'</td>');                                                                                           
