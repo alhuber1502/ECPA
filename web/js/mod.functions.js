@@ -318,6 +318,7 @@ function new_model ( task ) {
 	$( "#newModal" ).modal('show');
     } else if ( task == 'create' ) {
 	create_form( "Create a new model", "create", jf );
+	$( '#newModal .modal-body input').val( '' );
 	$( "#newModal" ).modal('show');
     } else {
 	create_form( "Fork this model", "create", jf );
@@ -1498,6 +1499,8 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.basic.name,'') );
+		if ( !nodeexists ) {
 		// create triples
 		var tripleid = "kb-"+uuidv4();
 		triples += `\n`+NS[""](tripleid)+` a crm:E21_Person ;\n`;
@@ -1647,6 +1650,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create a Person record", "wd-person", jf );
@@ -1748,6 +1755,8 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
 		// create triples
 		var level_label = [ 
 				   "frbroo:F4_Manifestation_Singleton",
@@ -1979,6 +1988,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create a Work record", "wd-work", jf );
@@ -2055,6 +2068,9 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {			
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
+
 		var tripleid = "kb-"+uuidv4();
 		triples += `\n`+NS[""](tripleid)+` a crm:E5_Event ;\n`;
 		triples += `skos:prefLabel """`+values.name+`""" ;\n`;
@@ -2178,6 +2194,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create an Event record", "wd-event", jf );
@@ -2237,6 +2257,9 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {			
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
+
 		var tripleid = "kb-"+uuidv4();
 		triples += `\n`+NS[""](tripleid)+` a crm:E53_Place ;\n`;
 		triples += `skos:prefLabel """`+values.name+`""" ;\n`;
@@ -2303,6 +2326,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create a Place record", "wd-place", jf );
@@ -2375,6 +2402,8 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
 		var tripleid = "kb-"+uuidv4();
 		triples += `\n`+NS[""](tripleid)+` a crm:E70_Thing ;\n`;
 		triples += `skos:prefLabel """`+values.name+`""" ;\n`;
@@ -2522,6 +2551,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create an Object record", "wd-object", jf );
@@ -2573,6 +2606,9 @@ function create_template( id ) {
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 	    } else {			
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
+
 		var tripleid = "kb-"+uuidv4();
 		triples += `\n`+NS[""](tripleid)+` a crm:E28_Conceptual_Object ;\n`;
 		triples += `skos:prefLabel """`+values.name+`""" ;\n`;
@@ -2624,6 +2660,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create a Concept record", "wd-concept", jf );
@@ -2744,6 +2784,9 @@ function create_template( id ) {
 		show_alert_mod( message, "danger" );
 	    } else {
 		// create triples
+		var nodeexists = localizedKB.any( undefined, NS["skos"]("prefLabel"), $rdf.literal(values.name,'') );
+		if ( !nodeexists ) {
+
 		var level_label = [ 
 				   "crminf:I5_Inference_Making, crminf:I1_Argumentation",
 				   "crminf:I7_Belief_Adoption, crminf:I1_Argumentation",
@@ -2916,6 +2959,10 @@ function create_template( id ) {
 		}
 		$( "#newModal" ).modal( 'hide' );
 		new_id = NS[""](tripleid).value;
+		} else {
+		    message = `<b>Oh snap!</b> A node with this name already exists.`;
+		    show_alert_mod( message, "danger" );
+		}
 	    }
 	};
 	create_form( "Create an Argumentation record", "wd-argumentation", jf );
@@ -3351,7 +3398,7 @@ function triggerTreeLinkClick (e) {
 		$( "#mod_ctl_sel" ).html( panel );
 		$( "#mod_ctl_sel" ).fadeIn( "fast" );
 		if ( link.startsWith( 'http' ) ) { // Taxonomy
-		    $( "#tax_subj" ).html( onto[ id ].label );
+		    if ( onto[ id ] ) {	$( "#tax_subj" ).html( onto[ id ].label ); }
 		    $( "#tax_pred" ).html( "[please choose a predicate]" );
 		    $( "#tax_obj" ).html( "[tbd]" );
 		    curr_stmt["o"] = "";

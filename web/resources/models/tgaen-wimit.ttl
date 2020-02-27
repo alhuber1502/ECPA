@@ -184,14 +184,6 @@
     crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
     crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
     .
-:Odes1757 a crm:E33_Linguistic_Object ;
-    skos:prefLabel "Thomas Gray's \"Odes\" (1757)" ;
-    crm:P102_has_title "Odes (1757)" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1757" ;
-    crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/0001.gif" ;
-    crm:P2_has_type lct:col ;
-    crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
-    .
 
 :CompositionOfTGsCommonplaceBook a crm:E65_Creation ;
     skos:prefLabel "Composition of Thomas Gray's \"Commonplace Book\"" ;
@@ -325,18 +317,6 @@
     crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
-:PublicationOfTGsOdes1757 a frbroo:F32_Carrier_Production_Event ;
-    skos:prefLabel "Publication of Thomas Gray's \"Odes\"" ;
-    crm:P92_brought_into_existence :Odes1757 ;
-    crm:P14_carried_out_by :ThomasGray ;
-    crm:P82_at_some_time_within :DateOfPublicationOfTGsOdes1757 ;
-    .
-:DateOfPublicationOfTGsOdes1757 a crm:E52_Time-Span ;
-    skos:prefLabel "Date of Publication of Thomas Gray's \"Odes\""^^xs:string ;
-    crm:P3_has_note "1757"^^xs:string ;
-    crm:P82a_begin_of_the_begin "1757-01-01"^^xs:date ;
-    crm:P82b_end_of_the_end "1757-12-31"^^xs:date ;
-    .
 :Odes1757 a crm:E33_Linguistic_Object ;
     skos:prefLabel "Thomas Gray's \"Odes\" (1757)" ;
     crm:P102_has_title "Odes (1757)" ;
