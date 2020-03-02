@@ -1,7 +1,7 @@
 
 // Global
 $.ajax({
-    url: "/data/stats.json", dataType: 'json',
+    url: "/data/stats.json", dataType: 'json', async: false,
     success: function(data) { stats = data; },
     error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
 });
