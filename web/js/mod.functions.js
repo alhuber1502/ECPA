@@ -753,7 +753,7 @@ function refresh_graph ( graph ) {
 	});
 
     // pre-populate authors/works dataLists (including direct superclasses)
-    $.each( [ "crm:E21_Person","crm:E39_Actor","crm:E20_Biological_Object","frbroo:F10_Person" ], function( i,v ) {
+    $.each( [ "crm:E21_Person","crm:E39_Actor","crm:E20_Biological_Object" ], function( i,v ) {
 	    if ( onto[ v ] ) { v = onto[ v ].about; }
 	    if (! dataList[ v ] ) { dataList[ v ] = []; }
 	    $.each( mod_auth, function (i2,v2) {
@@ -763,7 +763,7 @@ function refresh_graph ( graph ) {
 		    }
 		});
 	});
-    $.each( [ "crm:E33_Linguistic_Object","crm:E28_Conceptual_Object","crm:E84_Information_Carrier","frbroo:F4_Manifestation_Singleton" ], function( i,v ) {
+    $.each( [ "crm:E33_Linguistic_Object","crm:E28_Conceptual_Object","crm:E22_Human-Made_Object","frbroo:F5_Item" ], function( i,v ) {
 	    if ( onto[ v ] ) { v = onto[ v ].about; }
 	    if (! dataList[ v ] ) { dataList[ v ] = []; }
 	    $.each( mod_work, function (i2,v2) {
@@ -1759,8 +1759,8 @@ function create_template( id ) {
 		if ( !nodeexists ) {
 		// create triples
 		var level_label = [ 
-				   "frbroo:F4_Manifestation_Singleton",
-				   "crm:E84_Information_Carrier, frbroo:F5_Item",
+				   "frbroo:F5_Item",
+				   "crm:E22_Human-Made_Object, frbroo:F5_Item",
 				   "crm:E28_Conceptual_Object, frbroo:F32_Carrier_Production_Event",
 				   "crm:E33_Linguistic_Object, frbroo:F2_Expression",
 				   "crm:E33_Linguistic_Object, frbroo:F1_Work" 
