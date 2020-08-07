@@ -19,7 +19,7 @@ $( document ).ready(function() {
     });
 
     // add "_blank" link target to external links
-    $('a.link_ref:not(a.link_ref[href^="#"])').attr('target', '_blank');
+    $('a.link_ref:not(a.link_ref[href^="#"]):not(a.link_ref[href^="/"])').attr('target', '_blank');
     $('a.external').attr('target', '_blank');
 
     // switch to tab specified in URL hash
