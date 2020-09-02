@@ -2629,7 +2629,7 @@ function create_template( id ) {
 		if ( values.P527 ) {
 		    triples += `\n`+NS[""](tripleid)+` crm:P148_has_component """`+values.P527+`""" ;\n.`;
 		}
-		triples += `\n`+NS[""](tripleid)+` crm:P149_is_identified_by """`+values.P1343+`""" ;\n.`;
+		triples += `\n`+NS[""](tripleid)+` crm:P1_is_identified_by """`+values.P1343+`""" ;\n.`;
 		if ( values.P31 ) {
 		    var P31_parts = values["P31"].split( ";" );
 		    $.each( P31_parts, function(i,v) {
