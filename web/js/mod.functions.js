@@ -3328,7 +3328,9 @@ o.value+`" class="external" target="_blank"`))+`>`:``)+
 		+((o.termType == "NamedNode" || onto[ nsv( o.value ) ] || nsv( o.value ) || o.value.startsWith( 'http' ))?`</a>`:``)
 		+`</span></li>`;
 		});
-    } else {
+	} else {+((o.termType == "NamedNode" || onto[ nsv( o.value ) ] || nsv( o.value ) || o.value.startsWith( 'http' ))?\
+		  `</a>`:``)
+		
 	stinout += `<li>none</li>`;
     }
     stinout += `</ul><p>Incoming statements ( <em><i class="glyphicon glyphicon-arrow-left"/> P <i class="glyphicon glyphicon-arrow-left"/> O </em>):</p><ul class="listBibl">`;
