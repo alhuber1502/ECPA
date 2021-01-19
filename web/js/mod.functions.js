@@ -3327,11 +3327,10 @@ o.value+`" class="external" target="_blank"`))+`>`:``)+
 		      o.value)))
 		+((o.termType == "NamedNode" || onto[ nsv( o.value ) ] || nsv( o.value ) || o.value.startsWith( 'http' ))?`</a>`:``)
 		+`</span></li>`;
-		});
-	} else {+((o.termType == "NamedNode" || onto[ nsv( o.value ) ] || nsv( o.value ) || o.value.startsWith( 'http' ))?`</a>`:``)
-		
-	stinout += `<li>none</li>`;
-    }
+	    });
+	} else {
+	    stinout += `<li>none</li>`;
+	}
     stinout += `</ul><p>Incoming statements ( <em><i class="glyphicon glyphicon-arrow-left"/> P <i class="glyphicon glyphicon-arrow-left"/> O </em>):</p><ul class="listBibl">`;
     statements = graph.statementsMatching( undefined, undefined, $rdf.sym( id ) );
     if ( statements.length > 0 ) {
