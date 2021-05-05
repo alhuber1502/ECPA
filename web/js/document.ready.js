@@ -2,6 +2,10 @@
 // Document ready
 $( document ).ready(function() {
 
+	// add Twitter timeline from updates
+	if ($('#home').length) {
+		addTweets();
+	}
     // dropdown navigation
     $('.dropdown').hover(function() {
         $(this).addClass('open');
