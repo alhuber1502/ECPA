@@ -296,10 +296,12 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	}
 
     } else if ($(e.target).attr('href') == "#image") {  // Facsimile tab
+/*
 	$("#myImage").css({"width":"100%", "height":"100%"}); // seems to lose this info
 	if (Z.Viewer) {
 	    Z.Viewer.autoResizeViewer();
 	}
+*/
     }
     
 });
@@ -422,6 +424,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 function switchToImageView(image) {
     $('.nav-tabs a[href="#image"]').tab('show');
     if (image) {
+	/*
 	var pageno = image.split("/").pop();
 	Z.showImage("myImage","/images/works/"+image+".zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename="+docname+"-"+pageno+".jpg&zSaveImageFormat=JPG&zSaveImageHandlerPath=local&zSaveImageCompression=0.9");
 	$('#image-pagination').twbsPagination('destroy');
@@ -438,6 +441,8 @@ function switchToImageView(image) {
                 Z.showImage("myImage","/images/works/"+images[page]+".zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename="+docname+"-"+pageno+".jpg&zSaveImageFormat=JPG&zSaveImageHandlerPath=local&zSaveImageCompression=0.9");
 	    }
 	});
+	*/
+	viewer[ docname ].goToPage( imgs.indexOf( image ) );
     }
 }
 

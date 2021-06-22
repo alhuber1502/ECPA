@@ -134,7 +134,7 @@ $( document ).ready(function() {
 		$( 'a[href="#' + item + '"]' )
 		    .append(" <a class='help-modal' href='#'><span class='glyphicon glyphicon-question-sign' style='vertical-align:text-top'/></a>");
 	    });
-    
+/*    
 	// generate the image pagination controls for the #image tab
 	if ($('#image').length) {
 	    $('#image-pagination').twbsPagination({
@@ -152,7 +152,7 @@ $( document ).ready(function() {
 	    // TODO: uncomment and test this when zoomify 5 is released
 	    //$('#myImageControls').append(' <button class="btn btn-primary btn-sm" autocomplete="off" id="saveViewLocal"> Download view </button> <button class="btn btn-primary btn-sm" autocomplete="off" id="showView"> Open view </button>');
 	}
-
+*/
 	// unload non-default stylesheet
 	if ($('.right .tab-content > div.active').attr("id") == "reading") {
 	    $('link[href="/css/ana.ecep.css"]').prop('disabled', true);
@@ -209,16 +209,6 @@ $(document.body).on('click', '.gallery-nav a:nth-child(1)' , function(e) {
     $("#myImageControls p").replaceWith("<p><em>"+title[id]+"</em> / "+desc[id]+"</p>");
     $(this).parent().addClass("active");
 });
-
-
-// Zoomify save view link
-$(document.body).on('mousedown', '#showView' , function(e) {
-    Z.Viewport.saveAnnotationsToImageFile(false, true);
-});
-$(document.body).on('mousedown', '#saveViewLocal' , function(e) {
-    Z.Viewport.saveAnnotationsToImageFile(false, false, true);
-});
-
 
 // general purpose IC function, takes query, provides modal etc.
 function query (linktext, placeholder, feature, objID, mtitle, ititle, itype) {

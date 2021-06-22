@@ -85,6 +85,26 @@ body {
   border:1px solid #eee;
 }
 
+#works section .edn_para .row > div.col-xs-6 {
+    border: 0;
+    position: absolute;
+    overflow: auto;
+    height: calc(100% - 75px);
+}
+#works section .edn_para .row > div.col-xs-6:first-child {
+    border-right: 1px solid #ddd;
+}
+.edn_para > h1 {
+    text-align: inherit;
+    font-size: 20px;
+    line-height: 26px;
+    max-height: 55px;
+    height: 53px;
+    position: relative;
+    overflow: auto;
+}
+
+
 .tab-content > .tab-pane {
   position: absolute;
   left: 15px;
@@ -112,6 +132,15 @@ body {
   .tab-content > .tab-pane {
     overflow: auto;
   }
+}
+
+.openseadragon-canvas + div {
+    top: unset !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+    width: 408px;
 }
 
 #myImageControls {
@@ -226,6 +255,9 @@ a.link_ref:not([href^="#"]):not([href^="/"]),a:not(.img).external {
 }
 .nav > li.active > a, .nav > li.ui-state-active > a {
     background-color: #f5f5f5;
+}
+.nav > li > a#tour:focus, .nav > li > a#tour:hover {
+    background-color:#286090;
 }
 
 .nav-stacked li, .gallery-nav li {

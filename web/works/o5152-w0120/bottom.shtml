@@ -142,21 +142,109 @@
     <script src="/js/mod.functions.js"></script>
 
     <!-- Zoomify v4: http://www.zoomify.com/ -->
-    <script src="/js/zoomify/ZoomifyImageViewerEnterprise-min.js"></script>
+<!--    <script src="/js/zoomify/ZoomifyImageViewerEnterprise-min.js"></script> -->
+    <script src="/js/openseadragon-bin-2.4.2/openseadragon.min.js"></script>
     <script>
+      /*
       var pageno = '<!--#echo var="zoomifyfirst" -->';
       pageno = pageno.split("/").pop();
       if (document.getElementById("myImage")) {
-        Z.showImage("myImage","/images/works/<!--#echo var="zoomifyfirst"-->.zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename=<!--#echo var="docname"-->-"+pageno+".png&zSaveImageFormat=PNG&zSaveHandlerPath=Assets/SaveHandlers/upload.php&zSaveImageHandlerPath=Assets/SaveHandlers/uploadImage.php");
+        Z.showImage("myImage","/images/works/<!--#echo var='zoomifyfirst'-->.zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename=<!--#echo var='docname'-->-"+pageno+".png&zSaveImageFormat=PNG&zSaveHandlerPath=Assets/SaveHandlers/upload.php&zSaveImageHandlerPath=Assets/SaveHandlers/uploadImage.php");
+      }
+      */
+
+      var viewer = {};
+      var openseadragonOptions = {
+        showNavigator: true,
+        showRotationControl: true,
+        gestureSettingsTouch: {
+            pinchRotate: true
+        },
+        prefixUrl: "/js/openseadragon-bin-2.4.2/openseadragon-flat-toolbar-icons-master/images/",
+        sequenceMode: true,
+        preserveViewport: true,
+        navigatorAutoFade: false,
+        autoFade: false
+      };
+      var imgs = [], sources = [];
+      if ( typeof images !== 'undefined' ) {
+        if ( !images[1].startsWith( 'http' ) ) { // image files
+          imgs = Object.values( images );
+          imgs.forEach(function(part, index) {
+            var tilesource = {
+              type: "image",
+              url: "/images/works/"+part+".JPG"
+            };
+            sources.push( tilesource );
+          });
+          openseadragonOptions.id = "myImageContainer";
+          openseadragonOptions.tileSources = sources;
+          viewer[ docname ] = OpenSeadragon( openseadragonOptions );
+          viewer[ docname ].goToPage( imgs.indexOf( images[1] ) );
+        } else { // IIIF
+	    // not used so far, if it was to be used all I need to do is store the IIIF manifest URI in the XML
+	    // and create a javascript variable 'iiif_manifest' from it in the XSLT transformation
+            $.getJSON( iiif_manifest, function( data ) {
+            $.each( data.sequences[0].canvases, function( i,v ) {
+                $.each( v.images, function( i2,v2 ) {
+                    var tilesource = {};
+                    tilesource = v2.resource.service;
+                    tilesource.height = parseInt( v2.resource.height );
+                    tilesource.width = parseInt( v2.resource.width );
+                    if (!tilesource.protocol) {
+                      tilesource.protocol = "http://iiif.io/api/image";
+                    }
+                    sources.push( tilesource );
+                    imgs.push( tilesource["@id"] );
+                });
+            });
+            openseadragonOptions.id = "myImageContainer";
+            openseadragonOptions.tileSources = sources;
+            viewer[ docname ] = OpenSeadragon( openseadragonOptions );
+            viewer[ docname ].goToPage( imgs.indexOf( images[1] ) );
+            // extract basic metadata from IIIF manifest
+            var IIIF_md = '';
+            IIIF_md += `<div class="about"><h1 class="info">About the digital facsimile</h1></div>`;
+            if ( data.label ) {
+              IIIF_md += `<div class="bibl"><span class="label">Item</span> `+ data.label +`</div>`;
+            }
+            if ( data.description ) {
+              IIIF_md += `<div class="bibl"><span class="label">Description</span> `+ data.description +`</div>`;
+            }
+            $.each( data.metadata, function( i,v ) {
+              var dlabel = '', dvalue = '';
+              if ( typeof v.label == "string" ) { dlabel = v.label; }
+              else {
+                $.each( v.label, function( i2,v2 ) {
+                      if ( v2["@language"] == 'en' ) {
+                          dlabel = v2["@value"];
+                      }
+                });
+                if ( dlabel == '' ) { dlabel = v.label[0]["@value"]; }
+              }
+              if ( typeof v.value == "string" ) { dvalue = v.value; }
+              else {
+                $.each( v.value, function( i2,v2 ) {
+                  if ( v2["@language"] == 'en' ) {
+                    dvalue = v2["@value"];
+                  }
+                });
+                if ( dvalue == '' ) { dvalue = v.value[0]["@value"]; }
+              }
+              IIIF_md += `<div class="bibl"><span class="label">`+ dlabel +`</span> `+ dvalue.replace(/<a /,'<a class="external" target="_blank" ') +`</div>`;		
+            });
+            if ( data.attribution ) {
+              IIIF_md += `<div class="bibl"><span class="label">Attribution</span> `+ data.attribution +`</div>`;
+            }
+          });
+        }
       }
     </script>
 
-    <!-- Prettify Twitter timeline -->
-    <script src="/js/twitter_fix.js"></script>
-
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509e8f8d233ff269"></script> 
-
+    <script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="IV4SRsTw"></script>
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="/js/document.ready.js"></script>
     
   <script src="/js/bootstrap-tour-0.11.0/build/js/bootstrap-tour.min.js"></script><script src="/js/tour-core.js"></script></body>
