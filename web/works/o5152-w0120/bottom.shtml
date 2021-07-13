@@ -141,17 +141,8 @@
     <script src="/js/viz.functions.js"></script>
     <script src="/js/mod.functions.js"></script>
 
-    <!-- Zoomify v4: http://www.zoomify.com/ -->
-<!--    <script src="/js/zoomify/ZoomifyImageViewerEnterprise-min.js"></script> -->
     <script src="/js/openseadragon-bin-2.4.2/openseadragon.min.js"></script>
     <script>
-      /*
-      var pageno = '<!--#echo var="zoomifyfirst" -->';
-      pageno = pageno.split("/").pop();
-      if (document.getElementById("myImage")) {
-        Z.showImage("myImage","/images/works/<!--#echo var='zoomifyfirst'-->.zif","zRotationVisible=1&zInitialRotation=0&zSkinPath=/js/zoomify/Assets/Skins/Default&zSaveImageFilename=<!--#echo var='docname'-->-"+pageno+".png&zSaveImageFormat=PNG&zSaveHandlerPath=Assets/SaveHandlers/upload.php&zSaveImageHandlerPath=Assets/SaveHandlers/uploadImage.php");
-      }
-      */
 
       var viewer = {};
       var openseadragonOptions = {
@@ -162,7 +153,6 @@
         },
         prefixUrl: "/js/openseadragon-bin-2.4.2/openseadragon-flat-toolbar-icons-master/images/",
         sequenceMode: true,
-        preserveViewport: true,
         navigatorAutoFade: false,
         autoFade: false
       };
