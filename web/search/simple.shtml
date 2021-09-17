@@ -1,0 +1,34 @@
+
+          <form id="simsearch" class="simple_search" accept-charset="UTF-8" method="GET">
+            <div class="input-group" style="margin: auto; border-spacing:0">
+              <input type="hidden" name="op" value="AND">
+              <span class="input-group-addon" style="padding:0 12px; border-radius: 5px 0 0 5px">
+                <label for="search_field" style="font-weight:normal;">Search &nbsp;</label>
+                <select name="search_field" id="search_field" title="targeted search options" class="custom-select custom-select-sm">
+                  <option value="default">default fields</option>
+                  <option value="document_title">work title</option>
+                  <option value="author">author</option>
+                  <option value="subject">themes</option>
+                  <option value="form">genres</option>
+<!--
+                  <option value="publisher">publisher</option>
+                  <option value="PRISMS_dates">date of origin/publication</option>
+                  <option value="PRISMS_places">place of origin/publication</option>
+-->
+                  <option value="id">ECPA work ID</option>
+                  <option value="text">full-text</option>                        
+                </select>
+              </span>
+              <label class="sr-only">search for</label>
+              <input type="text" name="q" placeholder="Search titles, authors, themes/genres, full-text" class="form-control" autofocus="autofocus" style="display: table-cell; height:42px; border-right:0">
+              <span class="input-group-addon" style="padding:0 12px 0 0; border-radius: 0 5px 5px 0">
+                <button class="btn btn-primary" type="submit" style="border-right: 1px solid #ccc;"><i  class="glyphicon glyphicon-search" style="font-size:21px;"></i></button>
+                <span class="input-group-addon" style="padding:0 12px 0 0; border-radius: 0 5px 5px 0; font-size:14px; min-width: 140px; display:inline-block; border:0;">
+                  <input style="margin-left:22px;" name="fuzzy" type="checkbox" aria-label="Fuzzy?"> <label style="font-weight:normal;margin-bottom:unset;font-size:14px;margin-top:2px;">Fuzzy search</label><br>
+                  <!--
+                  <label style="font-weight:normal;margin-bottom:unset;font-size:14px;margin-top:0;margin-left:10px;">&nbsp; &nbsp; <a href="/search/advanced.shtml">Advanced search</a></label>
+                  -->
+                </span>
+              </span>
+            </div>
+          </form>

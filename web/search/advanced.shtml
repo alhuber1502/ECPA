@@ -1,0 +1,101 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="encoding" value="" -->
+<!--#set var="title" value="Search" -->
+<!--#set var="bodyid" value="search" -->
+<!--#set var="search" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<section xmlns="http://www.w3.org/1999/xhtml" id="main">
+  <div class="container-fluid">
+    <div class="row" id="advanced_search">
+      <div class="col-md-12 left">
+        <h1>Advanced Search</h1>
+
+        <div class="row">
+          <div class="col-md-8 left">
+
+            <form id="advsearch" accept-charset="UTF-8" method="GET">
+              <p style="font-size:large; padding:10px 0;">
+                Find editions that match <select name="op" id="op">
+                  <option value="AND">all</option>
+                  <option value="OR">any</option></select> of 
+              </p>
+              
+              <div class="input-group">
+                <span class="input-group-addon"><label>Work title</label></span>
+                <input name="document_title" type="text" class="form-control" placeholder='e.g. Elegy...' aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon"><label>Author</label></span>
+                <input name="author" type="text" class="form-control" placeholder='e.g. Hannah More' aria-describedby="basic-addon2">
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon"><label>Themes</label></span>
+                <input name="subject" type="text" class="form-control" placeholder='e.g. war; sex'>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon"><label>Genres</label></span>
+                <input name="form" type="text" class="form-control" placeholder='e.g. ode; ballad'>
+              </div>
+            <!--              
+              <div class="input-group">
+                <span class="input-group-addon"><label>Publisher</label></span>
+                <input name="publisher" type="text" class="form-control" placeholder='e.g. "J. Dodsley" OR "James Dodsley"'>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon"><label>Date of publication/origin</label></span>
+                <input name="PRISMS_dates" type="text" class="form-control" placeholder='e.g. 1712; 0-1527; 1501-1600'>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon"><label>Place of publication/origin</label></span>
+                <input name="PRISMS_places" type="text" class="form-control" placeholder='e.g. Lond?n?; *chester*'>
+              </div>
+            -->
+              <div class="input-group">
+                <span class="input-group-addon"><label>ECPA work ID</label></span>
+                <input name="id" type="text" class="form-control" placeholder='e.g. o5152-w0010; tgaen-welcc'>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3"><label>Full-text</label></span>
+                <input name="text" type="text" class="form-control" placeholder="e.g. +Shakespeare~1">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-default" style="margin-left:10px">Reset</button>
+            </form>
+
+          </div>
+          <div class="col-md-4 left">
+          
+            <div class="panel panel-default">
+              <div class="panel-heading">Search help</div>
+              <div class="panel-body">
+                  <ul class="advanced-help">
+                    <li>Select "match all" to require all fields; </li>
+                    <li>Select "match any" to find at least one field; </li>
+                    <li>Use quotation marks to search as "a phrase"; </li>
+                    <li>Use "+" before a word or phrase to make it required (otherwise results matching only some of your terms may be included); </li>
+                    <li>Use "-" before a word or phrase to exclude it; </li>
+                    <li>Use "OR", "AND", and "NOT" to create advanced boolean logic (use parentheses to disambiguate your expressions); </li> 
+                    <li>Truncations and wildcards ("*", "?") are supported, except in phrase searches; </li>
+                    <li>Add "~n" (where n is 1, 2, 3 etc.) to any search term to enable fuzzy searching (i.e. allowing for n insertions, deletions, or substitutions). </li>
+                  </ul>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--#include virtual="/bottom.shtml" -->

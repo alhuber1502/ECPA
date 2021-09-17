@@ -1,0 +1,74 @@
+<script src="/js/solr.js"></script>
+
+<section xmlns="http://www.w3.org/1999/xhtml" id="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 left">
+        <h1>Search</h1>
+
+        <div class="row">
+          <div class="col-md-9 left">
+              <!--#include virtual="/search/simple.shtml"-->
+              <div id="results">
+                <div id="query"></div>
+                <header id="results_header">
+                  <div class="row">
+                    <div class="col-md-2"><h2 style="margin-top:0;"> results</h2></div>
+                    <div class="col-md-3" id="per_page" style="text-align:center;"></div>
+                    <div class="col-md-4" style="text-align:center;"><ul class="sync-pagination pagination"></ul></div>
+                    <div class="col-md-3" id="sorting" style="text-align:center;"></div>
+                  </div>
+                </header>
+                <div id="results_main"></div>
+                <ul class="sync-pagination pagination"></ul>
+              </div>
+          </div>
+          <div class="col-md-3 left" style="background-color:#fff">
+              <div id="filters">
+                <header id="filters_header">
+                  <h2 style="margin-top:15px;">Filters</h2>
+                </header>
+                <div id="filters_main"></div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+  // #AH — 29/09/2020
+  // parse querystring and search || browse all
+  //$(function() {
+  (function() {
+
+    var url = new URL( window.location.href );
+    var searchParams = new URLSearchParams( url.search );
+
+    // search
+    if ( searchParams.has('q') ) {
+      var sort = '', rows = '';
+      if ( !searchParams.has('sort') ) {
+        sort = '&sort=score desc';
+      }
+      makeQuery( 
+        `facet.field=author_str&facet.field=subject_str&facet.field=form_str&facet.field=rhyme_str&facet.field=rhyme_spos_str&facet.field=syllab_str&facet.field=met_stanzas_str&facet.field=foot_type_str&facet.field=foot_number_str&facet.field=met_str&facet.field=met_lines_str&facet.missing=false&facet=on&`+searchParams.toString()+sort+`&rows=`+per_page+`&hl=on&hl.fl=text&hl.snippets=10&hl.encoder=html&hl.simple.pre=<span>&hl.simple.post=</span>&hl.requireFieldMatch=true`  
+        
+        //`facet.field=author_str&facet.field=languages&facet.field=subjects_str&facet.field=collection_id_str&facet.range=PRISMS_dates&f.PRISMS_dates.facet.range.start=1301&f.PRISMS_dates.facet.range.end=2100&f.PRISMS_dates.facet.range.gap=100&facet=on&`+searchParams.toString()+sort+`&hl=on&hl.fl=text&hl.snippets=5&hl.encoder=html&hl.simple.pre=<span>&hl.simple.post=</span>&hl.requireFieldMatch=true` 
+      );
+    }
+    // browse
+    else {
+      makeQuery( 
+        `facet.field=author_str&facet.field=subject_str&facet.field=form_str&facet.field=rhyme_str&facet.field=rhyme_spos_str&facet.field=syllab_str&facet.field=met_stanzas_str&facet.field=foot_type_str&facet.field=foot_number_str&facet.field=met_str&facet.field=met_lines_str&facet.missing=false&facet=on&q=*:*&rows=`+per_page+`&sort=document_title_str asc&hl=on&hl.fl=text&hl.snippets=10&hl.encoder=html&hl.simple.pre=<span>&hl.simple.post=</span>&hl.requireFieldMatch=true`  
+      
+        //`facet.field=author_str&facet.field=languages&facet.field=subjects_str&facet.field=collection_id_str&facet.range=PRISMS_dates&f.PRISMS_dates.facet.range.start=1301&f.PRISMS_dates.facet.range.end=2100&f.PRISMS_dates.facet.range.gap=100&facet=on&q=*:*&sort=PRISMS_dates asc,document_title_str asc` 
+      );
+    }
+  })();
+  //});
+  
+</script>

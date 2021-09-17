@@ -373,7 +373,18 @@ font-size:16px;">beta</span> phase on a <a href="betahist.shtml">separate
 page</a>.</p>
 
 <ul>
-
+  <!--
+  <li><em><!--#include virtual="/data/version" -->:</em>
+    <!-- v1.6 (Winter 2021/22) -->
+    <!--
+    <ul style="margin-left:-20px;">
+      <li><em>Contents:</em> 
+      </li>
+      <li><em>Website:</em> ECPA is delighted to announce an all new state-of-the-art search engine, offering many new avenues into the corpus, including full-text search and filters by many facets of poetic form.
+      </li>
+    </ul>
+  </li>    
+  //-->
   <li><em><!--#include virtual="/data/version" -->:</em>
     <!-- v1.5 (Summer 2021) -->
     <ul style="margin-left:-20px;">
@@ -553,7 +564,7 @@ available under the <a href="#copcit">license terms</a> indicated above.</p>
 <h2 id="contact">Contact</h2>
 
 <p>The <!--#echo var="ecep_full" --> was founded 
-  by <a href="http://users.ox.ac.uk/~bodl0153/" class="external" target="_blank">Alexander Huber</a> (Bodleian Libraries, 
+  by <a href="http://users.ox.ac.uk/~bodl0153/" id="AH" class="external" target="_blank">Alexander Huber</a> (Bodleian Libraries, 
   University of Oxford) who is also its editor.  The Website was
   designed by <a href="https://www.hubers.org.uk/"
                 target="_blank"><img style="height:14px;margin-bottom:2px;vertical-align:text-bottom"

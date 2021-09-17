@@ -43,6 +43,15 @@
     <meta name="theme-color" content="#ffffff">    
     <title><!--#echo var="ecep_full" --> / <!--#echo var="title" --></title>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    -->
+    <script src="/js/jquery-1.11.2/jquery.min.js">
+    </script>
+    <script src="/js/jquery.ui-1.11.4/jquery-ui.min.js">
+    </script>
+
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -154,6 +163,7 @@
                     <li><a href="/about/#contact">Contact</a></li>
                   </ul>
                 </li>
+                <li class="<!--#echo var="search" -->"><a href="/search/">Search</a></li>
                 <li class="<!--#echo var="authors" --> dropdown"><a href="/authors/"
 								    class="dropdown-toggle" role="button"
 								    aria-expanded="false">Authors</a>
