@@ -224,11 +224,11 @@ function IC_modal () {
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="newModalLabel"></h4>
+<h4 class="modal-title" id="newModalLabel">[New note]</h4>
 </div>
 <div class="modal-body">
 <form id="newNoteForm">
-<h5 id="modal-ititle"></h5>`+
+<h5 id="modal-ititle">[Reference]</h5>`+
 add_user());
 }
 
@@ -258,20 +258,20 @@ function add_user () {
 var user_details =
 `<h5>Your details (if you wish to be acknowledged)</h5>`+
 `<div class="input-group input-group-sm">
-<span class="input-group-addon" id="basic-addon1">Name</span>
-<input required="required" name="name" type="text" class="form-control" placeholder="real name" aria-describedby="basic-addon1">
+<label for="name" class="input-group-addon" id="basic-addon1">Name</label>
+<input required="required" id="name" name="name" type="text" class="form-control" placeholder="real name" aria-describedby="basic-addon1">
 </div>
 <div class="input-group input-group-sm">
-<span class="input-group-addon" id="basic-addon2">E-mail</span>
-<input required="required" name="e-mail" type="text" class="form-control" placeholder="valid e-mail address" aria-describedby="basic-addon2">
+<label for="e-mail" class="input-group-addon" id="basic-addon2">E-mail</label>
+<input required="required" id="e-mail" name="e-mail" type="text" class="form-control" placeholder="valid e-mail address" aria-describedby="basic-addon2">
 </div>
 <div class="input-group input-group-sm">
-<span class="input-group-addon" id="basic-addon3">Affiliation</span>
-<input name="affiliation" type="text" class="form-control" placeholder="institution (optional)" aria-describedby="basic-addon3">
+<label for="affiliation" class="input-group-addon" id="basic-addon3">Affiliation</label>
+<input id="affiliation" name="affiliation" type="text" class="form-control" placeholder="institution (optional)" aria-describedby="basic-addon3">
 </div>
 <div class="input-group input-group-sm">
-<span class="input-group-addon" id="basic-addon4">Website</span>
-<input name="website" type="text" class="form-control" placeholder="Web address (optional)" aria-describedby="basic-addon4">
+<label for="website" class="input-group-addon" id="basic-addon4">Website</label>
+<input id="website" name="website" type="text" class="form-control" placeholder="Web address (optional)" aria-describedby="basic-addon4">
 </div>
 </form></div>
 <div class="modal-footer">
