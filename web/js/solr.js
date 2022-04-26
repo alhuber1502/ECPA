@@ -1,8 +1,12 @@
 // ECPA
 // SOLR
 
-//var SOLR_ECPA = "http://192.168.1.2:8983/solr/ecpa/select";
-var SOLR_ECPA = "https://guineapig.hubers.org.uk/solr/solr/ecpa/select";
+var SOLR_ECPA;
+if ( /eighteenthcenturypoetry\.org/.test(window.location.href) ) {
+  SOLR_ECPA = "https://guineapig.hubers.org.uk/solr/solr/ecpa/select";
+} else {
+  SOLR_ECPA = "http://192.168.1.2:8983/solr/ecpa/select";  
+}
 
 // clear-text replacements
 var repl = {};
