@@ -1,0 +1,26 @@
+{
+    "title": "ECPA Topic Model Browser",
+    "meta_info": "<p>A topic model browser for the poems in the <em>Eighteenth-Century Poetry Archive</em>.<\/p> <p>This topic model was created with <a href='https://github.com/mimno/Mallet/' target='_blank' >Mallet 2.1</a>, using lemmatized versions of the poems and stopword lists, to train 64 topics.  The topics interface was created with the <a href='https://rdrr.io/github/agoldst/dfrtopics/' target='_blank'><em>dfrtopics</em></a> R-package, which seeks to reflect the multifaceted nature of a topic model by offering multiple views of the model: topics, documents, words, and document metadata.",
+    "VIS": {
+	"metadata": {
+	    "type": "base",
+	    "spec": {
+		"date_field": []
+	    }
+	},
+	"bib": {
+	    "type": "base"
+	},
+	"bib_view": {
+	    "major": "all",
+	    "minor": "raw"
+	},
+	"condition": {
+	    "type": "ordinal",
+	    "name": "author",
+	    "spec": {
+		"field": "author_id"
+	    }
+	}
+    }
+}
