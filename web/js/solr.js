@@ -3,7 +3,7 @@
 
 var SOLR_ECPA;
 if ( /eighteenthcenturypoetry\.org/.test(window.location.href) ) {
-  SOLR_ECPA = "https://guineapig.hubers.org.uk/solr/solr/ecpa/select";
+  SOLR_ECPA = "https://data.prisms.digital/solr/ecpa/select";
 } else {
   SOLR_ECPA = "http://192.168.1.2:8983/solr/ecpa/select";  
 }
