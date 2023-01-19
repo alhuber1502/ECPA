@@ -158,7 +158,8 @@ async function format_results( docs, base, highlights ) {
       } else {
         console.log( v );
       }
-      output += `<a href="/works/`+v.id+`.shtml"><h3>`+truncateString(unique_document_title[0],400)+`</h3></a>`;
+      output += `<h3><a href="/works/`+v.id+`.shtml">`+truncateString(unique_document_title[0],400)+`</a> <a 
+      class="add_bm" id="`+v.id+`" href="#"><span class="glyphicon glyphicon-bookmark"></span></a></h3>`;
       output += `<div><span>First/Last Lines:</span> `+v.incipit+` / `+v.explicit+`</div>`;
       if ( v.author ) {
         output += `<div><span>`+((v.author.length > 1)?`Authors`:`Author`)+`:</span> `;

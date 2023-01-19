@@ -323,3 +323,25 @@ $('#works .source').hover(function() {
     $('#'+$(this).attr('data-rel')).removeClass('highlight');
 });
 
+
+// Bookmarks
+$(document.body).on('click', '.add_bm' , function(e) {
+	var bookmarks;
+	if (localStorage.getItem( 'ecpa-bookmarks' ) === null) {
+		bookmarks = [];
+	} else {
+		bookmarks = JSON.parse( localStorage.getItem( 'ecpa-bookmarks' ) );
+	}
+	var bookmark = {};
+	bookmark.id = $(this).attr( 'id' );
+	if ( $(this).attr( 'id' ).startsWith( 'pers' ) ) {
+		bookmark.type = "aut";
+	} else if ( $(this).attr( 'id' ).includes( '-w' ) ) {
+		bookmark.type = "txt";
+	} else {
+		bookmark.type = "edn";
+	}
+	bookmarks.push( bookmark );
+	localStorage.setItem( 'ecpa-bookmarks', JSON.stringify( bookmarks ) );
+	$( this ).replaceWith( '' );
+});

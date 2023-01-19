@@ -620,7 +620,7 @@ a.image  { text-decoration: none !important; color: #333; }
 #home #featured h1, #authors .col-xs-3 .tab-pane h1 {
     font-size: 1.6em;
     line-height: 1.4em;
-    margin-top:20px;
+    margin-top:10px;
 }
 #home #featured h2:not(.ecep-home-box), 
 #authors .col-xs-3 h2 {
@@ -1088,4 +1088,17 @@ blockquote {
 
 #results_main ol {
   list-style:decimal;
+}
+
+#works a.add_bm {
+    margin-left: 1.2em;
+}
+#works #editions-done a.add_bm {
+    margin-left: 1.5em;
+}
+#listBookmarks li {
+    break-inside: avoid-column;
+}
+h3 .add_bm, h1 .add_bm {
+    font-size: 14px;
 }

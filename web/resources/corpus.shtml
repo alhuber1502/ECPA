@@ -1,0 +1,56 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Resources / Corpus" -->
+<!--#set var="bodyid" value="resources" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="resources" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <h1>ECPA Corpus: <span class="corpusTitle"></span></h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>This corpus is comprised of the following items (links will open in a new
+          tab/window):</p>
+        <ol id="listCorpus"></ol>
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+  <script type="text/javascript">
+    var citation = "";
+    citation += "Huber, Alexander. ";
+    var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+    citation += '\"ECPA Corpus\". ';
+    citation +='<em><!--#echo var="ecep_full" --></em>, '+
+      '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+      '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+    $(window).load(function(){
+
+      var url = new URL( window.location.href );
+      var searchParams = new URLSearchParams( url.search );
+
+      if ( searchParams.has('t') ) {
+        $( ".corpusTitle" ).append( searchParams.get('t') );
+      }
+      $.each( searchParams.get('c').split( ';' ), function(i,v) {
+        if ( v != '' ) {
+          if ( v.startsWith( 'pers' ) ) {
+            $( "#listCorpus" ).append( `<li><a href="/authors/`+mod_auth[ v ].id+`.shtml" target="_blank">`+mod_auth[ v ].name+`</a> (author page)</li>` );
+          } else if ( v.includes( '-w' ) ) {
+            $( "#listCorpus" ).append( `<li><a href="/works/`+mod_work[ v ].id+`.shtml" target="_blank">`+mod_work[ v ].title+`</a> / `+mod_work[ v ].aut + ` (poem page)` );
+          } else {
+            $( "#listCorpus" ).append( `<li><a href="/works/`+mod_edns[ v ].id+`.shtml" target="_blank">`+mod_edns[ v ].cit+`</a> (edition page)` );
+          }
+        }
+      });
+ 
+    });
+
+
+  </script>
+
+<!--#include virtual="/bottom.shtml" -->

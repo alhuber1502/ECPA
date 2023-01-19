@@ -645,15 +645,15 @@ function mod_save_graph ( localizedKBURI ) {
 			    success: function() { 
 			    console.log("serialization created: "+localizedKBURI); 
 			},
-			    error: function() { 
-			    console.log ("serialized graph not uploaded."); 
+			    error: function(error) { 
+			    console.log ("serialized graph not uploaded.",error); 
 			    message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 			    show_alert_mod( message, "danger" );
 			}
 		    });
 		exitcode = true;
 	    } else {
-		console.log ("serialized graph not uploaded."); 
+		console.log ("serialized graph not uploaded.",err); 
 		message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 		show_alert_mod( message, "danger" );
 		exitcode = false;
@@ -679,8 +679,8 @@ function mod_publ_graph ( localizedKBURI ) {
 			    success: function() { 
 			    console.log("serialization created: "+localizedKBURI); 
 			},
-			    error: function() { 
-			    console.log ("serialized graph not uploaded."); 
+			    error: function(error) { 
+			    console.log ("serialized graph not uploaded.",error); 
 			    message = `<b>Oh snap!</b> Something went wrong, try again? Or call for <a class="alert-link" href="mailto:help@eighteenthcenturypoetry.org">help!</a>`;
 			    show_alert_mod( message, "danger" );
 			}
@@ -721,7 +721,7 @@ function nsv( myiri ) {
 // function to return the skos:prefLabel of an IRI
 function skp( graph,myiri ) {
 
-    if ( myiri.termType == "NamedNode" ) {
+    if ( myiri && myiri.termType == "NamedNode" ) {
 	return ( graph.any( $rdf.sym( myiri.value ), NS["skos"]("prefLabel"), undefined ) );
     } else return false;
 

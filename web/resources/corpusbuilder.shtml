@@ -1,0 +1,142 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Resources / Corpus builder" -->
+<!--#set var="bodyid" value="resources" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="resources" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <h1>ECPA Corpus builder</h1>
+    <div class="row">
+      <div class="col-xs-4">
+        <h2 style="margin-top:5px;">Build your corpus</h2>
+        <p>This tool lets you quickly build and share a corpus of ECPA poets, 
+        poems, or editions.  Simply click on the bookmark icon <span class="glyphicon
+        glyphicon-bookmark"></span> you can find throughout the 
+        ECPA website to bookmark any item — your bookmarks will be
+        displayed on the right-hand side of this page.  Then just
+        check <span class="glyphicon glyphicon-ok"></span> any of your
+        bookmarked items on the right and hit the <em>Create corpus</em>-button to
+        include them in a sharable ECPA corpus — just copy and paste the URL of
+        the page showing your corpus. <!--Use the <span class="glyphicon 
+        glyphicon-trash"></span> to delete a bookmarked item.--></p>
+        <form id="CBform">
+        <label for="floatingInput">Corpus title</label>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="corpusTitle"
+          placeholder="" required>
+          <small class="form-text text-muted">
+          Give your corpus an expressive (meaningful) title — required
+          </small>
+        </div>
+        <br>
+        <button type="submit" id="buildCorpus" class="btn btn-primary">Create corpus</button>
+        </form>
+      </div> <!-- /col -->
+      <div class="col-xs-8">
+        <h2 style="margin-top:5px;">Your bookmarks</h2>
+        <div id="listBookmarks"></div>
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+  <script type="text/javascript">
+    var citation = "";
+    citation += "Huber, Alexander. ";
+    var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+    citation += '\"ECPA Corpus Builder\". ';
+    citation +='<em><!--#echo var="ecep_full" --></em>, '+
+      '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+      '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+    $(window).load(function(){
+      
+      document.getElementById( 'CBform' ).addEventListener( 'submit', createCorpus );
+      $(document.body).on('click','[name="delbm"]',function(){
+        deleteBookmark( $(this).data( 'id' ) );
+      });
+
+      function deleteBookmark( id ) {
+        var bms = JSON.parse( localStorage.getItem( 'ecpa-bookmarks' ) );
+        for( var i=0; i < bms.length; i++ ) {
+          if ( bms[i].id == id ) {
+            bms.splice(i,1);
+          }
+        }
+        localStorage.setItem( 'ecpa-bookmarks', JSON.stringify( bms ) );
+        fetchBookmarks();
+      }
+
+      function fetchBookmarks() {
+        var listBookmarks = document.getElementById( 'listBookmarks' );
+        var bms;
+        if ( ( bms = JSON.parse( localStorage.getItem( 'ecpa-bookmarks' ) ) ) === null || bms.length == 0 ) {
+          listBookmarks.innerHTML = `<p><em>You haven't added any bookmarks yet!</em></p>`;
+        } else {
+          var bmsList = '';
+          var grouped = _.groupBy( bms, function(obj){
+            return obj.type;
+          });
+          Object.keys( grouped ).sort().forEach(function(key) {
+            if ( key == "aut" ) {
+              bmsList += `<h3 style="margin-top:0px">Authors</h3>`;
+              bmsList += `<ul class="listBibl" style="columns:2; column-rule:1px solid #ccc;">`;
+              for( var i = 0; i < grouped[key].length; i++ ) {
+                bmsList += 
+                  `<li><input type="checkbox" name="bm" value="`+grouped[key][i].id+`"> <a href="/authors/`+mod_auth[ grouped[key][i].id ].id+`.shtml" target="_blank">`+mod_auth[ grouped[key][i].id ].name+`</a>`+
+                    ` <a data-id="`+grouped[key][i].id+`" name="delbm" href="#"><span style="margin-left:20px;" class="glyphicon glyphicon-trash"></span></a></li>`;
+              }
+              bmsList += `</ul>`;
+            } else if ( key == "txt" ) {
+              bmsList += `<h3>Poems</h3>`;
+              bmsList += `<ul class="listBibl" style="columns:2; column-rule:1px solid #ccc;">`;
+              for( var i = 0; i < grouped[key].length; i++ ) {  
+                bmsList += 
+                  `<li><input type="checkbox" name="bm" value="`+grouped[key][i].id+`"> <a href="/works/`+mod_work[ grouped[key][i].id ].id+`.shtml" target="_blank">`+mod_work[ grouped[key][i].id ].title+`</a> / `+mod_work[ grouped[key][i].id ].aut+
+                    ` <a data-id="`+grouped[key][i].id+`" name="delbm" href="#"><span style="margin-left:20px;" class="glyphicon glyphicon-trash"></span></a></li>`;
+              }
+              bmsList += `</ul>`;
+            } else if ( key == "edn" ) {
+              bmsList += `<h3>Editions</h3>`;
+              bmsList += `<ul class="listBibl" style="columns:2; column-rule:1px solid #ccc;">`;
+              for( var i = 0; i < grouped[key].length; i++ ) {
+                bmsList += 
+                  `<li><input type="checkbox" name="bm" value="`+grouped[key][i].id+`"> <a href="/works/`+mod_edns[ grouped[key][i].id ].id+`.shtml" target="_blank">`+mod_edns[ grouped[key][i].id ].cit+`</a>`+
+                    ` <a data-id="`+grouped[key][i].id+`" name="delbm" href="#"><span style="margin-left:20px;" class="glyphicon glyphicon-trash"></span></a></li>`;
+              }  
+              bmsList += `</ul>`;
+            }
+            listBookmarks.innerHTML = bmsList;
+          });
+        }
+      }
+
+      function createCorpus(e) {
+        e.preventDefault();
+        var bms = JSON.parse( localStorage.getItem( 'ecpa-bookmarks' ) );
+        if ( !document.getElementById( 'corpusTitle' ).value ) {
+          alert( 'Please give your corpus a title.' );
+        } else if ( $( "input[name='bm']:checked" ).length == 0 ) {
+          alert( 'Please add one or more items to your corpus.' );
+        } else {
+          var c = "";
+          var checkboxes = document.getElementsByName('bm');
+          for (var i = 0; i < checkboxes.length; i++) {
+              if (checkboxes[i].checked) {
+                  c += checkboxes[i].value + ';';
+              }
+          }
+          location = "/resources/corpus.shtml?t="+document.getElementById( 'corpusTitle' ).value+"&c="+c;
+        }
+      }
+
+      fetchBookmarks();
+
+    });
+
+  </script>
+
+<!--#include virtual="/bottom.shtml" -->

@@ -5,6 +5,12 @@ $.ajax({
     success: function(data) { stats = data; },
     error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
 });
+// load authors/works lists
+$.ajax({
+    url: "/resources/models/authwork_mdp.json", dataType: 'json',
+    success: function(data) { mod_auth = data[0]; mod_work = data[1]; mod_edns = data[2]; },
+    error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+});
 
 function output_met(met) {
     return met.replace(/\-/g," &#x02d8; ").replace(/\+/g,"&#x2032;");
@@ -126,13 +132,6 @@ if ($('#reading').length) {
     $.ajax({
 	url: "/resources/models/ontohier.json", dataType: 'json',
 	success: function(data) { ontohier = data; },
-        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
-    });
-
-    // load authors/works lists
-    $.ajax({
-	url: "/resources/models/authwork_mdp.json", dataType: 'json',
-	success: function(data) { mod_auth = data[0]; mod_work = data[1]; },
         error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
     });
 
