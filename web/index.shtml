@@ -61,11 +61,28 @@
 
       </div>
 
+      <style>
+	a.mastodon {
+	    display: inline-block;
+	    transition: all .2s ease-in-out;
+	}
+	a.mastodon:hover {
+	    transform: translateY(-4px);
+	    display: inline-block;
+	}
+      </style>
+      
       <div class="col-md-3">
 
 		<h2 class="ecep-home-box" style="padding-bottom:.3em;">Follow <!--#echo var="ecep" --></h2>
 		<!-- Go to www.addthis.com/dashboard to customize your tools --> 
-		<div class="addthis_inline_follow_toolbox"></div>
+		<div style="display:inline-block;"><a class="mastodon"
+						      href="https://hcommons.social/@c18ah"
+						      target="_blank"><img style="width: 32px; position:relative;
+										  height: 32px;
+										  top: -21px;
+										  left: 2px" src="/images/logo-purple.png"></a></div>
+		<div class="addthis_inline_follow_toolbox" style="display:inline-block;"></div>
 
         <h2 class="ecep-home-box" style="padding-bottom:.3em;">
         <!--#echo var="ecep" --> core features tour</h2>
