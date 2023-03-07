@@ -20,6 +20,9 @@ $receiver = "alhuber1502\@gmail.com";
 
 sub send_mail {
     local ($from, $email, $type) = @_;
+
+    if ( $from == "" ) { $from = "TGA"; }
+    if ( $email == "" ) { $email = "alexander\@hubers.org.uk"; }
     
     open(SENDMAIL, "|$sendmail -t ") || return 0;
     print SENDMAIL <<"MAIL_END";

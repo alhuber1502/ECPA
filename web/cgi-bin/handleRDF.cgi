@@ -32,7 +32,7 @@ if ( $cgi->param('publ') ) {
     print $fh decode('UTF-8',$cgi->param('myRDF'));
     close $fh;
     rename $subpath.$cgi->param('file'), $subpath."pub-".$cgi->param('file') or die "Cannot rename file: $!";
-    &send_mail ("ECPA mailer","huber\@eighteenthcenturypoetry.org","RDF file");
+    &send_mail ("ECPA mailer","alexander\@hubers.org.uk","RDF file");
 
 } else {
 

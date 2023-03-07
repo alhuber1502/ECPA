@@ -29,7 +29,7 @@ if ($cgi->param('option') && $cgi->param('option') eq 'up') {
     flock($fh, 2) or die "Could not lock file: $!";
     print $fh decode('UTF-8',$cgi->param('myXML'));
     close $fh;
-    &send_mail ("Anonymous","anonymous\@anonymous.org","XML file");
+    &send_mail ("ECPA mailer","alexander\@hubers.org.uk","XML file");
 } elsif ($cgi->param('option') && $cgi->param('option') eq 'down') {
     print $cgi->header(-type=>'application/octet-stream',-'Content-Disposition'=>'attachment;filename="'.$cgi->param("file").'-'.(time).'.xml"');
     print $cgi->param('myXML');
