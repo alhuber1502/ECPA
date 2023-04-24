@@ -581,8 +581,9 @@ available under the <a href="#copcit">license terms</a> indicated above.</p>
 
 <p>We use two external services which will store some small pieces of
   information on your computer in the form of cookies.  We
-  use <a class="external" target="_blank" 
-  href="http://www.addthis.com/">AddThis</a> to connect our Website to a
+  use
+  <a class="external" target="_blank" href="https://www.shareaholic.com/">Shareaholic</a> 
+ to connect our Website to a
   number of Social Networking services and also to provide access
   to sharing, printing, and e-mail options.  And we use <a class="external"
   target="_blank" href="http://www.google.com/analytics/">Google Analytics</a>
@@ -620,7 +621,12 @@ available under the <a href="#copcit">license terms</a> indicated above.</p>
 				     title="Huber Digital" alt="Huber Digital"
                 src="https://huberdigital.files.wordpress.com/2019/09/cropped-hd-logo.png"></a>.</p>
 
-<p>
+<style>
+  div[data-app="share_buttons"] {
+      display:inline-block;
+  }
+</style>
+
 <b><!--#echo var="ecep_full" --> (<!--#echo var="ecep" -->)</b><br>
 Alexander Huber, Editor<br><br>
 
@@ -628,8 +634,9 @@ E-mail: <a href="mailto:info@eighteenthcenturypoetry.org">info@eighteenthcentury
 Twitter: <a target="_blank" href="https://twitter.com/C18AH" class="external">@C18AH</a><br>
 Web: <a target="_blank" href="http://users.ox.ac.uk/~bodl0153/"
 	class="external">http://users.ox.ac.uk/~bodl0153/</a><br>
-Share: <span class="addthis_sharing_toolbox"></span>
-</p>
+Share: <div class="shareaholic-canvas" data-app="share_buttons"
+data-app-id="33106394" style="display:inline-block;vertical-align:middle"></div>
+
 
       </div> <!-- /col -->
 

@@ -98,6 +98,12 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- BEGIN SHAREAHOLIC CODE -->
+<link rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js" as="script" />
+<meta name="shareaholic:site_id" content="e3a45470ca59c58f8ae356eb9c1dbecc" />
+<script data-cfasync="false" async src="https://cdn.shareaholic.net/assets/pub/shareaholic.js"></script>
+<!-- END SHAREAHOLIC CODE -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-683D895GZB"></script>
     <script>
@@ -123,10 +129,10 @@
   </head>
   
   <body id="<!--#echo var='bodyid' -->" data-spy="scroll" data-target="#myScrollspy">
-    
+    <!--
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509e8f8d233ff269"
 	    async="async"></script>
-    
+    -->
     <!-- two column layout with sticky header and footer -->
     <div id="wrap">
       

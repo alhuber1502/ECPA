@@ -62,14 +62,15 @@
       </div>
 
       <style>
-	a.mastodon {
+	  a.mastodon {
 	    display: inline-block;
-	    transition: all .2s ease-in-out;
-	}
-	a.mastodon:hover {
-	    transform: translateY(-4px);
-	    display: inline-block;
-	}
+	  }
+    a.mastodon:hover {
+      filter: brightness(110%);
+    }
+    .shareaholic-canvas {
+      display: inline-block;
+    }
       </style>
       
       <div class="col-md-3">
@@ -77,12 +78,16 @@
 		<h2 class="ecep-home-box" style="margin-bottom:0em;">Follow <!--#echo var="ecep" --></h2>
 		<!-- Go to www.addthis.com/dashboard to customize your tools --> 
 		<div style="display:inline-block;"><a class="mastodon"
-						      href="https://hcommons.social/@c18ah"
-						      target="_blank"><img style="width: 32px; position:relative;
-										  height: 32px;
-										  top: -21px;
-										  left: 2px" src="/images/logos/logo-purple.png"></a></div>
-		<div class="addthis_inline_follow_toolbox" style="display:inline-block;"></div>
+			href="https://hcommons.social/@c18ah" title="Mastodon"
+			target="_blank"><img style="width: 40px; position:relative;
+				 height: 40px; margin-right:3px;
+				 top: -21px;
+				 left: 3px" src="/images/logos/logo-purple.png"></a></div>
+<!--
+<div class="addthis_inline_follow_toolbox" style="display:inline-block;"></div>
+-->
+<div class="shareaholic-canvas" style="display:inline-block" 
+data-app="follow_buttons" data-app-id="28681753"></div>
 
         <h2 class="ecep-home-box" style="margin-bottom:.3em;margin-top:0px;border-top: 1px solid #eee;">
         <!--#echo var="ecep" --> core features tour</h2>
