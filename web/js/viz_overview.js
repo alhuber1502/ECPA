@@ -36,6 +36,21 @@ $( '#viz_avail' ).append(`</ul><div class="viz_external">
         </div>
       </div>
     </li>
+
+    <!-- Switchboard -->
+    <li>
+      <a data-toggle="collapse" href="#collapseESeven" aria-expanded="false"
+         aria-controls="collapseESeven">Language Resource Switchboard</a> / 
+	<span>CLARIN. <em>Language Resource Switchboard.</em> 2015-. Web. 5 Jul. 2023. &lt;https://switchboard.clarin.eu/&gt;</span>
+      <div class="collapse" id="collapseESeven">
+        <div class="well">
+	<a href="https://switchboard.clarin.eu/#/ecpa/`+encodeURIComponent('https://www.eighteenthcenturypoetry.org/works/'+docname+'/'+docname+'.txt')+`" target="_blank" class="external">Launch Language Resource Switchboard</a><br/>
+	<p><em>Instructions: </em> Just follow the above link to use Language Resource Switchboard with this poem.</p>
+	<p><em>Description: </em> The Language Resource Switchboard has been developed within the CLARIN-PLUS project. It helps users find and use tools that can process their research data.</p>
+        </div>
+      </div>
+    </li>
+
     <!-- CATMA -->
     <li>
       <a data-toggle="collapse" href="#collapseETwo" aria-expanded="false"

@@ -49,6 +49,7 @@
     -->
     <script src="/js/jquery-1.11.2/jquery.min.js">
     </script>
+    <link href="/js/jquery.ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
     <script src="/js/jquery.ui-1.11.4/jquery-ui.min.js">
     </script>
 
@@ -56,6 +57,18 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/css/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <!-- Underscore v1.8.3 -->
+    <script src="/js/underscore-min.js"></script>
+    
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="/js/leaflet/leaflet.css"/>
+    <script src="/js/leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" href="/js/leaflet-sidebar-v2-master/css/leaflet-sidebar.min.css">
+    <script src="/js/leaflet-sidebar-v2-master/js/leaflet-sidebar.min.js"></script>
+    <script src="/js/OverlappingMarkerSpiderfier-Leaflet-0.2.6/bin/oms.min.js"></script>
 
     <!-- Cytoscape CSS -->
     <link rel="stylesheet" href="/js/cytoscape.js-panzoom-2.5.3/cytoscape.js-panzoom.css">
@@ -204,6 +217,7 @@
 								      class="dropdown-toggle" role="button"
 								      aria-expanded="false">Resources</a>
                   <ul class="dropdown-menu">
+                    <li><a href="/resources/map/">Poets map</a></li>
                     <li><a href="/resources/corpusbuilder.shtml">Corpus builder</a></li>
                     <li><a href="/resources/topicbrowser.shtml">Topic model browser</a></li>
                     <li><a href="/resources/bibliography.shtml">Bibliography</a></li>

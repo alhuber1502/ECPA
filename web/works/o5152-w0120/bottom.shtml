@@ -27,7 +27,12 @@
                    title="Citation (MLA-style)">Cite this page</a>
 	    </li>
 	    <li><a href="/about/#contact">Contact</a></li>
-	    <li><div class="addthis_sharing_toolbox"></div></li>
+	    <li><!--<div class="addthis_sharing_toolbox"></div>-->
+        <div class="shareaholic-canvas" data-app="share_buttons" 
+        data-app-id="33106394" style="vertical-align:text-top;bottom:4px;
+        position:relative;display:inline-block;"></div>
+      </li>
+      </li>
 	  </ul>
 	</nav>
 	<!--#config timefmt="%d %b %Y" -->
@@ -72,9 +77,6 @@
         });
       }
     </script>
-
-    <!-- Underscore v1.8.3 -->
-    <script src="/js/underscore-min.js"></script>
 
     <!-- Annodoc / conllu.js -->
     <script>
@@ -223,7 +225,9 @@
     </script>
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!--
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509e8f8d233ff269"></script> 
+    -->
     <script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="IV4SRsTw"></script>
     <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="/js/document.ready.js"></script>

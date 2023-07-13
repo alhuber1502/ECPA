@@ -131,9 +131,9 @@
     crm:P102_has_title "The History of English poetry, from the Close of the Eleventh to the Commencement of the Eighteenth Century (1774-1781)" ;
     crm:P138i_has_representation "https://upload.wikimedia.org/wikipedia/commons/8/8e/Warton%27s_History_of_English_Poetry.JPG" ;
     crm:P2_has_type lcs:sh2008106999 ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571" ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596" ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0571" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0596" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0599" ;
     .
 :PublicationOfTWsHistoryOfEnglishPoetry1774-1781 a frbroo:F32_Carrier_Production_Event ;
     skos:prefLabel """Publication of Thomas Warton's \"History of English Poetry\" (1774-1781)""" ;
@@ -166,7 +166,7 @@
     rdfs:comment "[We do not distinguish, for the purpose of this model, between the Dodsley and Foulis editions.]" ;
     crm:P102_has_title "Poems (1768)" ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768a/bvq0002.PNG" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1768" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/texts/diglib/primary/1768" ;
     crm:P2_has_type lct:col ;
     crm:P148_has_component :TGsImitations ;
     crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
@@ -231,9 +231,9 @@
     crm:P148i_is_component_of :TGsCommonplaceBook ;
     crm:P67_refers_to :TGsImitations ;
     crm:P15i_influenced :PublicationOfTWsHistoryOfEnglishPoetry1774-1781 ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0571" ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0596" ;
-    rdfs:seeAlso "https://www.thomasgray.org/cgi-bin/display.cgi?text=tgal0599" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0571" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0596" ;
+    rdfs:seeAlso "https://www.thomasgray.org/texts/letters/tgal0599" ;
     .
 
 
@@ -241,34 +241,34 @@
 
 :FatalSisters a crm:E33_Linguistic_Object ;
     skos:prefLabel "The Fatal Sisters" ;
-    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=fsio" ;
+    crm:P3_has_note "https://www.thomasgray.org/texts/poems/fsio" ;
     crm:P2_has_type lcg:gf2014026481 ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0077.gif" ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wfsio.shtml" ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/o4986-w0250.shtml" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=fsio#mss.0066" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/resources/findaid/poems/work/fsio#mss.0066" ;
     crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
     crm:P106i_forms_part_of :TGsImitations ;
     .
 
 :DescentOfOdin a crm:E33_Linguistic_Object ;
     skos:prefLabel "The Descent of Odin" ;
-    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=dooo" ;
+    crm:P3_has_note "https://www.thomasgray.org/texts/poems/dooo" ;
     crm:P2_has_type lcg:gf2014026481 ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0089.gif" ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wdooo.shtml" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=dooo#mss.0038" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/resources/findaid/poems/work/dooo#mss.0038" ;
     crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
     crm:P106i_forms_part_of :TGsImitations ;
     .
 
 :TriumphsOfOwen a crm:E33_Linguistic_Object ;
     skos:prefLabel "The Triumphs of Owen" ;
-    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=trow" ;
+    crm:P3_has_note "https://www.thomasgray.org/texts/poems/trow" ;
     crm:P2_has_type lcg:gf2014026481 ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1768/0101.gif" ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wtrow.shtml" ;    
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=trow#mss.0190" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/resources/findaid/poems/work/trow#mss.0190" ;
     crm:P108i_was_produced_by :PublicationOfTGsPoems1768 ;
     crm:P106i_forms_part_of :TGsImitations ;
     .
@@ -298,29 +298,29 @@
 :TheBard a crm:E33_Linguistic_Object ;
     skos:prefLabel "The Bard" ;
     crm:P102_has_title "The Bard" ;
-    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=bapo" ;
+    crm:P3_has_note "https://www.thomasgray.org/texts/poems/bapo" ;
     crm:P2_has_type lcg:gf2014026481 ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/ajt0078.PNG" ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wbapo.shtml" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=bapo#mss.0018" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/resources/findaid/poems/work/bapo#mss.0018" ;
     crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
 :TheProgressOfPoesy a crm:E33_Linguistic_Object ;
     skos:prefLabel "The Progress Of Poesy" ;
     crm:P102_has_title "The Progress Of Poesy" ;
-    crm:P3_has_note "https://www.thomasgray.org/cgi-bin/display.cgi?text=pppo" ;
+    crm:P3_has_note "https://www.thomasgray.org/texts/poems/pppo" ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/ajt0070.PNG" ;
     crm:P2_has_type lcg:gf2014026481 ;
     crm:P1_is_identified_by "https://www.eighteenthcenturypoetry.org/works/tgaen-wpppo.shtml" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/findaid.cgi?ead=grayt.ead.0001&collection=poems&work=pppo#mss.0138" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/resources/findaid/poems/work/work=pppo#mss.0138" ;
     crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;
     .
 
 :Odes1757 a crm:E33_Linguistic_Object ;
     skos:prefLabel "Thomas Gray's \"Odes\" (1757)" ;
     crm:P102_has_title "Odes (1757)" ;
-    crm:P1_is_identified_by "https://www.thomasgray.org/cgi-bin/view.cgi?collection=primary&edition=1757" ;
+    crm:P1_is_identified_by "https://www.thomasgray.org/texts/diglib/primary/1757" ;
     crm:P138i_has_representation "https://www.thomasgray.org/images/diglib/primary/1757/ajt0068.PNG" ;
     crm:P2_has_type lct:col ;
     crm:P108i_was_produced_by :PublicationOfTGsOdes1757 ;

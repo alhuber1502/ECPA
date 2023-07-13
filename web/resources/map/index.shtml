@@ -1,0 +1,638 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Resources / Poets map" -->
+<!--#set var="bodyid" value="resources" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="resources" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <div class="row" style="height:inherit;">
+      <div class="col-xs-12" style="padding:0;">
+
+        <div class="map" id="map" style="height:inherit;"></div>
+
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+<div id="sidebar" class="leaflet-sidebar collapsed">
+  <!-- Nav tabs -->
+  <div class="leaflet-sidebar-tabs">
+    <ul role="tablist">
+        <!--
+        <li><a href="#welcome"><i class="fas fa-door-open"></i><span class="sr-only">[Welcome]</span></a></li>
+        -->
+        <li><a href="#home" role="tab"><i class="fa fa-map"></i><span class="sr-only">[Map]</span></a></li>
+        <li><a href="#location" role="tab"><i class="fa fa-user"></i><span class="sr-only">[Poets]</span></a></li>
+        <!--
+        <li><a href="#profile" role="tab"><i class="fa fa-user"></i><span class="sr-only">[Poets]</span></a></li>
+        <li class="disabled"><a href="#" role="tab"><span class="sr-only">[Disabled]</span></a></li>
+        <li><a href="#about" role="tab"><i class="fa fa-info"></i><span class="sr-only">[About]</span></a></li>
+        <li><a href="#help" role="tab"><i class="fa fa-question-circle"></i><span class="sr-only">[Help]</span></a></li>
+        <li class="disabled"><a href="#" role="tab"><span class="sr-only">[Disabled]</span></a></li>
+        <li><a href="#feed" role="tab"><i class="fas fa-rss"></i><span class="sr-only">[News/Updates]</span></a></li>
+        <li><a href="#contact" role="tab"><i class="fas fa-envelope-open"></i><span class="sr-only">[Contact]</span></a></li>
+        <li class="disabled"><a href="#messages" role="tab"><i class="far fa-envelope"></i></a></li>
+        <li><a href="https://github.com/Turbo87/sidebar-v2" role="tab" target="_blank"><i class="fab fa-github"></i></a></li>
+        -->
+    </ul>
+    <!--
+    <ul role="tablist">
+        <li><a href="#settings" role="tab"><i class="fas fa-cog"></i></a></li>
+    </ul>
+    -->
+  </div>
+  <!-- Tab panes -->
+  <div class="leaflet-sidebar-content">
+      <div class="leaflet-sidebar-pane" id="home">
+          <h1 class="leaflet-sidebar-header">
+              Poets map
+              <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+          </h1>
+          <div>
+            <h2>The map</h2>
+            <p>The historical map used in this visualization is Thomas Kitchin's <em><a 
+              href="https://davidrumsey.oldmapsonline.org/maps/65ab80a4-46d0-50e8-966d-6811af9d58d7/"
+              class="external" target="_blank">A compleat map of the British Isles</a></em>
+               (London: Robert Sayer, 1788).  You can add or remove individual
+               map layers via the Layers-menu in the top right corner.  
+            </p>
+            <p>Poets are shown at their place of birth, unless it is unknown or
+              beyond the confines of the map, in which
+              case they are shown at the country's geographical centre.  Images of the poets
+              have been sourced from <a class="external" target="_blank" 
+            href="https://commons.wikimedia.org/wiki/Main_Page">Wikimedia
+            Commons</a> among others.
+            </p>
+            <p>You can use the filters below to adjust the window of reference,
+            and switch to the Poets-tab on the left for an alphabetical list of
+            poets (with filters applied).</p>
+            <h2 style="margin-top:15px;">Filter by years</h2>
+            <div style="margin-top:15px;" id="slider-range"></div>
+            <div>
+              <label for="year-range">Date range:</label>
+              <input type="text" id="year-range" readonly style="border:0; color:eee; font-weight:bold;">
+            </div>
+          </div>
+          <div class="controls gender" style="margin-top:15px;">
+            <h2>Filter by gender</h2>
+            <input id="male" value="m" class="checkbox" type="checkbox" checked/>
+            <label for="male"><i class="fa fa-male"></i><span class="sr-only">Male</span></label>
+            <input id="female" value="f" class="checkbox" type="checkbox" checked/>
+            <label for="female"><i class="fa fa-female"></i><span class="sr-only">Female</span></label>
+          </div>
+          <h3>Known issues</h2>
+          <p style="font-size:13px;">Regretfully, for navigational purposes,
+            some names and borders
+            used in the map navigation correspond to present-day denominations and 
+            historical reality.  We apologize for the resulting distortion
+            and historical inaccuracy, and hope to improve this over time with the 
+            help of projects like 
+            <a href="https://openhistoricalmap.org/" class="external" 
+            target="_blank">OpenHistoricalMap</a> as they evolve and mature.
+            Please <a
+            href="mailto:huber@eighteenthcenturypoetry.org">feedback</a> any
+            comments or issues to the editor. 
+          </p>
+      </div>
+
+      <div class="leaflet-sidebar-pane" id="location">
+          <h1 class="leaflet-sidebar-header">Poets<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+          <div class="results"></div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  // start with whole network
+  var startyr = 1650;
+  var endyr = 1780;
+
+  // map layers
+  /*
+  var baseMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    noWrap: true,
+    minzoom: 3,
+    maxZoom: 15
+  });
+  */
+
+  //  .. OpenStreetMap                                                                                               
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', noWrap: true, minZoom: 3, maxZoom: 15});
+
+  //  .. CartoDB Positron
+  var cartodbl = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', noWrap: true, minZoom: 3, maxZoom: 15});
+  var cartodbd = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', noWrap: true, minZoom: 3, maxZoom: 15});
+
+  //  .. OSM Toner
+  var toner = L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.', noWrap: true, minZoom: 3, maxZoom: 15});
+
+  //  .. White background
+  var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {noWrap: true, minZoom: 3, maxZoom: 9});
+
+  var basemaps = {"OpenStreetMap": osm, 
+                  "CartoDB Positron": cartodbl, 
+                  "CartoDB Dark Matter": cartodbd, 
+  //                "Stamen Toner": toner, 
+                  "White background": white}
+
+  var overlayMap = L.tileLayer('https://maps.georeferencer.com/georeferences/313b1e0d-376f-5114-862b-32a5c528a55d/2017-04-23T09:03:18.157822Z/map/{z}/{x}/{y}.png?key=z1Z0kmp6fUomiTPbaqES', {
+    attribution: '&copy; David Rumsey map collection',
+    transparent: true,
+    opacity: .9,
+    minZoom: 3,
+    maxZoom: 9
+  });
+
+  // map
+  var map = new L.Map('map', {
+    worldCopyJump: true,
+    zoomSnap: 0.5,
+    zoomDelta: 0.5,
+    minZoom: 3,
+    maxBounds: [
+      [90,-180],
+      [-90,180]
+    ],
+    layers: [
+      cartodbl,
+      overlayMap
+    ]
+  }).setView([53.5, -7], 7);
+
+  // visualization layers
+  var markerLayer = L.layerGroup().addTo( map );
+  // Spiderfy overlapping markers
+  var oms = new OverlappingMarkerSpiderfier( map, {keepSpiderfied: true} );
+  var markers = {};
+
+  // initialize
+  var loadPlaces = function() {
+    return $.ajax({ url: "/resources/map/data/places.min.json", dataType: 'json',
+      success: function(data) {
+        places = data;
+      }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+    });
+  }
+  var loadPersons = function() {
+    return $.ajax({ url: "/resources/map/data/persons.min.json", dataType: 'json',
+      success: function(data) { 
+        persons = data;
+      }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+    });
+  }
+  var loadNations = function() {
+    return $.ajax({ url: "/resources/map/data/nations.min.json", dataType: 'json',
+      success: function(data) { 
+        nations = data;          
+      }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+    });
+  }
+  
+  // load all required data before processing
+  $.when( loadPlaces(), loadPersons(), loadNations() ).done( function() {
+    showYrRange( startyr,endyr );//draw_viz( persons );
+  });
+
+  // switch base/overlay (to hide hist map "flaw")
+  map.on('overlayadd', function() {
+//    baseMap.setOpacity(0);
+//    $( ".map").css( "background-color", "#ede0cb" );
+  });
+  map.on('overlayremove', function() {
+//    $( ".map").css( "background-color", "#fff" );
+//    baseMap.setOpacity(1);
+  });
+  // zoom base/overlay
+
+  map.on('zoomend', function() {
+    /*
+    var zoomlevel = map.getZoom();
+    if (zoomlevel > 5) {
+      $( ".map").css( "background-color", "#fff" );
+      baseMap.setOpacity(1);
+    } else {
+      if ( map.hasLayer( overlayMap) ) {
+        baseMap.setOpacity(0);
+        $( ".map").css( "background-color", "#ede0cb" );
+      } else {
+        $( ".map").css( "background-color", "#fff" );        
+        baseMap.setOpacity(1);
+      }
+    }
+    */
+  });
+
+  // controls
+  L.control.layers( basemaps, { "British Isles (1788)": overlayMap } ).addTo(map);
+  // Create additional Control placeholders
+  function addControlPlaceholders(map) {
+    var corners = map._controlCorners,
+      l = 'leaflet-',
+      container = map._controlContainer;
+    function createCorner(vSide, hSide) {
+      var className = l + vSide + ' ' + l + hSide;
+      corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+    }
+    createCorner('verticalcenter', 'left');
+    createCorner('verticalcenter', 'right');
+  }
+  addControlPlaceholders(map);
+  // Change the position of the Zoom Control to a newly created placeholder.
+  map.zoomControl.setPosition('topright');
+
+  // "Center" map in a good starting position and add reset button next to zoom
+  L.easyButton( '<i style="font-size:16px;" class="fa fa-undo reset_map"></i><span class="sr-only">Reset map</span>', function(){
+    map.setView([53.5,-7], 7);
+  }).setPosition('topright').addTo( map );
+
+  var sidebar = L.control.sidebar({
+    autopan: false,       // whether to maintain the centered map point when opening the sidebar
+    closeButton: true,    // whether to add a close button to the panes
+    container: 'sidebar', // the DOM container or #ID of a predefined sidebar container that should be used
+    position: 'left',     // left or right
+  }).addTo(map);
+
+  function showYrRange( start, end ) {
+    startyr = start;
+    endyr = end;
+    var male = $( "#male" ).is( ":checked" );
+    var female = $( "#female" ).is( ":checked" );
+    var newPersons = _.filter( persons, function ( v ) {
+      var hide = false;
+      if ( !v["dob"] || !v["dod"] || v["dob"].substring(0,4) > endyr || v["dod"].substring(0,4) < startyr ) {
+        hide = true;
+      } else {
+        hide = false;
+      }
+      if (!hide) {
+        if ( !male && v["sex"] == 'm' ) {
+          hide = true;
+        }
+        if ( !female && v["sex"] == 'f' ) {
+          hide = true;
+        }
+      }
+      if ( !hide ) {
+        return v;
+      }
+    });
+    draw_viz( newPersons );
+  }
+
+  function draw_viz( new_persons ) {
+    markers = {};
+    oms.clearMarkers();
+    markerLayer.clearLayers();
+    $.each( new_persons, function ( i,v ) {
+      var coords = [], POB = '';
+      try {
+        var source = (v.pob && !v.gen && places[ v.pob ] && places[ v.pob ].coord)?places[ v.pob ].coord:nations[ v.nat.substring(0, 2) ].coord;
+        source.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { coords.push(x); }  });
+//        POB += nations[ v.nat.substring(0, 2) ].name.split(',')[0];
+        if ( v.pob && places[ v.pob ] && places[ v.pob ].name ) {
+          POB += ' (born in '+(( places[ v.pob ].name )?places[ v.pob ].name:``)
+//          +
+//            ((places[ v.pob ].nat && nations[ places[ v.pob ].nat.substring(0, 2) ].name && nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0] != nations[ v.nat.substring(0, 2) ].name.split(',')[0] )?
+//            `, `+nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0]
+//            :``);
+          POB += `)`
+        } else {
+          POB += ` (birthplace n/a)`
+        }
+        var icon = L.icon({
+          className: "poet-marker",
+          iconUrl: (v.img)?'/resources/map/data/img/thumb/'+v.id+'.jpg':(v.sex == 'm')?'/images/male.png':'/images/female.png',
+          iconSize: [(v.img)?35:30]
+        });
+        markers[ v.id ] = L.marker([ coords[1],coords[0] ], {
+          icon: icon,
+          title: v["name"]+POB,
+          riseOnHover: true
+        })
+        .bindPopup( `<div class='popup'><span class='name'>` + v["name"] + ` <a href="/authors/`+v["id"]+`.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></span><span class='loc'>`+POB+`</span></div>` )
+        .addTo( markerLayer );
+        // add person ID to marker
+        markers[ v.id ]._icon.id = v.id;
+        // spiderfy overlapping markers
+        oms.addMarker( markers[ v.id ] );
+      }
+      catch( err ) {
+//        console.log(i,v);
+      }
+    });
+    $( "#location .results" ).html( poets_overview( new_persons ) );
+    // wait for helper functions to load
+    document.addEventListener('DOMContentLoaded', function(event) {
+      checkPath();
+    });
+  }
+
+  async function poet_profile( id ) {
+    var poet = await load_poet_overview( id );
+    var birthDate = new Date( persons[ id ].dob.replace("T00:00:00Z","").split('-') );
+    var deathDate = new Date( persons[ id ].dod.replace("T00:00:00Z","").split('-') );
+    var works='', poems='', links='<ul style="columns:2;">';
+    links += 
+      (poet[id].ecpa?`<li><a href="`+poet[id].ecpa+`" class="external" target="_blank"><span>ECPA</span></a>`:``)+
+      (poet[id].ernie?`<li><a href="`+poet[id].ernie+`" class="external" target="_blank"><span>ERNiE</span></a>`:``)+
+      (poet[id].europeana?`<li><a href="`+poet[id].europeana+`" class="external" target="_blank"><span>Europeana</span></a>`:``)+
+      (poet[id].viaf?`<li><a href="`+poet[id].viaf+`" class="external" target="_blank"><span>VIAF</span></a>`:``)+
+      (poet[id].cerl?`<li><a href="`+poet[id].cerl+`" class="external" target="_blank"><span>CERL thesaurus</span></a>`:``)+
+      (poet[id].wcat?`<li><a href="`+poet[id].wcat+`" class="external" target="_blank"><span>Worldcat</span></a>`:``)+        
+      (poet[id].wd?`<li><a href="`+poet[id].wd+`" class="external" target="_blank"><span>Wikidata</span></a>`:``);
+    var wiki = '', wikisource = '';
+    for (var key of Object.keys( poet[id])) {
+      if ( key.includes( "wikisource" ) ) {
+        wikisource += `<li><a href="`+poet[id][key]+`" class="external" target="_blank"><span>Wikisource</span> (<code>`+key.substring(0,2)+`</code>)</a>`
+      } else if ( key.includes( "wiki" ) ) {
+        wiki += `<li><a href="`+poet[id][key]+`" class="external" target="_blank"><span>Wikipedia</span> (<code>`+key.substring(0,2)+`</code>)</a>`
+      }
+    }
+    links += wiki + wikisource + `</ul>`;
+    // available global texts
+    if ( poet[id].texts && poet[id].texts.poems.length > 0 ) {
+      poems += `<ul>`;
+      $.each( _.sortBy( poet[id].texts.poems, 'title' ), function(i,v) {
+        poems += `<li>`+
+          `<a class="show_globaltext" href="#text/`+v.text+`" data-tid="`+v.text+`" data-wid="`+v.work+`">`+
+          `<em>`+v.title+`</em>`+
+          '</a>'+
+          ((v.publ != '')?` (`+v.publ+`)`: ((v.comp != '')?` (comp. `+v.comp+`)`: ``))+
+          `</li>`;
+      });
+      poems += `</ul>`;
+    }
+    // select bibliography
+    if ( poet[id].otw ) {
+      works += `<ul>`;
+      $.each( _.sortBy( poet[id].otw, 'date' ), function(i,v) {
+        works += `<li>`+
+          ((v.url)?'<a class="external" target="_blank" href="'+v.url+'">':'')+
+          `<em>`+v.title+`</em>`+
+          ((v.url)?'</a>':'')+
+          (v.date?` (`+v.date.substring(0,4)+`)`:``)+
+          `</li>`;
+      });
+      works += `</ul>`;
+    } else if ( poet[id].bibl ) {
+      works += `<ul>`;
+      $.each( _.sortBy( poet[id].bibl, 'date' ), function(i,v) {
+        works += `<li>`+
+          ((v.url)?'<a class="external" target="_blank" href="'+v.url+'">':'')+
+          `<em>`+v.title+`</em>`+
+          ((v.url)?'</a>':'')+
+          (v.date?` (`+v.date.substring(0,4)+`)`:``)+
+          `</li>`;
+      });
+      works += `</ul>`;
+    }
+    $( "#profile .results" ).html( 
+      `<h2>`+persons[ id ].name+`</h2>`+(poet[id].desc?`<p style="font-size:14px;">`+poet[id].desc+`</p>`:``)+
+        ((persons[ id ].img)?`<img width="175" style="float:right;margin-left:10px;" src="`+persons[ id ].img.replace('http://','https://')+`?width=250px" />`:``)+
+        `<h3>Biographical details</h3><ul><li><span>Country:</span> 
+        <a href='#country/`+persons[ id ].nat.substring(0,2)+`' class='country-focus' data-cont='`+nations[ persons[ id ].nat.substring(0,2) ].cont+`' 
+        data-count='`+persons[ id ].nat.substring(0,2)+`' data-coord='`+nations[ persons[ id ].nat.substring(0,2) ].coord+`'>`+
+        nations[ persons[ id ].nat.substring(0,2) ].name.split(',')[0]+`</a></li>`+
+        (persons[ id ].sex?`<li><span>Gender:</span> `+(persons[ id ].sex == 'm'?`male`:`female`):``)+`</li>`+
+        (poet[ id ].pseud?`<li><span>Pseudonym:</span> `+_.uniq( poet[id].pseud ).join("; "):``)+`</li>`+
+          `<li><span>Birth:</span> `+ 
+        ((persons[ id ].dob.length == 20 && !persons[ id ].dob.includes("-01-01"))?birthDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }):birthDate.getFullYear())+
+        (persons[ id ].pob && places[ persons[ id ].pob ] && places[ persons[ id ].pob ].name ?` (`+
+          (( places[ persons[ id ].pob ] && places[ persons[ id ].pob ].name )?`<a href="https://www.wikidata.org/wiki/`+persons[ id ].pob+`" class="external" target="_blank">`+places[ persons[ id ].pob ].name+`</a>`:``)+
+          ((places[ persons[ id ].pob ] && places[ persons[ id ].pob ].nat && nations[ places[ persons[ id ].pob ].nat.substring(0, 2) ].name &&
+            nations[ places[ persons[ id ].pob ].nat.substring(0, 2) ].name.split(',')[0] != places[ persons[ id ].pob ].name)?
+          `, `+nations[ places[ persons[ id ].pob ].nat.substring(0, 2) ].name.split(',')[0]
+          :``):``)+(persons[ id ].pob && places[ persons[ id ].pob ] && places[ persons[ id ].pob ].name?`)`:``)+`</li>`+
+          `<li><span>Death:</span> `+ 
+        ((persons[ id ].dod.length == 20 && !persons[ id ].dod.includes("-01-01"))?deathDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }):deathDate.getFullYear())+
+        (persons[ id ].pod?` (`+
+          (( places[ persons[ id ].pod ].name )?`<a href="https://www.wikidata.org/wiki/`+persons[ id ].pod+`" class="external" target="_blank">`+places[ persons[ id ].pod ].name+`</a>`:``)+
+          ((places[ persons[ id ].pod ].nat && nations[ places[ persons[ id ].pod ].nat.substring(0, 2) ].name &&
+            nations[ places[ persons[ id ].pod ].nat.substring(0, 2) ].name.split(',')[0] != places[ persons[ id ].pod ].name)?
+          `, `+nations[ places[ persons[ id ].pod ].nat.substring(0, 2) ].name.split(',')[0]
+          :``):``)+(persons[ id ].pod?`)`:``)+`</li>`+
+        (poet[id].occ?`<li><span>Occupation:</span> `+_.uniq( poet[id].occ.sort() ).join("; ")+`</li>`:``)
+        +`</ul>`+
+        `<h3>Poems</h3>`+((poet[id].texts && poet[id].texts.poems.length > 0)?poems:`<ul><li>[forthcoming]</li></ul>`)+
+        ((poet[id].otw  || poet[id].bibl)?`<h3>Select bibliography</h3>`+works:``)+
+        ((links != '<ul style="columns:2;"></ul>')?`<h3>Links</h3>`+links:``)
+    );
+    sidebar.open('profile');
+    // update country in background
+    $( "#location .results" ).html( update_country( persons[ id ].nat.substring(0,2) ) );
+  }
+
+  function update_country( country ) {
+    var overview = `<h2>`+nations[ country ].name.split(',')[0]+`, `+
+      `<a href="#continent/`+continents[ nations[ country ].cont ].id+`" class='cont-focus' data-cont="`+continents[ nations[ country ].cont ].id+`" 
+      data-name="`+continents[ nations[ country ].cont ].name+`" data-coord="`+continents[ nations[ country ].cont ].coord+`">`+
+      continents[ nations[ country ].cont ].name+`</a> (`+
+      _.filter( persons, function(record){ return record.nat.substring(0,2) == country } ).length+` `+
+      (_.filter( persons, function(record){ return record.nat.substring(0,2) == country } ).length > 1?`poets`:`poet`)
+      +`)</h2>`;
+    overview += poets_by_country( country );
+    return( overview );
+  }
+
+  function update_continent( cont ) {
+    var name = continents[ cont ].name;
+    var countries = _.filter( nations, function(record){ return record.cont == cont } );
+    var overview = `<h2>`+name+
+      ` (`+
+      _.filter( persons, function(record){ return nations[ record.nat.substring(0,2) ].cont == cont } ).length+` `+
+      (_.filter( persons, function(record){ return nations[ record.nat.substring(0,2) ].cont == cont } ).length > 1?`poets`:`poet`)         
+      +`)`+
+      `</h2>`;
+    $.each( _.sortBy( countries, 'name' ), function( i,v ) {
+      overview += `<h3>`+v.name.split(',')[0]+` (`+
+        _.filter( persons, function(record){ return record.nat.substring(0,2) == v.id } ).length+` `+
+        (_.filter( persons, function(record){ return record.nat.substring(0,2) == v.id } ).length > 1?`poets`:`poet`)          
+        +`)</h3>`;
+      overview += poets_by_country( v.id );
+    });
+    return( overview );
+  }
+
+  function poets_by_country( country ) {
+    var return_poets = '';
+    var poets = _.filter( persons, function(record){ return record.nat.substring(0,2) == country } );
+    return_poets += "<ul>";
+    $.each( _.sortBy( poets, 'name' ), function( i,v ) {
+      var birthDate = new Date( v.dob.replace("T00:00:00Z","").split('-') ); // var birthDate = new Date( v.dob ); 
+      var deathDate = new Date( v.dod.replace("T00:00:00Z","").split('-') ); // var deathDate = new Date( v.dod );
+      return_poets += `<li><a href='#id/`+v.id+`' class='poet-focus' data-id='`+v.id+`'>`+v.name+` 
+        (`+birthDate.getFullYear()+`–`+deathDate.getFullYear()+`)</a></li>`;
+    });
+    return_poets += "</ul>";
+    return( return_poets );
+  }
+
+  function poets_overview( poets ) {
+    var return_poets = '';
+    //var poets = _.filter( persons, function(record){ return record.nat.substring(0,2) == country } );
+    return_poets += "<p><ul class='listBibl'>";
+    $.each( _.sortBy( poets, 'name' ), function( i,v ) {
+      try { var birthDate = new Date( v.dob.replace("T00:00:00Z","").split('-') ); }catch(err){} // var birthDate = new Date( v.dob ); 
+      try { var deathDate = new Date( v.dod.replace("T00:00:00Z","").split('-') ); }catch(err){} // var deathDate = new Date( v.dod );
+      return_poets += `<li style="margin:0;"><a href='#id/`+v.id+`' class='poet-focus' data-id='`+v.id+`'>`+v.name+((birthDate && deathDate)?` 
+        (`+birthDate.getFullYear()+`–`+deathDate.getFullYear()+`)`:'')+`</a>
+        <a href="/authors/`+v["id"]+`.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>`;
+    });
+    return_poets += "</ul>";
+    return( return_poets );
+  }
+
+  $('.gender .checkbox').change(function () {
+    showYrRange( startyr,endyr );
+  });
+  $('.continents .checkbox').change(function () {
+    showYrRange( startyr,endyr );
+  });
+  $( document ).on( 'click', '.poet-focus', function(e) {
+    var id = $(e.currentTarget).data( "id" );
+    markers[ id ].fire('click');
+//    poet_profile( id );
+  });
+  $( document ).on( 'click', '.country-focus,.cont-focus', function(e) {
+    var focus_type = $(e.currentTarget)[0].className, overview = '';
+    // generate and switch to continent or country overview
+    if (focus_type == 'cont-focus') {
+      overview += update_continent( $(e.currentTarget).data( "cont" ) );
+    } else {
+      overview += update_country( $(e.currentTarget).data( "count" ) );
+    }
+    $( "#location .results" ).html( overview );
+    sidebar.open('location');
+    // refresh markers
+    $( "#"+$(e.currentTarget).data( "cont" ) ).prop('checked', true);
+    showYrRange( startyr,endyr );
+    // pan to target
+    var coords = [];
+    $(e.currentTarget).data('coord').replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { coords.push(x); }  });
+    map.flyTo( [coords[1], coords[0]], (focus_type == 'cont-focus'?4:5) );
+  });
+
+  async function checkPath() {
+    var hash = location.hash.substring( location.hash.indexOf("/")+1 ), source;
+    switch ( location.hash.substring( location.hash.indexOf("#"), location.hash.indexOf("/")+1 ) ) {
+      case "#id/":
+//        poet_profile( hash );
+//        source = nations[ persons[ hash ].nat.substring(0, 2) ].coord;
+        markers[ hash ].fire('click');
+        break;
+      case "#continent/":
+        $( "#location .results" ).html( update_continent( hash ) );
+        sidebar.open('location');
+        source = continents[ hash ].coord;
+      break;
+      case "#country/":
+        $( "#location .results" ).html( update_country( hash ) );
+        sidebar.open('location');
+        source = nations[ hash ].coord;
+      break;
+      case "#text/":
+        var work = await load_work_overview( texts[ hash ][ "work" ] );
+        if ( work.aut != '' ) {
+          var aut = work.aut.split(';');
+//          poet_profile( aut[0] );
+          source = nations[ persons[ aut[0] ].nat.substring(0, 2) ].coord;
+        }
+        display_globaltext( hash, texts[ hash ][ "work" ] );
+      break;
+      case "#work/":
+        var work = await load_work_overview( hash );
+        if ( work.aut != '' ) {
+          var aut = work.aut.split(';');
+//          poet_profile( aut[0] );
+          source = nations[ persons[ aut[0] ].nat.substring(0, 2) ].coord;
+        }
+        display_globaltext( "", hash );
+      break;
+    }
+    if ( source ) {
+      // pan to target
+      var coords = [];
+      source.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { coords.push(x); }  });
+      map.setView( [coords[1], coords[0]], (location.hash.substring( location.hash.indexOf("#"), location.hash.indexOf("/")+1 ).includes( "#continent/" )?4:5) );
+    }
+  }
+
+  function checkHash() {
+    switch( window.location.hash ) {
+      case "#home":
+        sidebar.open( 'home' );
+      break;
+      case "#about":
+        sidebar.open( 'about' );
+      break;
+      case "#help":
+        sidebar.open( 'help' );
+      break;
+      case "#contact":
+        sidebar.open( 'contact' );
+      break;
+    }
+  }
+
+
+  // main 
+  (function() {
+
+    sidebar.open( 'home' );
+    window.addEventListener("hashchange", checkHash, false);
+
+    $( "#slider-range" ).slider({
+      range: true,
+      min: parseInt(startyr),
+      max: parseInt(endyr),
+      values: [ parseInt(startyr),parseInt(endyr) ],
+      slide: function( event, ui ) {
+        $( "#year-range" ).val( ui.values[ 0 ] + "–" + ui.values[ 1 ] );
+        setTimeout(function() {
+          showYrRange( ui.values[ 0 ],ui.values[ 1 ] );
+        }, 10);
+      }
+    });
+    $( "#year-range" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+        "–" + $( "#slider-range" ).slider( "values", 1 ) );
+
+    oms.addListener('click', function(marker) {
+//      poet_profile( marker._icon.id );
+//      window.location.hash = "#id/"+marker._icon.id;
+    });
+    oms.addListener('spiderfy', function(markers) {
+      $.each( markers, function(i,v) {
+        var popup = v.getPopup();
+        if ( popup.isOpen() ) {
+//          poet_profile( v._icon.id );
+//          window.location.hash = "#id/"+v._icon.id;
+          return false;
+        }
+      });
+    });
+
+    // wait for helper functions to load
+    document.addEventListener('DOMContentLoaded', function(event) {
+      $.when( loadPlaces(), loadPersons(), loadNations() ).done( function() {
+        checkPath();
+      });
+    });
+
+  })();    
+
+  var citation = "";
+  citation += "Huber, Alexander. ";
+  var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+  citation += '\"ECPA Topic Model Browser\". ';
+  citation +='<em><!--#echo var="ecep_full" --></em>, '+
+    '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+    '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+</script>
+
+<!--#include virtual="/bottom.shtml" -->
