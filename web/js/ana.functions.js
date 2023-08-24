@@ -1045,10 +1045,11 @@ function ana_initialize () {
         .after( "<a class='help-modal' href='#'><span class='pull-right glyphicon glyphicon-question-sign' style='padding-right:2px; vertical-align:text-top'/></a>");
 
     // add textareas for notes/observations
+	/*
     $.each( ["pho-static","mor-static","syn-static","sem-static","pra-static"], function( index,item ) {
 	    $( "#"+item ).append( '<div data-id="'+item.substr(0,3)+'"><i>For your notes and observations:</i><br/><textarea style="resize:vertical;width:100%;" class="textaInput" rows="4" id="ta-'+item+'"/></div>' );
     });
-
+	*/
     // trigger first line hover
     if ( $("#analysis")[0] ) {
 	for (var key in l) {
@@ -1061,6 +1062,7 @@ function ana_initialize () {
 }
 
 // save notes/observations textarea after timeout
+/*
 var timeout = null;
 $(document.body).on('input propertychange paste', '.textaInput', function(e){
     clearTimeout(timeout);
@@ -1076,7 +1078,7 @@ $(document.body).on('input propertychange paste', '.textaInput', function(e){
     	});
     }, 2500);
 });
-
+*/
 $('#collapseSyn').on('show.bs.collapse', function () { // Annodoc needs a re-draw when change happens while collapsed
 	draw(lineID);
     });
