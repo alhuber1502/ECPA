@@ -3,7 +3,7 @@ Eighteenth-Century Poetry Archive (ECPA)
 ![](https://img.shields.io/github/last-commit/alhuber1502/ECPA.svg?style=flat)
 ![](https://img.shields.io/badge/license-CC%20BY--SA-orange.svg?style=flat)
 ![](https://img.shields.io/website-up-down-green-red/http/www.eighteenthcenturypoetry.org.svg?style=flat)
-![](https://img.shields.io/maintenance/yes/2022.svg?style=flat)
+![](https://img.shields.io/maintenance/yes/2023.svg?style=flat)
 
 The Eighteenth-Century Poetry Archive — 
 [eighteenthcenturypoetry.org](http://www.eighteenthcenturypoetry.org/) — is a
