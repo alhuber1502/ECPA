@@ -852,7 +852,7 @@ function lk_json (json) {
 		    pattids.push( RF_patt(json[key][k].patt,key) );
 		}
 	    }
-	    RF += "<li style='display:inline;'><a class='visualize_ids' data-ids='"+pattids+"'>\/<span class='"+frqArr[j].key+"'></span>\/</a>&nbsp;("+frqArr[j].freq+")</a>";
+	    RF += "<li style='display:inline;'><a class='visualize_ids' data-ids='"+_.uniq(_.flatten(pattids))+"'>\/<span class='"+frqArr[j].key+"'></span>\/</a>&nbsp;("+frqArr[j].freq+")</a>";
 	    if (j+1 < newArr) { RF += ", ";}
 	    RF += "</li>";
 	}
