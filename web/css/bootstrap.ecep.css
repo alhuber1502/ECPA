@@ -225,7 +225,7 @@ body {
 
 .navbar-brand {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 5px;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 21px;
@@ -276,7 +276,7 @@ a.link_ref:not([href^="#"]):not([href^="/"]),a:not(.img).external {
 }
 
 .footer-links {
-    margin: 0 0 0 35px;
+    margin: 0 0 0 0;
     list-style-type: none;
     display: inline !important;
     padding: 8px;
@@ -1296,3 +1296,17 @@ div[data-app="share_buttons"] {
   .ui-widget-content {
     background: unset;
   }
+
+  .badge-light {
+      color: #212529;
+      background-color: #f8f9fa;
+      font-weight: bolder;
+      font-family: sans-serif;
+      margin-top: 3px;
+  }
+
+  .badge {
+      display: flex;
+      width: 67px;
+  }
+  
