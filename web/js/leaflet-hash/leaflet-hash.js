@@ -31,7 +31,7 @@
 				};
 			}
 		} else {
-			return false;
+			return;
 		}
 	};
 
