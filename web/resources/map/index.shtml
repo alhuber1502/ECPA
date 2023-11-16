@@ -167,10 +167,11 @@
 
   // visualization layers
   var markerLayer = L.layerGroup().addTo( map );
+
   // Spiderfy overlapping markers
   var oms = new OverlappingMarkerSpiderfier( map, {keepSpiderfied: true} );
   var markers = {};
-
+  var hash = new L.Hash(map);
   // initialize
   var loadPlaces = function() {
     return $.ajax({ url: "/resources/map/data/places.min.json", dataType: 'json',
