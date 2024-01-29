@@ -1,0 +1,92 @@
+
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Authors / Robert Blair" -->
+<!--#set var="bodyid" value="authors" -->
+<!--#set var="youarehere" value=" Home Authors Robert Blair "
+			-->
+<!--#set var="authors" value="active" -->
+<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-12">
+            <h1>Robert Blair <a class="add_bm" id="aut_BlaiRo1699" href="#"><span class="glyphicon glyphicon-bookmark"></span></a></h1>
+            												(1699 - 
+            											4 February 1746)
+            											
+            <div id="works">
+               <h2 class="info">Works in 
+                  <!--#echo var='ecep'-->
+               </h2>
+               <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
+               <ul class="listBibl" data-id="alphabetical">
+                  <li><a title="view full-text" href="/works/prb43-w0010.shtml"><em>THE GRAVE. A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="prb43" href="/works/prb43.shtml#prb43-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
+                  </li>
+               </ul>
+               <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
+                  <li data-id="prb43"><a title="view table of contents of source edition" href="/works/prb43.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Blair, Robert, 1699-1746. <em><span class="titlem">The Grave.</span> </em>  London: Printed for M. Cooper, at the Globe in Pater-Noster-Row, 1743. 4⁰.
+                     					(
+                     						Foxon B271)
+                     				
+                     <ul class="listBibl ednTOC">
+                        <li id="prb43-w0010" style="text-indent:-30px;"><a href="/works/prb43-w0010.shtml"><em>THE GRAVE. A POEM.</em></a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <h2 class="info">Source editions</h2>
+               <ul class="listBibl">
+                  <li id="prb43"><a title="view table of contents of source edition" href="/works/prb43.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Blair, Robert, 1699-1746. <em><span class="titlem">The Grave.</span> </em>  London: Printed for M. Cooper, at the Globe in Pater-Noster-Row, 1743. 4⁰.
+                     					(
+                     						Foxon B271)
+                     				
+                  </li>
+               </ul>
+            </div>
+            <div id="bib">
+               <h2 id="bib_BlaiRo1699">Bibliography</h2>
+               <p style="margin-bottom:-10px;">ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/2570">2570</a></p>
+               <h3>Reference works</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 28. Print.
+                     </div>
+                  </li>
+               </ul>
+               <h3>Criticism</h3>
+               <ul class="listBibl">
+                  <li>
+                     <div class="biblfree">Bentley, E. B.  <q class="titlea">Grave indignities: greed, hucksterism, and oblivion: Blake's watercolors for Blair's
+                           <span class="hi">Grave</span></q>.   <span class="titlej">Blake</span> 40(2) (2006): 66-71. Print.
+                     </div>
+                  </li>
+                  <li>
+                     <div class="biblfree">Butlin, Martin, ed. <span class="titlem">William Blake's watercolour inventions in illustration of <span class="hi">The Grave</span> by Robert Blair. With an essay on the poem by Morton D. Paley</span>. <span class="titlej">William Blake Trust</span> (2009): 95, (plates) 19. Print.
+                     </div>
+                  </li>
+                  <li>
+                     <div class="biblfree">Means, James.  <q class="titlea">A reading of ‘The Grave’</q>.   <span class="titlej">Studies in Scottish Literature</span> (1975): 270-281. Print.
+                     </div>
+                  </li>
+                  <li>
+                     <div class="biblfree">Parisot, Eric.  <q class="titlea">Disinterring <span class="hi">The Grave</span>: religious authority, poetic autonomy and Robert Blair's fideist poetics</q>.   <span class="titlej">Scottish Studies Review</span> 8(2) (2007): 24-35. Print.
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section><script xmlns="http://www.w3.org/1999/xhtml">
+				var citation = "";
+				citation += "Huber, Alexander. ";	
+				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
+				'<!--#echo var="DOCUMENT_URI"-->';
+				citation += "\"Robert Blair\". "; 
+				citation +=	'<em>\
+      <!--#echo var="ecep_full"--></em>, '+
+				'\
+   <!--#flastmod virtual="/data/version"--> (\
+   <!--#include virtual="/data/version"-->)'+
+				'. Web. \
+   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+			</script>
+<!--#include virtual="/bottom.shtml"-->

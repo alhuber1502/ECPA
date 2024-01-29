@@ -26,18 +26,18 @@ $( document ).ready(function() {
     var hash = location.hash;
     hash && $('ul.nav a[href="' + hash + '"]').tab('show') || $('.nav-tabs a[href="#text"]').tab('show');
     if (hash == "#poemvis" || hash == "#phonemia" || hash == "#dtreejs") { // supports direct link into #PoemViewer from TGA
-	if (hash == "#poemvis") {
-	    viz_chosen = "POEMVIS_VIZ";
-	} else if (hash == "#phonemia") {
-	    viz_chosen = "PHONEMIA_VIZ";
-	} else if (hash == "#dtreejs") {
-	    viz_chosen = "DTREEJS_VIZ";
-	}
-	$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
-	$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
-	hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
-	init( viz_chosen );
-    }
+		if (hash == "#poemvis") {
+	    	viz_chosen = "POEMVIS_VIZ";
+		} else if (hash == "#phonemia") {
+	    	viz_chosen = "PHONEMIA_VIZ";
+		} else if (hash == "#dtreejs") {
+	    	viz_chosen = "DTREEJS_VIZ";
+		}
+		$( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
+		$( '.right' ).switchClass( "col-xs-6", "col-xs-9");
+		hash && $('ul.nav a[href="' + '#visualization' + '"]').tab('show');
+		init( viz_chosen );
+    } else
     // modelling display
     if ( hash.match( /#\/submitted\/kb-/gi ) || hash.match( /#\/resources\/models\//gi ) ) {
         $( '.left' ).switchClass( "col-xs-6", "col-xs-3", 1000);
@@ -45,7 +45,9 @@ $( document ).ready(function() {
         hash && $('ul.nav a[href="' + '#modelling' + '"]').tab('show');
         kbURI = base + location.pathname.substring(1) + hash;
         mod_load_graph( kbURI );
-    }
+    } else if ( hash != '' && hash != '#text' && !hash.match(/^#\d/) ) {
+		$( hash+" .l" ).addClass( "pulse" );
+	}
 
     $('.nav-tabs a').click(function (e) {
         $(this).tab('show');

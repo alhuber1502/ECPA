@@ -1,0 +1,1129 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Resources / Rhyme-Index" -->
+<!--#set var="bodyid" value="resources" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="resources" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<style>
+  /* Rhyme-Index */
+
+  /* Layouts */
+  .rhyme-index .layout {
+    display: none;
+  }
+  .rhyme-index .layout .chart_parent {
+    display: grid;
+    grid-gap: 10px;
+		grid-template-columns: 33% 33% 33%;
+  }
+  .rhyme-index .layout .chart_parent2 {
+    display: grid;
+    grid-gap: 10px;
+		grid-template-columns: repeat(auto-fill, [col] 25% ) ;
+		grid-template-rows: repeat(auto-fill, [row] auto  );
+    width:100%;
+  }
+  .rhyme-index .layout .chart_parent > div {
+    display:flex;
+    flex-flow: column;
+    margin-bottom:0;
+    margin-top:0;
+  }
+  .rhyme-index .layout .chart_parent2 > div {
+    display:flex;
+    flex-flow: column;
+    margin-bottom:0;
+    margin-top:-10px;
+  }
+  /* Layout 1: overview */
+	#chart_4 {
+		grid-column: 1 / 3;
+		grid-row: 2;
+    height: calc((100vh - 50px)/2);
+	}
+	#chart_3 {
+		grid-column: 3 ;
+		grid-row: 1 / 3;
+    height: calc((100vh - 150px));
+	}
+	#chart_1 {
+		grid-column: 1 ;
+		grid-row: 1 ;
+    height: calc((100vh - 270px)/2);
+	}
+	#chart_2 {
+		grid-column: 2;
+		grid-row: 1;
+    height: calc((100vh - 270px)/2);
+  }
+  /* Layout 3: rhyme word view */
+	#chart_5 {
+		grid-column: 1;
+		grid-row: 1;
+    height: calc((100vh - 170px)/2);
+	}
+	#chart_6 {
+		grid-column: 2 / 4 ;
+		grid-row: 1;
+    height: calc((100vh - 170px)/2);
+	}
+	#chart_7 {
+		grid-column: 1 / 4 ;
+		grid-row: 2;
+    height: calc((100vh - 150px)/2);
+  }
+  /* Layout 2: author view */
+	#chart_8 {
+		grid-column: col 1;
+		grid-row: row 1;
+    height: calc((100vh - 170px)/2);
+	}
+	#chart_9 {
+		grid-column: col 2 / span 2 ;
+		grid-row: row 1;
+    height: calc((100vh - 170px)/2);
+	}
+	#chart_10 {
+		grid-column: col 4 / 4;
+		grid-row: row 1;
+    height: calc((100vh - 170px)/2);
+  }
+	#chart_11 {
+		grid-column: col / span 4 ;
+		grid-row: row 2;
+    height: calc((100vh - 150px)/2);
+    margin-top: 0;
+  }
+
+  /* text background highlighting */
+  .rhyme-index .panel-footer .id {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 15px;
+  }
+  .rhyme-index .panel-footer .id::before {
+    display: inline-block;
+    border-top: 20px solid #eee;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;  
+  }
+  .rhyme-index .panel-footer .ri {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 15px;
+  }
+  .rhyme-index .panel-footer .ri::before {
+    display: inline-block;
+    border-top: 20px solid #ddd;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;  
+  }
+  .rhyme-index .panel-footer .fu {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 15px;
+  }
+  .rhyme-index .panel-footer .fu::before {
+    display: inline-block;
+    border-top: 20px solid #bbb;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;  
+  }
+  .rhyme-index .panel-footer .hv {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 15px;
+    color:#ddd
+  }
+  .rhyme-index .panel-footer .hv::before {
+    display: inline-block;
+    border-top: 20px solid #888;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;  
+  }
+  .rhyme-index .panel-footer .hp {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 15px;
+    color:#ddd
+  }
+  .rhyme-index .panel-footer .hp::before {
+    display: inline-block;
+    border-top: 20px solid #555;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;  
+  }
+
+  /* Panels for Layouts */
+  .rhyme-index .panel-footer {
+    position: sticky;
+    display: block;
+    bottom: 0;
+    left: 0;
+    font-weight: 500;
+    padding: 5px 15px 5px 5px;
+  }
+  .rhyme-index .panel-heading {
+    font-size: 18px;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 5px 15px 5px 5px;
+  }
+  .rhyme-index .panel-body {
+    padding:0;
+    height:calc(100% - 68px);
+  }
+  .rhyme-index .panel-body img {
+    display: flex;
+    margin: 0 auto;
+    top: 45%;
+    position: relative;
+  }
+
+  /* Global modal settings */
+  .modal-footer,.modal-header {
+    padding:10px;
+  }
+
+</style>
+
+<!-- main -->
+<section id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 rhyme-index">
+
+        <h1><span><a href=".">Rhyme-Index</a><a class="help-modal" href="#res_rhyme-index"><span class="glyphicon glyphicon-question-sign"
+        style="vertical-align:text-top;font-size:14px;"></span></a></span> 
+          <span id="index_cat"></span>
+          <form id="simsearch" class="simple_search" accept-charset="UTF-8" method="GET" style="display: inline;">
+            <div class="input-group" style="width:200px; float:right; margin-right:48px;">
+              <input type="text" name="author" class="form-control" placeholder="Author name" list="authors">
+              <span class="input-group-btn" style="display:block;">
+                <button class="btn btn-default" type="submit" id="aut_sub" style="vertical-align:unset;background-color:rgb(239, 239, 239);">Go!</button>
+              </span>
+            </div>
+            <div class="input-group" style="width:200px; float:right; margin-right:53px;">
+              <input type="text" name="word" class="form-control" placeholder="Rhyme word" list="rwords">
+              <span class="input-group-btn" style="display:block;">
+                <button class="btn btn-default" type="submit" id="wrd_sub" style="vertical-align:unset;background-color:rgb(239, 239, 239);">Go!</button>
+              </span>
+            </div>
+          </form>
+        </h1>
+        <!-- Overview -->
+        <div id="layout_1" class="layout">
+          <div class="chart_parent">
+            <div id="chart_1" class="panel panel-default">
+              <div class="panel-heading">Rhyme words ranked by raw frequency</div>
+              <div class="panel-body"><img style="margin: 0 auto;" src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_2" class="panel panel-default">
+              <div class="panel-heading">Rhyme vowel sounds by raw frequency</div>
+              <div class="panel-body" style="overflow-x:hidden"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_3" class="panel panel-default">
+              <div class="panel-heading">Rhyme pairs by degree of closeness of the sound match</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_4" class="panel panel-default">
+              <div class="panel-heading">Rhyme pair co-occurrences for authors
+              with the highest raw co-occurrence frequency <button
+              style="border:0;font-size:16px;background-color:unset;float:right;top:5px;color:#777;margin-left:5px;" class="glyphicon
+              glyphicon-resize-full maximize"></button></div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <!-- Rhyme word -->
+        <div id="layout_3" class="layout">
+          <div class="chart_parent">
+            <div id="chart_5" class="panel panel-default">
+              <div class="panel-heading">Rhyming words by raw frequency</div>
+              <div class="panel-body" style="overflow-x:hidden"><img style="margin: 0 auto;" src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_6" class="panel panel-default">
+              <div class="panel-heading">Rhyme pair occurrences by author</div>
+              <div class="panel-body" style="overflow-x:hidden"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_7" class="panel panel-default">
+              <div class="panel-heading">Rhyme occurrences</div>
+              <div class="panel-body" style="height:calc(100% - 37px);"><img src="/images/loader.gif"></div>
+              <div class="panel-footer" style="display:none;">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <!-- Author -->
+        <div id="layout_2" class="layout">
+          <div class="chart_parent2">
+            <div id="chart_8" class="panel panel-default">
+              <div class="panel-heading">Rhyme words by raw frequency</div>
+              <div class="panel-body"><img style="margin: 0 auto;" src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_9" class="panel panel-default">
+              <div class="panel-heading">Rhyme pair co-occurrence by author</div>
+              <div class="panel-body" style="overflow-x:hidden"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_10" class="panel panel-default">
+              <div class="panel-heading">Rhyme schemes</div>
+              <div class="panel-body" style="overflow-x:hidden"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_11" class="panel panel-default">
+              <div class="panel-heading">Rhyme occurrences</div>
+              <div class="panel-body" style="height:calc(100% - 37px);"><img src="/images/loader.gif"></div>
+              <div class="panel-footer" style="display:none;">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+<script type="text/javascript">
+
+    // #AH — 10-24/01/2024
+    var q_wrd = '', q_aut = '', qa2f = {};
+    var gchart_1,gchart_2,gchart_3,gchart_4,gchart_5,gchart_6,gchart_7,gchart_8,gchart_9,gchart_10,gchart_11;
+    var gdata_1,gdata_2,gdata_3,gdata_4,gdata_5,gdata_6,gdata_7,gdata_8,gdata_9,gdata_10,gdata_11;
+    var goptions_1,goptions_2,goptions_3,goptions_4,goptions_5,goptions_6,goptions_7,goptions_8,goptions_9,goptions_10,goptions_11;
+
+    $(function() {
+      var url = new URL( window.location.href );
+      var searchParams = new URLSearchParams( url.search );
+      if ( searchParams.has('wrd') && searchParams.get('wrd') != '') {
+        q_wrd = searchParams.get('wrd')
+        $( "input[name='word']" ).val( q_wrd )
+      }
+      if ( searchParams.has('aut') && searchParams.get('aut') != '') {
+        q_aut = searchParams.get('aut')
+        if ( mod_auth[ q_aut ] ) {
+          $( "input[name='author']" ).val( mod_auth[ q_aut ].name )
+        }
+      }
+      // layout
+      if ( q_wrd != '') {
+        // rhyme word view
+        document.getElementById('index_cat').insertAdjacentHTML('afterbegin', 'for rhyme word "'+q_wrd+'"');
+        $( "#layout_3" ).show();
+        google.charts.setOnLoadCallback(draw_5);
+        google.charts.setOnLoadCallback(draw_6);
+        google.charts.setOnLoadCallback(draw_7);
+      } else if ( q_aut != '' ) {
+        // author view
+        if ( mod_auth[ q_aut ] ) {
+          document.getElementById('index_cat').insertAdjacentHTML('afterbegin', 'for '+mod_auth[ q_aut ].name);
+        } else {
+          var authors_v = '';
+          $.each( q_aut.split( ';' ), function( i,v ) {
+            if ( v == '' ) { return true; }
+            authors_v += mod_auth[v].name+'; '
+          });
+          authors_v = authors_v.substring(0, authors_v.length-2);
+          document.getElementById('index_cat').insertAdjacentHTML('afterbegin', 'for '+authors_v);
+        }
+        $( "#layout_2" ).show();
+        google.charts.setOnLoadCallback(draw_8);
+        google.charts.setOnLoadCallback(draw_9);
+        google.charts.setOnLoadCallback(draw_10);
+        google.charts.setOnLoadCallback(draw_11);
+      } else {
+        // overview
+        document.getElementById('index_cat').insertAdjacentHTML('afterbegin','overview');
+        $( "#layout_1" ).show();
+        google.charts.setOnLoadCallback(draw_1);
+        google.charts.setOnLoadCallback(draw_2);
+        google.charts.setOnLoadCallback(draw_3);
+        google.charts.setOnLoadCallback(draw_4);
+      }
+    });
+
+    // form submission
+    $( document.body ).on( 'submit', '#simsearch', function(e) {
+        e.preventDefault();
+        var data = getFormData( $( this ) );
+        var aut = '';
+        if ( qa2f[ data["author"] ] !== undefined && qa2f[ data["author"] ] != '' ) { aut = qa2f[ data["author"] ] };
+        if ( $(e)[0]["originalEvent"]["submitter"].id == "wrd_sub" ) {
+          window.location.href = './?wrd='+data["word"];
+        } else {
+          window.location.href = './?aut='+aut;          
+        }
+    });
+    // serialize form data to object                                                                                           
+    function getFormData($form){
+      var unindexed_array = $form.serializeArray();
+      var indexed_array = {};
+      $.map(unindexed_array, function(n, i){
+          indexed_array[n['name']] = n['value'];
+      });
+      return indexed_array;
+    }
+
+    $(".layout .maximize,.layout .minimize").click(function(){
+      if($(this).hasClass( "maximize" )){
+        $( this ).closest(".layout").find( "div.panel" ).hide();
+        $( "#chart_4" ).css( {"position":"fixed","width":"calc(100% - 30px)","height":"calc(100% - 150px)","overflow": "hidden" } )
+        $( "#chart_4" ).show()
+        gchart_4.draw(gdata_4, goptions_4);
+        $( this ).removeClass( "maximize" ).addClass( "minimize" );
+      } else {
+        $( this ).closest(".layout").find( "div.panel" ).show();
+        $( "#chart_4" ).css( {"position":"initial","width":"","height":"","overflow": "hidden" } )
+        gchart_4.draw(gdata_4, goptions_4);        
+        $( this ).removeClass( "minimize" ).addClass( "maximize" );
+      }
+    $("#box").slideToggle();
+});
+
+    // load datalists
+    var load_aut = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/data_aut.csv",
+        success: function(data) {
+          data_a = data.split("\r\n");
+          var remove_lastline = data_a.pop();
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_wrd = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/data_wrd.csv",
+        success: function(data) {
+          data_w = data.split("\r\n");
+          var remove_lastline = data_w.pop();
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    $.when( load_aut(),load_wrd() ).done( function() {
+      var data_a_list = `<datalist id="authors">`
+      $.each( data_a, function( i,v ) {
+        if ( i == 0 ) { return true; }
+        var row = v.match(/^([^&]*?),(.*)$/)
+        row.shift();
+        data_a_list += `<option value="`+row[1].replace(/"/g,'')+`" data-value="`+row[0]+`"/>`
+        qa2f[ row[1].replace(/"/g,'') ] = row[0];
+      });
+      data_a_list += `</datalist>`
+      var data_w_list = `<datalist id="rwords">`
+      $.each( data_w, function( i,v ) {
+        if ( i == 0 ) { return true; }
+        data_w_list += `<option value="`+v+`"></option>`            
+      });
+      data_w_list += `</datalist>`
+      $( "input[list='authors']" ).append( data_a_list );
+      $( "input[list='rwords']" ).append( data_w_list );
+    });
+
+    // load data
+    var load_1 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/occrwords.csv",
+        success: function(data) {
+          data_1 = data.split("\r\n");
+          var remove_lastline = data_1.pop();
+          $( "#chart_1 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/occrwords.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_2 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/occrvowels.csv",
+        success: function(data) {
+          data_2 = data.split("\r\n");
+          var remove_lastline = data_2.pop();
+          $( "#chart_2 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/occrvowels.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_3 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/pairdegree.csv",
+        success: function(data) {
+          data_3 = data.split("\r\n");
+          var remove_lastline = data_3.pop();
+          $( "#chart_3 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/pairdegree.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_4 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/autnet.json", dataType:'json',
+        success: function(data) {
+          data_4 = data;
+          $( "#chart_4 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/autnet.json" download><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    function load_data( data_path ) {
+      return $.ajax({ url: "/resources/rhyme-index/data/"+data_path,
+        success: function(data) {
+          data_wrd = csvjsonConverter(data, ',');
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_8 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/aut/"+q_aut+"_rwords.csv",
+        success: function(data) {
+          data_8 = data.split("\r\n");
+          var remove_lastline = data_8.pop();
+          $( "#chart_8 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/aut/`+q_aut+`_rwords.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    var load_9 = function() {
+      return $.ajax({ url: "/resources/rhyme-index/data/aut/"+q_aut+"_rnet.json", dataType:'json',
+        success: function(data) {
+          data_9 = data;
+          $( "#chart_9 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/aut/`+q_aut+`_rnet.json" download><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        }, error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+
+    // overview
+    function draw_1() {
+      $.when( load_1() ).done( function() {
+        var data_1a = [], counter = 0;
+        $.each( data_1, function( i,v ) {
+          if ( i == 0 ) { return true; }
+          var row = v.split(",");
+          data_1a.push( [ Number(row[0]), '<b>'+row[1]+'</b>', row[3], row[4], Number(row[2]) ] );
+          counter += Number(row[2]);
+        });
+        $('#chart_1 .panel-footer').html('There are '+data_1a.length+' rhyme words occurring '+counter+' times.');
+        gdata_1 = new google.visualization.DataTable();
+          gdata_1.addColumn('number', 'Rank');
+          gdata_1.addColumn('string', 'Rhyme word');
+          gdata_1.addColumn('string', 'Rhyme vowel sound');
+          gdata_1.addColumn('string', 'Rhyme sound');
+          gdata_1.addColumn('number', 'Raw frequency');
+          gdata_1.addRows( data_1a );
+        gchart_1 = new google.visualization.Table($('#chart_1 .panel-body')[0]);
+          function selectHandler() {
+            var selectedItem = gchart_1.getSelection()[0];
+            if (selectedItem) {
+              var selected = gdata_1.getValue(selectedItem.row, 1);
+              window.location.href = './?wrd='+selected.replace(/(<([^>]+)>)/ig, '')
+            }
+          }
+          google.visualization.events.addListener(gchart_1, 'select', selectHandler);
+          goptions_1 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
+          gchart_1.draw( gdata_1, goptions_1 );
+      });
+    }
+    function draw_2() {
+      $.when( load_2() ).done( function() {
+        var data_2a = [], counter = 0;
+        $.each( data_2, function( i,v ) {
+          if ( i == 0 ) { return true; }
+          var row = v.split(",");
+          data_2a.push( [ row[0], Number(row[1]) ] );
+          counter++;
+        });
+        $('#chart_2 .panel-footer').html('There are '+counter+' rhyme vowel sounds.');
+        gdata_2 = new google.visualization.DataTable();
+          gdata_2.addColumn('string', 'Rhyme vowel');
+          gdata_2.addColumn('number', 'Raw frequency');
+          gdata_2.addRows( data_2a );
+        gchart_2 = new google.visualization.PieChart($('#chart_2 .panel-body')[0]);
+          function selectHandler() {
+            var selectedItem = gchart_2.getSelection()[0];
+            if (selectedItem) {
+              var selected = gdata_2.getValue(selectedItem.row, 0);
+              //...
+            }
+          }
+        google.visualization.events.addListener(gchart_2, 'select', selectHandler);
+        goptions_2 = {'width':800,'height':425,pieStartAngle:0,chartArea:{top:10,left:135},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'selection' } };
+        gchart_2.draw( gdata_2, goptions_2 );
+        google.visualization.events.addListener(gchart_2, 'onmouseover', function(entry) {
+          gchart_2.setSelection([{row: entry.row}]);
+        });
+        google.visualization.events.addListener(gchart_2, 'onmouseout', function(entry) {
+          gchart_2.setSelection([]);
+        });    
+      });
+    }
+    function draw_3() {
+      $.when( load_3() ).done( function() {
+        colour = {}
+        colour[ "identical" ] = "#ddd"
+        colour[ "rich" ] = "#bbb"
+        colour[ "full" ] = "#999"
+        colour[ "half-vowelrhyme" ] = "#777"
+        colour[ "half-pararhyme" ] = "#555"
+        var data_3a = [];
+        $.each( data_3, function( i,v ) {
+          if ( i == 0 ) { return true; }
+          var row = v.split(",");
+          data_3a.push( [ row[0]+" (call)", row[1]+" (echo)", Number(row[2]), colour[ row[3] ] ] );
+        });
+        $('#chart_3 .panel-footer').html('<span class="id">identical</span> <span class="ri">rich</span> <span class="fu">full</span> <span class="hv">half (vowel-rhyme)</span> <span class="hp">half (pararhyme)</span>');
+        gdata_3 = new google.visualization.DataTable();
+          gdata_3.addColumn('string', 'Call');
+          gdata_3.addColumn('string', 'Echo');
+          gdata_3.addColumn('number', 'Weight');
+          gdata_3.addColumn({ type: 'string', role: 'style' });
+          gdata_3.addRows( data_3a );
+        gchart_3 = new google.visualization.Sankey($('#chart_3 .panel-body')[0]);
+          function selectHandler() {
+            var selectedItem = gchart_3.getSelection()[0];
+            if (selectedItem) {
+              var selected = gdata_3.getValue(selectedItem.row, 0);
+              //...
+            }
+          }
+        google.visualization.events.addListener(gchart_3, 'select', selectHandler);
+        goptions_3 = {'width':'100%','height':'100%',sankey:{ node:{ label:{fontSize:12}}, link:{ colorMode:'none' } },tooltip:{ textStyle:{fontSize:12} } };
+        gchart_3.draw( gdata_3, goptions_3 );
+      });
+    }
+    function draw_4() {
+      $.when( load_4() ).done( function() {
+        var data_4a = [], occur = {}, occur_sum = 0;
+        var occurrences = 0;
+        var author_names = []
+        var entries = []
+        author_names.push( 'Authors' )
+        $.each( data_a, function( i,v ) { // iterate through all authors
+          if ( i == 0 ) { return true; }
+          var row = v.match(/^([^&]*?),(.*)$/)
+          row.shift();
+          var authors = ''
+          $.each( row[0].split( ';' ), function( i2,v2 ) {
+            if ( v2 == '' || !(v2 in mod_auth )  ) { return true; }
+            authors += mod_auth[v2]["reg"]+'; '
+          });
+          authors = authors.substring(0, authors.length-2);
+          author_names.push( authors )
+        });
+        author_names.push( { role: 'annotation' } )
+        entries.push( author_names );
+        $.each( data_4, function(i,v) { // iterate through all records
+          var author_entry = [];
+          if ( Object.keys( data_4[ i ] )[0] in mod_auth ) {
+            author_entry.push( mod_auth[ Object.keys( data_4[ i ] )[0] ]["reg"] );
+          } else {
+            var authors = ''
+            var authors_str = Object.keys( data_4[ i ] )[0]+'';
+            $.each( authors_str.split( ';' ), function( i,v ) {
+              if ( v == '' || !(v in mod_auth )  ) { return true; }
+              authors += mod_auth[v]["reg"]+'; '
+            });
+            if ( authors == '' ) { return true; }
+            authors = authors.substring(0, authors.length-2);
+            author_entry.push( authors )
+          }
+          $.each( data_a, function( i2,v2 ) { // iterate through all authors
+            match = undefined;
+            if ( i2 == 0 ) { return true; }
+            var row = v2.match(/^([^&]*?),(.*)$/)
+            row.shift()
+            match = _.find(data_4[ i ][ Object.keys( data_4[ i ] )[0] ], function(obj){ return obj.i == row[0] }); // find existing entry
+            if ( !match || Object.keys( data_4[ i ] )[0] == row[0] ) {  // ensure a record exists
+              match = { "i": row[0], "m": 0 };
+            }
+            occur_sum += match.m;
+            author_entry.push( parseInt(match.m/1) );
+          });
+          author_entry.push( '' );
+          entries.push( author_entry );
+        });
+        gdata_4 = new google.visualization.arrayToDataTable( entries );
+        $('#chart_4 .panel-footer').html('The top '+(entries.length-1)+' authors (by highest raw co-occurrence frequency) have an average of '+Math.round(occur_sum/(data_4.length-1)/(data_a.length-1) * 100) / 100+' co-occurring rhyme pair instances.');
+          gdata_4.sort([{column: 0, desc: false}]);
+        goptions_4 = {
+          bar: {groupWidth: "90%"},
+          isStacked: 'percent',
+          fontSize: 11,
+          vAxis: { title:'Co-occurrences',format:"#",titleTextStyle:{fontSize:13} },
+          hAxis: { title:'Authors',titleTextStyle:{fontSize:13} },
+          chartArea: { top:25,left:80,width:'80%' }
+        };
+        gchart_4 = new google.visualization.ColumnChart($('#chart_4 .panel-body')[0]);
+        gchart_4.draw(gdata_4, goptions_4);
+
+      });
+    }
+    // rhyme word
+    function draw_5() {
+      $.when( load_data( "wrd/"+q_wrd+".csv" ) ).done( function() {
+        $( "#chart_5 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/wrd/`+q_wrd+`.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        update_wrd_chart( data_wrd );
+      });
+    }
+    function draw_6() {
+      $.when( load_data( "wrd/"+q_wrd+".csv" ) ).done( function() {
+        $( "#chart_6 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/wrd/`+q_wrd+`.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        update_wrd_cols( data_wrd );      
+      });
+    }
+    function draw_7() {
+      $.when( load_data( "wrd/"+q_wrd+".csv" ) ).done( function() {
+        $( "#chart_7 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/wrd/`+q_wrd+`.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        update_wrd_table( data_wrd, "7" );
+      });
+    }
+    function draw_8() {
+      $.when( load_8() ).done( function() {
+        var data_8a = [], counter = 0;
+        $.each( data_8, function( i,v ) {
+          if ( i == 0 ) { return true; }
+          var row = v.split(",");
+          data_8a.push( [ '<b>'+row[0]+'</b>', row[2], row[3], Number(row[1]) ] );
+          counter += Number(row[1]);
+        });
+        $('#chart_8 .panel-footer').html('There are '+data_8a.length+' rhyme words occurring '+counter+' times.');
+        gdata_8 = new google.visualization.DataTable();
+          gdata_8.addColumn('string', 'Rhyme word');
+          gdata_8.addColumn('string', 'Rhyme vowel sound');
+          gdata_8.addColumn('string', 'Rhyme sound');
+          gdata_8.addColumn('number', 'Raw frequency');
+          gdata_8.addRows( data_8a );
+        gchart_8 = new google.visualization.Table($('#chart_8 .panel-body')[0]);
+          function selectHandler() {
+            var selectedItem = gchart_8.getSelection()[0];
+            if (selectedItem) {
+              var selected = gdata_8.getValue(selectedItem.row, 0);
+              update_wrd_table( data_wrd, "11", selected.replace(/(<([^>]+)>)/ig, '') );
+            } else {
+              update_wrd_table( data_wrd, "11", selected );
+            }
+          }
+          google.visualization.events.addListener(gchart_8, 'select', selectHandler);
+          goptions_8 = {'width':'100%','height':'100%','sortColumn':3,sortAscending:false,'allowHtml':true };
+          gchart_8.draw( gdata_8, goptions_8 );
+      });
+    }
+    function draw_9() {
+      $.when( load_9() ).done( function() {
+        var data_9a = [], occur = {}, occur_sum = 0;
+        var occurrences = 0;
+        $.each( _.sortBy(data_9, 'matches'), function(i,v) {
+          if ( v.id == q_aut ) { return true; }
+          var authors = ''
+          var authors_str = v.id+'';
+          $.each( authors_str.split( ';' ), function( i,v ) {
+            if ( v == '' || !(v in mod_auth )  ) { return true; }
+            authors += mod_auth[v]["reg"]+'; '
+          });
+          if ( authors == '' ) { return true; }
+          authors = authors.substring(0, authors.length-2);
+          occur_sum += v.matches;
+          data_9a.push( [ authors, 
+                          occurrences,
+                          v.matches,
+                          'color:grey; opacity: 0.5'
+          ] );
+        });
+        $('#chart_9 .panel-footer').html('There are '+data_9a.length+' authors and an average of '+Math.round(occur_sum/(data_9.length-1) * 100) / 100+' co-occurring rhyme pair instances.');
+        gdata_9 = new google.visualization.DataTable();
+          gdata_9.addColumn('string', 'Author');
+          gdata_9.addColumn('number', 'Occurrences');
+          gdata_9.addColumn('number', 'Total');
+          gdata_9.addColumn({ type: 'string', role: 'style' });
+          gdata_9.addRows( data_9a );
+          gdata_9.sort([{column: 0, desc: false}]);
+        goptions_9 = {
+          bar: {groupWidth: "75%"},
+          legend: { position: "none" },
+          isStacked: true,
+          animation: { startup: true, duration:250 },
+          fontSize: 11,
+          vAxis: { title:'Total occurrences',format:"#",titleTextStyle:{fontSize:13} },
+          hAxis: { title:'Authors',titleTextStyle:{fontSize:13} },
+          chartArea: { top:25,left:80,width:'90%' }
+        };
+        gchart_9 = new google.visualization.ColumnChart($('#chart_9 .panel-body')[0]);
+        gchart_9.draw(gdata_9, goptions_9);
+      });
+    }
+    function draw_10() {
+      $.when( load_data( "aut/"+q_aut+"_rpairs.csv" ) ).done( function() {
+        $( "#chart_10 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/aut/`+q_aut+`_rpairs.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        update_rscheme_bars( data_wrd );
+      });
+    }
+    function draw_11() {
+      $.when( load_data( "aut/"+q_aut+"_rpairs.csv" ) ).done( function() {
+        $( "#chart_11 .panel-heading" ).append( `<a href="/resources/rhyme-index/data/aut/`+q_aut+`_rpairs.csv"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>` )
+        update_wrd_table( data_wrd, "11" );
+      });
+    }
+
+    function update_wrd_table( data_wrd, no, fac_wrd ) {
+      var data_wrda = [];
+      var degrees = {}
+      degrees[ "identical" ] = "identical rhyme"
+      degrees[ "rich" ] = "rich rhyme"
+      degrees[ "full" ] = "full rhyme"
+      degrees[ "half-vowelrhyme" ] = "half-rhyme"
+      degrees[ "half-pararhyme" ] = "half-rhyme"
+      // apply any filters to data_wrd here
+      // ...
+      for(let i = 0; i < data_wrd.length; i++) {
+        let obj = data_wrd[i];
+        var authors_f = '', authors_v = '';
+        var authors_str = obj["authors_id"]+'';
+        $.each( authors_str.split( ';' ), function( i,v ) {
+          if ( v == '' || !(v in mod_auth) ) { return true; }
+          authors_f += '<a href="./?aut='+v+'">'+mod_auth[v].reg+'</a>'+'; '
+          authors_v += mod_auth[v].reg+'; '
+        });
+        authors_f = authors_f.substring(0, authors_f.length-2);
+        authors_v = authors_v.substring(0, authors_v.length-2);
+        // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+        if ( no == "7" ) {
+          if (fac_wrd && obj["r_word"] != fac_wrd) { continue; }
+        } else {
+          if (fac_wrd && !obj["r_word"].startsWith( fac_wrd+" | " )) { continue; }
+        }
+        if ( no == "7" ) {
+          data_wrda.push( [ '<b>'+obj["r_word"].trim()+'</b>', 
+                            { v:obj["line_1"].trim(),f:'<a href="/works/'+obj["poem_id"]+'.shtml#'+obj["line_1_id"]+'">'+obj["line_1"].trim()+'</a>' }, 
+                            { v:obj["line_2"].trim(),f:'<a href="/works/'+obj["poem_id"]+'.shtml#'+obj["line_2_id"]+'">'+obj["line_2"].trim()+'</a>' }, 
+                            obj["r_sounds"],
+                            degrees[ obj["r_degree"] ],
+                            { v:obj["r_scheme"].replace(/(<([^>]+)>)/ig, ''), f:obj["r_scheme"] },
+                            { v:authors_v,f:authors_f },
+                            { v:mod_work[ obj["poem_id"] ].title,f:'<a href="/works/'+obj["poem_id"]+'.shtml#phonemia">'+mod_work[ obj["poem_id"] ].title+'</a>' }
+          ] );
+        } else {
+          data_wrda.push( [ '<b>'+obj["r_word"].trim()+'</b>', 
+                            { v:obj["line_1"].trim(),f:'<a href="/works/'+obj["poem_id"]+'.shtml#'+obj["line_1_id"]+'">'+obj["line_1"].trim()+'</a>' }, 
+                            { v:obj["line_2"].trim(),f:'<a href="/works/'+obj["poem_id"]+'.shtml#'+obj["line_2_id"]+'">'+obj["line_2"].trim()+'</a>' }, 
+                            obj["r_sounds"],
+                            degrees[ obj["r_degree"] ],
+                            { v:obj["r_scheme"].replace(/(<([^>]+)>)/ig, ''), f:obj["r_scheme"] },
+                            { v:mod_work[ obj["poem_id"] ].title,f:'<a href="/works/'+obj["poem_id"]+'.shtml#phonemia">'+mod_work[ obj["poem_id"] ].title+'</a>' }
+          ] );          
+        }
+      }
+        if ( no == "7" ) {
+          gdata_7 = new google.visualization.DataTable();
+          gdata_7.addColumn('string', 'Rhyming word');
+          gdata_7.addColumn('string', 'Line (rhyme word)');
+          gdata_7.addColumn('string', 'Line (rhyming word)');
+          gdata_7.addColumn('string', 'Rhyme sounds');
+          gdata_7.addColumn('string', 'Rhyme degree');
+          gdata_7.addColumn('string', 'Rhyme scheme');
+          gdata_7.addColumn('string', 'Author');
+          gdata_7.addColumn('string', 'Poem');
+          gdata_7.addRows( data_wrda );
+        } else {
+          gdata_11 = new google.visualization.DataTable();
+          gdata_11.addColumn('string', 'Rhyme pairs');
+          gdata_11.addColumn('string', 'Line (rhyme word)');
+          gdata_11.addColumn('string', 'Line (rhyming word)');
+          gdata_11.addColumn('string', 'Rhyme sounds');
+          gdata_11.addColumn('string', 'Rhyme degree');
+          gdata_11.addColumn('string', 'Rhyme scheme');
+          gdata_11.addColumn('string', 'Poem');
+          gdata_11.addRows( data_wrda );
+        }
+        if ( no == "7" ) {
+          gdata_7.setProperty(0, 0, 'style', 'width:125px');
+          gdata_7.setProperty(0, 1, 'style', 'width:300px');
+          gdata_7.setProperty(0, 2, 'style', 'width:300px');
+          gdata_7.setProperty(0, 4, 'style', 'width:165px');
+          gdata_7.setProperty(0, 6, 'style', 'width:200px'); 
+        } else {
+          gdata_11.setProperty(0, 0, 'style', 'width:155px');
+          gdata_11.setProperty(0, 1, 'style', 'width:340px');
+          gdata_11.setProperty(0, 2, 'style', 'width:340px');
+          gdata_11.setProperty(0, 4, 'style', 'width:165px');          
+        }
+      if ( no == "7" ) {
+        goptions_7 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
+        gchart_7 = new google.visualization.Table($('#chart_'+no+' .panel-body')[0]);
+        gchart_7.draw( gdata_7, goptions_7 ); 
+      } else {
+        goptions_11 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true }
+        gchart_11 = new google.visualization.Table($('#chart_'+no+' .panel-body')[0]);
+        gchart_11.draw( gdata_11, goptions_11 );         
+      }     
+    }
+
+    function update_wrd_chart( data_wrd ) {
+      var r_words = [], data_wrda = [], occur = {};
+      // apply any filters to data_wrd here
+      // ...
+      data_wrd.forEach(x => {
+        if ( x.r_word in occur ) {
+          occur[ x.r_word ]++;
+        } else {
+          occur[ x.r_word ] = 1;
+        }
+      });
+      r_words = _.uniq(data_wrd, x => x.r_word);
+      for(let i = 0; i < r_words.length; i++) {
+        let obj = r_words[i];
+        // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+        data_wrda.push( [ obj["r_word"].trim(), occur[ obj["r_word"] ] ] );
+      }
+      $('#chart_5 .panel-footer').html('There are '+r_words.length+' rhyming words, occurring '+data_wrd.length+' times, for this rhyme word.');
+      gdata_5 = new google.visualization.DataTable();
+        gdata_5.addColumn('string', 'Rhyming words');
+        gdata_5.addColumn('number', 'Raw frequency');
+        gdata_5.addRows( data_wrda );
+        gdata_5.sort([{column: 1, desc: true}]);
+      gchart_5 = new google.visualization.PieChart($('#chart_5 .panel-body')[0]);
+        function selectHandler() {
+          var selectedItem = gchart_5.getSelection()[0];
+          if (selectedItem) {
+            var selected = gdata_5.getValue(selectedItem.row, 0);
+            update_wrd_cols( data_wrd, selected );
+            update_wrd_table( data_wrd, "7", selected );
+          } else {
+            update_wrd_cols( data_wrd, selected );
+            update_wrd_table( data_wrd, "7", selected );
+          }
+        }
+      google.visualization.events.addListener(gchart_5, 'select', selectHandler);
+      goptions_5 = {'width':800,'height':470,pieStartAngle:0,chartArea:{top:20,left:150},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'focus' } };
+      gchart_5.draw( gdata_5, goptions_5 );
+      google.visualization.events.addListener(gchart_5, 'onmouseover', function(entry) {
+       // gchart_5.setSelection([{row: entry.row}]);
+      });
+      google.visualization.events.addListener(gchart_5, 'onmouseout', function(entry) {
+       // gchart_5.setSelection([]);
+      });
+
+    }
+
+    function update_wrd_cols( data_wrd, fac_wrd ) {
+      var data_wrda = [], occur = {}, occur_sum;
+      // apply any filters to data_wrd here
+      // -> determine occurrences based on rhyming word, and make total -= occurrences...
+      // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+      var authors_list = _.uniq(data_wrd, x => x.authors_id);
+      var poems_list = _.uniq(data_wrd, x => x.poem_id);
+      data_wrd.forEach(x => {
+        if ( x.authors_id in occur ) {
+          occur[ x.authors_id ]++;
+        } else {
+          occur[ x.authors_id ] = 1;
+        }
+      });
+      const sum_values = obj => Object.values(obj).reduce((a, b) => a + b, 0);
+      var occurrences = 0, occurs = {};
+      for(let i = 0; i < authors_list.length; i++) {
+        let obj = authors_list[i];
+        var authors = ''
+        var authors_str = obj["authors_id"]+'';
+        $.each( authors_str.split( ';' ), function( i,v ) {
+          if ( v == '' || !(v in mod_auth )  ) { return true; }
+          authors += mod_auth[v]["reg"]+'; '
+        });
+        if ( authors == '' ) { continue; }
+        authors = authors.substring(0, authors.length-2);
+        occurs[ authors ] = _.filter( data_wrd, function( item) { return item.r_word == fac_wrd && item.authors_id == obj["authors_id"] } );
+        // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+        data_wrda.push( [ authors, 
+                          occurs[ authors ].length || 0,
+                          occur[ obj["authors_id"] ]-occurs[ authors ].length,
+                          'color:grey; opacity: 0.5'
+        ] );
+      }
+      $('#chart_6 .panel-footer').html('There are '+authors_list.length+' authors and a total of '+poems_list.length+' poems which employ this rhyme word.');
+      gdata_6 = new google.visualization.DataTable();
+        gdata_6.addColumn('string', 'Author');
+        gdata_6.addColumn('number', 'Occurrences');
+        if (_.find(Object.values( occurs ), function(obj) { return obj.length }) ) {
+          gdata_6.addColumn('number', 'Remainder');
+        } else {
+          gdata_6.addColumn('number', 'Total');
+        }
+        gdata_6.addColumn({ type: 'string', role: 'style' });
+        gdata_6.addRows( data_wrda );
+        gdata_6.sort([{column: 0, desc: false}]);
+      goptions_6 = {
+        bar: {groupWidth: "75%"},
+        legend: { position: "none" },
+        isStacked: true,
+        animation: { startup: true, duration:250 },
+        fontSize: 11,
+        vAxis: { title:'Total occurrences',format:"#",titleTextStyle:{fontSize:13} },
+        hAxis: { title:'Authors',titleTextStyle:{fontSize:13} },
+        chartArea: { top:25,left:80,width:'90%' },
+        series: {
+          0:{color: 'black', visibleInLegend: false},
+        }
+      };
+      gchart_6 = new google.visualization.ColumnChart($('#chart_6 .panel-body')[0]);
+      gchart_6.draw(gdata_6, goptions_6);
+
+    }
+
+    function update_rscheme_bars( data_wrd ) {
+      var data_wrda = [], occur = {}, occur_sum;
+      // apply any filters to data_wrd here
+      // -> determine occurrences based on rhyming word, and make total -= occurrences...
+      // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+      var r_schemes_list = _.uniq(data_wrd, (x) => (x.r_scheme));
+      const extractScheme = function (schemes) {
+        let rhymeSchemes = schemes.filter((names) => {
+          return names.r_scheme;
+        }).map(names => {
+          return names.r_scheme.replace(/(<([^>]+)>)/ig, '');
+        });
+        return rhymeSchemes;
+      }
+      data_wrd.forEach(x => {
+        if ( x.r_scheme.replace(/(<([^>]+)>)/ig, '') in occur ) {
+          occur[ x.r_scheme.replace(/(<([^>]+)>)/ig, '') ]++;
+        } else {
+          occur[ x.r_scheme.replace(/(<([^>]+)>)/ig, '') ] = 1;
+        }
+      });
+      const sum_values = obj => Object.values(obj).reduce((a, b) => a + b, 0);
+      var occurrences = 0;
+      r_schemes_list = _.uniq( extractScheme( r_schemes_list ) )
+      for(let i = 0; i < r_schemes_list.length; i++) {
+        let obj = r_schemes_list[i];
+        // r_word,line_1,line_1_id,line_2,line_2_id,r_sounds,r_degree,r_scheme,authors_id,poem_id
+        data_wrda.push( [ obj, 
+                          occur[ obj ],
+                          'color:grey; opacity: 0.5'
+        ] );
+      }
+      $('#chart_10 .panel-footer').html('There are '+r_schemes_list.length+' rhyme schemes and a total of '+sum_values(occur)+' rhyming lines.');
+      gdata_10 = new google.visualization.DataTable();
+        gdata_10.addColumn('string', 'Rhyme scheme');
+        gdata_10.addColumn('number', 'Number of rhyming lines');
+        gdata_10.addColumn({ type: 'string', role: 'style' });
+        gdata_10.addRows( data_wrda );
+        gdata_10.sort([{column: 0, desc: false}]);
+      goptions_10 = {
+        bar: {groupWidth: "75%"},
+        legend: { position: "none" },
+        isStacked: false,
+        animation: { startup: true, duration:250 },
+        fontSize: 11,
+        vAxis: { title:'Rhyme schemes',titleTextStyle:{fontSize:13} },
+        hAxis: { title:'Number of rhyming lines',format:"#",titleTextStyle:{fontSize:13} },
+        chartArea: { top:20,left:120,width:'90%',height:'80%' }
+      };
+      gchart_10 = new google.visualization.BarChart($('#chart_10 .panel-body')[0]);
+      gchart_10.draw(gdata_10, goptions_10);
+    }
+
+
+
+    //Function for converting from CSV to JSON. This function is consider as a backend component for performing this task.
+    var csvjsonConverter = (csvdata, delimiter) => {
+        //This array will store the each of the patterns from the regular expression below.
+        let arrmatch = [];
+        //This array will store the data from the CSV.
+        let array = [[]];
+        //Stores matched values for quoted values.
+        let quotevals = "";
+        //Storing JSON array
+        let jsonarray = [];
+        //Increment value
+        let k = 0;
+        //Uses regular expression to parse the CSV data and determines if any values has their own quotes in case if any
+        // delimiters are within.
+        let regexp = new RegExp(("(\\" + delimiter + "|\\r?\\n|\\r|^)" + "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+            "([^\"\\" + delimiter + "\\r\\n]*))"), "gi");
+        //This will loop to find any matchings with the regular expressions.
+        while (arrmatch = regexp.exec(csvdata)) {
+            //This will determine what the delimiter is.
+            let delimitercheck = arrmatch[1];
+            //Matches the delimiter and determines if it is a row delimiter and matches the values to the first rows.
+            //If it reaches to a new row, then an empty array will be created as an empty row in array.
+            if ((delimitercheck !== delimiter) && delimitercheck.length) {
+                array.push([]);
+            }
+            //This determines as to what kind of value it is whether it has quotes or not for these conditions.
+            if (arrmatch[2]) {
+                quotevals = arrmatch[2].replace('""', '\"');
+            }
+            else {
+                quotevals = arrmatch[3];
+            }
+            //Adds the value from the data into the array
+            array[array.length - 1].push(quotevals);
+        }
+        //This will parse the resulting array into JSON format
+        for (let i = 0; i < array.length - 1; i++) {
+            jsonarray[i - 1] = {};
+            for (let j = 0; j < array[i].length && j < array[0].length; j++) {
+                let key = array[0][j];
+                jsonarray[i - 1][key] = array[i][j]
+            }
+        }
+        //This will determine what the properties of each values are from the JSON
+        //such as removing quotes for integer value.
+        for(k = 0; k < jsonarray.length; k++){
+            let jsonobject = jsonarray[k];
+            for(let prop in jsonobject){
+                if(!isNaN(jsonobject[prop]) && jsonobject.hasOwnProperty(prop)){
+                    jsonobject[prop] = +jsonobject[prop];
+                }
+            }
+        }
+        //This will stringify the JSON and formatting it.
+        //let formatjson = JSON.stringify(jsonarray, null, 2);
+        //Returns the converted result from CSV to JSON
+        return jsonarray;
+    };
+
+    var citation = "";
+    citation += "Huber, Alexander. ";
+    var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+    citation += '\"ECPA Rhyme-Index\". ';
+    citation +='<em><!--#echo var="ecep_full" --></em>, '+
+      '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+      '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+  </script>
+
+<!--#include virtual="/bottom.shtml" -->

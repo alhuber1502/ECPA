@@ -430,7 +430,12 @@ function lk_scan (line) {
 	    result = lk_output_scan(wrd,line,1);
 	} else {                                                             // use automatic scansion results
 	    var lineno = $clone.find( "#"+$( line ).attr( "id" ) ).children(".ln").text().trim()-1;
-	    var	syl = zeus[ lineno ].split(':').pop().trim().replace(/\'/g,'+').split(" ");
+		var syl;
+		if ( typeof zeus !== 'undefined' ) {
+	    	syl = zeus[ lineno ].split(':').pop().trim().replace(/\'/g,'+').split(" ");
+		} else {
+			syl = [];
+		}
 	    $.each( hyphened, function(index,item) {
 		syl[item] += syl[item+1];
 	    });

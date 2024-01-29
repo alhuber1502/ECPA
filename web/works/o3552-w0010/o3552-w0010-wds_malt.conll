@@ -8173,7 +8173,7 @@
 5	in	in	RP	RP	_	4	prt	_	_
 6	Name	name	NN	NN	_	8	dep	_	_
 7	and	and	CC	CC	_	8	dep	_	_
-8	Worth	worth	JJ	JJ	_	4	dep	_	_
+8	Worth	worth	JJ	JJ	_	4	amod	_	_
 9	,	,	,	,	_	8	punct	_	_
 10	Whom	who	WDT	WDT	_	11	dep	_	_
 11	ZEAL	zeal	NN	NN	_	8	dep	_	_
@@ -8189,13 +8189,14 @@
 21	REASON's	reason	NN	NN	_	22	nn	_	_
 22	plan	plan	NN	NN	_	17	dobj	_	_
 23	,	,	,	,	_	17	punct	_	_
-24	Whether	whether	IN	IN	_	26	complm	_	_
+24	Whether	whether	IN	IN	_	17	prep	_	_
 25	it	it	PRP	PRP	_	26	nsubj	_	_
-26	was	be	VBD	VBD	_	17	ccomp	_	_
+26	was	be	VBD	VBD	_	24	pcomp	_	_
 27	of	of	IN	IN	_	26	prep	_	_
 28	God	god	NN	NN	_	27	pobj	_	_
 29	or	or	CC	CC	_	28	cc	_	_
-30	Man.	Man.	NNP	NNP	_	28	conj	_	_
+30	Man	man	NN	NN	_	28	conj	_	_
+31	.	.	.	.	_	4	punct	_	_
 
 1	DARK	dark	JJ	JJ	_	4	nsubj	_	_
 2	was	be	VBD	VBD	_	4	cop	_	_

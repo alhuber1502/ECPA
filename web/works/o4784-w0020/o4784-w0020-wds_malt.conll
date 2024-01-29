@@ -37,7 +37,7 @@
 37	;	;	:	:	_	15	punct	_	_
 38	Till	till	CC	CC	_	15	cc	_	_
 39	by	by	RP	RP	_	15	conj	_	_
-40	Extension	extension	NN	NN	_	14	null	_	_
+40	Extension	extension	NN	NN	_	14	pobj	_	_
 41	into	into	RP	RP	_	40	dep	_	_
 42	that	that	IN	IN	_	44	dobj	_	_
 43	they	they	PRP	PRP	_	44	nsubj	_	_
@@ -184,7 +184,7 @@
 184	all	all	DT	DT	_	186	det	_	_
 185	his	his	PRP$	PRP$	_	186	poss	_	_
 186	Pain	pain	NN	NN	_	183	pobj	_	_
-187	Bestowed	bestow	VBN	VBN	_	125	dep	_	_
+187	Bestowed	bestow	VBN	VBN	_	125	parataxis	_	_
 188	while	while	IN	IN	_	189	mark	_	_
 189	in	in	RP	RP	_	187	advcl	_	_
 190	the	the	DT	DT	_	191	det	_	_
@@ -203,16 +203,17 @@
 203	to	to	RP	RP	_	204	dep	_	_
 204	know	know	VB	VB	_	187	conj	_	_
 205	,	,	,	,	_	204	punct	_	_
-206	That	that	IN	IN	_	215	complm	_	_
+206	That	that	IN	IN	_	204	prep	_	_
 207	Vanity's	vanity	NN	NN	_	209	nn	_	_
 208	our	our	PRP$	PRP$	_	209	poss	_	_
-209	Lot	lot	NN	NN	_	215	nsubj	_	_
+209	Lot	lot	NN	NN	_	206	pobj	_	_
 210	,	,	,	,	_	209	punct	_	_
 211	and	and	CC	CC	_	209	cc	_	_
 212	all	all	DT	DT	_	213	det	_	_
-213	Mankind	mankind	NN	NN	_	209	conj	_	_
+213	Mankind	mankind	NN	NN	_	215	nsubj	_	_
 214	is	be	VBZ	VBZ	_	215	cop	_	_
-215	Vain.	Vain.	NNP	NNP	_	204	ccomp	_	_
+215	Vain	vain	JJ	JJ	_	209	conj	_	_
+216	.	.	.	.	_	4	punct	_	_
 
 1	If	if	IN	IN	_	41	dep	_	_
 2	past	past	RP	RP	_	1	dep	_	_

@@ -237,6 +237,9 @@ body {
       color: #fff;
 }
 
+.nav-tabs > li > a {
+    font-size:16px;
+}
 .nav-tabs > li {
     margin-bottom:-2px;
 }
@@ -1309,5 +1312,20 @@ div[data-app="share_buttons"] {
   .badge {
       display: flex;
       width: 67px;
+  }
+
+  /* Line highlighting */
+
+.pulse {
+    animation: pulse-animation 2s 5;
+  }
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
   }
   

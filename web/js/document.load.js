@@ -7,7 +7,7 @@ $.ajax({
 });
 // load authors/works lists
 $.ajax({
-    url: "/resources/models/authwork_mdp.json", dataType: 'json',
+    url: "/resources/models/authwork_mdp.json", dataType: 'json', async: false,
     success: function(data) { mod_auth = data[0]; mod_work = data[1]; mod_edns = data[2]; },
     error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
 });
@@ -203,6 +203,9 @@ if ($('#reading').length) {
     }
     result = result.slice(0,-2);
     pf += result != "" ? "<div class='bibl'>Rhyme (stanza position): "+result+"</div>" : "";
+    if ( pf != "" && mod_auth[ aut_id ] ) {
+        pf += "<div><a href='/resources/rhyme-index/?aut="+aut_id+"'>View rhyme-index for "+mod_auth[ aut_id ].name+"</a></div>"
+    }
     if (pf != "") {
 	var pf_symbols = '<i>Symbols:</i><ul class="bibl"><li><span>&#x02d8;</span> metrically non-prominent</li><li><span>&#x2032;</span> metrically prominent (primary)</li><li><span>`</span> metrically prominent (secondary)</li><li><span>|</span> metrical foot boundary</li><li><span>/</span> metrical line boundary</li><li><span>||</span> caesura</li></ul>';
 	$("#poeticform").html('<div id="form"><h1 class="info">Poetic form</h1><table><tr><td>'+pf+'</td>'+

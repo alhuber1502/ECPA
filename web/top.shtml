@@ -71,6 +71,9 @@
     <script src="/js/OverlappingMarkerSpiderfier-Leaflet-0.2.6/bin/oms.min.js"></script>
     <script src="/js/leaflet-hash/leaflet-hash.js"></script>
 
+    <!-- jQuery Pagination plugin v. 1.2.5-5: http://esimakin.github.io/twbs-pagination/ -->
+    <script src="/js/pagination/jquery.twbsPagination.min.js"></script>
+    
     <!-- Cytoscape CSS -->
     <link rel="stylesheet" href="/js/cytoscape.js-panzoom-2.5.3/cytoscape.js-panzoom.css">
     <link rel="stylesheet" href="/js/cytoscape.js-navigator-1.3.3/cytoscape.js-navigator.css">
@@ -93,6 +96,12 @@
     <!-- frameviz.js -->
     <link rel="stylesheet" href="/js/frameviz/frameviz.css">
     
+    <!-- Google charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages': ['corechart','table','sankey'] });
+    </script>
+
     <!-- Custom styles for this template -->
     <link href="/css/bootstrap.ecep.css" rel="stylesheet">
     <link href="/css/tei.default.css" rel="stylesheet">
@@ -139,6 +148,12 @@
       ga('set', 'anonymizeIp', true);
       ga('send', 'pageview');
     </script>
+
+    <style>
+      div[data-app="share_buttons"] {
+        display:inline-block;
+      }
+    </style>
 
   </head>
   
@@ -219,12 +234,15 @@
 								      class="dropdown-toggle" role="button"
 								      aria-expanded="false">Resources</a>
                   <ul class="dropdown-menu">
-                    <li><a href="/resources/map/">Poets map</a></li>
-                    <li><a href="/resources/corpusbuilder.shtml">Corpus builder</a></li>
-                    <li><a href="/resources/topicbrowser.shtml">Topic model browser</a></li>
-                    <li><a href="/resources/bibliography.shtml">Bibliography</a></li>
-                    <li><a href="/resources/chronology.shtml">Chronology</a></li>
-                    <li><a href="/resources/gallery.shtml">Gallery</a></li>
+                    <li class="dropdown-header" style="font-size:14px;">Tools</li>
+                    <li style="margin-left:8px;"><a href="/resources/rhyme-index/">Rhyme-index</a></li>
+                    <li style="margin-left:8px;"><a href="/resources/map/">Poets map</a></li>
+                    <li style="margin-left:8px;"><a href="/resources/corpusbuilder.shtml">Corpus builder</a></li>
+                    <li style="margin-left:8px;"><a href="/resources/topicbrowser.shtml">Topic model browser</a></li>
+                    <li class="dropdown-header" style="font-size:14px;">Materials</li>
+                    <li style="margin-left:8px;"><a href="/resources/bibliography.shtml">Bibliography</a></li>
+                    <li style="margin-left:8px;"><a href="/resources/chronology.shtml">Chronology</a></li>
+                    <li style="margin-left:8px;"><a href="/resources/gallery.shtml">Gallery</a></li>
 <!--                    <li><a href="/resources/glossary.shtml">Glossary</a></li> -->
                   </ul>
                 </li>

@@ -30,7 +30,7 @@ $(document.body).on('click', '.help-modal', function () {
 	    file = "mod_intro";
 	    break;
 	}
-    } else if ( !$(this).parent().attr("id").match(/\_/) ) { // layer tabs
+    } else if ( $(this).parent().attr("id") && !$(this).parent().attr("id").match(/\_/) ) { // layer tabs
 	file = "ana_"+$(this).parent().attr("id").substring(0,3);	
     } else if ( $(this).prev().attr("src") ) {               // vizualizations
 	if ($(this).prev().attr("src").match(/phonemia/)) {

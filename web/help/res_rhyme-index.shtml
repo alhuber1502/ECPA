@@ -1,0 +1,101 @@
+<h2 style="margin-top:5px;" id="rhyme-index-help">Rhyme-Index</h2>
+
+<p>
+  The Eighteenth-Century Poetry Archive <em>rhyme-index</em> offers an <em>end
+  rhyme</em>-based access point to the poetry corpus based on rhyme-analytical
+  categories.  
+  The ECPA <em>rhyme-index</em> stands in a long tradition of rhyme 
+  indices produced in support of research, originally in print and more recently
+  in the digital medium.<sup>1</sup>
+  The <em>index</em> embraces data visualization techniques to quickly
+  highlight key information and allows for interactivity to fully exploit 
+  the potential of the underlying data.
+  The ECPA <em>rhyme-index</em> has been developed with <a
+  href="https://developers.google.com/chart" target="_blank"
+  class="external">Google charts</a> .
+</p>
+
+<h3>Interfaces</h3>
+
+The <em>rhyme-index</em> comprises an <em>overview</em> page as well as
+<em>rhyme word</em>- and <em>author</em>-based pages.  Each page consists of a 
+number of related panels intended to highlight various aspects, metrics, and
+properties of the selected view.  The latter two page types can be accessed from
+any page via the <em>rhyme word</em> and <em>author name</em> search panels on
+the top right of the screen.  The data underlying each of the panels is
+downloadable via the <em>downloads</em>-button at the top right corner of each
+panel.
+</p>
+
+<h4>Overview</h4>
+
+<p>The overview page offers a first crucial access point into the corpus by way
+of a sortable table of all rhyme words in the corpus ranked by raw frequencies.
+Clicking on any of the rows brings up the selected word's <em>rhyme word</em>
+page.  In addition to the rhyme word table, the overview page also contains a
+donut chart of all rhyme vowel sounds in the corpus by raw frequency, and a
+Sankey diagram that visualizes the flow between rhyme vowel sounds, thus
+grouping rhyme pairs by degree of closeness of the sound match.  Finally, a
+stacked bar chart (bottom left) shows the rhyme pair co-occurrences for the 75
+authors with the highest raw co-occurrence frequency.  Each column shows an
+author with all the authors in the ECPA corpus they share one or more rhyme
+pairs with.
+</p>
+
+<h4>Rhyme word pages</h4>
+
+<p>On the <em>rhyme word</em> page, all rhyming words for the chosen word are
+displayed in a donut chart.  Alongside is a column chart of all authors in the
+corpus that employ the rhyme word.  As and when a different rhyming word
+for the selected rhyme word is chosen, the display is updated dynamically,
+indicating the number of occurrences of the rhyming words for each of the
+authors. On the bottom of the page, a detailed table of the rhyme occurrences is
+displayed, which includes the rhyming word, the rhyme pair in the context of
+their lines, their rhyme sounds, degree of closeness, their positions in the
+rhyme scheme, and the author name and title of the poem.  The table is sortable
+by each of these categories.  Clicking on the poem title or the lines will jump
+back into the poem, where the occurrence can be studied in the context of the
+surrounding lines or stanza.  A click on the author name will jump to the
+<em>author</em> page in the <em>rhyme-index</em>.
+</p>
+
+<h4>Author pages</h4>
+
+<p>The <em>author</em> pages give an author-centric view of rhyme use in the 
+ECPA corpus.  In addition to a sortable table of all rhyme words used by the
+selected author in the poems included in ECPA (by raw frequencies), there is a
+column chart of all rhyme pair co-occurrences with other authors in the corpus.
+Additionally, a bar chart (top right) lists all the rhyme schemes used by the
+author in the poems included in ECPA.  On the bottom of the page, we again find
+a detailed table of the rhyme occurrences.  This table is also sortable by each
+of the displayed categories. At any point, in either page type, one can return
+to the overview via the <em>Rhyme-Index</em> link at the top, or find a new
+<em>rhyme word</em> or <em>author</em> via the search options.
+</p>
+
+<h3>Future work</h3>
+
+<p>One of the most beneficial, if less frequently acknowledged, side effects of
+exploratory data analysis of this kind is that it tends to reveal inconsistencies and
+errors in the underlying data.  The ECPA <em>rhyme-index</em> is no exception in
+this respect, and we apologize for any errors, which we will correct as we
+become aware of them.  We appreciate reports of any issues to the <a
+href="mailto:huber@eighteenthcenturypoetry.org">editor</a>.  Please also contact
+the editor with suggestions for additional visualizations or feedback about the
+usability and usefulness of the interface currently offered. <em>Thank
+you!</em>
+</p>
+
+<p class="small"><br/>
+<sup>1</sup> I am pleased to acknowledge the following outstanding digital work,
+which has been instrumental for this rhyme-index:
+<ul class="small">
+  <li>Bermúdez Sabel, Helena, Clara Martínez Cantón, and Pablo Ruiz Fabo.
+  <em>DISCOver: an interface to explore the DISCO corpus.</em> 2019. Web. 15
+  Jan. 2024. &lt;http://prf1.org/disco/&gt;</li>
+  <li>Plecháč, Petr and Robert Kolár. <em>Gunstick 2.0. Database of Czech
+  rhymes.</em> Prague: Institute for Czech Literature of the Academy of Sciences
+  of the Czech Republic, 2017. Web. 15 Jan. 2024.
+  &lt;http://versologie.cz&gt;</li> 
+</ul>
+</p>
