@@ -340,6 +340,39 @@
     var gchart_1,gchart_2,gchart_3,gchart_4,gchart_5,gchart_6,gchart_7,gchart_8,gchart_9,gchart_10,gchart_11;
     var gdata_1,gdata_2,gdata_3,gdata_4,gdata_5,gdata_6,gdata_7,gdata_8,gdata_9,gdata_10,gdata_11;
     var goptions_1,goptions_2,goptions_3,goptions_4,goptions_5,goptions_6,goptions_7,goptions_8,goptions_9,goptions_10,goptions_11;
+    var pieCols = [ 
+"#3366cc",
+"#dc3912",
+"#ff9900",
+"#109618",
+"#990099",
+"#0099c6",
+"#dd4477",
+"#66aa00",
+"#b82e2e",
+"#316395",
+"#994499",
+"#22aa99",
+"#aaaa11",
+"#6633cc",
+"#e67300",
+"#8b0707",
+"#651067",
+"#329262",
+"#5574a6",
+"#3b3eac",
+"#b77322",
+"#16d620",
+"#b91383",
+"#f4359e",
+"#9c5935",
+"#a9c413",
+"#2a778d",
+"#668d1c",
+"#bea413",
+"#0c5922",
+"#743411"
+     ];
 
     $(function() {
       var url = new URL( window.location.href );
@@ -919,7 +952,7 @@
           var selectedItem = gchart_5.getSelection()[0];
           if (selectedItem) {
             var selected = gdata_5.getValue(selectedItem.row, 0);
-            update_wrd_cols( data_wrd, selected );
+            update_wrd_cols( data_wrd, selected, selectedItem.row);
             update_wrd_table( data_wrd, "7", selected );
           } else {
             update_wrd_cols( data_wrd, selected );
@@ -927,7 +960,8 @@
           }
         }
       google.visualization.events.addListener(gchart_5, 'select', selectHandler);
-      goptions_5 = {'width':800,'height':470,pieStartAngle:0,chartArea:{top:20,left:150},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'focus' } };
+      goptions_5 = {'width':800,'height':470,pieStartAngle:0,chartArea:{top:20,left:150},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'focus' },
+        colors: pieCols };
       gchart_5.draw( gdata_5, goptions_5 );
       google.visualization.events.addListener(gchart_5, 'onmouseover', function(entry) {
        // gchart_5.setSelection([{row: entry.row}]);
@@ -935,10 +969,9 @@
       google.visualization.events.addListener(gchart_5, 'onmouseout', function(entry) {
        // gchart_5.setSelection([]);
       });
-
     }
 
-    function update_wrd_cols( data_wrd, fac_wrd ) {
+    function update_wrd_cols( data_wrd, fac_wrd, col ) {
       var data_wrda = [], occur = {}, occur_sum;
       // apply any filters to data_wrd here
       // -> determine occurrences based on rhyming word, and make total -= occurrences...
@@ -994,7 +1027,7 @@
         hAxis: { title:'Authors',titleTextStyle:{fontSize:13} },
         chartArea: { top:25,left:80,width:'90%' },
         series: {
-          0:{color: 'black', visibleInLegend: false},
+          0:{color:pieCols[col], visibleInLegend: false},
         }
       };
       gchart_6 = new google.visualization.ColumnChart($('#chart_6 .panel-body')[0]);
