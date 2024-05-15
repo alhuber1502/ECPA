@@ -140,12 +140,20 @@
                   "CartoDB Dark Matter": cartodbd, 
   //                "Stamen Toner": toner, 
                   "White background": white}
-
+  /*
   var overlayMap = L.tileLayer('https://maps.georeferencer.com/georeferences/313b1e0d-376f-5114-862b-32a5c528a55d/2017-04-23T09:03:18.157822Z/map/{z}/{x}/{y}.png?key=z1Z0kmp6fUomiTPbaqES', {
     attribution: '&copy; David Rumsey map collection',
     transparent: true,
     opacity: .9,
     minZoom: 3,
+    maxZoom: 9
+  });
+  */
+  var overlayMap = L.tileLayer('./map/{z}/{x}/{y}.png', {
+    attribution: '&copy; David Rumsey map collection',
+    transparent: true,
+    opacity: .9,
+    minZoom: 4,
     maxZoom: 9
   });
 
@@ -154,7 +162,7 @@
     worldCopyJump: true,
     zoomSnap: 0.5,
     zoomDelta: 0.5,
-    minZoom: 3,
+    minZoom: 4,
     maxBounds: [
       [90,-180],
       [-90,180]
