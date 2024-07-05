@@ -614,7 +614,7 @@
             }
           }
         google.visualization.events.addListener(gchart_2, 'select', selectHandler);
-        goptions_2 = {'width':800,'height':425,pieStartAngle:0,chartArea:{top:10,left:135},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'selection' } };
+        goptions_2 = {pieStartAngle:0,pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'selection' } };
         gchart_2.draw( gdata_2, goptions_2 );
         google.visualization.events.addListener(gchart_2, 'onmouseover', function(entry) {
           gchart_2.setSelection([{row: entry.row}]);
@@ -960,7 +960,7 @@
           }
         }
       google.visualization.events.addListener(gchart_5, 'select', selectHandler);
-      goptions_5 = {'width':800,'height':470,pieStartAngle:0,chartArea:{top:20,left:150},pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'focus' },
+      goptions_5 = {pieStartAngle:0,pieHole:.4,pieSliceText:'percentage','legend':{'position':'right',textStyle:{fontSize: 12}},sliceVisibilityThreshold:.00000001,tooltip:{ trigger:'focus' },
         colors: pieCols };
       gchart_5.draw( gdata_5, goptions_5 );
       google.visualization.events.addListener(gchart_5, 'onmouseover', function(entry) {

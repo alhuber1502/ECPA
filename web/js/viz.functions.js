@@ -766,7 +766,7 @@ function display_viz_lk( vis ) {
 	    }
 	}
     }
-    if (Object.keys(RFphon).length > 0 || l.rhyme != "" && l.rhyme != null ) {
+    if (Object.keys(RFphon).length > 0 || _.some( l, "rhymes" ) ) {
 	lk_control  += `<div class="panel">
                 <div class="panel-heading" role="tab" id="headingVFour">
                     <div class="panel-title">
@@ -780,7 +780,8 @@ function display_viz_lk( vis ) {
 	}
 	// end-rhyme vowels
 	var stable = [];
-	if ( l.rhyme != "irregular" && l.rhyme != "" && l.rhyme != null ) { // add rhyme vowels
+	console.log( l );
+	if ( l.rhyme != "irregular" && _.some( l, "rhymes" ) ) { // add rhyme vowels
 	    lk_control += "<label>End-rhyme vowels:</label><ul class='figures'>";
 	    for (var key in l) {
 		if ( l[key] !== null && l[key].rhymes !== undefined ) {

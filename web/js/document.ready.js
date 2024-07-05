@@ -261,7 +261,7 @@ var user_details =
 `<h5>Your details (if you wish to be acknowledged)</h5>`+
 `<div class="input-group input-group-sm">
 <label for="name" class="input-group-addon" id="basic-addon1">Name</label>
-<input required="required" id="name" name="name" type="text" class="form-control" placeholder="real name" aria-describedby="basic-addon1">
+<input required="required" id="name" name="name" type="text" class="form-control" placeholder="your name" aria-describedby="basic-addon1">
 </div>
 <div class="input-group input-group-sm">
 <label for="e-mail" class="input-group-addon" id="basic-addon2">E-mail</label>
