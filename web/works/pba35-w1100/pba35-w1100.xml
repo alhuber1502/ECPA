@@ -1,1840 +1,1927 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
-     xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:tei="http://www.tei-c.org/ns/1.0"
-     ana="#iamb #tetrameter #trimeter #quatrain #cross #occasional"
-     corresp="#txt_BarbMa1685_w0101"
-     decls="#semi-normalized"
-     ecep:syllab="8.6.8.6"
-     met="-+|-+|-+|-+/ -+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+/"
-     rendition="#lgvspace"
-     rhyme="abab"
-     subtype="eceptext"
-     type="poem"
-     xml:id="pba35-w1100">
-   <link target="authors.xml#aut_BarbMa1685" type="author"/>
-   <link target="11613" type="DMI"/>
-   <head type="main">
-      <w xml:id="pba35-281580"
-         n="a-0010"
-         ecep:lem="to"
-         ecep:pos="p-acp"
-         ecep:reg="To"
-         ecep:spe="To"
-         ecep:syllab="1"
-         ecep:pron="tuː">To</w>
-      <c> </c>
-      <w xml:id="pba35-281590"
-         n="a-0020"
-         ecep:lem="mrs."
-         ecep:pos="n1"
-         ecep:reg="Mrs."
-         ecep:spe="Mrs."
-         ecep:syllab="2"
-         ecep:pron="mɪsɪz">Mrs.</w>
-      <c> </c>
-      <w xml:id="pba35-281600"
-         n="a-0030"
-         ecep:lem="mary"
-         ecep:pos="np1"
-         ecep:reg="Mary"
-         ecep:spe="Mary"
-         ecep:syllab="2"
-         ecep:pron="ˈmeəri">Mary</w>
-      <c> </c>
-      <w xml:id="pba35-281610"
-         n="a-0040"
-         ecep:lem="CÆsar"
-         ecep:pos="np1"
-         ecep:reg="CÆsar"
-         ecep:spe="CÆsar"
-         ecep:syllab="2"
-         ecep:pron="kˈæsɑː">CÆsar</w>
-      <note place="bottom"
-            n="[ed.]"
-            resp="#AH"
-            xml:id="app_BarbMa1685_w0101_n1">"Mary Freeman, friend of Swift, who saw her as promoter and protector of Mary Barber when the latter was
+<?xml-model href="../tei_all.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title corresp="#txt_BarbMa1685_w0101">To Mrs. Mary CÆsar, upon seeing her just after the Marriage of her Friend, the Lady Margaret Harley.</title>
+            <author corresp="authors.xml#aut_BarbMa1685">Mary Barber</author>
+            <respStmt>
+               <name xml:id="AH">Alexander Huber</name>
+               <resp>Editor</resp>
+            </respStmt>
+            <funder>
+               <name type="institution" xml:id="BOD">Bodleian Libraries, University of Oxford</name>
+               <address>
+                  <addrLine>Broad Street</addrLine>
+                  <addrLine>Oxford OX1 3BG</addrLine>
+                  <addrLine>UK</addrLine>
+               </address>
+            </funder>
+         </titleStmt>
+         <publicationStmt>
+            <publisher xml:id="ECPA">Eighteenth-Century Poetry Archive</publisher>
+            <address>
+               <addrLine>Taylor Institution Library</addrLine>
+               <addrLine>St Giles'</addrLine>
+               <addrLine>Oxford OX1 3NA</addrLine>
+               <addrLine>UK</addrLine>
+               <addrLine>
+                  <email>info@eighteenthcenturypoetry.org</email>
+               </addrLine>
+               <addrLine>
+                  <ref target="https://www.eighteenthcenturypoetry.org/">https://www.eighteenthcenturypoetry.org/</ref>
+               </addrLine>
+            </address>
+            <pubPlace>Oxford</pubPlace>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.</licence>
+            </availability>
+            <idno type="ESTC">T42622</idno>
+            <idno type="DMI">519</idno>
+            <idno type="FOXON">p. 45</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author>Barber, Mary, ca. 1690-1757.</author>
+               <title>Poems on Several Occasions [poems only].</title>
+               <pubPlace>London</pubPlace>
+               <publisher>Printed for C. Rivington, at the Bible and Crown in St. Paul's Church-Yard</publisher>
+               <date>1734</date>
+               <biblScope>pp. 236-237.</biblScope>
+               <extent>xlviii,283,[7]p.; 8⁰.</extent>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This e-text is part of the Works section of the Eighteenth-Century Poetry Archive (ECPA).</p>
+            <p>XML created for the Eighteenth-Century Poetry Archive (ECPA).</p>
+         </projectDesc>
+         <editorialDecl>
+            <p>Typography, spelling, capitalization, and punctuation have been cautiously modernized. The source of the text is given and all significant
+						editorial interventions have been recorded in textual notes. This  text has been edited to conform to the recommendations found 
+						in Level 5 of the
+						Best Practices for TEI in Libraries version 4.0.0.
+					</p>
+         </editorialDecl>
+         <classDecl>
+            <taxonomy xml:id="LCNAF">
+               <bibl>Library of Congress Name Authority File (<abbr>LCNAF</abbr>)</bibl>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition n="linegroups indented" xml:id="lgindent" scheme="css">text-indent: 1em;</rendition>
+            <rendition n="linegroups vertically spaced" xml:id="lgvspace" scheme="css">margin-bottom: 1em;</rendition>
+            <rendition n="aligned centrally" xml:id="align-center" scheme="css">text-align: center;</rendition>
+            <rendition n="aligned right" xml:id="align-right" scheme="css">text-align: right;</rendition>
+            <rendition n="aligned left" xml:id="align-left" scheme="css">text-align: left;</rendition>
+            <rendition n="inline" xml:id="inline" scheme="css">display: inline</rendition>
+            <rendition n="italic" xml:id="i" scheme="css">font-style: italic;</rendition>
+            <rendition n="bold" xml:id="b" scheme="css">font-weight: bold;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+              xmlns:tei="http://www.tei-c.org/ns/1.0"
+              ana="#iamb #tetrameter #trimeter #quatrain #cross #occasional"
+              corresp="#txt_BarbMa1685_w0101"
+              decls="#semi-normalized"
+              ecep:syllab="8.6.8.6"
+              met="-+|-+|-+|-+/ -+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+/"
+              rendition="#lgvspace"
+              rhyme="abab"
+              subtype="eceptext"
+              type="poem"
+              xml:id="pba35-w1100">
+            <link target="authors.xml#aut_BarbMa1685" type="author"/>
+            <link target="11613" type="DMI"/>
+            <head type="main">
+               <w xml:id="pba35-281580"
+                  n="a-0010"
+                  ecep:lem="to"
+                  ecep:pos="p-acp"
+                  ecep:reg="To"
+                  ecep:spe="To"
+                  ecep:syllab="1"
+                  ecep:pron="tuː">To</w>
+               <c> </c>
+               <w xml:id="pba35-281590"
+                  n="a-0020"
+                  ecep:lem="mrs."
+                  ecep:pos="n1"
+                  ecep:reg="Mrs."
+                  ecep:spe="Mrs."
+                  ecep:syllab="2"
+                  ecep:pron="mɪsɪz">Mrs.</w>
+               <c> </c>
+               <w xml:id="pba35-281600"
+                  n="a-0030"
+                  ecep:lem="mary"
+                  ecep:pos="np1"
+                  ecep:reg="Mary"
+                  ecep:spe="Mary"
+                  ecep:syllab="2"
+                  ecep:pron="ˈmeəri">Mary</w>
+               <c> </c>
+               <w xml:id="pba35-281610"
+                  n="a-0040"
+                  ecep:lem="CÆsar"
+                  ecep:pos="np1"
+                  ecep:reg="CÆsar"
+                  ecep:spe="CÆsar"
+                  ecep:syllab="2"
+                  ecep:pron="kˈæsɑː">CÆsar</w>
+               <note place="bottom"
+                     n="[ed.]"
+                     resp="#AH"
+                     xml:id="app_BarbMa1685_w0101_n1">"Mary Freeman, friend of Swift, who saw her as promoter and protector of Mary Barber when the latter was
 									in England." 
 									(Tucker [1992], 221)
 								</note>
-      <pc xml:id="pba35-281620"
-          n="a-0050"
-          ecep:lem=","
-          ecep:pos=","
-          ecep:reg=","
-          ecep:spe=",">,</pc>
-      <c> </c>
-      <w xml:id="pba35-281630"
-         n="a-0060"
-         ecep:lem="upon"
-         ecep:pos="p-acp"
-         ecep:reg="upon"
-         ecep:spe="upon"
-         ecep:syllab="2"
-         ecep:pron="əˈpɒn">upon</w>
-      <c> </c>
-      <w xml:id="pba35-281640"
-         n="a-0070"
-         ecep:lem="see"
-         ecep:pos="vvg"
-         ecep:reg="seeing"
-         ecep:spe="seeing"
-         ecep:syllab="2"
-         ecep:pron="siːɪŋ">seeing</w>
-      <c> </c>
-      <w xml:id="pba35-281650"
-         n="a-0080"
-         ecep:lem="she"
-         ecep:pos="pno31"
-         ecep:reg="her"
-         ecep:spe="her"
-         ecep:syllab="1"
-         ecep:pron="hɜː">her</w>
-      <c> </c>
-      <w xml:id="pba35-281660"
-         n="a-0090"
-         ecep:lem="just"
-         ecep:pos="av-j"
-         ecep:reg="just"
-         ecep:spe="just"
-         ecep:syllab="1"
-         ecep:pron="dʒʌst">just</w>
-      <c> </c>
-      <w xml:id="pba35-281670"
-         n="a-0100"
-         ecep:lem="after"
-         ecep:pos="p-acp"
-         ecep:reg="after"
-         ecep:spe="after"
-         ecep:syllab="2"
-         ecep:pron="ˈɑːftə">after</w>
-      <c> </c>
-      <w xml:id="pba35-281680"
-         n="a-0110"
-         ecep:lem="the"
-         ecep:pos="dt"
-         ecep:reg="the"
-         ecep:spe="the"
-         ecep:syllab="1"
-         ecep:pron="ðiː">the</w>
-      <c> </c>
-      <w xml:id="pba35-281690"
-         n="a-0120"
-         ecep:lem="marriage"
-         ecep:pos="n1"
-         ecep:reg="Marriage"
-         ecep:spe="Marriage"
-         ecep:syllab="2"
-         ecep:pron="ˈmærɪdʒ">Marriage</w>
-      <c> </c>
-      <w xml:id="pba35-281700"
-         n="a-0130"
-         ecep:lem="of"
-         ecep:pos="pp-f"
-         ecep:reg="of"
-         ecep:spe="of"
-         ecep:syllab="1"
-         ecep:pron="ɒv">of</w>
-      <c> </c>
-      <w xml:id="pba35-281710"
-         n="a-0140"
-         ecep:lem="her"
-         ecep:pos="po31"
-         ecep:reg="her"
-         ecep:spe="her"
-         ecep:syllab="1"
-         ecep:pron="hɜː">her</w>
-      <c> </c>
-      <w xml:id="pba35-281720"
-         n="a-0150"
-         ecep:lem="friend"
-         ecep:pos="n1"
-         ecep:reg="Friend"
-         ecep:spe="Friend"
-         ecep:syllab="1"
-         ecep:pron="frend">Friend</w>
-      <pc xml:id="pba35-281730"
-          n="a-0160"
-          ecep:lem=","
-          ecep:pos=","
-          ecep:reg=","
-          ecep:spe=",">,</pc>
-      <c> </c>
-      <w xml:id="pba35-281740"
-         n="a-0170"
-         ecep:lem="the"
-         ecep:pos="dt"
-         ecep:reg="the"
-         ecep:spe="the"
-         ecep:syllab="1"
-         ecep:pron="ðiː">the</w>
-      <c> </c>
-      <w xml:id="pba35-281750"
-         n="a-0180"
-         ecep:lem="lady"
-         ecep:pos="n1"
-         ecep:reg="Lady"
-         ecep:spe="Lady"
-         ecep:syllab="2"
-         ecep:pron="ˈleɪdi">Lady</w>
-      <c> </c>
-      <w xml:id="pba35-281760"
-         n="a-0190"
-         ecep:lem="Margaret"
-         ecep:pos="np1"
-         ecep:reg="Margaret"
-         ecep:spe="Margaret"
-         ecep:syllab="3"
-         ecep:pron="ˈmɑːgərɪt">Margaret</w>
-      <c> </c>
-      <w xml:id="pba35-281770"
-         n="a-0200"
-         ecep:lem="Harley"
-         ecep:pos="np1"
-         ecep:reg="Harley"
-         ecep:spe="Harley"
-         ecep:syllab="2"
-         ecep:pron="ˈhɑːli">Harley</w>
-      <note place="bottom"
-            n="[ed.]"
-            resp="#AH"
-            xml:id="app_BarbMa1685_w0101_n2">"On 11 July 1734 Margaret, daughter of Edward Harley, Earl of Oxford and Mortimer, (son of
+               <pc xml:id="pba35-281620"
+                   n="a-0050"
+                   ecep:lem=","
+                   ecep:pos=","
+                   ecep:reg=","
+                   ecep:spe=",">,</pc>
+               <c> </c>
+               <w xml:id="pba35-281630"
+                  n="a-0060"
+                  ecep:lem="upon"
+                  ecep:pos="p-acp"
+                  ecep:reg="upon"
+                  ecep:spe="upon"
+                  ecep:syllab="2"
+                  ecep:pron="əˈpɒn">upon</w>
+               <c> </c>
+               <w xml:id="pba35-281640"
+                  n="a-0070"
+                  ecep:lem="see"
+                  ecep:pos="vvg"
+                  ecep:reg="seeing"
+                  ecep:spe="seeing"
+                  ecep:syllab="2"
+                  ecep:pron="siːɪŋ">seeing</w>
+               <c> </c>
+               <w xml:id="pba35-281650"
+                  n="a-0080"
+                  ecep:lem="she"
+                  ecep:pos="pno31"
+                  ecep:reg="her"
+                  ecep:spe="her"
+                  ecep:syllab="1"
+                  ecep:pron="hɜː">her</w>
+               <c> </c>
+               <w xml:id="pba35-281660"
+                  n="a-0090"
+                  ecep:lem="just"
+                  ecep:pos="av-j"
+                  ecep:reg="just"
+                  ecep:spe="just"
+                  ecep:syllab="1"
+                  ecep:pron="dʒʌst">just</w>
+               <c> </c>
+               <w xml:id="pba35-281670"
+                  n="a-0100"
+                  ecep:lem="after"
+                  ecep:pos="p-acp"
+                  ecep:reg="after"
+                  ecep:spe="after"
+                  ecep:syllab="2"
+                  ecep:pron="ˈɑːftə">after</w>
+               <c> </c>
+               <w xml:id="pba35-281680"
+                  n="a-0110"
+                  ecep:lem="the"
+                  ecep:pos="dt"
+                  ecep:reg="the"
+                  ecep:spe="the"
+                  ecep:syllab="1"
+                  ecep:pron="ðiː">the</w>
+               <c> </c>
+               <w xml:id="pba35-281690"
+                  n="a-0120"
+                  ecep:lem="marriage"
+                  ecep:pos="n1"
+                  ecep:reg="Marriage"
+                  ecep:spe="Marriage"
+                  ecep:syllab="2"
+                  ecep:pron="ˈmærɪdʒ">Marriage</w>
+               <c> </c>
+               <w xml:id="pba35-281700"
+                  n="a-0130"
+                  ecep:lem="of"
+                  ecep:pos="pp-f"
+                  ecep:reg="of"
+                  ecep:spe="of"
+                  ecep:syllab="1"
+                  ecep:pron="ɒv">of</w>
+               <c> </c>
+               <w xml:id="pba35-281710"
+                  n="a-0140"
+                  ecep:lem="her"
+                  ecep:pos="po31"
+                  ecep:reg="her"
+                  ecep:spe="her"
+                  ecep:syllab="1"
+                  ecep:pron="hɜː">her</w>
+               <c> </c>
+               <w xml:id="pba35-281720"
+                  n="a-0150"
+                  ecep:lem="friend"
+                  ecep:pos="n1"
+                  ecep:reg="Friend"
+                  ecep:spe="Friend"
+                  ecep:syllab="1"
+                  ecep:pron="frend">Friend</w>
+               <pc xml:id="pba35-281730"
+                   n="a-0160"
+                   ecep:lem=","
+                   ecep:pos=","
+                   ecep:reg=","
+                   ecep:spe=",">,</pc>
+               <c> </c>
+               <w xml:id="pba35-281740"
+                  n="a-0170"
+                  ecep:lem="the"
+                  ecep:pos="dt"
+                  ecep:reg="the"
+                  ecep:spe="the"
+                  ecep:syllab="1"
+                  ecep:pron="ðiː">the</w>
+               <c> </c>
+               <w xml:id="pba35-281750"
+                  n="a-0180"
+                  ecep:lem="lady"
+                  ecep:pos="n1"
+                  ecep:reg="Lady"
+                  ecep:spe="Lady"
+                  ecep:syllab="2"
+                  ecep:pron="ˈleɪdi">Lady</w>
+               <c> </c>
+               <w xml:id="pba35-281760"
+                  n="a-0190"
+                  ecep:lem="Margaret"
+                  ecep:pos="np1"
+                  ecep:reg="Margaret"
+                  ecep:spe="Margaret"
+                  ecep:syllab="3"
+                  ecep:pron="ˈmɑːgərɪt">Margaret</w>
+               <c> </c>
+               <w xml:id="pba35-281770"
+                  n="a-0200"
+                  ecep:lem="Harley"
+                  ecep:pos="np1"
+                  ecep:reg="Harley"
+                  ecep:spe="Harley"
+                  ecep:syllab="2"
+                  ecep:pron="ˈhɑːli">Harley</w>
+               <note place="bottom"
+                     n="[ed.]"
+                     resp="#AH"
+                     xml:id="app_BarbMa1685_w0101_n2">"On 11 July 1734 Margaret, daughter of Edward Harley, Earl of Oxford and Mortimer, (son of
 									<persName ref="#aut_SwifJo1667">Swift's</persName> patron, the Tory Prime Minister from 1710-14) married William Bentinck, second 
 									Duke of Portland. She appears frequently in Swift's	correspondence." 
 									(Tucker [1992], 226)
 								</note>
-      <pc xml:id="pba35-281780"
-          n="a-0210"
-          unit="sentence"
-          ecep:lem="."
-          ecep:pos="."
-          ecep:reg="."
-          ecep:spe=".">.</pc>
-   </head>
-   <lg xml:id="pba35-s01760">
-      <head>
-         <w xml:id="pba35-281820"
-            n="a-0220"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-      </head>
-      <l n="1" xml:id="pba35-l14260">
-         <hi rendition="#sc">
-            <w xml:id="pba35-281840"
-               n="a-0230"
-               ecep:lem="i"
-               ecep:pos="pns11"
-               ecep:reg="I"
-               ecep:spe="I"
-               ecep:syllab="1"
-               ecep:pron="aɪ">I</w>
-            <c> </c>
-            <w xml:id="pba35-281850"
-               n="a-0240"
-               ecep:lem="read"
-               ecep:pos="vvb"
-               ecep:reg="read"
-               ecep:spe="read"
-               ecep:syllab="1"
-               ecep:pron="riːd">read</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-281860"
-            n="a-0250"
-            ecep:lem="in"
-            ecep:pos="p-acp"
-            ecep:reg="in"
-            ecep:spe="in"
-            ecep:syllab="1"
-            ecep:pron="ɪn">in</w>
-         <c> </c>
-         <w xml:id="pba35-281870"
-            n="a-0260"
-            ecep:lem="your"
-            ecep:pos="po22"
-            ecep:reg="your"
-            ecep:spe="your"
-            ecep:syllab="1"
-            ecep:pron="jɔː">your</w>
-         <c> </c>
-         <w xml:id="pba35-281880"
-            n="a-0270"
-            ecep:lem="delight"
-            ecep:pos="j-vvn"
-            ecep:reg="delighted"
-            ecep:spe="delighted"
-            ecep:syllab="3"
-            ecep:pron="dɪˈlaɪtɪd">delighted</w>
-         <c> </c>
-         <w xml:id="pba35-281890"
-            n="a-0280"
-            ecep:lem="face"
-            ecep:pos="n1"
-            ecep:reg="Face"
-            ecep:spe="Face"
-            ecep:syllab="1"
-            ecep:pron="feɪs">Face</w>
-         <pc xml:id="pba35-281900"
-             n="a-0290"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="2" rendition="#h_3" xml:id="pba35-l14265">
-         <c> </c>
-         <w xml:id="pba35-281910"
-            n="a-0300"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="The"
-            ecep:spe="The"
-            ecep:syllab="1"
-            ecep:pron="ðiː">The</w>
-         <c> </c>
-         <w xml:id="pba35-281920"
-            n="a-0310"
-            ecep:lem="nuptial"
-            ecep:pos="j-jn"
-            ecep:reg="Nuptial"
-            ecep:spe="Nuptial"
-            ecep:syllab="2"
-            ecep:pron="ˈnʌpʃl">Nuptial</w>
-         <c> </c>
-         <w xml:id="pba35-281930"
-            n="a-0320"
-            ecep:lem="band"
-            ecep:pos="n2"
-            ecep:reg="Bands"
-            ecep:spe="Bands"
-            ecep:syllab="1"
-            ecep:pron="bændz">Bands</w>
-         <c> </c>
-         <w xml:id="pba35-281940"
-            n="a-0330"
-            ecep:lem="be"
-            ecep:pos="vbr"
-            ecep:reg="are"
-            ecep:spe="are"
-            ecep:syllab="1"
-            ecep:pron="ɑː">are</w>
-         <c> </c>
-         <w xml:id="pba35-281950"
-            n="a-0340"
-            ecep:lem="tie"
-            ecep:pos="vvn"
-            ecep:reg="tied"
-            ecep:spe="ty'd"
-            ecep:syllab="1"
-            ecep:pron="taɪd">ty'd</w>
-         <pc xml:id="pba35-281960"
-             n="a-0350"
-             ecep:lem=":"
-             ecep:pos=":"
-             ecep:reg=":"
-             ecep:spe=":">:</pc>
-      </l>
-      <l n="3" xml:id="pba35-l14270">
-         <c> </c>
-         <w xml:id="pba35-281970"
-            n="a-0360"
-            ecep:lem="from"
-            ecep:pos="p-acp"
-            ecep:reg="From"
-            ecep:spe="From"
-            ecep:syllab="1"
-            ecep:pron="frɒm">From</w>
-         <c> </c>
-         <w xml:id="pba35-281980"
-            n="a-0370"
-            ecep:lem="i"
-            ecep:pos="pno11"
-            ecep:reg="me"
-            ecep:spe="me"
-            ecep:syllab="1"
-            ecep:pron="miː">me</w>
-         <c> </c>
-         <w xml:id="pba35-281990"
-            n="a-0380"
-            ecep:lem="congratulate"
-            ecep:pos="vvi"
-            ecep:reg="congratulate"
-            ecep:spe="congratulate"
-            ecep:syllab="4"
-            ecep:pron="kənˈgrætʃəleɪt">congratulate</w>
-         <c> </c>
-         <w xml:id="pba35-282000"
-            n="a-0390"
-            ecep:lem="her"
-            ecep:pos="po31"
-            ecep:reg="her"
-            ecep:spe="her"
-            ecep:syllab="1"
-            ecep:pron="hɜː">her</w>
-         <c> </c>
-         <w xml:id="pba35-282010"
-            n="a-0400"
-            ecep:lem="grace"
-            ecep:pos="n1"
-            ecep:reg="Grace"
-            ecep:spe="Grace"
-            ecep:syllab="1"
-            ecep:pron="greɪs">Grace</w>
-         <pc xml:id="pba35-282020"
-             n="a-0410"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="4" rendition="#h_3" xml:id="pba35-l14275">
-         <c> </c>
-         <w xml:id="pba35-282030"
-            n="a-0420"
-            ecep:lem="young"
-            ecep:pos="j"
-            ecep:reg="Young"
-            ecep:spe="Young"
-            ecep:syllab="1"
-            ecep:pron="jʌŋ">Young</w>
-         <c> </c>
-         <hi rendition="#sc">
-            <w xml:id="pba35-282040"
-               n="a-0430"
-               ecep:lem="portland"
-               ecep:pos="npg1"
-               ecep:reg="Portland's"
-               ecep:spe="Portland's"
-               ecep:syllab="2"
-               ecep:pron="ˈpɔːtləndz">Portland's</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-282050"
-            n="a-0440"
-            ecep:lem="lovely"
-            ecep:pos="j"
-            ecep:reg="lovely"
-            ecep:spe="lovely"
-            ecep:syllab="2"
-            ecep:pron="ˈlʌvli">lovely</w>
-         <c> </c>
-         <w xml:id="pba35-282060"
-            n="a-0450"
-            ecep:lem="bride"
-            ecep:pos="n1"
-            ecep:reg="Bride"
-            ecep:spe="Bride"
-            ecep:syllab="1"
-            ecep:pron="braɪd">Bride</w>
-         <pc xml:id="pba35-282070"
-             n="a-0460"
-             unit="sentence"
-             ecep:lem="."
-             ecep:pos="."
-             ecep:reg="."
-             ecep:spe=".">.</pc>
-         <c> </c>
-      </l>
-   </lg>
-   <lg xml:id="pba35-s01765">
-      <head>
-         <w xml:id="pba35-282110"
-            n="a-0470"
-            ecep:lem="ii"
-            ecep:pos="crd"
-            ecep:reg="II"
-            ecep:spe="II"
-            ecep:syllab="1"
-            ecep:pron="rˌəʊməntˈuː">II</w>
-      </head>
-      <l n="5" xml:id="pba35-l14280">
-         <w xml:id="pba35-282130"
-            n="a-0480"
-            ecep:lem="tell"
-            ecep:pos="vvb"
-            ecep:reg="Tell"
-            ecep:spe="Tell"
-            ecep:syllab="1"
-            ecep:pron="tel">Tell</w>
-         <c> </c>
-         <w xml:id="pba35-282140"
-            n="a-0490"
-            ecep:lem="she"
-            ecep:pos="pno31"
-            ecep:reg="her"
-            ecep:spe="her"
-            ecep:syllab="1"
-            ecep:pron="hɜː">her</w>
-         <pc xml:id="pba35-282150"
-             n="a-0500"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="pba35-282160"
-            n="a-0510"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="an"
-            ecep:spe="an"
-            ecep:syllab="1"
-            ecep:pron="æn">an</w>
-         <c> </c>
-         <w xml:id="pba35-282170"
-            n="a-0520"
-            ecep:lem="humble"
-            ecep:pos="j"
-            ecep:reg="humble"
-            ecep:spe="humble"
-            ecep:syllab="2"
-            ecep:pron="ˈhʌmbl">humble</w>
-         <pc xml:id="pba35-282180"
-             n="a-0530"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="pba35-282190"
-            n="a-0540"
-            ecep:lem="artless"
-            ecep:pos="j"
-            ecep:reg="artless"
-            ecep:spe="artless"
-            ecep:syllab="2"
-            ecep:pron="ˈɑːtləs">artless</w>
-         <c> </c>
-         <w xml:id="pba35-282200"
-            n="a-0550"
-            ecep:lem="Muse"
-            ecep:pos="np1"
-            ecep:reg="Muse"
-            ecep:spe="Muse"
-            ecep:syllab="1"
-            ecep:pron="mjuːz">Muse</w>
-      </l>
-      <l n="6" rendition="#h_3" xml:id="pba35-l14285">
-         <c> </c>
-         <w xml:id="pba35-282210"
-            n="a-0560"
-            ecep:lem="will"
-            ecep:pos="vmd"
-            ecep:reg="Would"
-            ecep:spe="Would"
-            ecep:syllab="1"
-            ecep:pron="wʊd">Would</w>
-         <c> </c>
-         <w xml:id="pba35-282220"
-            n="a-0570"
-            ecep:lem="hail"
-            ecep:pos="vvi"
-            ecep:reg="hail"
-            ecep:spe="hail"
-            ecep:syllab="1"
-            ecep:pron="heɪl">hail</w>
-         <c> </c>
-         <w xml:id="pba35-282230"
-            n="a-0580"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="pba35-282240"
-            n="a-0590"
-            ecep:lem="happy"
-            ecep:pos="j"
-            ecep:reg="happy"
-            ecep:spe="happy"
-            ecep:syllab="2"
-            ecep:pron="ˈhæpi">happy</w>
-         <c> </c>
-         <w xml:id="pba35-282250"
-            n="a-0600"
-            ecep:lem="pair"
-            ecep:pos="n1"
-            ecep:reg="Pair"
-            ecep:spe="Pair"
-            ecep:syllab="1"
-            ecep:pron="peə">Pair</w>
-         <pc xml:id="pba35-282260"
-             n="a-0610"
-             ecep:lem=";"
-             ecep:pos=";"
-             ecep:reg=";"
-             ecep:spe=";">;</pc>
-      </l>
-      <l n="7" xml:id="pba35-l14290">
-         <c> </c>
-         <w xml:id="pba35-282270"
-            n="a-0620"
-            ecep:lem="but"
-            ecep:pos="cc-acp"
-            ecep:reg="But"
-            ecep:spe="But"
-            ecep:syllab="1"
-            ecep:pron="bʌt">But</w>
-         <c> </c>
-         <w xml:id="pba35-282280"
-            n="a-0630"
-            ecep:lem="that"
-            ecep:pos="d"
-            ecep:reg="that"
-            ecep:spe="that"
-            ecep:syllab="1"
-            ecep:pron="ðæt">that</w>
-         <pc xml:id="pba35-282290"
-             n="a-0640"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="pba35-282300"
-            n="a-0650"
-            ecep:lem="like"
-            ecep:pos="av-j"
-            ecep:reg="like"
-            ecep:spe="like"
-            ecep:syllab="1"
-            ecep:pron="laɪk">like</w>
-         <c> </c>
-         <w xml:id="pba35-282310"
-            n="a-0660"
-            ecep:lem="flower"
-            ecep:pos="n2"
-            ecep:reg="Flowers"
-            ecep:spe="Flow'rs"
-            ecep:syllab="1"
-            ecep:pron="flæəz">Flow'rs</w>
-         <c> </c>
-         <w xml:id="pba35-282320"
-            n="a-0670"
-            ecep:lem="by"
-            ecep:pos="p-acp"
-            ecep:reg="by"
-            ecep:spe="by"
-            ecep:syllab="1"
-            ecep:pron="baɪ">by</w>
-         <c> </c>
-         <w xml:id="pba35-282330"
-            n="a-0680"
-            ecep:lem="deadly"
-            ecep:pos="j"
-            ecep:reg="deadly"
-            ecep:spe="deadly"
-            ecep:syllab="2"
-            ecep:pron="ˈdedli">deadly</w>
-         <c> </c>
-         <w xml:id="pba35-282340"
-            n="a-0690"
-            ecep:lem="dew"
-            ecep:pos="n2"
-            ecep:reg="Dews"
-            ecep:spe="Dews"
-            ecep:syllab="1"
-            ecep:pron="dʒuːz">Dews</w>
-         <pc xml:id="pba35-282350"
-             n="a-0700"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="8" rendition="#h_3" xml:id="pba35-l14295">
-         <c> </c>
-         <w xml:id="pba35-282360"
-            n="a-0710"
-            ecep:lem="her"
-            ecep:pos="po31"
-            ecep:reg="Her"
-            ecep:spe="Her"
-            ecep:syllab="1"
-            ecep:pron="hɜː">Her</w>
-         <c> </c>
-         <w xml:id="pba35-282370"
-            n="a-0720"
-            ecep:lem="strain"
-            ecep:pos="n2"
-            ecep:reg="Strains"
-            ecep:spe="Strains"
-            ecep:syllab="1"
-            ecep:pron="streɪnz">Strains</w>
-         <c> </c>
-         <w xml:id="pba35-282380"
-            n="a-0730"
-            ecep:lem="be"
-            ecep:pos="vbr"
-            ecep:reg="are"
-            ecep:spe="are"
-            ecep:syllab="1"
-            ecep:pron="ɑː">are</w>
-         <c> </c>
-         <w xml:id="pba35-282390"
-            n="a-0740"
-            ecep:lem="damp"
-            ecep:pos="vvn"
-            ecep:reg="damped"
-            ecep:spe="damp'd"
-            ecep:syllab="1"
-            ecep:pron="dæmpt">damp'd</w>
-         <c> </c>
-         <w xml:id="pba35-282400"
-            n="a-0750"
-            ecep:lem="by"
-            ecep:pos="p-acp"
-            ecep:reg="by"
-            ecep:spe="by"
-            ecep:syllab="1"
-            ecep:pron="baɪ">by</w>
-         <c> </c>
-         <w xml:id="pba35-282410"
-            n="a-0760"
-            ecep:lem="care"
-            ecep:pos="n1"
-            ecep:reg="Care"
-            ecep:spe="Care"
-            ecep:syllab="1"
-            ecep:pron="keə">Care</w>
-         <pc xml:id="pba35-282420"
-             n="a-0770"
-             unit="sentence"
-             ecep:lem="."
-             ecep:pos="."
-             ecep:reg="."
-             ecep:spe=".">.</pc>
-         <c> </c>
-      </l>
-      <pb facs="pba35/0291" n="237" rend="none"/>
-   </lg>
-   <lg xml:id="pba35-s01770">
-      <head>
-         <w xml:id="pba35-282460"
-            n="a-0010"
-            ecep:lem="iii"
-            ecep:pos="crd"
-            ecep:reg="III"
-            ecep:spe="III"
-            ecep:syllab="1"
-            ecep:pron="rˌəʊmənθrˈiː">III</w>
-      </head>
-      <l n="9" xml:id="pba35-l14300">
-         <w xml:id="pba35-282480"
-            n="a-0020"
-            ecep:lem="those"
-            ecep:pos="d"
-            ecep:reg="Those"
-            ecep:spe="Those"
-            ecep:syllab="1"
-            ecep:pron="ðəʊz">Those</w>
-         <c> </c>
-         <w xml:id="pba35-282490"
-            n="a-0030"
-            ecep:lem="who"
-            ecep:pos="r-crq"
-            ecep:reg="whom"
-            ecep:spe="whom"
-            ecep:syllab="1"
-            ecep:pron="huːm">whom</w>
-         <c> </c>
-         <w xml:id="pba35-282500"
-            n="a-0040"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="pba35-282510"
-            n="a-0050"
-            ecep:lem="tuneful"
-            ecep:pos="j"
-            ecep:reg="tuneful"
-            ecep:spe="tuneful"
-            ecep:syllab="2"
-            ecep:pron="ˈtʃuːnfl">tuneful</w>
-         <c> </c>
-         <hi>
-            <w xml:id="pba35-282520"
-               n="a-0060"
-               ecep:lem="nine"
-               ecep:pos="crd"
-               ecep:reg="Nine"
-               ecep:spe="Nine"
-               ecep:syllab="1"
-               ecep:pron="naɪn">Nine</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-282530"
-            n="a-0070"
-            ecep:lem="inspire"
-            ecep:pos="vvi"
-            ecep:reg="inspire"
-            ecep:spe="inspire"
-            ecep:syllab="2"
-            ecep:pron="ɪnˈspæə">inspire</w>
-         <pc xml:id="pba35-282540"
-             n="a-0080"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="10" rendition="#h_3" xml:id="pba35-l14305">
-         <c> </c>
-         <w xml:id="pba35-282550"
-            n="a-0090"
-            ecep:lem="have"
-            ecep:pos="vhb"
-            ecep:reg="Have"
-            ecep:spe="Have"
-            ecep:syllab="1"
-            ecep:pron="hæv">Have</w>
-         <c> </c>
-         <w xml:id="pba35-282560"
-            n="a-0100"
-            ecep:lem="now"
-            ecep:pos="av"
-            ecep:reg="now"
-            ecep:spe="now"
-            ecep:syllab="1"
-            ecep:pron="naʊ">now</w>
-         <c> </c>
-         <w xml:id="pba35-282570"
-            n="a-0110"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="a"
-            ecep:spe="a"
-            ecep:syllab="1"
-            ecep:pron="ə">a</w>
-         <c> </c>
-         <w xml:id="pba35-282580"
-            n="a-0120"
-            ecep:lem="spacious"
-            ecep:pos="j"
-            ecep:reg="spacious"
-            ecep:spe="spacious"
-            ecep:syllab="2"
-            ecep:pron="ˈspeɪʃəs">spacious</w>
-         <c> </c>
-         <w xml:id="pba35-282590"
-            n="a-0130"
-            ecep:lem="field"
-            ecep:pos="n1"
-            ecep:reg="Field"
-            ecep:spe="Field"
-            ecep:syllab="1"
-            ecep:pron="ˈfiːld">Field</w>
-         <pc xml:id="pba35-282600"
-             n="a-0140"
-             ecep:lem=":"
-             ecep:pos=":"
-             ecep:reg=":"
-             ecep:spe=":">:</pc>
-      </l>
-      <l n="11" xml:id="pba35-l14310">
-         <c> </c>
-         <w xml:id="pba35-282610"
-            n="a-0150"
-            ecep:lem="to"
-            ecep:pos="p-acp"
-            ecep:reg="To"
-            ecep:spe="To"
-            ecep:syllab="1"
-            ecep:pron="tuː">To</w>
-         <c> </c>
-         <w xml:id="pba35-282620"
-            n="a-0160"
-            ecep:lem="they"
-            ecep:pos="pno32"
-            ecep:reg="them"
-            ecep:spe="them"
-            ecep:syllab="1"
-            ecep:pron="ðem">them</w>
-         <c> </c>
-         <w xml:id="pba35-282630"
-            n="a-0170"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-         <c> </c>
-         <w xml:id="pba35-282640"
-            n="a-0180"
-            ecep:lem="must"
-            ecep:pos="vmb"
-            ecep:reg="must"
-            ecep:spe="must"
-            ecep:syllab="1"
-            ecep:pron="mʌst">must</w>
-         <c> </c>
-         <w xml:id="pba35-282650"
-            n="a-0190"
-            ecep:lem="resign"
-            ecep:pos="vvi"
-            ecep:reg="resign"
-            ecep:spe="resign"
-            ecep:syllab="2"
-            ecep:pron="rɪˈzaɪn">resign</w>
-         <c> </c>
-         <w xml:id="pba35-282660"
-            n="a-0200"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="pba35-282670"
-            n="a-0210"
-            ecep:lem="lyre"
-            ecep:pos="n1"
-            ecep:reg="Lyre"
-            ecep:spe="Lyre"
-            ecep:syllab="1"
-            ecep:pron="laɪə">Lyre</w>
-         <pc xml:id="pba35-282680"
-             n="a-0220"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="12" rendition="#h_3" xml:id="pba35-l14315">
-         <c> </c>
-         <w xml:id="pba35-282690"
-            n="a-0230"
-            ecep:lem="to"
-            ecep:pos="p-acp"
-            ecep:reg="To"
-            ecep:spe="To"
-            ecep:syllab="1"
-            ecep:pron="tuː">To</w>
-         <c> </c>
-         <w xml:id="pba35-282700"
-            n="a-0240"
-            ecep:lem="none"
-            ecep:pos="pix"
-            ecep:reg="none"
-            ecep:spe="none"
-            ecep:syllab="1"
-            ecep:pron="nəʊn">none</w>
-         <c> </c>
-         <w xml:id="pba35-282710"
-            n="a-0250"
-            ecep:lem="in"
-            ecep:pos="p-acp"
-            ecep:reg="in"
-            ecep:spe="in"
-            ecep:syllab="1"
-            ecep:pron="ɪn">in</w>
-         <c> </c>
-         <w xml:id="pba35-282720"
-            n="a-0260"
-            ecep:lem="wish"
-            ecep:pos="n2"
-            ecep:reg="Wishes"
-            ecep:spe="Wishes"
-            ecep:syllab="2"
-            ecep:pron="wɪʃɪz">Wishes</w>
-         <c> </c>
-         <w xml:id="pba35-282730"
-            n="a-0270"
-            ecep:lem="yield"
-            ecep:pos="vvi"
-            ecep:reg="yield"
-            ecep:spe="yield"
-            ecep:syllab="1"
-            ecep:pron="jiːld">yield</w>
-         <pc xml:id="pba35-282740"
-             n="a-0280"
-             unit="sentence"
-             ecep:lem="."
-             ecep:pos="."
-             ecep:reg="."
-             ecep:spe=".">.</pc>
-         <c> </c>
-      </l>
-   </lg>
-   <lg xml:id="pba35-s01775">
-      <head>
-         <w xml:id="pba35-282780"
-            n="a-0290"
-            ecep:lem="iv"
-            ecep:pos="crd"
-            ecep:reg="IV"
-            ecep:spe="IV"
-            ecep:syllab="1"
-            ecep:pron="rˌəʊmənfˈɔː">IV</w>
-      </head>
-      <l n="13" xml:id="pba35-l14320">
-         <w xml:id="pba35-282800"
-            n="a-0300"
-            ecep:lem="may"
-            ecep:pos="vmb"
-            ecep:reg="May"
-            ecep:spe="May"
-            ecep:syllab="1"
-            ecep:pron="meɪ">May</w>
-         <c> </c>
-         <hi>
-            <w xml:id="pba35-282810"
-               n="a-0310"
-               ecep:lem="prudence"
-               ecep:pos="n1"
-               ecep:reg="Prudence"
-               ecep:spe="Prudence"
-               ecep:syllab="2"
-               ecep:pron="ˈpruːdns">Prudence</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-282820"
-            n="a-0320"
-            ecep:lem="still"
-            ecep:pos="av"
-            ecep:reg="still"
-            ecep:spe="still"
-            ecep:syllab="1"
-            ecep:pron="stɪl">still</w>
-         <c> </c>
-         <w xml:id="pba35-282830"
-            n="a-0330"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="pba35-282840"
-            n="a-0340"
-            ecep:lem="fair"
-            ecep:pos="j"
-            ecep:reg="Fair"
-            ecep:spe="Fair"
-            ecep:syllab="1"
-            ecep:pron="feə">Fair</w>
-         <c> </c>
-         <w xml:id="pba35-282850"
-            n="a-0350"
-            ecep:lem="attend"
-            ecep:pos="vvi"
-            ecep:reg="attend"
-            ecep:spe="attend"
-            ecep:syllab="2"
-            ecep:pron="əˈtend">attend</w>
-         <pc xml:id="pba35-282860"
-             n="a-0360"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="14" rendition="#h_3" xml:id="pba35-l14325">
-         <c> </c>
-         <w xml:id="pba35-282870"
-            n="a-0370"
-            ecep:lem="who"
-            ecep:pos="q-crq"
-            ecep:reg="Who"
-            ecep:spe="Who"
-            ecep:syllab="1"
-            ecep:pron="huː">Who</w>
-         <pc xml:id="pba35-282880"
-             n="a-0380"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="pba35-282890"
-            n="a-0390"
-            ecep:lem="with"
-            ecep:pos="p-acp"
-            ecep:reg="with"
-            ecep:spe="with"
-            ecep:syllab="1"
-            ecep:pron="wɪð">with</w>
-         <c> </c>
-         <w xml:id="pba35-282900"
-            n="a-0400"
-            ecep:lem="distinguish"
-            ecep:pos="j-vvn"
-            ecep:reg="distinguished"
-            ecep:spe="distinguish'd"
-            ecep:syllab="3"
-            ecep:pron="dɪˈstɪŋgwɪʃt">distinguish'd</w>
-         <c> </c>
-         <w xml:id="pba35-282910"
-            n="a-0410"
-            ecep:lem="taste"
-            ecep:pos="n1"
-            ecep:reg="Taste"
-            ecep:spe="Taste"
-            ecep:syllab="1"
-            ecep:pron="teɪst">Taste</w>
-         <pc xml:id="pba35-282920"
-             n="a-0420"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="15" xml:id="pba35-l14330">
-         <c> </c>
-         <w xml:id="pba35-282930"
-            n="a-0430"
-            ecep:lem="in"
-            ecep:pos="p-acp"
-            ecep:reg="In"
-            ecep:spe="In"
-            ecep:syllab="1"
-            ecep:pron="ɪn">In</w>
-         <c> </c>
-         <hi rendition="#sc">
-            <w xml:id="pba35-282940"
-               n="a-0440"
-               ecep:lem="CÆsar"
-               ecep:pos="np1"
-               ecep:reg="CÆsar"
-               ecep:spe="CÆsar"
-               ecep:syllab="2"
-               ecep:pron="kˈæsɑː">CÆsar</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-282950"
-            n="a-0450"
-            ecep:lem="early"
-            ecep:pos="av-j"
-            ecep:reg="early"
-            ecep:spe="early"
-            ecep:syllab="2"
-            ecep:pron="ˈɜːli">early</w>
-         <c> </c>
-         <w xml:id="pba35-282960"
-            n="a-0460"
-            ecep:lem="choose"
-            ecep:pos="vvd"
-            ecep:reg="chose"
-            ecep:spe="chose"
-            ecep:syllab="1"
-            ecep:pron="tʃəʊz">chose</w>
-         <c> </c>
-         <w xml:id="pba35-282970"
-            n="a-0470"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="a"
-            ecep:spe="a"
-            ecep:syllab="1"
-            ecep:pron="ə">a</w>
-         <c> </c>
-         <w xml:id="pba35-282980"
-            n="a-0480"
-            ecep:lem="friend"
-            ecep:pos="n1"
-            ecep:reg="Friend"
-            ecep:spe="Friend"
-            ecep:syllab="1"
-            ecep:pron="frend">Friend</w>
-         <pc xml:id="pba35-282990"
-             n="a-0490"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="16" rendition="#h_3" xml:id="pba35-l14335">
-         <c> </c>
-         <w xml:id="pba35-283000"
-            n="a-0500"
-            ecep:lem="with"
-            ecep:pos="p-acp"
-            ecep:reg="With"
-            ecep:spe="With"
-            ecep:syllab="1"
-            ecep:pron="wɪð">With</w>
-         <c> </c>
-         <w xml:id="pba35-283010"
-            n="a-0510"
-            ecep:lem="every"
-            ecep:pos="d"
-            ecep:reg="every"
-            ecep:spe="ev'ry"
-            ecep:syllab="2"
-            ecep:pron="ˈevri">ev'ry</w>
-         <c> </c>
-         <w xml:id="pba35-283020"
-            n="a-0520"
-            ecep:lem="virtue"
-            ecep:pos="n1"
-            ecep:reg="Virtue"
-            ecep:spe="Virtue"
-            ecep:syllab="2"
-            ecep:pron="ˈvɜːtʃuː">Virtue</w>
-         <c> </c>
-         <w xml:id="pba35-283030"
-            n="a-0530"
-            ecep:lem="grace"
-            ecep:pos="vvd"
-            ecep:reg="graced"
-            ecep:spe="grac'd"
-            ecep:syllab="1"
-            ecep:pron="greɪst">grac'd</w>
-         <pc xml:id="pba35-283040"
-             n="a-0540"
-             ecep:lem=":"
-             ecep:pos=":"
-             ecep:reg=":"
-             ecep:spe=":">:</pc>
-      </l>
-   </lg>
-   <lg xml:id="pba35-s01780">
-      <head>
-         <w xml:id="pba35-283080"
-            n="a-0550"
-            ecep:lem="v"
-            ecep:pos="crd"
-            ecep:reg="V"
-            ecep:spe="V"
-            ecep:syllab="1"
-            ecep:pron="viː">V</w>
-      </head>
-      <l n="17" xml:id="pba35-l14340">
-         <w xml:id="pba35-283100"
-            n="a-0560"
-            ecep:lem="who"
-            ecep:pos="r-crq"
-            ecep:reg="Who"
-            ecep:spe="Who"
-            ecep:syllab="1"
-            ecep:pron="huː">Who</w>
-         <c> </c>
-         <w xml:id="pba35-283110"
-            n="a-0570"
-            ecep:lem="back"
-            ecep:pos="n1"
-            ecep:reg="back"
-            ecep:spe="back"
-            ecep:syllab="1"
-            ecep:pron="bæk">back</w>
-         <c> </c>
-         <w xml:id="pba35-283120"
-            n="a-0580"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="a"
-            ecep:spe="a"
-            ecep:syllab="1"
-            ecep:pron="ə">a</w>
-         <c> </c>
-         <w xml:id="pba35-283130"
-            n="a-0590"
-            ecep:lem="thousand"
-            ecep:pos="crd"
-            ecep:reg="thousand"
-            ecep:spe="thousand"
-            ecep:syllab="2"
-            ecep:pron="ˈθaʊznd">thousand</w>
-         <c> </c>
-         <w xml:id="pba35-283140"
-            n="a-0600"
-            ecep:lem="year"
-            ecep:pos="n2"
-            ecep:reg="Years"
-            ecep:spe="Years"
-            ecep:syllab="1"
-            ecep:pron="jɪəz">Years</w>
-         <c> </c>
-         <w xml:id="pba35-283150"
-            n="a-0610"
-            ecep:lem="may"
-            ecep:pos="vmb"
-            ecep:reg="may"
-            ecep:spe="may"
-            ecep:syllab="1"
-            ecep:pron="meɪ">may</w>
-         <c> </c>
-         <w xml:id="pba35-283160"
-            n="a-0620"
-            ecep:lem="trace"
-            ecep:pos="vvi"
-            ecep:reg="trace"
-            ecep:spe="trace"
-            ecep:syllab="1"
-            ecep:pron="treɪs">trace</w>
-         <pc xml:id="pba35-283170"
-             n="a-0630"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="18" rendition="#h_3" xml:id="pba35-l14345">
-         <c> </c>
-         <w xml:id="pba35-283180"
-            n="a-0640"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="And"
-            ecep:spe="And"
-            ecep:syllab="1"
-            ecep:pron="ænd">And</w>
-         <c> </c>
-         <w xml:id="pba35-283190"
-            n="a-0650"
-            ecep:lem="her"
-            ecep:pos="po31"
-            ecep:reg="her"
-            ecep:spe="her"
-            ecep:syllab="1"
-            ecep:pron="hɜː">her</w>
-         <c> </c>
-         <w xml:id="pba35-283200"
-            n="a-0660"
-            ecep:lem="descent"
-            ecep:pos="n1"
-            ecep:reg="Descent"
-            ecep:spe="Descent"
-            ecep:syllab="2"
-            ecep:pron="dɪˈsent">Descent</w>
-         <c> </c>
-         <w xml:id="pba35-283210"
-            n="a-0670"
-            ecep:lem="maintain"
-            ecep:pos="vvi"
-            ecep:reg="maintain"
-            ecep:spe="maintain"
-            ecep:syllab="2"
-            ecep:pron="meɪnˈteɪn">maintain</w>
-         <pc xml:id="pba35-283220"
-             n="a-0680"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="19" xml:id="pba35-l14350">
-         <c> </c>
-         <w xml:id="pba35-283230"
-            n="a-0690"
-            ecep:lem="from"
-            ecep:pos="p-acp"
-            ecep:reg="From"
-            ecep:spe="From"
-            ecep:syllab="1"
-            ecep:pron="frɒm">From</w>
-         <note n="*" place="bottom" xml:id="pba35-n00185">
-            <w xml:id="pba35-283290"
-               n="a-0700"
-               ecep:lem="sir"
-               ecep:pos="n1"
-               ecep:reg="Sir"
-               ecep:spe="Sir"
-               ecep:syllab="1"
-               ecep:pron="sɜː">Sir</w>
-            <c> </c>
-            <w xml:id="pba35-283300"
-               n="a-0710"
-               ecep:lem="Julius"
-               ecep:pos="np1"
-               ecep:reg="Julius"
-               ecep:spe="Julius"
-               ecep:syllab="2"
-               ecep:pron="ˈdʒuːliəs">Julius</w>
-            <c> </c>
-            <w xml:id="pba35-283310"
-               n="a-0720"
-               ecep:lem="ademar"
-               ecep:pos="np1"
-               ecep:reg="Ademar"
-               ecep:spe="Ademar"
-               ecep:syllab="3"
-               ecep:pron="ʌdˈemə">Ademar</w>
-            <pc xml:id="pba35-283320"
-                n="a-0730"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-            <c> </c>
-            <w xml:id="pba35-283330"
-               n="a-0740"
-               ecep:lem="descend"
-               ecep:pos="vvn"
-               ecep:reg="descended"
-               ecep:spe="descended"
-               ecep:syllab="3"
-               ecep:pron="dɪˈsendɪd">descended</w>
-            <c> </c>
-            <w xml:id="pba35-283340"
-               n="a-0750"
-               ecep:lem="from"
-               ecep:pos="p-acp"
-               ecep:reg="from"
-               ecep:spe="from"
-               ecep:syllab="1"
-               ecep:pron="frɒm">from</w>
-            <c> </c>
-            <w xml:id="pba35-283350"
-               n="a-0760"
-               ecep:lem="baron"
-               ecep:pos="n1"
-               ecep:reg="Baron"
-               ecep:spe="Baron"
-               ecep:syllab="2"
-               ecep:pron="ˈbærn">Baron</w>
-            <c> </c>
-            <w xml:id="pba35-283360"
-               n="a-0770"
-               ecep:lem="ademar"
-               ecep:pos="np1"
-               ecep:reg="Ademar"
-               ecep:spe="Ademar"
-               ecep:syllab="3"
-               ecep:pron="ʌdˈemə">Ademar</w>
-            <pc xml:id="pba35-283370"
-                n="a-0780"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-            <c> </c>
-            <w xml:id="pba35-283380"
-               n="a-0790"
-               ecep:lem="who"
-               ecep:pos="r-crq"
-               ecep:reg="who"
-               ecep:spe="who"
-               ecep:syllab="1"
-               ecep:pron="huː">who</w>
-            <c> </c>
-            <w xml:id="pba35-283390"
-               n="a-0800"
-               ecep:lem="be"
-               ecep:pos="vbds"
-               ecep:reg="was"
-               ecep:spe="was"
-               ecep:syllab="1"
-               ecep:pron="wɒz">was</w>
-            <c> </c>
-            <w xml:id="pba35-283400"
-               n="a-0810"
-               ecep:lem="count"
-               ecep:pos="n1"
-               ecep:reg="Count"
-               ecep:spe="Count"
-               ecep:syllab="1"
-               ecep:pron="kaʊnt">Count</w>
-            <c> </c>
-            <w xml:id="pba35-283410"
-               n="a-0820"
-               ecep:lem="of"
-               ecep:pos="pp-f"
-               ecep:reg="of"
-               ecep:spe="of"
-               ecep:syllab="1"
-               ecep:pron="ɒv">of</w>
-            <c> </c>
-            <w xml:id="pba35-283420"
-               n="a-0830"
-               ecep:lem="Genoa"
-               ecep:pos="np1"
-               ecep:reg="Genoa"
-               ecep:spe="Genoa"
-               ecep:syllab="3"
-               ecep:pron="ˈdʒenəʊə">Genoa</w>
-            <c> </c>
-            <w xml:id="pba35-283430"
-               n="a-0840"
-               ecep:lem="in"
-               ecep:pos="p-acp"
-               ecep:reg="in"
-               ecep:spe="in"
-               ecep:syllab="1"
-               ecep:pron="ɪn">in</w>
-            <c> </c>
-            <w xml:id="pba35-283440"
-               n="a-0850"
-               ecep:lem="the"
-               ecep:pos="dt"
-               ecep:reg="the"
-               ecep:spe="the"
-               ecep:syllab="1"
-               ecep:pron="ðiː">the</w>
-            <c> </c>
-            <w xml:id="pba35-283450"
-               n="a-0860"
-               ecep:lem="reign"
-               ecep:pos="n1"
-               ecep:reg="Reign"
-               ecep:spe="Reign"
-               ecep:syllab="1"
-               ecep:pron="reɪn">Reign</w>
-            <c> </c>
-            <w xml:id="pba35-283460"
-               n="a-0870"
-               ecep:lem="of"
-               ecep:pos="pp-f"
-               ecep:reg="of"
-               ecep:spe="of"
-               ecep:syllab="1"
-               ecep:pron="ɒv">of</w>
-            <c> </c>
-            <w xml:id="pba35-283470"
-               n="a-0880"
-               ecep:lem="charlemain"
-               ecep:pos="np1"
-               ecep:reg="Charlemain"
-               ecep:spe="Charlemain"
-               ecep:syllab="3"
-               ecep:pron="tʃˈɑːlɪmˌeɪn">Charlemain</w>
-            <pc xml:id="pba35-283480"
-                n="a-0890"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-            <c> </c>
-            <w xml:id="pba35-283490"
-               n="a-0900"
-               ecep:lem="add"
-               ecep:pos="vvd"
-               ecep:reg="added"
-               ecep:spe="added"
-               ecep:syllab="2"
-               ecep:pron="ædɪd">added</w>
-            <c> </c>
-            <w xml:id="pba35-283500"
-               n="a-0910"
-               ecep:lem="the"
-               ecep:pos="dt"
-               ecep:reg="the"
-               ecep:spe="the"
-               ecep:syllab="1"
-               ecep:pron="ðiː">the</w>
-            <c> </c>
-            <w xml:id="pba35-283510"
-               n="a-0920"
-               ecep:lem="name"
-               ecep:pos="n1"
-               ecep:reg="Name"
-               ecep:spe="Name"
-               ecep:syllab="1"
-               ecep:pron="neɪm">Name</w>
-            <c> </c>
-            <w xml:id="pba35-283520"
-               n="a-0930"
-               ecep:lem="of"
-               ecep:pos="pp-f"
-               ecep:reg="of"
-               ecep:spe="of"
-               ecep:syllab="1"
-               ecep:pron="ɒv">of</w>
-            <c> </c>
-            <w xml:id="pba35-283530"
-               n="a-0940"
-               ecep:lem="CÆsar"
-               ecep:pos="np1"
-               ecep:reg="CÆsar"
-               ecep:spe="CÆsar"
-               ecep:syllab="2"
-               ecep:pron="kˈæsɑː">CÆsar</w>
-            <c> </c>
-            <w xml:id="pba35-283540"
-               n="a-0950"
-               ecep:lem="to"
-               ecep:pos="p-acp"
-               ecep:reg="to"
-               ecep:spe="to"
-               ecep:syllab="1"
-               ecep:pron="tuː">to</w>
-            <c> </c>
-            <w xml:id="pba35-283550"
-               n="a-0960"
-               ecep:lem="his"
-               ecep:pos="po31"
-               ecep:reg="his"
-               ecep:spe="his"
-               ecep:syllab="1"
-               ecep:pron="hɪz">his</w>
-            <c> </c>
-            <w xml:id="pba35-283560"
-               n="a-0970"
-               ecep:lem="own"
-               ecep:pos="d"
-               ecep:reg="own"
-               ecep:spe="own"
-               ecep:syllab="1"
-               ecep:pron="əʊn">own</w>
-            <pc xml:id="pba35-283570"
-                n="a-0980"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-            <c> </c>
-            <w xml:id="pba35-283580"
-               n="a-0990"
-               ecep:lem="by"
-               ecep:pos="p-acp"
-               ecep:reg="by"
-               ecep:spe="by"
-               ecep:syllab="1"
-               ecep:pron="baɪ">by</w>
-            <c> </c>
-            <w xml:id="pba35-283590"
-               n="a-1000"
-               ecep:lem="the"
-               ecep:pos="dt"
-               ecep:reg="the"
-               ecep:spe="the"
-               ecep:syllab="1"
-               ecep:pron="ðiː">the</w>
-            <c> </c>
-            <w xml:id="pba35-283600"
-               n="a-1010"
-               ecep:lem="command"
-               ecep:pos="n1"
-               ecep:reg="Command"
-               ecep:spe="Command"
-               ecep:syllab="2"
-               ecep:pron="kəˈmɑːnd">Command</w>
-            <c> </c>
-            <w xml:id="pba35-283610"
-               n="a-1020"
-               ecep:lem="of"
-               ecep:pos="pp-f"
-               ecep:reg="of"
-               ecep:spe="of"
-               ecep:syllab="1"
-               ecep:pron="ɒv">of</w>
-            <c> </c>
-            <w xml:id="pba35-283620"
-               n="a-1030"
-               ecep:lem="queen"
-               ecep:pos="n1"
-               ecep:reg="Queen"
-               ecep:spe="Queen"
-               ecep:syllab="1"
-               ecep:pron="kwiːn">Queen</w>
-            <c> </c>
-            <w xml:id="pba35-283630"
-               n="a-1040"
-               ecep:lem="Elizabeth"
-               ecep:pos="np1"
-               ecep:reg="Elizabeth"
-               ecep:spe="Elizabeth"
-               ecep:syllab="4"
-               ecep:pron="ɪˈlɪzəbəθ">Elizabeth</w>
-            <pc xml:id="pba35-283640"
-                n="a-1050"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-            <c> </c>
-            <w xml:id="pba35-283650"
-               n="a-1060"
-               ecep:lem="he"
-               ecep:pos="pns31"
-               ecep:reg="he"
-               ecep:spe="he"
-               ecep:syllab="1"
-               ecep:pron="hiː">he</w>
-            <c> </c>
-            <w xml:id="pba35-283660"
-               n="a-1070"
-               ecep:lem="be"
-               ecep:pos="vbg"
-               ecep:reg="being"
-               ecep:spe="being"
-               ecep:syllab="2"
-               ecep:pron="ˈbiːɪŋ">being</w>
-            <c> </c>
-            <w xml:id="pba35-283670"
-               n="a-1080"
-               ecep:lem="grandson"
-               ecep:pos="n1"
-               ecep:reg="Grandson"
-               ecep:spe="Grandson"
-               ecep:syllab="2"
-               ecep:pron="ˈgrænsʌn">Grandson</w>
-            <c> </c>
-            <w xml:id="pba35-283680"
-               n="a-1090"
-               ecep:lem="by"
-               ecep:pos="p-acp"
-               ecep:reg="by"
-               ecep:spe="by"
-               ecep:syllab="1"
-               ecep:pron="baɪ">by</w>
-            <c> </c>
-            <w xml:id="pba35-283690"
-               n="a-1100"
-               ecep:lem="the"
-               ecep:pos="dt"
-               ecep:reg="the"
-               ecep:spe="the"
-               ecep:syllab="1"
-               ecep:pron="ðiː">the</w>
-            <c> </c>
-            <w xml:id="pba35-283700"
-               n="a-1110"
-               ecep:lem="female"
-               ecep:pos="j-jn"
-               ecep:reg="Female"
-               ecep:spe="Female"
-               ecep:syllab="2"
-               ecep:pron="ˈfiːmeɪl">Female</w>
-            <c> </c>
-            <w xml:id="pba35-283710"
-               n="a-1120"
-               ecep:lem="line"
-               ecep:pos="n1"
-               ecep:reg="Line"
-               ecep:spe="Line"
-               ecep:syllab="1"
-               ecep:pron="laɪn">Line</w>
-            <c> </c>
-            <w xml:id="pba35-283720"
-               n="a-1130"
-               ecep:lem="to"
-               ecep:pos="p-acp"
-               ecep:reg="to"
-               ecep:spe="to"
-               ecep:syllab="1"
-               ecep:pron="tuː">to</w>
-            <c> </c>
-            <w xml:id="pba35-283730"
-               n="a-1140"
-               ecep:lem="the"
-               ecep:pos="dt"
-               ecep:reg="the"
-               ecep:spe="the"
-               ecep:syllab="1"
-               ecep:pron="ðiː">the</w>
-            <c> </c>
-            <w xml:id="pba35-283740"
-               n="a-1150"
-               ecep:lem="duke"
-               ecep:pos="n1"
-               ecep:reg="Duke"
-               ecep:spe="Duke"
-               ecep:syllab="1"
-               ecep:pron="dʒuːk">Duke</w>
-            <c> </c>
-            <w xml:id="pba35-283750"
-               n="a-1160"
-               ecep:lem="de"
-               ecep:pos="fw-fr"
-               ecep:reg="Dae"
-               ecep:spe="De"
-               ecep:syllab="1"
-               ecep:pron="də">De</w>
-            <c> </c>
-            <w xml:id="pba35-283760"
-               n="a-1170"
-               ecep:lem="CÆsarini"
-               ecep:pos="np1"
-               ecep:reg="CÆsarini"
-               ecep:spe="CÆsarini"
-               ecep:syllab="3"
-               ecep:pron="kˌæsɑːrˈiːnɪ">CÆsarini</w>
-            <pc xml:id="pba35-283770"
-                n="a-1180"
-                unit="sentence"
-                ecep:lem="."
-                ecep:pos="."
-                ecep:reg="."
-                ecep:spe=".">.</pc>
-         </note>
-         <c> </c>
-         <hi rendition="#sc">
-            <w xml:id="pba35-283240"
-               n="a-1190"
-               ecep:lem="ademar"
-               ecep:pos="npg1"
-               ecep:reg="Ademar's"
-               ecep:spe="Ademar's"
-               ecep:syllab="3"
-               ecep:pron="ʌdˈeməz">Ademar's</w>
-         </hi>
-         <c> </c>
-         <w xml:id="pba35-283250"
-            n="a-1200"
-            ecep:lem="illustrious"
-            ecep:pos="j"
-            ecep:reg="illustrious"
-            ecep:spe="illustrious"
-            ecep:syllab="4"
-            ecep:pron="ɪˈlʌstriəs">illustrious</w>
-         <c> </c>
-         <w xml:id="pba35-283260"
-            n="a-1210"
-            ecep:lem="race"
-            ecep:pos="n1"
-            ecep:reg="Race"
-            ecep:spe="Race"
-            ecep:syllab="1"
-            ecep:pron="reɪs">Race</w>
-         <pc xml:id="pba35-283270"
-             n="a-1220"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l n="20" rendition="#h_3" xml:id="pba35-l14355">
-         <c> </c>
-         <w xml:id="pba35-283780"
-            n="a-1230"
-            ecep:lem="ally"
-            ecep:pos="vvn"
-            ecep:reg="Allied"
-            ecep:spe="Ally'd"
-            ecep:syllab="2"
-            ecep:pron="əˈlaɪd">Ally'd</w>
-         <c> </c>
-         <w xml:id="pba35-283790"
-            n="a-1240"
-            ecep:lem="to"
-            ecep:pos="p-acp"
-            ecep:reg="to"
-            ecep:spe="to"
-            ecep:syllab="1"
-            ecep:pron="tuː">to</w>
-         <c> </c>
-         <hi rendition="#sc">
-            <w xml:id="pba35-283800"
-               n="a-1250"
-               ecep:lem="charlemain"
-               ecep:pos="np1"
-               ecep:reg="Charlemain"
-               ecep:spe="Charlemain"
-               ecep:syllab="3"
-               ecep:pron="tʃˈɑːlɪmˌeɪn">Charlemain</w>
-            <pc xml:id="pba35-283810"
-                n="a-1260"
-                unit="sentence"
-                ecep:lem="."
-                ecep:pos="."
-                ecep:reg="."
-                ecep:spe=".">.</pc>
-            <c> </c>
-         </hi>
-      </l>
-   </lg>
-</div>
+               <pc xml:id="pba35-281780"
+                   n="a-0210"
+                   unit="sentence"
+                   ecep:lem="."
+                   ecep:pos="."
+                   ecep:reg="."
+                   ecep:spe=".">.</pc>
+            </head>
+            <lg xml:id="pba35-s01760">
+               <head>
+                  <w xml:id="pba35-281820"
+                     n="a-0220"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+               </head>
+               <l n="1" xml:id="pba35-l14260">
+                  <hi rendition="#sc">
+                     <w xml:id="pba35-281840"
+                        n="a-0230"
+                        ecep:lem="i"
+                        ecep:pos="pns11"
+                        ecep:reg="I"
+                        ecep:spe="I"
+                        ecep:syllab="1"
+                        ecep:pron="aɪ">I</w>
+                     <c> </c>
+                     <w xml:id="pba35-281850"
+                        n="a-0240"
+                        ecep:lem="read"
+                        ecep:pos="vvb"
+                        ecep:reg="read"
+                        ecep:spe="read"
+                        ecep:syllab="1"
+                        ecep:pron="riːd">read</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-281860"
+                     n="a-0250"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="in"
+                     ecep:spe="in"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">in</w>
+                  <c> </c>
+                  <w xml:id="pba35-281870"
+                     n="a-0260"
+                     ecep:lem="your"
+                     ecep:pos="po22"
+                     ecep:reg="your"
+                     ecep:spe="your"
+                     ecep:syllab="1"
+                     ecep:pron="jɔː">your</w>
+                  <c> </c>
+                  <w xml:id="pba35-281880"
+                     n="a-0270"
+                     ecep:lem="delight"
+                     ecep:pos="j-vvn"
+                     ecep:reg="delighted"
+                     ecep:spe="delighted"
+                     ecep:syllab="3"
+                     ecep:pron="dɪˈlaɪtɪd">delighted</w>
+                  <c> </c>
+                  <w xml:id="pba35-281890"
+                     n="a-0280"
+                     ecep:lem="face"
+                     ecep:pos="n1"
+                     ecep:reg="Face"
+                     ecep:spe="Face"
+                     ecep:syllab="1"
+                     ecep:pron="feɪs">Face</w>
+                  <pc xml:id="pba35-281900"
+                      n="a-0290"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="2" rendition="#h_3" xml:id="pba35-l14265">
+                  <c> </c>
+                  <w xml:id="pba35-281910"
+                     n="a-0300"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="The"
+                     ecep:spe="The"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">The</w>
+                  <c> </c>
+                  <w xml:id="pba35-281920"
+                     n="a-0310"
+                     ecep:lem="nuptial"
+                     ecep:pos="j-jn"
+                     ecep:reg="Nuptial"
+                     ecep:spe="Nuptial"
+                     ecep:syllab="2"
+                     ecep:pron="ˈnʌpʃl">Nuptial</w>
+                  <c> </c>
+                  <w xml:id="pba35-281930"
+                     n="a-0320"
+                     ecep:lem="band"
+                     ecep:pos="n2"
+                     ecep:reg="Bands"
+                     ecep:spe="Bands"
+                     ecep:syllab="1"
+                     ecep:pron="bændz">Bands</w>
+                  <c> </c>
+                  <w xml:id="pba35-281940"
+                     n="a-0330"
+                     ecep:lem="be"
+                     ecep:pos="vbr"
+                     ecep:reg="are"
+                     ecep:spe="are"
+                     ecep:syllab="1"
+                     ecep:pron="ɑː">are</w>
+                  <c> </c>
+                  <w xml:id="pba35-281950"
+                     n="a-0340"
+                     ecep:lem="tie"
+                     ecep:pos="vvn"
+                     ecep:reg="tied"
+                     ecep:spe="ty'd"
+                     ecep:syllab="1"
+                     ecep:pron="taɪd">ty'd</w>
+                  <pc xml:id="pba35-281960"
+                      n="a-0350"
+                      ecep:lem=":"
+                      ecep:pos=":"
+                      ecep:reg=":"
+                      ecep:spe=":">:</pc>
+               </l>
+               <l n="3" xml:id="pba35-l14270">
+                  <c> </c>
+                  <w xml:id="pba35-281970"
+                     n="a-0360"
+                     ecep:lem="from"
+                     ecep:pos="p-acp"
+                     ecep:reg="From"
+                     ecep:spe="From"
+                     ecep:syllab="1"
+                     ecep:pron="frɒm">From</w>
+                  <c> </c>
+                  <w xml:id="pba35-281980"
+                     n="a-0370"
+                     ecep:lem="i"
+                     ecep:pos="pno11"
+                     ecep:reg="me"
+                     ecep:spe="me"
+                     ecep:syllab="1"
+                     ecep:pron="miː">me</w>
+                  <c> </c>
+                  <w xml:id="pba35-281990"
+                     n="a-0380"
+                     ecep:lem="congratulate"
+                     ecep:pos="vvi"
+                     ecep:reg="congratulate"
+                     ecep:spe="congratulate"
+                     ecep:syllab="4"
+                     ecep:pron="kənˈgrætʃəleɪt">congratulate</w>
+                  <c> </c>
+                  <w xml:id="pba35-282000"
+                     n="a-0390"
+                     ecep:lem="her"
+                     ecep:pos="po31"
+                     ecep:reg="her"
+                     ecep:spe="her"
+                     ecep:syllab="1"
+                     ecep:pron="hɜː">her</w>
+                  <c> </c>
+                  <w xml:id="pba35-282010"
+                     n="a-0400"
+                     ecep:lem="grace"
+                     ecep:pos="n1"
+                     ecep:reg="Grace"
+                     ecep:spe="Grace"
+                     ecep:syllab="1"
+                     ecep:pron="greɪs">Grace</w>
+                  <pc xml:id="pba35-282020"
+                      n="a-0410"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="4" rendition="#h_3" xml:id="pba35-l14275">
+                  <c> </c>
+                  <w xml:id="pba35-282030"
+                     n="a-0420"
+                     ecep:lem="young"
+                     ecep:pos="j"
+                     ecep:reg="Young"
+                     ecep:spe="Young"
+                     ecep:syllab="1"
+                     ecep:pron="jʌŋ">Young</w>
+                  <c> </c>
+                  <hi rendition="#sc">
+                     <w xml:id="pba35-282040"
+                        n="a-0430"
+                        ecep:lem="portland"
+                        ecep:pos="npg1"
+                        ecep:reg="Portland's"
+                        ecep:spe="Portland's"
+                        ecep:syllab="2"
+                        ecep:pron="ˈpɔːtləndz">Portland's</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-282050"
+                     n="a-0440"
+                     ecep:lem="lovely"
+                     ecep:pos="j"
+                     ecep:reg="lovely"
+                     ecep:spe="lovely"
+                     ecep:syllab="2"
+                     ecep:pron="ˈlʌvli">lovely</w>
+                  <c> </c>
+                  <w xml:id="pba35-282060"
+                     n="a-0450"
+                     ecep:lem="bride"
+                     ecep:pos="n1"
+                     ecep:reg="Bride"
+                     ecep:spe="Bride"
+                     ecep:syllab="1"
+                     ecep:pron="braɪd">Bride</w>
+                  <pc xml:id="pba35-282070"
+                      n="a-0460"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+                  <c> </c>
+               </l>
+            </lg>
+            <lg xml:id="pba35-s01765">
+               <head>
+                  <w xml:id="pba35-282110"
+                     n="a-0470"
+                     ecep:lem="ii"
+                     ecep:pos="crd"
+                     ecep:reg="II"
+                     ecep:spe="II"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊməntˈuː">II</w>
+               </head>
+               <l n="5" xml:id="pba35-l14280">
+                  <w xml:id="pba35-282130"
+                     n="a-0480"
+                     ecep:lem="tell"
+                     ecep:pos="vvb"
+                     ecep:reg="Tell"
+                     ecep:spe="Tell"
+                     ecep:syllab="1"
+                     ecep:pron="tel">Tell</w>
+                  <c> </c>
+                  <w xml:id="pba35-282140"
+                     n="a-0490"
+                     ecep:lem="she"
+                     ecep:pos="pno31"
+                     ecep:reg="her"
+                     ecep:spe="her"
+                     ecep:syllab="1"
+                     ecep:pron="hɜː">her</w>
+                  <pc xml:id="pba35-282150"
+                      n="a-0500"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="pba35-282160"
+                     n="a-0510"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="an"
+                     ecep:spe="an"
+                     ecep:syllab="1"
+                     ecep:pron="æn">an</w>
+                  <c> </c>
+                  <w xml:id="pba35-282170"
+                     n="a-0520"
+                     ecep:lem="humble"
+                     ecep:pos="j"
+                     ecep:reg="humble"
+                     ecep:spe="humble"
+                     ecep:syllab="2"
+                     ecep:pron="ˈhʌmbl">humble</w>
+                  <pc xml:id="pba35-282180"
+                      n="a-0530"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="pba35-282190"
+                     n="a-0540"
+                     ecep:lem="artless"
+                     ecep:pos="j"
+                     ecep:reg="artless"
+                     ecep:spe="artless"
+                     ecep:syllab="2"
+                     ecep:pron="ˈɑːtləs">artless</w>
+                  <c> </c>
+                  <w xml:id="pba35-282200"
+                     n="a-0550"
+                     ecep:lem="Muse"
+                     ecep:pos="np1"
+                     ecep:reg="Muse"
+                     ecep:spe="Muse"
+                     ecep:syllab="1"
+                     ecep:pron="mjuːz">Muse</w>
+               </l>
+               <l n="6" rendition="#h_3" xml:id="pba35-l14285">
+                  <c> </c>
+                  <w xml:id="pba35-282210"
+                     n="a-0560"
+                     ecep:lem="will"
+                     ecep:pos="vmd"
+                     ecep:reg="Would"
+                     ecep:spe="Would"
+                     ecep:syllab="1"
+                     ecep:pron="wʊd">Would</w>
+                  <c> </c>
+                  <w xml:id="pba35-282220"
+                     n="a-0570"
+                     ecep:lem="hail"
+                     ecep:pos="vvi"
+                     ecep:reg="hail"
+                     ecep:spe="hail"
+                     ecep:syllab="1"
+                     ecep:pron="heɪl">hail</w>
+                  <c> </c>
+                  <w xml:id="pba35-282230"
+                     n="a-0580"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="pba35-282240"
+                     n="a-0590"
+                     ecep:lem="happy"
+                     ecep:pos="j"
+                     ecep:reg="happy"
+                     ecep:spe="happy"
+                     ecep:syllab="2"
+                     ecep:pron="ˈhæpi">happy</w>
+                  <c> </c>
+                  <w xml:id="pba35-282250"
+                     n="a-0600"
+                     ecep:lem="pair"
+                     ecep:pos="n1"
+                     ecep:reg="Pair"
+                     ecep:spe="Pair"
+                     ecep:syllab="1"
+                     ecep:pron="peə">Pair</w>
+                  <pc xml:id="pba35-282260"
+                      n="a-0610"
+                      ecep:lem=";"
+                      ecep:pos=";"
+                      ecep:reg=";"
+                      ecep:spe=";">;</pc>
+               </l>
+               <l n="7" xml:id="pba35-l14290">
+                  <c> </c>
+                  <w xml:id="pba35-282270"
+                     n="a-0620"
+                     ecep:lem="but"
+                     ecep:pos="cc-acp"
+                     ecep:reg="But"
+                     ecep:spe="But"
+                     ecep:syllab="1"
+                     ecep:pron="bʌt">But</w>
+                  <c> </c>
+                  <w xml:id="pba35-282280"
+                     n="a-0630"
+                     ecep:lem="that"
+                     ecep:pos="d"
+                     ecep:reg="that"
+                     ecep:spe="that"
+                     ecep:syllab="1"
+                     ecep:pron="ðæt">that</w>
+                  <pc xml:id="pba35-282290"
+                      n="a-0640"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="pba35-282300"
+                     n="a-0650"
+                     ecep:lem="like"
+                     ecep:pos="av-j"
+                     ecep:reg="like"
+                     ecep:spe="like"
+                     ecep:syllab="1"
+                     ecep:pron="laɪk">like</w>
+                  <c> </c>
+                  <w xml:id="pba35-282310"
+                     n="a-0660"
+                     ecep:lem="flower"
+                     ecep:pos="n2"
+                     ecep:reg="Flowers"
+                     ecep:spe="Flow'rs"
+                     ecep:syllab="1"
+                     ecep:pron="flæəz">Flow'rs</w>
+                  <c> </c>
+                  <w xml:id="pba35-282320"
+                     n="a-0670"
+                     ecep:lem="by"
+                     ecep:pos="p-acp"
+                     ecep:reg="by"
+                     ecep:spe="by"
+                     ecep:syllab="1"
+                     ecep:pron="baɪ">by</w>
+                  <c> </c>
+                  <w xml:id="pba35-282330"
+                     n="a-0680"
+                     ecep:lem="deadly"
+                     ecep:pos="j"
+                     ecep:reg="deadly"
+                     ecep:spe="deadly"
+                     ecep:syllab="2"
+                     ecep:pron="ˈdedli">deadly</w>
+                  <c> </c>
+                  <w xml:id="pba35-282340"
+                     n="a-0690"
+                     ecep:lem="dew"
+                     ecep:pos="n2"
+                     ecep:reg="Dews"
+                     ecep:spe="Dews"
+                     ecep:syllab="1"
+                     ecep:pron="dʒuːz">Dews</w>
+                  <pc xml:id="pba35-282350"
+                      n="a-0700"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="8" rendition="#h_3" xml:id="pba35-l14295">
+                  <c> </c>
+                  <w xml:id="pba35-282360"
+                     n="a-0710"
+                     ecep:lem="her"
+                     ecep:pos="po31"
+                     ecep:reg="Her"
+                     ecep:spe="Her"
+                     ecep:syllab="1"
+                     ecep:pron="hɜː">Her</w>
+                  <c> </c>
+                  <w xml:id="pba35-282370"
+                     n="a-0720"
+                     ecep:lem="strain"
+                     ecep:pos="n2"
+                     ecep:reg="Strains"
+                     ecep:spe="Strains"
+                     ecep:syllab="1"
+                     ecep:pron="streɪnz">Strains</w>
+                  <c> </c>
+                  <w xml:id="pba35-282380"
+                     n="a-0730"
+                     ecep:lem="be"
+                     ecep:pos="vbr"
+                     ecep:reg="are"
+                     ecep:spe="are"
+                     ecep:syllab="1"
+                     ecep:pron="ɑː">are</w>
+                  <c> </c>
+                  <w xml:id="pba35-282390"
+                     n="a-0740"
+                     ecep:lem="damp"
+                     ecep:pos="vvn"
+                     ecep:reg="damped"
+                     ecep:spe="damp'd"
+                     ecep:syllab="1"
+                     ecep:pron="dæmpt">damp'd</w>
+                  <c> </c>
+                  <w xml:id="pba35-282400"
+                     n="a-0750"
+                     ecep:lem="by"
+                     ecep:pos="p-acp"
+                     ecep:reg="by"
+                     ecep:spe="by"
+                     ecep:syllab="1"
+                     ecep:pron="baɪ">by</w>
+                  <c> </c>
+                  <w xml:id="pba35-282410"
+                     n="a-0760"
+                     ecep:lem="care"
+                     ecep:pos="n1"
+                     ecep:reg="Care"
+                     ecep:spe="Care"
+                     ecep:syllab="1"
+                     ecep:pron="keə">Care</w>
+                  <pc xml:id="pba35-282420"
+                      n="a-0770"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+                  <c> </c>
+               </l>
+               <pb facs="pba35/0291" n="237" rend="none"/>
+            </lg>
+            <lg xml:id="pba35-s01770">
+               <head>
+                  <w xml:id="pba35-282460"
+                     n="a-0010"
+                     ecep:lem="iii"
+                     ecep:pos="crd"
+                     ecep:reg="III"
+                     ecep:spe="III"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊmənθrˈiː">III</w>
+               </head>
+               <l n="9" xml:id="pba35-l14300">
+                  <w xml:id="pba35-282480"
+                     n="a-0020"
+                     ecep:lem="those"
+                     ecep:pos="d"
+                     ecep:reg="Those"
+                     ecep:spe="Those"
+                     ecep:syllab="1"
+                     ecep:pron="ðəʊz">Those</w>
+                  <c> </c>
+                  <w xml:id="pba35-282490"
+                     n="a-0030"
+                     ecep:lem="who"
+                     ecep:pos="r-crq"
+                     ecep:reg="whom"
+                     ecep:spe="whom"
+                     ecep:syllab="1"
+                     ecep:pron="huːm">whom</w>
+                  <c> </c>
+                  <w xml:id="pba35-282500"
+                     n="a-0040"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="pba35-282510"
+                     n="a-0050"
+                     ecep:lem="tuneful"
+                     ecep:pos="j"
+                     ecep:reg="tuneful"
+                     ecep:spe="tuneful"
+                     ecep:syllab="2"
+                     ecep:pron="ˈtʃuːnfl">tuneful</w>
+                  <c> </c>
+                  <hi>
+                     <w xml:id="pba35-282520"
+                        n="a-0060"
+                        ecep:lem="nine"
+                        ecep:pos="crd"
+                        ecep:reg="Nine"
+                        ecep:spe="Nine"
+                        ecep:syllab="1"
+                        ecep:pron="naɪn">Nine</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-282530"
+                     n="a-0070"
+                     ecep:lem="inspire"
+                     ecep:pos="vvi"
+                     ecep:reg="inspire"
+                     ecep:spe="inspire"
+                     ecep:syllab="2"
+                     ecep:pron="ɪnˈspæə">inspire</w>
+                  <pc xml:id="pba35-282540"
+                      n="a-0080"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="10" rendition="#h_3" xml:id="pba35-l14305">
+                  <c> </c>
+                  <w xml:id="pba35-282550"
+                     n="a-0090"
+                     ecep:lem="have"
+                     ecep:pos="vhb"
+                     ecep:reg="Have"
+                     ecep:spe="Have"
+                     ecep:syllab="1"
+                     ecep:pron="hæv">Have</w>
+                  <c> </c>
+                  <w xml:id="pba35-282560"
+                     n="a-0100"
+                     ecep:lem="now"
+                     ecep:pos="av"
+                     ecep:reg="now"
+                     ecep:spe="now"
+                     ecep:syllab="1"
+                     ecep:pron="naʊ">now</w>
+                  <c> </c>
+                  <w xml:id="pba35-282570"
+                     n="a-0110"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xml:id="pba35-282580"
+                     n="a-0120"
+                     ecep:lem="spacious"
+                     ecep:pos="j"
+                     ecep:reg="spacious"
+                     ecep:spe="spacious"
+                     ecep:syllab="2"
+                     ecep:pron="ˈspeɪʃəs">spacious</w>
+                  <c> </c>
+                  <w xml:id="pba35-282590"
+                     n="a-0130"
+                     ecep:lem="field"
+                     ecep:pos="n1"
+                     ecep:reg="Field"
+                     ecep:spe="Field"
+                     ecep:syllab="1"
+                     ecep:pron="ˈfiːld">Field</w>
+                  <pc xml:id="pba35-282600"
+                      n="a-0140"
+                      ecep:lem=":"
+                      ecep:pos=":"
+                      ecep:reg=":"
+                      ecep:spe=":">:</pc>
+               </l>
+               <l n="11" xml:id="pba35-l14310">
+                  <c> </c>
+                  <w xml:id="pba35-282610"
+                     n="a-0150"
+                     ecep:lem="to"
+                     ecep:pos="p-acp"
+                     ecep:reg="To"
+                     ecep:spe="To"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">To</w>
+                  <c> </c>
+                  <w xml:id="pba35-282620"
+                     n="a-0160"
+                     ecep:lem="they"
+                     ecep:pos="pno32"
+                     ecep:reg="them"
+                     ecep:spe="them"
+                     ecep:syllab="1"
+                     ecep:pron="ðem">them</w>
+                  <c> </c>
+                  <w xml:id="pba35-282630"
+                     n="a-0170"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+                  <c> </c>
+                  <w xml:id="pba35-282640"
+                     n="a-0180"
+                     ecep:lem="must"
+                     ecep:pos="vmb"
+                     ecep:reg="must"
+                     ecep:spe="must"
+                     ecep:syllab="1"
+                     ecep:pron="mʌst">must</w>
+                  <c> </c>
+                  <w xml:id="pba35-282650"
+                     n="a-0190"
+                     ecep:lem="resign"
+                     ecep:pos="vvi"
+                     ecep:reg="resign"
+                     ecep:spe="resign"
+                     ecep:syllab="2"
+                     ecep:pron="rɪˈzaɪn">resign</w>
+                  <c> </c>
+                  <w xml:id="pba35-282660"
+                     n="a-0200"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="pba35-282670"
+                     n="a-0210"
+                     ecep:lem="lyre"
+                     ecep:pos="n1"
+                     ecep:reg="Lyre"
+                     ecep:spe="Lyre"
+                     ecep:syllab="1"
+                     ecep:pron="laɪə">Lyre</w>
+                  <pc xml:id="pba35-282680"
+                      n="a-0220"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="12" rendition="#h_3" xml:id="pba35-l14315">
+                  <c> </c>
+                  <w xml:id="pba35-282690"
+                     n="a-0230"
+                     ecep:lem="to"
+                     ecep:pos="p-acp"
+                     ecep:reg="To"
+                     ecep:spe="To"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">To</w>
+                  <c> </c>
+                  <w xml:id="pba35-282700"
+                     n="a-0240"
+                     ecep:lem="none"
+                     ecep:pos="pix"
+                     ecep:reg="none"
+                     ecep:spe="none"
+                     ecep:syllab="1"
+                     ecep:pron="nəʊn">none</w>
+                  <c> </c>
+                  <w xml:id="pba35-282710"
+                     n="a-0250"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="in"
+                     ecep:spe="in"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">in</w>
+                  <c> </c>
+                  <w xml:id="pba35-282720"
+                     n="a-0260"
+                     ecep:lem="wish"
+                     ecep:pos="n2"
+                     ecep:reg="Wishes"
+                     ecep:spe="Wishes"
+                     ecep:syllab="2"
+                     ecep:pron="wɪʃɪz">Wishes</w>
+                  <c> </c>
+                  <w xml:id="pba35-282730"
+                     n="a-0270"
+                     ecep:lem="yield"
+                     ecep:pos="vvi"
+                     ecep:reg="yield"
+                     ecep:spe="yield"
+                     ecep:syllab="1"
+                     ecep:pron="jiːld">yield</w>
+                  <pc xml:id="pba35-282740"
+                      n="a-0280"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+                  <c> </c>
+               </l>
+            </lg>
+            <lg xml:id="pba35-s01775">
+               <head>
+                  <w xml:id="pba35-282780"
+                     n="a-0290"
+                     ecep:lem="iv"
+                     ecep:pos="crd"
+                     ecep:reg="IV"
+                     ecep:spe="IV"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊmənfˈɔː">IV</w>
+               </head>
+               <l n="13" xml:id="pba35-l14320">
+                  <w xml:id="pba35-282800"
+                     n="a-0300"
+                     ecep:lem="may"
+                     ecep:pos="vmb"
+                     ecep:reg="May"
+                     ecep:spe="May"
+                     ecep:syllab="1"
+                     ecep:pron="meɪ">May</w>
+                  <c> </c>
+                  <hi>
+                     <w xml:id="pba35-282810"
+                        n="a-0310"
+                        ecep:lem="prudence"
+                        ecep:pos="n1"
+                        ecep:reg="Prudence"
+                        ecep:spe="Prudence"
+                        ecep:syllab="2"
+                        ecep:pron="ˈpruːdns">Prudence</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-282820"
+                     n="a-0320"
+                     ecep:lem="still"
+                     ecep:pos="av"
+                     ecep:reg="still"
+                     ecep:spe="still"
+                     ecep:syllab="1"
+                     ecep:pron="stɪl">still</w>
+                  <c> </c>
+                  <w xml:id="pba35-282830"
+                     n="a-0330"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="pba35-282840"
+                     n="a-0340"
+                     ecep:lem="fair"
+                     ecep:pos="j"
+                     ecep:reg="Fair"
+                     ecep:spe="Fair"
+                     ecep:syllab="1"
+                     ecep:pron="feə">Fair</w>
+                  <c> </c>
+                  <w xml:id="pba35-282850"
+                     n="a-0350"
+                     ecep:lem="attend"
+                     ecep:pos="vvi"
+                     ecep:reg="attend"
+                     ecep:spe="attend"
+                     ecep:syllab="2"
+                     ecep:pron="əˈtend">attend</w>
+                  <pc xml:id="pba35-282860"
+                      n="a-0360"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="14" rendition="#h_3" xml:id="pba35-l14325">
+                  <c> </c>
+                  <w xml:id="pba35-282870"
+                     n="a-0370"
+                     ecep:lem="who"
+                     ecep:pos="q-crq"
+                     ecep:reg="Who"
+                     ecep:spe="Who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">Who</w>
+                  <pc xml:id="pba35-282880"
+                      n="a-0380"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="pba35-282890"
+                     n="a-0390"
+                     ecep:lem="with"
+                     ecep:pos="p-acp"
+                     ecep:reg="with"
+                     ecep:spe="with"
+                     ecep:syllab="1"
+                     ecep:pron="wɪð">with</w>
+                  <c> </c>
+                  <w xml:id="pba35-282900"
+                     n="a-0400"
+                     ecep:lem="distinguish"
+                     ecep:pos="j-vvn"
+                     ecep:reg="distinguished"
+                     ecep:spe="distinguish'd"
+                     ecep:syllab="3"
+                     ecep:pron="dɪˈstɪŋgwɪʃt">distinguish'd</w>
+                  <c> </c>
+                  <w xml:id="pba35-282910"
+                     n="a-0410"
+                     ecep:lem="taste"
+                     ecep:pos="n1"
+                     ecep:reg="Taste"
+                     ecep:spe="Taste"
+                     ecep:syllab="1"
+                     ecep:pron="teɪst">Taste</w>
+                  <pc xml:id="pba35-282920"
+                      n="a-0420"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="15" xml:id="pba35-l14330">
+                  <c> </c>
+                  <w xml:id="pba35-282930"
+                     n="a-0430"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="In"
+                     ecep:spe="In"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">In</w>
+                  <c> </c>
+                  <hi rendition="#sc">
+                     <w xml:id="pba35-282940"
+                        n="a-0440"
+                        ecep:lem="CÆsar"
+                        ecep:pos="np1"
+                        ecep:reg="CÆsar"
+                        ecep:spe="CÆsar"
+                        ecep:syllab="2"
+                        ecep:pron="kˈæsɑː">CÆsar</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-282950"
+                     n="a-0450"
+                     ecep:lem="early"
+                     ecep:pos="av-j"
+                     ecep:reg="early"
+                     ecep:spe="early"
+                     ecep:syllab="2"
+                     ecep:pron="ˈɜːli">early</w>
+                  <c> </c>
+                  <w xml:id="pba35-282960"
+                     n="a-0460"
+                     ecep:lem="choose"
+                     ecep:pos="vvd"
+                     ecep:reg="chose"
+                     ecep:spe="chose"
+                     ecep:syllab="1"
+                     ecep:pron="tʃəʊz">chose</w>
+                  <c> </c>
+                  <w xml:id="pba35-282970"
+                     n="a-0470"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xml:id="pba35-282980"
+                     n="a-0480"
+                     ecep:lem="friend"
+                     ecep:pos="n1"
+                     ecep:reg="Friend"
+                     ecep:spe="Friend"
+                     ecep:syllab="1"
+                     ecep:pron="frend">Friend</w>
+                  <pc xml:id="pba35-282990"
+                      n="a-0490"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="16" rendition="#h_3" xml:id="pba35-l14335">
+                  <c> </c>
+                  <w xml:id="pba35-283000"
+                     n="a-0500"
+                     ecep:lem="with"
+                     ecep:pos="p-acp"
+                     ecep:reg="With"
+                     ecep:spe="With"
+                     ecep:syllab="1"
+                     ecep:pron="wɪð">With</w>
+                  <c> </c>
+                  <w xml:id="pba35-283010"
+                     n="a-0510"
+                     ecep:lem="every"
+                     ecep:pos="d"
+                     ecep:reg="every"
+                     ecep:spe="ev'ry"
+                     ecep:syllab="2"
+                     ecep:pron="ˈevri">ev'ry</w>
+                  <c> </c>
+                  <w xml:id="pba35-283020"
+                     n="a-0520"
+                     ecep:lem="virtue"
+                     ecep:pos="n1"
+                     ecep:reg="Virtue"
+                     ecep:spe="Virtue"
+                     ecep:syllab="2"
+                     ecep:pron="ˈvɜːtʃuː">Virtue</w>
+                  <c> </c>
+                  <w xml:id="pba35-283030"
+                     n="a-0530"
+                     ecep:lem="grace"
+                     ecep:pos="vvd"
+                     ecep:reg="graced"
+                     ecep:spe="grac'd"
+                     ecep:syllab="1"
+                     ecep:pron="greɪst">grac'd</w>
+                  <pc xml:id="pba35-283040"
+                      n="a-0540"
+                      ecep:lem=":"
+                      ecep:pos=":"
+                      ecep:reg=":"
+                      ecep:spe=":">:</pc>
+               </l>
+            </lg>
+            <lg xml:id="pba35-s01780">
+               <head>
+                  <w xml:id="pba35-283080"
+                     n="a-0550"
+                     ecep:lem="v"
+                     ecep:pos="crd"
+                     ecep:reg="V"
+                     ecep:spe="V"
+                     ecep:syllab="1"
+                     ecep:pron="viː">V</w>
+               </head>
+               <l n="17" xml:id="pba35-l14340">
+                  <w xml:id="pba35-283100"
+                     n="a-0560"
+                     ecep:lem="who"
+                     ecep:pos="r-crq"
+                     ecep:reg="Who"
+                     ecep:spe="Who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">Who</w>
+                  <c> </c>
+                  <w xml:id="pba35-283110"
+                     n="a-0570"
+                     ecep:lem="back"
+                     ecep:pos="n1"
+                     ecep:reg="back"
+                     ecep:spe="back"
+                     ecep:syllab="1"
+                     ecep:pron="bæk">back</w>
+                  <c> </c>
+                  <w xml:id="pba35-283120"
+                     n="a-0580"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xml:id="pba35-283130"
+                     n="a-0590"
+                     ecep:lem="thousand"
+                     ecep:pos="crd"
+                     ecep:reg="thousand"
+                     ecep:spe="thousand"
+                     ecep:syllab="2"
+                     ecep:pron="ˈθaʊznd">thousand</w>
+                  <c> </c>
+                  <w xml:id="pba35-283140"
+                     n="a-0600"
+                     ecep:lem="year"
+                     ecep:pos="n2"
+                     ecep:reg="Years"
+                     ecep:spe="Years"
+                     ecep:syllab="1"
+                     ecep:pron="jɪəz">Years</w>
+                  <c> </c>
+                  <w xml:id="pba35-283150"
+                     n="a-0610"
+                     ecep:lem="may"
+                     ecep:pos="vmb"
+                     ecep:reg="may"
+                     ecep:spe="may"
+                     ecep:syllab="1"
+                     ecep:pron="meɪ">may</w>
+                  <c> </c>
+                  <w xml:id="pba35-283160"
+                     n="a-0620"
+                     ecep:lem="trace"
+                     ecep:pos="vvi"
+                     ecep:reg="trace"
+                     ecep:spe="trace"
+                     ecep:syllab="1"
+                     ecep:pron="treɪs">trace</w>
+                  <pc xml:id="pba35-283170"
+                      n="a-0630"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="18" rendition="#h_3" xml:id="pba35-l14345">
+                  <c> </c>
+                  <w xml:id="pba35-283180"
+                     n="a-0640"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xml:id="pba35-283190"
+                     n="a-0650"
+                     ecep:lem="her"
+                     ecep:pos="po31"
+                     ecep:reg="her"
+                     ecep:spe="her"
+                     ecep:syllab="1"
+                     ecep:pron="hɜː">her</w>
+                  <c> </c>
+                  <w xml:id="pba35-283200"
+                     n="a-0660"
+                     ecep:lem="descent"
+                     ecep:pos="n1"
+                     ecep:reg="Descent"
+                     ecep:spe="Descent"
+                     ecep:syllab="2"
+                     ecep:pron="dɪˈsent">Descent</w>
+                  <c> </c>
+                  <w xml:id="pba35-283210"
+                     n="a-0670"
+                     ecep:lem="maintain"
+                     ecep:pos="vvi"
+                     ecep:reg="maintain"
+                     ecep:spe="maintain"
+                     ecep:syllab="2"
+                     ecep:pron="meɪnˈteɪn">maintain</w>
+                  <pc xml:id="pba35-283220"
+                      n="a-0680"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="19" xml:id="pba35-l14350">
+                  <c> </c>
+                  <w xml:id="pba35-283230"
+                     n="a-0690"
+                     ecep:lem="from"
+                     ecep:pos="p-acp"
+                     ecep:reg="From"
+                     ecep:spe="From"
+                     ecep:syllab="1"
+                     ecep:pron="frɒm">From</w>
+                  <note n="*" place="bottom" xml:id="pba35-n00185">
+                     <w xml:id="pba35-283290"
+                        n="a-0700"
+                        ecep:lem="sir"
+                        ecep:pos="n1"
+                        ecep:reg="Sir"
+                        ecep:spe="Sir"
+                        ecep:syllab="1"
+                        ecep:pron="sɜː">Sir</w>
+                     <c> </c>
+                     <w xml:id="pba35-283300"
+                        n="a-0710"
+                        ecep:lem="Julius"
+                        ecep:pos="np1"
+                        ecep:reg="Julius"
+                        ecep:spe="Julius"
+                        ecep:syllab="2"
+                        ecep:pron="ˈdʒuːliəs">Julius</w>
+                     <c> </c>
+                     <w xml:id="pba35-283310"
+                        n="a-0720"
+                        ecep:lem="ademar"
+                        ecep:pos="np1"
+                        ecep:reg="Ademar"
+                        ecep:spe="Ademar"
+                        ecep:syllab="3"
+                        ecep:pron="ʌdˈemə">Ademar</w>
+                     <pc xml:id="pba35-283320"
+                         n="a-0730"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                     <c> </c>
+                     <w xml:id="pba35-283330"
+                        n="a-0740"
+                        ecep:lem="descend"
+                        ecep:pos="vvn"
+                        ecep:reg="descended"
+                        ecep:spe="descended"
+                        ecep:syllab="3"
+                        ecep:pron="dɪˈsendɪd">descended</w>
+                     <c> </c>
+                     <w xml:id="pba35-283340"
+                        n="a-0750"
+                        ecep:lem="from"
+                        ecep:pos="p-acp"
+                        ecep:reg="from"
+                        ecep:spe="from"
+                        ecep:syllab="1"
+                        ecep:pron="frɒm">from</w>
+                     <c> </c>
+                     <w xml:id="pba35-283350"
+                        n="a-0760"
+                        ecep:lem="baron"
+                        ecep:pos="n1"
+                        ecep:reg="Baron"
+                        ecep:spe="Baron"
+                        ecep:syllab="2"
+                        ecep:pron="ˈbærn">Baron</w>
+                     <c> </c>
+                     <w xml:id="pba35-283360"
+                        n="a-0770"
+                        ecep:lem="ademar"
+                        ecep:pos="np1"
+                        ecep:reg="Ademar"
+                        ecep:spe="Ademar"
+                        ecep:syllab="3"
+                        ecep:pron="ʌdˈemə">Ademar</w>
+                     <pc xml:id="pba35-283370"
+                         n="a-0780"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                     <c> </c>
+                     <w xml:id="pba35-283380"
+                        n="a-0790"
+                        ecep:lem="who"
+                        ecep:pos="r-crq"
+                        ecep:reg="who"
+                        ecep:spe="who"
+                        ecep:syllab="1"
+                        ecep:pron="huː">who</w>
+                     <c> </c>
+                     <w xml:id="pba35-283390"
+                        n="a-0800"
+                        ecep:lem="be"
+                        ecep:pos="vbds"
+                        ecep:reg="was"
+                        ecep:spe="was"
+                        ecep:syllab="1"
+                        ecep:pron="wɒz">was</w>
+                     <c> </c>
+                     <w xml:id="pba35-283400"
+                        n="a-0810"
+                        ecep:lem="count"
+                        ecep:pos="n1"
+                        ecep:reg="Count"
+                        ecep:spe="Count"
+                        ecep:syllab="1"
+                        ecep:pron="kaʊnt">Count</w>
+                     <c> </c>
+                     <w xml:id="pba35-283410"
+                        n="a-0820"
+                        ecep:lem="of"
+                        ecep:pos="pp-f"
+                        ecep:reg="of"
+                        ecep:spe="of"
+                        ecep:syllab="1"
+                        ecep:pron="ɒv">of</w>
+                     <c> </c>
+                     <w xml:id="pba35-283420"
+                        n="a-0830"
+                        ecep:lem="Genoa"
+                        ecep:pos="np1"
+                        ecep:reg="Genoa"
+                        ecep:spe="Genoa"
+                        ecep:syllab="3"
+                        ecep:pron="ˈdʒenəʊə">Genoa</w>
+                     <c> </c>
+                     <w xml:id="pba35-283430"
+                        n="a-0840"
+                        ecep:lem="in"
+                        ecep:pos="p-acp"
+                        ecep:reg="in"
+                        ecep:spe="in"
+                        ecep:syllab="1"
+                        ecep:pron="ɪn">in</w>
+                     <c> </c>
+                     <w xml:id="pba35-283440"
+                        n="a-0850"
+                        ecep:lem="the"
+                        ecep:pos="dt"
+                        ecep:reg="the"
+                        ecep:spe="the"
+                        ecep:syllab="1"
+                        ecep:pron="ðiː">the</w>
+                     <c> </c>
+                     <w xml:id="pba35-283450"
+                        n="a-0860"
+                        ecep:lem="reign"
+                        ecep:pos="n1"
+                        ecep:reg="Reign"
+                        ecep:spe="Reign"
+                        ecep:syllab="1"
+                        ecep:pron="reɪn">Reign</w>
+                     <c> </c>
+                     <w xml:id="pba35-283460"
+                        n="a-0870"
+                        ecep:lem="of"
+                        ecep:pos="pp-f"
+                        ecep:reg="of"
+                        ecep:spe="of"
+                        ecep:syllab="1"
+                        ecep:pron="ɒv">of</w>
+                     <c> </c>
+                     <w xml:id="pba35-283470"
+                        n="a-0880"
+                        ecep:lem="charlemain"
+                        ecep:pos="np1"
+                        ecep:reg="Charlemain"
+                        ecep:spe="Charlemain"
+                        ecep:syllab="3"
+                        ecep:pron="tʃˈɑːlɪmˌeɪn">Charlemain</w>
+                     <pc xml:id="pba35-283480"
+                         n="a-0890"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                     <c> </c>
+                     <w xml:id="pba35-283490"
+                        n="a-0900"
+                        ecep:lem="add"
+                        ecep:pos="vvd"
+                        ecep:reg="added"
+                        ecep:spe="added"
+                        ecep:syllab="2"
+                        ecep:pron="ædɪd">added</w>
+                     <c> </c>
+                     <w xml:id="pba35-283500"
+                        n="a-0910"
+                        ecep:lem="the"
+                        ecep:pos="dt"
+                        ecep:reg="the"
+                        ecep:spe="the"
+                        ecep:syllab="1"
+                        ecep:pron="ðiː">the</w>
+                     <c> </c>
+                     <w xml:id="pba35-283510"
+                        n="a-0920"
+                        ecep:lem="name"
+                        ecep:pos="n1"
+                        ecep:reg="Name"
+                        ecep:spe="Name"
+                        ecep:syllab="1"
+                        ecep:pron="neɪm">Name</w>
+                     <c> </c>
+                     <w xml:id="pba35-283520"
+                        n="a-0930"
+                        ecep:lem="of"
+                        ecep:pos="pp-f"
+                        ecep:reg="of"
+                        ecep:spe="of"
+                        ecep:syllab="1"
+                        ecep:pron="ɒv">of</w>
+                     <c> </c>
+                     <w xml:id="pba35-283530"
+                        n="a-0940"
+                        ecep:lem="CÆsar"
+                        ecep:pos="np1"
+                        ecep:reg="CÆsar"
+                        ecep:spe="CÆsar"
+                        ecep:syllab="2"
+                        ecep:pron="kˈæsɑː">CÆsar</w>
+                     <c> </c>
+                     <w xml:id="pba35-283540"
+                        n="a-0950"
+                        ecep:lem="to"
+                        ecep:pos="p-acp"
+                        ecep:reg="to"
+                        ecep:spe="to"
+                        ecep:syllab="1"
+                        ecep:pron="tuː">to</w>
+                     <c> </c>
+                     <w xml:id="pba35-283550"
+                        n="a-0960"
+                        ecep:lem="his"
+                        ecep:pos="po31"
+                        ecep:reg="his"
+                        ecep:spe="his"
+                        ecep:syllab="1"
+                        ecep:pron="hɪz">his</w>
+                     <c> </c>
+                     <w xml:id="pba35-283560"
+                        n="a-0970"
+                        ecep:lem="own"
+                        ecep:pos="d"
+                        ecep:reg="own"
+                        ecep:spe="own"
+                        ecep:syllab="1"
+                        ecep:pron="əʊn">own</w>
+                     <pc xml:id="pba35-283570"
+                         n="a-0980"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                     <c> </c>
+                     <w xml:id="pba35-283580"
+                        n="a-0990"
+                        ecep:lem="by"
+                        ecep:pos="p-acp"
+                        ecep:reg="by"
+                        ecep:spe="by"
+                        ecep:syllab="1"
+                        ecep:pron="baɪ">by</w>
+                     <c> </c>
+                     <w xml:id="pba35-283590"
+                        n="a-1000"
+                        ecep:lem="the"
+                        ecep:pos="dt"
+                        ecep:reg="the"
+                        ecep:spe="the"
+                        ecep:syllab="1"
+                        ecep:pron="ðiː">the</w>
+                     <c> </c>
+                     <w xml:id="pba35-283600"
+                        n="a-1010"
+                        ecep:lem="command"
+                        ecep:pos="n1"
+                        ecep:reg="Command"
+                        ecep:spe="Command"
+                        ecep:syllab="2"
+                        ecep:pron="kəˈmɑːnd">Command</w>
+                     <c> </c>
+                     <w xml:id="pba35-283610"
+                        n="a-1020"
+                        ecep:lem="of"
+                        ecep:pos="pp-f"
+                        ecep:reg="of"
+                        ecep:spe="of"
+                        ecep:syllab="1"
+                        ecep:pron="ɒv">of</w>
+                     <c> </c>
+                     <w xml:id="pba35-283620"
+                        n="a-1030"
+                        ecep:lem="queen"
+                        ecep:pos="n1"
+                        ecep:reg="Queen"
+                        ecep:spe="Queen"
+                        ecep:syllab="1"
+                        ecep:pron="kwiːn">Queen</w>
+                     <c> </c>
+                     <w xml:id="pba35-283630"
+                        n="a-1040"
+                        ecep:lem="Elizabeth"
+                        ecep:pos="np1"
+                        ecep:reg="Elizabeth"
+                        ecep:spe="Elizabeth"
+                        ecep:syllab="4"
+                        ecep:pron="ɪˈlɪzəbəθ">Elizabeth</w>
+                     <pc xml:id="pba35-283640"
+                         n="a-1050"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                     <c> </c>
+                     <w xml:id="pba35-283650"
+                        n="a-1060"
+                        ecep:lem="he"
+                        ecep:pos="pns31"
+                        ecep:reg="he"
+                        ecep:spe="he"
+                        ecep:syllab="1"
+                        ecep:pron="hiː">he</w>
+                     <c> </c>
+                     <w xml:id="pba35-283660"
+                        n="a-1070"
+                        ecep:lem="be"
+                        ecep:pos="vbg"
+                        ecep:reg="being"
+                        ecep:spe="being"
+                        ecep:syllab="2"
+                        ecep:pron="ˈbiːɪŋ">being</w>
+                     <c> </c>
+                     <w xml:id="pba35-283670"
+                        n="a-1080"
+                        ecep:lem="grandson"
+                        ecep:pos="n1"
+                        ecep:reg="Grandson"
+                        ecep:spe="Grandson"
+                        ecep:syllab="2"
+                        ecep:pron="ˈgrænsʌn">Grandson</w>
+                     <c> </c>
+                     <w xml:id="pba35-283680"
+                        n="a-1090"
+                        ecep:lem="by"
+                        ecep:pos="p-acp"
+                        ecep:reg="by"
+                        ecep:spe="by"
+                        ecep:syllab="1"
+                        ecep:pron="baɪ">by</w>
+                     <c> </c>
+                     <w xml:id="pba35-283690"
+                        n="a-1100"
+                        ecep:lem="the"
+                        ecep:pos="dt"
+                        ecep:reg="the"
+                        ecep:spe="the"
+                        ecep:syllab="1"
+                        ecep:pron="ðiː">the</w>
+                     <c> </c>
+                     <w xml:id="pba35-283700"
+                        n="a-1110"
+                        ecep:lem="female"
+                        ecep:pos="j-jn"
+                        ecep:reg="Female"
+                        ecep:spe="Female"
+                        ecep:syllab="2"
+                        ecep:pron="ˈfiːmeɪl">Female</w>
+                     <c> </c>
+                     <w xml:id="pba35-283710"
+                        n="a-1120"
+                        ecep:lem="line"
+                        ecep:pos="n1"
+                        ecep:reg="Line"
+                        ecep:spe="Line"
+                        ecep:syllab="1"
+                        ecep:pron="laɪn">Line</w>
+                     <c> </c>
+                     <w xml:id="pba35-283720"
+                        n="a-1130"
+                        ecep:lem="to"
+                        ecep:pos="p-acp"
+                        ecep:reg="to"
+                        ecep:spe="to"
+                        ecep:syllab="1"
+                        ecep:pron="tuː">to</w>
+                     <c> </c>
+                     <w xml:id="pba35-283730"
+                        n="a-1140"
+                        ecep:lem="the"
+                        ecep:pos="dt"
+                        ecep:reg="the"
+                        ecep:spe="the"
+                        ecep:syllab="1"
+                        ecep:pron="ðiː">the</w>
+                     <c> </c>
+                     <w xml:id="pba35-283740"
+                        n="a-1150"
+                        ecep:lem="duke"
+                        ecep:pos="n1"
+                        ecep:reg="Duke"
+                        ecep:spe="Duke"
+                        ecep:syllab="1"
+                        ecep:pron="dʒuːk">Duke</w>
+                     <c> </c>
+                     <w xml:id="pba35-283750"
+                        n="a-1160"
+                        ecep:lem="de"
+                        ecep:pos="fw-fr"
+                        ecep:reg="Dae"
+                        ecep:spe="De"
+                        ecep:syllab="1"
+                        ecep:pron="də">De</w>
+                     <c> </c>
+                     <w xml:id="pba35-283760"
+                        n="a-1170"
+                        ecep:lem="CÆsarini"
+                        ecep:pos="np1"
+                        ecep:reg="CÆsarini"
+                        ecep:spe="CÆsarini"
+                        ecep:syllab="3"
+                        ecep:pron="kˌæsɑːrˈiːnɪ">CÆsarini</w>
+                     <pc xml:id="pba35-283770"
+                         n="a-1180"
+                         unit="sentence"
+                         ecep:lem="."
+                         ecep:pos="."
+                         ecep:reg="."
+                         ecep:spe=".">.</pc>
+                  </note>
+                  <c> </c>
+                  <hi rendition="#sc">
+                     <w xml:id="pba35-283240"
+                        n="a-1190"
+                        ecep:lem="ademar"
+                        ecep:pos="npg1"
+                        ecep:reg="Ademar's"
+                        ecep:spe="Ademar's"
+                        ecep:syllab="3"
+                        ecep:pron="ʌdˈeməz">Ademar's</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="pba35-283250"
+                     n="a-1200"
+                     ecep:lem="illustrious"
+                     ecep:pos="j"
+                     ecep:reg="illustrious"
+                     ecep:spe="illustrious"
+                     ecep:syllab="4"
+                     ecep:pron="ɪˈlʌstriəs">illustrious</w>
+                  <c> </c>
+                  <w xml:id="pba35-283260"
+                     n="a-1210"
+                     ecep:lem="race"
+                     ecep:pos="n1"
+                     ecep:reg="Race"
+                     ecep:spe="Race"
+                     ecep:syllab="1"
+                     ecep:pron="reɪs">Race</w>
+                  <pc xml:id="pba35-283270"
+                      n="a-1220"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l n="20" rendition="#h_3" xml:id="pba35-l14355">
+                  <c> </c>
+                  <w xml:id="pba35-283780"
+                     n="a-1230"
+                     ecep:lem="ally"
+                     ecep:pos="vvn"
+                     ecep:reg="Allied"
+                     ecep:spe="Ally'd"
+                     ecep:syllab="2"
+                     ecep:pron="əˈlaɪd">Ally'd</w>
+                  <c> </c>
+                  <w xml:id="pba35-283790"
+                     n="a-1240"
+                     ecep:lem="to"
+                     ecep:pos="p-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <hi rendition="#sc">
+                     <w xml:id="pba35-283800"
+                        n="a-1250"
+                        ecep:lem="charlemain"
+                        ecep:pos="np1"
+                        ecep:reg="Charlemain"
+                        ecep:spe="Charlemain"
+                        ecep:syllab="3"
+                        ecep:pron="tʃˈɑːlɪmˌeɪn">Charlemain</w>
+                     <pc xml:id="pba35-283810"
+                         n="a-1260"
+                         unit="sentence"
+                         ecep:lem="."
+                         ecep:pos="."
+                         ecep:reg="."
+                         ecep:spe=".">.</pc>
+                     <c> </c>
+                  </hi>
+               </l>
+            </lg>
+         </div>
+      </body>
+   </text>
+</TEI>

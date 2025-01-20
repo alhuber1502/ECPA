@@ -1,2328 +1,2414 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
-     ana="#iamb #tetrameter #trimeter #quintet #envelope #lament #refrain"
-     corresp="#txt_ShenWi1714_w0042"
-     ecep:syllab="6.6.8.8.6"
-     met="-+|-+|-+/          -+|-+|-+/         -+|-+|-+|-+/          -+|-+|-+|-+/          -+|-+|-+/"
-     rendition="#lgvspace"
-     rhyme="xabba"
-     subtype="eceptext"
-     type="poem"
-     xml:id="o5156-w0230"
-     decls="#semi-normalized">
-   <link target="authors.xml#aut_ShenWi1714" type="author"/>
-   <link target="27247" type="DMI"/>
-   <head type="main">
-      <w xml:id="o5156-109280"
-         n="58-a-0500"
-         ecep:lem="slender"
-         ecep:pos="ng1"
-         ecep:reg="SLENDER's"
-         ecep:spe="SLENDER's"
-         ecep:syllab="2"
-         ecep:pron="ˈslendəz">SLENDER's</w>
-      <c> </c>
-      <w xml:id="o5156-109290"
-         n="58-a-0510"
-         ecep:lem="ghost"
-         ecep:pos="n1"
-         ecep:reg="GHOST"
-         ecep:spe="GHOST"
-         ecep:syllab="1"
-         ecep:pron="gəʊst">GHOST</w>
-      <pc xml:id="o5156-109300"
-          n="58-a-0520"
-          unit="sentence"
-          ecep:lem="."
-          ecep:pos="."
-          ecep:reg="."
-          ecep:spe=".">.</pc>
-   </head>
-   <epigraph xml:id="o5156-s01119">
-      <q>
-         <pc xml:id="o5156-109340"
-             n="58-a-0530"
-             unit="sentence"
-             ecep:lem="—"
-             ecep:pos="—"
-             ecep:reg="—"
-             ecep:spe="—">—</pc>
-         <c> </c>
-         <w xml:id="o5156-109350"
-            n="58-a-0540"
-            ecep:lem="curae"
-            ecep:pos="fw-la"
-            ecep:reg="Curae"
-            ecep:spe="Curae"
-            ecep:syllab="2"
-            ecep:pron="kjˈʊriː">Curae</w>
-         <c> </c>
-         <w xml:id="o5156-109360"
-            n="58-a-0550"
-            ecep:lem="leves"
-            ecep:pos="fw-mi"
-            ecep:reg="leves"
-            ecep:spe="leves"
-            ecep:syllab="2"
-            ecep:pron="lˈiːvz">leves</w>
-         <c> </c>
-         <w xml:id="o5156-109370"
-            n="58-a-0560"
-            ecep:lem="loquuntur"
-            ecep:pos="fw-la"
-            ecep:reg="loquuntur"
-            ecep:spe="loquuntur"
-            ecep:syllab="3"
-            ecep:pron="lˈɒkwʌntʃə">loquuntur</w>
-         <pc xml:id="o5156-109380"
-             n="58-a-0570"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109390"
-            n="58-a-0580"
-            ecep:lem="ingentes"
-            ecep:pos="fw-la"
-            ecep:reg="ingentes"
-            ecep:spe="ingentes"
-            ecep:syllab="3"
-            ecep:pron="ɪndʒˈents">ingentes</w>
-         <c> </c>
-         <w xml:id="o5156-109400"
-            n="58-a-0590"
-            ecep:lem="stupent"
-            ecep:pos="fw-la"
-            ecep:reg="stupent"
-            ecep:spe="stupent"
-            ecep:syllab="2"
-            ecep:pron="ˈstjuːpənt">stupent</w>
-         <pc xml:id="o5156-109410"
-             n="58-a-0600"
-             unit="sentence"
-             ecep:lem="."
-             ecep:pos="."
-             ecep:reg="."
-             ecep:spe=".">.</pc>
-      </q>
-      <note place="bottom"
-            n="[ed.]"
-            resp="#AH"
-            xml:id="app_ShenWi1714_w0042_n1">Seneca, <title>Phaedra</title>
-         <ref n="[Perseus Digital Library]"
-              target="http://data.perseus.org/citations/urn:cts:latinLit:phi1017.phi005.perseus-lat1:565-624">607</ref>.
+<?xml-model href="../tei_all.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title corresp="#txt_ShenWi1714_w0042">SLENDER's GHOST.</title>
+            <author corresp="authors.xml#aut_ShenWi1714">William Shenstone</author>
+            <respStmt>
+               <name xml:id="AH">Alexander Huber</name>
+               <resp>Editor</resp>
+            </respStmt>
+            <funder>
+               <name type="institution" xml:id="BOD">Bodleian Libraries, University of Oxford</name>
+               <address>
+                  <addrLine>Broad Street</addrLine>
+                  <addrLine>Oxford OX1 3BG</addrLine>
+                  <addrLine>UK</addrLine>
+               </address>
+            </funder>
+         </titleStmt>
+         <publicationStmt>
+            <publisher xml:id="ECPA">Eighteenth-Century Poetry Archive</publisher>
+            <address>
+               <addrLine>Taylor Institution Library</addrLine>
+               <addrLine>St Giles'</addrLine>
+               <addrLine>Oxford OX1 3NA</addrLine>
+               <addrLine>UK</addrLine>
+               <addrLine>
+                  <email>info@eighteenthcenturypoetry.org</email>
+               </addrLine>
+               <addrLine>
+                  <ref target="https://www.eighteenthcenturypoetry.org/">https://www.eighteenthcenturypoetry.org/</ref>
+               </addrLine>
+            </address>
+            <pubPlace>Oxford</pubPlace>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.</licence>
+            </availability>
+            <idno type="ESTC">T131163</idno>
+            <idno type="TCP">K104099.005</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author>Dodsley, Robert, 1703-1764.</author>
+               <title>A Collection of Poems in Six Volumes. By Several Hands. Vol. V.</title>
+               <pubPlace>London</pubPlace>
+               <publisher>printed by J. Hughs, for R. and J. Dodsley</publisher>
+               <date>1763 [1st ed. 1758]</date>
+               <biblScope>pp. 56-57.</biblScope>
+               <extent>6v.: music; 8⁰.</extent>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This e-text is part of the Works section of the Eighteenth-Century Poetry Archive (ECPA).</p>
+            <p>XML created for the Eighteenth-Century Poetry Archive (ECPA).</p>
+         </projectDesc>
+         <editorialDecl>
+            <p>The text has been typographically modernized, but without any silent modernization of
+						spelling, capitalization, or punctuation. The source of the text is given and all editorial interventions
+						have been recorded in textual notes. Based on the electronic text originally produced by the TCP project, this  text has been edited to conform to the recommendations found in Level 5 of the
+						Best Practices for TEI in Libraries version 4.0.0.
+					</p>
+         </editorialDecl>
+         <classDecl>
+            <taxonomy xml:id="LCNAF">
+               <bibl>Library of Congress Name Authority File (<abbr>LCNAF</abbr>)</bibl>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition n="linegroups indented" xml:id="lgindent" scheme="css">text-indent: 1em;</rendition>
+            <rendition n="linegroups vertically spaced" xml:id="lgvspace" scheme="css">margin-bottom: 1em;</rendition>
+            <rendition n="aligned centrally" xml:id="align-center" scheme="css">text-align: center;</rendition>
+            <rendition n="aligned right" xml:id="align-right" scheme="css">text-align: right;</rendition>
+            <rendition n="aligned left" xml:id="align-left" scheme="css">text-align: left;</rendition>
+            <rendition n="inline" xml:id="inline" scheme="css">display: inline</rendition>
+            <rendition n="italic" xml:id="i" scheme="css">font-style: italic;</rendition>
+            <rendition n="bold" xml:id="b" scheme="css">font-weight: bold;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xmlns:tei="http://www.tei-c.org/ns/1.0"
+              xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+              ana="#iamb #tetrameter #trimeter #quintet #envelope #lament #refrain"
+              corresp="#txt_ShenWi1714_w0042"
+              ecep:syllab="6.6.8.8.6"
+              met="-+|-+|-+/          -+|-+|-+/         -+|-+|-+|-+/          -+|-+|-+|-+/          -+|-+|-+/"
+              rendition="#lgvspace"
+              rhyme="xabba"
+              subtype="eceptext"
+              type="poem"
+              xml:id="o5156-w0230"
+              decls="#semi-normalized">
+            <link target="authors.xml#aut_ShenWi1714" type="author"/>
+            <link target="27247" type="DMI"/>
+            <head type="main">
+               <w xml:id="o5156-109280"
+                  n="58-a-0500"
+                  ecep:lem="slender"
+                  ecep:pos="ng1"
+                  ecep:reg="SLENDER's"
+                  ecep:spe="SLENDER's"
+                  ecep:syllab="2"
+                  ecep:pron="ˈslendəz">SLENDER's</w>
+               <c> </c>
+               <w xml:id="o5156-109290"
+                  n="58-a-0510"
+                  ecep:lem="ghost"
+                  ecep:pos="n1"
+                  ecep:reg="GHOST"
+                  ecep:spe="GHOST"
+                  ecep:syllab="1"
+                  ecep:pron="gəʊst">GHOST</w>
+               <pc xml:id="o5156-109300"
+                   n="58-a-0520"
+                   unit="sentence"
+                   ecep:lem="."
+                   ecep:pos="."
+                   ecep:reg="."
+                   ecep:spe=".">.</pc>
+            </head>
+            <epigraph xml:id="o5156-s01119">
+               <q>
+                  <pc xml:id="o5156-109340"
+                      n="58-a-0530"
+                      unit="sentence"
+                      ecep:lem="—"
+                      ecep:pos="—"
+                      ecep:reg="—"
+                      ecep:spe="—">—</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109350"
+                     n="58-a-0540"
+                     ecep:lem="curae"
+                     ecep:pos="fw-la"
+                     ecep:reg="Curae"
+                     ecep:spe="Curae"
+                     ecep:syllab="2"
+                     ecep:pron="kjˈʊriː">Curae</w>
+                  <c> </c>
+                  <w xml:id="o5156-109360"
+                     n="58-a-0550"
+                     ecep:lem="leves"
+                     ecep:pos="fw-mi"
+                     ecep:reg="leves"
+                     ecep:spe="leves"
+                     ecep:syllab="2"
+                     ecep:pron="lˈiːvz">leves</w>
+                  <c> </c>
+                  <w xml:id="o5156-109370"
+                     n="58-a-0560"
+                     ecep:lem="loquuntur"
+                     ecep:pos="fw-la"
+                     ecep:reg="loquuntur"
+                     ecep:spe="loquuntur"
+                     ecep:syllab="3"
+                     ecep:pron="lˈɒkwʌntʃə">loquuntur</w>
+                  <pc xml:id="o5156-109380"
+                      n="58-a-0570"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109390"
+                     n="58-a-0580"
+                     ecep:lem="ingentes"
+                     ecep:pos="fw-la"
+                     ecep:reg="ingentes"
+                     ecep:spe="ingentes"
+                     ecep:syllab="3"
+                     ecep:pron="ɪndʒˈents">ingentes</w>
+                  <c> </c>
+                  <w xml:id="o5156-109400"
+                     n="58-a-0590"
+                     ecep:lem="stupent"
+                     ecep:pos="fw-la"
+                     ecep:reg="stupent"
+                     ecep:spe="stupent"
+                     ecep:syllab="2"
+                     ecep:pron="ˈstjuːpənt">stupent</w>
+                  <pc xml:id="o5156-109410"
+                      n="58-a-0600"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </q>
+               <note place="bottom"
+                     n="[ed.]"
+                     resp="#AH"
+                     xml:id="app_ShenWi1714_w0042_n1">Seneca, <title>Phaedra</title>
+                  <ref n="[Perseus Digital Library]"
+                       target="http://data.perseus.org/citations/urn:cts:latinLit:phi1017.phi005.perseus-lat1:565-624">607</ref>.
 								</note>
-   </epigraph>
-   <lg xml:id="o5156-s01120">
-      <l xml:id="o5156-l06315">
-         <w xml:id="o5156-109440"
-            n="58-a-0610"
-            ecep:lem="beneath"
-            ecep:pos="p-acp"
-            ecep:reg="BENEATH"
-            ecep:spe="BENEATH"
-            ecep:syllab="2"
-            ecep:pron="bɪˈniːθ">BENEATH</w>
-         <c> </c>
-         <w xml:id="o5156-109450"
-            n="58-a-0620"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="a"
-            ecep:spe="a"
-            ecep:syllab="1"
-            ecep:pron="ə">a</w>
-         <c> </c>
-         <w xml:id="o5156-109460"
-            n="58-a-0630"
-            ecep:lem="church-yard"
-            ecep:pos="n1"
-            ecep:reg="churchyard"
-            ecep:spe="church-yard"
-            ecep:syllab="2"
-            ecep:pron="ˈtʃɜːtʃjɑːd">church-yard</w>
-         <c> </c>
-         <w xml:id="o5156-109470"
-            n="58-a-0640"
-            ecep:lem="yew"
-            ecep:pos="n1"
-            ecep:reg="yew"
-            ecep:spe="yew"
-            ecep:syllab="1"
-            ecep:pron="juː">yew</w>
-      </l>
-      <l xml:id="o5156-l06320">
-         <w xml:id="o5156-109480"
-            n="58-a-0650"
-            ecep:lem="decay"
-            ecep:pos="vvn"
-            ecep:reg="Decayed"
-            ecep:spe="Decay'd"
-            ecep:syllab="2"
-            ecep:pron="dɪˈkeɪd">Decay'd</w>
-         <c> </c>
-         <w xml:id="o5156-109490"
-            n="58-a-0660"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="and"
-            ecep:spe="and"
-            ecep:syllab="1"
-            ecep:pron="ænd">and</w>
-         <c> </c>
-         <w xml:id="o5156-109500"
-            n="58-a-0670"
-            ecep:lem="wear"
-            ecep:pos="vvn"
-            ecep:reg="worn"
-            ecep:spe="worn"
-            ecep:syllab="1"
-            ecep:pron="wɔːn">worn</w>
-         <c> </c>
-         <w xml:id="o5156-109510"
-            n="58-a-0680"
-            ecep:lem="with"
-            ecep:pos="p-acp"
-            ecep:reg="with"
-            ecep:spe="with"
-            ecep:syllab="1"
-            ecep:pron="wɪð">with</w>
-         <c> </c>
-         <w xml:id="o5156-109520"
-            n="58-a-0690"
-            ecep:lem="age"
-            ecep:pos="n1"
-            ecep:reg="age"
-            ecep:spe="age"
-            ecep:syllab="1"
-            ecep:pron="eɪdʒ">age</w>
-         <pc xml:id="o5156-109530"
-             n="58-a-0700"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06325">
-         <w xml:id="o5156-109540"
-            n="58-a-0710"
-            ecep:lem="at"
-            ecep:pos="p-acp"
-            ecep:reg="At"
-            ecep:spe="At"
-            ecep:syllab="1"
-            ecep:pron="æt">At</w>
-         <c> </c>
-         <w xml:id="o5156-109550"
-            n="58-a-0720"
-            ecep:lem="dusk"
-            ecep:pos="n1"
-            ecep:reg="dusk"
-            ecep:spe="dusk"
-            ecep:syllab="1"
-            ecep:pron="dʌsk">dusk</w>
-         <c> </c>
-         <w xml:id="o5156-109560"
-            n="58-a-0730"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-109570"
-            n="58-a-0740"
-            ecep:lem="eve"
-            ecep:pos="n1"
-            ecep:reg="eve"
-            ecep:spe="eve"
-            ecep:syllab="1"
-            ecep:pron="iːv">eve</w>
-         <pc xml:id="o5156-109580"
-             n="58-a-0750"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109590"
-            n="58-a-0760"
-            ecep:lem="methinks"
-            ecep:pos="vvd"
-            ecep:reg="methought"
-            ecep:spe="methought"
-            ecep:syllab="2"
-            ecep:pron="mɪˈθɔːt">methought</w>
-         <c> </c>
-         <w xml:id="o5156-109600"
-            n="58-a-0770"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-         <c> </c>
-         <w xml:id="o5156-109610"
-            n="58-a-0780"
-            ecep:lem="spy"
-            ecep:pos="vvd"
-            ecep:reg="spied"
-            ecep:spe="spy'd"
-            ecep:syllab="1"
-            ecep:pron="spaɪd">spy'd</w>
-      </l>
-      <l xml:id="o5156-l06330">
-         <w xml:id="o5156-109620"
-            n="58-a-0790"
-            ecep:lem="poor"
-            ecep:pos="j"
-            ecep:reg="Poor"
-            ecep:spe="Poor"
-            ecep:syllab="1"
-            ecep:pron="pɔː">Poor</w>
-         <c> </c>
-         <w xml:id="o5156-109630"
-            n="58-a-0800"
-            ecep:lem="slender"
-            ecep:pos="ng1"
-            ecep:reg="Slender's"
-            ecep:spe="Slender's"
-            ecep:syllab="2"
-            ecep:pron="ˈslendəz">Slender's</w>
-         <c> </c>
-         <w xml:id="o5156-109640"
-            n="58-a-0810"
-            ecep:lem="ghost"
-            ecep:pos="n1"
-            ecep:reg="ghost"
-            ecep:spe="ghost"
-            ecep:syllab="1"
-            ecep:pron="gəʊst">ghost</w>
-         <pc xml:id="o5156-109650"
-             n="58-a-0820"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109660"
-            n="58-a-0830"
-            ecep:lem="that"
-            ecep:pos="cst"
-            ecep:reg="that"
-            ecep:spe="that"
-            ecep:syllab="1"
-            ecep:pron="ðæt">that</w>
-         <c> </c>
-         <w xml:id="o5156-109670"
-            n="58-a-0840"
-            ecep:lem="whimper"
-            ecep:pos="n-vvg"
-            ecep:reg="whimpering"
-            ecep:spe="whimpering"
-            ecep:syllab="3"
-            ecep:pron="ˈwɪmprɪŋ">whimpering</w>
-         <c> </c>
-         <w xml:id="o5156-109680"
-            n="58-a-0850"
-            ecep:lem="cry"
-            ecep:pos="vvd"
-            ecep:reg="cried"
-            ecep:spe="cry'd"
-            ecep:syllab="1"
-            ecep:pron="kraɪd">cry'd</w>
-         <pc xml:id="o5156-109690"
-             n="58-a-0860"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06335">
-         <w xml:id="o5156-109700"
-            n="58-a-0870"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-109710"
-            n="58-a-0880"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-109720"
-             n="58-a-0890"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109730"
-            n="58-a-0900"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-109740"
-            n="58-a-0910"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-109750"
-            n="58-a-0920"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-109760"
-            n="58-a-0930"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-109770"
-             n="58-a-0940"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <lg xml:id="o5156-s01125">
-      <l xml:id="o5156-l06340">
-         <w xml:id="o5156-109800"
-            n="58-a-0950"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="You"
-            ecep:spe="Ye"
-            ecep:syllab="1"
-            ecep:pron="jiː">Ye</w>
-         <c> </c>
-         <w xml:id="o5156-109810"
-            n="58-a-0960"
-            ecep:lem="gentle"
-            ecep:pos="j-jn"
-            ecep:reg="gentle"
-            ecep:spe="gentle"
-            ecep:syllab="2"
-            ecep:pron="ˈdʒentl">gentle</w>
-         <c> </c>
-         <w xml:id="o5156-109820"
-            n="58-a-0970"
-            ecep:lem="bard"
-            ecep:pos="n2"
-            ecep:reg="bards"
-            ecep:spe="bards"
-            ecep:syllab="1"
-            ecep:pron="bɑːdz">bards</w>
-         <pc xml:id="o5156-109830"
-             n="58-a-0980"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109840"
-            n="58-a-0990"
-            ecep:lem="give"
-            ecep:pos="vvb"
-            ecep:reg="give"
-            ecep:spe="give"
-            ecep:syllab="1"
-            ecep:pron="gɪv">give</w>
-         <c> </c>
-         <w xml:id="o5156-109850"
-            n="58-a-1000"
-            ecep:lem="ear"
-            ecep:pos="n1"
-            ecep:reg="ear"
-            ecep:spe="ear"
-            ecep:syllab="1"
-            ecep:pron="ɪə">ear</w>
-         <pc xml:id="o5156-109860"
-             n="58-a-1010"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-      <l xml:id="o5156-l06345">
-         <w xml:id="o5156-109870"
-            n="58-a-1020"
-            ecep:lem="who"
-            ecep:pos="q-crq"
-            ecep:reg="Who"
-            ecep:spe="Who"
-            ecep:syllab="1"
-            ecep:pron="huː">Who</w>
-         <c> </c>
-         <w xml:id="o5156-109880"
-            n="58-a-1030"
-            ecep:lem="talk"
-            ecep:pos="n1"
-            ecep:reg="talk"
-            ecep:spe="talk"
-            ecep:syllab="1"
-            ecep:pron="tɔːk">talk</w>
-         <c> </c>
-         <w xml:id="o5156-109890"
-            n="58-a-1040"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-109900"
-            n="58-a-1050"
-            ecep:lem="amorous"
-            ecep:pos="j"
-            ecep:reg="amorous"
-            ecep:spe="amorous"
-            ecep:syllab="3"
-            ecep:pron="ˈæmrəs">amorous</w>
-         <c> </c>
-         <w xml:id="o5156-109910"
-            n="58-a-1060"
-            ecep:lem="rage"
-            ecep:pos="n1"
-            ecep:reg="rage"
-            ecep:spe="rage"
-            ecep:syllab="1"
-            ecep:pron="reɪdʒ">rage</w>
-         <pc xml:id="o5156-109920"
-             n="58-a-1070"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06350">
-         <w xml:id="o5156-109930"
-            n="58-a-1080"
-            ecep:lem="who"
-            ecep:pos="q-crq"
-            ecep:reg="Who"
-            ecep:spe="Who"
-            ecep:syllab="1"
-            ecep:pron="huː">Who</w>
-         <c> </c>
-         <w xml:id="o5156-109940"
-            n="58-a-1090"
-            ecep:lem="spoil"
-            ecep:pos="vvb"
-            ecep:reg="spoil"
-            ecep:spe="spoil"
-            ecep:syllab="1"
-            ecep:pron="spɔɪl">spoil</w>
-         <c> </c>
-         <w xml:id="o5156-109950"
-            n="58-a-1100"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="o5156-109960"
-            n="58-a-1110"
-            ecep:lem="lily"
-            ecep:pos="n1"
-            ecep:reg="lily"
-            ecep:spe="lily"
-            ecep:syllab="2"
-            ecep:pron="ˈlɪli">lily</w>
-         <pc xml:id="o5156-109970"
-             n="58-a-1120"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-109980"
-            n="58-a-1130"
-            ecep:lem="rob"
-            ecep:pos="vvb"
-            ecep:reg="rob"
-            ecep:spe="rob"
-            ecep:syllab="1"
-            ecep:pron="rɒb">rob</w>
-         <c> </c>
-         <w xml:id="o5156-109990"
-            n="58-a-1140"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="o5156-110000"
-            n="58-a-1150"
-            ecep:lem="rose"
-            ecep:pos="n1"
-            ecep:reg="rose"
-            ecep:spe="rose"
-            ecep:syllab="1"
-            ecep:pron="rəʊz">rose</w>
-         <pc xml:id="o5156-110010"
-             n="58-a-1160"
-             ecep:lem=";"
-             ecep:pos=";"
-             ecep:reg=";"
-             ecep:spe=";">;</pc>
-      </l>
-      <l xml:id="o5156-l06355">
-         <w xml:id="o5156-110020"
-            n="58-a-1170"
-            ecep:lem="come"
-            ecep:pos="vvb"
-            ecep:reg="Come"
-            ecep:spe="Come"
-            ecep:syllab="1"
-            ecep:pron="kʌm">Come</w>
-         <c> </c>
-         <w xml:id="o5156-110030"
-            n="58-a-1180"
-            ecep:lem="learn"
-            ecep:pos="vvb"
-            ecep:reg="learn"
-            ecep:spe="learn"
-            ecep:syllab="1"
-            ecep:pron="lɜːn">learn</w>
-         <c> </c>
-         <w xml:id="o5156-110040"
-            n="58-a-1190"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-110050"
-            n="58-a-1200"
-            ecep:lem="i"
-            ecep:pos="pno11"
-            ecep:reg="me"
-            ecep:spe="me"
-            ecep:syllab="1"
-            ecep:pron="miː">me</w>
-         <c> </c>
-         <w xml:id="o5156-110060"
-            n="58-a-1210"
-            ecep:lem="to"
-            ecep:pos="pc-acp"
-            ecep:reg="to"
-            ecep:spe="to"
-            ecep:syllab="1"
-            ecep:pron="tuː">to</w>
-         <c> </c>
-         <w xml:id="o5156-110070"
-            n="58-a-1220"
-            ecep:lem="weep"
-            ecep:pos="vvi"
-            ecep:reg="weep"
-            ecep:spe="weep"
-            ecep:syllab="1"
-            ecep:pron="wiːp">weep</w>
-         <c> </c>
-         <w xml:id="o5156-110080"
-            n="58-a-1230"
-            ecep:lem="your"
-            ecep:pos="po22"
-            ecep:reg="your"
-            ecep:spe="your"
-            ecep:syllab="1"
-            ecep:pron="jɔː">your</w>
-         <c> </c>
-         <w xml:id="o5156-110090"
-            n="58-a-1240"
-            ecep:lem="woe"
-            ecep:pos="n2"
-            ecep:reg="woes"
-            ecep:spe="woes"
-            ecep:syllab="1"
-            ecep:pron="wəʊz">woes</w>
-         <pc xml:id="o5156-110100"
-             n="58-a-1250"
-             ecep:lem=":"
-             ecep:pos=":"
-             ecep:reg=":"
-             ecep:spe=":">:</pc>
-      </l>
-      <l xml:id="o5156-l06360">
-         <w xml:id="o5156-110110"
-            n="58-a-1260"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-110120"
-            n="58-a-1270"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-110130"
-             n="58-a-1280"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-         <c> </c>
-         <w xml:id="o5156-110140"
-            n="58-a-1290"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-110150"
-            n="58-a-1300"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-110160"
-            n="58-a-1310"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-110170"
-            n="58-a-1320"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-110180"
-             n="58-a-1330"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <lg xml:id="o5156-s01130">
-      <l xml:id="o5156-l06365">
-         <w xml:id="o5156-110210"
-            n="58-a-1340"
-            ecep:lem="why"
-            ecep:pos="q-crq"
-            ecep:reg="Why"
-            ecep:spe="Why"
-            ecep:syllab="1"
-            ecep:pron="waɪ">Why</w>
-         <c> </c>
-         <w xml:id="o5156-110220"
-            n="58-a-1350"
-            ecep:lem="shall"
-            ecep:pos="vmd"
-            ecep:reg="should"
-            ecep:spe="should"
-            ecep:syllab="1"
-            ecep:pron="ʃʊd">should</w>
-         <c> </c>
-         <w xml:id="o5156-110230"
-            n="58-a-1360"
-            ecep:lem="such"
-            ecep:pos="d"
-            ecep:reg="such"
-            ecep:spe="such"
-            ecep:syllab="1"
-            ecep:pron="sʌtʃ">such</w>
-         <c> </c>
-         <w xml:id="o5156-110240"
-            n="58-a-1370"
-            ecep:lem="labour"
-            ecep:pos="j-vvn"
-            ecep:reg="laboured"
-            ecep:spe="labour'd"
-            ecep:syllab="2"
-            ecep:pron="ˈleɪbəd">labour'd</w>
-         <c> </c>
-         <w xml:id="o5156-110250"
-            n="58-a-1380"
-            ecep:lem="strain"
-            ecep:pos="n2"
-            ecep:reg="strains"
-            ecep:spe="strains"
-            ecep:syllab="1"
-            ecep:pron="streɪnz">strains</w>
-      </l>
-      <l xml:id="o5156-l06370">
-         <w xml:id="o5156-110260"
-            n="58-a-1390"
-            ecep:lem="your"
-            ecep:pos="po22"
-            ecep:reg="Your"
-            ecep:spe="Your"
-            ecep:syllab="1"
-            ecep:pron="jɔː">Your</w>
-         <c> </c>
-         <w xml:id="o5156-110270"
-            n="58-a-1400"
-            ecep:lem="formal"
-            ecep:pos="j"
-            ecep:reg="formal"
-            ecep:spe="formal"
-            ecep:syllab="2"
-            ecep:pron="ˈfɔːml">formal</w>
-         <c> </c>
-         <w xml:id="o5156-110280"
-            n="58-a-1410"
-            ecep:lem="muse"
-            ecep:pos="n1"
-            ecep:reg="Muse"
-            ecep:spe="Muse"
-            ecep:syllab="1"
-            ecep:pron="mjuːz">Muse</w>
-         <c> </c>
-         <w xml:id="o5156-110290"
-            n="58-a-1420"
-            ecep:lem="engage"
-            ecep:pos="vvi"
-            ecep:reg="engage"
-            ecep:spe="engage"
-            ecep:syllab="2"
-            ecep:pron="ɪnˈgeɪdʒ">engage</w>
-         <pc xml:id="o5156-110300"
-             n="58-a-1430"
-             unit="sentence"
-             ecep:lem="?"
-             ecep:pos="?"
-             ecep:reg="?"
-             ecep:spe="?">?</pc>
-      </l>
-      <l xml:id="o5156-l06375">
-         <w xml:id="o5156-110310"
-            n="58-a-1440"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-         <c> </c>
-         <w xml:id="o5156-110320"
-            n="58-a-1450"
-            ecep:lem="never"
-            ecep:pos="av-x"
-            ecep:reg="never"
-            ecep:spe="never"
-            ecep:syllab="2"
-            ecep:pron="ˈnevə">never</w>
-         <c> </c>
-         <w xml:id="o5156-110330"
-            n="58-a-1460"
-            ecep:lem="dream"
-            ecep:pos="vvd"
-            ecep:reg="dreamt"
-            ecep:spe="dreamt"
-            ecep:syllab="1"
-            ecep:pron="driːmdremt">dreamt</w>
-         <c> </c>
-         <w xml:id="o5156-110340"
-            n="58-a-1470"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-110350"
-            n="58-a-1480"
-            ecep:lem="flame"
-            ecep:pos="n1"
-            ecep:reg="flame"
-            ecep:spe="flame"
-            ecep:syllab="1"
-            ecep:pron="fleɪm">flame</w>
-         <c> </c>
-         <w xml:id="o5156-110360"
-            n="58-a-1490"
-            ecep:lem="or"
-            ecep:pos="cc"
-            ecep:reg="or"
-            ecep:spe="or"
-            ecep:syllab="1"
-            ecep:pron="ɔː">or</w>
-         <c> </c>
-         <w xml:id="o5156-110370"
-            n="58-a-1500"
-            ecep:lem="dart"
-            ecep:pos="n1"
-            ecep:reg="dart"
-            ecep:spe="dart"
-            ecep:syllab="1"
-            ecep:pron="dɑːt">dart</w>
-         <pc xml:id="o5156-110380"
-             n="58-a-1510"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06380">
-         <w xml:id="o5156-110390"
-            n="58-a-1520"
-            ecep:lem="that"
-            ecep:pos="cst"
-            ecep:reg="That"
-            ecep:spe="That"
-            ecep:syllab="1"
-            ecep:pron="ðæt">That</w>
-         <c> </c>
-         <w xml:id="o5156-110400"
-            n="58-a-1530"
-            ecep:lem="fire"
-            ecep:pos="vvd"
-            ecep:reg="fired"
-            ecep:spe="fir'd"
-            ecep:syllab="1"
-            ecep:pron="fæəd">fir'd</w>
-         <c> </c>
-         <w xml:id="o5156-110410"
-            n="58-a-1540"
-            ecep:lem="my"
-            ecep:pos="po11"
-            ecep:reg="my"
-            ecep:spe="my"
-            ecep:syllab="1"
-            ecep:pron="maɪ">my</w>
-         <c> </c>
-         <w xml:id="o5156-110420"
-            n="58-a-1550"
-            ecep:lem="breast"
-            ecep:pos="n1"
-            ecep:reg="breast"
-            ecep:spe="breast"
-            ecep:syllab="1"
-            ecep:pron="brest">breast</w>
-         <pc xml:id="o5156-110430"
-             n="58-a-1560"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-110440"
-            n="58-a-1570"
-            ecep:lem="or"
-            ecep:pos="cc"
-            ecep:reg="or"
-            ecep:spe="or"
-            ecep:syllab="1"
-            ecep:pron="ɔː">or</w>
-         <c> </c>
-         <w xml:id="o5156-110450"
-            n="58-a-1580"
-            ecep:lem="pierce"
-            ecep:pos="vvd"
-            ecep:reg="pierced"
-            ecep:spe="pierc'd"
-            ecep:syllab="1"
-            ecep:pron="pɪəst">pierc'd</w>
-         <c> </c>
-         <w xml:id="o5156-110460"
-            n="58-a-1590"
-            ecep:lem="my"
-            ecep:pos="po11"
-            ecep:reg="my"
-            ecep:spe="my"
-            ecep:syllab="1"
-            ecep:pron="maɪ">my</w>
-         <c> </c>
-         <w xml:id="o5156-110470"
-            n="58-a-1600"
-            ecep:lem="heart"
-            ecep:pos="n1"
-            ecep:reg="heart"
-            ecep:spe="heart"
-            ecep:syllab="1"
-            ecep:pron="hɑːt">heart</w>
-         <pc xml:id="o5156-110480"
-             n="58-a-1610"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06385">
-         <w xml:id="o5156-110490"
-            n="58-a-1620"
-            ecep:lem="but"
-            ecep:pos="cc-acp"
-            ecep:reg="But"
-            ecep:spe="But"
-            ecep:syllab="1"
-            ecep:pron="bʌt">But</w>
-         <c> </c>
-         <w xml:id="o5156-110500"
-            n="58-a-1630"
-            ecep:lem="sigh"
-            ecep:pos="vvd"
-            ecep:reg="sighed"
-            ecep:spe="sigh'd"
-            ecep:syllab="1"
-            ecep:pron="saɪd">sigh'd</w>
-         <pc xml:id="o5156-110510"
-             n="58-a-1640"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-110520"
-            n="58-a-1650"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-110530"
-            n="58-a-1660"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-110540"
-            n="58-a-1670"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-110550"
-            n="58-a-1680"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-110560"
-             n="58-a-1690"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <lg xml:id="o5156-s01135">
-      <l xml:id="o5156-l06390">
-         <w xml:id="o5156-110590"
-            n="58-a-1700"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="And"
-            ecep:spe="And"
-            ecep:syllab="1"
-            ecep:pron="ænd">And</w>
-         <c> </c>
-         <w xml:id="o5156-110600"
-            n="58-a-1710"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="you"
-            ecep:spe="you"
-            ecep:syllab="1"
-            ecep:pron="juː">you</w>
-         <pc xml:id="o5156-110610"
-             n="58-a-1720"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-110620"
-            n="58-a-1730"
-            ecep:lem="who"
-            ecep:pos="r-crq"
-            ecep:reg="whose"
-            ecep:spe="whose"
-            ecep:syllab="1"
-            ecep:pron="huːz">whose</w>
-         <c> </c>
-         <w xml:id="o5156-110630"
-            n="58-a-1740"
-            ecep:lem="lovesick"
-            ecep:pos="j"
-            ecep:reg="lovesick"
-            ecep:spe="love-sick"
-            ecep:syllab="2"
-            ecep:pron="lʌvˌsɪk">love-sick</w>
-         <c> </c>
-         <w xml:id="o5156-110640"
-            n="58-a-1750"
-            ecep:lem="mind"
-            ecep:pos="n2"
-            ecep:reg="minds"
-            ecep:spe="minds"
-            ecep:syllab="1"
-            ecep:pron="maɪndz">minds</w>
-      </l>
-      <l xml:id="o5156-l06395">
-         <w xml:id="o5156-110650"
-            n="58-a-1760"
-            ecep:lem="no"
-            ecep:pos="dx"
-            ecep:reg="No"
-            ecep:spe="No"
-            ecep:syllab="1"
-            ecep:pron="nəʊ">No</w>
-         <c> </c>
-         <w xml:id="o5156-110660"
-            n="58-a-1770"
-            ecep:lem="medicine"
-            ecep:pos="n1"
-            ecep:reg="medicine"
-            ecep:spe="medicine"
-            ecep:syllab="3"
-            ecep:pron="ˈmedsn">medicine</w>
-         <c> </c>
-         <w xml:id="o5156-110670"
-            n="58-a-1780"
-            ecep:lem="can"
-            ecep:pos="vmb"
-            ecep:reg="can"
-            ecep:spe="can"
-            ecep:syllab="1"
-            ecep:pron="kæn">can</w>
-         <c> </c>
-         <w xml:id="o5156-110680"
-            n="58-a-1790"
-            ecep:lem="assuage"
-            ecep:pos="vvi"
-            ecep:reg="assuage"
-            ecep:spe="assuage"
-            ecep:syllab="2"
-            ecep:pron="əˈsweɪdʒ">assuage</w>
-         <pc xml:id="o5156-110690"
-             n="58-a-1800"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-      <l xml:id="o5156-l06400">
-         <w xml:id="o5156-110700"
-            n="58-a-1810"
-            ecep:lem="accuse"
-            ecep:pos="vvb"
-            ecep:reg="Accuse"
-            ecep:spe="Accuse"
-            ecep:syllab="2"
-            ecep:pron="əˈkjuːz">Accuse</w>
-         <c> </c>
-         <w xml:id="o5156-110710"
-            n="58-a-1820"
-            ecep:lem="the"
-            ecep:pos="dt"
-            ecep:reg="the"
-            ecep:spe="the"
-            ecep:syllab="1"
-            ecep:pron="ðiː">the</w>
-         <c> </c>
-         <w xml:id="o5156-110720"
-            n="58-a-1830"
-            ecep:lem="leech"
-            ecep:pos="ng1"
-            ecep:reg="leech's"
-            ecep:spe="leech's"
-            ecep:syllab="1"
-            ecep:pron="liːtʃz">leech's</w>
-         <c> </c>
-         <w xml:id="o5156-110730"
-            n="58-a-1840"
-            ecep:lem="art"
-            ecep:pos="n1"
-            ecep:reg="art"
-            ecep:spe="art"
-            ecep:syllab="1"
-            ecep:pron="ɑːt">art</w>
-         <c> </c>
-         <w xml:id="o5156-110740"
-            n="58-a-1850"
-            ecep:lem="no"
-            ecep:pos="av-dx"
-            ecep:reg="no"
-            ecep:spe="no"
-            ecep:syllab="1"
-            ecep:pron="nəʊ">no</w>
-         <c> </c>
-         <w xml:id="o5156-110750"
-            n="58-a-1860"
-            ecep:lem="more"
-            ecep:pos="av-dc"
-            ecep:reg="more"
-            ecep:spe="more"
-            ecep:syllab="1"
-            ecep:pron="mɔː">more</w>
-         <pc xml:id="o5156-110760"
-             n="58-a-1870"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06405">
-         <w xml:id="o5156-110770"
-            n="58-a-1880"
-            ecep:lem="but"
-            ecep:pos="cc-acp"
-            ecep:reg="But"
-            ecep:spe="But"
-            ecep:syllab="1"
-            ecep:pron="bʌt">But</w>
-         <c> </c>
-         <w xml:id="o5156-110780"
-            n="58-a-1890"
-            ecep:lem="learn"
-            ecep:pos="vvb"
-            ecep:reg="learn"
-            ecep:spe="learn"
-            ecep:syllab="1"
-            ecep:pron="lɜːn">learn</w>
-         <c> </c>
-         <w xml:id="o5156-110790"
-            n="58-a-1900"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-110800"
-            n="58-a-1910"
-            ecep:lem="slender"
-            ecep:pos="j"
-            ecep:reg="Slender"
-            ecep:spe="Slender"
-            ecep:syllab="2"
-            ecep:pron="ˈslendə">Slender</w>
-         <c> </c>
-         <w xml:id="o5156-110810"
-            n="58-a-1920"
-            ecep:lem="to"
-            ecep:pos="pc-acp"
-            ecep:reg="to"
-            ecep:spe="to"
-            ecep:syllab="1"
-            ecep:pron="tuː">to</w>
-         <c> </c>
-         <w xml:id="o5156-110820"
-            n="58-a-1930"
-            ecep:lem="deplore"
-            ecep:pos="vvi"
-            ecep:reg="deplore"
-            ecep:spe="deplore"
-            ecep:syllab="2"
-            ecep:pron="dɪˈplɔː">deplore</w>
-         <pc xml:id="o5156-110830"
-             n="58-a-1940"
-             ecep:lem=";"
-             ecep:pos=";"
-             ecep:reg=";"
-             ecep:spe=";">;</pc>
-      </l>
-      <l xml:id="o5156-l06410">
-         <w xml:id="o5156-110840"
-            n="58-a-1950"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-110850"
-            n="58-a-1960"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-110860"
-             n="58-a-1970"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-         <c> </c>
-         <w xml:id="o5156-110870"
-            n="58-a-1980"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-110880"
-            n="58-a-1990"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-110890"
-            n="58-a-2000"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-110900"
-            n="58-a-2010"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-110910"
-             n="58-a-2020"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <pb facs="o5156/0062_R" n="57" rend="none"/>
-   <lg xml:id="o5156-s01140">
-      <l xml:id="o5156-l06415">
-         <w xml:id="o5156-110940"
-            n="59-a-0010"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="And"
-            ecep:spe="And"
-            ecep:syllab="1"
-            ecep:pron="ænd">And</w>
-         <c> </c>
-         <w xml:id="o5156-110950"
-            n="59-a-0020"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="you"
-            ecep:spe="you"
-            ecep:syllab="1"
-            ecep:pron="juː">you</w>
-         <pc xml:id="o5156-110960"
-             n="59-a-0030"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-110970"
-            n="59-a-0040"
-            ecep:lem="who"
-            ecep:pos="r-crq"
-            ecep:reg="whose"
-            ecep:spe="whose"
-            ecep:syllab="1"
-            ecep:pron="huːz">whose</w>
-         <c> </c>
-         <w xml:id="o5156-110980"
-            n="59-a-0050"
-            ecep:lem="soul"
-            ecep:pos="n2"
-            ecep:reg="souls"
-            ecep:spe="souls"
-            ecep:syllab="1"
-            ecep:pron="səʊlz">souls</w>
-         <c> </c>
-         <w xml:id="o5156-110990"
-            n="59-a-0060"
-            ecep:lem="be"
-            ecep:pos="vbr"
-            ecep:reg="are"
-            ecep:spe="are"
-            ecep:syllab="1"
-            ecep:pron="ɑː">are</w>
-         <c> </c>
-         <w xml:id="o5156-111000"
-            n="59-a-0070"
-            ecep:lem="hold"
-            ecep:pos="vvn"
-            ecep:reg="held"
-            ecep:spe="held"
-            ecep:syllab="1"
-            ecep:pron="held">held</w>
-         <pc xml:id="o5156-111010"
-             n="59-a-0080"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06420">
-         <w xml:id="o5156-111020"
-            n="59-a-0090"
-            ecep:lem="like"
-            ecep:pos="av-j"
-            ecep:reg="Like"
-            ecep:spe="Like"
-            ecep:syllab="1"
-            ecep:pron="laɪk">Like</w>
-         <c> </c>
-         <w xml:id="o5156-111030"
-            n="59-a-0100"
-            ecep:lem="linnet"
-            ecep:pos="n2"
-            ecep:reg="linnets"
-            ecep:spe="linnets"
-            ecep:syllab="2"
-            ecep:pron="ˈlɪnɪts">linnets</w>
-         <pc xml:id="o5156-111040"
-             n="59-a-0110"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111050"
-            n="59-a-0120"
-            ecep:lem="in"
-            ecep:pos="p-acp"
-            ecep:reg="in"
-            ecep:spe="in"
-            ecep:syllab="1"
-            ecep:pron="ɪn">in</w>
-         <c> </c>
-         <w xml:id="o5156-111060"
-            n="59-a-0130"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="a"
-            ecep:spe="a"
-            ecep:syllab="1"
-            ecep:pron="ə">a</w>
-         <c> </c>
-         <w xml:id="o5156-111070"
-            n="59-a-0140"
-            ecep:lem="cage"
-            ecep:pos="n1"
-            ecep:reg="cage"
-            ecep:spe="cage"
-            ecep:syllab="1"
-            ecep:pron="keɪdʒ">cage</w>
-         <pc xml:id="o5156-111080"
-             n="59-a-0150"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-      <l xml:id="o5156-l06425">
-         <w xml:id="o5156-111090"
-            n="59-a-0160"
-            ecep:lem="who"
-            ecep:pos="q-crq"
-            ecep:reg="Who"
-            ecep:spe="Who"
-            ecep:syllab="1"
-            ecep:pron="huː">Who</w>
-         <c> </c>
-         <w xml:id="o5156-111100"
-            n="59-a-0170"
-            ecep:lem="talk"
-            ecep:pos="n1"
-            ecep:reg="talk"
-            ecep:spe="talk"
-            ecep:syllab="1"
-            ecep:pron="tɔːk">talk</w>
-         <c> </c>
-         <w xml:id="o5156-111110"
-            n="59-a-0180"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-111120"
-            n="59-a-0190"
-            ecep:lem="fetter"
-            ecep:pos="n2"
-            ecep:reg="fetters"
-            ecep:spe="fetters"
-            ecep:syllab="2"
-            ecep:pron="ˈfetəz">fetters</w>
-         <pc xml:id="o5156-111130"
-             n="59-a-0200"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111140"
-            n="59-a-0210"
-            ecep:lem="link"
-            ecep:pos="n2"
-            ecep:reg="links"
-            ecep:spe="links"
-            ecep:syllab="1"
-            ecep:pron="lɪŋks">links</w>
-         <pc xml:id="o5156-111150"
-             n="59-a-0220"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111160"
-            n="59-a-0230"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="and"
-            ecep:spe="and"
-            ecep:syllab="1"
-            ecep:pron="ænd">and</w>
-         <c> </c>
-         <w xml:id="o5156-111170"
-            n="59-a-0240"
-            ecep:lem="chain"
-            ecep:pos="n2"
-            ecep:reg="chains"
-            ecep:spe="chains"
-            ecep:syllab="1"
-            ecep:pron="tʃeɪnz">chains</w>
-         <pc xml:id="o5156-111180"
-             n="59-a-0250"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06430">
-         <w xml:id="o5156-111190"
-            n="59-a-0260"
-            ecep:lem="attend"
-            ecep:pos="vvb"
-            ecep:reg="Attend"
-            ecep:spe="Attend"
-            ecep:syllab="2"
-            ecep:pron="əˈtend">Attend</w>
-         <pc xml:id="o5156-111200"
-             n="59-a-0270"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111210"
-            n="59-a-0280"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="and"
-            ecep:spe="and"
-            ecep:syllab="1"
-            ecep:pron="ænd">and</w>
-         <c> </c>
-         <w xml:id="o5156-111220"
-            n="59-a-0290"
-            ecep:lem="imitate"
-            ecep:pos="vvi"
-            ecep:reg="imitate"
-            ecep:spe="imitate"
-            ecep:syllab="3"
-            ecep:pron="ˈɪmɪteɪt">imitate</w>
-         <c> </c>
-         <w xml:id="o5156-111230"
-            n="59-a-0300"
-            ecep:lem="my"
-            ecep:pos="po11"
-            ecep:reg="my"
-            ecep:spe="my"
-            ecep:syllab="1"
-            ecep:pron="maɪ">my</w>
-         <c> </c>
-         <w xml:id="o5156-111240"
-            n="59-a-0310"
-            ecep:lem="strain"
-            ecep:pos="n2"
-            ecep:reg="strains"
-            ecep:spe="strains"
-            ecep:syllab="1"
-            ecep:pron="streɪnz">strains</w>
-         <pc xml:id="o5156-111250"
-             n="59-a-0320"
-             ecep:lem=":"
-             ecep:pos=":"
-             ecep:reg=":"
-             ecep:spe=":">:</pc>
-      </l>
-      <l xml:id="o5156-l06435">
-         <w xml:id="o5156-111260"
-            n="59-a-0330"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-111270"
-            n="59-a-0340"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-111280"
-             n="59-a-0350"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-         <c> </c>
-         <w xml:id="o5156-111290"
-            n="59-a-0360"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-111300"
-            n="59-a-0370"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-111310"
-            n="59-a-0380"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-111320"
-            n="59-a-0390"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-111330"
-             n="59-a-0400"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <lg xml:id="o5156-s01145">
-      <l xml:id="o5156-l06440">
-         <w xml:id="o5156-111360"
-            n="59-a-0410"
-            ecep:lem="and"
-            ecep:pos="cc"
-            ecep:reg="And"
-            ecep:spe="And"
-            ecep:syllab="1"
-            ecep:pron="ænd">And</w>
-         <c> </c>
-         <w xml:id="o5156-111370"
-            n="59-a-0420"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="you"
-            ecep:spe="you"
-            ecep:syllab="1"
-            ecep:pron="juː">you</w>
-         <pc xml:id="o5156-111380"
-             n="59-a-0430"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111390"
-            n="59-a-0440"
-            ecep:lem="who"
-            ecep:pos="r-crq"
-            ecep:reg="who"
-            ecep:spe="who"
-            ecep:syllab="1"
-            ecep:pron="huː">who</w>
-         <c> </c>
-         <hi>
-            <w xml:id="o5156-111400"
-               n="59-a-0450"
-               ecep:lem="boast"
-               ecep:pos="n1"
-               ecep:reg="boast"
-               ecep:spe="boast"
-               ecep:syllab="1"
-               ecep:pron="bəʊst">boast</w>
-         </hi>
-         <c> </c>
-         <w xml:id="o5156-111410"
-            n="59-a-0460"
-            ecep:lem="or"
-            ecep:pos="cc"
-            ecep:reg="or"
-            ecep:spe="or"
-            ecep:syllab="1"
-            ecep:pron="ɔː">or</w>
-         <c> </c>
-         <hi>
-            <w xml:id="o5156-111420"
-               n="59-a-0470"
-               ecep:lem="grieve"
-               ecep:pos="vvi"
-               ecep:reg="grieve"
-               ecep:spe="grieve"
-               ecep:syllab="1"
-               ecep:pron="griːv">grieve</w>
-            <pc xml:id="o5156-111430"
-                n="59-a-0480"
-                ecep:lem=","
-                ecep:pos=","
-                ecep:reg=","
-                ecep:spe=",">,</pc>
-         </hi>
-      </l>
-      <l xml:id="o5156-l06445">
-         <w xml:id="o5156-111440"
-            n="59-a-0490"
-            ecep:lem="what"
-            ecep:pos="q-crq"
-            ecep:reg="What"
-            ecep:spe="What"
-            ecep:syllab="1"
-            ecep:pron="wɒt">What</w>
-         <c> </c>
-         <w xml:id="o5156-111450"
-            n="59-a-0500"
-            ecep:lem="horrid"
-            ecep:pos="j"
-            ecep:reg="horrid"
-            ecep:spe="horrid"
-            ecep:syllab="2"
-            ecep:pron="ˈhɒrɪd">horrid</w>
-         <c> </c>
-         <w xml:id="o5156-111460"
-            n="59-a-0510"
-            ecep:lem="war"
-            ecep:pos="n2"
-            ecep:reg="wars"
-            ecep:spe="wars"
-            ecep:syllab="1"
-            ecep:pron="wɔːz">wars</w>
-         <c> </c>
-         <w xml:id="o5156-111470"
-            n="59-a-0520"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="you"
-            ecep:spe="ye"
-            ecep:syllab="1"
-            ecep:pron="jiː">ye</w>
-         <c> </c>
-         <w xml:id="o5156-111480"
-            n="59-a-0530"
-            ecep:lem="wage"
-            ecep:pos="vvb"
-            ecep:reg="wage"
-            ecep:spe="wage"
-            ecep:syllab="1"
-            ecep:pron="weɪdʒ">wage</w>
-         <pc xml:id="o5156-111490"
-             n="59-a-0540"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-      <l xml:id="o5156-l06450">
-         <w xml:id="o5156-111500"
-            n="59-a-0550"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="Of"
-            ecep:spe="Of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">Of</w>
-         <c> </c>
-         <w xml:id="o5156-111510"
-            n="59-a-0560"
-            ecep:lem="wound"
-            ecep:pos="n2"
-            ecep:reg="wounds"
-            ecep:spe="wounds"
-            ecep:syllab="1"
-            ecep:pron="wuːndz">wounds</w>
-         <c> </c>
-         <w xml:id="o5156-111520"
-            n="59-a-0570"
-            ecep:lem="receive"
-            ecep:pos="vvn"
-            ecep:reg="received"
-            ecep:spe="receiv'd"
-            ecep:syllab="2"
-            ecep:pron="rɪˈsiːvd">receiv'd</w>
-         <c> </c>
-         <w xml:id="o5156-111530"
-            n="59-a-0580"
-            ecep:lem="from"
-            ecep:pos="p-acp"
-            ecep:reg="from"
-            ecep:spe="from"
-            ecep:syllab="1"
-            ecep:pron="frɒm">from</w>
-         <c> </c>
-         <w xml:id="o5156-111540"
-            n="59-a-0590"
-            ecep:lem="many"
-            ecep:pos="d"
-            ecep:reg="many"
-            ecep:spe="many"
-            ecep:syllab="2"
-            ecep:pron="ˈmeni">many</w>
-         <c> </c>
-         <w xml:id="o5156-111550"
-            n="59-a-0600"
-            ecep:lem="a"
-            ecep:pos="dt"
-            ecep:reg="an"
-            ecep:spe="an"
-            ecep:syllab="1"
-            ecep:pron="æn">an</w>
-         <c> </c>
-         <w xml:id="o5156-111560"
-            n="59-a-0610"
-            ecep:lem="eye"
-            ecep:pos="n1"
-            ecep:reg="eye"
-            ecep:spe="eye"
-            ecep:syllab="1"
-            ecep:pron="aɪ">eye</w>
-         <pc xml:id="o5156-111570"
-             n="59-a-0620"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06455">
-         <w xml:id="o5156-111580"
-            n="59-a-0630"
-            ecep:lem="yet"
-            ecep:pos="av"
-            ecep:reg="Yet"
-            ecep:spe="Yet"
-            ecep:syllab="1"
-            ecep:pron="jet">Yet</w>
-         <c> </c>
-         <w xml:id="o5156-111590"
-            n="59-a-0640"
-            ecep:lem="mean"
-            ecep:pos="vvb"
-            ecep:reg="mean"
-            ecep:spe="mean"
-            ecep:syllab="1"
-            ecep:pron="miːn">mean</w>
-         <c> </c>
-         <w xml:id="o5156-111600"
-            n="59-a-0650"
-            ecep:lem="as"
-            ecep:pos="c-acp"
-            ecep:reg="as"
-            ecep:spe="as"
-            ecep:syllab="1"
-            ecep:pron="æz">as</w>
-         <c> </c>
-         <w xml:id="o5156-111610"
-            n="59-a-0660"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-         <c> </c>
-         <w xml:id="o5156-111620"
-            n="59-a-0670"
-            ecep:lem="do"
-            ecep:pos="vdb"
-            ecep:reg="do"
-            ecep:spe="do"
-            ecep:syllab="1"
-            ecep:pron="duː">do</w>
-         <c> </c>
-         <w xml:id="o5156-111630"
-            n="59-a-0680"
-            ecep:lem="when"
-            ecep:pos="c-crq"
-            ecep:reg="when"
-            ecep:spe="when"
-            ecep:syllab="1"
-            ecep:pron="wen">when</w>
-         <c> </c>
-         <w xml:id="o5156-111640"
-            n="59-a-0690"
-            ecep:lem="i"
-            ecep:pos="pns11"
-            ecep:reg="I"
-            ecep:spe="I"
-            ecep:syllab="1"
-            ecep:pron="aɪ">I</w>
-         <c> </c>
-         <w xml:id="o5156-111650"
-            n="59-a-0700"
-            ecep:lem="sigh"
-            ecep:pos="vvb"
-            ecep:reg="sigh"
-            ecep:spe="sigh"
-            ecep:syllab="1"
-            ecep:pron="saɪ">sigh</w>
-      </l>
-      <l xml:id="o5156-l06460">
-         <w xml:id="o5156-111660"
-            n="59-a-0710"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-111670"
-            n="59-a-0720"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-111680"
-             n="59-a-0730"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-         <c> </c>
-         <w xml:id="o5156-111690"
-            n="59-a-0740"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-111700"
-            n="59-a-0750"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-111710"
-            n="59-a-0760"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-111720"
-            n="59-a-0770"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-111730"
-             n="59-a-0780"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-   <lg xml:id="o5156-s01150">
-      <l xml:id="o5156-l06465">
-         <w xml:id="o5156-111760"
-            n="59-a-0790"
-            ecep:lem="hence"
-            ecep:pos="av"
-            ecep:reg="Hence"
-            ecep:spe="Hence"
-            ecep:syllab="1"
-            ecep:pron="hens">Hence</w>
-         <c> </c>
-         <w xml:id="o5156-111770"
-            n="59-a-0800"
-            ecep:lem="every"
-            ecep:pos="d"
-            ecep:reg="every"
-            ecep:spe="every"
-            ecep:syllab="2"
-            ecep:pron="ˈevri">every</w>
-         <c> </c>
-         <w xml:id="o5156-111780"
-            n="59-a-0810"
-            ecep:lem="fond"
-            ecep:pos="j"
-            ecep:reg="fond"
-            ecep:spe="fond"
-            ecep:syllab="1"
-            ecep:pron="fɒnd">fond</w>
-         <c> </c>
-         <w xml:id="o5156-111790"
-            n="59-a-0820"
-            ecep:lem="conceit"
-            ecep:pos="n1"
-            ecep:reg="conceit"
-            ecep:spe="conceit"
-            ecep:syllab="2"
-            ecep:pron="kənˈsiːt">conceit</w>
-      </l>
-      <l xml:id="o5156-l06470">
-         <w xml:id="o5156-111800"
-            n="59-a-0830"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="Of"
-            ecep:spe="Of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">Of</w>
-         <c> </c>
-         <w xml:id="o5156-111810"
-            n="59-a-0840"
-            ecep:lem="shepherd"
-            ecep:pos="n1"
-            ecep:reg="shepherd"
-            ecep:spe="shepherd"
-            ecep:syllab="2"
-            ecep:pron="ˈʃepəd">shepherd</w>
-         <pc xml:id="o5156-111820"
-             n="59-a-0850"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111830"
-            n="59-a-0860"
-            ecep:lem="or"
-            ecep:pos="cc"
-            ecep:reg="or"
-            ecep:spe="or"
-            ecep:syllab="1"
-            ecep:pron="ɔː">or</w>
-         <c> </c>
-         <w xml:id="o5156-111840"
-            n="59-a-0870"
-            ecep:lem="of"
-            ecep:pos="pp-f"
-            ecep:reg="of"
-            ecep:spe="of"
-            ecep:syllab="1"
-            ecep:pron="ɒv">of</w>
-         <c> </c>
-         <w xml:id="o5156-111850"
-            n="59-a-0880"
-            ecep:lem="sage"
-            ecep:pos="j-jn"
-            ecep:reg="sage"
-            ecep:spe="sage"
-            ecep:syllab="1"
-            ecep:pron="seɪdʒ">sage</w>
-         <pc xml:id="o5156-111860"
-             n="59-a-0890"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-      <l xml:id="o5156-l06475">
-         <w xml:id="o5156-111870"
-            n="59-a-0900"
-            ecep:lem="it|be"
-            ecep:pos="pn31|vbz"
-            ecep:reg="It's"
-            ecep:spe="'Tis"
-            ecep:syllab="1"
-            ecep:pron="tɪz">'Tis</w>
-         <c> </c>
-         <w xml:id="o5156-111880"
-            n="59-a-0910"
-            ecep:lem="slender"
-            ecep:pos="ng1"
-            ecep:reg="Slender's"
-            ecep:spe="Slender's"
-            ecep:syllab="2"
-            ecep:pron="ˈslendəz">Slender's</w>
-         <c> </c>
-         <w xml:id="o5156-111890"
-            n="59-a-0920"
-            ecep:lem="voice"
-            ecep:pos="n1"
-            ecep:reg="voice"
-            ecep:spe="voice"
-            ecep:syllab="1"
-            ecep:pron="vɔɪs">voice</w>
-         <pc xml:id="o5156-111900"
-             n="59-a-0930"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-         <c> </c>
-         <w xml:id="o5156-111910"
-            n="59-a-0940"
-            ecep:lem="it|be"
-            ecep:pos="pn31|vbz"
-            ecep:reg="it's"
-            ecep:spe="'tis"
-            ecep:syllab="1"
-            ecep:pron="tɪz">'tis</w>
-         <c> </c>
-         <w xml:id="o5156-111920"
-            n="59-a-0950"
-            ecep:lem="slender"
-            ecep:pos="ng1"
-            ecep:reg="Slender's"
-            ecep:spe="Slender's"
-            ecep:syllab="2"
-            ecep:pron="ˈslendəz">Slender's</w>
-         <c> </c>
-         <w xml:id="o5156-111930"
-            n="59-a-0960"
-            ecep:lem="way"
-            ecep:pos="n1"
-            ecep:reg="way"
-            ecep:spe="way"
-            ecep:syllab="1"
-            ecep:pron="weɪ">way</w>
-         <pc xml:id="o5156-111940"
-             n="59-a-0970"
-             ecep:lem=","
-             ecep:pos=","
-             ecep:reg=","
-             ecep:spe=",">,</pc>
-      </l>
-      <l xml:id="o5156-l06480">
-         <w xml:id="o5156-111950"
-            n="59-a-0980"
-            ecep:lem="express"
-            ecep:pos="vvz"
-            ecep:reg="Expresses"
-            ecep:spe="Expresses"
-            ecep:syllab="3"
-            ecep:pron="ɪkˈspresɪz">Expresses</w>
-         <c> </c>
-         <w xml:id="o5156-111960"
-            n="59-a-0990"
-            ecep:lem="all"
-            ecep:pos="av-d"
-            ecep:reg="all"
-            ecep:spe="all"
-            ecep:syllab="1"
-            ecep:pron="ɔːl">all</w>
-         <c> </c>
-         <w xml:id="o5156-111970"
-            n="59-a-1000"
-            ecep:lem="you"
-            ecep:pos="pn22"
-            ecep:reg="you"
-            ecep:spe="you"
-            ecep:syllab="1"
-            ecep:pron="juː">you</w>
-         <c> </c>
-         <w xml:id="o5156-111980"
-            n="59-a-1010"
-            ecep:lem="have"
-            ecep:pos="vhb"
-            ecep:reg="have"
-            ecep:spe="have"
-            ecep:syllab="1"
-            ecep:pron="hæv">have</w>
-         <c> </c>
-         <w xml:id="o5156-111990"
-            n="59-a-1020"
-            ecep:lem="to"
-            ecep:pos="pc-acp"
-            ecep:reg="to"
-            ecep:spe="to"
-            ecep:syllab="1"
-            ecep:pron="tuː">to</w>
-         <c> </c>
-         <w xml:id="o5156-112000"
-            n="59-a-1030"
-            ecep:lem="say"
-            ecep:pos="vvi"
-            ecep:reg="say"
-            ecep:spe="say"
-            ecep:syllab="1"
-            ecep:pron="seɪ">say</w>
-         <c> </c>
-         <pc xml:id="o5156-112010"
-             n="59-a-1040"
-             ecep:lem="—"
-             ecep:pos="—"
-             ecep:reg="—"
-             ecep:spe="—">—</pc>
-      </l>
-      <l xml:id="o5156-l06485">
-         <w xml:id="o5156-112020"
-            n="59-a-1050"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-112030"
-            n="59-a-1060"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <pc xml:id="o5156-112040"
-             n="59-a-1070"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-         <c> </c>
-         <w xml:id="o5156-112050"
-            n="59-a-1080"
-            ecep:lem="o"
-            ecep:pos="uh"
-            ecep:reg="OH"
-            ecep:spe="O"
-            ecep:syllab="1"
-            ecep:pron="əʊ">O</w>
-         <c> </c>
-         <w xml:id="o5156-112060"
-            n="59-a-1090"
-            ecep:lem="sweet"
-            ecep:pos="j"
-            ecep:reg="sweet"
-            ecep:spe="sweet"
-            ecep:syllab="1"
-            ecep:pron="swiːt">sweet</w>
-         <c> </c>
-         <w xml:id="o5156-112070"
-            n="59-a-1100"
-            ecep:lem="Anne"
-            ecep:pos="np1"
-            ecep:reg="Anne"
-            ecep:spe="Anne"
-            ecep:syllab="1"
-            ecep:pron="ˈæn">Anne</w>
-         <c> </c>
-         <w xml:id="o5156-112080"
-            n="59-a-1110"
-            ecep:lem="page"
-            ecep:pos="n1"
-            ecep:reg="Page"
-            ecep:spe="Page"
-            ecep:syllab="1"
-            ecep:pron="peɪdʒ">Page</w>
-         <pc xml:id="o5156-112090"
-             n="59-a-1120"
-             unit="sentence"
-             ecep:lem="!"
-             ecep:pos="!"
-             ecep:reg="!"
-             ecep:spe="!">!</pc>
-      </l>
-   </lg>
-</div>
+            </epigraph>
+            <lg xml:id="o5156-s01120">
+               <l xml:id="o5156-l06315">
+                  <w xml:id="o5156-109440"
+                     n="58-a-0610"
+                     ecep:lem="beneath"
+                     ecep:pos="p-acp"
+                     ecep:reg="BENEATH"
+                     ecep:spe="BENEATH"
+                     ecep:syllab="2"
+                     ecep:pron="bɪˈniːθ">BENEATH</w>
+                  <c> </c>
+                  <w xml:id="o5156-109450"
+                     n="58-a-0620"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xml:id="o5156-109460"
+                     n="58-a-0630"
+                     ecep:lem="church-yard"
+                     ecep:pos="n1"
+                     ecep:reg="churchyard"
+                     ecep:spe="church-yard"
+                     ecep:syllab="2"
+                     ecep:pron="ˈtʃɜːtʃjɑːd">church-yard</w>
+                  <c> </c>
+                  <w xml:id="o5156-109470"
+                     n="58-a-0640"
+                     ecep:lem="yew"
+                     ecep:pos="n1"
+                     ecep:reg="yew"
+                     ecep:spe="yew"
+                     ecep:syllab="1"
+                     ecep:pron="juː">yew</w>
+               </l>
+               <l xml:id="o5156-l06320">
+                  <w xml:id="o5156-109480"
+                     n="58-a-0650"
+                     ecep:lem="decay"
+                     ecep:pos="vvn"
+                     ecep:reg="Decayed"
+                     ecep:spe="Decay'd"
+                     ecep:syllab="2"
+                     ecep:pron="dɪˈkeɪd">Decay'd</w>
+                  <c> </c>
+                  <w xml:id="o5156-109490"
+                     n="58-a-0660"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xml:id="o5156-109500"
+                     n="58-a-0670"
+                     ecep:lem="wear"
+                     ecep:pos="vvn"
+                     ecep:reg="worn"
+                     ecep:spe="worn"
+                     ecep:syllab="1"
+                     ecep:pron="wɔːn">worn</w>
+                  <c> </c>
+                  <w xml:id="o5156-109510"
+                     n="58-a-0680"
+                     ecep:lem="with"
+                     ecep:pos="p-acp"
+                     ecep:reg="with"
+                     ecep:spe="with"
+                     ecep:syllab="1"
+                     ecep:pron="wɪð">with</w>
+                  <c> </c>
+                  <w xml:id="o5156-109520"
+                     n="58-a-0690"
+                     ecep:lem="age"
+                     ecep:pos="n1"
+                     ecep:reg="age"
+                     ecep:spe="age"
+                     ecep:syllab="1"
+                     ecep:pron="eɪdʒ">age</w>
+                  <pc xml:id="o5156-109530"
+                      n="58-a-0700"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06325">
+                  <w xml:id="o5156-109540"
+                     n="58-a-0710"
+                     ecep:lem="at"
+                     ecep:pos="p-acp"
+                     ecep:reg="At"
+                     ecep:spe="At"
+                     ecep:syllab="1"
+                     ecep:pron="æt">At</w>
+                  <c> </c>
+                  <w xml:id="o5156-109550"
+                     n="58-a-0720"
+                     ecep:lem="dusk"
+                     ecep:pos="n1"
+                     ecep:reg="dusk"
+                     ecep:spe="dusk"
+                     ecep:syllab="1"
+                     ecep:pron="dʌsk">dusk</w>
+                  <c> </c>
+                  <w xml:id="o5156-109560"
+                     n="58-a-0730"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-109570"
+                     n="58-a-0740"
+                     ecep:lem="eve"
+                     ecep:pos="n1"
+                     ecep:reg="eve"
+                     ecep:spe="eve"
+                     ecep:syllab="1"
+                     ecep:pron="iːv">eve</w>
+                  <pc xml:id="o5156-109580"
+                      n="58-a-0750"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109590"
+                     n="58-a-0760"
+                     ecep:lem="methinks"
+                     ecep:pos="vvd"
+                     ecep:reg="methought"
+                     ecep:spe="methought"
+                     ecep:syllab="2"
+                     ecep:pron="mɪˈθɔːt">methought</w>
+                  <c> </c>
+                  <w xml:id="o5156-109600"
+                     n="58-a-0770"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+                  <c> </c>
+                  <w xml:id="o5156-109610"
+                     n="58-a-0780"
+                     ecep:lem="spy"
+                     ecep:pos="vvd"
+                     ecep:reg="spied"
+                     ecep:spe="spy'd"
+                     ecep:syllab="1"
+                     ecep:pron="spaɪd">spy'd</w>
+               </l>
+               <l xml:id="o5156-l06330">
+                  <w xml:id="o5156-109620"
+                     n="58-a-0790"
+                     ecep:lem="poor"
+                     ecep:pos="j"
+                     ecep:reg="Poor"
+                     ecep:spe="Poor"
+                     ecep:syllab="1"
+                     ecep:pron="pɔː">Poor</w>
+                  <c> </c>
+                  <w xml:id="o5156-109630"
+                     n="58-a-0800"
+                     ecep:lem="slender"
+                     ecep:pos="ng1"
+                     ecep:reg="Slender's"
+                     ecep:spe="Slender's"
+                     ecep:syllab="2"
+                     ecep:pron="ˈslendəz">Slender's</w>
+                  <c> </c>
+                  <w xml:id="o5156-109640"
+                     n="58-a-0810"
+                     ecep:lem="ghost"
+                     ecep:pos="n1"
+                     ecep:reg="ghost"
+                     ecep:spe="ghost"
+                     ecep:syllab="1"
+                     ecep:pron="gəʊst">ghost</w>
+                  <pc xml:id="o5156-109650"
+                      n="58-a-0820"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109660"
+                     n="58-a-0830"
+                     ecep:lem="that"
+                     ecep:pos="cst"
+                     ecep:reg="that"
+                     ecep:spe="that"
+                     ecep:syllab="1"
+                     ecep:pron="ðæt">that</w>
+                  <c> </c>
+                  <w xml:id="o5156-109670"
+                     n="58-a-0840"
+                     ecep:lem="whimper"
+                     ecep:pos="n-vvg"
+                     ecep:reg="whimpering"
+                     ecep:spe="whimpering"
+                     ecep:syllab="3"
+                     ecep:pron="ˈwɪmprɪŋ">whimpering</w>
+                  <c> </c>
+                  <w xml:id="o5156-109680"
+                     n="58-a-0850"
+                     ecep:lem="cry"
+                     ecep:pos="vvd"
+                     ecep:reg="cried"
+                     ecep:spe="cry'd"
+                     ecep:syllab="1"
+                     ecep:pron="kraɪd">cry'd</w>
+                  <pc xml:id="o5156-109690"
+                      n="58-a-0860"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06335">
+                  <w xml:id="o5156-109700"
+                     n="58-a-0870"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-109710"
+                     n="58-a-0880"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-109720"
+                      n="58-a-0890"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109730"
+                     n="58-a-0900"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-109740"
+                     n="58-a-0910"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-109750"
+                     n="58-a-0920"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-109760"
+                     n="58-a-0930"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-109770"
+                      n="58-a-0940"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <lg xml:id="o5156-s01125">
+               <l xml:id="o5156-l06340">
+                  <w xml:id="o5156-109800"
+                     n="58-a-0950"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="You"
+                     ecep:spe="Ye"
+                     ecep:syllab="1"
+                     ecep:pron="jiː">Ye</w>
+                  <c> </c>
+                  <w xml:id="o5156-109810"
+                     n="58-a-0960"
+                     ecep:lem="gentle"
+                     ecep:pos="j-jn"
+                     ecep:reg="gentle"
+                     ecep:spe="gentle"
+                     ecep:syllab="2"
+                     ecep:pron="ˈdʒentl">gentle</w>
+                  <c> </c>
+                  <w xml:id="o5156-109820"
+                     n="58-a-0970"
+                     ecep:lem="bard"
+                     ecep:pos="n2"
+                     ecep:reg="bards"
+                     ecep:spe="bards"
+                     ecep:syllab="1"
+                     ecep:pron="bɑːdz">bards</w>
+                  <pc xml:id="o5156-109830"
+                      n="58-a-0980"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109840"
+                     n="58-a-0990"
+                     ecep:lem="give"
+                     ecep:pos="vvb"
+                     ecep:reg="give"
+                     ecep:spe="give"
+                     ecep:syllab="1"
+                     ecep:pron="gɪv">give</w>
+                  <c> </c>
+                  <w xml:id="o5156-109850"
+                     n="58-a-1000"
+                     ecep:lem="ear"
+                     ecep:pos="n1"
+                     ecep:reg="ear"
+                     ecep:spe="ear"
+                     ecep:syllab="1"
+                     ecep:pron="ɪə">ear</w>
+                  <pc xml:id="o5156-109860"
+                      n="58-a-1010"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+               <l xml:id="o5156-l06345">
+                  <w xml:id="o5156-109870"
+                     n="58-a-1020"
+                     ecep:lem="who"
+                     ecep:pos="q-crq"
+                     ecep:reg="Who"
+                     ecep:spe="Who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">Who</w>
+                  <c> </c>
+                  <w xml:id="o5156-109880"
+                     n="58-a-1030"
+                     ecep:lem="talk"
+                     ecep:pos="n1"
+                     ecep:reg="talk"
+                     ecep:spe="talk"
+                     ecep:syllab="1"
+                     ecep:pron="tɔːk">talk</w>
+                  <c> </c>
+                  <w xml:id="o5156-109890"
+                     n="58-a-1040"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-109900"
+                     n="58-a-1050"
+                     ecep:lem="amorous"
+                     ecep:pos="j"
+                     ecep:reg="amorous"
+                     ecep:spe="amorous"
+                     ecep:syllab="3"
+                     ecep:pron="ˈæmrəs">amorous</w>
+                  <c> </c>
+                  <w xml:id="o5156-109910"
+                     n="58-a-1060"
+                     ecep:lem="rage"
+                     ecep:pos="n1"
+                     ecep:reg="rage"
+                     ecep:spe="rage"
+                     ecep:syllab="1"
+                     ecep:pron="reɪdʒ">rage</w>
+                  <pc xml:id="o5156-109920"
+                      n="58-a-1070"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06350">
+                  <w xml:id="o5156-109930"
+                     n="58-a-1080"
+                     ecep:lem="who"
+                     ecep:pos="q-crq"
+                     ecep:reg="Who"
+                     ecep:spe="Who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">Who</w>
+                  <c> </c>
+                  <w xml:id="o5156-109940"
+                     n="58-a-1090"
+                     ecep:lem="spoil"
+                     ecep:pos="vvb"
+                     ecep:reg="spoil"
+                     ecep:spe="spoil"
+                     ecep:syllab="1"
+                     ecep:pron="spɔɪl">spoil</w>
+                  <c> </c>
+                  <w xml:id="o5156-109950"
+                     n="58-a-1100"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="o5156-109960"
+                     n="58-a-1110"
+                     ecep:lem="lily"
+                     ecep:pos="n1"
+                     ecep:reg="lily"
+                     ecep:spe="lily"
+                     ecep:syllab="2"
+                     ecep:pron="ˈlɪli">lily</w>
+                  <pc xml:id="o5156-109970"
+                      n="58-a-1120"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-109980"
+                     n="58-a-1130"
+                     ecep:lem="rob"
+                     ecep:pos="vvb"
+                     ecep:reg="rob"
+                     ecep:spe="rob"
+                     ecep:syllab="1"
+                     ecep:pron="rɒb">rob</w>
+                  <c> </c>
+                  <w xml:id="o5156-109990"
+                     n="58-a-1140"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="o5156-110000"
+                     n="58-a-1150"
+                     ecep:lem="rose"
+                     ecep:pos="n1"
+                     ecep:reg="rose"
+                     ecep:spe="rose"
+                     ecep:syllab="1"
+                     ecep:pron="rəʊz">rose</w>
+                  <pc xml:id="o5156-110010"
+                      n="58-a-1160"
+                      ecep:lem=";"
+                      ecep:pos=";"
+                      ecep:reg=";"
+                      ecep:spe=";">;</pc>
+               </l>
+               <l xml:id="o5156-l06355">
+                  <w xml:id="o5156-110020"
+                     n="58-a-1170"
+                     ecep:lem="come"
+                     ecep:pos="vvb"
+                     ecep:reg="Come"
+                     ecep:spe="Come"
+                     ecep:syllab="1"
+                     ecep:pron="kʌm">Come</w>
+                  <c> </c>
+                  <w xml:id="o5156-110030"
+                     n="58-a-1180"
+                     ecep:lem="learn"
+                     ecep:pos="vvb"
+                     ecep:reg="learn"
+                     ecep:spe="learn"
+                     ecep:syllab="1"
+                     ecep:pron="lɜːn">learn</w>
+                  <c> </c>
+                  <w xml:id="o5156-110040"
+                     n="58-a-1190"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-110050"
+                     n="58-a-1200"
+                     ecep:lem="i"
+                     ecep:pos="pno11"
+                     ecep:reg="me"
+                     ecep:spe="me"
+                     ecep:syllab="1"
+                     ecep:pron="miː">me</w>
+                  <c> </c>
+                  <w xml:id="o5156-110060"
+                     n="58-a-1210"
+                     ecep:lem="to"
+                     ecep:pos="pc-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <w xml:id="o5156-110070"
+                     n="58-a-1220"
+                     ecep:lem="weep"
+                     ecep:pos="vvi"
+                     ecep:reg="weep"
+                     ecep:spe="weep"
+                     ecep:syllab="1"
+                     ecep:pron="wiːp">weep</w>
+                  <c> </c>
+                  <w xml:id="o5156-110080"
+                     n="58-a-1230"
+                     ecep:lem="your"
+                     ecep:pos="po22"
+                     ecep:reg="your"
+                     ecep:spe="your"
+                     ecep:syllab="1"
+                     ecep:pron="jɔː">your</w>
+                  <c> </c>
+                  <w xml:id="o5156-110090"
+                     n="58-a-1240"
+                     ecep:lem="woe"
+                     ecep:pos="n2"
+                     ecep:reg="woes"
+                     ecep:spe="woes"
+                     ecep:syllab="1"
+                     ecep:pron="wəʊz">woes</w>
+                  <pc xml:id="o5156-110100"
+                      n="58-a-1250"
+                      ecep:lem=":"
+                      ecep:pos=":"
+                      ecep:reg=":"
+                      ecep:spe=":">:</pc>
+               </l>
+               <l xml:id="o5156-l06360">
+                  <w xml:id="o5156-110110"
+                     n="58-a-1260"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-110120"
+                     n="58-a-1270"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-110130"
+                      n="58-a-1280"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110140"
+                     n="58-a-1290"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-110150"
+                     n="58-a-1300"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-110160"
+                     n="58-a-1310"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-110170"
+                     n="58-a-1320"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-110180"
+                      n="58-a-1330"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <lg xml:id="o5156-s01130">
+               <l xml:id="o5156-l06365">
+                  <w xml:id="o5156-110210"
+                     n="58-a-1340"
+                     ecep:lem="why"
+                     ecep:pos="q-crq"
+                     ecep:reg="Why"
+                     ecep:spe="Why"
+                     ecep:syllab="1"
+                     ecep:pron="waɪ">Why</w>
+                  <c> </c>
+                  <w xml:id="o5156-110220"
+                     n="58-a-1350"
+                     ecep:lem="shall"
+                     ecep:pos="vmd"
+                     ecep:reg="should"
+                     ecep:spe="should"
+                     ecep:syllab="1"
+                     ecep:pron="ʃʊd">should</w>
+                  <c> </c>
+                  <w xml:id="o5156-110230"
+                     n="58-a-1360"
+                     ecep:lem="such"
+                     ecep:pos="d"
+                     ecep:reg="such"
+                     ecep:spe="such"
+                     ecep:syllab="1"
+                     ecep:pron="sʌtʃ">such</w>
+                  <c> </c>
+                  <w xml:id="o5156-110240"
+                     n="58-a-1370"
+                     ecep:lem="labour"
+                     ecep:pos="j-vvn"
+                     ecep:reg="laboured"
+                     ecep:spe="labour'd"
+                     ecep:syllab="2"
+                     ecep:pron="ˈleɪbəd">labour'd</w>
+                  <c> </c>
+                  <w xml:id="o5156-110250"
+                     n="58-a-1380"
+                     ecep:lem="strain"
+                     ecep:pos="n2"
+                     ecep:reg="strains"
+                     ecep:spe="strains"
+                     ecep:syllab="1"
+                     ecep:pron="streɪnz">strains</w>
+               </l>
+               <l xml:id="o5156-l06370">
+                  <w xml:id="o5156-110260"
+                     n="58-a-1390"
+                     ecep:lem="your"
+                     ecep:pos="po22"
+                     ecep:reg="Your"
+                     ecep:spe="Your"
+                     ecep:syllab="1"
+                     ecep:pron="jɔː">Your</w>
+                  <c> </c>
+                  <w xml:id="o5156-110270"
+                     n="58-a-1400"
+                     ecep:lem="formal"
+                     ecep:pos="j"
+                     ecep:reg="formal"
+                     ecep:spe="formal"
+                     ecep:syllab="2"
+                     ecep:pron="ˈfɔːml">formal</w>
+                  <c> </c>
+                  <w xml:id="o5156-110280"
+                     n="58-a-1410"
+                     ecep:lem="muse"
+                     ecep:pos="n1"
+                     ecep:reg="Muse"
+                     ecep:spe="Muse"
+                     ecep:syllab="1"
+                     ecep:pron="mjuːz">Muse</w>
+                  <c> </c>
+                  <w xml:id="o5156-110290"
+                     n="58-a-1420"
+                     ecep:lem="engage"
+                     ecep:pos="vvi"
+                     ecep:reg="engage"
+                     ecep:spe="engage"
+                     ecep:syllab="2"
+                     ecep:pron="ɪnˈgeɪdʒ">engage</w>
+                  <pc xml:id="o5156-110300"
+                      n="58-a-1430"
+                      unit="sentence"
+                      ecep:lem="?"
+                      ecep:pos="?"
+                      ecep:reg="?"
+                      ecep:spe="?">?</pc>
+               </l>
+               <l xml:id="o5156-l06375">
+                  <w xml:id="o5156-110310"
+                     n="58-a-1440"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+                  <c> </c>
+                  <w xml:id="o5156-110320"
+                     n="58-a-1450"
+                     ecep:lem="never"
+                     ecep:pos="av-x"
+                     ecep:reg="never"
+                     ecep:spe="never"
+                     ecep:syllab="2"
+                     ecep:pron="ˈnevə">never</w>
+                  <c> </c>
+                  <w xml:id="o5156-110330"
+                     n="58-a-1460"
+                     ecep:lem="dream"
+                     ecep:pos="vvd"
+                     ecep:reg="dreamt"
+                     ecep:spe="dreamt"
+                     ecep:syllab="1"
+                     ecep:pron="driːmdremt">dreamt</w>
+                  <c> </c>
+                  <w xml:id="o5156-110340"
+                     n="58-a-1470"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-110350"
+                     n="58-a-1480"
+                     ecep:lem="flame"
+                     ecep:pos="n1"
+                     ecep:reg="flame"
+                     ecep:spe="flame"
+                     ecep:syllab="1"
+                     ecep:pron="fleɪm">flame</w>
+                  <c> </c>
+                  <w xml:id="o5156-110360"
+                     n="58-a-1490"
+                     ecep:lem="or"
+                     ecep:pos="cc"
+                     ecep:reg="or"
+                     ecep:spe="or"
+                     ecep:syllab="1"
+                     ecep:pron="ɔː">or</w>
+                  <c> </c>
+                  <w xml:id="o5156-110370"
+                     n="58-a-1500"
+                     ecep:lem="dart"
+                     ecep:pos="n1"
+                     ecep:reg="dart"
+                     ecep:spe="dart"
+                     ecep:syllab="1"
+                     ecep:pron="dɑːt">dart</w>
+                  <pc xml:id="o5156-110380"
+                      n="58-a-1510"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06380">
+                  <w xml:id="o5156-110390"
+                     n="58-a-1520"
+                     ecep:lem="that"
+                     ecep:pos="cst"
+                     ecep:reg="That"
+                     ecep:spe="That"
+                     ecep:syllab="1"
+                     ecep:pron="ðæt">That</w>
+                  <c> </c>
+                  <w xml:id="o5156-110400"
+                     n="58-a-1530"
+                     ecep:lem="fire"
+                     ecep:pos="vvd"
+                     ecep:reg="fired"
+                     ecep:spe="fir'd"
+                     ecep:syllab="1"
+                     ecep:pron="fæəd">fir'd</w>
+                  <c> </c>
+                  <w xml:id="o5156-110410"
+                     n="58-a-1540"
+                     ecep:lem="my"
+                     ecep:pos="po11"
+                     ecep:reg="my"
+                     ecep:spe="my"
+                     ecep:syllab="1"
+                     ecep:pron="maɪ">my</w>
+                  <c> </c>
+                  <w xml:id="o5156-110420"
+                     n="58-a-1550"
+                     ecep:lem="breast"
+                     ecep:pos="n1"
+                     ecep:reg="breast"
+                     ecep:spe="breast"
+                     ecep:syllab="1"
+                     ecep:pron="brest">breast</w>
+                  <pc xml:id="o5156-110430"
+                      n="58-a-1560"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110440"
+                     n="58-a-1570"
+                     ecep:lem="or"
+                     ecep:pos="cc"
+                     ecep:reg="or"
+                     ecep:spe="or"
+                     ecep:syllab="1"
+                     ecep:pron="ɔː">or</w>
+                  <c> </c>
+                  <w xml:id="o5156-110450"
+                     n="58-a-1580"
+                     ecep:lem="pierce"
+                     ecep:pos="vvd"
+                     ecep:reg="pierced"
+                     ecep:spe="pierc'd"
+                     ecep:syllab="1"
+                     ecep:pron="pɪəst">pierc'd</w>
+                  <c> </c>
+                  <w xml:id="o5156-110460"
+                     n="58-a-1590"
+                     ecep:lem="my"
+                     ecep:pos="po11"
+                     ecep:reg="my"
+                     ecep:spe="my"
+                     ecep:syllab="1"
+                     ecep:pron="maɪ">my</w>
+                  <c> </c>
+                  <w xml:id="o5156-110470"
+                     n="58-a-1600"
+                     ecep:lem="heart"
+                     ecep:pos="n1"
+                     ecep:reg="heart"
+                     ecep:spe="heart"
+                     ecep:syllab="1"
+                     ecep:pron="hɑːt">heart</w>
+                  <pc xml:id="o5156-110480"
+                      n="58-a-1610"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06385">
+                  <w xml:id="o5156-110490"
+                     n="58-a-1620"
+                     ecep:lem="but"
+                     ecep:pos="cc-acp"
+                     ecep:reg="But"
+                     ecep:spe="But"
+                     ecep:syllab="1"
+                     ecep:pron="bʌt">But</w>
+                  <c> </c>
+                  <w xml:id="o5156-110500"
+                     n="58-a-1630"
+                     ecep:lem="sigh"
+                     ecep:pos="vvd"
+                     ecep:reg="sighed"
+                     ecep:spe="sigh'd"
+                     ecep:syllab="1"
+                     ecep:pron="saɪd">sigh'd</w>
+                  <pc xml:id="o5156-110510"
+                      n="58-a-1640"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110520"
+                     n="58-a-1650"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-110530"
+                     n="58-a-1660"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-110540"
+                     n="58-a-1670"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-110550"
+                     n="58-a-1680"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-110560"
+                      n="58-a-1690"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <lg xml:id="o5156-s01135">
+               <l xml:id="o5156-l06390">
+                  <w xml:id="o5156-110590"
+                     n="58-a-1700"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xml:id="o5156-110600"
+                     n="58-a-1710"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="you"
+                     ecep:syllab="1"
+                     ecep:pron="juː">you</w>
+                  <pc xml:id="o5156-110610"
+                      n="58-a-1720"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110620"
+                     n="58-a-1730"
+                     ecep:lem="who"
+                     ecep:pos="r-crq"
+                     ecep:reg="whose"
+                     ecep:spe="whose"
+                     ecep:syllab="1"
+                     ecep:pron="huːz">whose</w>
+                  <c> </c>
+                  <w xml:id="o5156-110630"
+                     n="58-a-1740"
+                     ecep:lem="lovesick"
+                     ecep:pos="j"
+                     ecep:reg="lovesick"
+                     ecep:spe="love-sick"
+                     ecep:syllab="2"
+                     ecep:pron="lʌvˌsɪk">love-sick</w>
+                  <c> </c>
+                  <w xml:id="o5156-110640"
+                     n="58-a-1750"
+                     ecep:lem="mind"
+                     ecep:pos="n2"
+                     ecep:reg="minds"
+                     ecep:spe="minds"
+                     ecep:syllab="1"
+                     ecep:pron="maɪndz">minds</w>
+               </l>
+               <l xml:id="o5156-l06395">
+                  <w xml:id="o5156-110650"
+                     n="58-a-1760"
+                     ecep:lem="no"
+                     ecep:pos="dx"
+                     ecep:reg="No"
+                     ecep:spe="No"
+                     ecep:syllab="1"
+                     ecep:pron="nəʊ">No</w>
+                  <c> </c>
+                  <w xml:id="o5156-110660"
+                     n="58-a-1770"
+                     ecep:lem="medicine"
+                     ecep:pos="n1"
+                     ecep:reg="medicine"
+                     ecep:spe="medicine"
+                     ecep:syllab="3"
+                     ecep:pron="ˈmedsn">medicine</w>
+                  <c> </c>
+                  <w xml:id="o5156-110670"
+                     n="58-a-1780"
+                     ecep:lem="can"
+                     ecep:pos="vmb"
+                     ecep:reg="can"
+                     ecep:spe="can"
+                     ecep:syllab="1"
+                     ecep:pron="kæn">can</w>
+                  <c> </c>
+                  <w xml:id="o5156-110680"
+                     n="58-a-1790"
+                     ecep:lem="assuage"
+                     ecep:pos="vvi"
+                     ecep:reg="assuage"
+                     ecep:spe="assuage"
+                     ecep:syllab="2"
+                     ecep:pron="əˈsweɪdʒ">assuage</w>
+                  <pc xml:id="o5156-110690"
+                      n="58-a-1800"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+               <l xml:id="o5156-l06400">
+                  <w xml:id="o5156-110700"
+                     n="58-a-1810"
+                     ecep:lem="accuse"
+                     ecep:pos="vvb"
+                     ecep:reg="Accuse"
+                     ecep:spe="Accuse"
+                     ecep:syllab="2"
+                     ecep:pron="əˈkjuːz">Accuse</w>
+                  <c> </c>
+                  <w xml:id="o5156-110710"
+                     n="58-a-1820"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xml:id="o5156-110720"
+                     n="58-a-1830"
+                     ecep:lem="leech"
+                     ecep:pos="ng1"
+                     ecep:reg="leech's"
+                     ecep:spe="leech's"
+                     ecep:syllab="1"
+                     ecep:pron="liːtʃz">leech's</w>
+                  <c> </c>
+                  <w xml:id="o5156-110730"
+                     n="58-a-1840"
+                     ecep:lem="art"
+                     ecep:pos="n1"
+                     ecep:reg="art"
+                     ecep:spe="art"
+                     ecep:syllab="1"
+                     ecep:pron="ɑːt">art</w>
+                  <c> </c>
+                  <w xml:id="o5156-110740"
+                     n="58-a-1850"
+                     ecep:lem="no"
+                     ecep:pos="av-dx"
+                     ecep:reg="no"
+                     ecep:spe="no"
+                     ecep:syllab="1"
+                     ecep:pron="nəʊ">no</w>
+                  <c> </c>
+                  <w xml:id="o5156-110750"
+                     n="58-a-1860"
+                     ecep:lem="more"
+                     ecep:pos="av-dc"
+                     ecep:reg="more"
+                     ecep:spe="more"
+                     ecep:syllab="1"
+                     ecep:pron="mɔː">more</w>
+                  <pc xml:id="o5156-110760"
+                      n="58-a-1870"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06405">
+                  <w xml:id="o5156-110770"
+                     n="58-a-1880"
+                     ecep:lem="but"
+                     ecep:pos="cc-acp"
+                     ecep:reg="But"
+                     ecep:spe="But"
+                     ecep:syllab="1"
+                     ecep:pron="bʌt">But</w>
+                  <c> </c>
+                  <w xml:id="o5156-110780"
+                     n="58-a-1890"
+                     ecep:lem="learn"
+                     ecep:pos="vvb"
+                     ecep:reg="learn"
+                     ecep:spe="learn"
+                     ecep:syllab="1"
+                     ecep:pron="lɜːn">learn</w>
+                  <c> </c>
+                  <w xml:id="o5156-110790"
+                     n="58-a-1900"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-110800"
+                     n="58-a-1910"
+                     ecep:lem="slender"
+                     ecep:pos="j"
+                     ecep:reg="Slender"
+                     ecep:spe="Slender"
+                     ecep:syllab="2"
+                     ecep:pron="ˈslendə">Slender</w>
+                  <c> </c>
+                  <w xml:id="o5156-110810"
+                     n="58-a-1920"
+                     ecep:lem="to"
+                     ecep:pos="pc-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <w xml:id="o5156-110820"
+                     n="58-a-1930"
+                     ecep:lem="deplore"
+                     ecep:pos="vvi"
+                     ecep:reg="deplore"
+                     ecep:spe="deplore"
+                     ecep:syllab="2"
+                     ecep:pron="dɪˈplɔː">deplore</w>
+                  <pc xml:id="o5156-110830"
+                      n="58-a-1940"
+                      ecep:lem=";"
+                      ecep:pos=";"
+                      ecep:reg=";"
+                      ecep:spe=";">;</pc>
+               </l>
+               <l xml:id="o5156-l06410">
+                  <w xml:id="o5156-110840"
+                     n="58-a-1950"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-110850"
+                     n="58-a-1960"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-110860"
+                      n="58-a-1970"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110870"
+                     n="58-a-1980"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-110880"
+                     n="58-a-1990"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-110890"
+                     n="58-a-2000"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-110900"
+                     n="58-a-2010"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-110910"
+                      n="58-a-2020"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <pb facs="o5156/0062_R" n="57" rend="none"/>
+            <lg xml:id="o5156-s01140">
+               <l xml:id="o5156-l06415">
+                  <w xml:id="o5156-110940"
+                     n="59-a-0010"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xml:id="o5156-110950"
+                     n="59-a-0020"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="you"
+                     ecep:syllab="1"
+                     ecep:pron="juː">you</w>
+                  <pc xml:id="o5156-110960"
+                      n="59-a-0030"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-110970"
+                     n="59-a-0040"
+                     ecep:lem="who"
+                     ecep:pos="r-crq"
+                     ecep:reg="whose"
+                     ecep:spe="whose"
+                     ecep:syllab="1"
+                     ecep:pron="huːz">whose</w>
+                  <c> </c>
+                  <w xml:id="o5156-110980"
+                     n="59-a-0050"
+                     ecep:lem="soul"
+                     ecep:pos="n2"
+                     ecep:reg="souls"
+                     ecep:spe="souls"
+                     ecep:syllab="1"
+                     ecep:pron="səʊlz">souls</w>
+                  <c> </c>
+                  <w xml:id="o5156-110990"
+                     n="59-a-0060"
+                     ecep:lem="be"
+                     ecep:pos="vbr"
+                     ecep:reg="are"
+                     ecep:spe="are"
+                     ecep:syllab="1"
+                     ecep:pron="ɑː">are</w>
+                  <c> </c>
+                  <w xml:id="o5156-111000"
+                     n="59-a-0070"
+                     ecep:lem="hold"
+                     ecep:pos="vvn"
+                     ecep:reg="held"
+                     ecep:spe="held"
+                     ecep:syllab="1"
+                     ecep:pron="held">held</w>
+                  <pc xml:id="o5156-111010"
+                      n="59-a-0080"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06420">
+                  <w xml:id="o5156-111020"
+                     n="59-a-0090"
+                     ecep:lem="like"
+                     ecep:pos="av-j"
+                     ecep:reg="Like"
+                     ecep:spe="Like"
+                     ecep:syllab="1"
+                     ecep:pron="laɪk">Like</w>
+                  <c> </c>
+                  <w xml:id="o5156-111030"
+                     n="59-a-0100"
+                     ecep:lem="linnet"
+                     ecep:pos="n2"
+                     ecep:reg="linnets"
+                     ecep:spe="linnets"
+                     ecep:syllab="2"
+                     ecep:pron="ˈlɪnɪts">linnets</w>
+                  <pc xml:id="o5156-111040"
+                      n="59-a-0110"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111050"
+                     n="59-a-0120"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="in"
+                     ecep:spe="in"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">in</w>
+                  <c> </c>
+                  <w xml:id="o5156-111060"
+                     n="59-a-0130"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xml:id="o5156-111070"
+                     n="59-a-0140"
+                     ecep:lem="cage"
+                     ecep:pos="n1"
+                     ecep:reg="cage"
+                     ecep:spe="cage"
+                     ecep:syllab="1"
+                     ecep:pron="keɪdʒ">cage</w>
+                  <pc xml:id="o5156-111080"
+                      n="59-a-0150"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+               <l xml:id="o5156-l06425">
+                  <w xml:id="o5156-111090"
+                     n="59-a-0160"
+                     ecep:lem="who"
+                     ecep:pos="q-crq"
+                     ecep:reg="Who"
+                     ecep:spe="Who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">Who</w>
+                  <c> </c>
+                  <w xml:id="o5156-111100"
+                     n="59-a-0170"
+                     ecep:lem="talk"
+                     ecep:pos="n1"
+                     ecep:reg="talk"
+                     ecep:spe="talk"
+                     ecep:syllab="1"
+                     ecep:pron="tɔːk">talk</w>
+                  <c> </c>
+                  <w xml:id="o5156-111110"
+                     n="59-a-0180"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-111120"
+                     n="59-a-0190"
+                     ecep:lem="fetter"
+                     ecep:pos="n2"
+                     ecep:reg="fetters"
+                     ecep:spe="fetters"
+                     ecep:syllab="2"
+                     ecep:pron="ˈfetəz">fetters</w>
+                  <pc xml:id="o5156-111130"
+                      n="59-a-0200"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111140"
+                     n="59-a-0210"
+                     ecep:lem="link"
+                     ecep:pos="n2"
+                     ecep:reg="links"
+                     ecep:spe="links"
+                     ecep:syllab="1"
+                     ecep:pron="lɪŋks">links</w>
+                  <pc xml:id="o5156-111150"
+                      n="59-a-0220"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111160"
+                     n="59-a-0230"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xml:id="o5156-111170"
+                     n="59-a-0240"
+                     ecep:lem="chain"
+                     ecep:pos="n2"
+                     ecep:reg="chains"
+                     ecep:spe="chains"
+                     ecep:syllab="1"
+                     ecep:pron="tʃeɪnz">chains</w>
+                  <pc xml:id="o5156-111180"
+                      n="59-a-0250"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06430">
+                  <w xml:id="o5156-111190"
+                     n="59-a-0260"
+                     ecep:lem="attend"
+                     ecep:pos="vvb"
+                     ecep:reg="Attend"
+                     ecep:spe="Attend"
+                     ecep:syllab="2"
+                     ecep:pron="əˈtend">Attend</w>
+                  <pc xml:id="o5156-111200"
+                      n="59-a-0270"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111210"
+                     n="59-a-0280"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xml:id="o5156-111220"
+                     n="59-a-0290"
+                     ecep:lem="imitate"
+                     ecep:pos="vvi"
+                     ecep:reg="imitate"
+                     ecep:spe="imitate"
+                     ecep:syllab="3"
+                     ecep:pron="ˈɪmɪteɪt">imitate</w>
+                  <c> </c>
+                  <w xml:id="o5156-111230"
+                     n="59-a-0300"
+                     ecep:lem="my"
+                     ecep:pos="po11"
+                     ecep:reg="my"
+                     ecep:spe="my"
+                     ecep:syllab="1"
+                     ecep:pron="maɪ">my</w>
+                  <c> </c>
+                  <w xml:id="o5156-111240"
+                     n="59-a-0310"
+                     ecep:lem="strain"
+                     ecep:pos="n2"
+                     ecep:reg="strains"
+                     ecep:spe="strains"
+                     ecep:syllab="1"
+                     ecep:pron="streɪnz">strains</w>
+                  <pc xml:id="o5156-111250"
+                      n="59-a-0320"
+                      ecep:lem=":"
+                      ecep:pos=":"
+                      ecep:reg=":"
+                      ecep:spe=":">:</pc>
+               </l>
+               <l xml:id="o5156-l06435">
+                  <w xml:id="o5156-111260"
+                     n="59-a-0330"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-111270"
+                     n="59-a-0340"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-111280"
+                      n="59-a-0350"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111290"
+                     n="59-a-0360"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-111300"
+                     n="59-a-0370"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-111310"
+                     n="59-a-0380"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-111320"
+                     n="59-a-0390"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-111330"
+                      n="59-a-0400"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <lg xml:id="o5156-s01145">
+               <l xml:id="o5156-l06440">
+                  <w xml:id="o5156-111360"
+                     n="59-a-0410"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xml:id="o5156-111370"
+                     n="59-a-0420"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="you"
+                     ecep:syllab="1"
+                     ecep:pron="juː">you</w>
+                  <pc xml:id="o5156-111380"
+                      n="59-a-0430"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111390"
+                     n="59-a-0440"
+                     ecep:lem="who"
+                     ecep:pos="r-crq"
+                     ecep:reg="who"
+                     ecep:spe="who"
+                     ecep:syllab="1"
+                     ecep:pron="huː">who</w>
+                  <c> </c>
+                  <hi>
+                     <w xml:id="o5156-111400"
+                        n="59-a-0450"
+                        ecep:lem="boast"
+                        ecep:pos="n1"
+                        ecep:reg="boast"
+                        ecep:spe="boast"
+                        ecep:syllab="1"
+                        ecep:pron="bəʊst">boast</w>
+                  </hi>
+                  <c> </c>
+                  <w xml:id="o5156-111410"
+                     n="59-a-0460"
+                     ecep:lem="or"
+                     ecep:pos="cc"
+                     ecep:reg="or"
+                     ecep:spe="or"
+                     ecep:syllab="1"
+                     ecep:pron="ɔː">or</w>
+                  <c> </c>
+                  <hi>
+                     <w xml:id="o5156-111420"
+                        n="59-a-0470"
+                        ecep:lem="grieve"
+                        ecep:pos="vvi"
+                        ecep:reg="grieve"
+                        ecep:spe="grieve"
+                        ecep:syllab="1"
+                        ecep:pron="griːv">grieve</w>
+                     <pc xml:id="o5156-111430"
+                         n="59-a-0480"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                  </hi>
+               </l>
+               <l xml:id="o5156-l06445">
+                  <w xml:id="o5156-111440"
+                     n="59-a-0490"
+                     ecep:lem="what"
+                     ecep:pos="q-crq"
+                     ecep:reg="What"
+                     ecep:spe="What"
+                     ecep:syllab="1"
+                     ecep:pron="wɒt">What</w>
+                  <c> </c>
+                  <w xml:id="o5156-111450"
+                     n="59-a-0500"
+                     ecep:lem="horrid"
+                     ecep:pos="j"
+                     ecep:reg="horrid"
+                     ecep:spe="horrid"
+                     ecep:syllab="2"
+                     ecep:pron="ˈhɒrɪd">horrid</w>
+                  <c> </c>
+                  <w xml:id="o5156-111460"
+                     n="59-a-0510"
+                     ecep:lem="war"
+                     ecep:pos="n2"
+                     ecep:reg="wars"
+                     ecep:spe="wars"
+                     ecep:syllab="1"
+                     ecep:pron="wɔːz">wars</w>
+                  <c> </c>
+                  <w xml:id="o5156-111470"
+                     n="59-a-0520"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="ye"
+                     ecep:syllab="1"
+                     ecep:pron="jiː">ye</w>
+                  <c> </c>
+                  <w xml:id="o5156-111480"
+                     n="59-a-0530"
+                     ecep:lem="wage"
+                     ecep:pos="vvb"
+                     ecep:reg="wage"
+                     ecep:spe="wage"
+                     ecep:syllab="1"
+                     ecep:pron="weɪdʒ">wage</w>
+                  <pc xml:id="o5156-111490"
+                      n="59-a-0540"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+               <l xml:id="o5156-l06450">
+                  <w xml:id="o5156-111500"
+                     n="59-a-0550"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="Of"
+                     ecep:spe="Of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">Of</w>
+                  <c> </c>
+                  <w xml:id="o5156-111510"
+                     n="59-a-0560"
+                     ecep:lem="wound"
+                     ecep:pos="n2"
+                     ecep:reg="wounds"
+                     ecep:spe="wounds"
+                     ecep:syllab="1"
+                     ecep:pron="wuːndz">wounds</w>
+                  <c> </c>
+                  <w xml:id="o5156-111520"
+                     n="59-a-0570"
+                     ecep:lem="receive"
+                     ecep:pos="vvn"
+                     ecep:reg="received"
+                     ecep:spe="receiv'd"
+                     ecep:syllab="2"
+                     ecep:pron="rɪˈsiːvd">receiv'd</w>
+                  <c> </c>
+                  <w xml:id="o5156-111530"
+                     n="59-a-0580"
+                     ecep:lem="from"
+                     ecep:pos="p-acp"
+                     ecep:reg="from"
+                     ecep:spe="from"
+                     ecep:syllab="1"
+                     ecep:pron="frɒm">from</w>
+                  <c> </c>
+                  <w xml:id="o5156-111540"
+                     n="59-a-0590"
+                     ecep:lem="many"
+                     ecep:pos="d"
+                     ecep:reg="many"
+                     ecep:spe="many"
+                     ecep:syllab="2"
+                     ecep:pron="ˈmeni">many</w>
+                  <c> </c>
+                  <w xml:id="o5156-111550"
+                     n="59-a-0600"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="an"
+                     ecep:spe="an"
+                     ecep:syllab="1"
+                     ecep:pron="æn">an</w>
+                  <c> </c>
+                  <w xml:id="o5156-111560"
+                     n="59-a-0610"
+                     ecep:lem="eye"
+                     ecep:pos="n1"
+                     ecep:reg="eye"
+                     ecep:spe="eye"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">eye</w>
+                  <pc xml:id="o5156-111570"
+                      n="59-a-0620"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06455">
+                  <w xml:id="o5156-111580"
+                     n="59-a-0630"
+                     ecep:lem="yet"
+                     ecep:pos="av"
+                     ecep:reg="Yet"
+                     ecep:spe="Yet"
+                     ecep:syllab="1"
+                     ecep:pron="jet">Yet</w>
+                  <c> </c>
+                  <w xml:id="o5156-111590"
+                     n="59-a-0640"
+                     ecep:lem="mean"
+                     ecep:pos="vvb"
+                     ecep:reg="mean"
+                     ecep:spe="mean"
+                     ecep:syllab="1"
+                     ecep:pron="miːn">mean</w>
+                  <c> </c>
+                  <w xml:id="o5156-111600"
+                     n="59-a-0650"
+                     ecep:lem="as"
+                     ecep:pos="c-acp"
+                     ecep:reg="as"
+                     ecep:spe="as"
+                     ecep:syllab="1"
+                     ecep:pron="æz">as</w>
+                  <c> </c>
+                  <w xml:id="o5156-111610"
+                     n="59-a-0660"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+                  <c> </c>
+                  <w xml:id="o5156-111620"
+                     n="59-a-0670"
+                     ecep:lem="do"
+                     ecep:pos="vdb"
+                     ecep:reg="do"
+                     ecep:spe="do"
+                     ecep:syllab="1"
+                     ecep:pron="duː">do</w>
+                  <c> </c>
+                  <w xml:id="o5156-111630"
+                     n="59-a-0680"
+                     ecep:lem="when"
+                     ecep:pos="c-crq"
+                     ecep:reg="when"
+                     ecep:spe="when"
+                     ecep:syllab="1"
+                     ecep:pron="wen">when</w>
+                  <c> </c>
+                  <w xml:id="o5156-111640"
+                     n="59-a-0690"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I"
+                     ecep:syllab="1"
+                     ecep:pron="aɪ">I</w>
+                  <c> </c>
+                  <w xml:id="o5156-111650"
+                     n="59-a-0700"
+                     ecep:lem="sigh"
+                     ecep:pos="vvb"
+                     ecep:reg="sigh"
+                     ecep:spe="sigh"
+                     ecep:syllab="1"
+                     ecep:pron="saɪ">sigh</w>
+               </l>
+               <l xml:id="o5156-l06460">
+                  <w xml:id="o5156-111660"
+                     n="59-a-0710"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-111670"
+                     n="59-a-0720"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-111680"
+                      n="59-a-0730"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111690"
+                     n="59-a-0740"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-111700"
+                     n="59-a-0750"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-111710"
+                     n="59-a-0760"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-111720"
+                     n="59-a-0770"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-111730"
+                      n="59-a-0780"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+            <lg xml:id="o5156-s01150">
+               <l xml:id="o5156-l06465">
+                  <w xml:id="o5156-111760"
+                     n="59-a-0790"
+                     ecep:lem="hence"
+                     ecep:pos="av"
+                     ecep:reg="Hence"
+                     ecep:spe="Hence"
+                     ecep:syllab="1"
+                     ecep:pron="hens">Hence</w>
+                  <c> </c>
+                  <w xml:id="o5156-111770"
+                     n="59-a-0800"
+                     ecep:lem="every"
+                     ecep:pos="d"
+                     ecep:reg="every"
+                     ecep:spe="every"
+                     ecep:syllab="2"
+                     ecep:pron="ˈevri">every</w>
+                  <c> </c>
+                  <w xml:id="o5156-111780"
+                     n="59-a-0810"
+                     ecep:lem="fond"
+                     ecep:pos="j"
+                     ecep:reg="fond"
+                     ecep:spe="fond"
+                     ecep:syllab="1"
+                     ecep:pron="fɒnd">fond</w>
+                  <c> </c>
+                  <w xml:id="o5156-111790"
+                     n="59-a-0820"
+                     ecep:lem="conceit"
+                     ecep:pos="n1"
+                     ecep:reg="conceit"
+                     ecep:spe="conceit"
+                     ecep:syllab="2"
+                     ecep:pron="kənˈsiːt">conceit</w>
+               </l>
+               <l xml:id="o5156-l06470">
+                  <w xml:id="o5156-111800"
+                     n="59-a-0830"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="Of"
+                     ecep:spe="Of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">Of</w>
+                  <c> </c>
+                  <w xml:id="o5156-111810"
+                     n="59-a-0840"
+                     ecep:lem="shepherd"
+                     ecep:pos="n1"
+                     ecep:reg="shepherd"
+                     ecep:spe="shepherd"
+                     ecep:syllab="2"
+                     ecep:pron="ˈʃepəd">shepherd</w>
+                  <pc xml:id="o5156-111820"
+                      n="59-a-0850"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111830"
+                     n="59-a-0860"
+                     ecep:lem="or"
+                     ecep:pos="cc"
+                     ecep:reg="or"
+                     ecep:spe="or"
+                     ecep:syllab="1"
+                     ecep:pron="ɔː">or</w>
+                  <c> </c>
+                  <w xml:id="o5156-111840"
+                     n="59-a-0870"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xml:id="o5156-111850"
+                     n="59-a-0880"
+                     ecep:lem="sage"
+                     ecep:pos="j-jn"
+                     ecep:reg="sage"
+                     ecep:spe="sage"
+                     ecep:syllab="1"
+                     ecep:pron="seɪdʒ">sage</w>
+                  <pc xml:id="o5156-111860"
+                      n="59-a-0890"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+               <l xml:id="o5156-l06475">
+                  <w xml:id="o5156-111870"
+                     n="59-a-0900"
+                     ecep:lem="it|be"
+                     ecep:pos="pn31|vbz"
+                     ecep:reg="It's"
+                     ecep:spe="'Tis"
+                     ecep:syllab="1"
+                     ecep:pron="tɪz">'Tis</w>
+                  <c> </c>
+                  <w xml:id="o5156-111880"
+                     n="59-a-0910"
+                     ecep:lem="slender"
+                     ecep:pos="ng1"
+                     ecep:reg="Slender's"
+                     ecep:spe="Slender's"
+                     ecep:syllab="2"
+                     ecep:pron="ˈslendəz">Slender's</w>
+                  <c> </c>
+                  <w xml:id="o5156-111890"
+                     n="59-a-0920"
+                     ecep:lem="voice"
+                     ecep:pos="n1"
+                     ecep:reg="voice"
+                     ecep:spe="voice"
+                     ecep:syllab="1"
+                     ecep:pron="vɔɪs">voice</w>
+                  <pc xml:id="o5156-111900"
+                      n="59-a-0930"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xml:id="o5156-111910"
+                     n="59-a-0940"
+                     ecep:lem="it|be"
+                     ecep:pos="pn31|vbz"
+                     ecep:reg="it's"
+                     ecep:spe="'tis"
+                     ecep:syllab="1"
+                     ecep:pron="tɪz">'tis</w>
+                  <c> </c>
+                  <w xml:id="o5156-111920"
+                     n="59-a-0950"
+                     ecep:lem="slender"
+                     ecep:pos="ng1"
+                     ecep:reg="Slender's"
+                     ecep:spe="Slender's"
+                     ecep:syllab="2"
+                     ecep:pron="ˈslendəz">Slender's</w>
+                  <c> </c>
+                  <w xml:id="o5156-111930"
+                     n="59-a-0960"
+                     ecep:lem="way"
+                     ecep:pos="n1"
+                     ecep:reg="way"
+                     ecep:spe="way"
+                     ecep:syllab="1"
+                     ecep:pron="weɪ">way</w>
+                  <pc xml:id="o5156-111940"
+                      n="59-a-0970"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="o5156-l06480">
+                  <w xml:id="o5156-111950"
+                     n="59-a-0980"
+                     ecep:lem="express"
+                     ecep:pos="vvz"
+                     ecep:reg="Expresses"
+                     ecep:spe="Expresses"
+                     ecep:syllab="3"
+                     ecep:pron="ɪkˈspresɪz">Expresses</w>
+                  <c> </c>
+                  <w xml:id="o5156-111960"
+                     n="59-a-0990"
+                     ecep:lem="all"
+                     ecep:pos="av-d"
+                     ecep:reg="all"
+                     ecep:spe="all"
+                     ecep:syllab="1"
+                     ecep:pron="ɔːl">all</w>
+                  <c> </c>
+                  <w xml:id="o5156-111970"
+                     n="59-a-1000"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="you"
+                     ecep:syllab="1"
+                     ecep:pron="juː">you</w>
+                  <c> </c>
+                  <w xml:id="o5156-111980"
+                     n="59-a-1010"
+                     ecep:lem="have"
+                     ecep:pos="vhb"
+                     ecep:reg="have"
+                     ecep:spe="have"
+                     ecep:syllab="1"
+                     ecep:pron="hæv">have</w>
+                  <c> </c>
+                  <w xml:id="o5156-111990"
+                     n="59-a-1020"
+                     ecep:lem="to"
+                     ecep:pos="pc-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <w xml:id="o5156-112000"
+                     n="59-a-1030"
+                     ecep:lem="say"
+                     ecep:pos="vvi"
+                     ecep:reg="say"
+                     ecep:spe="say"
+                     ecep:syllab="1"
+                     ecep:pron="seɪ">say</w>
+                  <c> </c>
+                  <pc xml:id="o5156-112010"
+                      n="59-a-1040"
+                      ecep:lem="—"
+                      ecep:pos="—"
+                      ecep:reg="—"
+                      ecep:spe="—">—</pc>
+               </l>
+               <l xml:id="o5156-l06485">
+                  <w xml:id="o5156-112020"
+                     n="59-a-1050"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-112030"
+                     n="59-a-1060"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <pc xml:id="o5156-112040"
+                      n="59-a-1070"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+                  <c> </c>
+                  <w xml:id="o5156-112050"
+                     n="59-a-1080"
+                     ecep:lem="o"
+                     ecep:pos="uh"
+                     ecep:reg="OH"
+                     ecep:spe="O"
+                     ecep:syllab="1"
+                     ecep:pron="əʊ">O</w>
+                  <c> </c>
+                  <w xml:id="o5156-112060"
+                     n="59-a-1090"
+                     ecep:lem="sweet"
+                     ecep:pos="j"
+                     ecep:reg="sweet"
+                     ecep:spe="sweet"
+                     ecep:syllab="1"
+                     ecep:pron="swiːt">sweet</w>
+                  <c> </c>
+                  <w xml:id="o5156-112070"
+                     n="59-a-1100"
+                     ecep:lem="Anne"
+                     ecep:pos="np1"
+                     ecep:reg="Anne"
+                     ecep:spe="Anne"
+                     ecep:syllab="1"
+                     ecep:pron="ˈæn">Anne</w>
+                  <c> </c>
+                  <w xml:id="o5156-112080"
+                     n="59-a-1110"
+                     ecep:lem="page"
+                     ecep:pos="n1"
+                     ecep:reg="Page"
+                     ecep:spe="Page"
+                     ecep:syllab="1"
+                     ecep:pron="peɪdʒ">Page</w>
+                  <pc xml:id="o5156-112090"
+                      n="59-a-1120"
+                      unit="sentence"
+                      ecep:lem="!"
+                      ecep:pos="!"
+                      ecep:reg="!"
+                      ecep:spe="!">!</pc>
+               </l>
+            </lg>
+         </div>
+      </body>
+   </text>
+</TEI>

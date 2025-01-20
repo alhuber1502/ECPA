@@ -84,6 +84,11 @@
             <input id="female" value="f" class="checkbox" type="checkbox" checked/>
             <label for="female"><i class="fa fa-female"></i><span class="sr-only">Female</span></label>
           </div>
+          <div class="controls birthdeath" style="margin-top:15px;">
+            <h2>Display options</h2>
+            <input id="birthdeath" class="checkbox" type="checkbox" style="display:inline-block"/>
+            <label for="birthdeath">Birth <i class="fa fa-long-arrow-right"></i> Death</label>
+          </div>
           <h3>Known issues</h2>
           <p style="font-size:13px;">Regretfully, for navigational purposes,
             some names and borders
@@ -175,10 +180,14 @@
 
   // visualization layers
   var markerLayer = L.layerGroup().addTo( map );
+  var lineLayer = L.layerGroup().addTo( map );
 
   // Spiderfy overlapping markers
   var oms = new OverlappingMarkerSpiderfier( map, {keepSpiderfied: true} );
   var markers = {};
+  var lines = {};
+  var popupLine = null;
+
   var hash = new L.Hash(map);
   // initialize
   var loadPlaces = function() {
@@ -235,6 +244,55 @@
       }
     }
     */
+  });
+
+  map.on( 'popupopen', function(e) {
+    if (e.popup._source !== undefined) {
+      var persid;
+      if ( e.popup._source._icon !== undefined ) {
+        persid = e.popup._source._icon.id;
+      } else {
+        persid = e.popup._source.id;
+      }
+      if ( $( "#birthdeath" ).is( ":checked" ) && map.hasLayer( lineLayer ) ) {
+        map.removeLayer( lineLayer );
+        var bcoords = [], dcoords = [];
+        if ( persons[ persid ].pob && !persons[ persid ].gen && places[ persons[ persid ].pob ] && places[ persons[ persid ].pob ].coord && persons[ persid ].pod && places[ persons[ persid ].pod ] && places[ persons[ persid ].pod ].coord) {
+          var bcoords = [], dcoords = [];
+          var bsource = places[ persons[ persid ].pob ].coord;
+          bsource.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { bcoords.push(x); } });
+          var dsource = places[ persons[ persid ].pod ].coord;
+          dsource.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { dcoords.push(x); } });
+          const options = {
+              weight: 1,
+              opacity: 0.5,
+              color: '#000',
+              className: 'map-line links link '+persid,
+              steps: 8
+          };
+          popupLine = new L.Geodesic([ 
+            { lat: Number( bcoords[1] ), lng: Number( bcoords[0] ) }, 
+            { lat: Number( dcoords[1] ), lng: Number( dcoords[0] ) } 
+          ], options)
+          .addTo( map );
+          if ( e.popup._source._icon === undefined ) {
+            markers[ persid ].fire('click');
+          }
+        } else {
+          popupLine = null;
+        }
+      }
+    }
+  });
+  map.on( 'popupclose', function(e) {
+    if (e.popup._source._icon !== null) {
+      if ( $( "#birthdeath" ).is( ":checked" ) ) {
+        if ( popupLine !== null ) {
+          popupLine.remove();
+        }
+        map.addLayer( lineLayer );
+      }
+    }
   });
 
   // controls
@@ -295,11 +353,13 @@
   }
 
   function draw_viz( new_persons ) {
-    markers = {};
+    markers = {}, lines = {};
     oms.clearMarkers();
     markerLayer.clearLayers();
+    lineLayer.clearLayers();
     $.each( new_persons, function ( i,v ) {
       var coords = [], POB = '';
+      // create marker
       try {
         var source = (v.pob && !v.gen && places[ v.pob ] && places[ v.pob ].coord)?places[ v.pob ].coord:nations[ v.nat.substring(0, 2) ].coord;
         source.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { coords.push(x); }  });
@@ -310,9 +370,19 @@
 //            ((places[ v.pob ].nat && nations[ places[ v.pob ].nat.substring(0, 2) ].name && nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0] != nations[ v.nat.substring(0, 2) ].name.split(',')[0] )?
 //            `, `+nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0]
 //            :``);
+          POB += `, `
+        } else {
+          POB += ` (birthplace n/a, `
+        }
+        if ( v.pod && places[ v.pod ] && places[ v.pod ].name ) {
+          POB += ' died in '+(( places[ v.pod ].name )?places[ v.pod ].name:``)
+//          +
+//            ((places[ v.pob ].nat && nations[ places[ v.pob ].nat.substring(0, 2) ].name && nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0] != nations[ v.nat.substring(0, 2) ].name.split(',')[0] )?
+//            `, `+nations[ places[ v.pob ].nat.substring(0, 2) ].name.split(',')[0]
+//            :``);
           POB += `)`
         } else {
-          POB += ` (birthplace n/a)`
+          POB += ` deathplace n/a)`
         }
         var icon = L.icon({
           className: "poet-marker",
@@ -334,7 +404,35 @@
       catch( err ) {
 //        console.log(i,v);
       }
+      // create edges
+      if (v.pob && !v.gen && places[ v.pob ] && places[ v.pob ].coord && v.pod && places[ v.pod ] && places[ v.pod ].coord) {
+        var bcoords = [], dcoords = [];
+        var bsource = places[ v.pob ].coord;
+        bsource.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { bcoords.push(x); } });
+        var dsource = places[ v.pod ].coord;
+        dsource.replace(/[-+]?[0-9]*\.?[0-9]+/g, function( x ) { var n = Number(x); if (x == n) { dcoords.push(x); } });
+        const options = {
+            weight: 1,
+            opacity: 0.5,
+            color: '#000',
+            className: 'map-line links',
+            steps: 8
+        };
+        lines[ v.id ] = new L.Geodesic([ 
+          { lat: Number( bcoords[1] ), lng: Number( bcoords[0] ) }, 
+          { lat: Number( dcoords[1] ), lng: Number( dcoords[0] ) } 
+        ], options)
+        .bindPopup( `<div class='popup'><span class='name'>` + v["name"] + ` <a href="/authors/`+v["id"]+`.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></span><span class='loc'>`+POB+`</span></div>` )
+        .addTo( lineLayer );
+//        console.log( lines[ v.id ] );
+        lines[ v.id ]._popup._source.id = v.id;
+      }
     });
+    if ( $( "#birthdeath" ).is( ":checked" ) ) {
+      map.addLayer( lineLayer );
+    } else {
+      map.removeLayer( lineLayer );
+    }
     $( "#location .results" ).html( poets_overview( new_persons ) );
     // wait for helper functions to load
     document.addEventListener('DOMContentLoaded', function(event) {
@@ -497,7 +595,11 @@
     return( return_poets );
   }
 
-  $('.gender .checkbox').change(function () {
+  $('.gender .checkbox,.birthdeath .checkbox').change(function (e) {
+    map.closePopup();
+    if ( popupLine !== null ) {
+      popupLine.remove();
+    }
     showYrRange( startyr,endyr );
   });
   $('.continents .checkbox').change(function () {
@@ -596,16 +698,18 @@
     sidebar.open( 'home' );
     window.addEventListener("hashchange", checkHash, false);
 
+    var timeout;
     $( "#slider-range" ).slider({
       range: true,
       min: parseInt(startyr),
       max: parseInt(endyr),
       values: [ parseInt(startyr),parseInt(endyr) ],
       slide: function( event, ui ) {
+        timeout = clearTimeout(timeout);
         $( "#year-range" ).val( ui.values[ 0 ] + "–" + ui.values[ 1 ] );
-        setTimeout(function() {
+        timeout = setTimeout(function() {
           showYrRange( ui.values[ 0 ],ui.values[ 1 ] );
-        }, 10);
+        }, 100);
       }
     });
     $( "#year-range" ).val( $( "#slider-range" ).slider( "values", 0 ) +
