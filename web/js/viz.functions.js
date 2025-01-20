@@ -431,7 +431,7 @@ function lk_scan (line) {
 	} else {                                                             // use automatic scansion results
 	    var lineno = $clone.find( "#"+$( line ).attr( "id" ) ).children(".ln").text().trim()-1;
 		var syl;
-		if ( typeof zeus !== 'undefined' ) {
+		if ( typeof zeus !== 'undefined' && typeof zeus[ lineno ] !== 'undefined' ) {
 	    	syl = zeus[ lineno ].split(':').pop().trim().replace(/\'/g,'+').split(" ");
 		} else {
 			syl = [];
@@ -780,7 +780,7 @@ function display_viz_lk( vis ) {
 	}
 	// end-rhyme vowels
 	var stable = [];
-	console.log( l );
+	//console.log( l );
 	if ( l.rhyme != "irregular" && _.some( l, "rhymes" ) ) { // add rhyme vowels
 	    lk_control += "<label>End-rhyme vowels:</label><ul class='figures'>";
 	    for (var key in l) {

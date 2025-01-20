@@ -171,7 +171,8 @@ function rdn_cont (e) {
     }
     content += "<p style='text-align: right;' class='small'>"+query('[Found an error?]','Please specify...','props',$(e).attr('id'), 'Make a correction', 'Please provide a correction to the properites of '+reference($(e)), 'ta')+"</p>";
     content += "<p class='small'><b>External tools</b></p><ul class='downloads2 small'><li>Language: "+
-	"<ul class='bibliography'><li><a class='external' target='_blank' href='https://www.dictionary.com/browse/"+escape(lookup_r)+"'>English dictionary</a>"+
+	"<ul class='bibliography'><li><a class='external' target='_blank' href='https://johnsonsdictionaryonline.com/views/search.php?term="+escape(lookup_r)+"'>Johnson's Dictionary</a>"+
+	"<li><a class='external' target='_blank' href='https://www.dictionary.com/browse/"+escape(lookup_r)+"'>English dictionary</a>"+
 	"<li><a class='external' target='_blank' href='https://www.thesaurus.com/browse/"+escape(lookup_l)+"'>English thesaurus</a>"+
 	"<li><a class='external' target='_blank' href='http://www.collinsdictionary.com/search/?dictCode=french-english&amp;q="+escape(lookup_l)+"'>French dictionary</a>"+
 	"<li><a class='external' target='_blank' href='http://www.perseus.tufts.edu/hopper/resolveform?lang=la&amp;lookup="+escape(lookup_l)+"'>Latin dictionary</a></ul>"+
