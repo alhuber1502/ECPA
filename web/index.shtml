@@ -106,10 +106,20 @@ data-app="follow_buttons" data-app-id="28681753"></div>
 
         <h2 class="ecep-home-box" style="margin-bottom:0em;border-top: 1px solid #eee;">News/Updates</h2>
 
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+        <bsky-embed
+            search="#EighteenthCenturyPoetryArchive"
+            mode="light"
+            limit="10"
+            load-more="true"
+            custom-styles="section.light { max-height:685px; overflow: scroll;}"
+        >
+        </bsky-embed>
+<!--
 		<div id="twitter-updates" style="height:660px; overflow:auto; margin-bottom:25px; max-width:359px; border-bottom:1px solid #ddd;">
-			<!--#include virtual="/updates.shtml" -->
+			<!- #include virtual="/updates.shtml" ->
 		</div>
-
+-->
 	  </div>
 
     </div><!-- end of row -->
