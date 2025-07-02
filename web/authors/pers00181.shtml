@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Jael Henrietta Pye (née Mendez)" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Jael Henrietta Pye (née Mendez) "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Jael Henrietta Pye (née Mendez)" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Jael Henrietta Pye (née Mendez) "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -14,13 +8,10 @@
             											1782)
             											
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o5089-w0620.shtml"><em>ON MR. WALPOLE's HOUSE AT STRAWBERRY HILL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5089" href="/works/o5089.shtml#o5089-w0620"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o5089-w0620.shtml"><em>ON MR. WALPOLE's HOUSE AT STRAWBERRY HILL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5089" href="/works/o5089.shtml#o5089-w0620"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o5089"><a title="view table of contents of source edition" href="/works/o5089.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Mendez, Moses. <em><span class="titlem">A collection of the most esteemed pieces of poetry: that have appeared for several
@@ -43,8 +34,7 @@
                      					(ESTC <a class="external" href="http://estc.bl.uk/T124631">T124631</a>; 
                      						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1073&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1073</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K099398.000">K099398.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -53,12 +43,10 @@
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 282. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 282. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 260-261. Print.
-                     </div>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 260-261. Print.</div>
                   </li>
                </ul>
             </div>
@@ -71,12 +59,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Jael Henrietta Pye (née Mendez)\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

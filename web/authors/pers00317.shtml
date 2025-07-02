@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Maria Falconar" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Maria Falconar "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Maria Falconar" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Maria Falconar "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -15,13 +9,10 @@
             												? )
             											
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/yfs88-w0010.shtml"><em>SLAVERY. A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="yfs88" href="/works/yfs88.shtml#yfs88-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/yfs88-w0010.shtml"><em>SLAVERY. A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="yfs88" href="/works/yfs88.shtml#yfs88-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="yfs88"><a title="view table of contents of source edition" href="/works/yfs88.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Falconar, Maria, b. 1771? Falconar, Harriet, b. 1774? <em><span class="titlem">Poems on Slavery.</span> </em>  London: Printed for Messrs. EGERTONS, Charing-Cross; Mr. MURRAY, Temple-Bar; and Mr. J. JOHNSON,
@@ -38,8 +29,7 @@
                   <li id="yfs88"><a title="view table of contents of source edition" href="/works/yfs88.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Falconar, Maria, b. 1771? Falconar, Harriet, b. 1774? <em><span class="titlem">Poems on Slavery.</span> </em>  London: Printed for Messrs. EGERTONS, Charing-Cross; Mr. MURRAY, Temple-Bar; and Mr. J. JOHNSON,
                      No. 72, St. Paul's Church-yard M.DCC.LXXXVIII, 1788. 
                      					(ESTC <a class="external" href="http://estc.bl.uk/T61945">T61945</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -47,8 +37,7 @@
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 117-118. Print.
-                     </div>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 117-118. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
@@ -67,12 +56,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Maria Falconar\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

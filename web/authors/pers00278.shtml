@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Robert Bloomfield" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Robert Bloomfield "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Robert Bloomfield" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Robert Bloomfield "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,16 +10,13 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Robert Bloomfield (1766-1823)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/BlooRo1766_NPG.jpg" alt="Robert Bloomfield (1766-1823)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/BlooRo1766_NPG.jpg" alt="Robert Bloomfield (1766-1823)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o5398-w0010.shtml"><em>[THE FARMER'S BOY; A RURAL POEM.]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5398" href="/works/o5398.shtml#o5398-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o5398-w0010.shtml"><em>[THE FARMER'S BOY; A RURAL POEM.]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5398" href="/works/o5398.shtml#o5398-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o5398"><a title="view table of contents of source edition" href="/works/o5398.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Bloomfield, Robert, 1766-1823. <em><span class="titlem">The farmer's boy: a rural poem, in four books. By Robert Bloomfield. With ornaments
@@ -46,8 +37,7 @@
                      Norwich, 1800. [4],xvi,102,[2]p.,plate: ill.; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T154018">T154018</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K116451.000">K116451.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -56,93 +46,70 @@
                <h3>Editions</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Cochran, Peter, ed. <span class="titlem"><span class="hi">The Farmer's Boy</span> by Robert Bloomfield: A Parallel Text Edition, with <span class="hi">The Thresher's Labour</span> by Stephen Duck and <span class="hi">The Woman's Labour</span> by Mary Collier</span>. Newcastle upon Tyne, England: Cambridge Scholars, 2014. Print.
-                     </div>
+                     <div class="biblfree">Cochran, Peter, ed. <span class="titlem"><span class="hi">The Farmer's Boy</span> by Robert Bloomfield: A Parallel Text Edition, with <span class="hi">The Thresher's Labour</span> by Stephen Duck and <span class="hi">The Woman's Labour</span> by Mary Collier</span>. Newcastle upon Tyne, England: Cambridge Scholars, 2014. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fulford, Tim, John Goodridge, and Sam Ward, eds. <span class="titlem">The Collected Writings of Robert Bloomfield</span>. <span class="publisher">Romantic Circles</span>, Nov. 2019. Web. 19 Nov. 2019.  <a class="external" target="_blank" href="https://romantic-circles.org/editions/bloomfield_poems/index.html"><span>https://romantic-circles.org/editions/bloomfield_poems/index.html</span></a>.
-                     </div>
+                     <div class="biblfree">Fulford, Tim, John Goodridge, Lynda Pratt, and Sam Ward, eds. <span class="titlem">The Collected Writings of Robert Bloomfield</span>. <span class="publisher">CTS, De Montfort University</span>, 2024. Web. 24 Jan. 2025.  <a class="external" target="_blank" href="https://beddoes.dmu.ac.uk/BloomfieldPages/Texts.html"><span>https://beddoes.dmu.ac.uk/BloomfieldPages/Texts.html</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fulford, Tim and Lynda Pratt, eds. <span class="titlem">The Letters of Robert Bloomfield and his circle</span>. <span class="publisher">Romantic Circles</span>, Sep. 2009. Web. 13 Jul. 2017.  <a class="external" target="_blank" href="http://www.rc.umd.edu/editions/bloomfield_letters/"><span>http://www.rc.umd.edu/editions/bloomfield_letters/</span></a>.
-                     </div>
+                     <div class="biblfree">Goodridge, John and John Lucas, eds. <span class="titlem">Selected Poems: Robert Bloomfield</span>. Revised and enlarged edition. Nottingham: Trent Editions, 2007 [1999]. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Goodridge, John and John Lucas, eds. <span class="titlem">Selected Poems: Robert Bloomfield</span>. Revised and enlarged edition. Nottingham: Trent Editions, 2007 [1999]. Print.
-                     </div>
-                  </li>
-                  <li>
-                     <div class="biblfree">Reiman, Donald H., ed. <span class="titlem">The Farmer's Boy: A Rural Poem</span>. Romantic Context 16. New York: Garland, 1977. Print.
-                     </div>
+                     <div class="biblfree">Reiman, Donald H., ed. <span class="titlem">The Farmer's Boy: A Rural Poem</span>. Romantic Context 16. New York: Garland, 1977. Print.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Lawson, Jonathan. <span class="titlem">Robert Bloomfield</span>. Twayne's English authors, 310. Boston, MA: G. K. Hall, 1980. Print.
-                     </div>
+                     <div class="biblfree">Lawson, Jonathan. <span class="titlem">Robert Bloomfield</span>. Twayne's English authors, 310. Boston, MA: G. K. Hall, 1980. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Wickett, William and Nicholas Duval. <span class="titlem">The farmer's boy: the story of a Suffolk poet, Robert Bloomfield, his life and poems,
-                           1766-1823</span>. Lavenham: Dalton, 1971. Print.
-                     </div>
+                           1766-1823</span>. Lavenham: Dalton, 1971. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Bloomfield, B. C.  <q class="titlea">The publication of <span class="hi">The Farmer's Boy</span> by Robert Bloomfield</q>. <span class="titlej">Library</span> 15(2) (1993): 75-94. Print.
-                     </div>
+                     <div class="biblfree">Bloomfield, B. C.  <q class="titlea">The publication of <span class="hi">The Farmer's Boy</span> by Robert Bloomfield</q>. <span class="titlej">Library</span> 15(2) (1993): 75-94. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Fulford, Tim.  <q class="titlea">To 'crown with glory the romantick scene': Robert Bloomfield's "To Immagination" and
-                           the discourse of Romanticism</q>. <span class="titlej">Romanticism</span> 15(2) (2009): 181-200. Print.
-                     </div>
+                           the discourse of Romanticism</q>. <span class="titlej">Romanticism</span> 15(2) (2009): 181-200. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Goodridge, John.  <q class="titlea">John Clare and eighteenth-century poetry: Pomfret, Cunningham, Bloomfield</q>. <span class="titlej">Eighteenth Century</span> 42(3) (2001): 264-278. Print.
-                     </div>
+                     <div class="biblfree">Goodridge, John.  <q class="titlea">John Clare and eighteenth-century poetry: Pomfret, Cunningham, Bloomfield</q>. <span class="titlej">Eighteenth Century</span> 42(3) (2001): 264-278. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Goodridge, John, ed. <span class="titlem">The Independent Spirit: John Clare and the Self-Taught Tradition</span>. Helpston, UK: John Clare Soc. &amp; Margaret Grainger Memorial Trust, 1994. Print.
-                     </div>
+                     <div class="biblfree">Goodridge, John, ed. <span class="titlem">The Independent Spirit: John Clare and the Self-Taught Tradition</span>. Helpston, UK: John Clare Soc. &amp; Margaret Grainger Memorial Trust, 1994. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Graver, Bruce.  <q class="titlea">Illustrating <span class="hi">The Farmer's Boy</span></q>.  <q class="titlea">Romanticism: The Journal of Romantic Culture and Criticism</q> 9(2) (2003): 157-75. Print.
-                     </div>
+                     <div class="biblfree">Graver, Bruce.  <q class="titlea">Illustrating <span class="hi">The Farmer's Boy</span></q>.  <q class="titlea">Romanticism: The Journal of Romantic Culture and Criticism</q> 9(2) (2003): 157-75. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Haywood, Ian.  <q class="titlea">The Infection of Robert Bloomfield: Terrorizing <span class="hi">The Farmer's Boy</span></q>. Goodridge, John and Bridget Keegan, ed. and introd. <span class="titlem">Robert Bloomfield: The Inestimable Blessing of Letters</span>. Romantic Circles Praxis Series Jan. College Park, MD: U of Maryland P, 2012. Print.
-                     </div>
+                     <div class="biblfree">Haywood, Ian.  <q class="titlea">The Infection of Robert Bloomfield: Terrorizing <span class="hi">The Farmer's Boy</span></q>. Goodridge, John and Bridget Keegan, ed. and introd. <span class="titlem">Robert Bloomfield: The Inestimable Blessing of Letters</span>. Romantic Circles Praxis Series Jan. College Park, MD: U of Maryland P, 2012. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">McEathron, Scott.  <q class="titlea">Working Class Poetry and the Royal Literary Fund: Two Case Studies in Patronage</q>. Goodridge, John, Bridget Keegan, eds. <span class="titlem">A History of British Working Class Literature</span>. Cambridge, England: Cambridge UP, 2017. 149-167. Print.
-                     </div>
+                     <div class="biblfree">McEathron, Scott.  <q class="titlea">Working Class Poetry and the Royal Literary Fund: Two Case Studies in Patronage</q>. Goodridge, John, Bridget Keegan, eds. <span class="titlem">A History of British Working Class Literature</span>. Cambridge, England: Cambridge UP, 2017. 149-167. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Rudd, Andrew.  <q class="titlea">The 'other' Robert Bloomfield: "To Immagination" (1800) and the quest for an authentic
-                           poetic voice</q>. <span class="titlej">Studies in Romanticism</span> 55(2) (2016): 239-56. Print.
-                     </div>
+                           poetic voice</q>. <span class="titlej">Studies in Romanticism</span> 55(2) (2016): 239-56. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Scrivener, Michael.  <q class="titlea">Laboring-Class Poetry in the Romantic Era</q>. Mahoney, Charles, ed. and introd. <span class="titlem">A Companion to Romantic Poetry</span>. Blackwell Companions to Literature and Culture 73. Chichester, England: Wiley-Blackwell, 2011. 234-250. Print.
-                     </div>
+                     <div class="biblfree">Scrivener, Michael.  <q class="titlea">Laboring-Class Poetry in the Romantic Era</q>. Mahoney, Charles, ed. and introd. <span class="titlem">A Companion to Romantic Poetry</span>. Blackwell Companions to Literature and Culture 73. Chichester, England: Wiley-Blackwell, 2011. 234-250. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">White, Simon J.  <q class="titlea">Otaheite, natural genius and Robert Bloomfield's <span class="hi">The Farmer's Boy</span></q>. <span class="titlej">Romanticism</span> 17(2) (2011): 160-74. Print.
-                     </div>
+                     <div class="biblfree">White, Simon J.  <q class="titlea">Otaheite, natural genius and Robert Bloomfield's <span class="hi">The Farmer's Boy</span></q>. <span class="titlej">Romanticism</span> 17(2) (2011): 160-74. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">White, Simon J. <span class="titlem">Robert Bloomfield, Romanticism and the Poetry of Community</span>. Farnham, Surrey; Burlington, VT: Ashgate, 2007. Print.
-                     </div>
+                     <div class="biblfree">White, Simon J. <span class="titlem">Robert Bloomfield, Romanticism and the Poetry of Community</span>. Farnham, Surrey; Burlington, VT: Ashgate, 2007. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">White, Simon J., John Goodridge, and Bridget Keegan, eds. <span class="titlem">Robert Bloomfield: Lyric, Class, and the Romantic Canon</span>. Lewisburg, PA: Bucknell University Press, 2006. Print.
-                     </div>
+                     <div class="biblfree">White, Simon J., John Goodridge, and Bridget Keegan, eds. <span class="titlem">Robert Bloomfield: Lyric, Class, and the Romantic Canon</span>. Lewisburg, PA: Bucknell University Press, 2006. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Zimmerman, Donald Mark.  <q class="titlea">The medium of antipastoral: protest between the lines of Bloomfield's <span class="hi">The Farmer's Boy</span></q>. <span class="titlej">ANQ</span> 17(2) (2004): 35-9. Print.
-                     </div>
+                     <div class="biblfree">Zimmerman, Donald Mark.  <q class="titlea">The medium of antipastoral: protest between the lines of Bloomfield's <span class="hi">The Farmer's Boy</span></q>. <span class="titlej">ANQ</span> 17(2) (2004): 35-9. Print.</div>
                   </li>
                </ul>
             </div>
@@ -155,12 +122,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Robert Bloomfield\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

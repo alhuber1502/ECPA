@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Sir Richard Steele" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Sir Richard Steele "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Sir Richard Steele" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Sir Richard Steele "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,16 +10,13 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Sir Richard Steele (1672-1729)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/SteeRi1672_NPG.jpg" alt="Sir Richard Steele (1672-1729)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/SteeRi1672_NPG.jpg" alt="Sir Richard Steele (1672-1729)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/oas95-w0010.shtml"><em>The Procession. A POEM ON Her MAJESTIES FUNERAL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="oas95" href="/works/oas95.shtml#oas95-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/oas95-w0010.shtml"><em>The Procession. A POEM ON Her MAJESTIES FUNERAL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="oas95" href="/works/oas95.shtml#oas95-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="oas95"><a title="view table of contents of source edition" href="/works/oas95.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Steele, Richard, Sir, 1672-1729. <em><span class="titlem">The procession a poem on Her Majesties funeral / by a gentleman of the army.</span> </em>  London: Printed for Thomas Bennet ..., 1695. [4],8,[1]p.
@@ -36,8 +27,7 @@
                </ul>
                <h2 class="info">Source editions</h2>
                <ul class="listBibl">
-                  <li id="oas95"><a title="view table of contents of source edition" href="/works/oas95.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Steele, Richard, Sir, 1672-1729. <em><span class="titlem">The procession a poem on Her Majesties funeral / by a gentleman of the army.</span> </em>  London: Printed for Thomas Bennet ..., 1695. [4],8,[1]p.
-                  </li>
+                  <li id="oas95"><a title="view table of contents of source edition" href="/works/oas95.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Steele, Richard, Sir, 1672-1729. <em><span class="titlem">The procession a poem on Her Majesties funeral / by a gentleman of the army.</span> </em>  London: Printed for Thomas Bennet ..., 1695. [4],8,[1]p.</li>
                </ul>
             </div>
             <div id="bib">
@@ -46,30 +36,25 @@
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 3 Pope-Steele. 389-412. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 3 Pope-Steele. 389-412. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Winton, Calhoun. <span class="titlem">Captain Steele: the early career of Richard Steele</span>. Baltimore, Md.: Johns Hopkins UP, 1964. Print.
-                     </div>
+                     <div class="biblfree">Winton, Calhoun. <span class="titlem">Captain Steele: the early career of Richard Steele</span>. Baltimore, Md.: Johns Hopkins UP, 1964. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Winton, Calhoun. <span class="titlem">Sir Richard Steele: M.P., the later career</span>. Baltimore; London: Johns Hopkins UP, 1970. Print.
-                     </div>
+                     <div class="biblfree">Winton, Calhoun. <span class="titlem">Sir Richard Steele: M.P., the later career</span>. Baltimore; London: Johns Hopkins UP, 1970. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 324-325. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 324-325. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Sir Richard Steele (1672-1729)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32927"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32927</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Sir Richard Steele (1672-1729)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32927"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32927</span></a>.</div>
                   </li>
                </ul>
             </div>
@@ -82,12 +67,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Sir Richard Steele\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

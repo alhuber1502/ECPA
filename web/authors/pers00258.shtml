@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / John Philips" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors John Philips "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / John Philips" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors John Philips "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,18 +10,14 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">John Philips (1676-1709)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/PhilJo1676_NPG.jpg" alt="John Philips (1676-1709)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/PhilJo1676_NPG.jpg" alt="John Philips (1676-1709)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/rpj08-w0010.shtml"><em>CYDER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="rpj08" href="/works/rpj08.shtml#rpj08-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcs43-w0010.shtml"><em>THE Splendid Shilling,</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcs43" href="/works/pcs43.shtml#pcs43-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/rpj08-w0010.shtml"><em>CYDER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="rpj08" href="/works/rpj08.shtml#rpj08-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcs43-w0010.shtml"><em>THE Splendid Shilling,</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcs43" href="/works/pcs43.shtml#pcs43-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="rpj08"><a title="view table of contents of source edition" href="/works/rpj08.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Philips, John, 1676-1709. <em><span class="titlem">Cyder. A poem. In two books.</span> </em>  London: Printed for Jacob Tonson, within Grays-Inn Gate next Grays-Inn Lane, 1708. [4],89,[1]p., plate; 8⁰.
@@ -51,14 +41,12 @@
                <ul class="listBibl">
                   <li id="rpj08"><a title="view table of contents of source edition" href="/works/rpj08.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Philips, John, 1676-1709. <em><span class="titlem">Cyder. A poem. In two books.</span> </em>  London: Printed for Jacob Tonson, within Grays-Inn Gate next Grays-Inn Lane, 1708. [4],89,[1]p., plate; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T78745">T78745</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="pcs43"><a title="view table of contents of source edition" href="/works/pcs43.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Bramston, James, 1694?-1744. <em><span class="titlem">The Crooked six-pence. With a Learned preface Found among Some Papers bearing Date
                            the same Year in which Paradise Lost was published by the late Dr. Bently [poems only].</span> </em>  London: printed for R. Dodsley at Tully's-Head in Pall-Mall; and sold by M. Cooper at the
                      Globe in Pater-Noster Row, 1743. x,24p.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T34436">T34436</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bio">
@@ -73,81 +61,65 @@
                      introduced to Henry St. John (later Viscount Bolingbroke), and was commissioned to
                      write  <q class="titlea">Blenheim</q>, intended as an alternative to Addison's  <a class="link_ref" href="/works/o3499-w0010.shtml"> <q class="titlea">The Campaign</q></a>. Philips left Oxford sometime after 1707, without taking a degree. Philips' poem  <a class="link_ref" href="/works/rpj08-w0010.shtml"><span class="titlem">Cyder</span></a>, a georgic poem on the process of cider-making, with many local allusions to Herefordshire,
                      was published by Tonson in 1708. It was an influence on Alexander Pope's  <a class="link_ref" href="/works/o3704-w0010.shtml"><span class="titlem">Windsor-Forest</span></a> (1713) as well as on the landscape poetry of Dyer and Thomson. Philips died at Hereford
-                     early in 1709. He was buried in Hereford Cathedral. An edition of Philips's <span class="titlem">Poems</span>, with a <span class="titlem">Life</span> by George Sewell, was published by Curll in 1713.</span> 
-               </p>
+                     early in 1709. He was buried in Hereford Cathedral. An edition of Philips's <span class="titlem">Poems</span>, with a <span class="titlem">Life</span> by George Sewell, was published by Curll in 1713.</span> </p>
             </div>
             <div id="bib">
                <h2 id="bib_PhilJo1676">Bibliography</h2>
-               <p style="margin-bottom:-10px;">ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/22123">22123</a>; NCBEL 563; DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=2019&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">2019</a>; DLB 95
-               </p>
+               <p style="margin-bottom:-10px;">ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/22123">22123</a>; NCBEL 563; DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=2019&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">2019</a>; DLB 95</p>
                <h3>Editions</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Thomas, M. G. Lloyd, ed. <span class="titlem">The poems of John Philips</span>. Oxford: B. Blackwell, 1927. Print.
-                     </div>
+                     <div class="biblfree">Thomas, M. G. Lloyd, ed. <span class="titlem">The poems of John Philips</span>. Oxford: B. Blackwell, 1927. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 268-269. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 268-269. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">John Philips (1676-1708)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32938"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32938</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">John Philips (1676-1708)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32938"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32938</span></a>.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Cope, Kevin L.  <q class="titlea">When the Past Presses the Present: Shillings, Cyder, Malts, and Wine</q>. Kropf, Carl R., ed. <span class="titlem">Reader Entrapment in Eighteenth-Century Literature</span>. New York: AMS Press, 1992. 15-43. Print.
-                     </div>
+                     <div class="biblfree">Cope, Kevin L.  <q class="titlea">When the Past Presses the Present: Shillings, Cyder, Malts, and Wine</q>. Kropf, Carl R., ed. <span class="titlem">Reader Entrapment in Eighteenth-Century Literature</span>. New York: AMS Press, 1992. 15-43. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fairer, David.  <q class="titlea">'Where fuming Trees refresh the thirsty Air': the world of eco-georgic</q>. <span class="titlej">Studies in Eighteenth-Century Culture</span> 40 (2011): 201-18. Print.
-                     </div>
+                     <div class="biblfree">Fairer, David.  <q class="titlea">'Where fuming Trees refresh the thirsty Air': the world of eco-georgic</q>. <span class="titlej">Studies in Eighteenth-Century Culture</span> 40 (2011): 201-18. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Griffin, Dustin.  <q class="titlea">The Bard of Cyder-Land: John Philips and Miltonic Imitation</q>. <span class="titlej">Studies in English Literature</span> 24 (1984): 441-460. Print.
-                     </div>
+                     <div class="biblfree">Griffin, Dustin.  <q class="titlea">The Bard of Cyder-Land: John Philips and Miltonic Imitation</q>. <span class="titlej">Studies in English Literature</span> 24 (1984): 441-460. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Irvine, Robert P.  <q class="titlea">Labor and commerce in Locke and early eighteenth-century English georgic</q>. <span class="titlej">ELH</span> 76(4) (2009): 963-988. Print.
-                     </div>
+                     <div class="biblfree">Irvine, Robert P.  <q class="titlea">Labor and commerce in Locke and early eighteenth-century English georgic</q>. <span class="titlej">ELH</span> 76(4) (2009): 963-988. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">McGuire, Kelly Ann.  <q class="titlea">'Dire compotation': eighteenth-century English georgics and the misuses of alcohol</q>. <span class="titlej">Lumen</span> 23 (2004): 255-273. Print.
-                     </div>
+                     <div class="biblfree">McGuire, Kelly Ann.  <q class="titlea">'Dire compotation': eighteenth-century English georgics and the misuses of alcohol</q>. <span class="titlej">Lumen</span> 23 (2004): 255-273. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Rogers, Pat.  <q class="titlea">John Philips, Pope, and political georgic</q>. <span class="titlej">Modern Language Quarterly</span> 66(4) (2005): 411-442. Print.
-                     </div>
+                     <div class="biblfree">Rogers, Pat.  <q class="titlea">John Philips, Pope, and political georgic</q>. <span class="titlej">Modern Language Quarterly</span> 66(4) (2005): 411-442. Print.</div>
                   </li>
                </ul>
                <h3>Studies of individual works</h3>
                <ul class="listBibl">
                   <li>
                      <div class="biblfree" id="bib_PhilJo1676_w0002_i1">Mounsey, Chris.  <q class="titlea">Christopher Smart's 'The Hop-Garden' and John Philips's 'Cyder', a Battle of the Georgics?
-                           Mid-Eighteenth-Century Poetic Discussions of Authority, Science and Experience</q>. <span class="titlej">British Journal for Eighteenth-Century Studies</span> 22 (1999): 67-84. Print.
-                     </div>
+                           Mid-Eighteenth-Century Poetic Discussions of Authority, Science and Experience</q>. <span class="titlej">British Journal for Eighteenth-Century Studies</span> 22 (1999): 67-84. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Mueller, Andreas K. E.  <q class="titlea">Politics, politeness, and panegyrics: Defoe, Addison, and Philips on Blenheim</q>. <span class="titlej">Philological Quarterly</span> 94(1/2) (2015): 121-47. Print.
-                     </div>
+                     <div class="biblfree">Mueller, Andreas K. E.  <q class="titlea">Politics, politeness, and panegyrics: Defoe, Addison, and Philips on Blenheim</q>. <span class="titlej">Philological Quarterly</span> 94(1/2) (2015): 121-47. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree" id="bib_PhilJo1676_w0002_i2">Pellicer, Juan Christian.  <q class="titlea">Christopher Smart's 'The Hop-Garden': a satirical parody of John Philips's 'Cyder'?</q>. <span class="titlej">Notes and Queries</span> 51(4) (2004): 400-406. Print.
-                     </div>
+                     <div class="biblfree" id="bib_PhilJo1676_w0002_i2">Pellicer, Juan Christian.  <q class="titlea">Christopher Smart's 'The Hop-Garden': a satirical parody of John Philips's 'Cyder'?</q>. <span class="titlej">Notes and Queries</span> 51(4) (2004): 400-406. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree" id="bib_PhilJo1676_w0002_i3">Pellicer, Juan Christian.  <q class="titlea">Harleian georgic from Tonson's press: the publication of John Philips's 'Cyder', 29
-                           January 1708</q>. <span class="titlej">Library</span> 7(2) (2006): 185-198. Print.
-                     </div>
+                           January 1708</q>. <span class="titlej">Library</span> 7(2) (2006): 185-198. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree" id="bib_PhilJo1676_w0002_i4">Pellicer, Juan Christian.  <q class="titlea">The Politics of 'Cyder'</q>. Goodridge, John and J. C. Pellicer, eds. <span class="titlem">Cyder. A Poem in Two Books</span>. Cheltenham: Cyder Press, 2001. i-xvi. Print.
-                     </div>
+                     <div class="biblfree" id="bib_PhilJo1676_w0002_i4">Pellicer, Juan Christian.  <q class="titlea">The Politics of 'Cyder'</q>. Goodridge, John and J. C. Pellicer, eds. <span class="titlem">Cyder. A Poem in Two Books</span>. Cheltenham: Cyder Press, 2001. i-xvi. Print.</div>
                   </li>
                </ul>
             </div>
@@ -160,12 +132,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"John Philips\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

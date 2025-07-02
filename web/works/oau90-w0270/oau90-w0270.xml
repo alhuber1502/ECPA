@@ -1,0 +1,1992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../tei_all.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title corresp="#txt_DUrfTh1653_w0027">The KING'S Health: A CATCH Sung in Parts.</title>
+            <author corresp="authors.xml#aut_DUrfTh1653">Thomas D'Urfey</author>
+            <respStmt>
+               <name xml:id="AH">Alexander Huber</name>
+               <resp>Editor</resp>
+            </respStmt>
+            <funder>
+               <name type="institution" xml:id="BOD">Bodleian Libraries, University of Oxford</name>
+               <address>
+                  <addrLine>Broad Street</addrLine>
+                  <addrLine>Oxford OX1 3BG</addrLine>
+                  <addrLine>UK</addrLine>
+               </address>
+            </funder>
+         </titleStmt>
+         <publicationStmt>
+            <publisher xml:id="ECPA">Eighteenth-Century Poetry Archive</publisher>
+            <address>
+               <addrLine>Taylor Institution Library</addrLine>
+               <addrLine>St Giles'</addrLine>
+               <addrLine>Oxford OX1 3NA</addrLine>
+               <addrLine>UK</addrLine>
+               <addrLine>
+                  <email>info@eighteenthcenturypoetry.org</email>
+               </addrLine>
+               <addrLine>
+                  <ref target="https://www.eighteenthcenturypoetry.org/">https://www.eighteenthcenturypoetry.org/</ref>
+               </addrLine>
+            </address>
+            <pubPlace>Oxford</pubPlace>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.</licence>
+            </availability>
+            <idno type="ESTC">R17889</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author>D'Urfey, Thomas, 1653-1723.</author>
+               <title>New poems, consisting of satyrs, elegies, and odes together with a choice collection of the newest court songs set to musick by the best masters of the age / all written by Mr. D'Urfey.</title>
+               <pubPlace>London</pubPlace>
+               <publisher>Printed for J. Bullord ... and A. Roper ...</publisher>
+               <date>1690</date>
+               <biblScope>pp. 98-99.</biblScope>
+               <extent>[16],207,[1]p.</extent>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>This e-text is part of the Works section of the Eighteenth-Century Poetry Archive (ECPA).</p>
+            <p>XML created for the Eighteenth-Century Poetry Archive (ECPA).</p>
+         </projectDesc>
+         <editorialDecl>
+            <p>Typography, spelling, capitalization, and punctuation have been cautiously modernized. The source of the text is given and all significant
+						editorial interventions have been recorded in textual notes. This  text has been edited to conform to the recommendations found 
+						in Level 5 of the
+						Best Practices for TEI in Libraries version 4.0.0.
+					</p>
+         </editorialDecl>
+         <classDecl>
+            <taxonomy xml:id="LCNAF">
+               <bibl>Library of Congress Name Authority File (<abbr>LCNAF</abbr>)</bibl>
+            </taxonomy>
+         </classDecl>
+         <tagsDecl>
+            <rendition n="linegroups indented" xml:id="lgindent" scheme="css">text-indent: 1em;</rendition>
+            <rendition n="linegroups vertically spaced" xml:id="lgvspace" scheme="css">margin-bottom: 1em;</rendition>
+            <rendition n="aligned centrally" xml:id="align-center" scheme="css">text-align: center;</rendition>
+            <rendition n="aligned right" xml:id="align-right" scheme="css">text-align: right;</rendition>
+            <rendition n="aligned left" xml:id="align-left" scheme="css">text-align: left;</rendition>
+            <rendition n="inline" xml:id="inline" scheme="css">display: inline</rendition>
+            <rendition n="italic" xml:id="i" scheme="css">font-style: italic;</rendition>
+            <rendition n="bold" xml:id="b" scheme="css">font-weight: bold;</rendition>
+         </tagsDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+              ana="#tetrameter #invariable #iamb #cross"
+              corresp="#txt_DUrfTh1653_w0027"
+              decls="#semi-normalized"
+              ecep:syllab="8.8.8.8"
+              met="-+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/"
+              rendition="#lgindent"
+              rhyme="abab"
+              subtype="eceptext"
+              type="poem"
+              xml:id="oau90-w0270">
+            <link target="authors.xml#aut_DUrfTh1653" type="author"/>
+            <head type="main">
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-177960"
+                  n="oau90/0114-a-0620"
+                  ecep:lem="the"
+                  ecep:pos="dt"
+                  ecep:reg="The"
+                  ecep:spe="The"
+                  ecep:syllab="1"
+                  ecep:pron="ðiː">The</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-177970"
+                  n="oau90/0114-a-0630"
+                  ecep:lem="king"
+                  ecep:pos="ng1"
+                  ecep:reg="KING'S"
+                  ecep:spe="KING'S"
+                  ecep:syllab="1"
+                  ecep:pron="ˈkɪŋz">KING'S</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-177980"
+                  n="oau90/0114-a-0640"
+                  ecep:lem="health"
+                  ecep:pos="n1"
+                  ecep:reg="Health"
+                  ecep:spe="Health"
+                  ecep:syllab="1"
+                  ecep:pron="helθ">Health</w>
+               <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                   xml:id="oau90-177990"
+                   n="oau90/0114-a-0650"
+                   ecep:lem=":"
+                   ecep:pos=":"
+                   ecep:reg=":"
+                   ecep:spe=":">:</pc>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-178000"
+                  n="oau90/0114-a-0660"
+                  ecep:lem="a"
+                  ecep:pos="sy"
+                  ecep:reg="A"
+                  ecep:spe="A"
+                  ecep:syllab="1"
+                  ecep:pron="ə">A</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-178010"
+                  n="oau90/0114-a-0670"
+                  ecep:lem="catch"
+                  ecep:pos="vvb"
+                  ecep:reg="CATCH"
+                  ecep:spe="CATCH"
+                  ecep:syllab="1"
+                  ecep:pron="kætʃ">CATCH</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-178020"
+                  n="oau90/0114-a-0680"
+                  ecep:lem="sing"
+                  ecep:pos="vvn"
+                  ecep:reg="Sung"
+                  ecep:spe="Sung"
+                  ecep:syllab="1"
+                  ecep:pron="sʌŋ">Sung</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-178030"
+                  n="oau90/0114-a-0690"
+                  ecep:lem="in"
+                  ecep:pos="p-acp"
+                  ecep:reg="in"
+                  ecep:spe="in"
+                  ecep:syllab="1"
+                  ecep:pron="ɪn">in</w>
+               <c> </c>
+               <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                  xml:id="oau90-178040"
+                  n="oau90/0114-a-0700"
+                  ecep:lem="part"
+                  ecep:pos="n2"
+                  ecep:reg="Parts"
+                  ecep:spe="Parts"
+                  ecep:syllab="1"
+                  ecep:pron="pɑːts">Parts</w>
+               <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                   xml:id="oau90-178050"
+                   n="oau90/0114-a-0710"
+                   unit="sentence"
+                   ecep:lem="."
+                   ecep:pos="."
+                   ecep:reg="."
+                   ecep:spe=".">.</pc>
+            </head>
+            <lg n="1" xml:id="oau90-s00780">
+               <head>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178090"
+                     n="oau90/0114-a-0720"
+                     ecep:lem="i"
+                     ecep:pos="pns11"
+                     ecep:reg="I"
+                     ecep:spe="I."
+                     ecep:syllab="1"
+                     ecep:pron="ˈaɪ">I.</w>
+                  <pc unit="sentence" xml:id="oau90-178090-eos" n="oau90/0114-a-0730"/>
+               </head>
+               <l xml:id="oau90-l07980">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178110"
+                     n="oau90/0114-a-0740"
+                     ecep:lem="now"
+                     ecep:pos="av"
+                     ecep:reg="NOW"
+                     ecep:spe="NOW"
+                     ecep:syllab="1"
+                     ecep:pron="naʊ">NOW</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178120"
+                     n="oau90/0114-a-0750"
+                     ecep:lem="second"
+                     ecep:pos="ord"
+                     ecep:reg="Second"
+                     ecep:spe="Second"
+                     ecep:syllab="2"
+                     ecep:pron="ˈseknd">Second</w>
+                  <c> </c>
+                  <hi>
+                     <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                        xml:id="oau90-178130"
+                        n="oau90/0114-a-0760"
+                        ecep:lem="Hannibal"
+                        ecep:pos="np1"
+                        ecep:reg="Hannibal"
+                        ecep:spe="Hannibal"
+                        ecep:syllab="3"
+                        ecep:pron="hˈænɪbəl">Hannibal</w>
+                  </hi>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178140"
+                     n="oau90/0114-a-0770"
+                     ecep:lem="be"
+                     ecep:pos="vbz"
+                     ecep:reg="is"
+                     ecep:spe="is"
+                     ecep:syllab="1"
+                     ecep:pron="ɪz">is</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178150"
+                     n="oau90/0114-a-0780"
+                     ecep:lem="come"
+                     ecep:pos="vvn"
+                     ecep:reg="come"
+                     ecep:spe="come"
+                     ecep:syllab="1"
+                     ecep:pron="kʌm">come</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178160"
+                      n="oau90/0114-a-0790"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l07985">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178170"
+                     n="oau90/0114-a-0800"
+                     ecep:lem="over"
+                     ecep:pos="p-acp"
+                     ecep:reg="Over"
+                     ecep:spe="O'er"
+                     ecep:syllab="1"
+                     ecep:pron="ˈɔːə">O'er</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178180"
+                     n="oau90/0114-a-0810"
+                     ecep:lem="freeze"
+                     ecep:pos="j-vvn"
+                     ecep:reg="frozen"
+                     ecep:spe="frozen"
+                     ecep:syllab="2"
+                     ecep:pron="ˈfrəʊzn">frozen</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178190"
+                     n="oau90/0114-a-0820"
+                     ecep:lem="lake"
+                     ecep:pos="n2"
+                     ecep:reg="Lakes"
+                     ecep:spe="Lakes"
+                     ecep:syllab="1"
+                     ecep:pron="leɪks">Lakes</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178200"
+                     n="oau90/0114-a-0830"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178210"
+                     n="oau90/0114-a-0840"
+                     ecep:lem="mount"
+                     ecep:pos="vvz"
+                     ecep:reg="mounts"
+                     ecep:spe="mounts"
+                     ecep:syllab="1"
+                     ecep:pron="maʊnts">mounts</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178220"
+                     n="oau90/0114-a-0850"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178230"
+                     n="oau90/0114-a-0860"
+                     ecep:lem="snow"
+                     ecep:pos="n1"
+                     ecep:reg="Snow"
+                     ecep:spe="Snow"
+                     ecep:syllab="1"
+                     ecep:pron="snəʊ">Snow</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178240"
+                      n="oau90/0114-a-0870"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l07990">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178250"
+                     n="oau90/0114-a-0880"
+                     ecep:lem="to"
+                     ecep:pos="pc-acp"
+                     ecep:reg="To"
+                     ecep:spe="To"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">To</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178260"
+                     n="oau90/0114-a-0890"
+                     ecep:lem="find"
+                     ecep:pos="vvd"
+                     ecep:reg="found"
+                     ecep:spe="found"
+                     ecep:syllab="1"
+                     ecep:pron="faʊnd">found</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178270"
+                     n="oau90/0114-a-0900"
+                     ecep:lem="our"
+                     ecep:pos="po12"
+                     ecep:reg="our"
+                     ecep:spe="our"
+                     ecep:syllab="1"
+                     ecep:pron="æə">our</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178280"
+                     n="oau90/0114-a-0910"
+                     ecep:lem="faith"
+                     ecep:pos="n1"
+                     ecep:reg="Faith"
+                     ecep:spe="Faith"
+                     ecep:syllab="1"
+                     ecep:pron="feɪθ">Faith</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178290"
+                     n="oau90/0114-a-0920"
+                     ecep:lem="on"
+                     ecep:pos="p-acp"
+                     ecep:reg="on"
+                     ecep:spe="on"
+                     ecep:syllab="1"
+                     ecep:pron="ɒn">on</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178300"
+                     n="oau90/0114-a-0930"
+                     ecep:lem="conquer"
+                     ecep:pos="j-vvn"
+                     ecep:reg="conquered"
+                     ecep:spe="conquer'd"
+                     ecep:syllab="2"
+                     ecep:pron="ˈkɒŋkəd">conquer'd</w>
+                  <c> </c>
+                  <hi>
+                     <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                        xml:id="oau90-178310"
+                        n="oau90/0114-a-0940"
+                        ecep:lem="Rome"
+                        ecep:pos="np1"
+                        ecep:reg="Rome"
+                        ecep:spe="Rome"
+                        ecep:syllab="1"
+                        ecep:pron="ˈrəʊm">Rome</w>
+                     <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                         xml:id="oau90-178320"
+                         n="oau90/0114-a-0950"
+                         ecep:lem=","
+                         ecep:pos=","
+                         ecep:reg=","
+                         ecep:spe=",">,</pc>
+                  </hi>
+               </l>
+               <l xml:id="oau90-l07995">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178330"
+                     n="oau90/0114-a-0960"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178340"
+                     n="oau90/0114-a-0970"
+                     ecep:lem="give"
+                     ecep:pos="vvi"
+                     ecep:reg="give"
+                     ecep:spe="give"
+                     ecep:syllab="1"
+                     ecep:pron="gɪv">give</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178350"
+                     n="oau90/0114-a-0980"
+                     ecep:lem="proud"
+                     ecep:pos="j"
+                     ecep:reg="Proud"
+                     ecep:spe="Proud"
+                     ecep:syllab="1"
+                     ecep:pron="praʊd">Proud</w>
+                  <c> </c>
+                  <hi>
+                     <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                        xml:id="oau90-178360"
+                        n="oau90/0114-a-0990"
+                        ecep:lem="France"
+                        ecep:pos="np1"
+                        ecep:reg="France"
+                        ecep:spe="France"
+                        ecep:syllab="1"
+                        ecep:pron="ˈfrɑːns">France</w>
+                  </hi>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178370"
+                     n="oau90/0114-a-1000"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178380"
+                     n="oau90/0114-a-1010"
+                     ecep:lem="fatal"
+                     ecep:pos="j"
+                     ecep:reg="fatal"
+                     ecep:spe="fatal"
+                     ecep:syllab="2"
+                     ecep:pron="ˈfeɪtl">fatal</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178390"
+                     n="oau90/0114-a-1020"
+                     ecep:lem="blow"
+                     ecep:pos="vvb"
+                     ecep:reg="Blow"
+                     ecep:spe="Blow"
+                     ecep:syllab="1"
+                     ecep:pron="bləʊ">Blow</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178400"
+                      n="oau90/0114-a-1030"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </l>
+            </lg>
+            <lg n="2" xml:id="oau90-s00785">
+               <head>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178440"
+                     n="oau90/0114-a-1040"
+                     ecep:lem="ii"
+                     ecep:pos="crd"
+                     ecep:reg="II"
+                     ecep:spe="II"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊməntˈuː">II</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178450"
+                      n="oau90/0114-a-1050"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </head>
+               <l xml:id="oau90-l08000">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178470"
+                     n="oau90/0114-a-1060"
+                     ecep:lem="well"
+                     ecep:pos="uh-av"
+                     ecep:reg="Well"
+                     ecep:spe="Well"
+                     ecep:syllab="1"
+                     ecep:pron="wel">Well</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178480"
+                     n="oau90/0114-a-1070"
+                     ecep:lem="may"
+                     ecep:pos="vmb"
+                     ecep:reg="may"
+                     ecep:spe="may"
+                     ecep:syllab="1"
+                     ecep:pron="meɪ">may</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178490"
+                     n="oau90/0114-a-1080"
+                     ecep:lem="our"
+                     ecep:pos="po12"
+                     ecep:reg="our"
+                     ecep:spe="our"
+                     ecep:syllab="1"
+                     ecep:pron="æə">our</w>
+                  <c> </c>
+                  <hi>
+                     <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                        xml:id="oau90-178500"
+                        n="oau90/0114-a-1090"
+                        ecep:lem="phaebus"
+                        ecep:pos="fw-la"
+                        ecep:reg="Phaebus"
+                        ecep:spe="Phaebus"
+                        ecep:syllab="2"
+                        ecep:pron="fˈiːbəs">Phaebus</w>
+                  </hi>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178510"
+                     n="oau90/0114-a-1100"
+                     ecep:lem="disappear"
+                     ecep:pos="vvb"
+                     ecep:reg="disappear"
+                     ecep:spe="disappear"
+                     ecep:syllab="3"
+                     ecep:pron="ˌdɪsəˈpɪə">disappear</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178520"
+                      n="oau90/0114-a-1110"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08005">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178530"
+                     n="oau90/0114-a-1120"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178540"
+                     n="oau90/0114-a-1130"
+                     ecep:lem="set"
+                     ecep:pos="vvi"
+                     ecep:reg="set"
+                     ecep:spe="set"
+                     ecep:syllab="1"
+                     ecep:pron="set">set</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178550"
+                     n="oau90/0114-a-1140"
+                     ecep:lem="his"
+                     ecep:pos="po31"
+                     ecep:reg="his"
+                     ecep:spe="his"
+                     ecep:syllab="1"
+                     ecep:pron="hɪz">his</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178560"
+                     n="oau90/0114-a-1150"
+                     ecep:lem="glory"
+                     ecep:pos="n1"
+                     ecep:reg="Glory"
+                     ecep:spe="Glory"
+                     ecep:syllab="2"
+                     ecep:pron="ˈglɔːri">Glory</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178570"
+                     n="oau90/0114-a-1160"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="in"
+                     ecep:spe="in"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">in</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178580"
+                     n="oau90/0114-a-1170"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178590"
+                     n="oau90/0114-a-1180"
+                     ecep:lem="sea"
+                     ecep:pos="n1"
+                     ecep:reg="Sea"
+                     ecep:spe="Sea"
+                     ecep:syllab="1"
+                     ecep:pron="siː">Sea</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178600"
+                      n="oau90/0114-a-1190"
+                      ecep:lem=";"
+                      ecep:pos=";"
+                      ecep:reg=";"
+                      ecep:spe=";">;</pc>
+               </l>
+               <l xml:id="oau90-l08010">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178610"
+                     n="oau90/0114-a-1200"
+                     ecep:lem="if"
+                     ecep:pos="cs"
+                     ecep:reg="If"
+                     ecep:spe="If"
+                     ecep:syllab="1"
+                     ecep:pron="ɪf">If</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178620"
+                     n="oau90/0114-a-1210"
+                     ecep:lem="planet"
+                     ecep:pos="n2"
+                     ecep:reg="Planets"
+                     ecep:spe="Planets"
+                     ecep:syllab="2"
+                     ecep:pron="ˈplænɪts">Planets</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178630"
+                     n="oau90/0114-a-1220"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178640"
+                     n="oau90/0114-a-1230"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178650"
+                     n="oau90/0114-a-1240"
+                     ecep:lem="low"
+                     ecep:pos="jc"
+                     ecep:reg="lower"
+                     ecep:spe="lower"
+                     ecep:syllab="2"
+                     ecep:pron="ˈləʊə">lower</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178660"
+                     n="oau90/0114-a-1250"
+                     ecep:lem="sphere"
+                     ecep:pos="n1"
+                     ecep:reg="Sphere"
+                     ecep:spe="Sphere"
+                     ecep:syllab="1"
+                     ecep:pron="sfɪə">Sphere</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178670"
+                      n="oau90/0114-a-1260"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08015">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178680"
+                     n="oau90/0114-a-1270"
+                     ecep:lem="can"
+                     ecep:pos="vmb"
+                     ecep:reg="Can"
+                     ecep:spe="Can"
+                     ecep:syllab="1"
+                     ecep:pron="kæn">Can</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178690"
+                     n="oau90/0114-a-1280"
+                     ecep:lem="give"
+                     ecep:pos="vvi"
+                     ecep:reg="give"
+                     ecep:spe="give"
+                     ecep:syllab="1"
+                     ecep:pron="gɪv">give</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178700"
+                     n="oau90/0114-a-1290"
+                     ecep:lem="we"
+                     ecep:pos="pno12"
+                     ecep:reg="us"
+                     ecep:spe="us"
+                     ecep:syllab="1"
+                     ecep:pron="ʌs">us</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178710"
+                     n="oau90/0114-a-1300"
+                     ecep:lem="great"
+                     ecep:pos="jc"
+                     ecep:reg="greater"
+                     ecep:spe="greater"
+                     ecep:syllab="2"
+                     ecep:pron="greɪtə">greater</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178720"
+                     n="oau90/0114-a-1310"
+                     ecep:lem="light"
+                     ecep:pos="n1"
+                     ecep:reg="light"
+                     ecep:spe="light"
+                     ecep:syllab="1"
+                     ecep:pron="laɪt">light</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178730"
+                     n="oau90/0114-a-1320"
+                     ecep:lem="than"
+                     ecep:pos="cs"
+                     ecep:reg="than"
+                     ecep:spe="than"
+                     ecep:syllab="1"
+                     ecep:pron="ðæn">than</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178740"
+                     n="oau90/0114-a-1330"
+                     ecep:lem="he"
+                     ecep:pos="pns31"
+                     ecep:reg="he"
+                     ecep:spe="he"
+                     ecep:syllab="1"
+                     ecep:pron="hiː">he</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178750"
+                      n="oau90/0114-a-1340"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </l>
+            </lg>
+            <pb facs="oau90/0115" n="99" rend="none"/>
+            <lg n="3" xml:id="oau90-s00790">
+               <head>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178790"
+                     n="oau90/0115-a-0010"
+                     ecep:lem="iii"
+                     ecep:pos="crd"
+                     ecep:reg="III"
+                     ecep:spe="III"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊmənθrˈiː">III</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178800"
+                      n="oau90/0115-a-0020"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </head>
+               <l xml:id="oau90-l08020">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178820"
+                     n="oau90/0115-a-0030"
+                     ecep:lem="friar"
+                     ecep:pos="n2"
+                     ecep:reg="Friars"
+                     ecep:spe="Fryars"
+                     ecep:syllab="1"
+                     ecep:pron="frjˈɑːz">Fryars</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178830"
+                     n="oau90/0115-a-0040"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178840"
+                     n="oau90/0115-a-0050"
+                     ecep:lem="monk"
+                     ecep:pos="n2"
+                     ecep:reg="Monks"
+                     ecep:spe="Monks"
+                     ecep:syllab="1"
+                     ecep:pron="mʌŋks">Monks</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178850"
+                      n="oau90/0115-a-0060"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178860"
+                     n="oau90/0115-a-0070"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178870"
+                     n="oau90/0115-a-0080"
+                     ecep:lem="all"
+                     ecep:pos="d"
+                     ecep:reg="all"
+                     ecep:spe="all"
+                     ecep:syllab="1"
+                     ecep:pron="ɔːl">all</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178880"
+                     n="oau90/0115-a-0090"
+                     ecep:lem="those"
+                     ecep:pos="d"
+                     ecep:reg="those"
+                     ecep:spe="those"
+                     ecep:syllab="1"
+                     ecep:pron="ðəʊz">those</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178890"
+                     n="oau90/0115-a-0100"
+                     ecep:lem="baldpate"
+                     ecep:pos="n1"
+                     ecep:reg="baldpate"
+                     ecep:spe="bald-pate"
+                     ecep:syllab="2"
+                     ecep:pron="ˈbɔːldpeɪt">bald-pate</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178900"
+                     n="oau90/0115-a-0110"
+                     ecep:lem="fool"
+                     ecep:pos="n2"
+                     ecep:reg="Fools"
+                     ecep:spe="Fools"
+                     ecep:syllab="1"
+                     ecep:pron="fuːlz">Fools</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178910"
+                      n="oau90/0115-a-0120"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08025">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178920"
+                     n="oau90/0115-a-0130"
+                     ecep:lem="with"
+                     ecep:pos="p-acp"
+                     ecep:reg="With"
+                     ecep:spe="With"
+                     ecep:syllab="1"
+                     ecep:pron="wɪð">With</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178930"
+                     n="oau90/0115-a-0140"
+                     ecep:lem="wafer"
+                     ecep:pos="n2"
+                     ecep:reg="Wafers"
+                     ecep:spe="Wafers"
+                     ecep:syllab="2"
+                     ecep:pron="ˈweɪfəz">Wafers</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178940"
+                      n="oau90/0115-a-0150"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178950"
+                     n="oau90/0115-a-0160"
+                     ecep:lem="ointment"
+                     ecep:pos="n2"
+                     ecep:reg="Ointments"
+                     ecep:spe="Oyntments"
+                     ecep:syllab="2"
+                     ecep:pron="ˈɔɪntmənts">Oyntments</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-178960"
+                      n="oau90/0115-a-0170"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178970"
+                     n="oau90/0115-a-0180"
+                     ecep:lem="bead"
+                     ecep:pos="n2"
+                     ecep:reg="Beads"
+                     ecep:spe="Beads"
+                     ecep:syllab="1"
+                     ecep:pron="biːdz">Beads</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178980"
+                     n="oau90/0115-a-0190"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-178990"
+                     n="oau90/0115-a-0200"
+                     ecep:lem="sham"
+                     ecep:pos="n2"
+                     ecep:reg="Shams"
+                     ecep:spe="Shams"
+                     ecep:syllab="1"
+                     ecep:pron="ʃæmz">Shams</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179000"
+                      n="oau90/0115-a-0210"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08030">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179010"
+                     n="oau90/0115-a-0220"
+                     ecep:lem="pardon"
+                     ecep:pos="n2"
+                     ecep:reg="Pardons"
+                     ecep:spe="Pardons"
+                     ecep:syllab="2"
+                     ecep:pron="ˈpɑːdnz">Pardons</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179020"
+                     n="oau90/0115-a-0230"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179030"
+                     n="oau90/0115-a-0240"
+                     ecep:lem="antichristian"
+                     ecep:pos="jp"
+                     ecep:reg="Antichristian"
+                     ecep:spe="Antichristian"
+                     ecep:syllab="4"
+                     ecep:pron="ˌæntiˈkrɪstʃn">Antichristian</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179040"
+                     n="oau90/0115-a-0250"
+                     ecep:lem="bull"
+                     ecep:pos="n2"
+                     ecep:reg="Bulls"
+                     ecep:spe="Bulls"
+                     ecep:syllab="1"
+                     ecep:pron="bʊlz">Bulls</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179050"
+                      n="oau90/0115-a-0260"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </l>
+               <l xml:id="oau90-l08035">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179060"
+                     n="oau90/0115-a-0270"
+                     ecep:lem="must"
+                     ecep:pos="vmb"
+                     ecep:reg="Must"
+                     ecep:spe="Must"
+                     ecep:syllab="1"
+                     ecep:pron="mʌst">Must</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179070"
+                     n="oau90/0115-a-0280"
+                     ecep:lem="yield"
+                     ecep:pos="vvi"
+                     ecep:reg="yield"
+                     ecep:spe="yield"
+                     ecep:syllab="1"
+                     ecep:pron="jiːld">yield</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179080"
+                     n="oau90/0115-a-0290"
+                     ecep:lem="to"
+                     ecep:pos="p-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <hi>
+                     <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                        xml:id="oau90-179090"
+                        n="oau90/0115-a-0300"
+                        ecep:lem="belgic"
+                        ecep:pos="jp"
+                        ecep:reg="Belgic"
+                        ecep:spe="Belgick"
+                        ecep:syllab="2"
+                        ecep:pron="bˈeldʒɪk">Belgick</w>
+                  </hi>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179100"
+                     n="oau90/0115-a-0310"
+                     ecep:lem="batter"
+                     ecep:pos="vvg"
+                     ecep:reg="battering"
+                     ecep:spe="battering"
+                     ecep:syllab="3"
+                     ecep:pron="ˈbætrɪŋ">battering</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179110"
+                     n="oau90/0115-a-0320"
+                     ecep:lem="ram"
+                     ecep:pos="n2"
+                     ecep:reg="Rams"
+                     ecep:spe="Rams"
+                     ecep:syllab="1"
+                     ecep:pron="ræmz">Rams</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179120"
+                      n="oau90/0115-a-0330"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </l>
+            </lg>
+            <lg n="4" xml:id="oau90-s00795">
+               <head>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179160"
+                     n="oau90/0115-a-0340"
+                     ecep:lem="iv"
+                     ecep:pos="crd"
+                     ecep:reg="IV"
+                     ecep:spe="IV"
+                     ecep:syllab="1"
+                     ecep:pron="rˌəʊmənfˈɔː">IV</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179170"
+                      n="oau90/0115-a-0350"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </head>
+               <l xml:id="oau90-l08040">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179190"
+                     n="oau90/0115-a-0360"
+                     ecep:lem="infallibility"
+                     ecep:pos="n1"
+                     ecep:reg="Infallibility"
+                     ecep:spe="Infallibility"
+                     ecep:syllab="6"
+                     ecep:pron="ɪnˌfæləˈbɪləti">Infallibility</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179200"
+                     n="oau90/0115-a-0370"
+                     ecep:lem="be"
+                     ecep:pos="vbz"
+                     ecep:reg="is"
+                     ecep:spe="is"
+                     ecep:syllab="1"
+                     ecep:pron="ɪz">is</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179210"
+                     n="oau90/0115-a-0380"
+                     ecep:lem="go"
+                     ecep:pos="vvn"
+                     ecep:reg="gone"
+                     ecep:spe="gone"
+                     ecep:syllab="1"
+                     ecep:pron="gɒn">gone</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179220"
+                      n="oau90/0115-a-0390"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08045">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179230"
+                     n="oau90/0115-a-0400"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179240"
+                     n="oau90/0115-a-0410"
+                     ecep:lem="judge"
+                     ecep:pos="n2"
+                     ecep:reg="Judges"
+                     ecep:spe="Judges"
+                     ecep:syllab="2"
+                     ecep:pron="dʒʌdʒɪz">Judges</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179250"
+                     n="oau90/0115-a-0420"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179260"
+                     n="oau90/0115-a-0430"
+                     ecep:lem="dispense"
+                     ecep:pos="j-vvg"
+                     ecep:reg="Dispensing"
+                     ecep:spe="Dispensing"
+                     ecep:syllab="3"
+                     ecep:pron="dɪˈspensɪŋ">Dispensing</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179270"
+                     n="oau90/0115-a-0440"
+                     ecep:lem="power"
+                     ecep:pos="n2"
+                     ecep:reg="Powers"
+                     ecep:spe="Powers"
+                     ecep:syllab="1"
+                     ecep:pron="ˈpaʊəz">Powers</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179280"
+                      n="oau90/0115-a-0450"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08050">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179290"
+                     n="oau90/0115-a-0460"
+                     ecep:lem="that"
+                     ecep:pos="cst"
+                     ecep:reg="That"
+                     ecep:spe="That"
+                     ecep:syllab="1"
+                     ecep:pron="ðæt">That</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179300"
+                     n="oau90/0115-a-0470"
+                     ecep:lem="have"
+                     ecep:pos="vhd"
+                     ecep:reg="had"
+                     ecep:spe="had"
+                     ecep:syllab="1"
+                     ecep:pron="hæd">had</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179310"
+                     n="oau90/0115-a-0480"
+                     ecep:lem="their"
+                     ecep:pos="po32"
+                     ecep:reg="their"
+                     ecep:spe="thier"
+                     ecep:syllab="2"
+                     ecep:pron="θˈiə">thier</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179320"
+                     n="oau90/0115-a-0490"
+                     ecep:lem="country"
+                     ecep:pos="n1"
+                     ecep:reg="Country"
+                     ecep:spe="Country"
+                     ecep:syllab="2"
+                     ecep:pron="ˈkʌntri">Country</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179330"
+                     n="oau90/0115-a-0500"
+                     ecep:lem="quite"
+                     ecep:pos="av"
+                     ecep:reg="quite"
+                     ecep:spe="quite"
+                     ecep:syllab="1"
+                     ecep:pron="kwaɪt">quite</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179340"
+                     n="oau90/0115-a-0510"
+                     ecep:lem="undo"
+                     ecep:pos="vvn"
+                     ecep:reg="undone"
+                     ecep:spe="undone"
+                     ecep:syllab="2"
+                     ecep:pron="ʌnˈdʌn">undone</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179350"
+                      n="oau90/0115-a-0520"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08055">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179360"
+                     n="oau90/0115-a-0530"
+                     ecep:lem="be"
+                     ecep:pos="vbds"
+                     ecep:reg="Was"
+                     ecep:spe="Was"
+                     ecep:syllab="1"
+                     ecep:pron="wɒz">Was</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179370"
+                     n="oau90/0115-a-0540"
+                     ecep:lem="ever"
+                     ecep:pos="av"
+                     ecep:reg="ever"
+                     ecep:spe="ever"
+                     ecep:syllab="2"
+                     ecep:pron="ˈevə">ever</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179380"
+                     n="oau90/0115-a-0550"
+                     ecep:lem="know"
+                     ecep:pos="vvn"
+                     ecep:reg="known"
+                     ecep:spe="known"
+                     ecep:syllab="1"
+                     ecep:pron="nəʊn">known</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179390"
+                     n="oau90/0115-a-0560"
+                     ecep:lem="such"
+                     ecep:pos="d"
+                     ecep:reg="such"
+                     ecep:spe="such"
+                     ecep:syllab="1"
+                     ecep:pron="sʌtʃ">such</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179400"
+                     n="oau90/0115-a-0570"
+                     ecep:lem="son"
+                     ecep:pos="n2"
+                     ecep:reg="Sons"
+                     ecep:spe="Sons"
+                     ecep:syllab="1"
+                     ecep:pron="sʌnz">Sons</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179410"
+                     n="oau90/0115-a-0580"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179420"
+                     n="oau90/0115-a-0590"
+                     ecep:lem="whore"
+                     ecep:pos="n2"
+                     ecep:reg="Whores"
+                     ecep:spe="Whores"
+                     ecep:syllab="1"
+                     ecep:pron="hɔːz">Whores</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179430"
+                      n="oau90/0115-a-0600"
+                      unit="sentence"
+                      ecep:lem="?"
+                      ecep:pos="?"
+                      ecep:reg="?"
+                      ecep:spe="?">?</pc>
+               </l>
+            </lg>
+            <lg ecep:syllab="8.8.8.8.8.8.8.8"
+                met="-+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/ -+|-+|-+|-+/"
+                n="5"
+                rhyme="ababcdcd"
+                xml:id="oau90-s00800">
+               <head>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179470"
+                     n="oau90/0115-a-0610"
+                     ecep:lem="v."
+                     ecep:pos="crd"
+                     ecep:reg="V"
+                     ecep:spe="V."
+                     ecep:syllab="1"
+                     ecep:pron="viː">V.</w>
+                  <pc unit="sentence" xml:id="oau90-179470-eos" n="oau90/0115-a-0620"/>
+               </head>
+               <l xml:id="oau90-l08060">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179490"
+                     n="oau90/0115-a-0630"
+                     ecep:lem="drink"
+                     ecep:pos="vvb"
+                     ecep:reg="Drink"
+                     ecep:spe="Drink"
+                     ecep:syllab="1"
+                     ecep:pron="drɪŋk">Drink</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179500"
+                     n="oau90/0115-a-0640"
+                     ecep:lem="all"
+                     ecep:pos="d"
+                     ecep:reg="all"
+                     ecep:spe="all"
+                     ecep:syllab="1"
+                     ecep:pron="ɔːl">all</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179510"
+                     n="oau90/0115-a-0650"
+                     ecep:lem="around"
+                     ecep:pos="a-acp"
+                     ecep:reg="around"
+                     ecep:spe="around"
+                     ecep:syllab="2"
+                     ecep:pron="əˈraʊnd">around</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179520"
+                      n="oau90/0115-a-0660"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179530"
+                     n="oau90/0115-a-0670"
+                     ecep:lem="then"
+                     ecep:pos="av"
+                     ecep:reg="then"
+                     ecep:spe="then"
+                     ecep:syllab="1"
+                     ecep:pron="ðen">then</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179540"
+                     n="oau90/0115-a-0680"
+                     ecep:lem="by"
+                     ecep:pos="p-acp"
+                     ecep:reg="by"
+                     ecep:spe="by"
+                     ecep:syllab="1"
+                     ecep:pron="baɪ">by</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179550"
+                     n="oau90/0115-a-0690"
+                     ecep:lem="consent"
+                     ecep:pos="n1"
+                     ecep:reg="consent"
+                     ecep:spe="consent"
+                     ecep:syllab="2"
+                     ecep:pron="kənˈsent">consent</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179560"
+                      n="oau90/0115-a-0700"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08065">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179570"
+                     n="oau90/0115-a-0710"
+                     ecep:lem="health"
+                     ecep:pos="n1"
+                     ecep:reg="Health"
+                     ecep:spe="Health"
+                     ecep:syllab="1"
+                     ecep:pron="helθ">Health</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179580"
+                     n="oau90/0115-a-0720"
+                     ecep:lem="to"
+                     ecep:pos="p-acp"
+                     ecep:reg="to"
+                     ecep:spe="to"
+                     ecep:syllab="1"
+                     ecep:pron="tuː">to</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179590"
+                     n="oau90/0115-a-0730"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179600"
+                     n="oau90/0115-a-0740"
+                     ecep:lem="monarch"
+                     ecep:pos="n1"
+                     ecep:reg="Monarch"
+                     ecep:spe="Monarch"
+                     ecep:syllab="2"
+                     ecep:pron="ˈmɒnək">Monarch</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179610"
+                     n="oau90/0115-a-0750"
+                     ecep:lem="of"
+                     ecep:pos="pp-f"
+                     ecep:reg="of"
+                     ecep:spe="of"
+                     ecep:syllab="1"
+                     ecep:pron="ɒv">of</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179620"
+                     n="oau90/0115-a-0760"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179630"
+                     n="oau90/0115-a-0770"
+                     ecep:lem="land"
+                     ecep:pos="n1"
+                     ecep:reg="Land"
+                     ecep:spe="Land"
+                     ecep:syllab="1"
+                     ecep:pron="lænd">Land</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179640"
+                      n="oau90/0115-a-0780"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08070">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179650"
+                     n="oau90/0115-a-0790"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="The"
+                     ecep:spe="The"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">The</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179660"
+                     n="oau90/0115-a-0800"
+                     ecep:lem="queen"
+                     ecep:pos="n1"
+                     ecep:reg="Queen"
+                     ecep:spe="Queen"
+                     ecep:syllab="1"
+                     ecep:pron="kwiːn">Queen</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179670"
+                      n="oau90/0115-a-0810"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179680"
+                     n="oau90/0115-a-0820"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179690"
+                     n="oau90/0115-a-0830"
+                     ecep:lem="heal"
+                     ecep:pos="j-vvg"
+                     ecep:reg="healing"
+                     ecep:spe="healing"
+                     ecep:syllab="2"
+                     ecep:pron="hiːlɪŋ">healing</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179700"
+                     n="oau90/0115-a-0840"
+                     ecep:lem="parliament"
+                     ecep:pos="n1"
+                     ecep:reg="Parliament"
+                     ecep:spe="Parliament"
+                     ecep:syllab="3"
+                     ecep:pron="ˈpɑːləmənt">Parliament</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179710"
+                      n="oau90/0115-a-0850"
+                      ecep:lem=";"
+                      ecep:pos=";"
+                      ecep:reg=";"
+                      ecep:spe=";">;</pc>
+               </l>
+               <l xml:id="oau90-l08075">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179720"
+                     n="oau90/0115-a-0860"
+                     ecep:lem="pledge"
+                     ecep:pos="vvb"
+                     ecep:reg="Pledge"
+                     ecep:spe="Pledge"
+                     ecep:syllab="1"
+                     ecep:pron="pledʒ">Pledge</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179730"
+                     n="oau90/0115-a-0870"
+                     ecep:lem="i"
+                     ecep:pos="pno11"
+                     ecep:reg="me"
+                     ecep:spe="me"
+                     ecep:syllab="1"
+                     ecep:pron="miː">me</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179740"
+                     n="oau90/0115-a-0880"
+                     ecep:lem="six"
+                     ecep:pos="crd"
+                     ecep:reg="six"
+                     ecep:spe="six"
+                     ecep:syllab="1"
+                     ecep:pron="sɪks">six</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179750"
+                     n="oau90/0115-a-0890"
+                     ecep:lem="bumper"
+                     ecep:pos="n2"
+                     ecep:reg="Bumpers"
+                     ecep:spe="Bumpers"
+                     ecep:syllab="2"
+                     ecep:pron="ˈbʌmpəz">Bumpers</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179760"
+                     n="oau90/0115-a-0900"
+                     ecep:lem="in"
+                     ecep:pos="p-acp"
+                     ecep:reg="in"
+                     ecep:spe="in"
+                     ecep:syllab="1"
+                     ecep:pron="ɪn">in</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179770"
+                     n="oau90/0115-a-0910"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="a"
+                     ecep:spe="a"
+                     ecep:syllab="1"
+                     ecep:pron="ə">a</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179780"
+                     n="oau90/0115-a-0920"
+                     ecep:lem="hand"
+                     ecep:pos="n1"
+                     ecep:reg="hand"
+                     ecep:spe="hand"
+                     ecep:syllab="1"
+                     ecep:pron="hænd">hand</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179790"
+                      n="oau90/0115-a-0930"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08080">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179800"
+                     n="oau90/0115-a-0940"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="And"
+                     ecep:spe="And"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">And</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179810"
+                     n="oau90/0115-a-0950"
+                     ecep:lem="when"
+                     ecep:pos="c-crq"
+                     ecep:reg="when"
+                     ecep:spe="when"
+                     ecep:syllab="1"
+                     ecep:pron="wen">when</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179820"
+                     n="oau90/0115-a-0960"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179830"
+                     n="oau90/0115-a-0970"
+                     ecep:lem="jesuit"
+                     ecep:pos="np2"
+                     ecep:reg="Jesuits"
+                     ecep:spe="Jesuits"
+                     ecep:syllab="3"
+                     ecep:pron="ˈdʒezjuɪts">Jesuits</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179840"
+                     n="oau90/0115-a-0980"
+                     ecep:lem="you"
+                     ecep:pos="pn22"
+                     ecep:reg="you"
+                     ecep:spe="you"
+                     ecep:syllab="1"
+                     ecep:pron="juː">you</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179850"
+                     n="oau90/0115-a-0990"
+                     ecep:lem="see"
+                     ecep:pos="vvb"
+                     ecep:reg="see"
+                     ecep:spe="see"
+                     ecep:syllab="1"
+                     ecep:pron="siː">see</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179860"
+                      n="oau90/0115-a-1000"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08085">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179870"
+                     n="oau90/0115-a-1010"
+                     ecep:lem="dangle"
+                     ecep:pos="vvg"
+                     ecep:reg="Dangling"
+                     ecep:spe="Dangling"
+                     ecep:syllab="3"
+                     ecep:pron="ˈdæŋglɪŋ">Dangling</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179880"
+                     n="oau90/0115-a-1020"
+                     ecep:lem="upon"
+                     ecep:pos="p-acp"
+                     ecep:reg="upon"
+                     ecep:spe="upon"
+                     ecep:syllab="2"
+                     ecep:pron="əˈpɒn">upon</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179890"
+                     n="oau90/0115-a-1030"
+                     ecep:lem="the"
+                     ecep:pos="dt"
+                     ecep:reg="the"
+                     ecep:spe="the"
+                     ecep:syllab="1"
+                     ecep:pron="ðiː">the</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179900"
+                     n="oau90/0115-a-1040"
+                     ecep:lem="triple"
+                     ecep:pos="j"
+                     ecep:reg="Triple"
+                     ecep:spe="Triple"
+                     ecep:syllab="2"
+                     ecep:pron="ˈtrɪpl">Triple</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179910"
+                     n="oau90/0115-a-1050"
+                     ecep:lem="tree"
+                     ecep:pos="n1"
+                     ecep:reg="Tree"
+                     ecep:spe="Tree"
+                     ecep:syllab="1"
+                     ecep:pron="triː">Tree</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179920"
+                      n="oau90/0115-a-1060"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08090">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179930"
+                     n="oau90/0115-a-1070"
+                     ecep:lem="fill"
+                     ecep:pos="vvb"
+                     ecep:reg="Fill"
+                     ecep:spe="Fill"
+                     ecep:syllab="1"
+                     ecep:pron="fɪl">Fill</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179940"
+                     n="oau90/0115-a-1080"
+                     ecep:lem="up"
+                     ecep:pos="a-acp"
+                     ecep:reg="up"
+                     ecep:spe="up"
+                     ecep:syllab="1"
+                     ecep:pron="ʌp">up</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179950"
+                     n="oau90/0115-a-1090"
+                     ecep:lem="six"
+                     ecep:pos="crd"
+                     ecep:reg="six"
+                     ecep:spe="six"
+                     ecep:syllab="1"
+                     ecep:pron="sɪks">six</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179960"
+                     n="oau90/0115-a-1100"
+                     ecep:lem="more"
+                     ecep:pos="dc"
+                     ecep:reg="more"
+                     ecep:spe="more"
+                     ecep:syllab="1"
+                     ecep:pron="mɔː">more</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-179970"
+                      n="oau90/0115-a-1110"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179980"
+                     n="oau90/0115-a-1120"
+                     ecep:lem="and"
+                     ecep:pos="cc"
+                     ecep:reg="and"
+                     ecep:spe="and"
+                     ecep:syllab="1"
+                     ecep:pron="ænd">and</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-179990"
+                     n="oau90/0115-a-1130"
+                     ecep:lem="sing"
+                     ecep:pos="vvi"
+                     ecep:reg="sing"
+                     ecep:spe="sing"
+                     ecep:syllab="1"
+                     ecep:pron="sɪŋ">sing</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180000"
+                     n="oau90/0115-a-1140"
+                     ecep:lem="with"
+                     ecep:pos="p-acp"
+                     ecep:reg="with"
+                     ecep:spe="with"
+                     ecep:syllab="1"
+                     ecep:pron="wɪð">with</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180010"
+                     n="oau90/0115-a-1150"
+                     ecep:lem="i"
+                     ecep:pos="pno11"
+                     ecep:reg="me"
+                     ecep:spe="me"
+                     ecep:syllab="1"
+                     ecep:pron="miː">me</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-180020"
+                      n="oau90/0115-a-1160"
+                      ecep:lem=","
+                      ecep:pos=","
+                      ecep:reg=","
+                      ecep:spe=",">,</pc>
+               </l>
+               <l xml:id="oau90-l08095">
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180030"
+                     n="oau90/0115-a-1170"
+                     ecep:lem="a"
+                     ecep:pos="dt"
+                     ecep:reg="A"
+                     ecep:spe="A"
+                     ecep:syllab="1"
+                     ecep:pron="ə">A</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180040"
+                     n="oau90/0115-a-1180"
+                     ecep:lem="plague"
+                     ecep:pos="n1"
+                     ecep:reg="Plague"
+                     ecep:spe="Plague"
+                     ecep:syllab="1"
+                     ecep:pron="pleɪg">Plague</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180050"
+                     n="oau90/0115-a-1190"
+                     ecep:lem="on"
+                     ecep:pos="p-acp"
+                     ecep:reg="on"
+                     ecep:spe="on"
+                     ecep:syllab="1"
+                     ecep:pron="ɒn">on</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180060"
+                     n="oau90/0115-a-1200"
+                     ecep:lem="senseless"
+                     ecep:pos="j"
+                     ecep:reg="senseless"
+                     ecep:spe="senseless"
+                     ecep:syllab="2"
+                     ecep:pron="ˈsensləs">senseless</w>
+                  <c> </c>
+                  <w xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                     xml:id="oau90-180070"
+                     n="oau90/0115-a-1210"
+                     ecep:lem="popery"
+                     ecep:pos="n1"
+                     ecep:reg="Popery"
+                     ecep:spe="Popery"
+                     ecep:syllab="3"
+                     ecep:pron="ˈpəʊpri">Popery</w>
+                  <pc xmlns:ecep="http://www.eighteenthcenturypoetry.org/ns"
+                      xml:id="oau90-180080"
+                      n="oau90/0115-a-1220"
+                      unit="sentence"
+                      ecep:lem="."
+                      ecep:pos="."
+                      ecep:reg="."
+                      ecep:spe=".">.</pc>
+               </l>
+            </lg>
+         </div>
+      </body>
+   </text>
+</TEI>

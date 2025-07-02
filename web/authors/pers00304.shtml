@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / James Boswell" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors James Boswell "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / James Boswell" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors James Boswell "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,24 +10,17 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">James Boswell (1740-1795)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/BoswJa1740_NPG.jpg" alt="James Boswell (1740-1795)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/BoswJa1740_NPG.jpg" alt="James Boswell (1740-1795)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o4257-w0010.shtml"><em>THE CUB, AT NEW-MARKET.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4257" href="/works/o4257.shtml#o4257-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o3913-w0010.shtml"><em>An ELEGY on the Death of an amiable YOUNG LADY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3913" href="/works/o3913.shtml#o3913-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o3913-w0020.shtml"><em>LYCIDAS to MENALCAS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3913" href="/works/o3913.shtml#o3913-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4546-w0010.shtml"><em>ODE TO TRAGEDY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4546" href="/works/o4546.shtml#o4546-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o3613-w0010.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3613" href="/works/o3613.shtml#o3613-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o4257-w0010.shtml"><em>THE CUB, AT NEW-MARKET.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4257" href="/works/o4257.shtml#o4257-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o3913-w0010.shtml"><em>An ELEGY on the Death of an amiable YOUNG LADY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3913" href="/works/o3913.shtml#o3913-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o3913-w0020.shtml"><em>LYCIDAS to MENALCAS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3913" href="/works/o3913.shtml#o3913-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4546-w0010.shtml"><em>ODE TO TRAGEDY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4546" href="/works/o4546.shtml#o4546-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o3613-w0010.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3613" href="/works/o3613.shtml#o3613-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o3913"><a title="view table of contents of source edition" href="/works/o3913.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Boswell, James, 1740-1795. <em><span class="titlem">An elegy on the death of an amiable young lady. With an epistle from Menalcas to Lycidas.
@@ -77,23 +64,19 @@
                            To which are prefixed, three critical recommendatory letters.</span> </em>  Edinburgh: printed by A. Donaldson and J. Reid. For Alex. Donaldson, 1761. 24p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T32518">T32518</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K035585.000">K035585.000</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4546"><a title="view table of contents of source edition" href="/works/o4546.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Boswell, James, 1740-1795. <em><span class="titlem">An ode to tragedy. By a gentleman of Scotland.</span> </em>  Edinburgh: printed by A. Donaldson and J. Reid. For Alex. Donaldson MDCLXI, 1761. 12p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T71923">T71923</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K060978.000">K060978.000</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4257"><a title="view table of contents of source edition" href="/works/o4257.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Boswell, James, 1740-1795. <em><span class="titlem">The cub, at Newmarket: a tale.</span> </em>  London: printed for R. and J. Dodsley, 1762. 24p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T53403">T53403</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K048041.000">K048041.000</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o3613"><a title="view table of contents of source edition" href="/works/o3613.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Boswell, James, 1740-1795. Johnson, Samuel, 1709-1784. <em><span class="titlem">Ode by Dr. Samuel Johnson to Mrs. Thrale, upon their supposed approaching nuptials.</span> </em>  London: printed for R. Faulder, 1784. 16p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T2407">T2407</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K021475.000">K021475.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -102,26 +85,22 @@
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 39-58. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 39-58. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 30-31. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 30-31. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">McFarland, Ronald E.  <q class="titlea">Considering Boswell's poetry</q>. <span class="titlej">New Rambler</span> 23 (1982): 30-40. Print.
-                     </div>
+                     <div class="biblfree">McFarland, Ronald E.  <q class="titlea">Considering Boswell's poetry</q>. <span class="titlej">New Rambler</span> 23 (1982): 30-40. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Newman, Donald J.  <q class="titlea">Boswell's Poetry: The Comic Cohesion of a Fragmented Self</q>. Newman, Donald J., ed. <span class="titlem">James Boswell: Psychological Interpretations</span>. New York: St. Martin's, 1995. 165-187. Print.
-                     </div>
+                     <div class="biblfree">Newman, Donald J.  <q class="titlea">Boswell's Poetry: The Comic Cohesion of a Fragmented Self</q>. Newman, Donald J., ed. <span class="titlem">James Boswell: Psychological Interpretations</span>. New York: St. Martin's, 1995. 165-187. Print.</div>
                   </li>
                </ul>
             </div>
@@ -134,12 +113,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"James Boswell\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

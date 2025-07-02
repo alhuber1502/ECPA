@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Works / Pope, Alexander, 1688-1744.  The court ballad: By Mr. Pope. To the tune of, To all you ladies now at land, &c.    [London]: Printed for R. Burleigh, in Amen-Corner, 1717. 2p. ; 1/2⁰.
 					(ESTC  T5527 ; 
 						Foxon P762; 
@@ -17,12 +16,12 @@
 				citation += "Huber, Alexander, ed. ";	
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
-				citation += `Pope, Alexander, 1688-1744. <em><span class="titlem">The court ballad: By Mr. Pope. To the tune of, To all you ladies now at land, &amp;c.</span> </em>  [London]: Printed for R. Burleigh, in Amen-Corner, 1717. 2p. ; 1/2⁰.
+				citation += `Pope, Alexander, 1688-1744. <em><span class="titlem">The court ballad: By Mr. Pope. To the tune of, To all you ladies now at land, &c.</span> </em>  [London]: Printed for R. Burleigh, in Amen-Corner, 1717. 2p. ; 1/2⁰.
 					(ESTC <a class="external" href="http://estc.bl.uk/T5527">T5527</a>; 
 						Foxon P762; 
 						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K023019.000">K023019.000</a>)
 				. `; 
 				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
 				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
-				'. Web. \<!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
 			</script><!--#include virtual="/bottom.shtml"-->

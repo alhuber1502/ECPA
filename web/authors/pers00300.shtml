@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Mary Pix (née Griffith)" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Mary Pix (née Griffith) "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Mary Pix (née Griffith)" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Mary Pix (née Griffith) "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,16 +10,13 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Mary Pix (1666-1709)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/PixMar1666_NPG.jpg" alt="Mary Pix (1666-1709)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/PixMar1666_NPG.jpg" alt="Mary Pix (1666-1709)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o4885-w0010.shtml"><em>VIOLENTA FROM BOCCACE</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4885" href="/works/o4885.shtml#o4885-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o4885-w0010.shtml"><em>VIOLENTA FROM BOCCACE</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4885" href="/works/o4885.shtml#o4885-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o4885"><a title="view table of contents of source edition" href="/works/o4885.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Pix, Mary, 1666-1720. <em><span class="titlem">Violenta, or the Rewards of Virtue: turn'd from Boccace into Verse.</span> </em>  London: Printed for John Nutt, near Stationers-Hall, 1704. [8],128p.; 8⁰.
@@ -44,8 +35,7 @@
                      					(ESTC <a class="external" href="http://estc.bl.uk/T106756">T106756</a>; 
                      						Foxon P463; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K085711.000">K085711.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -54,19 +44,16 @@
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 272. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 272. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 256-257. Print.
-                     </div>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 256-257. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Messenger, Ann, ed. <span class="titlem">Gender at work: four women writers of the eighteenth century</span>. Detroit, MI: Wayne State UP, 1990. Print.
-                     </div>
+                     <div class="biblfree">Messenger, Ann, ed. <span class="titlem">Gender at work: four women writers of the eighteenth century</span>. Detroit, MI: Wayne State UP, 1990. Print.</div>
                   </li>
                </ul>
             </div>
@@ -79,12 +66,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Mary Pix (née Griffith)\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

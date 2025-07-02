@@ -297,21 +297,23 @@ function ana_cont (e) {
     content += `<div>Sentence no.: `+(parseInt( token.sent )+ 1)+`, token id.: `+(token.spos+1)+` (tokens normalized)</div>`;
     content += `<ul style="margin-left:-40px" class="listBibl">`;
     var semout = false;
-    $.each(sema[ token.sent ].frames, function(index,item) {
-	if (item.target.name != "" && item.target.spans && item.target.spans[0].start <= token.spos && item.target.spans[0].end > token.spos) { // look in frames
-	    content += `<li>`+format_frame(token,item)+`</li>`;
-	    semout = true;
-	    return true;
+	if ( sema[ token.sent ] ) {
+		$.each(sema[ token.sent ].frames, function(index,item) {
+			if (item.target.name != "" && item.target.spans && item.target.spans[0].start <= token.spos && item.target.spans[0].end > token.spos) { // look in frames
+				content += `<li>`+format_frame(token,item)+`</li>`;
+				semout = true;
+				return true;
+			}
+			$.each(item.annotationSets[0].frameElements, function(index2,item2) { // look in frame elements
+				if (item2.name != "" && item2.spans && item2.spans[0].start <= token.spos && item2.spans[0].end > token.spos) {
+					content += `<li>`+format_frame(token,item)+`</li>`;
+					semout = true;
+					return false;
+				}
+			});
+		});
 	}
-	$.each(item.annotationSets[0].frameElements, function(index2,item2) { // look in frame elements
-	    if (item2.name != "" && item2.spans && item2.spans[0].start <= token.spos && item2.spans[0].end > token.spos) {
-		content += `<li>`+format_frame(token,item)+`</li>`;
-		semout = true;
-		return false;
-	    }
-	});
-    });
-    if (!semout) { content += `<li><a class="visualize_ids" data-ids="`+IDfromST(token.sent,token.spos)+`">"`+token.reg+`"</a> is not in any semantic frame</li>`; }
+	if (!semout) { content += `<li><a class="visualize_ids" data-ids="`+IDfromST(token.sent,token.spos)+`">"`+token.reg+`"</a> is not in any semantic frame</li>`; }
     content += `</ul>`;
     var semcoll = [];
     if (Object.keys(RFsema).length > 0) {
@@ -1297,7 +1299,11 @@ function ana_semantic (lineID) {
 	"<br/><div id='parse_horiz' class='frameviz'/><br/>");
 	for (var i = 0; i < l[lineID].sentences.length; i++) {
 	    sentnum += (parseInt(l[lineID].sentences[i])+1)+", ";
-	    receivedFrameJSON(sema[ l[lineID].sentences[i]], 'sent', l[lineID].sentences[i]); // function appends output directly, plus, added third parameter to include sentence number
+		if ( sema[ l[lineID].sentences[i]] ) {
+		    receivedFrameJSON(sema[ l[lineID].sentences[i]], 'sent', l[lineID].sentences[i]); // function appends output directly, plus, added third parameter to include sentence number
+		} else {
+			$( "#parse_horiz" ).append("<p>[Semantic frame is not available.]</p>")
+		}
 	}
     }
     // make all tables equal width

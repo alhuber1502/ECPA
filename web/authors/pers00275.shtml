@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / George Crabbe" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors George Crabbe "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / George Crabbe" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors George Crabbe "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,32 +10,21 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">George Crabbe (1754-1832)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/CrabGe1754_NPG.jpg" alt="George Crabbe (1754-1832)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/CrabGe1754_NPG.jpg" alt="George Crabbe (1754-1832)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/pcr18-w0050.shtml"><em>THE BIRTH OF FLATTERY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0050"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0080.shtml"><em>THE HALL OF JUSTICE. IN TWO PARTS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0080"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0010.shtml"><em>THE LIBRARY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0030.shtml"><em>THE NEWSPAPER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0030"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0040.shtml"><em>THE PARISH REGISTER. IN THREE PARTS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0040"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0060.shtml"><em>REFLECTIONS UPON THE SUBJECT — —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0060"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0070.shtml"><em>SIR EUSTACE GREY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0070"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0020.shtml"><em>THE VILLAGE. IN TWO BOOKS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/pcr18-w0090.shtml"><em>WOMAN! MR. LEDYARD, AS QUOTED BY MUNGO PARKE IN HIS TRAVELS INTO AFRICA —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0090"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/pcr18-w0050.shtml"><em>THE BIRTH OF FLATTERY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0050"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0080.shtml"><em>THE HALL OF JUSTICE. IN TWO PARTS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0080"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0010.shtml"><em>THE LIBRARY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0030.shtml"><em>THE NEWSPAPER.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0030"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0040.shtml"><em>THE PARISH REGISTER. IN THREE PARTS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0040"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0060.shtml"><em>REFLECTIONS UPON THE SUBJECT — —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0060"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0070.shtml"><em>SIR EUSTACE GREY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0070"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0020.shtml"><em>THE VILLAGE. IN TWO BOOKS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/pcr18-w0090.shtml"><em>WOMAN! MR. LEDYARD, AS QUOTED BY MUNGO PARKE IN HIS TRAVELS INTO AFRICA —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="pcr18" href="/works/pcr18.shtml#pcr18-w0090"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="pcr18"><a title="view table of contents of source edition" href="/works/pcr18.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Crabbe, George, 1754-1832. <em><span class="titlem">The Poetical Works of the Rev. George Crabbe: with his letters and journals, and his
@@ -62,8 +45,7 @@
                <h2 class="info">Source editions</h2>
                <ul class="listBibl">
                   <li id="pcr18"><a title="view table of contents of source edition" href="/works/pcr18.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Crabbe, George, 1754-1832. <em><span class="titlem">The Poetical Works of the Rev. George Crabbe: with his letters and journals, and his
-                           life, by his son. In eight volumes. Vol. II. [poems only]</span> </em>  London: John Murray, Albemarle Street. MDCCCXXXVIII., 1838. 8 volumes.
-                  </li>
+                           life, by his son. In eight volumes. Vol. II. [poems only]</span> </em>  London: John Murray, Albemarle Street. MDCCCXXXVIII., 1838. 8 volumes.</li>
                </ul>
             </div>
             <div id="bio">
@@ -98,8 +80,7 @@
                      (1778-1843) on one of his visits to London, who became his publisher. He published
                      Crabbe's new collection of verse stories, <span class="titlem">Tales of the Hall</span> in 1819 and produced a five-volume edition of Crabbe's <span class="titlem">Works</span> in 1823 (eight vols., 1838). Crabbe became a member of the Literary Society in 1819
                      and was admitted to the Athenaeum in 1824. In 1826 he became a magistrate in Trowbridge.
-                     Crabbe died in his rectory at Trowbridge in 1832.</span> 
-               </p>
+                     Crabbe died in his rectory at Trowbridge in 1832.</span> </p>
             </div>
             <div id="bib">
                <h2 id="bib_CrabGe1754">Bibliography</h2>
@@ -107,127 +88,101 @@
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 293-330. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 293-330. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Editions</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Dalrymple-Champneys, Norma and Arthur Pollard, eds. <span class="titlem">George Crabbe: The Complete Poetical Works</span>. Oxford: Clarendon Press, 1988. Print. 3 volumes.
-                     </div>
+                     <div class="biblfree">Dalrymple-Champneys, Norma and Arthur Pollard, eds. <span class="titlem">George Crabbe: The Complete Poetical Works</span>. Oxford: Clarendon Press, 1988. Print. 3 volumes.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Faulkner, Thomas C., ed. with the assistance of Rhonda L. Blair. <span class="titlem">Selected Letters and Journals of George Crabbe</span>. Oxford: Clarendon Press, 1985. Print.
-                     </div>
+                     <div class="biblfree">Faulkner, Thomas C., ed. with the assistance of Rhonda L. Blair. <span class="titlem">Selected Letters and Journals of George Crabbe</span>. Oxford: Clarendon Press, 1985. Print.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Powell, Neil. <span class="titlem">George Crabbe: an English life, 1754-1832</span>. London: Pimlico, 2004. Print.
-                     </div>
+                     <div class="biblfree">Powell, Neil. <span class="titlem">George Crabbe: an English life, 1754-1832</span>. London: Pimlico, 2004. Print.</div>
                   </li>
                </ul>
                <h3>Bibliography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Bareham, Terence and Simon Gatrell. <span class="titlem">A bibliography of George Crabbe</span>. Folkestone, Eng: Dawson; Hamden, Conn: Archon Books, 1978. Print.
-                     </div>
+                     <div class="biblfree">Bareham, Terence and Simon Gatrell. <span class="titlem">A bibliography of George Crabbe</span>. Folkestone, Eng: Dawson; Hamden, Conn: Archon Books, 1978. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Peterson, Ann.  <q class="titlea">A secondary bibliography of George Crabbe: 1975-1989</q>. <span class="titlej">Bulletin of Bibliography</span> 51(3) (1994): 269-72. Print.
-                     </div>
+                     <div class="biblfree">Peterson, Ann.  <q class="titlea">A secondary bibliography of George Crabbe: 1975-1989</q>. <span class="titlej">Bulletin of Bibliography</span> 51(3) (1994): 269-72. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 82-83. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 82-83. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Rev. George Crabbe (1754-1832)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33261"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33261</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Rev. George Crabbe (1754-1832)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33261"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33261</span></a>.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Bareham, Terence. <span class="titlem">George Crabbe</span>. London: Vision Press, 1977. Print.
-                     </div>
+                     <div class="biblfree">Bareham, Terence. <span class="titlem">George Crabbe</span>. London: Vision Press, 1977. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Carnochan, W. B.  <q class="titlea">The Continuity of Eighteenth-Century Poetry: Gray, Cowper, Crabbe, and the Augustans</q>. <span class="titlej">Eighteenth-Century Life</span> 12 (1988): 119-27. Print.
-                     </div>
+                     <div class="biblfree">Carnochan, W. B.  <q class="titlea">The Continuity of Eighteenth-Century Poetry: Gray, Cowper, Crabbe, and the Augustans</q>. <span class="titlej">Eighteenth-Century Life</span> 12 (1988): 119-27. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Chaden, Caryn.  <q class="titlea">Oliver Goldsmith, <span class="hi">The Deserted Village</span>, and George Crabbe, <span class="hi">The Village</span></q>. Gerrard, Christine, ed. <span class="titlem">A Companion to Eighteenth-Century Poetry</span>. Malden, MA: Blackwell, 2006. 303-315. Print.
-                     </div>
+                     <div class="biblfree">Chaden, Caryn.  <q class="titlea">Oliver Goldsmith, <span class="hi">The Deserted Village</span>, and George Crabbe, <span class="hi">The Village</span></q>. Gerrard, Christine, ed. <span class="titlem">A Companion to Eighteenth-Century Poetry</span>. Malden, MA: Blackwell, 2006. 303-315. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Edgecombe, Rodney Stenning. <span class="titlem">Theme, embodiment and structure in the poetry of George Crabbe</span>. Salzburg: Institut für Anglistik und Amerikanistik, Universität Salzburg, 1983.
-                        Print.
-                     </div>
+                        Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Edwards, Gavin.  <q class="titlea">Crabbe's So-Called Realism</q>. <span class="titlej">Essays in Criticism</span> 37(4) (1987): 303-20. Print.
-                     </div>
+                     <div class="biblfree">Edwards, Gavin.  <q class="titlea">Crabbe's So-Called Realism</q>. <span class="titlej">Essays in Criticism</span> 37(4) (1987): 303-20. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Edwards, Gavin. <span class="titlem">George Crabbe's Poetry on Border Land</span>. Lewiston, NY; Queenston, Ont.; Lampeter: The Edwin Mellen Press, 1990. Print.
-                     </div>
+                     <div class="biblfree">Edwards, Gavin. <span class="titlem">George Crabbe's Poetry on Border Land</span>. Lewiston, NY; Queenston, Ont.; Lampeter: The Edwin Mellen Press, 1990. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fogel, Aaron.  <q class="titlea">Wordsworth's 'We Are Seven' and Crabbe's 'The Parish Register': Poetry and Anti-Census</q>. <span class="titlej">Studies in Romanticism</span> 48(1): 2009. 23-65. Print.
-                     </div>
+                     <div class="biblfree">Fogel, Aaron.  <q class="titlea">Wordsworth's 'We Are Seven' and Crabbe's 'The Parish Register': Poetry and Anti-Census</q>. <span class="titlej">Studies in Romanticism</span> 48(1): 2009. 23-65. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Hatch, Ronald B. <span class="titlem">Crabbe's Arabesque: Social Drama in the Poetry of George Crabbe</span>. Montreal: McGill-Queen's UP, 1976. Print.
-                     </div>
+                     <div class="biblfree">Hatch, Ronald B. <span class="titlem">Crabbe's Arabesque: Social Drama in the Poetry of George Crabbe</span>. Montreal: McGill-Queen's UP, 1976. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Jain, B. B. <span class="titlem">The Poetry of George Crabbe</span>. Romantic Reassessment, 37. Salzburg: Institut für Anglistik und Amerikanistik, Universität Salzburg, 1976.
-                        Print.
-                     </div>
+                        Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Lamont, Claire.  <q class="titlea">'The smallest circumstances of the smallest things': domestic interiors in Crabbe's
-                           poems</q>. <span class="titlej">Romanticism</span> 20(2) (2014): 106-16. Print.
-                     </div>
+                           poems</q>. <span class="titlej">Romanticism</span> 20(2) (2014): 106-16. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Lucas, John. <span class="titlem">George Crabbe: a critical study</span>. London: Greenwich Exchange, 2015. Print.
-                     </div>
+                     <div class="biblfree">Lucas, John. <span class="titlem">George Crabbe: a critical study</span>. London: Greenwich Exchange, 2015. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">McGann, Jerome J.  <q class="titlea">The Anachronism of George Crabbe</q>. <span class="titlej">ELH</span> 48 (1981): 555-72. Print.
-                     </div>
+                     <div class="biblfree">McGann, Jerome J.  <q class="titlea">The Anachronism of George Crabbe</q>. <span class="titlej">ELH</span> 48 (1981): 555-72. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Nelson, Beth. <span class="titlem">George Crabbe and the Progress of Eighteenth-Century Narrative Verse</span>. Lewisburg, PA: Bucknell UP, 1976. Print.
-                     </div>
+                     <div class="biblfree">Nelson, Beth. <span class="titlem">George Crabbe and the Progress of Eighteenth-Century Narrative Verse</span>. Lewisburg, PA: Bucknell UP, 1976. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">New, Peter. <span class="titlem">George Crabbe's Poetry</span>. London and Basingstoke: Macmillan, 1976. Print.
-                     </div>
+                     <div class="biblfree">New, Peter. <span class="titlem">George Crabbe's Poetry</span>. London and Basingstoke: Macmillan, 1976. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Pollard, Arthur, ed. <span class="titlem">George Crabbe: the critical heritage</span>. London: Routledge, 1995 [1972]. Print.
-                     </div>
+                     <div class="biblfree">Pollard, Arthur, ed. <span class="titlem">George Crabbe: the critical heritage</span>. London: Routledge, 1995 [1972]. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Rossington, Michael.  <q class="titlea">Crabbe's times</q>. <span class="titlej">Romanticism</span> 20(2) (2014): 117-27. Print.
-                     </div>
+                     <div class="biblfree">Rossington, Michael.  <q class="titlea">Crabbe's times</q>. <span class="titlej">Romanticism</span> 20(2) (2014): 117-27. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Whitehead, Frank S. <span class="titlem">George Crabbe a reappraisal</span>. Selinsgrove: Susquehanna University Press; London: Associated University Presses,
-                        1995. Print.
-                     </div>
+                        1995. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Whitehead, Frank S.  <q class="titlea">Crabbe, 'realism', and poetic truth</q>. <span class="titlej">Essays in Criticism</span> 39(1) (1989): 29-46. Print.
-                     </div>
+                     <div class="biblfree">Whitehead, Frank S.  <q class="titlea">Crabbe, 'realism', and poetic truth</q>. <span class="titlej">Essays in Criticism</span> 39(1) (1989): 29-46. Print.</div>
                   </li>
                </ul>
             </div>
@@ -240,12 +195,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"George Crabbe\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

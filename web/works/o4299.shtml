@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Works / Defoe, Daniel, 1661?-1731.  Caledonia: &c. A poem in honour of Scotland, and the Scots nation. In three parts.    Edinburgh: printed by the heirs and successors of Andrew Anderson, anno Dom., 1706. [10],60p.; 2⁰.
 					(ESTC  T55494 ; 
 						Foxon D90-91; 
@@ -17,12 +16,12 @@
 				citation += "Huber, Alexander, ed. ";	
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
-				citation += `Defoe, Daniel, 1661?-1731. <em><span class="titlem">Caledonia: &amp;c. A poem in honour of Scotland, and the Scots nation. In three parts.</span> </em>  Edinburgh: printed by the heirs and successors of Andrew Anderson, anno Dom., 1706. [10],60p.; 2⁰.
+				citation += `Defoe, Daniel, 1661?-1731. <em><span class="titlem">Caledonia: &c. A poem in honour of Scotland, and the Scots nation. In three parts.</span> </em>  Edinburgh: printed by the heirs and successors of Andrew Anderson, anno Dom., 1706. [10],60p.; 2⁰.
 					(ESTC <a class="external" href="http://estc.bl.uk/T55494">T55494</a>; 
 						Foxon D90-91; 
 						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K049443.000">K049443.000</a>)
 				. `; 
 				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
 				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
-				'. Web. \<!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
 			</script><!--#include virtual="/bottom.shtml"-->

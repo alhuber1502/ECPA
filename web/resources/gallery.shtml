@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Resources / Gallery" -->
-<!--#set var="bodyid" value="resources" -->
-<!--#set var="youarehere" value=" Home Resources Gallery "
-			-->
-<!--#set var="resources" value="active" -->
-<!--#include virtual="/top.shtml" --><script xmlns="http://www.w3.org/1999/xhtml">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Resources / Gallery" --><!--#set var="bodyid" value="resources" --><!--#set var="youarehere" value=" Home Resources Gallery "
+			--><!--#set var="resources" value="active" --><!--#include virtual="/top.shtml" --><script xmlns="http://www.w3.org/1999/xhtml">
 				var src = {}, title= {}, desc= {};
 				
 						src['pers00001'] = `/images/authors/MontLa1689_NPG.jpg`;
@@ -19,6 +13,10 @@
 						src['pers00343'] = `/images/authors/LeeNa1650_NPG.jpg`;
 						title['pers00343'] = `Nathaniel Lee (c.1650-1692)`;
 						desc['pers00343'] = `© National Portrait Gallery, London`;						
+					
+						src['pers00350'] = `/images/authors/DUrfTh1653_NPG.jpg`;
+						title['pers00350'] = `Thomas D'Urfey (after Edward Gouge)`;
+						desc['pers00350'] = `© National Portrait Gallery, London`;						
 					
 						src['pers00335'] = `/images/authors/BlacRi1654_NPG.jpg`;
 						title['pers00335'] = `Sir Richard Blackmore (1654-1729)`;
@@ -586,7 +584,7 @@
             <div class="gallery">
                <h1>Gallery of Author Portraits</h1>
                <div id="myImageContainer">
-                  <div id="myImagePortrait"><img src="" alt=""></img></div>
+                  <div id="myImagePortrait"><img src="" alt=""></div>
                   <div id="myImageControls">
                      <p></p>
                   </div>
@@ -635,6 +633,7 @@
                <li><a href="#pers00269" title="[show author portrait]">William Cowper (1731-1800)</a><a href="/authors/pers00269.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
                <li><a href="#pers00275" title="[show author portrait]">George Crabbe (1754-1832)</a><a href="/authors/pers00275.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
                <li><a href="#pers00215" title="[show author portrait]">Elizabeth Craven (née Berkeley) (1750-1828)</a><a href="/authors/pers00215.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
+               <li><a href="#pers00350" title="[show author portrait]">Thomas D'Urfey (after Edward Gouge)</a><a href="/authors/pers00350.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
                <li><a href="#pers00337" title="[show author portrait]">Erasmus Darwin (1731-1802)</a><a href="/authors/pers00337.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
                <li><a href="#pers00028" title="[show author portrait]">Sneyd Davies (1709-1769)</a><a href="/authors/pers00028.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
                <li><a href="#pers00346" title="[show author portrait]">Daniel Defoe (1660?-1731)</a><a href="/authors/pers00346.shtml" title="[go to author page]"><span style="display:initial;" class="glyphicon glyphicon-user"></span></a></li>
@@ -748,12 +747,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Gallery\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

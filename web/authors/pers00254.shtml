@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Christopher Smart" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Christopher Smart "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Christopher Smart" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Christopher Smart "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,93 +10,53 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Christopher Smart (1722-1771)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/SmarCh1722_NPG.jpg" alt="Christopher Smart (1722-1771)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/SmarCh1722_NPG.jpg" alt="Christopher Smart (1722-1771)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o4103-w0020.shtml"><em>Against ILL-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/o4985-w0370.shtml"><em>ODE AGAINST ILL-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4985" href="/works/o4985.shtml#o4985-w0370"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0320.shtml"><em>APOLLO and DAPHNE. An EPIGRAM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0320"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0330.shtml"><em>The BAG-WIG and the TOBACCO-PIPE. A FABLE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0330"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0340.shtml"><em>CARE and GENEROSITY. A FABLE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0340"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0240.shtml"><em>The DECISION. BALLAD III.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0240"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0280.shtml"><em>The DISTRESSED DAMSEL. BALLAD VII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0280"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0130.shtml"><em>EPITHALAMIUM. ODE XI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0130"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0290.shtml"><em>The FAIR RECLUSE. BALLAD VIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0290"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0270.shtml"><em>The FORCE of INNOCENCE. To Miss C—. BALLAD VI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0270"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0170.shtml"><em>THE HOP-GARDEN. A GEORGIC. In Two BOOKS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0170"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0090.shtml"><em>IDLENESS. ODE VII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0090"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0360.shtml"><em>THE JUDGMENT OF MIDAS. A MASQUE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0360"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0230.shtml"><em>The LASS with the golden Locks. BALLAD II.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0230"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0030.shtml"><em>A MORNING PIECE, OR, AN HYMN for the HAY-MAKERS. ODE I.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0030"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0050.shtml"><em>A NIGHT-PIECE; OR, MODERN PHILOSOPHY. ODE III.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0050"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0040.shtml"><em>A NOON-PIECE; OR, The MOWERS at Dinner. ODE II.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0040"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0350.shtml"><em>AN OCCASIONAL PROLOGUE and EPILOGUE TO OTHELLO,</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0350"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4985-w0380.shtml"><em>ODE ON ST. CECILIA's DAY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4985" href="/works/o4985.shtml#o4985-w0380"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0110.shtml"><em>ODE IX. The Author apologizes to a Lady, for his being a little man.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0110"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0150.shtml"><em>On an EAGLE confined in a College-Court. ODE XIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0150"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0010.shtml"><em>On GOOD-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0120.shtml"><em>On Miss * * * *. ODE X.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0120"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4987-w0900.shtml"><em>ON THE ETERNITY OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0900"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0070.shtml"><em>On the Fifth of December, being the Birth-day of a beautiful young Lady. ODE V.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0070"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4987-w0940.shtml"><em>ON THE GOODNESS OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0940"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4987-w0910.shtml"><em>ON THE IMMENSITY OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0910"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4987-w0920.shtml"><em>ON THE OMNISCIENCE OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0920"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4987-w0930.shtml"><em>ON THE POWER OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0930"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0060.shtml"><em>On the sudden Death of a CLERGYMAN. ODE IV.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0060"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0310.shtml"><em>The PHYSICIAN and the MONKEY. An EPIGRAM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0310"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o4103-w0020.shtml"><em>Against ILL-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/o4985-w0370.shtml"><em>ODE AGAINST ILL-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4985" href="/works/o4985.shtml#o4985-w0370"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0320.shtml"><em>APOLLO and DAPHNE. An EPIGRAM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0320"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0330.shtml"><em>The BAG-WIG and the TOBACCO-PIPE. A FABLE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0330"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0340.shtml"><em>CARE and GENEROSITY. A FABLE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0340"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0240.shtml"><em>The DECISION. BALLAD III.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0240"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0280.shtml"><em>The DISTRESSED DAMSEL. BALLAD VII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0280"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0130.shtml"><em>EPITHALAMIUM. ODE XI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0130"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0290.shtml"><em>The FAIR RECLUSE. BALLAD VIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0290"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0270.shtml"><em>The FORCE of INNOCENCE. To Miss C—. BALLAD VI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0270"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0170.shtml"><em>THE HOP-GARDEN. A GEORGIC. In Two BOOKS.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0170"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0090.shtml"><em>IDLENESS. ODE VII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0090"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0360.shtml"><em>THE JUDGMENT OF MIDAS. A MASQUE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0360"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0230.shtml"><em>The LASS with the golden Locks. BALLAD II.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0230"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0030.shtml"><em>A MORNING PIECE, OR, AN HYMN for the HAY-MAKERS. ODE I.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0030"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0050.shtml"><em>A NIGHT-PIECE; OR, MODERN PHILOSOPHY. ODE III.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0050"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0040.shtml"><em>A NOON-PIECE; OR, The MOWERS at Dinner. ODE II.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0040"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0350.shtml"><em>AN OCCASIONAL PROLOGUE and EPILOGUE TO OTHELLO,</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0350"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4985-w0380.shtml"><em>ODE ON ST. CECILIA's DAY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4985" href="/works/o4985.shtml#o4985-w0380"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0110.shtml"><em>ODE IX. The Author apologizes to a Lady, for his being a little man.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0110"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0150.shtml"><em>On an EAGLE confined in a College-Court. ODE XIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0150"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0010.shtml"><em>On GOOD-NATURE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0120.shtml"><em>On Miss * * * *. ODE X.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0120"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4987-w0900.shtml"><em>ON THE ETERNITY OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0900"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0070.shtml"><em>On the Fifth of December, being the Birth-day of a beautiful young Lady. ODE V.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0070"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4987-w0940.shtml"><em>ON THE GOODNESS OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0940"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4987-w0910.shtml"><em>ON THE IMMENSITY OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0910"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4987-w0920.shtml"><em>ON THE OMNISCIENCE OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0920"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4987-w0930.shtml"><em>ON THE POWER OF THE SUPREME BEING.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4987" href="/works/o4987.shtml#o4987-w0930"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0060.shtml"><em>On the sudden Death of a CLERGYMAN. ODE IV.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0060"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0310.shtml"><em>The PHYSICIAN and the MONKEY. An EPIGRAM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0310"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4103-w0080.shtml"><em>The PRETTY CHAMBERMAID: In Imitation of Ne sit Ancillae tibi amor pudori, &amp;c. of Horace.
-                           ODE VI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0080"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0260.shtml"><em>The SILENT FAIR. BALLAD V.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0260"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/psm63-w0010.shtml"><em>[A SONG to DAVID.]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="psm63" href="/works/psm63.shtml#psm63-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0220.shtml"><em>SWEET WILLIAM. BALLAD I.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0220"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0250.shtml"><em>The TALKATIVE FAIR. BALLAD IV.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0250"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           ODE VI.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0080"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0260.shtml"><em>The SILENT FAIR. BALLAD V.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0260"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/psm63-w0010.shtml"><em>[A SONG to DAVID.]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="psm63" href="/works/psm63.shtml#psm63-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0220.shtml"><em>SWEET WILLIAM. BALLAD I.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0220"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0250.shtml"><em>The TALKATIVE FAIR. BALLAD IV.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0250"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4103-w0140.shtml"><em>To ETHELINDA, On her doing my Verses the honour of wearing them in her bosom. Written
-                           at Thirteen.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0140"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4103-w0300.shtml"><em>To Miss — one of the Chichester Graces. BALLAD IX.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           at Thirteen.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0140"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4103-w0300.shtml"><em>To Miss — one of the Chichester Graces. BALLAD IX.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4103-w0100.shtml"><em>To the reverend and learned Dr. WEBSTER, Occasioned by his Dialogues on ANGER and
-                           FORGIVENESS. ODE VIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0100"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           FORGIVENESS. ODE VIII.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4103" href="/works/o4103.shtml#o4103-w0100"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o4103"><a title="view table of contents of source edition" href="/works/o4103.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Smart, Christopher, 1722-1771. <em><span class="titlem">Poems on several occasions: By Christopher Smart, A. M. Fellow of Pembroke-Hall, Cambridge.</span> </em>  London: printed for the author, by W. Strahan; and sold by J. Newbery, at the Bible and Sun,
@@ -185,25 +139,21 @@
                      in St. Paul’s Church-Yard, MDCCLII., 1752. [16],230p.,plates; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T42626">T42626</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K041581.000">K041581.000</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="psm63"><a title="view table of contents of source edition" href="/works/psm63.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Smart, Christopher, 1722-1771. <em><span class="titlem">A Song to David. By Christopher Smart [poem only].</span> </em>  London: Printed for the Author; and Sold by Mr. Fletcher ... And by all the Booksellers in
                      Town and Country, 1763. [2],22p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T105048">T105048</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4985"><a title="view table of contents of source edition" href="/works/o4985.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Pearch, G. <em><span class="titlem">A collection of poems in four volumes. By several hands. Vol. II.</span> </em> [The second edition]. London: printed for G. Pearch, 1770. 4v. ; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T116245">T116245</a>; 
                      						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1135&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1135</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K093079.002">K093079.002</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4987"><a title="view table of contents of source edition" href="/works/o4987.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Pearch, G. <em><span class="titlem">A collection of poems in four volumes. By several hands. Vol. IV.</span> </em> [The second edition]. London: printed for G. Pearch, 1770. 4v. ; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T116245">T116245</a>; 
                      						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1137&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1137</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K093079.004">K093079.004</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bio">
@@ -239,126 +189,100 @@
                      who campaigned for reform of private madhouses. After his release, Smart moved into
                      lodgings in Westminster. He published in rapid succession,  <a class="link_ref" href="/works/psm63-w0010.shtml"><span class="titlem">A Song to David</span></a>, a hymn of praise to David the Psalmist, <span class="titlem">Poems by Mr Smart</span>, and <span class="titlem">Poems on Several Occasions</span>. He also wrote two opera libretti on biblical themes and several translations. As
                      none of these publications brought any financial rewards, Smart was soon in debt again
-                     and was imprisoned at the King's Bench. Here he composed his final work, <span class="titlem">Hymns, for the Amusement of Children</span> (1770, dated 1771). He died, probably of liver failure, in 1771.</span> 
-               </p>
+                     and was imprisoned at the King's Bench. Here he composed his final work, <span class="titlem">Hymns, for the Amusement of Children</span> (1770, dated 1771). He died, probably of liver failure, in 1771.</span> </p>
             </div>
             <div id="bib">
                <h2 id="bib_SmarCh1722">Bibliography</h2>
-               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=2169&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">2169</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/25739">25739</a>; NCBEL 589-593, 1022; DLB 109
-               </p>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=2169&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">2169</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/25739">25739</a>; NCBEL 589-593, 1022; DLB 109</p>
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 3 Pope-Steele. 375-384. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 3 Pope-Steele. 375-384. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Editions</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Rizzo, Betty and Robert Mahony, eds. <span class="titlem">The annotated letters of Christopher Smart</span>. Carbondale: Southern Illinois UP, 1991. Print.
-                     </div>
+                     <div class="biblfree">Rizzo, Betty and Robert Mahony, eds. <span class="titlem">The annotated letters of Christopher Smart</span>. Carbondale: Southern Illinois UP, 1991. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Walsh, Marcus and Karina Williamson, eds. <span class="titlem">The Poetical Works of Christopher Smart</span>. Oxford: Clarendon Press, 1980-96. Print. 6 volumes.
-                     </div>
+                     <div class="biblfree">Walsh, Marcus and Karina Williamson, eds. <span class="titlem">The Poetical Works of Christopher Smart</span>. Oxford: Clarendon Press, 1980-96. Print. 6 volumes.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Mounsey, Chris. <span class="titlem">Christopher Smart: Clown of God</span>. Lewisburg, PA: Bucknell UP, 2001. Print.
-                     </div>
+                     <div class="biblfree">Mounsey, Chris. <span class="titlem">Christopher Smart: Clown of God</span>. Lewisburg, PA: Bucknell UP, 2001. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Sherbo, Arthur. <span class="titlem">Christopher Smart, Scholar of the University</span>. East Lansing: Michigan State UP, 1967. Print.
-                     </div>
+                     <div class="biblfree">Sherbo, Arthur. <span class="titlem">Christopher Smart, Scholar of the University</span>. East Lansing: Michigan State UP, 1967. Print.</div>
                   </li>
                </ul>
                <h3>Bibliography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Mahony, Robert and Betty W. Rizzo. <span class="titlem">Christopher Smart. An Annotated Bibliography, 1743-1983</span>. New York and London: Garland Pub., 1984. Print.
-                     </div>
+                     <div class="biblfree">Mahony, Robert and Betty W. Rizzo. <span class="titlem">Christopher Smart. An Annotated Bibliography, 1743-1983</span>. New York and London: Garland Pub., 1984. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 313-315. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 313-315. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Christopher Smart (1722-1771)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33087"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33087</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Christopher Smart (1722-1771)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33087"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33087</span></a>.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Curry, Neil. <span class="titlem">Christopher Smart</span>. Tavistock: Northcote House, 2005. Print.
-                     </div>
+                     <div class="biblfree">Curry, Neil. <span class="titlem">Christopher Smart</span>. Tavistock: Northcote House, 2005. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Dearnley, Moira. <span class="titlem">The Poetry of Christopher Smart</span>. New York: Barnes &amp; Noble, 1969. Print.
-                     </div>
+                     <div class="biblfree">Dearnley, Moira. <span class="titlem">The Poetry of Christopher Smart</span>. New York: Barnes &amp; Noble, 1969. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Gedalof, Allan J.  <q class="titlea">The Rise and Fall of Smart's <span class="hi">David</span></q>. <span class="titlej">Philological Quarterly</span> 60 (1981): 369-86. Print.
-                     </div>
+                     <div class="biblfree">Gedalof, Allan J.  <q class="titlea">The Rise and Fall of Smart's <span class="hi">David</span></q>. <span class="titlej">Philological Quarterly</span> 60 (1981): 369-86. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Greene, D. J.  <q class="titlea">Smart, Berkeley, the Scientists and the Poets</q>. <span class="titlej">Journal of the History of Ideas</span> 14 (1953): 327-52. Print.
-                     </div>
+                     <div class="biblfree">Greene, D. J.  <q class="titlea">Smart, Berkeley, the Scientists and the Poets</q>. <span class="titlej">Journal of the History of Ideas</span> 14 (1953): 327-52. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Guest, Harriet. <span class="titlem">A Form of Sound Words: The Religious Poetry of Christopher Smart</span>. Oxford: Clarendon Press, 1989. Print.
-                     </div>
+                     <div class="biblfree">Guest, Harriet. <span class="titlem">A Form of Sound Words: The Religious Poetry of Christopher Smart</span>. Oxford: Clarendon Press, 1989. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Hawes, Clement, ed. <span class="titlem">Christopher Smart and the Enlightenment</span>. New York: St. Martin's Press, 1999. Print.
-                     </div>
+                     <div class="biblfree">Hawes, Clement, ed. <span class="titlem">Christopher Smart and the Enlightenment</span>. New York: St. Martin's Press, 1999. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Kumbier, William.  <q class="titlea">Sound and Signification in Christopher Smart's <span class="hi">Jubilate Agno</span></q>. <span class="titlej">Texas Studies in Language and Literature</span> 24 (1982): 293-312. Print.
-                     </div>
+                     <div class="biblfree">Kumbier, William.  <q class="titlea">Sound and Signification in Christopher Smart's <span class="hi">Jubilate Agno</span></q>. <span class="titlej">Texas Studies in Language and Literature</span> 24 (1982): 293-312. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Mounsey, Chris.  <q class="titlea">Christopher Smart's 'The Hop-Garden' and John Philips's 'Cyder', a Battle of the Georgics?
-                           Mid-Eighteenth-Century Poetic Discussions of Authority, Science and Experience</q>. <span class="titlej">British Journal for Eighteenth-Century Studies</span> 22 (1999): 67-84. Print.
-                     </div>
+                           Mid-Eighteenth-Century Poetic Discussions of Authority, Science and Experience</q>. <span class="titlej">British Journal for Eighteenth-Century Studies</span> 22 (1999): 67-84. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Mounsey, Chris.  <q class="titlea">Christopher Smart and William Blake: A Distinctive Mode</q>. Woodman, Thomas, ed. <span class="titlem">Early Romantics: Perspectives in British Poetry from Pope to Wordsworth</span>. Basingstoke, England; New York, NY: Macmillan; St. Martin's, 1998. 166-81. Print.
-                     </div>
+                     <div class="biblfree">Mounsey, Chris.  <q class="titlea">Christopher Smart and William Blake: A Distinctive Mode</q>. Woodman, Thomas, ed. <span class="titlem">Early Romantics: Perspectives in British Poetry from Pope to Wordsworth</span>. Basingstoke, England; New York, NY: Macmillan; St. Martin's, 1998. 166-81. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Pellicer, Juan Christian.  <q class="titlea">Christopher Smart's 'The Hop-Garden': a satirical parody of John Philips's 'Cyder'?</q>. <span class="titlej">Notes and Queries</span> 51(4) (2004): 400-406. Print.
-                     </div>
+                     <div class="biblfree">Pellicer, Juan Christian.  <q class="titlea">Christopher Smart's 'The Hop-Garden': a satirical parody of John Philips's 'Cyder'?</q>. <span class="titlej">Notes and Queries</span> 51(4) (2004): 400-406. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Powell, Rosalind. <span class="titlem">Christopher Smart's English Lyrics: Translation in the Eighteenth Century</span>. Farnham: Ashgate, 2014. Print.
-                     </div>
+                     <div class="biblfree">Powell, Rosalind. <span class="titlem">Christopher Smart's English Lyrics: Translation in the Eighteenth Century</span>. Farnham: Ashgate, 2014. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Rose, John.  <q class="titlea">All the crumbling edifices must come down: decoding Christopher Smart's <span class="hi">Song to David</span></q>. <span class="titlej">Philological Quarterly</span> 84(4) (2005): 403-24. Print.
-                     </div>
+                     <div class="biblfree">Rose, John.  <q class="titlea">All the crumbling edifices must come down: decoding Christopher Smart's <span class="hi">Song to David</span></q>. <span class="titlej">Philological Quarterly</span> 84(4) (2005): 403-24. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Walsh, Marcus.  <q class="titlea">Eighteenth-Century High Lyric: William Collins and Christopher Smart</q>. Thain, Marion and Jonathan Culler, eds. <span class="titlem">The Lyric Poem: Formations and Transformations</span>. Cambridge, England: Cambridge UP, 2013. 112-134. Print.
-                     </div>
+                     <div class="biblfree">Walsh, Marcus.  <q class="titlea">Eighteenth-Century High Lyric: William Collins and Christopher Smart</q>. Thain, Marion and Jonathan Culler, eds. <span class="titlem">The Lyric Poem: Formations and Transformations</span>. Cambridge, England: Cambridge UP, 2013. 112-134. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Walsh, Marcus.  <q class="titlea">A Very Peculiar Practice: Christopher Smart and the Poetic Language of 'Early Romanticism'</q>. Woodman, Thomas, ed. <span class="titlem">Early Romantics: Perspectives in British Poetry from Pope to Wordsworth</span>. Basingstoke, England; New York, NY: Macmillan; St. Martin's, 1998. 151-65. Print.
-                     </div>
+                     <div class="biblfree">Walsh, Marcus.  <q class="titlea">A Very Peculiar Practice: Christopher Smart and the Poetic Language of 'Early Romanticism'</q>. Woodman, Thomas, ed. <span class="titlem">Early Romantics: Perspectives in British Poetry from Pope to Wordsworth</span>. Basingstoke, England; New York, NY: Macmillan; St. Martin's, 1998. 151-65. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Wild, Min and Noel Chevalier, eds. <span class="titlem">Reading Christopher Smart in the twenty-first century: by succession of delight</span>. Lanham, Maryland: Bucknell University Press, 2013. Print.
-                     </div>
+                     <div class="biblfree">Wild, Min and Noel Chevalier, eds. <span class="titlem">Reading Christopher Smart in the twenty-first century: by succession of delight</span>. Lanham, Maryland: Bucknell University Press, 2013. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Williamson, Karina.  <q class="titlea">Christopher Smart's Hymns and Spiritual Songs</q>. <span class="titlej">Philological Quarterly</span> 38 (1959): 413-24. Print.
-                     </div>
+                     <div class="biblfree">Williamson, Karina.  <q class="titlea">Christopher Smart's Hymns and Spiritual Songs</q>. <span class="titlej">Philological Quarterly</span> 38 (1959): 413-24. Print.</div>
                   </li>
                </ul>
             </div>
@@ -371,12 +295,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Christopher Smart\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

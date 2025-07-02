@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Hannah More" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Hannah More "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Hannah More" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Hannah More "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,20 +10,15 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Hannah More (1745-1833)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/MoreHa1745_NPG.jpg" alt="Hannah More (1745-1833)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/MoreHa1745_NPG.jpg" alt="Hannah More (1745-1833)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o3982-w0020.shtml"><em>THE BAS BLEU.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o3982-w0010.shtml"><em>FLORIO: A POETICAL TALE, FOR FINE GENTLEMEN AND FINE LADIES.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o4179-w0010.shtml"><em>SLAVERY, A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4179" href="/works/o4179.shtml#o4179-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o3982-w0020.shtml"><em>THE BAS BLEU.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o3982-w0010.shtml"><em>FLORIO: A POETICAL TALE, FOR FINE GENTLEMEN AND FINE LADIES.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3982" href="/works/o3982.shtml#o3982-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o4179-w0010.shtml"><em>SLAVERY, A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4179" href="/works/o4179.shtml#o4179-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o3982"><a title="view table of contents of source edition" href="/works/o3982.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> More, Hannah, 1745-1833. <em><span class="titlem">Florio: a tale: for fine gentlemen and fine ladies: and, the bas bleu; or, conversation:
@@ -57,13 +46,11 @@
                            two poems.</span> </em>  London: printed for T. Cadell, 1786. v,[3],89,[3]p. ; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T35621">T35621</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K037413.000">K037413.000</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4179"><a title="view table of contents of source edition" href="/works/o4179.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> More, Hannah, 1745-1833. <em><span class="titlem">Slavery, a poem. By Hannah More.</span> </em>  London: printed for T. Cadell, 1788. [4],20p. ; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T48439">T48439</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K045163.000">K045163.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bio">
@@ -88,8 +75,7 @@
                      the new literary generation of Romantic poets. The last twenty years of More's life
                      were dominated by ill health and loss. She nursed her sisters through successive illnesses
                      and deaths, and in the 1820s succumbed to a series of serious illnesses, which left
-                     her confined to her room. She died at Clifton, aged eighty-eight, on 7 September 1833.</span> 
-               </p>
+                     her confined to her room. She died at Clifton, aged eighty-eight, on 7 September 1833.</span> </p>
             </div>
             <div id="bib">
                <h2 id="bib_MoreHa1745">Bibliography</h2>
@@ -103,70 +89,56 @@
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Ford, Charles Howard. <span class="titlem">Hannah More: a critical biography</span>. New York; Frankfurt; Bern; Paris: Lang, 1996. Print.
-                     </div>
+                     <div class="biblfree">Ford, Charles Howard. <span class="titlem">Hannah More: a critical biography</span>. New York; Frankfurt; Bern; Paris: Lang, 1996. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Jones, M. G. <span class="titlem">Hannah More</span>. Cambridge: CUP, 1968. Print.
-                     </div>
+                     <div class="biblfree">Jones, M. G. <span class="titlem">Hannah More</span>. Cambridge: CUP, 1968. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Prior, Karen Swallow. <span class="titlem">Fierce convictions: the extraordinary life of Hannah More: poet, reformer, Abolitionist</span>. Nashville, TN: Nelson, 2014. Print.
-                     </div>
+                     <div class="biblfree">Prior, Karen Swallow. <span class="titlem">Fierce convictions: the extraordinary life of Hannah More: poet, reformer, Abolitionist</span>. Nashville, TN: Nelson, 2014. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Stott, Anne. <span class="titlem">Hannah More: the First Victorian</span>. Oxford: Oxford University Press, 2003. Print.
-                     </div>
+                     <div class="biblfree">Stott, Anne. <span class="titlem">Hannah More: the First Victorian</span>. Oxford: Oxford University Press, 2003. Print.</div>
                   </li>
                </ul>
                <h3>Bibliography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Smith, Nicholas D. <span class="titlem">The Literary Manuscripts and Letters of Hannah More</span>. Aldershot; Burlington, VT: Ashgate, 2008. Print.
-                     </div>
+                     <div class="biblfree">Smith, Nicholas D. <span class="titlem">The Literary Manuscripts and Letters of Hannah More</span>. Aldershot; Burlington, VT: Ashgate, 2008. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 243-244. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 243-244. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Hannah More (1745-1833)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33214"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33214</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Hannah More (1745-1833)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33214"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33214</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 224-227. Print.
-                     </div>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 224-227. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Andrews, Kerri. <span class="titlem">Ann Yearsley and Hannah More, Patronage and Poetry: The Story of A Literary Relationship</span>. London: Pickering &amp; Chatto, 2013. Print.
-                     </div>
+                     <div class="biblfree">Andrews, Kerri. <span class="titlem">Ann Yearsley and Hannah More, Patronage and Poetry: The Story of A Literary Relationship</span>. London: Pickering &amp; Chatto, 2013. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Demers, Patricia.  <q class="titlea">'For Mine's a Stubborn and a Savage Will': 'Lactilla' (Ann Yearsley) and 'Stella'
-                           (Hannah More) Reconsidered</q>. <span class="titlej">Huntington Library Quarterly</span> 56 (1993): 135-50. Print.
-                     </div>
+                           (Hannah More) Reconsidered</q>. <span class="titlej">Huntington Library Quarterly</span> 56 (1993): 135-50. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Demers, Patricia. <span class="titlem">The world of Hannah More</span>. Lexington: Kentucky UP, 1996. Print.
-                     </div>
+                     <div class="biblfree">Demers, Patricia. <span class="titlem">The world of Hannah More</span>. Lexington: Kentucky UP, 1996. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Haslett, Moyra.  <q class="titlea">Becoming Bluestockings: contextualising Hannah More's <span class="hi">The Bas Bleu</span></q>. <span class="titlej">Journal for Eighteenth-Century Studies</span> 33(1) (2010): 89-114. Print.
-                     </div>
+                     <div class="biblfree">Haslett, Moyra.  <q class="titlea">Becoming Bluestockings: contextualising Hannah More's <span class="hi">The Bas Bleu</span></q>. <span class="titlej">Journal for Eighteenth-Century Studies</span> 33(1) (2010): 89-114. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Richardson, Alan.  <q class="titlea">Darkness visible: race and representation in Bristol Abolitionist poetry</q>. <span class="titlej">Wordsworth Circle</span> 27(2) (1996): 67-72. Print.
-                     </div>
+                     <div class="biblfree">Richardson, Alan.  <q class="titlea">Darkness visible: race and representation in Bristol Abolitionist poetry</q>. <span class="titlej">Wordsworth Circle</span> 27(2) (1996): 67-72. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Waldron, Mary.  <q class="titlea">Mentors old and new: Samuel Johnson and Hannah More</q>. <span class="titlej">New Rambler</span> D:11 (1995/96): 29-37. Print.
-                     </div>
+                     <div class="biblfree">Waldron, Mary.  <q class="titlea">Mentors old and new: Samuel Johnson and Hannah More</q>. <span class="titlej">New Rambler</span> D:11 (1995/96): 29-37. Print.</div>
                   </li>
                </ul>
             </div>
@@ -179,12 +151,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Hannah More\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

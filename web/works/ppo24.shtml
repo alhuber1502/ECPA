@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Works / Pomfret, John, 1667-1702.  Poems upon Several Occasions. By the Reverend Mr. John Pomfret [poems only].   The Sixth Edition, Corrected. With some Account Of his Life and Writings. To which are added, His Remains. London: printed for D. Brown without Temple Bar, J. Walthoe in the Temple Cloysters, A. Bettesworth, and E. Taylor, in Pater-Noster-Row, and J. Hooke in Fleetstreet, 1724. [12], 132, vi, 17p.
 					(ESTC  N21233 )
 				" --><!--#set var="bodyid" value="works" --><!--#set var="youarehere" value=" Home Works Pomfret, John, 1667-1702.  Poems upon Several Occasions. By the Reverend Mr. John Pomfret [poems only].   The Sixth Edition, Corrected. With some Account Of his Life and Writings. To which are added, His Remains. London: printed for D. Brown without Temple Bar, J. Walthoe in the Temple Cloysters, A. Bettesworth, and E. Taylor, in Pater-Noster-Row, and J. Hooke in Fleetstreet, 1724. [12], 132, vi, 17p.
@@ -16,5 +15,5 @@
 				. `; 
 				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
 				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
-				'. Web. \<!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
 			</script><!--#include virtual="/bottom.shtml"-->

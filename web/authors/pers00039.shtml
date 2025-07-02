@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Thomas Gray" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Thomas Gray "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Thomas Gray" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Thomas Gray "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,116 +10,65 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Thomas Gray (1716-1771)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/GrayTh1716_NPG.jpg" alt="Thomas Gray (1716-1771)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/GrayTh1716_NPG.jpg" alt="Thomas Gray (1716-1771)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/tgaen-wagtr.shtml"><em>Agrippina, a Tragedy</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wagtr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-waleg.shtml"><em>The Alliance of Education and Government. A Fragment</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-waleg"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wcand.shtml"><em>The Candidate</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcand"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wcara.shtml"><em>[Caradoc]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcara"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wchcc.shtml"><em>The Characters of the Christ-Cross Row, By a Critic, To Mrs —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wchcc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wcona.shtml"><em>[Conan]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcona"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wcoub.shtml"><em>[Couplet about Birds]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcoub"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wdeho.shtml"><em>The Death of Hoel From Aneurin, Monarch of the Bards, extracted from the Gododin</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wdeho"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/tgaen-wagtr.shtml"><em>Agrippina, a Tragedy</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wagtr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-waleg.shtml"><em>The Alliance of Education and Government. A Fragment</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-waleg"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wcand.shtml"><em>The Candidate</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcand"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wcara.shtml"><em>[Caradoc]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcara"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wchcc.shtml"><em>The Characters of the Christ-Cross Row, By a Critic, To Mrs —</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wchcc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wcona.shtml"><em>[Conan]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcona"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wcoub.shtml"><em>[Couplet about Birds]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wcoub"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wdeho.shtml"><em>The Death of Hoel From Aneurin, Monarch of the Bards, extracted from the Gododin</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wdeho"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4986-w0260.shtml"><em>THE DESCENT OF ODIN: AN ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4986" href="/works/o4986.shtml#o4986-w0260"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wdooo.shtml"><em>The Descent of Odin. An Ode (From the Norse-Tongue,) in Bartholinus, de causis contemnendae
-                           mortis; Hafniae, 1689, Quarto. Upreis Odinn allda gautr, &amp;c.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wdooo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5155-w0010.shtml"><em>An ELEGY WRITTEN IN A COUNTRY CHURCH YARD.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5155" href="/works/o5155.shtml#o5155-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-welcc.shtml"><em>Elegy Written in a Country Churchyard</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-welcc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wepld.shtml"><em>[Epitaph on a Child]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepld"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wepmc.shtml"><em>[Epitaph on Mrs Clerke]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepmc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wepmm.shtml"><em>[Epitaph on Mrs Mason]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepmm"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wepww.shtml"><em>[Epitaph on Sir William Williams]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepww"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           mortis; Hafniae, 1689, Quarto. Upreis Odinn allda gautr, &amp;c.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wdooo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5155-w0010.shtml"><em>An ELEGY WRITTEN IN A COUNTRY CHURCH YARD.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5155" href="/works/o5155.shtml#o5155-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-welcc.shtml"><em>Elegy Written in a Country Churchyard</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-welcc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wepld.shtml"><em>[Epitaph on a Child]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepld"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wepmc.shtml"><em>[Epitaph on Mrs Clerke]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepmc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wepmm.shtml"><em>[Epitaph on Mrs Mason]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepmm"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wepww.shtml"><em>[Epitaph on Sir William Williams]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wepww"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4986-w0250.shtml"><em>THE FATAL SISTERS: AN ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4986" href="/works/o4986.shtml#o4986-w0250"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wfsio.shtml"><em>The Fatal Sisters. An Ode (From the Norse-Tongue,) in the ORCADES of Thormodus Torfaeus;
-                           Hafniae, 1697, Folio: and also in Bartholinus. Vitt er orpit fyrir valfalli, &amp;c.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wfsio"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5155-w0020.shtml"><em>HYMN to ADVERSITY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5155" href="/works/o5155.shtml#o5155-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wotad.shtml"><em>Ode to Adversity</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wotad"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-whyig.shtml"><em>[Hymn to Ignorance. A Fragment]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-whyig"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wimp3.shtml"><em>Imitated from Propertius, Lib: 3: Eleg: 5:</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimp3"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wimp2.shtml"><em>[Imitated] From Propertius. Lib: 2: Eleg: 1.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimp2"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wimpr.shtml"><em>[Impromptus]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimpr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-winma.shtml"><em>[Invitation to Mason]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-winma"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wlods.shtml"><em>[Lines on Dr Robert Smith]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlods"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wlog3.shtml"><em>Lines on the Accession of George III</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlog3"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wlojd.shtml"><em>[Lines Spoken by the Ghost of John Dennis at the Devil Tavern]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlojd"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wlobt.shtml"><em>[Lines Written at Burnham]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlobt"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wlost.shtml"><em>A Long Story</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlost"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           Hafniae, 1697, Folio: and also in Bartholinus. Vitt er orpit fyrir valfalli, &amp;c.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wfsio"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5155-w0020.shtml"><em>HYMN to ADVERSITY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5155" href="/works/o5155.shtml#o5155-w0020"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wotad.shtml"><em>Ode to Adversity</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wotad"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-whyig.shtml"><em>[Hymn to Ignorance. A Fragment]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-whyig"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wimp3.shtml"><em>Imitated from Propertius, Lib: 3: Eleg: 5:</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimp3"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wimp2.shtml"><em>[Imitated] From Propertius. Lib: 2: Eleg: 1.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimp2"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wimpr.shtml"><em>[Impromptus]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wimpr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-winma.shtml"><em>[Invitation to Mason]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-winma"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wlods.shtml"><em>[Lines on Dr Robert Smith]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlods"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wlog3.shtml"><em>Lines on the Accession of George III</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlog3"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wlojd.shtml"><em>[Lines Spoken by the Ghost of John Dennis at the Devil Tavern]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlojd"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wlobt.shtml"><em>[Lines Written at Burnham]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlobt"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wlost.shtml"><em>A Long Story</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wlost"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4986-w0240.shtml"><em>ODE AT THE INSTALLATION OF HIS GRACE AUGUSTUS HENRY FITZROY, DUKE OF GRAFTON, CHANCELLOR
-                           OF THE UNIVERSITY. JULY 1, MDCCLXIX.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4986" href="/works/o4986.shtml#o4986-w0240"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wocmu.shtml"><em>Ode for Music</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wocmu"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5153-w0560.shtml"><em>An ODE On a distant Prospect of ETON COLLEGE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0560"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wodec.shtml"><em>Ode on a Distant Prospect of Eton College</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wodec"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5153-w0580.shtml"><em>ODE on the Death of a Favourite CAT, Drowned in a Tub of Gold Fishes.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0580"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wodfc.shtml"><em>Ode on the Death of a Favourite Cat, Drowned in a Tub of Gold Fishes</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wodfc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-woopv.shtml"><em>[Ode on the Pleasure Arising from Vicissitude]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woopv"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5157-w0890.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0890"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wbapo.shtml"><em>The Bard. A Pindaric Ode</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wbapo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5153-w0570.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0570"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-woots.shtml"><em>Ode on the Spring</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woots"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5157-w0880.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0880"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wpppo.shtml"><em>The Progress of Poesy. A Pindaric Ode</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wpppo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-woxst.shtml"><em>On L[or]d H[olland']s Seat near M[argat]e, K[en]t</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woxst"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wpare.shtml"><em>[Parody on an Epitaph]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wpare"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wsahh.shtml"><em>Satire on the Heads of Houses; or, Never a Barrel the Better Herring</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsahh"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wskoc.shtml"><em>[Sketch of his Own Character]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wskoc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wsng1.shtml"><em>Song I</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsng1"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wsng2.shtml"><em>Song II</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsng2"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wsorw.shtml"><em>Sonnet [on the Death of Mr Richard West]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsorw"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wstbe.shtml"><em>Stanzas to Mr Bentley</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wstbe"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wtapr.shtml"><em>[Tophet] Inscription on a Portrait</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtapr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wtdin.shtml"><em>[Translation from Dante, Inferno Canto xxxiii 1-78]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtdin"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wtra6.shtml"><em>[Translation from Statius, Thebaid VI 646-88, 704-24]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtra6"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wtra9.shtml"><em>[Translation from Statius, Thebaid IX 319-26]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtra9"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wtrgl.shtml"><em>[Translation] From Tasso [Gerusalemme Liberata] Canto 14, Stanza 32-9</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtrgl"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           OF THE UNIVERSITY. JULY 1, MDCCLXIX.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4986" href="/works/o4986.shtml#o4986-w0240"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wocmu.shtml"><em>Ode for Music</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wocmu"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5153-w0560.shtml"><em>An ODE On a distant Prospect of ETON COLLEGE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0560"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wodec.shtml"><em>Ode on a Distant Prospect of Eton College</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wodec"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5153-w0580.shtml"><em>ODE on the Death of a Favourite CAT, Drowned in a Tub of Gold Fishes.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0580"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wodfc.shtml"><em>Ode on the Death of a Favourite Cat, Drowned in a Tub of Gold Fishes</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wodfc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-woopv.shtml"><em>[Ode on the Pleasure Arising from Vicissitude]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woopv"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5157-w0890.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0890"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wbapo.shtml"><em>The Bard. A Pindaric Ode</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wbapo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5153-w0570.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5153" href="/works/o5153.shtml#o5153-w0570"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-woots.shtml"><em>Ode on the Spring</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woots"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5157-w0880.shtml"><em>ODE.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5157" href="/works/o5157.shtml#o5157-w0880"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wpppo.shtml"><em>The Progress of Poesy. A Pindaric Ode</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wpppo"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-woxst.shtml"><em>On L[or]d H[olland']s Seat near M[argat]e, K[en]t</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-woxst"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wpare.shtml"><em>[Parody on an Epitaph]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wpare"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wsahh.shtml"><em>Satire on the Heads of Houses; or, Never a Barrel the Better Herring</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsahh"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wskoc.shtml"><em>[Sketch of his Own Character]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wskoc"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wsng1.shtml"><em>Song I</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsng1"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wsng2.shtml"><em>Song II</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsng2"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wsorw.shtml"><em>Sonnet [on the Death of Mr Richard West]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wsorw"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wstbe.shtml"><em>Stanzas to Mr Bentley</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wstbe"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wtapr.shtml"><em>[Tophet] Inscription on a Portrait</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtapr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wtdin.shtml"><em>[Translation from Dante, Inferno Canto xxxiii 1-78]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtdin"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wtra6.shtml"><em>[Translation from Statius, Thebaid VI 646-88, 704-24]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtra6"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wtra9.shtml"><em>[Translation from Statius, Thebaid IX 319-26]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtra9"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wtrgl.shtml"><em>[Translation] From Tasso [Gerusalemme Liberata] Canto 14, Stanza 32-9</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtrgl"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                   <li><a title="view full-text" href="/works/o4986-w0270.shtml"><em>THE TRIUMPHS OF OWEN: A FRAGMENT.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4986" href="/works/o4986.shtml#o4986-w0270"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>); <a title="view full-text" href="/works/tgaen-wtrow.shtml"><em>The Triumphs of Owen. A Fragment from Mr. Evans's Specimens of the Welch Poetry; London,
-                           1764, Quarto.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtrow"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wvsfr.shtml"><em>[Verse Fragments]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wvsfr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/tgaen-wwsma.shtml"><em>William Shakespeare to Mrs Anne, Regular Servant to the Revd Mr Precentor of York</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wwsma"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                           1764, Quarto.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wtrow"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wvsfr.shtml"><em>[Verse Fragments]</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wvsfr"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/tgaen-wwsma.shtml"><em>William Shakespeare to Mrs Anne, Regular Servant to the Revd Mr Precentor of York</em></a> (<a class="source" title="view table of contents of source edition" data-rel="tgaen" href="/works/tgaen.shtml#tgaen-wwsma"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o5153"><a title="view table of contents of source edition" href="/works/o5153.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. II.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
@@ -230,55 +173,45 @@
                   <li id="o5153"><a title="view table of contents of source edition" href="/works/o5153.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. II.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.002">K104099.002</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o5155"><a title="view table of contents of source edition" href="/works/o5155.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. IV.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.004">K104099.004</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o5157"><a title="view table of contents of source edition" href="/works/o5157.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. VI.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.006">K104099.006</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4986"><a title="view table of contents of source edition" href="/works/o4986.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Pearch, G. <em><span class="titlem">A collection of poems in four volumes. By several hands. Vol. III.</span> </em> [The second edition]. London: printed for G. Pearch, 1770. 4v. ; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T116245">T116245</a>; 
                      						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1136&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1136</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K093079.003">K093079.003</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="tgaen"><a title="view table of contents of source edition" href="/works/tgaen.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Gray, Thomas, 1716-1771. <em><span class="titlem">Thomas Gray: English poems.</span> </em> Web.  Oxford: Thomas Gray Archive, 2002. <a class="external" target="_blank" href="http://www.thomasgray.org/texts/poems.shtml">http://www.thomasgray.org/texts/poems.shtml</a></li>
                </ul>
             </div>
             <div id="bib">
                <h2 id="bib_GrayTh1716">Bibliography</h2>
-               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1642&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1642</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/11356">11356</a>; NCBEL 42, 577, 1780; DLB 109
-               </p>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1642&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1642</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/11356">11356</a>; NCBEL 42, 577, 1780; DLB 109</p>
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Thomas Gray Manuscripts: An Integrated Finding Aid</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2013</span>. Web. 14 Oct. 2016.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/findaid.shtml"><span>http://www.thomasgray.org/resources/findaid.shtml</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Thomas Gray Manuscripts: An Integrated Finding Aid</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2013</span>. Web. 14 Oct. 2016.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/findaid.shtml"><span>http://www.thomasgray.org/resources/findaid.shtml</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 2 Gay-Philips. 71-116. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 2 Gay-Philips. 71-116. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Editions</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Huber, Alexander, ed.  <q class="titlea">Poems</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2002</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/texts/poems.shtml"><span>http://www.thomasgray.org/texts/poems.shtml</span></a>.
-                     </div>
+                     <div class="biblfree">Huber, Alexander, ed.  <q class="titlea">Poems</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2002</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/texts/poems.shtml"><span>http://www.thomasgray.org/texts/poems.shtml</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Lonsdale, Roger, ed. <span class="titlem">The Poems of Gray, Collins and Goldsmith</span>. <span class="pubPlace">London and Harlow</span>: <span class="publisher">Longmans</span>, <span class="date">1969</span>. Print.
-                     </div>
+                     <div class="biblfree">Lonsdale, Roger, ed. <span class="titlem">The Poems of Gray, Collins and Goldsmith</span>. <span class="pubPlace">London and Harlow</span>: <span class="publisher">Longmans</span>, <span class="date">1969</span>. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Starr, Herbert W., and J. R. Hendrickson, ed. <span class="titlem">The Complete Poems of Thomas Gray: English, Latin and Greek.</span> Oxford: Clarendon Press, 1966 [reprinted with corrections 1972]. Print.
-                     </div>
+                     <div class="biblfree">Starr, Herbert W., and J. R. Hendrickson, ed. <span class="titlem">The Complete Poems of Thomas Gray: English, Latin and Greek.</span> Oxford: Clarendon Press, 1966 [reprinted with corrections 1972]. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree"><span class="titlem">The Works of the English Poets, from Chaucer to Cowper; including the Series Edited,
@@ -289,58 +222,47 @@
                <h3>Concordance</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Concordance</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2002</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/concordance.shtml"><span>http://www.thomasgray.org/resources/concordance.shtml</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Concordance</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2002</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/concordance.shtml"><span>http://www.thomasgray.org/resources/concordance.shtml</span></a>.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Biography</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2004</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/bio.shtml"><span>http://www.thomasgray.org/resources/bio.shtml</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Biography</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2004</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/bio.shtml"><span>http://www.thomasgray.org/resources/bio.shtml</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Mack, Robert L. <span class="titlem">Thomas Gray: a life</span>. New Haven and London: Yale UP, 2000. Print.
-                     </div>
+                     <div class="biblfree">Mack, Robert L. <span class="titlem">Thomas Gray: a life</span>. New Haven and London: Yale UP, 2000. Print.</div>
                   </li>
                </ul>
                <h3>Bibliography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Bibliography</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2018</span>. Web. 12 Jun. 2018.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/bibyr.shtml"><span>http://www.thomasgray.org/resources/bibyr.shtml</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">Huber, Alexander</span>.  <q class="titlea">Bibliography</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2018</span>. Web. 12 Jun. 2018.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/bibyr.shtml"><span>http://www.thomasgray.org/resources/bibyr.shtml</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree"><span class="author">McKenzie, Alan T. and B. Eugene McCarthy</span>.  <q class="titlea">Selected Bibliography: Thomas Gray (1716-1771)</q>. <span class="titlem">c18 Bibliographies On-Line</span>. Ed. Jack Lynch. <span class="publisher">Rutgers University, Newark</span>, <span class="date">14 Dec. 2001</span>. Web. 20 Jan. 2012.  <a class="external" target="_blank" href="http://jacklynch.net/C18/biblio/gray.html"><span>http://jacklynch.net/C18/biblio/gray.html</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">McKenzie, Alan T. and B. Eugene McCarthy</span>.  <q class="titlea">Selected Bibliography: Thomas Gray (1716-1771)</q>. <span class="titlem">c18 Bibliographies On-Line</span>. Ed. Jack Lynch. <span class="publisher">Rutgers University, Newark</span>, <span class="date">14 Dec. 2001</span>. Web. 20 Jan. 2012.  <a class="external" target="_blank" href="http://jacklynch.net/C18/biblio/gray.html"><span>http://jacklynch.net/C18/biblio/gray.html</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree"><span class="author">Thomson, Heidi</span>.  <q class="titlea">Thomas Gray 1716-1771</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2010</span>. Web. 12 Jun. 2013.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/thomsonbib.shtml"><span>http://www.thomasgray.org/resources/thomsonbib.shtml</span></a>.
-                     </div>
+                     <div class="biblfree"><span class="author">Thomson, Heidi</span>.  <q class="titlea">Thomas Gray 1716-1771</q>. <span class="titlem">Thomas Gray Archive</span>. <span class="publisher">Thomas Gray Archive</span>, <span class="date">2010</span>. Web. 12 Jun. 2013.  <a class="external" target="_blank" href="http://www.thomasgray.org/resources/thomsonbib.shtml"><span>http://www.thomasgray.org/resources/thomsonbib.shtml</span></a>.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 154-156. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 154-156. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fairer, David. <span class="titlem">English Poetry of the Eighteenth Century 1700-1789</span>. Longman Literature in English Series. <span class="pubPlace">Harlow</span>: <span class="publisher">Longman</span>, <span class="date">2003</span>. 272-273. Print.
-                     </div>
+                     <div class="biblfree">Fairer, David. <span class="titlem">English Poetry of the Eighteenth Century 1700-1789</span>. Longman Literature in English Series. <span class="pubPlace">Harlow</span>: <span class="publisher">Longman</span>, <span class="date">2003</span>. 272-273. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree"><span class="author">Mell, Jr., Donald C.</span> <span class="titlem">English Poetry, 1660-1800: a guide to information sources</span>. American Literature, English Literature, and World Literatures in English Information
-                        Guide Series, vol. 40. <span class="pubPlace">Detroit</span>: <span class="publisher">Gale</span>, <span class="date">1982</span>. 238-251. Print.
-                     </div>
+                        Guide Series, vol. 40. <span class="pubPlace">Detroit</span>: <span class="publisher">Gale</span>, <span class="date">1982</span>. 238-251. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Thomas Gray (1716-1771)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33062"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33062</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Thomas Gray (1716-1771)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33062"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=33062</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Gray, Thomas</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 157-158. Print. 6 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Gray, Thomas</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 157-158. Print. 6 volumes.</div>
                   </li>
                </ul>
             </div>
@@ -353,12 +275,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Thomas Gray\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

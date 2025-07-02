@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / Elizabeth Griffith" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors Elizabeth Griffith "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / Elizabeth Griffith" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors Elizabeth Griffith "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,16 +10,13 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">Elizabeth Griffith (1727-1793)</figcaption>
-                  <p>© National Portrait Gallery, London</p><img src="/images/authors/GrifEl1727_NPG.jpg" alt="Elizabeth Griffith (1727-1793)" class="graphic"></img></figure>
+                  <p>© National Portrait Gallery, London</p><img src="/images/authors/GrifEl1727_NPG.jpg" alt="Elizabeth Griffith (1727-1793)" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o3838-w0010.shtml"><em>AMANA.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3838" href="/works/o3838.shtml#o3838-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o3838-w0010.shtml"><em>AMANA.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o3838" href="/works/o3838.shtml#o3838-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o3838"><a title="view table of contents of source edition" href="/works/o3838.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Griffith, Mrs. (Elizabeth), 1720?-1793. <em><span class="titlem">Amana. A dramatic poem. By a lady.</span> </em>  London: printed by T. Harrison; for W. Johnston, 1764. xii,54p.; 4⁰.
@@ -42,8 +33,7 @@
                   <li id="o3838"><a title="view table of contents of source edition" href="/works/o3838.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Griffith, Mrs. (Elizabeth), 1720?-1793. <em><span class="titlem">Amana. A dramatic poem. By a lady.</span> </em>  London: printed by T. Harrison; for W. Johnston, 1764. xii,54p.; 4⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T21796">T21796</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K030677.000">K030677.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -52,26 +42,22 @@
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Eshleman, Dorothy Hughes. <span class="titlem">Elizabeth Griffith: A Biographical and Critical Study</span>. Philadelphia: Univ. of Pennsylvania Press, 1949. Print.
-                     </div>
+                     <div class="biblfree">Eshleman, Dorothy Hughes. <span class="titlem">Elizabeth Griffith: A Biographical and Critical Study</span>. Philadelphia: Univ. of Pennsylvania Press, 1949. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 157-158. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 157-158. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 141-142. Print.
-                     </div>
+                     <div class="biblfree">Todd, Janet, ed. <span class="titlem">A Dictionary of British and American Women Writers 1660-1800</span>. Paperback edition, revised. <span class="pubPlace">Lanham <span class="hi">et al.</span></span>: Rowman &amp; Littlefield, 1987. 141-142. Print.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Morin, Christina.  <q class="titlea">Theorizing 'Gothic' in Eighteenth-Century Ireland</q>. Morin, Christina, Niall Gillespie, eds. <span class="titlem">Irish Gothics: Genres, Forms, Modes, and Traditions, 1760-1890</span>. Basingstoke, England: Palgrave Macmillan, 2014. 13-33. Print.
-                     </div>
+                     <div class="biblfree">Morin, Christina.  <q class="titlea">Theorizing 'Gothic' in Eighteenth-Century Ireland</q>. Morin, Christina, Niall Gillespie, eds. <span class="titlem">Irish Gothics: Genres, Forms, Modes, and Traditions, 1760-1890</span>. Basingstoke, England: Palgrave Macmillan, 2014. 13-33. Print.</div>
                   </li>
                </ul>
             </div>
@@ -84,12 +70,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"Elizabeth Griffith\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

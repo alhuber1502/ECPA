@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / George Alexander Stevens" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors George Alexander Stevens "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / George Alexander Stevens" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors George Alexander Stevens "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -16,16 +10,13 @@
             <div id="portrait">
                <figure class="figure">
                   <figcaption class="caption">George Alexander Stevens (1710-84), with Mrs Paul Sandby</figcaption>
-                  <p>Chrisite's (2012: "Andrew Wyld: Connoisseur Dealer", lot 6)</p><img src="/images/authors/StevGe1710.jpg" alt="George Alexander Stevens (1710-84), with Mrs Paul Sandby" class="graphic"></img></figure>
+                  <p>Chrisite's (2012: "Andrew Wyld: Connoisseur Dealer", lot 6)</p><img src="/images/authors/StevGe1710.jpg" alt="George Alexander Stevens (1710-84), with Mrs Paul Sandby" class="graphic"></figure>
             </div>
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o4154-w0010.shtml"><em>RELIGION. A RHAPSODY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4154" href="/works/o4154.shtml#o4154-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o4154-w0010.shtml"><em>RELIGION. A RHAPSODY.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4154" href="/works/o4154.shtml#o4154-w0010"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o4154"><a title="view table of contents of source edition" href="/works/o4154.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Stevens, George Alexander, 1710-1784. <em><span class="titlem">Religion: or, the libertine repentant: A rhapsody. By George Alexander Stevens.</span> </em>  London: printed and sold by W. Reeve; and F. Noble, 1751. 18p.; 8⁰.
@@ -42,8 +33,7 @@
                   <li id="o4154"><a title="view table of contents of source edition" href="/works/o4154.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Stevens, George Alexander, 1710-1784. <em><span class="titlem">Religion: or, the libertine repentant: A rhapsody. By George Alexander Stevens.</span> </em>  London: printed and sold by W. Reeve; and F. Noble, 1751. 18p.; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T46712">T46712</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K043977.000">K043977.000</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
@@ -52,8 +42,7 @@
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 328-329. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 328-329. Print.</div>
                   </li>
                </ul>
             </div>
@@ -66,12 +55,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"George Alexander Stevens\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->

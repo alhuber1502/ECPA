@@ -1,11 +1,5 @@
-
-<!--#config timefmt="%d %b %Y" -->
-<!--#set var="title" value="Authors / John Dyer" -->
-<!--#set var="bodyid" value="authors" -->
-<!--#set var="youarehere" value=" Home Authors John Dyer "
-			-->
-<!--#set var="authors" value="active" -->
-<!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
+<!--#config timefmt="%d %b %Y" --><!--#set var="title" value="Authors / John Dyer" --><!--#set var="bodyid" value="authors" --><!--#set var="youarehere" value=" Home Authors John Dyer "
+			--><!--#set var="authors" value="active" --><!--#include virtual="/top.shtml" --><section xmlns="http://www.w3.org/1999/xhtml" id="main">
    <div class="container">
       <div class="row">
          <div class="col-xs-12">
@@ -14,17 +8,12 @@
             											early December 1757)
             											
             <div id="works">
-               <h2 class="info">Works in 
-                  <!--#echo var='ecep'-->
-               </h2>
+               <h2 class="info">Works in <!--#echo var='ecep'--></h2>
                <p><span id="alphabetical">alphabetical listing</span> / <span id="bysourceeditions">listing in source editions</span></p>
                <ul class="listBibl" data-id="alphabetical">
-                  <li><a title="view full-text" href="/works/o4984-w0300.shtml"><em>AN EPISTLE TO A FRIEND IN TOWN.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4984" href="/works/o4984.shtml#o4984-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5152-w0300.shtml"><em>GRONGAR HILL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5152" href="/works/o5152.shtml#o5152-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
-                  <li><a title="view full-text" href="/works/o5152-w0310.shtml"><em>THE RUINS of ROME.  A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5152" href="/works/o5152.shtml#o5152-w0310"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)
-                  </li>
+                  <li><a title="view full-text" href="/works/o4984-w0300.shtml"><em>AN EPISTLE TO A FRIEND IN TOWN.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o4984" href="/works/o4984.shtml#o4984-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5152-w0300.shtml"><em>GRONGAR HILL.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5152" href="/works/o5152.shtml#o5152-w0300"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
+                  <li><a title="view full-text" href="/works/o5152-w0310.shtml"><em>THE RUINS of ROME.  A POEM.</em></a> (<a class="source" title="view table of contents of source edition" data-rel="o5152" href="/works/o5152.shtml#o5152-w0310"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a>)</li>
                </ul>
                <ul class="listBibl" data-id="bysourceeditions" style="display:none;">
                   <li data-id="o5152"><a title="view table of contents of source edition" href="/works/o5152.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. I.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
@@ -51,25 +40,21 @@
                   <li id="o5152"><a title="view table of contents of source edition" href="/works/o5152.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Dodsley, Robert, 1703-1764. <em><span class="titlem">A Collection of Poems in Six Volumes. By Several Hands. Vol. I.</span> </em>  London: printed by J. Hughs, for R. and J. Dodsley, 1763 [1st ed. 1758]. 6v.: music; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T131163">T131163</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K104099.001">K104099.001</a>)
-                     				
-                  </li>
+                     				</li>
                   <li id="o4984"><a title="view table of contents of source edition" href="/works/o4984.shtml"><i class="fa fa-book" aria-hidden="true" style="display:inline;"></i></a> Pearch, G. <em><span class="titlem">A collection of poems in four volumes. By several hands. Vol. I.</span> </em> [The second edition]. London: printed for G. Pearch, 1770. 4v. ; 8⁰.
                      					(ESTC <a class="external" href="http://estc.bl.uk/T116245">T116245</a>; 
                      						DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1122&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Miscellany&amp;search_field=advanced">1122</a>; 
                      						OTA <a class="external" target="_blank" href="http://ota.ox.ac.uk/id/K093079.001">K093079.001</a>)
-                     				
-                  </li>
+                     				</li>
                </ul>
             </div>
             <div id="bib">
                <h2 id="bib_DyerJo1699">Bibliography</h2>
-               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1550&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1550</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/8350">8350</a>; NCBEL 545; DLB 95
-               </p>
+               <p style="margin-bottom:-10px;">DMI <a class="external" target="_blank" href="http://dmi.bodleian.ox.ac.uk/catalog?op=AND&amp;dmi_id=1550&amp;f_inclusive%5Bcontent_type%5D%5B%5D=Person&amp;search_field=advanced">1550</a>; ODNB <a class="external" target="_blank" href="http://dx.doi.org/10.1093/ref:odnb/8350">8350</a>; NCBEL 545; DLB 95</p>
                <h3>Manuscripts</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 341-353. Print. 4 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Smith, Margaret M.</span> <span class="titles">Index of English Literary Manuscripts</span>. Vol. III, 1700-1800 . <span class="pubPlace">London</span>: <span class="publisher">Mansell</span>, <span class="date">1986-1997</span>. Pt. 1 Addison-Fielding. 341-353. Print. 4 volumes.</div>
                   </li>
                </ul>
                <h3>Editions</h3>
@@ -80,69 +65,56 @@
                            translations</span>. The Additional Lives by Alexander Chalmers, F.S.A. Vol. XIII.  <span class="pubPlace">London</span>: <span class="publisher">J. Johnson <em style="font-style:italic">et al.</em></span>, <span class="date">1810</span>. 219-253. Google Books edition. Web. 13 Feb. 2016.  <a class="external" target="_blank" href="https://books.google.co.uk/books?id=EWJIAQAAMAAJ&amp;pg=PA219"><span>https://books.google.co.uk/books?id=EWJIAQAAMAAJ&amp;pg=PA219</span></a></div>
                   </li>
                   <li>
-                     <div class="biblfree">Goodridge, John, ed. <span class="titlem">John Dyer: Selected Poetry and Prose</span>. Nottingham: Trent, 2000. Print.
-                     </div>
+                     <div class="biblfree">Goodridge, John, ed. <span class="titlem">John Dyer: Selected Poetry and Prose</span>. Nottingham: Trent, 2000. Print.</div>
                   </li>
                </ul>
                <h3>Biography</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Williams, Ralph M. <span class="titlem">Poet, Painter and Parson: The Life of John Dyer</span>. New York: Bookman, 1956. Print.
-                     </div>
+                     <div class="biblfree">Williams, Ralph M. <span class="titlem">Poet, Painter and Parson: The Life of John Dyer</span>. New York: Bookman, 1956. Print.</div>
                   </li>
                </ul>
                <h3>Reference works</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 113-114. Print.
-                     </div>
+                     <div class="biblfree">Baines, Paul, Julian Ferraro, Pat Rogers, eds. <span class="titlem">The Wiley-Blackwell Encyclopedia of Eighteenth-Century Writers and Writing, 1660-1789</span>. <span class="pubPlace">Malden, MA</span>: <span class="publisher">Wiley-Blackwell</span>, <span class="date">2011</span>. 113-114. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Fairer, David. <span class="titlem">English Poetry of the Eighteenth Century 1700-1789</span>. Longman Literature in English Series. <span class="pubPlace">Harlow</span>: <span class="publisher">Longman</span>, <span class="date">2003</span>. 269. Print.
-                     </div>
+                     <div class="biblfree">Fairer, David. <span class="titlem">English Poetry of the Eighteenth Century 1700-1789</span>. Longman Literature in English Series. <span class="pubPlace">Harlow</span>: <span class="publisher">Longman</span>, <span class="date">2003</span>. 269. Print.</div>
                   </li>
                   <li>
                      <div class="biblfree">Johnson, Sarah.  <q class="titlea">Dyer, John, 1700?-1758</q>. Literature Online biography. Cambridge: Chadwyck-Healey, 2006. Web. 21 Feb. 2016.  <a class="external" target="_blank" href="http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&amp;xri:pqil:res_ver=0.2&amp;res_id=xri:lion&amp;rft_id=xri:lion:ft:ref:BIO000719:0"><span>http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&amp;xri:pqil:res_ver=0.2&amp;res_id=xri:lion&amp;rft_id=xri:lion:ft:ref:BIO000719:0</span></a></div>
                   </li>
                   <li>
                      <div class="biblfree"><span class="author">Mell, Jr., Donald C.</span> <span class="titlem">English Poetry, 1660-1800: a guide to information sources</span>. American Literature, English Literature, and World Literatures in English Information
-                        Guide Series, vol. 40. <span class="pubPlace">Detroit</span>: <span class="publisher">Gale</span>, <span class="date">1982</span>. 216-219. Print.
-                     </div>
+                        Guide Series, vol. 40. <span class="pubPlace">Detroit</span>: <span class="publisher">Gale</span>, <span class="date">1982</span>. 216-219. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Rev. John Dyer (1700-1757)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32995"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32995</span></a>.
-                     </div>
+                     <div class="biblfree">Radcliffe, David H., ed.  <q class="titlea">Rev. John Dyer (1700-1757)</q>. <span class="titlem">Spenser and the Tradition: ENGLISH POETRY 1579-1830</span>. <span class="publisher">Center for Applied Technologies in the Humanities, Virginia Tech</span>, <span class="date">2006</span>. Web. 14 Oct. 2011.  <a class="external" target="_blank" href="https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32995"><span>https://web.archive.org/web/20170908014740/http://spenserians.cath.vt.edu/AuthorRecord.php?recordid=32995</span></a>.</div>
                   </li>
                   <li>
-                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Dyer, John</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 147. Print. 6 volumes.
-                     </div>
+                     <div class="biblfree"><span class="author">Suarez, Michael F.</span>  <q class="titlea">Dyer, John</q>. <span class="titlem">A Collection of Poems by Several Hands [<span class="date">1782</span>]</span>. Ed. Robert Dodsley and Michael F. Suarez. Vol. I.  <span class="pubPlace">London</span>: <span class="publisher">Routledge/Thoemmes</span>, <span class="date">1997</span>. 147. Print. 6 volumes.</div>
                   </li>
                </ul>
                <h3>Criticism</h3>
                <ul class="listBibl">
                   <li>
-                     <div class="biblfree">Barrell, John. <span class="titlem">English Literature in History: An Equal, Wide Survey</span>. London: Hutchinson, 1983. 90-109. Print.
-                     </div>
+                     <div class="biblfree">Barrell, John. <span class="titlem">English Literature in History: An Equal, Wide Survey</span>. London: Hutchinson, 1983. 90-109. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Feingold, Richard. <span class="titlem">Nature and Society: Later Eighteenth-Century Uses of the Pastoral and Georgic</span>. Hassocks: Harvester, 1978. 83-119. Print.
-                     </div>
+                     <div class="biblfree">Feingold, Richard. <span class="titlem">Nature and Society: Later Eighteenth-Century Uses of the Pastoral and Georgic</span>. Hassocks: Harvester, 1978. 83-119. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Goldstein, Laurence. <span class="titlem">Ruins and Empire: The Evolution of a Theme in Augustan and Romantic Literature</span>. Pittsburgh: U of Pittsburgh P., 1977. 25-58. Print.
-                     </div>
+                     <div class="biblfree">Goldstein, Laurence. <span class="titlem">Ruins and Empire: The Evolution of a Theme in Augustan and Romantic Literature</span>. Pittsburgh: U of Pittsburgh P., 1977. 25-58. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Goodridge, John. <span class="titlem">Rural Life in Eighteenth-Century Poetry</span> Cambridge: CUP, 1995. 91-180. Print.
-                     </div>
+                     <div class="biblfree">Goodridge, John. <span class="titlem">Rural Life in Eighteenth-Century Poetry</span> Cambridge: CUP, 1995. 91-180. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Humfrey, Belinda. <span class="titlem">John Dyer</span>. Cardiff: University of Wales Press on behalf of the Welsh Arts Council, 1980. Print.
-                     </div>
+                     <div class="biblfree">Humfrey, Belinda. <span class="titlem">John Dyer</span>. Cardiff: University of Wales Press on behalf of the Welsh Arts Council, 1980. Print.</div>
                   </li>
                   <li>
-                     <div class="biblfree">Patey, Douglas Lane.  <q class="titlea">Anne Finch, John Dyer, and the Syntax of Nature</q>. Rivero, Albert J., ed. <span class="titlem">Augustan Subjects: Essays in Honor of Martin C. Battestin</span>. Newark and London: U of Delaware P., 1997. 29-46. Print.
-                     </div>
+                     <div class="biblfree">Patey, Douglas Lane.  <q class="titlea">Anne Finch, John Dyer, and the Syntax of Nature</q>. Rivero, Albert J., ed. <span class="titlem">Augustan Subjects: Essays in Honor of Martin C. Battestin</span>. Newark and London: U of Delaware P., 1997. 29-46. Print.</div>
                   </li>
                </ul>
             </div>
@@ -155,12 +127,7 @@
 				var citlink = 'https://'+'<!--#echo var="HTTP_HOST"-->'+
 				'<!--#echo var="DOCUMENT_URI"-->';
 				citation += "\"John Dyer\". "; 
-				citation +=	'<em>\
-      <!--#echo var="ecep_full"--></em>, '+
-				'\
-   <!--#flastmod virtual="/data/version"--> (\
-   <!--#include virtual="/data/version"-->)'+
-				'. Web. \
-   <!--#echo var="DATE_LOCAL"-->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
-			</script>
-<!--#include virtual="/bottom.shtml"-->
+				citation +=	'<em>\<!--#echo var="ecep_full"--></em>, '+
+				'\<!--#flastmod virtual="/data/version"--> (\<!--#include virtual="/data/version"-->)'+
+				'. Web. \<!--#echo var="DATE_LOCAL"-->. <<a href="'+citlink+'">'+citlink+'</a>>';
+			</script><!--#include virtual="/bottom.shtml"-->
