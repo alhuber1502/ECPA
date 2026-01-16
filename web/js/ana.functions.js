@@ -1299,7 +1299,7 @@ function ana_semantic (lineID) {
 	"<br/><div id='parse_horiz' class='frameviz'/><br/>");
 	for (var i = 0; i < l[lineID].sentences.length; i++) {
 	    sentnum += (parseInt(l[lineID].sentences[i])+1)+", ";
-		if ( sema[ l[lineID].sentences[i]] ) {
+		if ( typeof sema !== 'undefined' && sema[ l[lineID].sentences[i]] ) {
 		    receivedFrameJSON(sema[ l[lineID].sentences[i]], 'sent', l[lineID].sentences[i]); // function appends output directly, plus, added third parameter to include sentence number
 		} else {
 			$( "#parse_horiz" ).append("<p>[Semantic frame is not available.]</p>")
