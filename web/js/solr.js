@@ -1,6 +1,17 @@
 // ECPA
 // SOLR
 
+// HTML-escape to prevent XSS when inserting dynamic data into HTML strings
+function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 var SOLR_ECPA;
 if ( /eighteenthcenturypoetry\.org/.test(window.location.href) ) {
   SOLR_ECPA = "https://data.prisms.digital/solr/ecpa/select";
@@ -90,7 +101,7 @@ function format_filters( filters, base ) {
         if ( base.search( re ) != -1 ) {
           reout = `<span class="facet_delete"><a class="del_facet" href='`+thisfq.replace(/'/g, '%27').replace( /\+/g, "%2B")+`' data-base='`+base.replace(/'/g, '%27').replace( /\+/g, "%2B")+`&rows=`+per_page+`'>&times;</a> </span>`;
         }
-        output += `<li>`+reout+`<span class="facet_label">`+((reout == '')?`<a href='`+base.replace(/'/g, "%27").replace( /\+/g, "%2B")+`&rows=`+per_page+`&start=0&fq=`+key+`:&quot;`+filters.facet_fields[key][i].replace(/'/g, "%27").replace( /\+/g, "%2B")+`&quot;'>`:``)+(repl[ filters.facet_fields[key][i] ]?repl[ filters.facet_fields[key][i] ]:((key=="met_str")?output_met(filters.facet_fields[key][i]):filters.facet_fields[key][i]))+((reout == '')?`</a>`:``)+`</span> <span class="facet_count">`+filters.facet_fields[key][i+1].toLocaleString()+`</span></li>`;
+        output += `<li>`+reout+`<span class="facet_label">`+((reout == '')?`<a href='`+base.replace(/'/g, "%27").replace( /\+/g, "%2B")+`&rows=`+per_page+`&start=0&fq=`+key+`:&quot;`+filters.facet_fields[key][i].replace(/'/g, "%27").replace( /\+/g, "%2B")+`&quot;'>`:``)+escapeHtml(repl[ filters.facet_fields[key][i] ]?repl[ filters.facet_fields[key][i] ]:((key=="met_str")?output_met(filters.facet_fields[key][i]):filters.facet_fields[key][i]))+((reout == '')?`</a>`:``)+`</span> <span class="facet_count">`+filters.facet_fields[key][i+1].toLocaleString()+`</span></li>`;
       }
     }
     output += `</ul></div></div>`;
@@ -158,14 +169,14 @@ async function format_results( docs, base, highlights ) {
       } else {
         console.log( v );
       }
-      output += `<h3><a href="/works/`+v.id+`.shtml">`+truncateString(unique_document_title[0],400)+`</a> <a 
-      class="add_bm" id="`+v.id+`" href="#"><span class="glyphicon glyphicon-bookmark"></span></a></h3>`;
-      output += `<div><span>First/Last Lines:</span> `+v.incipit+` / `+v.explicit+`</div>`;
+      output += `<h3><a href="/works/`+escapeHtml(v.id)+`.shtml">`+escapeHtml(truncateString(unique_document_title[0],400))+`</a> <a
+      class="add_bm" id="`+escapeHtml(v.id)+`" href="#"><span class="glyphicon glyphicon-bookmark"></span></a></h3>`;
+      output += `<div><span>First/Last Lines:</span> `+escapeHtml(v.incipit)+` / `+escapeHtml(v.explicit)+`</div>`;
       if ( v.author ) {
         output += `<div><span>`+((v.author.length > 1)?`Authors`:`Author`)+`:</span> `;
         var vautlen = v.author.length;
         $.each( v.author, function(i,v2) {
-          output += `<a href="/authors/`+v.author_id[i]+`.shtml">`+v2+`</a>`;
+          output += `<a href="/authors/`+escapeHtml(v.author_id[i])+`.shtml">`+escapeHtml(v2)+`</a>`;
           if ( i != (vautlen - 1) ) { output += "; "; }
         });
         output +=  `</div>`;
@@ -174,8 +185,8 @@ async function format_results( docs, base, highlights ) {
       if (v.subject) {
         var sublen = v.subject.length;
         output += `<div><span>Themes:</span> `;
-        $.each( v.subject, function(i,v) { 
-          output += v;
+        $.each( v.subject, function(i,v) {
+          output += escapeHtml(v);
           if (i === sublen - 1) {}
           else { output += ", "; }
         });
@@ -184,8 +195,8 @@ async function format_results( docs, base, highlights ) {
       if (v.form) {
         var forlen = v.form.length;
         output += `<div><span>Genres:</span> `;
-        $.each( v.form, function(i,v) { 
-          output += v;
+        $.each( v.form, function(i,v) {
+          output += escapeHtml(v);
           if (i === forlen - 1) {}
           else { output += ", "; }
         });

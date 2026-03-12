@@ -1,4 +1,15 @@
 
+// HTML-escape to prevent XSS when inserting dynamic data into HTML strings
+function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // Reading
 
 
@@ -44,19 +55,19 @@ $(document.body).on('click', '.w:not(.note .w),.pc:not(.note .pc),.l:not(.note .
 <h5 style="display:inline-block; padding: 0 10px 0 20px;"> Context </h5>
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-default btn-sm`+((isWord)?' active':'')+`">
-    <input type="radio" name="obj" autocomplete="off" class="form-control" `+((isWord)?'checked="checked"':'')+` value="`+$(e.target).attr("id")+`"/> word
+    <input type="radio" name="obj" autocomplete="off" class="form-control" `+((isWord)?'checked="checked"':'')+` value="`+escapeHtml($(e.target).attr("id"))+`"/> word
   </label>
   <label class="btn btn-default btn-sm`+((!isWord)?' active':'')+`">
-    <input type="radio" name="obj" autocomplete="off" class="form-control" `+((!isWord)?'checked="checked"':'')+` value="`+($(e.target).parent().attr("id")?$(e.target).parent().attr("id"):'line: '+$(e.target).attr("id"))+`"> line(s) 
+    <input type="radio" name="obj" autocomplete="off" class="form-control" `+((!isWord)?'checked="checked"':'')+` value="`+escapeHtml($(e.target).parent().attr("id")?$(e.target).parent().attr("id"):'line: '+$(e.target).attr("id"))+`"> line(s)
   </label>
   <label class="btn btn-default btn-sm">
-    <input class="form-control" type="radio" name="obj" autocomplete="off" value="stanza: `+((isWord)?$(e.target).attr("id"):$(e.target).parent().attr("id"))+`"> stanza/paragraph
+    <input class="form-control" type="radio" name="obj" autocomplete="off" value="stanza: `+escapeHtml((isWord)?$(e.target).attr("id"):$(e.target).parent().attr("id"))+`"> stanza/paragraph
   </label>
   <label class="btn btn-default btn-sm">
-    <input class="form-control" type="radio" name="obj" autocomplete="off" value="whole text: `+((isWord)?$(e.target).attr("id"):$(e.target).parent().attr("id"))+`"/> whole text
+    <input class="form-control" type="radio" name="obj" autocomplete="off" value="whole text: `+escapeHtml((isWord)?$(e.target).attr("id"):$(e.target).parent().attr("id"))+`"/> whole text
   </label>
 </div>
-<h5>Your <span id="contribution-type">note on</span> <span id="contribution-context">`+ref+
+<h5>Your <span id="contribution-type">note on</span> <span id="contribution-context">`+escapeHtml(ref)+
 `</span></h5>`+
 `<textarea style="resize:vertical;" class="form-control" name="comment" id="newNoteText" rows="6" required="required"/>`+add_user());
     $('#newNote').modal('show');
