@@ -85,7 +85,7 @@ $(document.body).on('click', 'button#newNoteSubmit' , function(e) {
     $.ajax({
         type: 'POST',
         url: '/cgi-bin/handleCS.cgi',
-	data: { 'content': str, 'file': docname, 'source': source },
+	data: { 'content': str, 'file': docname },
         dataType: 'text',
         success: function() {
 	    $(d).html("Thank You!");
@@ -459,7 +459,7 @@ $("#upXML").click(function(e){
         $.ajax({
 	    type: 'POST',
 	    url: '/cgi-bin/handleXML.cgi',
-	    data: { 'myXML': content, 'file': docname, 'option': "up", 'source': source.replace(/\./g,'') },
+	    data: { 'myXML': content, 'file': docname, 'option': "up" },
 	    dataType: 'xml',
 	    success: function() {
 		$("#upXML").html("Changes submitted!");

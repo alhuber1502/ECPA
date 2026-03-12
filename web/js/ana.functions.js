@@ -1073,7 +1073,7 @@ $(document.body).on('input propertychange paste', '.textaInput', function(e){
         $.ajax({
 	    type: 'POST',
 	    url: '/cgi-bin/handleCS.cgi',
-	    data: { 'content': $(d).parent().attr("data-id")+"/"+lineID+": "+$(d).val(), 'file': docname, 'source': source },
+	    data: { 'content': $(d).parent().attr("data-id")+"/"+lineID+": "+$(d).val(), 'file': docname },
 	    dataType: 'text',
 	    success: function() {},
 	    error: function() {}

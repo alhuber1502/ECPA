@@ -26,7 +26,7 @@ if ($cgi->param('content')) {
     print $cgi->header('text/plain;charset=UTF-8');
     open(my $fh, ">>:encoding(UTF-8)", $subpath.$cgi->param('file').".txt") or die "Could not open file: $!";
     flock($fh, 2) or die "Could not lock file: $!";
-    print $fh $cgi->param('content')."&source=".$cgi->param('source')."&timestamp=".(time)."\n";
+    print $fh $cgi->param('content')."&timestamp=".(time)."\n";
     close $fh;
     my $query = CGI->new($cgi->param('content'));
     my %params = $query->Vars;
