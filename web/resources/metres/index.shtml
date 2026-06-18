@@ -376,6 +376,8 @@
   var POEMS = [];              // array of poem objects (csvjsonConverter)
   var FACETS = [];             // array of {dim,id,label,poems,authors}
   var GLOSS = {};              // category id -> one-line gloss (from glosses.csv)
+  var POET_IDS = {};           // authoritative poet ids (recStatus 'unpublished' in authors.xml)
+  var POET_LOADED = false;     // true once poets.csv loads (else count all persons)
   var data_a = [];             // raw author datalist rows
   var qa2f = {};               // author name -> pers id
   var AUT_NAME = {};            // pers id -> name (fallback when mod_auth lacks it)
@@ -447,8 +449,8 @@
     return $.ajax({ url: BASE + file, dataType: json ? 'json' : 'text' });
   }
   $(function() {
-    $.when( load('poems.csv'), load('facets.csv'), load('data_aut.csv'), load('glosses.csv') ).done(
-      function( poemsR, facetsR, autR, glossR ) {
+    $.when( load('poems.csv'), load('facets.csv'), load('data_aut.csv'), load('glosses.csv'), load('poets.csv') ).done(
+      function( poemsR, facetsR, autR, glossR, poetsR ) {
         POEMS  = csvjsonConverter( poemsR[0], ',' );
         FACETS = csvjsonConverter( facetsR[0], ',' );
         // csvjsonConverter coerces numeric-looking strings to numbers; force
@@ -459,6 +461,8 @@
           f.dim   = f.dim+'';
         });
         if ( glossR ) csvjsonConverter( glossR[0], ',' ).forEach( function(g){ GLOSS[ g.id+'' ] = g.gloss+''; } );
+        if ( poetsR ) { csvjsonConverter( poetsR[0], ',' ).forEach( function(r){ POET_IDS[ r['Author ID']+'' ] = 1; } );
+                        POET_LOADED = Object.keys(POET_IDS).length > 0; }
         // author datalist
         data_a = autR[0].split("\r\n"); data_a.pop();
         buildAuthorList();
@@ -614,9 +618,12 @@
 
   // distinct individual poets across a poem set; ';'-joined aut_ids are
   // collaborations (e.g. "persA;persB"), so each person is counted once, not the pair
+  // ...and, where the authoritative poet list is loaded, count only persons in it
+  // (so 'draft' records and non-corpus co-attributions are not counted as poets)
   function countPersons( poems ) {
     var s = {};
-    poems.forEach(function(p){ (p.aut_id+'').split(';').forEach(function(a){ if (a) s[a]=1; }); });
+    poems.forEach(function(p){ (p.aut_id+'').split(';').forEach(function(a){
+      if ( a && (!POET_LOADED || POET_IDS[a]) ) s[a]=1; }); });
     return Object.keys(s).length;
   }
 
