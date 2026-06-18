@@ -471,13 +471,13 @@ div.panel-heading a:hover,a:focus {
     display: inline;
 }
 
-#names h1, #dates h1, #gender h1,
+#names h1, #dates h1, #gender h1, #nationality h1,
 #titles h1, #lines h1, #themes h1, #genres h1, #edns h1
 {
     font-size: 20px;
 }
-#names h2, #dates h2, #gender h2,
-#titles h2, #lines h2, #themes h2, #genres h2, #edns h2 
+#names h2, #dates h2, #gender h2, #nationality h2,
+#titles h2, #lines h2, #themes h2, #genres h2, #edns h2
 {
     font-size: 16px;
     margin-left: 10px;
@@ -489,17 +489,17 @@ div.panel-heading a:hover,a:focus {
     margin-top: 10px;
     line-height: .5em;
 }
-#names li, #dates li, #gender li,
-#titles li, #lines li, #themes li, #genres li, #edns li 
+#names li, #dates li, #gender li, #nationality li,
+#titles li, #lines li, #themes li, #genres li, #edns li
 {
     list-style-type: none;
 }
-#names-done > ul, #dates-done > ul, #gender-done > ul,
+#names-done > ul, #dates-done > ul, #gender-done > ul, #nationality-done > ul,
 #titles-done > ul, #lines-done > ul, #themes-done > ul, #genres-done > ul, #editions-done > ul
 {
     padding-left: 0px !important;
 }
-#names ul, #dates ul, #gender ul,
+#names ul, #dates ul, #gender ul, #nationality ul,
 #titles ul, #lines ul, #themes ul, #genres ul, #edns ul
 {
     padding-left: 20px;
@@ -638,6 +638,19 @@ a.image  { text-decoration: none !important; color: #333; }
     font-size: 1.2em;
     line-height: 1em;
 }
+#nationality h3 {
+    font-size: 17px;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+#nationality h4 {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: #666;
+    font-weight: normal;
+}
 #home #featured #portrait {
     margin-top:-25px;
 }
@@ -690,9 +703,15 @@ span.collapse.in {
     font-size:20px;
     line-height:26px;
 }
-#text.edn_para .pagebreak, #text.edn_para .byline, #text.edn_para .figure, #text.edn_para .titlepage, #text.edn_para .tableofcontents, #text.edn_para .dramatispersonae, #text.edn_para .halftitle, #text.edn_para .half-title, #text.edn_para .introduction, #text.edn_para .dedication, #text.edn_para .preface, #text.edn_para .argument {
+#text.edn_para .pagebreak, #text.edn_para .byline, #text.edn_para .figure, #text.edn_para .titlepage, #text.edn_para .tableofcontents, #text.edn_para .dramatispersonae, #text.edn_para .halftitle, #text.edn_para .half-title, #text.edn_para .introduction, #text.edn_para .dedication, #text.edn_para .preface, #text.edn_para .argument
+{
     display:block !important;
+    padding-bottom:10px;
 }
+.preface, .introduction, .dedication, .epigraph, .tableofcontents, .dramatispersonae, .halftitle, .half-title, .argument, .titlepage, .figure {
+    padding-bottom: 10px;
+}
+
 #text.edn_para .epigraph {
     width:70%;
 }
@@ -1332,3 +1351,6 @@ div[data-app="share_buttons"] {
     }
   }
   
+.google-visualization-controls-label {
+    padding-top:5px;
+}

@@ -1,0 +1,1560 @@
+<!--#config timefmt="%d %b %Y" -->
+<!--#set var="title" value="Resources / Metres Database" -->
+<!--#set var="bodyid" value="resources" -->
+<!--#set var="youarehere" value="" -->
+<!--#set var="resources" value="active" -->
+<!--#include virtual="/top.shtml" -->
+
+<style>
+  /* Metres Database */
+  .metres .layout { display: none; }
+
+  /* corpus layout: facet sidebar + main column */
+  .metres #layout_corpus.layout { display: none; }
+  .metres .corpus_grid {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-gap: 14px;
+    align-items: start;
+  }
+  .metres .facets {
+    position: sticky;
+    top: 10px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    font-size: 13px;
+  }
+  .metres .facets h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 12px 0 4px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: #555;
+  }
+  .metres .facets .facet-val {
+    display: block;
+    cursor: pointer;
+    padding: 1px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .metres .facets .facet-val:hover { background: #f0f0f0; }
+  .metres .facets .facet-val.on { background: #3366cc; color: #fff; }
+  .metres .facets .facet-val .cnt { color: #999; float: right; margin-left: 8px; }
+  .metres .facets .facet-val.on .cnt { color: #dde; }
+  .metres .facets .unclassified { font-style: italic; color: #999; }
+
+  /* summary tiles */
+  .metres .tiles { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .metres .tile {
+    flex: 1 1 150px;
+    background: #f7f7f7;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    padding: 8px 12px;
+  }
+  .metres .tile .num { font-size: 22px; font-weight: 700; color: #3366cc; line-height: 1.1; }
+  .metres .tile .lab { font-size: 12px; color: #666; }
+
+  /* chips */
+  .metres .chips { margin: 4px 0 12px; min-height: 22px; }
+  .metres .chip {
+    display: inline-block;
+    background: #3366cc;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2px 10px;
+    margin: 2px 4px 2px 0;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .metres .chip .x { margin-left: 6px; font-weight: 700; }
+  .metres .chip.clear { background: #999; }
+
+  /* chart grid */
+  .metres .charts { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 10px; }
+  .metres .charts .panel { margin-bottom: 0; }
+  .metres .charts .panel-body { height: 240px; padding: 0; }
+  .metres #panel_results { grid-column: 1 / 4; }
+  .metres #panel_results .panel-body { height: auto; max-height: 70vh; overflow: auto; }
+
+  .metres .panel-heading { font-size: 18px; font-weight: 500; }
+  /* loader spinners only — must NOT leak onto the navigator's thumbnail <img>,
+     which the plugin positions absolutely inside #netnav */
+  .metres .panel-body > img { display: flex; margin: 20px auto; }
+
+  /* let long cell values (titles, multi-tag forms, author names) wrap naturally
+     instead of forcing very wide columns */
+  .metres .panel-body table.google-visualization-table-table { width: 100%; }
+  .metres .panel-body table.google-visualization-table-table td,
+  .metres .panel-body table.google-visualization-table-table th {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+  }
+  /* cap the wide text columns so they wrap rather than sprawl.
+     Matching-poems table cols: 1 Poem, 2 Author, 7 Form/genre.
+     Poet poems table cols:     1 Poem, 6 Form/genre. */
+  .metres #panel_results table.google-visualization-table-table td:nth-child(4),
+  .metres #panel_poems   table.google-visualization-table-table td:nth-child(3), 
+  .metres #panel_results table.google-visualization-table-table td:nth-child(1),
+  .metres #panel_poems   table.google-visualization-table-table td:nth-child(1) { max-width: 300px; }
+  .metres #panel_results table.google-visualization-table-table td:nth-child(2) { max-width: 180px; }
+  .metres #panel_results table.google-visualization-table-table td:nth-child(8),
+  .metres #panel_poems   table.google-visualization-table-table td:nth-child(7), 
+  .metres #panel_results table.google-visualization-table-table td:nth-child(7),
+  .metres #panel_poems   table.google-visualization-table-table td:nth-child(6) { max-width: 220px; }
+
+  /* poet layout — 3-up grid like the corpus page */
+  .metres #layout_poet .charts { grid-template-columns: 1fr 1fr 1fr; }
+  .metres #layout_poet #panel_dist { grid-column: 1 / 4; }
+  .metres #layout_poet #panel_poems { grid-column: 1 / 4; }
+  .metres #layout_poet #panel_poems .panel-body { height: auto; max-height: 70vh; overflow: auto; }
+
+  /* form / genre profile */
+  .metres #layout_form .fp-id { border-bottom: 1px solid #e3e3e3; padding-bottom: 10px; margin-bottom: 14px; }
+  .metres #layout_form .fp-name { margin: 0 0 4px; font-size: 26px; }
+  .metres #layout_form .fp-glyph { font-size: 16px; color: #777; font-weight: 400; margin-left: 8px; white-space: nowrap; }
+  .metres #layout_form .fp-standfirst { font-size: 16px; color: #333; margin: 0 0 4px; }
+  .metres #layout_form .fp-gloss { font-size: 13px; color: #777; font-style: italic; margin: 0 0 10px; }
+  .metres #layout_form .fp-section-h { font-size: 18px; font-weight: 500; margin: 6px 0 8px; }
+  .metres #layout_form .fp-sub { font-weight: 400; font-size: 12px; color: #999; }
+  .metres #layout_form .charts { grid-template-columns: 1fr 1fr 1fr; margin-bottom: 14px; }
+  .metres #layout_form #fp_poets .panel-body,
+  .metres #layout_form #fp_companions .panel-body,
+  .metres #layout_form #fp_variants .panel-body { height: auto; min-height: 120px; max-height: 320px; overflow: auto; padding: 10px 12px; }
+  .metres #layout_form #fp_heat .panel-body { padding: 8px 10px; overflow: auto; }   /* sits in the recipe grid (240px cell) */
+  .metres #layout_form #fp_poems .panel-body { height: auto; max-height: 70vh; overflow: auto; }
+  .metres #layout_form .fp-refine { float: right; font-size: 12px; font-weight: 400; margin: 5px 15px 0 0; }
+  .metres #layout_form .fp-heat-pair { font-size: 12px; font-weight: 400; vertical-align: middle; }
+  .metres #layout_form .fp-xlinks { margin: 12px 0 4px; color: #777; font-size: 13px; }
+  .metres #layout_form .fp-xlinks a { margin-right: 16px; }
+  /* strictness bar in the identity header */
+  .metres #layout_form .fp-strictbar { margin-top: 10px; font-size: 13px; color: #555; }
+  .metres #layout_form .fp-strictbar .track { height: 12px; background: #eee; border-radius: 3px; max-width: 520px; margin-top: 4px; }
+  .metres #layout_form .fp-strictbar .fill { height: 100%; background: #3366cc; border-radius: 3px; }
+  /* lift heatmap grid */
+  .metres .fp-heatwrap { overflow: auto; }
+  .metres table.fp-heat { border-collapse: collapse; font-size: 12px; }
+  .metres table.fp-heat th { font-weight: 500; color: #555; padding: 3px 6px; text-align: center; }
+  .metres table.fp-heat th.rowh { text-align: right; }
+  .metres table.fp-heat td { width: 46px; height: 34px; text-align: center; border: 1px solid #fff; cursor: pointer; color: #222; }
+  .metres table.fp-heat td.empty { background: #f5f5f5; color: #ccc; cursor: default; }
+  /* simple horizontal bar rows (signature poets, companion forms) */
+  .metres .fp-bars { width: 100%; }
+  .metres .fp-bars .row { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+  .metres .fp-bars .lab { flex: 0 0 42%; text-align: right; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .metres .fp-bars .lab a { color: #3366cc; }
+  .metres .fp-bars .bar { height: 13px; background: #3366cc; border-radius: 2px; }
+  .metres .fp-bars .val { font-size: 11px; color: #777; white-space: nowrap; }
+  .metres .fp-cols { display: flex; gap: 14px; }
+  .metres .fp-cols > div { flex: 1 1 0; min-width: 0; }
+  .metres .fp-cols h5 { font-size: 12px; color: #999; font-weight: 500; margin: 0 0 6px; text-transform: uppercase; letter-spacing: .03em; }
+
+  .metres h1 .xlink { font-size: 14px; font-weight: 400; }
+  .metres h1 .net-explorer-link { float: right; font-size: 14px; font-weight: 400; margin-top: 12px; }
+  .metres h1::after { content: ""; display: block; clear: both; }   /* contain the floated link */
+
+  /* Network Explorer */
+  .metres .net-controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 18px;
+    padding: 6px 2px 10px; font-size: 13px;
+  }
+  .metres .net-controls label { font-weight: 400; }
+  .metres .net-controls select, .metres .net-controls input[type=range] { vertical-align: middle; }
+  /* note fills the rest of the controls line (flex-basis 0 => never wraps to its own row) */
+  .metres #net_explorer_note { flex: 1 1 0; min-width: 0; }
+  .metres #net_canvas { position: relative; border: 1px solid #e3e3e3; border-radius: 4px; }
+  .metres #cy_explorer { width: 100%; height: calc(100vh - 220px); }
+  .metres #netnav2.cytoscape-navigator {
+    display: block;
+    position: absolute; bottom: 8px; right: 8px;
+    width: 220px; height: 220px;
+    border: 1px solid #ccc; background: rgba(255,255,255,.9);
+    overflow: hidden; z-index: 3;
+  }
+
+  /* in-table search box (Google Charts StringFilter) */
+  .metres .panel-search { float: right; margin-right: 26px; }
+  .metres .metres-filter { display: inline-block; }
+  .metres .metres-filter label { font-weight: 400; font-size: 12px; color: #777; margin-right: 4px; }
+  .metres .metres-filter input { font-size: 12px; padding: 1px 6px; border: 1px solid #ccc; border-radius: 3px; }
+</style>
+
+<!-- main -->
+<section id="main">
+  <div class="container-fluid" style="padding: 0 15px;">
+    <div class="row">
+      <div class="col-xs-12 metres">
+
+        <h1 style="margin-top:10px;">
+          <span><a href=".">Metres Database</a><a class="help-modal" href="#res_metres"><span class="glyphicon glyphicon-question-sign" style="vertical-align:text-top;font-size:14px;"></span></a></span>
+          <span id="index_cat"></span>
+          <span id="poet_xlink" class="xlink"></span>
+          <a href="./?view=network" class="net-explorer-link">Network Explorer &#x25B8;</a>
+        </h1>
+
+        <!-- Corpus: overview + faceted browser -->
+        <div id="layout_corpus" class="layout">
+          <div class="corpus_grid">
+            <div class="facets" id="facets"></div>
+            <div class="main">
+              <div class="tiles" id="tiles"></div>
+              <div class="chips" id="chips"></div>
+              <div class="charts">
+                <div id="panel_foottype" class="panel panel-default">
+                  <div class="panel-heading">Foot type</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_footnum" class="panel panel-default">
+                  <div class="panel-heading">Foot count</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_syllab" class="panel panel-default">
+                  <div class="panel-heading">Line-length profile (top 15)</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_form" class="panel panel-default">
+                  <div class="panel-heading">Poetic form / genre (top 15)</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_stanza" class="panel panel-default">
+                  <div class="panel-heading">Stanza form (top 15)</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_len" class="panel panel-default">
+                  <div class="panel-heading">Poem length (lines)</div>
+                  <div class="panel-body"><img src="/images/loader.gif"></div>
+                </div>
+                <div id="panel_results" class="panel panel-default">
+                  <div class="panel-heading">Matching poems <span id="results_note" style="font-weight:400;font-size:12px;color:#999;"></span>
+                    <span id="results_search" class="panel-search"></span>
+                    <div style="font-weight:400;font-size:11px;color:#999;">Foot&nbsp;count and Stanza sort by number of feet / lines; Line&nbsp;length = syllables per line (10 = decasyllabic; 8.6.8.6 = alternating lines, i.e. common metre), sorted by the first line's length. Click a column header to sort, or type in the filter box to search.</div>
+                  </div>
+                  <div class="panel-body"><div id="results_table"><img src="/images/loader.gif"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poet deep-dive -->
+        <div id="layout_poet" class="layout">
+          <div class="tiles" id="ptiles"></div>
+          <div class="charts">
+            <div id="panel_pfoottype" class="panel panel-default">
+              <div class="panel-heading">Foot type</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_pfootnum" class="panel panel-default">
+              <div class="panel-heading">Foot count</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_pspos" class="panel panel-default">
+              <div class="panel-heading">Rhyme-scheme type</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_pstanza" class="panel panel-default">
+              <div class="panel-heading">Stanza form (top 15)</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_psyllab" class="panel panel-default">
+              <div class="panel-heading">Line-length profile (top 15)</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_pform" class="panel panel-default">
+              <div class="panel-heading">Poetic form / genre (top 15)</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_prhyme" class="panel panel-default">
+              <div class="panel-heading">Rhyme scheme (top 15)</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_plen" class="panel panel-default">
+              <div class="panel-heading">Poem length (lines)</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_pneighbours" class="panel panel-default">
+              <div class="panel-heading">Metrical neighbours <span style="font-weight:400;font-size:12px;color:#999;">(nearest poets by metrical fingerprint)</span></div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_dist" class="panel panel-default">
+              <div class="panel-heading">Form/genre usage — this poet (blue) vs. the corpus (grey)</div>
+              <div class="panel-body" style="height:260px;"><img src="/images/loader.gif"></div>
+            </div>
+            <div id="panel_poems" class="panel panel-default">
+              <div class="panel-heading">Poems <span id="ppoems_note" style="font-weight:400;font-size:12px;color:#999;"></span>
+                <span id="ppoems_search" class="panel-search"></span>
+              </div>
+              <div class="panel-body"><div id="ppoems_table"><img src="/images/loader.gif"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form / genre profile -->
+        <div id="layout_form" class="layout">
+          <div class="fp-id">
+            <h2 class="fp-name"><span id="fp_label">&nbsp;</span> <span id="fp_glyph"></span></h2>
+            <p id="fp_standfirst" class="fp-standfirst"></p>
+            <p id="fp_gloss" class="fp-gloss"></p>
+            <div class="tiles" id="fp_tiles"></div>
+            <div id="fp_strictbar" class="fp-strictbar"></div>
+          </div>
+          <div class="fp-section-h">The recipe <span class="fp-sub">how poems in this form distribute across the other metrical dimensions</span></div>
+          <div class="charts">
+            <div id="fp_foottype" class="panel panel-default"><div class="panel-heading">Foot type</div><div class="panel-body"><img src="/images/loader.gif"></div></div>
+            <div id="fp_footnum"  class="panel panel-default"><div class="panel-heading">Foot count</div><div class="panel-body"><img src="/images/loader.gif"></div></div>
+            <div id="fp_syllab"   class="panel panel-default"><div class="panel-heading">Line-length profile (top 15)</div><div class="panel-body"><img src="/images/loader.gif"></div></div>
+            <div id="fp_stanza"   class="panel panel-default"><div class="panel-heading">Stanza form (top 15)</div><div class="panel-body"><img src="/images/loader.gif"></div></div>
+            <div id="fp_rhyme"    class="panel panel-default"><div class="panel-heading">Rhyme scheme (top 15)</div><div class="panel-body"><img src="/images/loader.gif"></div></div>
+            <div id="fp_heat"     class="panel panel-default">
+              <div class="panel-heading">Joint distribution
+                <select id="fp_heat_pair" class="fp-heat-pair">
+                  <option value="footnum:stanza">foot count &times; stanza</option>
+                  <option value="footnum:spos" selected>foot count &times; rhyme type</option>
+                  <option value="stanza:spos">stanza &times; rhyme type</option>
+                </select>
+              </div>
+              <div class="panel-body"></div>
+            </div>
+          </div>
+          <div class="charts fp-3up">
+            <div id="fp_poets"     class="panel panel-default"><div class="panel-heading">Signature poets <span class="fp-sub">most prolific, and those it is most distinctive for</span></div><div class="panel-body"></div></div>
+            <div id="fp_companions" class="panel panel-default"><div class="panel-heading">Companion forms / genres <span class="fp-sub">tags these poems also carry, vs. chance</span></div><div class="panel-body"></div></div>
+            <div id="fp_variants"  class="panel panel-default"><div class="panel-heading">Variants <span class="fp-sub">poems that depart from the recipe</span></div><div class="panel-body"></div></div>
+          </div>
+          <div id="fp_poems" class="panel panel-default">
+            <div class="panel-heading">Poems <span id="fp_poems_note" style="font-weight:400;font-size:12px;color:#999;"></span>
+              <span id="fp_poems_search" class="panel-search"></span>
+              <a id="fp_refine" class="fp-refine" href="#">Refine in the faceted browser &rarr;</a>
+            </div>
+            <div class="panel-body"><div id="fp_poems_table"><img src="/images/loader.gif"></div></div>
+          </div>
+          <div id="fp_xlinks" class="fp-xlinks"></div>
+        </div>
+
+        <!-- Network Explorer -->
+        <div id="layout_network" class="layout">
+          <div class="net-controls">
+            <a href="./">&#x2039; Overview</a>
+            <label>Network
+              <select id="net_type">
+                <option value="metre_form">Metre &harr; form/genre</option>
+                <option value="form_form">Form &harr; form (co-occurrence)</option>
+                <option value="author_sim">Poet &harr; poet (metrical twins)</option>
+                <option value="author_metre">Poet &harr; metrical signature</option>
+              </select>
+            </label>
+            <label>Max nodes <input type="range" id="net_maxn" min="10" max="100" value="40"> <span id="net_maxn_val">40</span></label>
+            <label>Min. links <input type="range" id="net_minw" min="1" max="25" value="3"> <span id="net_minw_val">3</span></label>
+            <label id="net_focus_wrap" style="display:none;">Focus poet <input list="authors" id="net_focus" placeholder="all poets" autocomplete="off" style="width:150px;"> <a href="#" id="net_focus_clear" style="display:none;font-size:12px;">clear</a></label>
+            <span id="net_explorer_note" style="color:#999;font-size:12px;"></span>
+          </div>
+          <div id="net_canvas">
+            <div id="cy_explorer"></div>
+            <div id="netnav2" class="cytoscape-navigator"></div>
+          </div>
+        </div>
+
+      </div> <!-- /col -->
+    </div> <!-- /row -->
+  </div> <!-- /container -->
+</section> <!-- /main -->
+
+<script type="text/javascript">
+  // === ECPA Metres Database ===
+  // All faceting, distributions, the poet fingerprints and the network are
+  // derived client-side from a single master table (poems.csv). See bin/metres.py.
+
+  google.charts.load('current', {packages:['controls']});   // in-table StringFilter search
+
+  var BASE = "/resources/metres/data/";
+  var POEMS = [];              // array of poem objects (csvjsonConverter)
+  var FACETS = [];             // array of {dim,id,label,poems,authors}
+  var GLOSS = {};              // category id -> one-line gloss (from glosses.csv)
+  var data_a = [];             // raw author datalist rows
+  var qa2f = {};               // author name -> pers id
+  var AUT_NAME = {};            // pers id -> name (fallback when mod_auth lacks it)
+
+  // facet plumbing
+  var PARAM2DIM = { met:'foottype', footnum:'footnum', stanza:'stanza', syllab:'syllab', form:'form', rhyme:'rhyme', spos:'spos' };
+  var DIM2PARAM = { foottype:'met', footnum:'footnum', stanza:'stanza', syllab:'syllab', form:'form', rhyme:'rhyme', spos:'spos' };
+  var DIM2COL   = { foottype:'foottype', footnum:'footnums', stanza:'stanza', spos:'spos', syllab:'syllab', form:'form', rhyme:'rhyme' };
+  var DIM_ORDER = ['foottype','footnum','syllab','rhyme','stanza','form'];
+  var DIM_LABEL = { foottype:'Foot type', footnum:'Foot count', stanza:'Stanza form',
+                    spos:'Rhyme-scheme type', syllab:'Line-length profile', form:'Poetic form / genre',
+                    rhyme:'Rhyme scheme' };
+  var FOOTNUM_SEQ = ['monometer','dimeter','trimeter','tetrameter','pentameter','hexameter','heptameter','octameter'];
+  // numeric sort keys: feet per line, lines per stanza
+  var FOOTNUM_N = { monometer:1,dimeter:2,trimeter:3,tetrameter:4,pentameter:5,hexameter:6,heptameter:7,octameter:8 };
+  var STANZA_N  = { couplet:2,triplet:3,quatrain:4,quintet:5,sestet:6,sestarima:6,septet:7,octet:8,
+                    'nine-line':9,'ten-line':10,'eleven-line':11,'twelve-line':12,'fourteen-line':14 };
+  var pieCols = ["#3366cc","#dc3912","#ff9900","#109618","#990099","#0099c6","#dd4477","#66aa00",
+                 "#b82e2e","#316395","#994499","#22aa99","#aaaa11","#6633cc","#e67300","#8b0707"];
+
+  var q_aut = '';
+  var filter = {};             // dim -> [selected values]; '' value means "(unclassified)"
+  var expanded = {};           // dim -> show all facet values (vs. capped)
+
+  // --- helpers ----------------------------------------------------------------
+  // a poem's set of values for a dimension ('' bucket = unclassified)
+  function poemVals( poem, dim ) {
+    var cell = (poem[ DIM2COL[dim] ] || '') + '';
+    if ( cell === '' ) return [];
+    return cell.split('|');
+  }
+  function labelFor( dim, id ) {
+    if ( id === '' ) return '(unclassified)';
+    for ( var i=0; i<FACETS.length; i++ ) if ( FACETS[i].dim===dim && FACETS[i].id===id ) return FACETS[i].label;
+    return id;
+  }
+  function poemMatches( poem ) {
+    for ( var dim in filter ) {
+      if ( !filter[dim] || !filter[dim].length ) continue;
+      var vals = poemVals( poem, dim );
+      var hit = false;
+      for ( var i=0; i<filter[dim].length; i++ ) {
+        var sel = filter[dim][i];
+        if ( sel === '' ) { if ( vals.length === 0 ) { hit = true; break; } }
+        else if ( vals.indexOf( sel ) !== -1 ) { hit = true; break; }
+      }
+      if ( !hit ) return false;
+    }
+    return true;
+  }
+  function filtered() { return POEMS.filter( poemMatches ); }
+
+  // count distribution of a dim over a set of poems -> [ [id,label,count], ... ]
+  function distribution( poems, dim ) {
+    var c = {}, unc = 0;
+    poems.forEach( function(p) {
+      var vals = poemVals( p, dim );
+      if ( vals.length === 0 ) { unc++; return; }
+      vals.forEach( function(v) { c[v] = (c[v]||0) + 1; } );
+    });
+    var rows = Object.keys(c).map( function(k){ return [ k, labelFor(dim,k), c[k] ]; } );
+    rows.sort( function(a,b){ return b[2]-a[2]; } );
+    if ( unc > 0 ) rows.push( ['', '(unclassified)', unc ] );
+    return rows;
+  }
+
+  // === boot ===================================================================
+  function load( file, json ) {
+    return $.ajax({ url: BASE + file, dataType: json ? 'json' : 'text' });
+  }
+  $(function() {
+    $.when( load('poems.csv'), load('facets.csv'), load('data_aut.csv'), load('glosses.csv') ).done(
+      function( poemsR, facetsR, autR, glossR ) {
+        POEMS  = csvjsonConverter( poemsR[0], ',' );
+        FACETS = csvjsonConverter( facetsR[0], ',' );
+        // csvjsonConverter coerces numeric-looking strings to numbers; force
+        // ids/labels/dims back to strings (e.g. syllab "10", numeric form labels)
+        FACETS.forEach( function(f){
+          f.id    = (f.id===undefined||f.id===0) ? '' : f.id+'';
+          f.label = (f.label===undefined) ? '' : f.label+'';
+          f.dim   = f.dim+'';
+        });
+        if ( glossR ) csvjsonConverter( glossR[0], ',' ).forEach( function(g){ GLOSS[ g.id+'' ] = g.gloss+''; } );
+        // author datalist
+        data_a = autR[0].split("\r\n"); data_a.pop();
+        buildAuthorList();
+        google.charts.setOnLoadCallback( start );
+      }
+    );
+  });
+
+  function buildAuthorList() {
+    var list = '<datalist id="authors">';
+    $.each( data_a, function(i,v){
+      if ( i===0 ) return true;
+      var row = v.match(/^([^,]*),(.*)$/); if (!row) return true;
+      var name = row[2].replace(/"/g,'');
+      list += '<option value="'+name+'" data-value="'+row[1]+'"/>';
+      qa2f[ name ] = row[1];
+      AUT_NAME[ row[1] ] = name;
+    });
+    list += '</datalist>';
+    // (a search box could append this; facets are the primary browse path)
+    $('body').append( list );
+  }
+
+  // === routing ================================================================
+  function start() {
+    var sp = new URLSearchParams( window.location.search );
+    if ( sp.get('view') === 'network' ) {
+      renderNetworkExplorer();
+      return;
+    }
+    if ( sp.get('aut') ) {
+      q_aut = sp.get('aut');
+      renderPoet();
+      return;
+    }
+    // seed filter from any facet params
+    filter = {};
+    for ( var p in PARAM2DIM ) {
+      var raw = sp.get( p );
+      if ( raw !== null && raw !== '' ) filter[ PARAM2DIM[p] ] = raw.split(',');
+      else if ( sp.has(p) ) filter[ PARAM2DIM[p] ] = ['']; // ?form= (empty) => unclassified
+    }
+    // a single ?form=X (one form, no other facets) opens the form profile,
+    // unless &view=browse asks for the faceted browser explicitly
+    var fkeys = Object.keys( filter );
+    if ( sp.get('view') !== 'browse' && fkeys.length === 1 && fkeys[0] === 'form'
+         && filter.form.length === 1 && filter.form[0] !== '' ) {
+      renderFormProfile( filter.form[0] );
+      return;
+    }
+    $('#index_cat').text( Object.keys(filter).length ? '' : 'corpus overview' );
+    $('#layout_corpus').show();
+    renderFacets();
+    renderCorpus();
+  }
+
+  // === permalink ==============================================================
+  // sidebar dims plus any active filter dim not in the sidebar (e.g. spos)
+  function activeDims() { return DIM_ORDER.concat( Object.keys(filter).filter(function(d){ return DIM_ORDER.indexOf(d)<0; }) ); }
+  function syncURL() {
+    var parts = [];
+    activeDims().forEach( function(dim){
+      if ( filter[dim] && filter[dim].length )
+        parts.push( DIM2PARAM[dim] + '=' + filter[dim].map(encodeURIComponent).join(',') );
+    });
+    var qs = parts.length ? ('?' + parts.join('&')) : window.location.pathname;
+    history.replaceState( null, '', parts.length ? (window.location.pathname + qs) : window.location.pathname );
+  }
+
+  // === facet sidebar ==========================================================
+  function renderFacets() {
+    var html = '';
+    DIM_ORDER.forEach( function(dim){
+      var vals = FACETS.filter( function(f){ return f.dim===dim; } );
+      if ( dim==='footnum' ) {
+        vals.sort( function(a,b){
+          var ia = FOOTNUM_SEQ.indexOf(a.id), ib = FOOTNUM_SEQ.indexOf(b.id);
+          return (ia<0?99:ia) - (ib<0?99:ib);
+        });
+      }
+      // cap long lists (form/syllab) to keep the sidebar usable; "more" expands
+      var baseCap = (dim==='form'||dim==='syllab'||dim==='rhyme') ? 18 : 99;
+      var cap = expanded[dim] ? vals.length : baseCap;
+      html += '<h4>'+DIM_LABEL[dim]+'</h4>';
+      vals.slice(0,cap).forEach( function(f){
+        var on = filter[dim] && filter[dim].indexOf(f.id) !== -1;
+        var cls = 'facet-val' + (on?' on':'') + (f.id===''?' unclassified':'');
+        html += '<span class="'+cls+'" data-dim="'+dim+'" data-id="'+escAttr(f.id)+'">'
+              +  escHtml(f.label) + '<span class="cnt">'+f.poems+'</span></span>';
+      });
+      if ( vals.length > baseCap )
+        html += '<span class="facet-more" data-dim="'+dim+'" style="display:block;padding:1px 4px;color:#3366cc;cursor:pointer;">'
+              + ( expanded[dim] ? '↑ show fewer' : '↓ show all '+vals.length ) + '</span>';
+    });
+    $('#facets').html( html );
+  }
+
+  $(document.body).on('click', '.facet-more', function(){
+    var dim = $(this).data('dim'); expanded[dim] = !expanded[dim]; renderFacets();
+  });
+
+  $(document.body).on('click', '.facet-val[data-dim]', function(){
+    addFilter( $(this).data('dim'), $(this).attr('data-id') );
+  });
+
+  // chips (active filter summary)
+  function renderChips() {
+    var html = '';
+    activeDims().forEach( function(dim){
+      if ( !filter[dim] ) return;
+      filter[dim].forEach( function(id){
+        html += '<span class="chip" data-dim="'+dim+'" data-id="'+escAttr(id)+'">'
+              + escHtml(DIM_LABEL[dim]+': '+labelFor(dim,id)) + '<span class="x">&times;</span></span>';
+      });
+    });
+    if ( html ) html += '<span class="chip clear" id="chip_clear">clear all</span>';
+    else html = '<span style="color:#999;font-size:12px;">No filters applied — click a facet on the left (or a node in the network below) to narrow the corpus; the URL updates so any view can be bookmarked or cited.</span>';
+    $('#chips').html( html );
+  }
+  $(document.body).on('click', '.chip[data-dim]', function(){
+    var dim = $(this).data('dim'), id = $(this).attr('data-id');
+    filter[dim].splice( filter[dim].indexOf(id), 1 );
+    if ( !filter[dim].length ) delete filter[dim];
+    syncURL(); renderFacets(); renderCorpus();
+  });
+  $(document.body).on('click', '#chip_clear', function(){
+    filter = {}; syncURL(); renderFacets(); renderCorpus();
+  });
+
+  // toggle a (dim,id) into the filter — shared by the sidebar and the network
+  function addFilter( dim, id ) {
+    filter[dim] = filter[dim] || [];
+    var i = filter[dim].indexOf(id);
+    if ( i === -1 ) filter[dim].push(id); else filter[dim].splice(i,1);
+    if ( !filter[dim].length ) delete filter[dim];
+    syncURL(); renderFacets(); renderCorpus();
+  }
+
+  // === corpus render ==========================================================
+  var corpusCharts = {};
+  function renderCorpus() {
+    var poems = filtered();
+    renderChips();
+    renderTiles( poems );
+    drawDist( '#panel_foottype', poems, 'foottype', 'pie' );
+    drawDist( '#panel_footnum',  poems, 'footnum',  'col', FOOTNUM_SEQ );
+    drawDist( '#panel_syllab',   poems, 'syllab',   'col', null, 15 );
+    drawDist( '#panel_form',     poems, 'form',     'bar', null, 15 );
+    drawDist( '#panel_stanza',   poems, 'stanza',   'bar', null, 15 );
+    drawLenHist( '#panel_len',   poems );
+    renderResults( poems );
+  }
+
+  // distinct individual poets across a poem set; ';'-joined aut_ids are
+  // collaborations (e.g. "persA;persB"), so each person is counted once, not the pair
+  function countPersons( poems ) {
+    var s = {};
+    poems.forEach(function(p){ (p.aut_id+'').split(';').forEach(function(a){ if (a) s[a]=1; }); });
+    return Object.keys(s).length;
+  }
+
+  function renderTiles( poems ) {
+    var ft = distribution( poems, 'foottype' )[0];
+    var fm = distribution( poems, 'form' ).filter(function(r){return r[0]!=='';})[0];
+    var multi = poems.filter( function(p){ return poemVals(p,'footnum').length > 1; } ).length;
+    var uncForm = poems.filter( function(p){ return poemVals(p,'form').length === 0; } ).length;
+    var pct = function(n){ return poems.length ? Math.round(100*n/poems.length) : 0; };
+    var tiles = [
+      [ poems.length.toLocaleString(), 'poems' ],
+      [ countPersons(poems), 'poets' ],
+      [ ft ? ft[1] : '—', 'commonest foot type' ],
+      [ fm ? fm[1] : '—', 'commonest form/genre' ],
+      [ pct(multi)+'%', 'mixed foot count' ],
+      [ pct(uncForm)+'%', 'form unclassified' ]
+    ];
+    $('#tiles').html( tiles.map( function(t){
+      return '<div class="tile"><div class="num">'+escHtml(t[0]+'')+'</div><div class="lab">'+escHtml(t[1])+'</div></div>';
+    }).join('') );
+  }
+
+  // draw a categorical distribution with the chart type that fits
+  function drawDist( sel, poems, dim, type, orderList, cap ) {
+    var rows = distribution( poems, dim );
+    if ( orderList ) {
+      rows.sort( function(a,b){
+        var ia=orderList.indexOf(a[0]), ib=orderList.indexOf(b[0]);
+        return (ia<0?99:ia)-(ib<0?99:ib);
+      });
+    }
+    if ( rows.length ) panelDownload( sel, 'metres-'+sel.replace('#panel_','')+'.csv', ['id','label','poems'], rows );
+    var truncated = 0;
+    if ( cap && rows.length > cap ) { truncated = rows.length - cap; rows = rows.slice(0, cap); }
+    var body = $(sel+' .panel-body')[0];
+    if ( !rows.length ) { $(body).html('<p style="padding:10px;color:#999;">No data for the current selection.</p>'); return; }
+
+    var dt = new google.visualization.DataTable();
+    dt.addColumn('string', DIM_LABEL[dim]);
+    dt.addColumn('number', 'Poems');
+    if ( type==='bar' || type==='col' ) dt.addColumn({type:'string', role:'style'});
+    rows.forEach( function(r,i){
+      var cells = [ r[1], r[2] ];
+      if ( type==='bar' || type==='col' )
+        cells.push( r[0]==='' ? 'color:#ccc' : ('color:'+pieCols[i % pieCols.length]) );
+      dt.addRow( cells );
+    });
+    var opts, chart;
+    if ( type==='pie' ) {
+      opts = { pieHole:.4, pieSliceText:'percentage', legend:{position:'right', textStyle:{fontSize:11}},
+               chartArea:{width:'92%',height:'88%'}, colors:pieCols, tooltip:{trigger:'focus'} };
+      chart = new google.visualization.PieChart( body );
+    } else if ( type==='col' ) {
+      opts = { legend:{position:'none'}, chartArea:{top:10,left:40,width:'85%',height:'72%'},
+               vAxis:{format:'#'}, hAxis:{slantedText:true, slantedTextAngle:40, textStyle:{fontSize:10}} };
+      chart = new google.visualization.ColumnChart( body );
+    } else {
+      opts = { legend:{position:'none'}, chartArea:{top:5,left:120,width:'70%',height:'90%'},
+               hAxis:{format:'#'} };
+      chart = new google.visualization.BarChart( body );
+    }
+    chart.draw( dt, opts );
+    if ( truncated ) $(sel+' .panel-heading').attr('title', truncated+' more not shown');
+  }
+
+  // === Network Explorer (full-page, switchable graph) =========================
+  var cyx = null, cyxNav = null;
+  var NET_FOCUS = null;        // poet network: aut_id to show an ego-network for (null = full network)
+  function nodeSz( w, max ) { return 16 + (w/max)*60; }
+  function edgeW( w, max ) { return 1 + (w/max)*8; }
+  // association (lift) helpers: edges are weighted/coloured by how far observed
+  // co-occurrence departs from chance, not by raw count — so the iambic base rate
+  // (90% of poems) no longer dominates and only the surprises stand out.
+  function log2lift( obs, ca, cb, N ) { var exp = ca*cb/N; return ( exp>0 && obs>0 ) ? Math.log(obs/exp)/Math.LN2 : 0; }
+  function liftCol( l2 ) {
+    if ( l2 >=  0.6 ) return '#d62728';   // far more together than chance
+    if ( l2 >=  0.2 ) return '#ff9896';   // somewhat more
+    if ( l2 <= -0.6 ) return '#1f77b4';   // far less (mutual avoidance)
+    if ( l2 <= -0.2 ) return '#aec7e8';   // somewhat less
+    return '#cccccc';                     // about as expected
+  }
+  function liftW( l2 ) { return 1 + Math.min(Math.abs(l2),3)*2; }   // 1..7 by strength of deviation
+  // each form's most over-represented foot type (its "metrical family"), for node colouring
+  var FORM_FAM = null, FAM_COL = { iamb:'#9ecae1', anapaest:'#a1d99b', trochee:'#fdae6b', dactyl:'#bcbddc', '':'#dddddd' };
+  function buildFormFamily() {
+    if ( FORM_FAM ) return FORM_FAM;
+    var N=POEMS.length, ft={}, fc={}, co={};
+    POEMS.forEach(function(p){
+      var fts=poemVals(p,'foottype'), forms=poemVals(p,'form');
+      fts.forEach(function(f){ ft[f]=(ft[f]||0)+1; });
+      forms.forEach(function(g){ fc[g]=(fc[g]||0)+1; fts.forEach(function(f){ co[f+'@@'+g]=(co[f+'@@'+g]||0)+1; }); });
+    });
+    var fam={};
+    Object.keys(fc).forEach(function(g){ var best='', bl=0;
+      ['iamb','anapaest','trochee','dactyl'].forEach(function(f){ var c=co[f+'@@'+g]; if(!c)return;
+        var l=c/(ft[f]*fc[g]/N); if ( l>bl ) { bl=l; best=f; } });
+      fam[g]=best; });
+    FORM_FAM=fam; return fam;
+  }
+
+  // metre (foot type + foot count) ↔ form/genre, over the whole corpus
+  function buildMetreForm( minW, maxN ) {
+    var formCount = {}, mCount = {}, edge = {};
+    POEMS.forEach(function(p){
+      var forms = poemVals(p,'form');
+      var metres = poemVals(p,'foottype').map(function(v){return 'foottype:'+v;})
+                   .concat( poemVals(p,'footnum').map(function(v){return 'footnum:'+v;}) );
+      forms.forEach(function(fm){ formCount[fm]=(formCount[fm]||0)+1; });
+      metres.forEach(function(mk){ mCount[mk]=(mCount[mk]||0)+1;
+        forms.forEach(function(fm){ var k=mk+'@@'+fm; edge[k]=(edge[k]||0)+1; }); });
+    });
+    var N = POEMS.length, fam = buildFormFamily();
+    var topForms = Object.keys(formCount).sort(function(a,b){return formCount[b]-formCount[a];}).slice(0,maxN);
+    var keep = {}; topForms.forEach(function(f){ keep[f]=1; });
+    var usedM = {}, usedF = {}, edges = [];
+    Object.keys(edge).forEach(function(k){
+      var mk=k.split('@@')[0], fm=k.split('@@')[1];
+      if ( keep[fm] && edge[k]>=minW ) {
+        var l = log2lift(edge[k],mCount[mk],formCount[fm],N);
+        if ( Math.abs(l) < 0.2 ) return;        // hide "about as expected" links; keep only the surprises
+        usedM[mk]=1; usedF[fm]=1; edges.push([mk,fm,l]);
+      }
+    });
+    var forms = topForms.filter(function(fm){ return usedF[fm]; });
+    var maxNode = Math.max.apply(null, Object.keys(usedM).map(function(mk){return mCount[mk];})
+                    .concat(forms.map(function(fm){return formCount[fm];})).concat([2]));
+    var els = [];
+    Object.keys(usedM).forEach(function(mk){
+      var dim=mk.split(':')[0], id=mk.slice(dim.length+1);
+      els.push({ data:{ id:'m_'+mk, label:labelFor(dim,id), col:(dim==='foottype'?'#3366cc':'#109618'), strong:1,
+                        sz:nodeSz(mCount[mk],maxNode), href:'./?'+DIM2PARAM[dim]+'='+encodeURIComponent(id) } });
+    });
+    forms.forEach(function(fm){
+      els.push({ data:{ id:'f_'+fm, label:labelFor('form',fm), col:(FAM_COL[fam[fm]||'']||'#dddddd'), strong:0,
+                        sz:nodeSz(formCount[fm],maxNode), href:'./?form='+encodeURIComponent(fm) } });
+    });
+    edges.forEach(function(e){ els.push({ data:{ source:'m_'+e[0], target:'f_'+e[1], ew:liftW(e[2]), ecol:liftCol(e[2]) } }); });
+    return { els:els, note:'metre ↔ form by association — edge red = paired far more than chance, blue = far less (neutral links hidden); form colour = its leaning foot type (iambic pale-blue, anapaestic green, trochaic orange) · from ≥'+minW+' poems · click a node to filter' };
+  }
+
+  // form ↔ form co-occurrence (which genre/form tags share poems)
+  function buildFormForm( minW, maxN ) {
+    var formCount = {}, edge = {};
+    POEMS.forEach(function(p){
+      var forms = poemVals(p,'form');
+      forms.forEach(function(fm){ formCount[fm]=(formCount[fm]||0)+1; });
+      for ( var i=0;i<forms.length;i++ ) for ( var j=i+1;j<forms.length;j++ ) {
+        var a=forms[i], b=forms[j], k=a<b?a+'@@'+b:b+'@@'+a; edge[k]=(edge[k]||0)+1;
+      }
+    });
+    var N = POEMS.length, fam = buildFormFamily();
+    var topForms = Object.keys(formCount).sort(function(a,b){return formCount[b]-formCount[a];}).slice(0,maxN);
+    var keep = {}; topForms.forEach(function(f){ keep[f]=1; });
+    var edges = [], connected = {};
+    Object.keys(edge).forEach(function(k){
+      var a=k.split('@@')[0], b=k.split('@@')[1];
+      if ( keep[a] && keep[b] && edge[k]>=minW ) {
+        var l = log2lift(edge[k],formCount[a],formCount[b],N);
+        if ( Math.abs(l) < 0.2 ) return;        // hide "about as expected" links; keep only the surprises
+        edges.push([a,b,l]); connected[a]=1; connected[b]=1;
+      }
+    });
+    var nodes = topForms.filter(function(f){ return connected[f]; });
+    var maxNode = Math.max.apply(null, nodes.map(function(f){return formCount[f];}).concat([2]));
+    var els = [];
+    nodes.forEach(function(fm){ els.push({ data:{ id:'f_'+fm, label:labelFor('form',fm), col:(FAM_COL[fam[fm]||'']||'#dddddd'), strong:0,
+                        sz:nodeSz(formCount[fm],maxNode), href:'./?form='+encodeURIComponent(fm) } }); });
+    edges.forEach(function(e){ els.push({ data:{ source:'f_'+e[0], target:'f_'+e[1], ew:liftW(e[2]), ecol:liftCol(e[2]) } }); });
+    return { els:els, note:nodes.length+' forms · edge red = co-occur far more than chance, blue = far less; node colour = leaning foot type · from ≥'+minW+' poems · click a form to filter' };
+  }
+
+  // poet ↔ poet metrical-fingerprint similarity (each poet linked to its 3 nearest)
+  // Ego-network of one poet: the focus poet (gold) + its K nearest by fingerprint.
+  // Lets you pull up any poet (incl. canonical-but-undersampled ones like Pope) on demand,
+  // even when they're metrically peripheral and so absent from the centrality view.
+  function buildAuthorEgo( fp, focus, maxN ) {
+    var vf = fp[focus].v, sims = [];
+    Object.keys(fp).forEach(function(b){ if ( b===focus || fp[b].n<3 ) return;
+      var dot=0, vb=fp[b].v; for ( var k in vf ) if ( vb[k] ) dot += vf[k]*vb[k];
+      sims.push([b, dot/(fp[focus].norm*fp[b].norm)]); });
+    sims.sort(function(x,y){ return y[1]-x[1]; });
+    var K = Math.max(6, Math.min(maxN, 15)), nbrs = sims.slice(0,K);
+    var maxSim = nbrs.length ? (nbrs[0][1]||1) : 1, els = [];
+    els.push({ data:{ id:'a_'+focus, label:autName(focus), col:'#f0ad4e', strong:1, focus:1,
+                      sz:76, href:'./?aut='+focus } });
+    nbrs.forEach(function(s){
+      els.push({ data:{ id:'a_'+s[0], label:autName(s[0]), col:'#3366cc', strong:1,
+                        sz:14+(s[1]/maxSim)*40, href:'./?aut='+s[0] } });
+      els.push({ data:{ source:'a_'+focus, target:'a_'+s[0], ew:1+s[1]*6, ecol:'#999' } });
+    });
+    // light edges between the neighbours that themselves resemble each other (ego-net texture)
+    for ( var i=0; i<nbrs.length; i++ ) for ( var j=i+1; j<nbrs.length; j++ ) {
+      var a=nbrs[i][0], b=nbrs[j][0], va=fp[a].v, vb=fp[b].v, dot=0;
+      for ( var k in va ) if ( vb[k] ) dot += va[k]*vb[k];
+      if ( dot/(fp[a].norm*fp[b].norm) >= 0.72 ) els.push({ data:{ source:'a_'+a, target:'a_'+b, ew:0.6, ecol:'#e0e0e0' } });
+    }
+    return { els:els, note:'metrical ego-network of '+autName(focus)+' (gold) and its '+nbrs.length+
+            ' nearest poets by fingerprint · node size = closeness to '+autName(focus)+' · click a poet to open their page' };
+  }
+
+  function buildAuthorSim( maxN ) {
+    var fp = buildFingerprints();
+    if ( NET_FOCUS && fp[NET_FOCUS] ) return buildAuthorEgo( fp, NET_FOCUS, maxN );
+    // MUTUAL k-nearest-neighbours: an edge only when both poets rank each other in
+    // their top-K. Breaks the uniform "everyone has 3 links" mesh into genuine
+    // metrical twins and clusters; poets with no reciprocated match drop out honestly.
+    var auts = Object.keys(fp).filter(function(a){ return fp[a].n>=3; });
+    var K = 6, topk = {};
+    auts.forEach(function(a){
+      var sims = [], va=fp[a].v;
+      auts.forEach(function(b){ if (a===b) return; var dot=0, vb=fp[b].v;
+        for ( var k in va ) if ( vb[k] ) dot += va[k]*vb[k];
+        sims.push([b, dot/(fp[a].norm*fp[b].norm)]); });
+      sims.sort(function(x,y){ return y[1]-x[1]; });
+      topk[a] = {}; sims.slice(0,K).forEach(function(s){ topk[a][s[0]]=s[1]; });
+    });
+    var edges = [], seen = {}, deg = {};
+    auts.forEach(function(a){ deg[a]=0; });
+    auts.forEach(function(a){ Object.keys(topk[a]).forEach(function(b){
+      if ( topk[b] && topk[b][a]!==undefined ) {                 // reciprocated => a twin
+        var key=a<b?a+'|'+b:b+'|'+a;
+        if (!seen[key]) { seen[key]=1; edges.push([a,b,topk[a][b]]); deg[a]++; deg[b]++; }
+      }
+    }); });
+    // keep the most-connected twins (top by mutual degree); drop anything left isolated
+    var connected = auts.filter(function(a){ return deg[a]>0; });
+    connected.sort(function(a,b){ return deg[b]-deg[a] || fp[b].n-fp[a].n; });
+    var keep = connected.slice(0,maxN), inKeep = {};
+    keep.forEach(function(a){ inKeep[a]=1; });
+    var disp = edges.filter(function(e){ return inKeep[e[0]] && inKeep[e[1]]; }), hasEdge = {};
+    disp.forEach(function(e){ hasEdge[e[0]]=1; hasEdge[e[1]]=1; });
+    var nodes = keep.filter(function(a){ return hasEdge[a]; });
+    var maxDeg = Math.max.apply(null, nodes.map(function(a){return deg[a];}).concat([1]));
+    var els = [];
+    nodes.forEach(function(a){ els.push({ data:{ id:'a_'+a, label:autName(a), col:'#3366cc', strong:1,
+                        sz:nodeSz(deg[a],maxDeg), href:'./?aut='+a } }); });
+    disp.forEach(function(e){ els.push({ data:{ source:'a_'+e[0], target:'a_'+e[1], ew:1+e[2]*6, ecol:'#bbb' } }); });
+    return { els:els, note:nodes.length+' poets with a mutual metrical "twin" (both rank each other in their nearest '+K+') · clusters share a signature · node size = number of twins · click a poet to open their page' };
+  }
+
+  // poet ↔ metrical signature: links each (prolific) poet to the foot types, foot
+  // counts and forms they use DISTINCTIVELY (far more than the corpus average),
+  // so shared signatures cluster poets together. Bipartite, association-weighted.
+  function buildAuthorMetre( maxN ) {
+    var N = POEMS.length, poetn = {}, feat = {}, pf = {};
+    POEMS.forEach(function(p){
+      var a=p.aut_id; poetn[a]=(poetn[a]||0)+1;
+      var fs = {};
+      poemVals(p,'foottype').forEach(function(v){ fs['foottype:'+v]=1; });
+      poemVals(p,'footnum').forEach(function(v){ fs['footnum:'+v]=1; });
+      poemVals(p,'form').forEach(function(v){ fs['form:'+v]=1; });
+      Object.keys(fs).forEach(function(f){ feat[f]=(feat[f]||0)+1; if(!pf[a])pf[a]={}; pf[a][f]=(pf[a][f]||0)+1; });
+    });
+    var LIFT=1.6, SUP=3;
+    var poets = Object.keys(poetn).filter(function(a){ return poetn[a]>=8; })
+                  .sort(function(a,b){ return poetn[b]-poetn[a]; }).slice(0,maxN);
+    var edges = [], featDeg = {};
+    poets.forEach(function(a){ Object.keys(pf[a]).forEach(function(f){
+      var c=pf[a][f], lift=c/(poetn[a]*feat[f]/N);
+      if ( lift>=LIFT && c>=SUP ) { edges.push([a,f,lift]); featDeg[f]=(featDeg[f]||0)+1; }
+    }); });
+    var keepFeat = {}; Object.keys(featDeg).forEach(function(f){ if(featDeg[f]>=2) keepFeat[f]=1; });  // shared signatures only
+    edges = edges.filter(function(e){ return keepFeat[e[1]]; });
+    var poetHas = {}; edges.forEach(function(e){ poetHas[e[0]]=1; });
+    var shown = poets.filter(function(a){ return poetHas[a]; });
+    var maxP = Math.max.apply(null, shown.map(function(a){return poetn[a];}).concat([2]));
+    var maxF = Math.max.apply(null, Object.keys(keepFeat).map(function(f){return featDeg[f];}).concat([2]));
+    var maxL = Math.max.apply(null, edges.map(function(e){return e[2];}).concat([2]));
+    var els = [];
+    shown.forEach(function(a){ els.push({ data:{ id:'a_'+a, label:autName(a), col:'#756bb1', strong:1,
+                        sz:nodeSz(poetn[a],maxP), href:'./?aut='+a } }); });
+    Object.keys(keepFeat).forEach(function(f){
+      var dim=f.split(':')[0], id=f.slice(dim.length+1);
+      var col = dim==='foottype'?'#3366cc':(dim==='footnum'?'#109618':'#ff9900');
+      var href = dim==='form' ? './?form='+encodeURIComponent(id) : './?'+DIM2PARAM[dim]+'='+encodeURIComponent(id);
+      els.push({ data:{ id:'x_'+f, label:labelFor(dim,id), col:col, strong:0, sz:nodeSz(featDeg[f],maxF), href:href } });
+    });
+    edges.forEach(function(e){ els.push({ data:{ source:'a_'+e[0], target:'x_'+e[1], ew:edgeW(e[2],maxL), ecol:'#ccc' } }); });
+    return { els:els, note:shown.length+' poets (purple) ↔ '+Object.keys(keepFeat).length+
+            ' signatures they share distinctively (foot type blue, count green, form orange) · edge = used ≥'+LIFT+
+            '× the corpus rate (so iambic, the near-universal default, is no poet’s signature and never appears) · click to explore' };
+  }
+
+  function buildNetwork( type, minW, maxN ) {
+    if ( type==='form_form' )    return buildFormForm( minW, maxN );
+    if ( type==='author_sim' )   return buildAuthorSim( maxN );
+    if ( type==='author_metre' ) return buildAuthorMetre( maxN );
+    return buildMetreForm( minW, maxN );
+  }
+
+  var NET_LAYOUT = { name:'cose', animate:false, padding:40, randomize:true,
+                     nodeDimensionsIncludeLabels:true,   // reserve room for labels => far less overlap
+                     nodeRepulsion:22000, idealEdgeLength:135, nodeOverlap:30,
+                     componentSpacing:120, gravity:0.2, numIter:1500 };
+  function drawExplorer() {
+    var type = $('#net_type').val() || 'metre_form';
+    var minW = parseInt($('#net_minw').val(),10) || 1;
+    var maxN = parseInt($('#net_maxn').val(),10) || 40;
+    var built = buildNetwork( type, minW, maxN );
+    $('#net_explorer_note').text( built.note );
+    if ( !built.els.length ) { if ( cyx ) cyx.elements().remove(); return; }
+    if ( !cyx ) {
+      cyx = cytoscape({
+        container: document.getElementById('cy_explorer'),
+        elements: built.els,
+        wheelSensitivity: 0.2,
+        style: [
+          { selector:'node', style:{ 'label':'data(label)','background-color':'data(col)','width':'data(sz)','height':'data(sz)',
+              'font-size':10,'min-zoomed-font-size':3,'text-wrap':'wrap','text-max-width':'90px','color':'#333','text-valign':'bottom' } },
+          { selector:'node[strong=1]', style:{ 'color':'#fff','text-valign':'center','text-outline-color':'data(col)','text-outline-width':2,'font-weight':'bold','font-size':11,'min-zoomed-font-size':2 } },
+          { selector:'node[strong=0]', style:{ 'font-size':9,'text-max-width':'84px',
+              'text-background-color':'#ffffff','text-background-opacity':0.78,'text-background-shape':'roundrectangle','text-background-padding':1.5 } },
+          { selector:'node[focus=1]', style:{ 'border-width':3,'border-color':'#b8860b','font-size':13 } },
+          { selector:'edge', style:{ 'width':'data(ew)','line-color':'data(ecol)','curve-style':'bezier','opacity':.6 } },
+          { selector:'.faded', style:{ 'opacity':.12,'text-opacity':.12 } },
+          { selector:'.hl', style:{ 'opacity':1,'text-opacity':1 } }
+        ],
+        layout: NET_LAYOUT
+      });
+      cyx.on('mouseover','node', function(e){ var n=e.target; cyx.elements().addClass('faded');
+        n.removeClass('faded').addClass('hl');
+        n.connectedEdges().removeClass('faded').addClass('hl').connectedNodes().removeClass('faded').addClass('hl'); });
+      cyx.on('mouseout','node', function(){ cyx.elements().removeClass('faded hl'); });
+      cyx.on('tap','node', function(e){ var h = e.target.data('href'); if ( h ) window.location.href = h; });
+      try { cyx.panzoom(); } catch(e){}
+      try { cyxNav = cyx.navigator({ container: document.getElementById('netnav2') }); } catch(e){}
+    } else {
+      cyx.batch(function(){ cyx.elements().remove(); cyx.add( built.els ); });
+      cyx.layout( NET_LAYOUT ).run();
+    }
+    cyx.resize(); cyx.fit( undefined, 40 );
+    setTimeout(function(){ try { cyx.resize(); cyx.fit( undefined, 40 ); if ( cyxNav && cyxNav.resize ) cyxNav.resize(); } catch(e){} }, 0);
+  }
+
+  function renderNetworkExplorer() {
+    $('#index_cat').text('network explorer');
+    $('.net-explorer-link').hide();
+    $('#layout_network').show();
+    $('#net_maxn').on('input', function(){ $('#net_maxn_val').text(this.value); });
+    $('#net_minw').on('input', function(){ $('#net_minw_val').text(this.value); });
+    // focus-poet search applies only to the poet network
+    function syncFocusUi() {
+      var isPoet = $('#net_type').val() === 'author_sim';
+      $('#net_focus_wrap').toggle( isPoet );
+      if ( !isPoet ) { NET_FOCUS = null; $('#net_focus').val(''); $('#net_focus_clear').hide(); }
+    }
+    $('#net_focus').on('change', function(){
+      var name = $(this).val().trim(), id = name ? qa2f[name] : null;
+      NET_FOCUS = ( id && POEMS ) ? id : null;     // ignore unknown names => full network
+      $('#net_focus_clear').toggle( !!NET_FOCUS );
+      drawExplorer();
+    });
+    $('#net_focus_clear').on('click', function(e){ e.preventDefault();
+      NET_FOCUS = null; $('#net_focus').val(''); $(this).hide(); drawExplorer(); });
+    $('#net_type').on('change', syncFocusUi);
+    $('#net_type, #net_maxn, #net_minw').on('change', drawExplorer);
+    syncFocusUi();
+    drawExplorer();
+  }
+
+  // === results table ==========================================================
+  function poemLink( p ) {
+    var t = (mod_work[ p.poem_id ] && mod_work[ p.poem_id ].title) ? mod_work[ p.poem_id ].title : p.poem_id;
+    return '<a href="/works/'+p.poem_id+'.shtml#analysis">'+escHtml(t)+'</a>';
+  }
+  function autName( id ) {  // forename-first, for headings
+    return ( mod_auth[id] && mod_auth[id].name ) ? mod_auth[id].name : ( AUT_NAME[id] || id );
+  }
+  function autReg( id ) {   // "surname, forename", for sortable table columns
+    if ( mod_auth[id] && mod_auth[id].reg ) return mod_auth[id].reg;
+    if ( (id+'').indexOf(';') !== -1 ) {    // composite (collaborative) ids
+      var parts = id.split(';');
+      var regs = parts.map( function(p){ return mod_auth[p] && mod_auth[p].reg; } );
+      if ( regs.every(Boolean) ) return regs.join('; ');     // every component sortable
+      return AUT_NAME[id] || regs.map( function(r,i){ return r || parts[i]; } ).join('; ');
+    }
+    return AUT_NAME[id] || id;
+  }
+  function autLink( p ) {
+    return '<a href="./?aut='+p.aut_id+'">'+escHtml( autReg( p.aut_id ) )+'</a>';
+  }
+  function joinLabels( p, dim ) {
+    return poemVals(p,dim).map(function(v){ return labelFor(dim,v); }).join(', ');
+  }
+  // table sort keys + ordered display labels.
+  // numeric dims (foot count, stanza): sort by the LOWEST value in the group.
+  function minNum( p, dim, map ) {
+    var vs = poemVals(p,dim);
+    return vs.length ? Math.min.apply( null, vs.map(function(v){ return map[v]||90; }) ) : 99;
+  }
+  // display labels ordered: by numeric map (ascending) if given, else alphabetically
+  function orderedLabels( p, dim, map ) {
+    var vs = poemVals(p,dim).slice();
+    if ( map ) vs.sort(function(a,b){ return (map[a]||90)-(map[b]||90); });
+    else vs.sort(function(a,b){ var la=labelFor(dim,a).toLowerCase(), lb=labelFor(dim,b).toLowerCase(); return la<lb?-1:(la>lb?1:0); });
+    return vs.map(function(v){ return labelFor(dim,v); });
+  }
+  function firstAlpha( p, dim ) { var ls = orderedLabels(p,dim,null); return ls.length ? ls[0].toLowerCase() : '~'; }
+  function syllabVal( p ) { var n = parseInt( (p.syllab||'')+'', 10 ); return isNaN(n) ? 999 : n; }
+  // per-poem rows for CSV export (mirrors the results / poet-poems tables)
+  var POEM_EXPORT_HEADERS = ['poem_id','title','author','foot type','foot count','line length','stanza','rhyme-scheme type','form/genre','rhyme scheme','metre','lines'];
+  function poemExport( poems ) {
+    return poems.map(function(p){
+      return [ p.poem_id, (mod_work[p.poem_id]&&mod_work[p.poem_id].title)||'', autReg(p.aut_id),
+               joinLabels(p,'foottype'), orderedLabels(p,'footnum',FOOTNUM_N).join('; '), (p.syllab||'')+'',
+               orderedLabels(p,'stanza',STANZA_N).join('; '), joinLabels(p,'spos'),
+               orderedLabels(p,'form',null).join('; '), (p.rhyme||'')+'', (p.met||'')+'', Number(p.nlines)||0 ];
+    });
+  }
+  // lower-cased "search blob" for a poem — what the in-table StringFilter matches against
+  function searchBlob( p ) {
+    return ( ((mod_work[p.poem_id]&&mod_work[p.poem_id].title)||'') + ' ' + autReg(p.aut_id) + ' ' +
+             joinLabels(p,'foottype') + ' ' + joinLabels(p,'footnum') + ' ' + (p.syllab||'') + ' ' +
+             joinLabels(p,'stanza') + ' ' + joinLabels(p,'form') + ' ' + (p.rhyme||'') ).toLowerCase();
+  }
+  // a Table with a StringFilter search box, wired via a Dashboard. The DataTable's last
+  // column is the hidden search blob the filter targets; the table view shows every column
+  // except that one — i.e. a single box that searches the whole row (DataTables-style).
+  function searchableTable( dashSel, searchId, tableId, dt, tableOpts ) {
+    var blobCol = dt.getNumberOfColumns() - 1, visible = [];
+    for ( var i=0; i<blobCol; i++ ) visible.push(i);
+    if ( !google.visualization.Dashboard ) {   // 'controls' package unavailable — plain table, no search
+      var view = new google.visualization.DataView(dt); view.setColumns(visible);
+      new google.visualization.Table( document.getElementById(tableId) ).draw( view, tableOpts );
+      return;
+    }
+    var dash = new google.visualization.Dashboard( document.querySelector(dashSel) );
+    var control = new google.visualization.ControlWrapper({
+      controlType: 'StringFilter', containerId: searchId,
+      options: { filterColumnIndex: blobCol, matchType: 'any',
+                 ui: { label: 'Filter', labelSeparator: '', cssClass: 'metres-filter' } }
+    });
+    var tbl = new google.visualization.ChartWrapper({
+      chartType: 'Table', containerId: tableId, options: tableOpts, view: { columns: visible }
+    });
+    dash.bind( control, tbl );
+    dash.draw( dt );
+  }
+  function renderResults( poems, opts ) {
+    opts = opts || {};
+    var panel = opts.panel || '#panel_results', note = opts.note || '#results_note',
+        searchId = opts.searchId || 'results_search', tableId = opts.tableId || 'results_table';
+    $(note).text( poems.length.toLocaleString()+' poems — page through them with the controls below the table' );
+    var dt = new google.visualization.DataTable();
+    dt.addColumn('string','Poem'); dt.addColumn('string','Author');
+    dt.addColumn('string','Foot type'); dt.addColumn('number','Foot count');
+    dt.addColumn('number','Line length'); dt.addColumn('number','Stanza');
+    dt.addColumn('string','Form / genre'); dt.addColumn('string','Pattern');
+    dt.addColumn('number','Lines'); dt.addColumn('string','_search');   // last col = hidden search blob
+    poems.forEach( function(p){
+      dt.addRow([
+        { v: (mod_work[p.poem_id]&&mod_work[p.poem_id].title)||p.poem_id, f: poemLink(p) },
+        { v: autReg(p.aut_id), f: autLink(p) },
+        joinLabels(p,'foottype'),
+        { v: minNum(p,'footnum',FOOTNUM_N), f: orderedLabels(p,'footnum',FOOTNUM_N).join(', ') },
+        { v: syllabVal(p), f: (p.syllab||'')+'' },
+        { v: minNum(p,'stanza',STANZA_N), f: orderedLabels(p,'stanza',STANZA_N).join(', ') },
+        { v: firstAlpha(p,'form'), f: orderedLabels(p,'form',null).join(', ') },
+        { v: (p.met||'')+'', f: p.met ? output_met(p.met) : '' },
+        Number(p.nlines)||0, searchBlob(p)
+      ]);
+    });
+    panelDownload( panel, 'metres-poems.csv', POEM_EXPORT_HEADERS, poemExport(poems) );
+    searchableTable( panel, searchId, tableId, dt,
+      { width:'100%', height:'50vh', allowHtml:true, sortColumn:1, sortAscending:true,
+        page:'enable', pageSize:50, pagingButtonsConfiguration:'auto' } );
+  }
+
+  // === form / genre profile ("everything about heroic couplets") =============
+  var FP_FORM = '';
+  var FP_POEMS = [];                             // current profile's poem subset (for the switchable heatmap)
+  var FP_RECIPE_KEYS = ['foottype','footnum'];   // metrical core for strictness/variants
+  var FP_PAIRS = [ ['footnum','stanza'], ['footnum','spos'], ['stanza','spos'] ];
+  // a dimension only enters the recipe description when its modal value is a majority
+  function fpChar( modal, d ) { return modal[d] && modal[d].share >= 0.5; }
+
+  function renderFormProfile( formId ) {
+    FP_FORM = formId;
+    $('#layout_form').show();
+    $('#index_cat').text('');
+    var poems = POEMS.filter( function(p){ return poemVals(p,'form').indexOf(formId) !== -1; } );
+    var N = POEMS.length, n = poems.length;
+
+    // modal value of each other dimension (the "recipe"), with its share of the form
+    var modal = {};
+    ['foottype','footnum','stanza','rhyme','syllab'].forEach( function(d){
+      var r = distribution(poems,d).filter(function(x){return x[0]!=='';})[0] || null;
+      modal[d] = r ? { id:r[0], label:r[1], sl:(r[1]+'').replace(/\s*\(.*\)\s*/,''), count:r[2], share: n?r[2]/n:0 } : null;
+    });
+
+    // identity header
+    $('.fp-id').find('.fp-back').remove();
+    $('.fp-id').prepend('<a class="fp-back" href="./" style="font-size:13px;font-weight:400;">&#x2039; Corpus overview</a>');
+    $('#fp_label').text( labelFor('form', formId) );
+    var topMet = (function(){ var m={}; poems.forEach(function(p){ if(p.met) m[p.met]=(m[p.met]||0)+1; });
+      return Object.keys(m).sort(function(a,b){return m[b]-m[a];})[0]; })();
+    $('#fp_glyph').html( topMet ? output_met(topMet) : '' );
+    $('#fp_standfirst').text( fpStandfirst(modal) );
+    var gloss = GLOSS[ formId ];
+    $('#fp_gloss').text( gloss || '' ).toggle( !!gloss );
+
+    var poetCount = countPersons( poems );
+    var rk = (function(){ var rows=distribution(POEMS,'form').filter(function(r){return r[0]!=='';});
+      for(var i=0;i<rows.length;i++) if(rows[i][0]===formId) return {r:i+1,t:rows.length}; return {r:'—',t:rows.length}; })();
+    var pct = function(x){ return n ? Math.round(100*x/n) : 0; };
+    var tiles = [
+      [ n.toLocaleString(), 'poems' ],
+      [ (N?Math.round(100*n/N):0)+'%', 'of the corpus' ],
+      [ '#'+rk.r, 'of '+rk.t+' forms' ],
+      [ poetCount, 'poets' ],
+      [ modal.foottype?modal.foottype.sl:'—', 'usual foot type' ],
+      [ modal.footnum?modal.footnum.sl:'—', 'usual foot count' ]
+    ];
+    $('#fp_tiles').html( tiles.map(function(t){
+      return '<div class="tile"><div class="num">'+escHtml(t[0]+'')+'</div><div class="lab">'+escHtml(t[1])+'</div></div>'; }).join('') );
+
+    // the recipe (small multiples)
+    drawDist('#fp_foottype', poems, 'foottype', 'pie');
+    drawDist('#fp_footnum',  poems, 'footnum',  'col', FOOTNUM_SEQ);
+    drawDist('#fp_syllab',   poems, 'syllab',   'col', null, 15);
+    drawDist('#fp_stanza',   poems, 'stanza',   'bar', null, 15);
+    drawDist('#fp_rhyme',    poems, 'rhyme',    'bar', null, 15);
+
+    var strictPct = fpStrictness( poems, modal );
+    fpSignaturePoets( formId, poems );
+    fpCompanions( formId, poems );
+    fpVariants( poems, modal, strictPct );
+    fpSetupHeatmap( poems );
+    renderResults( poems, { panel:'#fp_poems', note:'#fp_poems_note', searchId:'fp_poems_search', tableId:'fp_poems_table' } );
+    $('#fp_refine').attr('href', './?form='+encodeURIComponent(formId)+'&view=browse');
+    fpCrossLinks( poems, modal );
+  }
+
+  function fpStandfirst( modal ) {
+    var ft = fpChar(modal,'foottype') ? modal.foottype.sl : null;
+    var fn = fpChar(modal,'footnum')  ? modal.footnum.sl  : null;
+    var st = fpChar(modal,'stanza')   ? modal.stanza.sl   : null;
+    // rhyme only if it is both characteristic and short (so "aa"/"abab" show, not a full sonnet scheme)
+    var rh = ( fpChar(modal,'rhyme') && modal.rhyme.sl.length <= 6 ) ? modal.rhyme.sl : null;
+    var s = '';
+    if ( ft || fn ) s = 'Most often ' + [ft,fn].filter(Boolean).join(' ');
+    if ( st ) s += (s?' in ':'In ') + st + ' form';
+    if ( rh ) s += (s?', rhyming ':'Rhyming ') + rh;
+    return s ? s + '.' : '';
+  }
+
+  // horizontal bar rows (label, bar, value)
+  function fpBars( items, max ) {
+    return '<div class="fp-bars">' + items.map(function(it){
+      var w = Math.max(3, Math.round((it.val/max)*120));
+      var lab = it.href ? '<a href="'+it.href+'">'+escHtml(it.label)+'</a>' : escHtml(it.label);
+      return '<div class="row"><div class="lab">'+lab+'</div><div class="bar" style="width:'+w+'px;background:'+(it.col||'#3366cc')+'"></div><div class="val">'+escHtml(it.disp+'')+'</div></div>';
+    }).join('') + '</div>';
+  }
+
+  function fpStrictness( poems, modal ) {
+    var keys = FP_RECIPE_KEYS.filter(function(d){ return modal[d]; });   // foot type + count
+    var match = poems.filter(function(p){
+      return keys.every(function(d){ return poemVals(p,d).indexOf(modal[d].id) !== -1; });
+    }).length;
+    var pct = poems.length ? Math.round(100*match/poems.length) : 0;
+    // describe the recipe with whatever dimensions actually characterise the form
+    var recipe = ['foottype','footnum','stanza','rhyme']
+      .filter(function(d){ return fpChar(modal,d) && !(d==='rhyme' && modal.rhyme.sl.length>6); })
+      .map(function(d){ return modal[d].sl; }).join(' &middot; ');
+    $('#fp_strictbar').html(
+      '<strong>'+pct+'%</strong> follow the canonical recipe'+
+      ( recipe ? ': <span style="color:#333;">'+recipe+'</span>' : '' )+
+      ' <span style="color:#999;">('+(100-pct)+'% use a different foot type or count)</span>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%;"></div></div>'
+    );
+    return pct;
+  }
+
+  function fpSignaturePoets( formId, poems ) {
+    var pc={}, allc={};
+    poems.forEach(function(p){ pc[p.aut_id]=(pc[p.aut_id]||0)+1; });
+    POEMS.forEach(function(p){ allc[p.aut_id]=(allc[p.aut_id]||0)+1; });
+    var prolific = Object.keys(pc).sort(function(a,b){ return pc[b]-pc[a]; }).slice(0,8);
+    var distinctive = Object.keys(pc).filter(function(a){ return allc[a]>=8; })
+      .map(function(a){ return [a, (pc[a]/allc[a])/(poems.length/POEMS.length), pc[a]]; })
+      .sort(function(x,y){ return y[1]-x[1]; }).slice(0,8);
+    var maxP = Math.max.apply(null, prolific.map(function(a){return pc[a];}).concat([1]));
+    var maxD = Math.max.apply(null, distinctive.map(function(d){return d[1];}).concat([1]));
+    var c1 = fpBars( prolific.map(function(a){ return { label:autName(a), val:pc[a], disp:pc[a], href:'./?aut='+a }; }), maxP );
+    var c2 = distinctive.length
+      ? fpBars( distinctive.map(function(d){ return { label:autName(d[0]), val:d[1], disp:d[1].toFixed(1)+'×', href:'./?aut='+d[0], col:'#dc3912' }; }), maxD )
+      : '<p style="color:#999;font-size:12px;">Too few prolific poets to rank.</p>';
+    $('#fp_poets .panel-body').html('<div class="fp-cols"><div><h5>Most prolific</h5>'+c1+'</div><div><h5>Most distinctive (vs. own output)</h5>'+c2+'</div></div>');
+  }
+
+  function fpCompanions( formId, poems ) {
+    var fc={}, co={}, N=POEMS.length, n=poems.length;
+    POEMS.forEach(function(p){ poemVals(p,'form').forEach(function(g){ fc[g]=(fc[g]||0)+1; }); });
+    poems.forEach(function(p){ poemVals(p,'form').forEach(function(g){ if(g!==formId) co[g]=(co[g]||0)+1; }); });
+    var items = Object.keys(co).filter(function(g){ return fc[g]>=15 && co[g]>=3; })
+      .map(function(g){ return { id:g, lift:(co[g]/n)/(fc[g]/N), c:co[g] }; })
+      .sort(function(a,b){ return b.lift-a.lift; }).slice(0,10);
+    if ( !items.length ) { $('#fp_companions .panel-body').html('<p style="color:#999;font-size:12px;">No strongly associated companion forms.</p>'); return; }
+    var max=items[0].lift;
+    $('#fp_companions .panel-body').html( fpBars( items.map(function(it){
+      return { label:labelFor('form',it.id), val:it.lift, disp:it.lift.toFixed(1)+'×', href:'./?form='+encodeURIComponent(it.id), col:'#ff9900' }; }), max ) );
+  }
+
+  function fpVariants( poems, modal, strictPct ) {
+    var keys = FP_RECIPE_KEYS.filter(function(d){ return modal[d]; });
+    var variants = poems.filter(function(p){
+      return !keys.every(function(d){ return poemVals(p,d).indexOf(modal[d].id) !== -1; });
+    });
+    if ( strictPct < 50 || !variants.length ) { $('#fp_variants').hide(); return; }
+    $('#fp_variants').show();
+    var rows = variants.slice(0,14).map(function(p){
+      var diffs=[];
+      keys.forEach(function(d){ if ( poemVals(p,d).indexOf(modal[d].id) === -1 ) {
+        diffs.push( poemVals(p,d).map(function(v){ return labelFor(d,v); }).join('/') || '(unclassified)' ); } });
+      return '<li style="margin:2px 0;">'+poemLink(p)+' <span style="color:#999;font-size:12px;">'+escHtml(diffs.join('; '))+'</span></li>';
+    });
+    $('#fp_variants .panel-body').html(
+      '<div style="font-size:12px;color:#777;margin-bottom:6px;">'+variants.length+' of '+poems.length+' poems use a different foot type or count:</div>'+
+      '<ul style="padding-left:16px;margin:0;list-style:disc;">'+rows.join('')+'</ul>' );
+  }
+
+  function fpShortLabel( dim, id ) { return labelFor(dim,id).replace(/\s*\(.*\)\s*/,''); }
+  function fpOrder( ids, dim ) {
+    var seq = dim==='footnum' ? FOOTNUM_N : dim==='stanza' ? STANZA_N : null;
+    return ids.slice().sort( seq ? function(a,b){ return (seq[a]||99)-(seq[b]||99); } : undefined );
+  }
+
+  // cross-tab margins + counts for two dims over a poem set
+  function fpGrid( poems, rd, cd ) {
+    var rmarg={}, cmarg={}, ct={};
+    poems.forEach(function(p){
+      var rset={}, cset={};
+      poemVals(p,rd).forEach(function(r){ rset[r]=1; });
+      poemVals(p,cd).forEach(function(c){ cset[c]=1; });
+      Object.keys(rset).forEach(function(r){ rmarg[r]=(rmarg[r]||0)+1;
+        Object.keys(cset).forEach(function(c){ ct[r+'@@'+c]=(ct[r+'@@'+c]||0)+1; }); });
+      Object.keys(cset).forEach(function(c){ cmarg[c]=(cmarg[c]||0)+1; });
+    });
+    return { rmarg:rmarg, cmarg:cmarg, ct:ct };
+  }
+  // a pairing is worth drawing only when the form genuinely spreads on both axes
+  function fpSpreads( poems, rd, cd ) {
+    var g=fpGrid(poems,rd,cd), n=poems.length;
+    var maxCell=Math.max.apply(null, Object.keys(g.ct).map(function(k){return g.ct[k];}).concat([0]));
+    return Object.keys(g.rmarg).length>=2 && Object.keys(g.cmarg).length>=2
+        && Object.keys(g.ct).length>=4 && (!n || maxCell/n<=0.7);
+  }
+  // set up the switchable heatmap: hide the panel only if NO pairing spreads
+  function fpSetupHeatmap( poems ) {
+    FP_POEMS = poems;
+    if ( !FP_PAIRS.some(function(p){ return fpSpreads(poems,p[0],p[1]); }) ) { $('#fp_heat').hide(); return; }
+    $('#fp_heat').show();
+    var sel = $('#fp_heat_pair').val().split(':');
+    if ( !fpSpreads(poems, sel[0], sel[1]) ) {       // default to a pairing that actually spreads
+      var best = FP_PAIRS.filter(function(p){ return fpSpreads(poems,p[0],p[1]); })[0];
+      $('#fp_heat_pair').val( best[0]+':'+best[1] );
+    }
+    $('#fp_heat_pair').off('change').on('change', function(){ var s=$(this).val().split(':'); fpDrawHeat(s[0],s[1]); });
+    $('#fp_heat').off('click','td[data-row]').on('click','td[data-row]', function(){
+      window.location.href = './?form='+encodeURIComponent(FP_FORM)+
+        '&'+DIM2PARAM[$(this).attr('data-rd')]+'='+encodeURIComponent($(this).attr('data-row'))+
+        '&'+DIM2PARAM[$(this).attr('data-cd')]+'='+encodeURIComponent($(this).attr('data-col'))+'&view=browse';
+    });
+    var s2=$('#fp_heat_pair').val().split(':'); fpDrawHeat(s2[0], s2[1]);
+  }
+  function fpDrawHeat( rd, cd ) {
+    if ( !fpSpreads(FP_POEMS, rd, cd) ) {
+      $('#fp_heat .panel-body').html('<p style="color:#999;font-size:12px;padding:6px;">Too uniform on these two dimensions to be worth a grid. Try another pairing.</p>');
+      return;
+    }
+    var g=fpGrid(FP_POEMS, rd, cd), N=FP_POEMS.length;
+    var rO=fpOrder(Object.keys(g.rmarg),rd), cO=fpOrder(Object.keys(g.cmarg),cd);
+    var html='<div class="fp-heatwrap"><table class="fp-heat"><tr><th></th>'+
+      cO.map(function(c){ return '<th>'+escHtml(fpShortLabel(cd,c))+'</th>'; }).join('')+'</tr>';
+    rO.forEach(function(r){
+      html+='<tr><th class="rowh">'+escHtml(fpShortLabel(rd,r))+'</th>';
+      cO.forEach(function(c){
+        var o=g.ct[r+'@@'+c]||0;
+        if ( !o ) { html+='<td class="empty">&middot;</td>'; return; }
+        var l2=log2lift(o, g.rmarg[r], g.cmarg[c], N);
+        html+='<td style="background:'+liftCol(l2)+';" data-rd="'+rd+'" data-cd="'+cd+'" data-row="'+escHtml(r)+'" data-col="'+escHtml(c)+
+              '" title="'+o+' poems, lift '+Math.pow(2,l2).toFixed(1)+'×">'+o+'</td>';
+      });
+      html+='</tr>';
+    });
+    html+='</table></div><div style="font-size:11px;color:#999;margin-top:6px;">cell = poems &middot; red = more than chance, blue = less &middot; click to filter</div>';
+    $('#fp_heat .panel-body').html(html);
+  }
+
+  function fpCrossLinks( poems, modal ) {
+    var keys = FP_RECIPE_KEYS.filter(function(d){ return modal[d]; });
+    var matches = poems.filter(function(p){ return keys.every(function(d){ return poemVals(p,d).indexOf(modal[d].id)!==-1; }); });
+    var pool = matches.length ? matches : poems;
+    var rep = pool.slice().sort(function(a,b){ return (Number(b.nlines)||0)-(Number(a.nlines)||0); })[0];
+    var html='';
+    if ( rep ) {
+      var t = (mod_work[rep.poem_id]&&mod_work[rep.poem_id].title) || rep.poem_id;
+      html += '<a href="/works/'+rep.poem_id+'.shtml#analysis">A representative poem: '+escHtml(t)+', see its scansion &rarr;</a>';
+    }
+    html += '<span style="color:#aaa;">Compare with another form (coming soon)</span>';
+    $('#fp_xlinks').html( html );
+    $('#fp_xlinks').css('display','none'); // hide until the "compare" feature is implemented
+  }
+
+  // === poet deep-dive =========================================================
+  function renderPoet() {
+    $('#layout_poet').show();
+    var name = autName( q_aut );
+    $('#index_cat').text( 'for ' + name );
+    $('#poet_xlink').html( ' &nbsp;<a href="/resources/rhyme-index/?aut='+q_aut+'">View this poet’s rhyme profile &rarr;</a>' );
+
+    var poems = POEMS.filter( function(p){ return p.aut_id === q_aut; } );
+
+    // tiles
+    var topOf = function(dim){ return (distribution(poems,dim).filter(function(r){return r[0]!=='';})[0]||['','—']); };
+    var avgLen = poems.length ? Math.round( poems.reduce(function(s,p){ return s+(Number(p.nlines)||0); },0)/poems.length ) : 0;
+    $('#ptiles').html([
+      [ poems.length, 'poems in the archive' ],
+      [ topOf('foottype')[1], 'commonest foot type' ],
+      [ topOf('footnum')[1], 'commonest foot count' ],
+      [ topOf('form')[1], 'commonest form/genre' ],
+      [ topOf('stanza')[1], 'commonest stanza' ],
+      [ avgLen, 'average length (lines)' ]
+    ].map(function(t){ return '<div class="tile"><div class="num">'+escHtml(t[0]+'')+'</div><div class="lab">'+escHtml(t[1])+'</div></div>'; }).join(''));
+
+    drawDist('#panel_pfoottype', poems, 'foottype', 'pie');
+    drawDist('#panel_pfootnum',  poems, 'footnum',  'col', FOOTNUM_SEQ);
+    drawDist('#panel_pspos',     poems, 'spos',     'pie');
+    drawDist('#panel_pstanza',   poems, 'stanza',   'bar', null, 15);
+    drawDist('#panel_psyllab',   poems, 'syllab',   'col', null, 15);
+    drawDist('#panel_pform',     poems, 'form',     'bar', null, 15);
+    drawDist('#panel_prhyme',    poems, 'rhyme',    'bar', null, 15);
+    drawLenHist('#panel_plen',   poems);
+    renderNeighbours( q_aut );
+    drawDistinctive( poems );
+    renderPoetPoems( poems );
+  }
+
+  // poem-length histogram (binned line counts)
+  function drawLenHist( sel, poems ) {
+    var bands = [[1,4,'1–4'],[5,8,'5–8'],[9,14,'9–14'],[15,30,'15–30'],[31,60,'31–60'],[61,120,'61–120'],[121,1e9,'121+']];
+    var counts = bands.map(function(){ return 0; });
+    poems.forEach(function(p){
+      var n = Number(p.nlines)||0;
+      for ( var i=0; i<bands.length; i++ ) if ( n>=bands[i][0] && n<=bands[i][1] ) { counts[i]++; break; }
+    });
+    panelDownload( sel, 'metres-'+sel.replace('#panel_','')+'.csv', ['lines','poems'], bands.map(function(b,i){ return [b[2], counts[i]]; }) );
+    var dt = new google.visualization.DataTable();
+    dt.addColumn('string','Lines'); dt.addColumn('number','Poems'); dt.addColumn({type:'string',role:'style'});
+    bands.forEach(function(b,i){ dt.addRow([ b[2], counts[i], 'color:'+pieCols[i % pieCols.length] ]); });
+    new google.visualization.ColumnChart( $(sel+' .panel-body')[0] ).draw( dt, {
+      legend:{position:'none'}, chartArea:{top:10,left:40,width:'85%',height:'70%'},
+      vAxis:{format:'#'}, hAxis:{textStyle:{fontSize:10}}
+    });
+  }
+
+  // metrical neighbours: nearest poets by cosine similarity of their metrical
+  // fingerprint (foot type / count / stanza / rhyme-scheme type / line-length).
+  var POET_FP = null;
+  function buildFingerprints() {
+    if ( POET_FP ) return POET_FP;
+    var dims = ['foottype','footnum','stanza','spos','syllab'], fp = {}, df = {};
+    POEMS.forEach(function(p){
+      var a = p.aut_id;
+      if ( !fp[a] ) fp[a] = { n:0, v:{} };
+      fp[a].n++;
+      dims.forEach(function(dim){
+        poemVals(p,dim).forEach(function(val){ var k=dim+':'+val; fp[a].v[k]=(fp[a].v[k]||0)+1; });
+      });
+    });
+    // document frequency = number of poets exhibiting each feature
+    var aks = Object.keys(fp), N = aks.length;
+    aks.forEach(function(a){ Object.keys(fp[a].v).forEach(function(k){ df[k]=(df[k]||0)+1; }); });
+    // IDF-weight (so ubiquitous traits like iambic pentameter don't dominate) + L2-normalise
+    aks.forEach(function(a){
+      var v = fp[a].v, s = 0;
+      Object.keys(v).forEach(function(k){
+        v[k] = v[k] * ( Math.log( N / df[k] ) + 0.1 );   // +0.1 keeps a little weight on common traits
+        s += v[k]*v[k];
+      });
+      fp[a].norm = Math.sqrt(s) || 1;
+    });
+    POET_FP = fp;
+    return fp;
+  }
+  function renderNeighbours( aut ) {
+    var body = $('#panel_pneighbours .panel-body')[0];
+    var fp = buildFingerprints(), me = fp[aut];
+    if ( !me || me.n < 3 ) { $(body).html('<p style="padding:10px;color:#999;">Too few poems to identify metrical neighbours.</p>'); return; }
+    var keys = Object.keys(me.v), sims = [];
+    Object.keys(fp).forEach(function(a){
+      if ( a === aut || fp[a].n < 3 ) return;       // skip self and sparse poets
+      var o = fp[a], dot = 0;
+      keys.forEach(function(k){ if ( o.v[k] ) dot += me.v[k]*o.v[k]; });
+      var cos = dot/(me.norm*o.norm);
+      if ( cos > 0 ) sims.push([a, cos]);
+    });
+    sims.sort(function(x,y){ return y[1]-x[1]; });
+    panelDownload( '#panel_pneighbours', 'metres-neighbours.csv', ['poet','similarity %'],
+      sims.map(function(s){ return [ autReg(s[0]), Math.round(s[1]*1000)/10 ]; }) );
+    var top = sims.slice(0,10);
+    if ( !top.length ) { $(body).html('<p style="padding:10px;color:#999;">No close metrical neighbours found.</p>'); return; }
+    var max = top[0][1] || 1;
+    var html = '<div style="height:100%;overflow:auto;padding:4px 10px;"><ol style="margin:4px 0;padding-left:22px;font-size:13px;line-height:1.5;">';
+    top.forEach(function(s){
+      html += '<li style="margin-bottom:3px;"><a href="./?aut='+s[0]+'">'+escHtml(autReg(s[0]))+'</a> '
+            + '<span style="color:#999;font-size:11px;">'+Math.round(s[1]*100)+'%</span>'
+            + '<div style="height:3px;background:#3366cc;border-radius:2px;width:'+Math.round(s[1]/max*100)+'%;"></div></li>';
+    });
+    html += '</ol></div>';
+    $(body).html( html );
+  }
+
+  // form usage: this poet (blue) vs. the corpus (grey), for the poet's most
+  // over-indexed forms — the gap between the paired bars is what's distinctive.
+  function drawDistinctive( poems ) {
+    var body = $('#panel_dist .panel-body')[0];
+    var corpusN = POEMS.length, poetN = poems.length;
+    if ( poetN < 3 ) { $(body).html('<p style="padding:10px;color:#999;">Too few poems for a meaningful comparison.</p>'); return; }
+    var cC = {}, pC = {};
+    POEMS.forEach(function(p){ poemVals(p,'form').forEach(function(v){ cC[v]=(cC[v]||0)+1; }); });
+    poems.forEach(function(p){ poemVals(p,'form').forEach(function(v){ pC[v]=(pC[v]||0)+1; }); });
+    if ( !Object.keys(pC).length ) { $(body).html('<p style="padding:10px;color:#999;">No classified forms for this poet.</p>'); return; }
+    // the poet's forms, ordered by gap to the corpus (most over-indexed first)
+    var byGap = Object.keys(pC).sort(function(a,b){
+      return ( pC[b]/poetN - (cC[b]||0)/corpusN ) - ( pC[a]/poetN - (cC[a]||0)/corpusN );
+    });
+    panelDownload( '#panel_dist', 'metres-distinctiveness.csv', ['form','this poet %','corpus %'],
+      byGap.map(function(f){ return [ labelFor('form',f), Math.round(pC[f]/poetN*1000)/10, Math.round((cC[f]||0)/corpusN*1000)/10 ]; }) );
+    var forms = byGap.slice(0,12);
+    var dt = new google.visualization.DataTable();
+    dt.addColumn('string','Form');
+    dt.addColumn('number','This poet');
+    dt.addColumn('number','Corpus');
+    forms.forEach(function(f){
+      dt.addRow([ labelFor('form',f),
+                  Math.round(pC[f]/poetN*1000)/10,
+                  Math.round((cC[f]||0)/corpusN*1000)/10 ]);
+    });
+    new google.visualization.BarChart( body ).draw( dt, {
+      legend:{ position:'top', textStyle:{fontSize:11} },
+      colors:['#3366cc','#cccccc'],
+      chartArea:{ top:24,left:150,width:'80%',height:'80%' },
+      hAxis:{ title:'% of poems', format:'#', textStyle:{fontSize:10} },
+      vAxis:{ textStyle:{fontSize:12}, showTextEvery:1 },   // show every form label, not every 2nd
+      bar:{ groupWidth:'78%' }
+    });
+  }
+
+  function renderPoetPoems( poems ) {
+    $('#ppoems_note').text( poems.length+' poems' );
+    var dt = new google.visualization.DataTable();
+    dt.addColumn('string','Poem'); dt.addColumn('string','Foot type'); dt.addColumn('number','Foot count');
+    dt.addColumn('number','Line length'); dt.addColumn('number','Stanza'); dt.addColumn('string','Form / genre');
+    dt.addColumn('string','Pattern'); dt.addColumn('number','Lines'); dt.addColumn('string','_search');
+    poems.forEach(function(p){
+      dt.addRow([
+        { v:(mod_work[p.poem_id]&&mod_work[p.poem_id].title)||p.poem_id, f: poemLink(p) },
+        joinLabels(p,'foottype'),
+        { v: minNum(p,'footnum',FOOTNUM_N), f: orderedLabels(p,'footnum',FOOTNUM_N).join(', ') },
+        { v: syllabVal(p), f: (p.syllab||'')+'' },
+        { v: minNum(p,'stanza',STANZA_N), f: orderedLabels(p,'stanza',STANZA_N).join(', ') },
+        { v: firstAlpha(p,'form'), f: orderedLabels(p,'form',null).join(', ') },
+        { v:(p.met||'')+'', f:p.met?output_met(p.met):'' }, Number(p.nlines)||0, searchBlob(p)
+      ]);
+    });
+    panelDownload( '#panel_poems', 'metres-poet-poems.csv', POEM_EXPORT_HEADERS, poemExport(poems) );
+    searchableTable( '#panel_poems', 'ppoems_search', 'ppoems_table', dt,
+      { width:'100%', height:'50vh', allowHtml:true, sortColumn:0, page:'enable', pageSize:50 } );
+  }
+
+  // === small utils ============================================================
+  function escHtml(s){ return (s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function escAttr(s){ return (s+'').replace(/"/g,'&quot;'); }
+
+  // --- per-panel CSV download (reflects the current filtered selection) --------
+  var DL = {};
+  function toCSV( headers, rows ) {
+    var esc = function(v){ v=(v==null?'':v)+''; return /[",\r\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v; };
+    var out = [ headers.map(esc).join(',') ];
+    rows.forEach(function(r){ out.push( r.map(esc).join(',') ); });
+    return out.join('\r\n');
+  }
+  function panelDownload( panelSel, filename, headers, rows ) {
+    DL[panelSel] = { filename: filename, csv: toCSV(headers, rows) };
+    var $h = $(panelSel + ' .panel-heading');
+    if ( $h.length && !$h.find('a.dl').length ) {
+      // prepend (not append) so the float:right icon anchors to the top-right even
+      // on panels whose heading has a second (help-text) line, e.g. network/results
+      $h.prepend('<a class="dl" href="#" title="Download this panel’s data (CSV)"><span style="float:right;font-size:16px;color:#777;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>');
+    }
+  }
+  $(document.body).on('click', 'a.dl', function(e){
+    e.preventDefault();
+    var d = DL[ '#' + $(this).closest('.panel').attr('id') ];
+    if ( !d ) return;
+    var url = URL.createObjectURL( new Blob([d.csv], {type:'text/csv;charset=utf-8'}) );
+    var a = document.createElement('a');
+    a.href = url; a.download = d.filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  });
+
+  // CSV -> JSON (verbatim from the rhyme-index tool)
+  var csvjsonConverter = (csvdata, delimiter) => {
+    let arrmatch = [], array = [[]], quotevals = "", jsonarray = [], k = 0;
+    let regexp = new RegExp(("(\\" + delimiter + "|\\r?\\n|\\r|^)" + "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+      "([^\"\\" + delimiter + "\\r\\n]*))"), "gi");
+    while (arrmatch = regexp.exec(csvdata)) {
+      let delimitercheck = arrmatch[1];
+      if ((delimitercheck !== delimiter) && delimitercheck.length) { array.push([]); }
+      if (arrmatch[2]) { quotevals = arrmatch[2].replace('""', '\"'); } else { quotevals = arrmatch[3]; }
+      array[array.length - 1].push(quotevals);
+    }
+    for (let i = 0; i < array.length - 1; i++) {
+      jsonarray[i - 1] = {};
+      for (let j = 0; j < array[i].length && j < array[0].length; j++) {
+        let key = array[0][j]; jsonarray[i - 1][key] = array[i][j];
+      }
+    }
+    for (k = 0; k < jsonarray.length; k++) {
+      let jsonobject = jsonarray[k];
+      for (let prop in jsonobject) {
+        if (!isNaN(jsonobject[prop]) && jsonobject.hasOwnProperty(prop)) { jsonobject[prop] = +jsonobject[prop]; }
+      }
+    }
+    return jsonarray;
+  };
+
+  var citation = "";
+  citation += "Huber, Alexander. ";
+  var citlink = 'http:\/\/<!--#echo var="HTTP_HOST" --><!--#echo var="DOCUMENT_URI" -->';
+  citation += '\"ECPA Metres Database\". ';
+  citation +='<em><!--#echo var="ecep_full" --></em>, '+
+    '<!--#flastmod virtual="/data/version" --> (<!--#include virtual="/data/version" -->)'+
+    '. Web. <!--#echo var="DATE_LOCAL" -->. &lt;<a href="'+citlink+'">'+citlink+'</a>&gt;';
+
+</script>
+
+<!--#include virtual="/bottom.shtml" -->

@@ -21,6 +21,8 @@
 					  data-toggle="tab">Birth dates</a></li>
 <li role="presentation"><a href="#gender" aria-controls="gender" role="tab"
 			   data-toggle="tab">Gender</a></li>
+<li role="presentation"><a href="#nationality" aria-controls="nationality" role="tab"
+			   data-toggle="tab">Nationality</a></li>
 </ul>
 
 <div class="tab-content">
@@ -35,6 +37,10 @@
 
 <div role="tabpanel" class="tab-pane" id="gender">
 <!--#include virtual="/authors/gender.shtml" -->
+</div>
+
+<div role="tabpanel" class="tab-pane" id="nationality">
+<!--#include virtual="/authors/nationality.shtml" -->
 </div>
 
 </div>

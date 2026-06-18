@@ -57,6 +57,17 @@
 		grid-row: 1;
     height: calc((100vh - 270px)/2);
   }
+  /* Layout 1: rhyme structure (added row) */
+	#chart_12 {
+		grid-column: 1 / 3;
+		grid-row: 3;
+    height: calc((100vh - 270px)/2);
+	}
+	#chart_13 {
+		grid-column: 3;
+		grid-row: 3;
+    height: calc((100vh - 270px)/2);
+	}
   /* Layout 3: rhyme word view */
 	#chart_5 {
 		grid-column: 1;
@@ -228,6 +239,37 @@
     padding:10px;
   }
 
+  /* in-table search box (Google Charts StringFilter) */
+  .rhyme-index .panel-heading .panel-search { float: right; font-weight: 400; margin-right: 6px; }
+  .rhyme-index .gc-filter { display: inline-block; }
+  .rhyme-index .gc-filter label { font-size: 12px; color: #777; margin-right: 4px; font-weight: 400; }
+  .rhyme-index .gc-filter input { font-size: 12px; padding: 1px 6px; border: 1px solid #ccc; border-radius: 3px; }
+  /* chart_8 sits in the narrow 4-up author grid — keep its filter input compact */
+  .rhyme-index #c8_search input { width: 80px; }
+  /* the active (selected) rhyme word in chart_8 */
+  .rhyme-index .ri-wrdfilter.active { font-weight: bold; background: #d9edf7; }
+
+  /* === Rhyme Network Explorer === */
+  .rhyme-index h1 .net-explorer-link { float: right; font-size: 14px; font-weight: 400; margin-top: 4px; margin-right: 4px; }
+  .rhyme-index h1::after { content: ""; display: block; clear: both; }   /* contain the floated link/form */
+  .rhyme-index .net-controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 18px;
+    padding: 6px 2px 10px; font-size: 13px;
+  }
+  .rhyme-index .net-controls label { font-weight: 400; }
+  .rhyme-index .net-controls select, .rhyme-index .net-controls input[type=range] { vertical-align: middle; }
+  /* note fills the rest of the controls line (flex-basis 0 => never wraps to its own row) */
+  .rhyme-index #net_explorer_note { flex: 1 1 0; min-width: 0; }
+  .rhyme-index #net_canvas { position: relative; border: 1px solid #e3e3e3; border-radius: 4px; }
+  .rhyme-index #cy_explorer { width: 100%; height: calc(100vh - 220px); }
+  .rhyme-index #netnav2.cytoscape-navigator {
+    display: block;
+    position: absolute; bottom: 8px; right: 8px;
+    width: 220px; height: 220px;
+    border: 1px solid #ccc; background: rgba(255,255,255,.9);
+    overflow: hidden; z-index: 3;
+  }
+
 </style>
 
 <!-- main -->
@@ -253,13 +295,14 @@
               </span>
             </div>
           </form>
+          <a href="./?view=network" class="net-explorer-link">Rhyme Network Explorer &#x25B8;</a>
         </h1>
         <!-- Overview -->
         <div id="layout_1" class="layout">
           <div class="chart_parent">
             <div id="chart_1" class="panel panel-default">
-              <div class="panel-heading">Rhyme words ranked by raw frequency</div>
-              <div class="panel-body"><img style="margin: 0 auto;" src="/images/loader.gif"></div>
+              <div class="panel-heading">Rhyme words ranked by raw frequency<span id="c1_search" class="panel-search"></span></div>
+              <div class="panel-body"><div id="c1_table" style="height:100%"><img style="margin: 0 auto;" src="/images/loader.gif"></div></div>
               <div class="panel-footer">&nbsp;</div>
             </div>
             <div id="chart_2" class="panel panel-default">
@@ -280,6 +323,16 @@
               <div class="panel-body"><img src="/images/loader.gif"></div>
               <div class="panel-footer">&nbsp;</div>
             </div>
+            <div id="chart_12" class="panel panel-default">
+              <div class="panel-heading">Rhyme schemes by raw frequency</div>
+              <div class="panel-body"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
+            <div id="chart_13" class="panel panel-default">
+              <div class="panel-heading">Rhyme-scheme types by raw frequency</div>
+              <div class="panel-body" style="overflow-x:hidden"><img src="/images/loader.gif"></div>
+              <div class="panel-footer">&nbsp;</div>
+            </div>
           </div>
         </div>
         <!-- Rhyme word -->
@@ -296,8 +349,8 @@
               <div class="panel-footer">&nbsp;</div>
             </div>
             <div id="chart_7" class="panel panel-default">
-              <div class="panel-heading">Rhyme occurrences</div>
-              <div class="panel-body" style="height:calc(100% - 37px);"><img src="/images/loader.gif"></div>
+              <div class="panel-heading">Rhyme occurrences<span id="c7_search" class="panel-search"></span></div>
+              <div class="panel-body" style="height:calc(100% - 37px);"><div id="c7_table" style="height:100%"><img src="/images/loader.gif"></div></div>
               <div class="panel-footer" style="display:none;">&nbsp;</div>
             </div>
           </div>
@@ -306,8 +359,8 @@
         <div id="layout_2" class="layout">
           <div class="chart_parent2">
             <div id="chart_8" class="panel panel-default">
-              <div class="panel-heading">Rhyme words by raw frequency</div>
-              <div class="panel-body"><img style="margin: 0 auto;" src="/images/loader.gif"></div>
+              <div class="panel-heading">Rhyme words by raw frequency<span id="c8_search" class="panel-search"></span></div>
+              <div class="panel-body"><div id="c8_table" style="height:100%"><img style="margin: 0 auto;" src="/images/loader.gif"></div></div>
               <div class="panel-footer">&nbsp;</div>
             </div>
             <div id="chart_9" class="panel panel-default">
@@ -321,10 +374,32 @@
               <div class="panel-footer">&nbsp;</div>
             </div>
             <div id="chart_11" class="panel panel-default">
-              <div class="panel-heading">Rhyme occurrences</div>
-              <div class="panel-body" style="height:calc(100% - 37px);"><img src="/images/loader.gif"></div>
+              <div class="panel-heading">Rhyme occurrences<span id="c11_search" class="panel-search"></span></div>
+              <div class="panel-body" style="height:calc(100% - 37px);"><div id="c11_table" style="height:100%"><img src="/images/loader.gif"></div></div>
               <div class="panel-footer" style="display:none;">&nbsp;</div>
             </div>
+          </div>
+        </div>
+
+        <!-- Rhyme Network Explorer -->
+        <div id="layout_network" class="layout">
+          <div class="net-controls">
+            <a href="./">&#x2039; Overview</a>
+            <label>Network
+              <select id="net_type">
+                <option value="sound_web">Rhyme sound &harr; sound</option>
+                <option value="word_fam">Rhyme-word families</option>
+                <option value="poet_twin">Poet &harr; poet (rhyme twins)</option>
+                <option value="poet_sig">Poet &harr; rhyme signature</option>
+              </select>
+            </label>
+            <label>Max nodes <input type="range" id="net_maxn" min="10" max="150" value="60"> <span id="net_maxn_val">60</span></label>
+            <label>Min. links <input type="range" id="net_minw" min="1" max="200" value="20"> <span id="net_minw_val">20</span></label>
+            <span id="net_explorer_note" style="color:#999;font-size:12px;"></span>
+          </div>
+          <div id="net_canvas">
+            <div id="cy_explorer"></div>
+            <div id="netnav2" class="cytoscape-navigator"></div>
           </div>
         </div>
 
@@ -336,10 +411,11 @@
 <script type="text/javascript">
 
     // #AH — 10-24/01/2024
+    google.charts.load('current', {packages:['controls']});   // in-table StringFilter search
     var q_wrd = '', q_aut = '', qa2f = {};
-    var gchart_1,gchart_2,gchart_3,gchart_4,gchart_5,gchart_6,gchart_7,gchart_8,gchart_9,gchart_10,gchart_11;
-    var gdata_1,gdata_2,gdata_3,gdata_4,gdata_5,gdata_6,gdata_7,gdata_8,gdata_9,gdata_10,gdata_11;
-    var goptions_1,goptions_2,goptions_3,goptions_4,goptions_5,goptions_6,goptions_7,goptions_8,goptions_9,goptions_10,goptions_11;
+    var gchart_1,gchart_2,gchart_3,gchart_4,gchart_5,gchart_6,gchart_7,gchart_8,gchart_9,gchart_10,gchart_11,gchart_12,gchart_13;
+    var gdata_1,gdata_2,gdata_3,gdata_4,gdata_5,gdata_6,gdata_7,gdata_8,gdata_9,gdata_10,gdata_11,gdata_12,gdata_13;
+    var goptions_1,goptions_2,goptions_3,goptions_4,goptions_5,goptions_6,goptions_7,goptions_8,goptions_9,goptions_10,goptions_11,goptions_12,goptions_13;
     var pieCols = [ 
 "#3366cc",
 "#dc3912",
@@ -377,6 +453,7 @@
     $(function() {
       var url = new URL( window.location.href );
       var searchParams = new URLSearchParams( url.search );
+      if ( searchParams.get('view') === 'network' ) { renderRhymeNetwork(); return; }
       if ( searchParams.has('wrd') && searchParams.get('wrd') != '') {
         q_wrd = searchParams.get('wrd')
         $( "input[name='word']" ).val( q_wrd )
@@ -421,6 +498,8 @@
         google.charts.setOnLoadCallback(draw_2);
         google.charts.setOnLoadCallback(draw_3);
         google.charts.setOnLoadCallback(draw_4);
+        google.charts.setOnLoadCallback(draw_12);
+        google.charts.setOnLoadCallback(draw_13);
       }
     });
 
@@ -567,7 +646,10 @@
         $.each( data_1, function( i,v ) {
           if ( i == 0 ) { return true; }
           var row = v.split(",");
-          data_1a.push( [ Number(row[0]), '<b>'+row[1]+'</b>', row[3], row[4], Number(row[2]) ] );
+          data_1a.push( [ Number(row[0]),
+                          { v: row[1], f: '<a href="./?wrd='+row[1]+'">'+row[1]+'</a>' },
+                          row[3], row[4], Number(row[2]),
+                          (row[1]+' '+row[3]+' '+row[4]).toLowerCase() ] );
           counter += Number(row[2]);
         });
         $('#chart_1 .panel-footer').html('There are '+data_1a.length+' rhyme words occurring '+counter+' times.');
@@ -577,18 +659,10 @@
           gdata_1.addColumn('string', 'Rhyme vowel sound');
           gdata_1.addColumn('string', 'Rhyme sound');
           gdata_1.addColumn('number', 'Raw frequency');
+          gdata_1.addColumn('string', '_search');
           gdata_1.addRows( data_1a );
-        gchart_1 = new google.visualization.Table($('#chart_1 .panel-body')[0]);
-          function selectHandler() {
-            var selectedItem = gchart_1.getSelection()[0];
-            if (selectedItem) {
-              var selected = gdata_1.getValue(selectedItem.row, 1);
-              window.location.href = './?wrd='+selected.replace(/(<([^>]+)>)/ig, '')
-            }
-          }
-          google.visualization.events.addListener(gchart_1, 'select', selectHandler);
-          goptions_1 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
-          gchart_1.draw( gdata_1, goptions_1 );
+        goptions_1 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
+        searchableTable( '#chart_1', 'c1_search', 'c1_table', gdata_1, goptions_1 );
       });
     }
     function draw_2() {
@@ -725,6 +799,130 @@
 
       });
     }
+    // rhyme structure (corpus-wide scheme + scheme-type distributions).
+    // Data is reused from the companion Metres Database facets file; both tools
+    // regenerate together (makereading.sh), so it is always present at view time.
+    var facets_data = [];
+    var load_facets = function() {
+      return $.ajax({ url: "/resources/metres/data/facets.csv",
+        success: function(data) { facets_data = csvjsonConverter(data, ','); },
+        error: function (jqXHR, textStatus, errorThrown) { console.log(jqXHR, textStatus, errorThrown); }
+      });
+    }
+    // per-panel CSV download for the rhyme-structure charts (the other panels
+    // link to static files; these are derived, so we build the CSV client-side)
+    var DL = {};
+    function toCSV( headers, rows ) {
+      var esc = function(v){ v=(v==null?'':v)+''; return /[",\r\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v; };
+      var out = [ headers.map(esc).join(',') ];
+      rows.forEach(function(r){ out.push( r.map(esc).join(',') ); });
+      return out.join('\r\n');
+    }
+    function panelDownload( panelSel, filename, headers, rows ) {
+      DL[panelSel] = { filename: filename, csv: toCSV(headers, rows) };
+      var $h = $(panelSel + ' .panel-heading');
+      if ( $h.length && !$h.find('a.dl').length ) {
+        $h.append('<a class="dl" href="#" title="Download this panel’s data (CSV)"><span style="float: right;font-size:16px;top:6px;" class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>');
+      }
+    }
+    $(document.body).on('click', 'a.dl', function(e){
+      e.preventDefault();
+      var d = DL[ '#' + $(this).closest('.panel').attr('id') ];
+      if ( !d ) return;
+      var url = URL.createObjectURL( new Blob([d.csv], {type:'text/csv;charset=utf-8'}) );
+      var a = document.createElement('a');
+      a.href = url; a.download = d.filename;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    });
+
+    // a Table with a StringFilter search box (Dashboard). The DataTable's last column is a
+    // hidden search blob the filter targets; the table view shows every column except it,
+    // giving a single box that searches the whole row (DataTables-style).
+    function searchableTable( dashSel, searchId, tableId, dt, tableOpts ) {
+      // the download icon is appended to the heading by load_N before this runs; move the
+      // filter box to the end so the download keeps the far-right slot and the filter sits left of it
+      var sc = document.getElementById(searchId);
+      if ( sc ) $( dashSel + ' .panel-heading' ).append( sc );
+      var blobCol = dt.getNumberOfColumns() - 1, visible = [];
+      for ( var i=0; i<blobCol; i++ ) visible.push(i);
+      if ( !google.visualization.Dashboard ) {   // 'controls' package unavailable — plain table
+        var view = new google.visualization.DataView(dt); view.setColumns(visible);
+        new google.visualization.Table( document.getElementById(tableId) ).draw( view, tableOpts );
+        return;
+      }
+      var dash = new google.visualization.Dashboard( document.querySelector(dashSel) );
+      var control = new google.visualization.ControlWrapper({
+        controlType: 'StringFilter', containerId: searchId,
+        options: { filterColumnIndex: blobCol, matchType: 'any',
+                   ui: { label: 'Filter', labelSeparator: '', cssClass: 'gc-filter' } }
+      });
+      var tbl = new google.visualization.ChartWrapper({
+        chartType: 'Table', containerId: tableId, options: tableOpts, view: { columns: visible }
+      });
+      dash.bind( control, tbl );
+      dash.draw( dt );
+    }
+    // append a hidden lower-cased "search blob" column to a DataTable, built from the plain
+    // text of all existing columns (HTML stripped) — what the StringFilter matches against
+    function addSearchBlob( gd ) {
+      var nc = gd.getNumberOfColumns();
+      gd.addColumn('string','_search');
+      for ( var r=0; r<gd.getNumberOfRows(); r++ ) {
+        var b = '';
+        for ( var c=0; c<nc; c++ ) { var val = gd.getValue(r,c); b += ' ' + ((val==null?'':val)+'').replace(/<[^>]+>/g,''); }
+        gd.setValue( r, nc, b.toLowerCase() );
+      }
+    }
+    // clicking an author's rhyme word (chart_8) filters the occurrences table (chart_11);
+    // clicking the already-active word again clears the filter — restoring the old
+    // Google Charts select/deselect toggle behaviour.
+    var ri_wrd_filter = null;
+    $(document.body).on('click', '.ri-wrdfilter', function(e){
+      e.preventDefault();
+      var w = $(this).attr('data-wrd');
+      if ( ri_wrd_filter === w ) { ri_wrd_filter = null; update_wrd_table( data_wrd, "11" ); }
+      else { ri_wrd_filter = w; update_wrd_table( data_wrd, "11", w ); }
+      $('.ri-wrdfilter').removeClass('active');
+      if ( ri_wrd_filter ) $(this).addClass('active');
+    });
+
+    function draw_12() {
+      $.when( load_facets() ).done( function() {
+        var rows = facets_data.filter(function(r){ return r.dim==='rhyme' && r.id!=='' && r.id!==0; });
+        rows.sort(function(a,b){ return b.poems-a.poems; });
+        panelDownload( '#chart_12', 'rhyme-schemes.csv', ['rhyme scheme','poems','authors'], rows.map(function(r){ return [ r.id+'', Number(r.poems), Number(r.authors) ]; }) );
+        var data_12a = rows.slice(0,15).map(function(r){ return [ r.id+'', Number(r.poems) ]; });
+        $('#chart_12 .panel-footer').html('Showing the top '+Math.min(15,rows.length)+' of '+rows.length+' rhyme schemes.');
+        gdata_12 = new google.visualization.DataTable();
+        gdata_12.addColumn('string', 'Rhyme scheme');
+        gdata_12.addColumn('number', 'Poems');
+        gdata_12.addRows( data_12a );
+        gchart_12 = new google.visualization.BarChart($('#chart_12 .panel-body')[0]);
+        goptions_12 = { legend:{position:'none'},
+          chartArea:{ top:10, left:115, width:'85%', height:'82%' },
+          hAxis:{ format:'#', title:'Poems', textStyle:{fontSize:10}, titleTextStyle:{fontSize:12, italic:false} },
+          vAxis:{ textStyle:{fontSize:11} },
+          colors:['#5b9bd5'] };
+        gchart_12.draw( gdata_12, goptions_12 );
+      });
+    }
+    function draw_13() {
+      $.when( load_facets() ).done( function() {
+        var rows = facets_data.filter(function(r){ return r.dim==='spos' && r.id!=='' && r.id!==0; });
+        rows.sort(function(a,b){ return b.poems-a.poems; });
+        panelDownload( '#chart_13', 'rhyme-scheme-types.csv', ['rhyme-scheme type','poems','authors'], rows.map(function(r){ return [ (r.label||r.id)+'', Number(r.poems), Number(r.authors) ]; }) );
+        var data_13a = rows.map(function(r){ return [ (r.label||r.id)+'', Number(r.poems) ]; });
+        $('#chart_13 .panel-footer').html('There are '+rows.length+' rhyme-scheme types.');
+        gdata_13 = new google.visualization.DataTable();
+        gdata_13.addColumn('string', 'Rhyme-scheme type');
+        gdata_13.addColumn('number', 'Poems');
+        gdata_13.addRows( data_13a );
+        gchart_13 = new google.visualization.PieChart($('#chart_13 .panel-body')[0]);
+        goptions_13 = { pieStartAngle:0, pieHole:.4, pieSliceText:'percentage', sliceVisibilityThreshold:0, legend:{position:'right',textStyle:{fontSize:12}}, colors:pieCols };
+        gchart_13.draw( gdata_13, goptions_13 );
+      });
+    }
     // rhyme word
     function draw_5() {
       $.when( load_data( "wrd/"+q_wrd+".csv" ) ).done( function() {
@@ -750,7 +948,9 @@
         $.each( data_8, function( i,v ) {
           if ( i == 0 ) { return true; }
           var row = v.split(",");
-          data_8a.push( [ '<b>'+row[0]+'</b>', row[2], row[3], Number(row[1]) ] );
+          data_8a.push( [ { v: row[0], f: '<a href="#" class="ri-wrdfilter" data-wrd="'+row[0]+'">'+row[0]+'</a>' },
+                          row[2], row[3], Number(row[1]),
+                          (row[0]+' '+row[2]+' '+row[3]).toLowerCase() ] );
           counter += Number(row[1]);
         });
         $('#chart_8 .panel-footer').html('There are '+data_8a.length+' rhyme words occurring '+counter+' times.');
@@ -759,20 +959,10 @@
           gdata_8.addColumn('string', 'Rhyme vowel sound');
           gdata_8.addColumn('string', 'Rhyme sound');
           gdata_8.addColumn('number', 'Raw frequency');
+          gdata_8.addColumn('string', '_search');
           gdata_8.addRows( data_8a );
-        gchart_8 = new google.visualization.Table($('#chart_8 .panel-body')[0]);
-          function selectHandler() {
-            var selectedItem = gchart_8.getSelection()[0];
-            if (selectedItem) {
-              var selected = gdata_8.getValue(selectedItem.row, 0);
-              update_wrd_table( data_wrd, "11", selected.replace(/(<([^>]+)>)/ig, '') );
-            } else {
-              update_wrd_table( data_wrd, "11", selected );
-            }
-          }
-          google.visualization.events.addListener(gchart_8, 'select', selectHandler);
-          goptions_8 = {'width':'100%','height':'100%','sortColumn':3,sortAscending:false,'allowHtml':true };
-          gchart_8.draw( gdata_8, goptions_8 );
+        goptions_8 = {'width':'100%','height':'100%','sortColumn':3,sortAscending:false,'allowHtml':true };
+        searchableTable( '#chart_8', 'c8_search', 'c8_table', gdata_8, goptions_8 );
       });
     }
     function draw_9() {
@@ -914,13 +1104,13 @@
           gdata_11.setProperty(0, 4, 'style', 'width:165px');          
         }
       if ( no == "7" ) {
+        addSearchBlob( gdata_7 );
         goptions_7 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
-        gchart_7 = new google.visualization.Table($('#chart_'+no+' .panel-body')[0]);
-        gchart_7.draw( gdata_7, goptions_7 ); 
+        searchableTable( '#chart_7', 'c7_search', 'c7_table', gdata_7, goptions_7 ); 
       } else {
-        goptions_11 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true }
-        gchart_11 = new google.visualization.Table($('#chart_'+no+' .panel-body')[0]);
-        gchart_11.draw( gdata_11, goptions_11 );         
+        addSearchBlob( gdata_11 );
+        goptions_11 = {'width':'100%','height':'100%','sortColumn':0,'allowHtml':true };
+        searchableTable( '#chart_11', 'c11_search', 'c11_table', gdata_11, goptions_11 );         
       }     
     }
 
@@ -1148,6 +1338,228 @@
         //Returns the converted result from CSV to JSON
         return jsonarray;
     };
+
+    // ====================================================================
+    // Rhyme Network Explorer  (?view=network) — 4 switchable cytoscape views
+    // built client-side from the rhyme-index data + the Houston (2022) metrics
+    // ====================================================================
+    var RXW=[], RXV=[], RXPD=[], RXRPHO=[], RXWM={}, RXCONV={};   // loaded data
+    var cyR=null, cyRNav=null, RX_FP=null;
+
+    function rxCsv( path ) {
+      return $.ajax({ url:'/resources/rhyme-index/data/'+path, dataType:'text' })
+              .then( function(d){ return csvjsonConverter(d, ','); } );
+    }
+    function rxNodeSz( w, max ) { return 16 + (w/max)*60; }
+    function rxAutName( a ) { return ( mod_auth[a] && mod_auth[a].name ) ? mod_auth[a].name : a; }
+    // conventionality / rhyme-frequency-ratio colour scale (corpus mean ≈ .47):
+    // red = conventional-as-a-rhyme, blue = distinctive
+    function rxRatioCol( r ) {
+      if ( r === '' || r == null || isNaN(r) ) return '#dddddd';
+      if ( r >= 0.62 ) return '#b30000';
+      if ( r >= 0.52 ) return '#e34a33';
+      if ( r >= 0.43 ) return '#fdae6b';
+      if ( r >= 0.36 ) return '#9ecae1';
+      return '#3182bd';
+    }
+
+    // --- A · rhyme sound ↔ sound (the near-rhyme web), from pairdegree.csv ----
+    // Cross-vowel slant rhymes only; an edge = two different vowels poets rhymed
+    // together FAR MORE than their frequency predicts (a near-rhyme affinity).
+    function rxAffCol( lift ) { return lift>=6?'#99000d' : lift>=3?'#cb181d' : lift>=2?'#ef3b2c' : '#fc9272'; }
+    function rxBuildSoundWeb( minW, maxN ) {
+      var vf={}; RXV.forEach(function(r){ vf[ r['Ryhme vowels'] || r['Rhyme vowels'] ] = r['Raw frequency']; });
+      var maxV=Math.max.apply(null, Object.keys(vf).map(function(k){return vf[k];}).concat([2]));
+      // symmetric cross-vowel slant weights + configuration-model margins
+      var wsum={}, deg={}, T=0;
+      RXPD.forEach(function(r){ if ( r.Source===r.Target ) return;
+        var k=r.Source<r.Target ? r.Source+'|'+r.Target : r.Target+'|'+r.Source;
+        wsum[k]=(wsum[k]||0)+r.Weight; });
+      Object.keys(wsum).forEach(function(k){ var p=k.split('|'); deg[p[0]]=(deg[p[0]]||0)+wsum[k]; deg[p[1]]=(deg[p[1]]||0)+wsum[k]; T+=wsum[k]; });
+      var used={}, edges=[], maxW=2;
+      Object.keys(wsum).forEach(function(k){ var p=k.split('|'), s=p[0], t=p[1], w=wsum[k];
+        if ( w < minW ) return;
+        var exp = deg[s]*deg[t]/(2*T), lift = exp>0 ? w/exp : 0;
+        if ( lift < 1.5 ) return;                       // keep only real near-rhyme affinities
+        used[s]=1; used[t]=1; maxW=Math.max(maxW,w); edges.push([s,t,w,lift]);
+      });
+      var els=[];
+      Object.keys(used).forEach(function(v){ els.push({ data:{ id:'v_'+v, label:v, col:'#6a51a3', strong:1, sz:rxNodeSz(vf[v]||2,maxV) } }); });
+      edges.forEach(function(e){ els.push({ data:{ source:'v_'+e[0], target:'v_'+e[1], ew:1.5+(e[2]/maxW)*7, ecol:rxAffCol(e[3]) } }); });
+      return { els:els, note:Object.keys(used).length+' rhyme vowels · an edge = two vowels poets slant-rhymed far more than chance (a near-rhyme affinity, e.g. /aɪ/~/ɔɪ/, /æ/~/ɑː/) · redder = stronger affinity, wider = more frequent · node size = how often the vowel rhymes · ≥'+minW+' instances' };
+    }
+
+    // --- B · rhyme-word families (cluster by shared sound), occrwords + metrics
+    // Node selection is FAMILY-driven, not by raw frequency: pull from a wide pool,
+    // keep only rhyme-sound families of >=2 words, and fill with the LARGEST families,
+    // so every word has a perfect-rhyme partner (no orphans).
+    function rxBuildWordFam( minW, maxN ) {
+      var pool = RXW.slice(0, Math.max(400, maxN*6));
+      var fam={};
+      pool.forEach(function(r){ (fam[ r['Rhyme sound'] ] = fam[ r['Rhyme sound'] ] || []).push(r); });
+      var families = Object.keys(fam).filter(function(s){ return fam[s].length>=2; })
+                       .sort(function(a,b){ return fam[b].length-fam[a].length; });
+      var words=[];                                    // add whole families, largest first, up to maxN
+      for ( var fi=0; fi<families.length && words.length<maxN; fi++ ) {
+        var fg=fam[families[fi]];
+        for ( var fj=0; fj<fg.length && words.length<maxN; fj++ ) words.push(fg[fj]);
+      }
+      var maxF=Math.max.apply(null, words.map(function(r){return r['Raw frequency'];}).concat([2]));
+      var byRsnd={}, byRpho={};
+      words.forEach(function(r){
+        (byRsnd[ r['Rhyme sound'] ] = byRsnd[ r['Rhyme sound'] ] || []).push(r['Rhyme word']);
+        (byRpho[ r['Rhyme vowel'] ] = byRpho[ r['Rhyme vowel'] ] || []).push(r); });
+      var els=[], seen={};
+      words.forEach(function(r){ var wm=RXWM[ r['Rhyme word'] ] || {};
+        els.push({ data:{ id:'w_'+r['Rhyme word'], label:r['Rhyme word'], col:rxRatioCol(wm.ratio), strong:0,
+                          sz:rxNodeSz(r['Raw frequency'],maxF), href:'./?wrd='+encodeURIComponent(r['Rhyme word']) } }); });
+      // perfect-rhyme edges: clique within each shared rhyme SOUND (rsnd)
+      Object.keys(byRsnd).forEach(function(s){ var g=byRsnd[s];
+        for ( var i=0;i<g.length;i++ ) for ( var j=i+1;j<g.length;j++ ) {
+          var k=g[i]<g[j]?g[i]+'|'+g[j]:g[j]+'|'+g[i];
+          if (!seen[k]) { seen[k]=1; els.push({ data:{ source:'w_'+g[i], target:'w_'+g[j], ew:3, ecol:'#777' } }); }
+        } });
+      // near-rhyme edges: star each shared VOWEL (rpho) group to its most frequent member
+      Object.keys(byRpho).forEach(function(p){ var g=byRpho[p];
+        g.sort(function(a,b){ return b['Raw frequency']-a['Raw frequency']; });
+        var h=g[0]['Rhyme word'];
+        for ( var i=1;i<g.length;i++ ) { var w=g[i]['Rhyme word'];
+          var k=h<w?h+'|'+w:w+'|'+h;
+          if (!seen[k]) { seen[k]=1; els.push({ data:{ source:'w_'+h, target:'w_'+w, ew:1, ecol:'#dcdcdc' } }); }
+        } });
+      return { els:els, note:words.length+' words in the '+Object.keys(byRsnd).length+' largest rhyme families · clusters = families (solid = perfect rhyme, grey = same vowel / near rhyme) · colour = conventional as a rhyme (red) vs distinctive (blue) · click a word' };
+    }
+
+    // poet fingerprints = IDF-weighted rhyme-vowel distribution (for C and D)
+    function rxFingerprints() {
+      if ( RX_FP ) return RX_FP;
+      var fp={}, df={};
+      RXRPHO.forEach(function(r){ var a=r['Author ID'], v=r['Rhyme vowel'], c=r['Raw frequency'];
+        if (!fp[a]) fp[a]={ n:0, v:{} }; fp[a].v[v]=(fp[a].v[v]||0)+c; fp[a].n+=c; });
+      var auts=Object.keys(fp), N=auts.length;
+      auts.forEach(function(a){ Object.keys(fp[a].v).forEach(function(k){ df[k]=(df[k]||0)+1; }); });
+      auts.forEach(function(a){ var v=fp[a].v, s=0;
+        Object.keys(v).forEach(function(k){ v[k]=(v[k]/fp[a].n)*(Math.log(N/df[k])+0.1); s+=v[k]*v[k]; });
+        fp[a].norm=Math.sqrt(s)||1; });
+      RX_FP=fp; return fp;
+    }
+
+    // --- C · poet ↔ poet rhyme twins (mutual-kNN), coloured by conventionality
+    function rxBuildPoetTwin( maxN ) {
+      var fp=rxFingerprints();
+      var auts=Object.keys(fp).filter(function(a){ return fp[a].n>=30; });
+      var K=6, topk={};
+      auts.forEach(function(a){ var sims=[], va=fp[a].v;
+        auts.forEach(function(b){ if (a===b) return; var dot=0, vb=fp[b].v;
+          for ( var k in va ) if ( vb[k] ) dot+=va[k]*vb[k]; sims.push([b, dot/(fp[a].norm*fp[b].norm)]); });
+        sims.sort(function(x,y){return y[1]-x[1];}); topk[a]={}; sims.slice(0,K).forEach(function(s){ topk[a][s[0]]=s[1]; }); });
+      var edges=[], seen={}, deg={}; auts.forEach(function(a){ deg[a]=0; });
+      auts.forEach(function(a){ Object.keys(topk[a]).forEach(function(b){
+        if ( topk[b] && topk[b][a]!==undefined ) { var key=a<b?a+'|'+b:b+'|'+a;
+          if (!seen[key]) { seen[key]=1; edges.push([a,b,topk[a][b]]); deg[a]++; deg[b]++; } } }); });
+      var connected=auts.filter(function(a){ return deg[a]>0; });
+      connected.sort(function(a,b){ return deg[b]-deg[a] || fp[b].n-fp[a].n; });
+      var keep=connected.slice(0,maxN), inKeep={}; keep.forEach(function(a){ inKeep[a]=1; });
+      var disp=edges.filter(function(e){ return inKeep[e[0]] && inKeep[e[1]]; }), hasE={};
+      disp.forEach(function(e){ hasE[e[0]]=1; hasE[e[1]]=1; });
+      var nodes=keep.filter(function(a){ return hasE[a]; });
+      var maxDeg=Math.max.apply(null, nodes.map(function(a){return deg[a];}).concat([1]));
+      var els=[];
+      nodes.forEach(function(a){ var c=RXCONV[a]?RXCONV[a].conv:'';
+        els.push({ data:{ id:'a_'+a, label:rxAutName(a), col:rxRatioCol(c), strong:1, sz:rxNodeSz(deg[a],maxDeg), href:'./?aut='+a } }); });
+      disp.forEach(function(e){ els.push({ data:{ source:'a_'+e[0], target:'a_'+e[1], ew:1+e[2]*6, ecol:'#bbb' } }); });
+      return { els:els, note:nodes.length+' poets with a mutual rhyme-vowel "twin" · colour = how conventional their rhyming is (red) vs distinctive (blue) · size = number of twins · click a poet' };
+    }
+
+    // --- D · poet ↔ rhyme signature (bipartite): vowels a poet favours by lift
+    function rxBuildPoetSig( maxN ) {
+      var poet={}, poetN={}, vowTot={}, TOT=0;
+      RXRPHO.forEach(function(r){ var a=r['Author ID'], v=r['Rhyme vowel'], c=r['Raw frequency'];
+        if (!poet[a]) poet[a]={}; poet[a][v]=(poet[a][v]||0)+c; poetN[a]=(poetN[a]||0)+c; vowTot[v]=(vowTot[v]||0)+c; TOT+=c; });
+      var poets=Object.keys(poetN).filter(function(a){ return poetN[a]>=40; })
+                  .sort(function(a,b){ return poetN[b]-poetN[a]; }).slice(0,maxN);
+      var LIFT=1.4, SUP=5, edges=[], vdeg={};
+      poets.forEach(function(a){ Object.keys(poet[a]).forEach(function(v){ var c=poet[a][v];
+        var lift=(c/poetN[a])/(vowTot[v]/TOT);
+        if ( lift>=LIFT && c>=SUP ) { edges.push([a,v,lift]); vdeg[v]=(vdeg[v]||0)+1; } }); });
+      var keepV={}; Object.keys(vdeg).forEach(function(v){ if (vdeg[v]>=2) keepV[v]=1; });
+      edges=edges.filter(function(e){ return keepV[e[1]]; });
+      var pHas={}; edges.forEach(function(e){ pHas[e[0]]=1; });
+      var shown=poets.filter(function(a){ return pHas[a]; });
+      var maxP=Math.max.apply(null, shown.map(function(a){return poetN[a];}).concat([2]));
+      var maxVd=Math.max.apply(null, Object.keys(keepV).map(function(v){return vdeg[v];}).concat([2]));
+      var maxL=Math.max.apply(null, edges.map(function(e){return e[2];}).concat([2]));
+      var els=[];
+      shown.forEach(function(a){ var cv=RXCONV[a]?RXCONV[a].conv:'';
+        els.push({ data:{ id:'a_'+a, label:rxAutName(a), col:rxRatioCol(cv), strong:1, sz:rxNodeSz(poetN[a],maxP), href:'./?aut='+a } }); });
+      Object.keys(keepV).forEach(function(v){ els.push({ data:{ id:'x_'+v, label:v, col:'#6a51a3', strong:0, sz:rxNodeSz(vdeg[v],maxVd) } }); });
+      edges.forEach(function(e){ els.push({ data:{ source:'a_'+e[0], target:'x_'+e[1], ew:1+(e[2]/maxL)*6, ecol:'#ccc' } }); });
+      return { els:els, note:shown.length+' poets (coloured by conventionality) ↔ '+Object.keys(keepV).length+' rhyme vowels they favour distinctively (≥'+LIFT+'× the corpus rate) · click a poet' };
+    }
+
+    function rxBuildNet( type, minW, maxN ) {
+      if ( type==='word_fam' )  return rxBuildWordFam( minW, maxN );
+      if ( type==='poet_twin' ) return rxBuildPoetTwin( maxN );
+      if ( type==='poet_sig' )  return rxBuildPoetSig( maxN );
+      return rxBuildSoundWeb( minW, maxN );
+    }
+
+    var RX_LAYOUT = { name:'cose', animate:false, padding:40, randomize:true,
+                      nodeDimensionsIncludeLabels:true, nodeRepulsion:22000, idealEdgeLength:130,
+                      nodeOverlap:30, componentSpacing:120, gravity:0.2, numIter:1500 };
+    function rxDraw() {
+      var type=$('#net_type').val() || 'sound_web';
+      var minW=parseInt($('#net_minw').val(),10) || 1;
+      var maxN=parseInt($('#net_maxn').val(),10) || 60;
+      var built=rxBuildNet( type, minW, maxN );
+      $('#net_explorer_note').text( built.note );
+      if ( !built.els.length ) { if ( cyR ) cyR.elements().remove(); return; }
+      if ( !cyR ) {
+        cyR = cytoscape({
+          container: document.getElementById('cy_explorer'),
+          elements: built.els, wheelSensitivity: 0.2,
+          style: [
+            { selector:'node', style:{ 'label':'data(label)','background-color':'data(col)','width':'data(sz)','height':'data(sz)',
+                'font-size':10,'min-zoomed-font-size':3,'text-wrap':'wrap','text-max-width':'90px','color':'#333','text-valign':'bottom' } },
+            { selector:'node[strong=1]', style:{ 'color':'#fff','text-valign':'center','text-outline-color':'data(col)','text-outline-width':2,'font-weight':'bold','font-size':11,'min-zoomed-font-size':2 } },
+            { selector:'node[strong=0]', style:{ 'font-size':9,'text-max-width':'84px','text-background-color':'#ffffff','text-background-opacity':0.78,'text-background-shape':'roundrectangle','text-background-padding':1.5 } },
+            { selector:'edge', style:{ 'width':'data(ew)','line-color':'data(ecol)','curve-style':'bezier','opacity':.6 } },
+            { selector:'.faded', style:{ 'opacity':.12,'text-opacity':.12 } },
+            { selector:'.hl', style:{ 'opacity':1,'text-opacity':1 } }
+          ],
+          layout: RX_LAYOUT
+        });
+        cyR.on('mouseover','node', function(e){ var n=e.target; cyR.elements().addClass('faded');
+          n.removeClass('faded').addClass('hl');
+          n.connectedEdges().removeClass('faded').addClass('hl').connectedNodes().removeClass('faded').addClass('hl'); });
+        cyR.on('mouseout','node', function(){ cyR.elements().removeClass('faded hl'); });
+        cyR.on('tap','node', function(e){ var h=e.target.data('href'); if ( h ) window.location.href=h; });
+        try { cyR.panzoom(); } catch(e){}
+        try { cyRNav = cyR.navigator({ container: document.getElementById('netnav2') }); } catch(e){}
+      } else {
+        cyR.batch(function(){ cyR.elements().remove(); cyR.add( built.els ); });
+        cyR.layout( RX_LAYOUT ).run();
+      }
+      cyR.resize(); cyR.fit( undefined, 40 );
+      setTimeout(function(){ try { cyR.resize(); cyR.fit( undefined, 40 ); if ( cyRNav && cyRNav.resize ) cyRNav.resize(); } catch(e){} }, 0);
+    }
+
+    function renderRhymeNetwork() {
+      document.getElementById('index_cat').insertAdjacentHTML('afterbegin','network explorer');
+      $('.net-explorer-link').hide();
+      $('#layout_network').show();
+      $.when( rxCsv('occrwords.csv'), rxCsv('occrvowels.csv'), rxCsv('pairdegree.csv'),
+              rxCsv('word_metrics.csv'), rxCsv('aut_conventionality.csv'), rxCsv('aut_rpho_all.csv') )
+       .done( function( w, v, pd, wm, conv, rpho ) {
+          RXW=w; RXV=v; RXPD=pd; RXRPHO=rpho;
+          wm.forEach(function(r){ RXWM[ r['Rhyme word'] ]={ ratio:r['Rhyme frequency ratio'], pct:r['%DIFF'], full:r['Full freq'] }; });
+          conv.forEach(function(r){ RXCONV[ r['Author ID'] ]={ conv:r['Conventionality'], n:r['Rhyme tokens'] }; });
+          $('#net_maxn').on('input', function(){ $('#net_maxn_val').text(this.value); });
+          $('#net_minw').on('input', function(){ $('#net_minw_val').text(this.value); });
+          $('#net_type, #net_maxn, #net_minw').on('change', rxDraw);
+          rxDraw();
+       } );
+    }
 
     var citation = "";
     citation += "Huber, Alexander. ";

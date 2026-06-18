@@ -7,7 +7,7 @@
   The ECPA <em>rhyme-index</em> stands in a long tradition of rhyme 
   indices produced in support of research, originally in print and more recently
   in the digital medium.<sup>2</sup>
-  The <em>index</em> embraces data visualization techniques to quickly
+  The <em>index</em> embraces data visualisation techniques to quickly
   highlight key information and allows for interactivity to fully exploit 
   the potential of the underlying data.
   The ECPA <em>rhyme-index</em> has been developed with <a
@@ -24,7 +24,8 @@ properties of the selected view.  The latter two page types can be accessed from
 any page via the <em>rhyme word</em> and <em>author name</em> search panels on
 the top right of the screen.  The data underlying each of the panels is
 downloadable via the <em>downloads</em>-button at the top right corner of each
-panel.
+panel.  A full-page <em>Network Explorer</em>, reached from the link at the top
+right, offers graph-based views of the same data, described below.
 </p>
 
 <h4>Overview</h4>
@@ -34,7 +35,7 @@ of a sortable table of all rhyme words in the corpus ranked by raw frequencies.
 Clicking on any of the rows brings up the selected word's <em>rhyme word</em>
 page.  In addition to the rhyme word table, the overview page also contains a
 donut chart of all rhyme vowel sounds in the corpus by raw frequency, and a
-Sankey diagram that visualizes the flow between rhyme vowel sounds, thus
+Sankey diagram that visualises the flow between rhyme vowel sounds, thus
 grouping rhyme pairs by degree of closeness of the sound match.  Finally, a
 stacked bar chart (bottom left) shows the rhyme pair co-occurrences for the 75
 authors with the highest raw co-occurrence frequency.  Each column shows an
@@ -73,15 +74,51 @@ to the overview via the <em>Rhyme-Index</em> link at the top, or find a new
 <em>rhyme word</em> or <em>author</em> via the search options.
 </p>
 
+<h4>Network Explorer</h4>
+
+<p>The <em>Rhyme Network Explorer</em>, reached from the link at the top right of
+every page, is a full-page interactive graph offering four complementary views of
+the corpus, selected from a dropdown.  <em>Rhyme sound and sound</em> connects two
+vowels whenever poets rhymed them together far more often than chance would
+predict, mapping the near rhymes, the slant and para rhymes, that the period
+treated as close enough (for example /a&#x026A;/ with /&#x0254;&#x026A;/, or
+/&#x00E6;/ with /&#x0251;&#x02D0;/); the redder and wider the link, the stronger
+and more frequent the affinity.  <em>Rhyme-word families</em> groups words that
+share a rhyme sound into families (<em>me, thee, see</em>; <em>light, night,
+bright</em>), drawn as solid links, with lighter links bridging families that
+share a vowel.  <em>Poet and poet</em> links each poet to the others whose
+rhyme-vowel taste is most similar, resolving the corpus into clusters of poets who
+rhyme alike.  <em>Poet and rhyme signature</em> joins each prolific poet to the
+rhyme vowels they favour distinctively, far more than the corpus average.
+</p>
+
+<p>Several of the views are coloured using the rhyme-frequency measures proposed by
+Natalie M. Houston.<sup>3</sup>  In the <em>rhyme-word families</em>, a word's size
+reflects how often it is used as a rhyme (its raw frequency ranking), while its
+colour reflects its <em>rhyme-frequency ratio</em>, that is, how often the word,
+whenever it appears at all, appears as a rhyme: deep red marks the thoroughly
+conventional rhyme words a reader would almost always meet at the line end, blue
+the words that are distinctive or unexpected as rhymes.  In the two poet views,
+each poet is coloured by their <em>conventionality</em>, the average
+rhyme-frequency ratio of their rhymes, so that conventional rhymers stand out from
+those whose rhyming is more distinctive.  (Houston's keyness, or %DIFF, effect
+size, comparing a word's frequency as a rhyme against its frequency elsewhere in
+the line, is also computed and available in the underlying data.)  Hovering a node
+highlights its neighbourhood, and clicking a node opens it: a rhyme word opens its
+<em>rhyme word</em> page, a poet their <em>author</em> page.  The sliders set how
+many nodes are shown and the minimum strength of a link, and the graph can be
+panned and zoomed, with a minimap for orientation.
+</p>
+
 <h3>Future work</h3>
 
 <p>One of the most beneficial, if less frequently acknowledged, side effects of
 exploratory data analysis of this kind is that it tends to reveal inconsistencies and
 errors in the underlying data.  The ECPA <em>rhyme-index</em> is no exception in
-this respect, and we apologize for any errors, which we will correct as we
+this respect, and we apologise for any errors, which we will correct as we
 become aware of them.  We appreciate reports of any issues to the <a
 href="mailto:huber@eighteenthcenturypoetry.org">editor</a>.  Please also contact
-the editor with suggestions for additional visualizations or feedback about the
+the editor with suggestions for additional visualisations or feedback about the
 usability and usefulness of the interface currently offered. <em>Thank
 you!</em>
 </p>
@@ -100,6 +137,11 @@ which has been instrumental for this rhyme-index:
   <li>Plecháč, Petr and Robert Kolár. <em>Gunstick 2.0. Database of Czech
   rhymes.</em> Prague: Institute for Czech Literature of the Academy of Sciences
   of the Czech Republic, 2017. Web. 15 Jan. 2024.
-  <a class="external" target="_blank" href="http://versologie.cz/"><span>http://versologie.cz/</span></a></li> 
+  <a class="external" target="_blank" href="http://versologie.cz/"><span>http://versologie.cz/</span></a></li>
 </ul>
+<p class="small">
+<sup>3</sup> The conventionality and rhyme-frequency measures used in the Network
+Explorer follow: Houston, Natalie M. <q class="titlea">Rhyme Frequency in
+Nineteenth-Century English Poetry</q>. Berlin, Boston: De Gruyter, 2022.
+<a class="external" target="_blank" href="https://doi.org/10.1515/9783110781502-007"><span>https://doi.org/10.1515/9783110781502-007</span></a>
 </p>

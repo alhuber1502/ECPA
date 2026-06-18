@@ -1,0 +1,228 @@
+<h2 style="margin-top:5px;" id="metres-help">Metres Database</h2>
+
+<p>
+  The Eighteenth-Century Poetry Archive <em>Metres Database</em> offers a
+  <em>metre</em>-based access point to the poetry corpus, and is the companion to
+  the ECPA <a href="/resources/rhyme-index/">rhyme-index</a>. Where the
+  rhyme-index gives a <em>rhyme</em>-analytical view of the corpus, the
+  <em>Metres Database</em> focusses on metrical form: foot type and foot count,
+  line length, stanza form, rhyme scheme, and poetic form or genre, both
+  <em>across the whole corpus</em> and in the practice of <em>individual
+  poets</em>. It embraces data-visualisation and interactive filtering so the
+  formal structure of eighteenth-century verse can be explored rather than merely
+  looked up. The database has been developed with
+  <a href="https://developers.google.com/chart" target="_blank" class="external">Google
+  charts</a> and <a href="https://js.cytoscape.org/" target="_blank" class="external">Cytoscape.js</a>.
+</p>
+
+<h3>Interfaces</h3>
+
+<p>
+  The <em>Metres Database</em> comprises a <em>corpus overview</em> with a faceted
+  browser, a full-page <em>Network Explorer</em>, <em>poet</em>-based pages, and
+  <em>form / genre profile</em> pages. The Network Explorer is reached from the
+  link at the top right of the page; a poet's page is reached from any results
+  table (by clicking an author name) or from a poet node in a network; a form
+  profile is reached by selecting a single form or genre (for example clicking a
+  form in a chart or a companion form on another profile). The data underlying
+  each panel is downloadable as
+  CSV via the <span class="glyphicon glyphicon-download-alt"></span> button at the
+  top right of the panel; on the corpus page the download always reflects the
+  <em>current facet selection</em>, i.e. exactly the data behind what is on screen.
+</p>
+
+<h4>Corpus overview and faceted browser</h4>
+
+<p>
+  The left-hand <em>facets</em> let you filter the corpus by foot type, foot
+  count, line-length profile, rhyme scheme, stanza form, and poetic form / genre.
+  Facets <em>combine</em> (e.g. <em>iambic</em> &times; <em>tetrameter</em>
+  &times; <em>abab</em>), and because several categories are recorded as sets (a
+  ballad-metre poem is both <em>tetrameter</em> and <em>trimeter</em>), a poem is
+  matched if it carries <em>any</em> of the selected values for a facet. Selected
+  facets appear as removable <em>chips</em>, and the address bar updates as you
+  filter, so any view can be bookmarked or cited. The summary tiles and the
+  distribution charts (foot type, foot count, line length, form / genre, stanza,
+  poem length) recompute live for the current selection, as does the <em>matching
+  poems</em> table, which is sortable and carries a filter box that searches across
+  all of its columns at once.
+</p>
+
+<h4>Network Explorer</h4>
+
+<p>
+  The Network Explorer is a full-page interactive graph. A dropdown switches
+  between four views. The two corpus views, <em>metre and form / genre</em> and
+  <em>form and form</em>, are drawn by <em>association</em> rather than by raw
+  frequency: because nearly nine in ten poems are iambic, a plain co-occurrence
+  graph would simply restate that everything connects to iambic. Instead, each
+  edge measures how far two things go together <em>relative to chance</em>, so a
+  <strong>red</strong> link means a pairing far more common than expected (the
+  anapaestic lilt of song and comic verse, the trochaic cast of hymns and odes)
+  and a <strong>blue</strong> link one far rarer than expected (blank verse
+  shunning short tetrameter lines, song shunning the stately pentameter); the
+  thicker the edge, the stronger the surprise. Pairings that fall close to chance
+  are not drawn at all, so every edge you see is a genuine over, or under,
+  representation rather than an artefact of how common the two things are. Form
+  nodes are tinted by the foot
+  type they lean towards (pale blue for iambic, green for anapaestic, orange for
+  trochaic), so metrical families and the forms that defect from the iambic
+  default stand out at a glance.
+</p>
+
+<p>
+  The two poet views turn the same lens on authors. <em>Poet and poet (metrical
+  twins)</em> draws a link only between poets who each count the other among their
+  nearest by <em>metrical fingerprint</em>, so the graph resolves into genuine
+  twin pairs and clusters that share a signature rather than a uniform mesh; node
+  size shows how many twins a poet has. <em>Poet and metrical signature</em> is a
+  bipartite map joining each prolific poet to the foot types, foot counts and
+  forms they use <em>distinctively</em> (far more than the corpus average), so
+  shared signatures pull poets together, e.g. the song-writers around <em>song</em>,
+  the couplet-poets around the <em>heroic couplet</em>. Because almost every poem
+  is iambic, the iambic foot is no poet's distinctive trait and never appears here;
+  only the non-default feet, the anapaestic and trochaic, surface as foot-type
+  signatures (dactylic verse, just a handful of poems in the whole corpus, is too
+  rare to register). Sliders control how many
+  nodes are shown and, for the corpus views, the minimum support behind an edge.
+  Hovering highlights a node's neighbourhood, and <strong>clicking a node jumps to
+  it</strong>: a metre or form node filters the corpus overview, a poet node opens
+  that poet's page. You can drag to pan and scroll to zoom, with a minimap.
+</p>
+
+<p>
+  A canonical poet may nonetheless sit at the metrical margins: Alexander Pope, for
+  instance, writes so squarely in the period's default measure (the iambic
+  pentameter heroic couplet) that, once ubiquitous traits are down-weighted, no
+  other poet counts him among their nearest, so he has no metrical twin and does
+  not appear in the twin network. For exactly this reason the poet views offer a
+  <em>focus poet</em> search: type any poet to redraw the graph as <em>their</em>
+  metrical ego-network, the chosen poet (in gold) surrounded by the poets nearest
+  to them, with node size showing closeness. It is the quickest way to place a
+  specific poet, whether or not they are metrically central.
+</p>
+
+<h4>Poet pages</h4>
+
+<p>
+  A poet page gives a metre-centric view of an individual author's practice. It
+  opens with summary tiles and a poet's <em>metrical fingerprint</em>: the
+  distribution of foot types, foot counts, rhyme-scheme types, stanza forms,
+  line-length profiles, rhyme schemes, poetic forms, and poem lengths. The
+  <em>distinctiveness</em> panel compares the poet's form usage against the corpus
+  average, so what is characteristic of the poet stands out. The <em>metrical
+  neighbours</em> panel lists the poets whose metrical fingerprint is most similar
+  (by cosine similarity, weighted so that ubiquitous traits such as iambic
+  pentameter do not dominate). A sortable, searchable and downloadable table of the
+  poet's poems links back into each poem, and to the poet's
+  <a href="/resources/rhyme-index/">rhyme-index</a> profile, so rhyme and metre can
+  be studied together.
+</p>
+
+<h4>Form / genre profiles</h4>
+
+<p>
+  A form profile gathers everything the corpus holds about a single poetic form or
+  genre, the heroic couplet, the ode, the ballad, and so on. It opens with the
+  form's typical recipe, expressed as a plain sentence (for example "most often
+  iambic pentameter in couplet form, rhyming aa") and a <em>strictness</em> reading
+  giving the share of poems that follow that recipe. The <em>recipe</em> panels
+  then show how the form distributes across foot type, foot count, line length,
+  stanza and rhyme, alongside a switchable cross-tab that pairs two of those
+  dimensions and colours each cell by association (red for more than chance, blue
+  for less). Further panels list the form's <em>signature poets</em> (its most
+  prolific practitioners, and those for whom it is most distinctive), its
+  <em>companion</em> forms and genres (the tags these poems most often also carry),
+  any <em>variants</em> that depart from the recipe, and a searchable, downloadable
+  table of the poems themselves. A profile is reached by selecting a single form or
+  genre; a link in the poems panel reopens the same selection in the faceted
+  browser, so further facets can be added without losing the combinatorial search.
+</p>
+
+<h3>Metrical categories</h3>
+
+<p>The classifications used throughout the database derive from the ECPA
+encoding taxonomy.<sup>1</sup> The principal categories are:</p>
+
+<h4>Foot type</h4>
+<p>The metrical foot, notated with <em>&#x2d8;</em> (metrically non-prominent /
+unstressed) and <em>&#x2032;</em> (metrically prominent / stressed). Those
+attested in the corpus are <em>iambic</em> (&#x2d8;&#x2032;),
+<em>trochaic</em> (&#x2032;&#x2d8;), <em>anapaestic</em>
+(&#x2d8;&#x2d8;&#x2032;) and <em>dactylic</em> (&#x2032;&#x2d8;&#x2d8;).</p>
+
+<h4>Foot count</h4>
+<p>The number of feet per line: <em>monometer</em>&nbsp;(1),
+<em>dimeter</em>&nbsp;(2), <em>trimeter</em>&nbsp;(3),
+<em>tetrameter</em>&nbsp;(4), <em>pentameter</em>&nbsp;(5),
+<em>hexameter</em>&nbsp;(6) and <em>heptameter</em>&nbsp;(7). Many poems
+alternate line lengths (e.g. common / ballad metre), so a poem may carry more
+than one foot count.</p>
+
+<h4>Line-length profile</h4>
+<p>The syllable count per line. A single number (e.g. <q>10</q>) marks a uniform
+line length (here decasyllabic, typical of iambic pentameter); a dotted sequence
+(e.g. <q>8.6.8.6</q>) marks alternating line lengths, in this case
+<em>common metre</em>.</p>
+
+<h4>Stanza form</h4>
+<p>Recorded by number of lines: <em>couplet</em>&nbsp;(2),
+<em>triplet</em>&nbsp;(3), <em>quatrain</em>&nbsp;(4), <em>quintet</em>&nbsp;(5),
+<em>sestet</em>&nbsp;(6), <em>septet</em>&nbsp;(7), <em>octet</em>&nbsp;(8) and
+longer forms, together with named stanzas such as <em>sesta rima</em> and the
+Pindaric <em>strophe</em>, <em>antistrophe</em> and <em>epode</em>.</p>
+
+<h4>Rhyme scheme and rhyme-scheme type</h4>
+<p>The <em>rhyme scheme</em> facet gives the literal scheme (<q>aa</q>,
+<q>abab</q>, &hellip;). The related <em>rhyme-scheme type</em> (charted on poet
+pages and on the <a href="/resources/rhyme-index/">rhyme-index</a>) records the
+underlying arrangement: <em>pair</em>&nbsp;(aabb), <em>cross</em>&nbsp;(abab),
+<em>envelope</em>&nbsp;(abba), <em>tail</em>&nbsp;(aabccb),
+<em>intermittent</em>&nbsp;(xaxa), <em>continuous</em>&nbsp;(aaa) and
+<em>cinquain</em>&nbsp;(abaab).</p>
+
+<h4>Poetic form / genre</h4>
+<p>A single flat vocabulary of formal and thematic tags, from stanzaic and
+metrical forms (<em>heroic couplet</em>, <em>sonnet</em>, <em>blank verse</em>,
+<em>Spenserian stanza</em>, <em>ballad</em>) through kinds and genres
+(<em>ode</em>, <em>elegy</em>, <em>satire</em>, <em>epistle</em>,
+<em>hymn</em>) to modes (<em>translation</em>, <em>imitation</em>,
+<em>paraphrase</em>). A poem commonly carries several such tags.</p>
+
+<h4>Metrical pattern</h4>
+<p>The abstract metrical template of a line, e.g.
+<em>&#x2d8;&#x2032;|&#x2d8;&#x2032;|&#x2d8;&#x2032;|&#x2d8;&#x2032;|&#x2d8;&#x2032;/</em>
+for iambic pentameter, where <em>|</em> marks a foot boundary and <em>/</em> the
+line end. (Note that this is the <em>nominal</em> template; it does not record
+realised syllable-by-syllable scansion.)</p>
+
+<h3>Notes on the data</h3>
+
+<p>
+  All categories are drawn from poem-level metrical metadata. Where a category
+  was not assigned, a poem is shown under <em>(unclassified)</em> for that facet,
+  with transparent counts. Prose pieces, having no metrical line structure, are
+  excluded from the database. ECPA poems are edited as they appear within their
+  source editions and were not assigned systematic composition or publication
+  dates; the database therefore offers no chronological or timeline views.
+</p>
+
+<h3>Future work</h3>
+
+<p>
+  One of the most beneficial side effects of exploratory analysis of this kind is
+  that it tends to reveal inconsistencies and errors in the underlying data. The
+  <em>Metres Database</em> is no exception, and we apologise for any errors,
+  which we will correct as we become aware of them. We appreciate reports of any
+  issues, as well as suggestions for additional views or feedback on the
+  usefulness of the interface, to the
+  <a href="mailto:huber@eighteenthcenturypoetry.org">editor</a>. <em>Thank
+  you!</em>
+</p>
+
+<p class="small"><br/>
+<sup>1</sup> The full encoding taxonomy of formal and metrical categories is
+maintained in the ECPA <span class="titlea">encodingDesc</span>
+(<code>ECEP.met.*</code>), which underlies both the archive's TEI encoding and
+this database.
+</p>
